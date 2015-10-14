@@ -1,10 +1,3 @@
-/*
- * Utilizador.h
- *
- *  Created on: 02/10/2015
- *      Author: Catarina
- */
-
 #ifndef SRC_UTILIZADOR_H_
 #define SRC_UTILIZADOR_H_
 #include <iostream>

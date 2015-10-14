@@ -1,14 +1,7 @@
-/*
- * Mensagem.h
- *
- *  Created on: 02/10/2015
- *      Author: Catarina
- */
-
 #ifndef SRC_MENSAGEM_H_
 #define SRC_MENSAGEM_H_
 #include <iostream>
-//#include "System.h"
+#include "System.h"
 #include "Utilizador.h"
 #include "Grupo.h"
 #include "Conversa.h"

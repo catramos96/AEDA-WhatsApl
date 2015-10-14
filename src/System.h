@@ -1,10 +1,3 @@
-/*
- * System.h
- *
- *  Created on: 02/10/2015
- *      Author: Catarina
- */
-
 #ifndef SRC_SYSTEM_H_
 #define SRC_SYSTEM_H_
 #include <iostream>

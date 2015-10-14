@@ -1,10 +1,3 @@
-/*
- * Grupo.h
- *
- *  Created on: 11/10/2015
- *      Author: x552L
- */
-
 #ifndef SRC_GRUPO_H_
 #define SRC_GRUPO_H_
 
