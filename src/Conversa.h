@@ -1,10 +1,3 @@
-/*
- * Conversa.h
- *
- *  Created on: 02/10/2015
- *      Author: Catarina
- */
-
 #ifndef SRC_CONVERSA_H_
 #define SRC_CONVERSA_H_
 #include <iostream>
