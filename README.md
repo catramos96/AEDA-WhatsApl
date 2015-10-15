@@ -10,11 +10,13 @@
 
 ## 2- Para fazer commits: ##
 
-IMPORTANTE: Fazer log in:
+### Sempre que se abre o terminal é preciso fazer login ###
 
 * git config --global user.name "Vosso nome"
 
 * git config --global user.email "Vosso email da conta do bb"
+
+### Para fazer commits estes passos têm de ser seguidos. Todos e por esta ordem para evitar problemas ###
 
 * git add -A    //Adiciona todos os ficheiros novos ou alterados ao commit
 
