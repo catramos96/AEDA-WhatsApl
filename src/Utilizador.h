@@ -1,3 +1,6 @@
+/** @ \file Utilizador.h
+ * header file que contém a classe Utilizador
+ */
 #ifndef SRC_UTILIZADOR_H_
 #define SRC_UTILIZADOR_H_
 #include <iostream>

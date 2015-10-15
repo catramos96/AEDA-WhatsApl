@@ -1,3 +1,6 @@
+/** @ \file Grupo.h
+ * header file que contém a classe Grupo
+ */
 #ifndef SRC_GRUPO_H_
 #define SRC_GRUPO_H_
 
