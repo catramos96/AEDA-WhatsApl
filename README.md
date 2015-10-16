@@ -1,3 +1,19 @@
+## Prioridade para desenvolver as classes: ##
+
+1 - System.h
+
+2 - Utilizador.h
+
+3 - Grupo.h
+
+4 - Conversa.h
+
+5 - Mensagem.h
+
+6 - Comunidade.h
+
+# ------------------------------------------------------- #
+
 # Comandos do git #
 
 ## 1- Clonar o repositório para o vosso computador: ##
