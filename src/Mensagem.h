@@ -4,11 +4,13 @@
 #ifndef SRC_MENSAGEM_H_
 #define SRC_MENSAGEM_H_
 #include <iostream>
+
 #include "System.h"
 #include "Utilizador.h"
+#include "Comunidade.h"
+#include "Comunidade.h"
 #include "Grupo.h"
-#include "Conversa.h"
-#include "System.h"
+#include "Mensagem.h"
 
 using namespace std;
 
@@ -24,14 +26,16 @@ public:
 	virtual void imprimirSms() = 0; //imprime todos os membros private
 };
 
-class MensagemGrupo {
+class MensagemGrupo : public Mensagem {
+private:
 	Grupo destinatario;
 public:
 	MensagemGrupo(string tipo, Data data, Horas hora, Utilizador emissor, Utilizador destinatario);
 	void imprimirSms();
 };
 
-class MensagemUtil {
+class MensagemUtil : public Mensagem {
+private:
 	Utilizador destinatario;
 public:
 	MensagemUtil(string tipo, Data data, Horas hora, Utilizador emissor, Utilizador destinatario);

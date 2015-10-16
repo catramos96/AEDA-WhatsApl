@@ -1,7 +1,14 @@
-#include "cute.h"
-#include "ide_listener.h"
-#include "xml_listener.h"
-#include "cute_runner.h"
+#include <iostream>
+
+#include "System.h"
+#include "Utilizador.h"
+#include "Comunidade.h"
+#include "Comunidade.h"
+#include "Grupo.h"
+#include "Mensagem.h"
+
+using namespace std;
+
 
 /*
 void thisIsATest() {
@@ -22,3 +29,29 @@ int main(int argc, char const *argv[]){
     return 0;
 }
 */
+
+int main()
+{
+	try{
+		Data data;
+		int d, m, a;
+		cout << "Dia, mes, ano ";
+		cin >> d >> m >> a;
+		data.setData(d, m, a);
+		cout << data << endl;
+
+		Horas hora;
+		int h, min;
+		cout << "Hora, minutos";
+		cin >> h >> min;
+		hora.setHoras(h, min);
+		cout << hora << endl;
+	}
+	catch(Data::DataInvalida){
+		cout << "Data Invalida!" << endl;
+	}
+	catch (Horas::HoraInvalida){
+		cout << "Hora Invalida!" << endl;
+	}
+	return 0;
+}

@@ -3,49 +3,44 @@
  */
 #ifndef SRC_SYSTEM_H_
 #define SRC_SYSTEM_H_
+
+#include "System.h"
+#include "Utilizador.h"
+#include "Comunidade.h"
+#include "Comunidade.h"
+#include "Grupo.h"
+#include "Mensagem.h"
+
 #include <iostream>
 #include <string>
-#include "Utilizador.h"
+#include <sstream>
 #include <vector>
-
-using namespace std;
 
 class Horas
 {
+private:
 	int hora,min;
 public:
-	Horas(int hora, int min); //construtor
+	class HoraInvalida{};
+	Horas();
 	void setHoras(int hora,int min);
-	void setHora(int hora);
-	void setMin(int minutos);
-	string getHoras() const;
-friend ostream & operator<<(ostream & o, const Horas & h);
+	int getHora() const;
+	int getMinutos() const;
+	friend ostream & operator<<(ostream & out, const Horas & h);
 };
 
 class Data
 {
+private:
 	int dia,mes,ano;
 public:
-	Data(int dia, int mes, int ano); //construtor
-	void setDia(int dia);
-	void setMes(int mes);
-	void setAno(int ano);
+	class DataInvalida{};
+	Data(); //construtor
+	void setData(int dia, int mes, int ano);
 	int getDia() const;
 	int getMes() const;
 	int getAno() const;
-
-friend ostream & operator<<(ostream & o, const Data & d);
-
+	friend ostream & operator<<(ostream & out, const Data & d);
 };
-
-class Comunidade
-{
-private:
-	vector<Utilizador *> comunidade;
-public:
-	Comunidade();
-	bool adicionarUtil(Utilizador utilizador);
-};
-
 
 #endif /* SRC_SYSTEM_H_ */
