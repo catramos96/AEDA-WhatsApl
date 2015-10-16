@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['comandos_20do_20git',['Comandos do git',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['prioridade_20para_20desenvolver_20as_20classes_3a',['Prioridade para desenvolver as classes:',['../md__r_e_a_d_m_e.html',1,'']]]
 ];
