@@ -7,7 +7,6 @@
 #include "System.h"
 #include "Utilizador.h"
 #include "Comunidade.h"
-#include "Comunidade.h"
 #include "Grupo.h"
 #include "Mensagem.h"
 
@@ -21,13 +20,16 @@ class Utilizador
 {
 private:
 	string login,nome,email;
-	int telemovel;
+	vector<int> telemoveis;
 	Data dataAdesao;
-	vector<Conversa> conversas;
+	vector<Conversa *> conversas;
 public:
-	Utilizador();
-	Utilizador(string login, string nome, string email, int telemovel, Data dataAdesao);
+	Utilizador(string login, string nome, string email, Data dataAdesao);
+	bool addTelemovel(int t);
+	bool addConversa(Conversa &c);
+	bool enviarSms(Mensagem &m);
 	//...
+
 };
 
 

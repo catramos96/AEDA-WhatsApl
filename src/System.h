@@ -4,13 +4,6 @@
 #ifndef SRC_SYSTEM_H_
 #define SRC_SYSTEM_H_
 
-#include "System.h"
-#include "Utilizador.h"
-#include "Comunidade.h"
-#include "Comunidade.h"
-#include "Grupo.h"
-#include "Mensagem.h"
-
 #include <iostream>
 #include <string>
 #include <sstream>
