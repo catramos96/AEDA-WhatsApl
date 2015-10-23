@@ -8,67 +8,117 @@
 #include <iostream>
 #include <vector>
 #include "System.h"
-#include "Utilizador.h"
+#include <string>
+#include <sstream>
+#include "Mensagem.h"
 
 using namespace std;
 
-Mensagem::Mensagem(string tipo, Data data, Horas hora, string n_emissor,vector<string> destinatarios)
-{
+/********************************
+ *		CLASSE MENSAGEM			*
+ *******************************/
+Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor,
+		vector<string> destinatarios) {
 	this->tipo = tipo;
 	this->data = data;
 	this->hora = hora;
-	this->n_emissor = n_emissor;
+	this->emissor = emissor;
 	this->destinatarios = destinatarios;
+	titulo = "";
 }
 
-void Mensagem::imprimirSms()
-{
+Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor,
+		vector<string> destinatarios, string titulo) {
+	this->tipo = tipo;
+	this->data = data;
+	this->hora = hora;
+	this->emissor = emissor;
+	this->destinatarios = destinatarios;
+	this->titulo = titulo;
+}
+
+void Mensagem::imprimirMsg() {
 	cout << "Tipo: " << tipo << endl;
 	cout << "Data: " << data << endl;
 	cout << "Hora: " << hora << endl;
-	cout << "Emissor: " << n_emissor << endl;
+	cout << "Emissor: " << emissor << endl;
 	cout << "Destinatarios: " << endl;
 	for (unsigned int i = 0; i < destinatarios.size(); i++) {
 		cout << "    " << destinatarios[i] << endl;
 	}
+	cout << "Titulo: " << titulo << endl;
 }
 
 string Mensagem::getTipo() const {
 	return tipo;
 }
 
-Data Mensagem::getData() const{
+Data Mensagem::getData() const {
 	return data;
 }
 
-Horas Mensagem::getHora() const{
+Horas Mensagem::getHora() const {
 	return hora;
 }
 
-string Mensagem::getEmissor() const
-{
-	return n_emissor;
+string Mensagem::getEmissor() const {
+	return emissor;
 }
 
-vector<string> Mensagem::getDestinatarios() const{
+vector<string> Mensagem::getDestinatarios() const {
 	return destinatarios;
 }
 
-ostream & operator<<(ostream &out,const Mensagem &m){
-	out << "De: " << m.getEmissor() << endl;
-	out << "Para: ";
-	for (int i = 0; i < m.getDestinatarios().size(); i++) {
-		out << m.getDestinatarios()[i];
-		if(i+1 < m.getDestinatarios().size())
-			out << ", ";
+string Mensagem::msgHeader() const {
+	stringstream s;
+	s << "De: " << emissor << endl;
+	s << "Para: ";
+	for (unsigned int i = 0; i < destinatarios.size(); i++) {
+		s << destinatarios[i];
+		if (i + 1 < destinatarios.size())
+			s << ", ";
 	}
-	out << endl;
-	return out;
+	s << endl;
+	s << "Titulo: " << titulo << endl;
+	return s.str();
 }
 
-void msgTexto::imprimirSms()
-{
-	Mensagem::imprimirSms();
+/********************************
+ *		CLASSE MSG TEXTO		*
+ *******************************/
+
+string msgTexto::getConteudo() const {
+	return conteudo;
+}
+
+void msgTexto::imprimirMsg() {
+	Mensagem::imprimirMsg();
 	cout << "Conteudo: \n   " << conteudo << endl;
 }
 
+ostream & operator<<(ostream & out, const msgTexto &mt) {
+	out << mt.msgHeader();
+	out << mt.getConteudo();
+	return out;
+}
+
+/********************************
+ *		CLASSE MSG VIDEO		*
+ *******************************/
+
+ostream & operator<<(ostream & out, const msgVideo &mv) {
+	out << mv.msgHeader();
+	out << "VIDEO";
+	return out;
+}
+
+/********************************
+ *		CLASSE MSG IMAGEM		*
+ *******************************/
+
+ostream & operator<<(ostream & out, const msgImagem &mi) {
+	out << mi.msgHeader();
+	out << "IMAGEM";
+
+	return out;
+}

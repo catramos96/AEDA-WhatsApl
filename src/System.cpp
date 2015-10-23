@@ -1,11 +1,24 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <vector>
 #include "System.h"
 
-/* classe Horas */
+using namespace std;
 
-/* construtor */
+/********************************
+ *		CLASSE HORAS			*
+ *******************************/
 Horas::Horas(){
 	hora = 0;
 	min = 0;
+}
+
+Horas::Horas(int h,int m ){
+	if(h < 0 || h > 24 || m < 0 || m > 60)
+			throw HoraInvalida();
+	hora = h;
+	min = m;
 }
 
 void Horas::setHoras(int h, int m){
@@ -30,13 +43,21 @@ ostream & operator<<(ostream & out, const Horas & h){
 	return out;
 }
 
-/* classe Data */
 
-/* construtor */
+/********************************
+ *	    	CLASSE DATA			*
+ *******************************/
+
 Data::Data(){
 	dia=0;
 	mes=0;
 	ano=0;
+}
+
+Data::Data(int d, int m, int a){
+	dia = d;
+	mes = m;
+	ano = a;
 }
 
 void Data::setData(int d, int m, int a){
