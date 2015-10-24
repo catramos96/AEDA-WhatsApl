@@ -12,7 +12,6 @@
 #include "System.h"
 #include "Utilizador.h"
 #include "Comunidade.h"
-#include "Comunidade.h"
 #include "Grupo.h"
 #include "Mensagem.h"
 

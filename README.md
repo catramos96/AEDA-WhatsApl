@@ -1,10 +1,10 @@
 ## Prioridade para desenvolver as classes: ##
 
-1 - System.h
+1 - System.h  ---> acabado
 
-2 - Utilizador.h
+2 - Utilizador.h ---> a trabalhar
 
-3 - Grupo.h
+3 - Grupo.h ---> a trabalhar
 
 4 - Conversa.h
 

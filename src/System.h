@@ -38,6 +38,7 @@ public:
 	 * @ param min : representa os minutos
 	 * @ return void
 	 */
+	Horas(int h,int m);
 	void setHoras(int h,int min);
 	/**
 	 * @brief Função que retorna as horas atuais.
@@ -56,7 +57,9 @@ public:
 	 * @param h objeto Horas
 	 * @return out
 	 */
+
 	friend ostream & operator<<(ostream & out, const Horas & h);
+
 };
 
 /**
@@ -88,6 +91,8 @@ public:
 	 * @ param a : represnta o ano
 	 * @return void
 	 */
+
+	Data(int d,int m,int a);
 	void setData(int d, int m, int a);
 	/**
 	 * @brief Função que retorna o dia atual.
