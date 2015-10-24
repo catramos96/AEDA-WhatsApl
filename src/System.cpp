@@ -25,7 +25,7 @@ int Horas::getMinutos() const{
 	return min;
 }
 
-ostream & operator<<(ostream & out, const Horas & h){
+std::ostream & operator<<(std::ostream & out, const Horas & h){
 	out << h.getHora()  << " : " << h.getMinutos();
 	return out;
 }
@@ -61,7 +61,7 @@ int Data::getDia() const{
 	return dia;
 }
 
-ostream & operator<<(ostream & out, const Data & d){
+std::ostream & operator<<(std::ostream & out, const Data & d){
 	out << d.getDia() << " / " << d.getMes() << " / " << d.getAno();
 	return out;
 }

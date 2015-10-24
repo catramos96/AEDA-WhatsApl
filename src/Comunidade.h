@@ -7,7 +7,7 @@
 #include "Grupo.h"
 #include "Mensagem.h"
 #include <vector>
-
+/*
 class Comunidade
 {
 private:
@@ -16,5 +16,5 @@ public:
 	Comunidade();
 	bool adicionarUtil(Utilizador utilizador);
 };
-
+*/
 #endif /* SRC_COMUNIDADE_H_ */

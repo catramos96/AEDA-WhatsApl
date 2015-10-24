@@ -4,7 +4,7 @@
 #ifndef SRC_MENSAGEM_H_
 #define SRC_MENSAGEM_H_
 #include <iostream>
-
+/*
 #include "System.h"
 #include "Utilizador.h"
 #include "Comunidade.h"
@@ -41,5 +41,5 @@ public:
 	MensagemUtil(string tipo, Data data, Horas hora, Utilizador emissor, Utilizador destinatario);
 	void imprimirSms();
 };
-
+*/
 #endif /* SRC_MENSAGEM_H_ */

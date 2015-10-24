@@ -4,20 +4,15 @@
 #ifndef SRC_SYSTEM_H_
 #define SRC_SYSTEM_H_
 
-#include "System.h"
-#include "Utilizador.h"
-#include "Comunidade.h"
-#include "Comunidade.h"
-#include "Grupo.h"
-#include "Mensagem.h"
-
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <vector>
 
+using namespace std;
+
 /**
- * Classe Horas.
+ * @brief Classe Horas.
  * Classe que indica as horas (hora e minuto) ao utilizador.
  * É possivel modificar as horas.
  */
@@ -28,34 +23,34 @@ private:
 		min; /**<  membro privado que representa os minutos*/
 public:
 	/**
-	 * Classe HoraInvalida.
+	 * @brief Classe HoraInvalida.
 	 * É uma classe que indica uma exeção da classe Horas.
 	 */
 	class HoraInvalida{};
 	/**
-	 * Constutor
+	 * @brief Constutor
 	 * Construtor default que inicializa as horas e os minutos a zero
 	 */
 	Horas();
 	/**
-	 * Função que permite o utilizador alterar as horas e os minutos atuais com verificações de input.
+	 * @ brief Função que permite o utilizador alterar as horas e os minutos atuais com verificações de input.
 	 * @ param h : representa a hora
 	 * @ param min : representa os minutos
-	 * @return void
+	 * @ return void
 	 */
 	void setHoras(int h,int min);
 	/**
-	 * Função que retorna as horas atuais.
+	 * @brief Função que retorna as horas atuais.
 	 * @return hora atual
 	 */
 	int getHora() const;
 	/**
-	 * Função que retorna os minutos atuais
+	 * @brief Função que retorna os minutos atuais
 	 * @return minutos
 	 */
 	int getMinutos() const;
 	/**
-	 * Função friend: função que acede aos membros privados da classe.
+	 * @brief Função friend: função que acede aos membros privados da classe.
 	 * operator<< permite imprimir no ecrã o objeto Horas
 	 * @param out output
 	 * @param h objeto Horas
@@ -65,7 +60,7 @@ public:
 };
 
 /**
- * Classe Data.
+ * @brief Classe Data.
  * Classe que indica as data (dia mês e ano) ao utilizador.
  * É possivel modificar a data
  */
@@ -77,17 +72,17 @@ private:
 		ano; /**< membro provado que representa o ano */
 public:
 	/**
-	 * Classe DataInvalida.
+	 * @brief Classe DataInvalida.
 	 * É uma classe que indica uma exeção da classe Data.
 	 */
 	class DataInvalida{};
 	/**
-	 * Constutor
+	 * @brief Constutor
 	 * Construtor default que inicializa o dia mes e ano a zero
 	 */
 	Data();
 	/**
-	 * Função que permite o utilizador alterar o dia mês e ano atuais com verificações de input.
+	 * @brief Função que permite o utilizador alterar o dia mês e ano atuais com verificações de input.
 	 * @ param d : representa o dia
 	 * @ param m : representa o mes
 	 * @ param a : represnta o ano
@@ -95,22 +90,22 @@ public:
 	 */
 	void setData(int d, int m, int a);
 	/**
-	 * Função que retorna o dia atual.
+	 * @brief Função que retorna o dia atual.
 	 * @return dia atual
 	 */
 	int getDia() const;
 	/**
-	 * Função que retorna o mês atual
+	 * @brief Função que retorna o mês atual
 	 * @return mês atual
 	 */
 	int getMes() const;
 	/**
-	 * Função que retorna o ano atual
+	 * @brief Função que retorna o ano atual
 	 * @return ano atual
 	 */
 	int getAno() const;
 	/**
-	 * Função friend: função que acede aos membros privados da classe.
+	 * @brief Função friend: função que acede aos membros privados da classe.
 	 * operator<< permite imprimir no ecrã o objeto Data
 	 * @param out output
 	 * @param d objeto Data

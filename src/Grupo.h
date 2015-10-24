@@ -11,14 +11,9 @@
 
 #include "System.h"
 #include "Utilizador.h"
-#include "Comunidade.h"
-#include "Comunidade.h"
-#include "Grupo.h"
-#include "Mensagem.h"
-
 
 struct membro{
-	Utilizador *util;
+	Utilizador util;
 	Data adesaoGrupo;
 };
 
@@ -27,19 +22,14 @@ private:
 	string titulo;
 	vector <membro *> membros;
 	Data criacao;
+	Utilizador moderador;
+	// algo para registar o bloqueio ou desbloqueio de um membro
 public:
-	Grupo(string titulo, Data criacao);
-};
-
-class Moderador : public Grupo{
-private:
-	Utilizador *moderador;
-	Data adesao;
-public:
-	Moderador(Utilizador moderador, Data adesao, string titulo, Data criacao); //não esquecer: colocar no vetor membros
-	bool pedidoAdesao(Utilizador u, Data adesao);
+	Grupo(string titulo,Data criacao, Utilizador Moderador);
+	int numMembros() const;
+	bool isModerador(Utilizador u);
+	bool pedidoAdesao(Utilizador u, Data adesao, bool aceita);
 	bool bloquearMembro(Utilizador u);
-
 };
 
 #endif /* SRC_GRUPO_H_ */

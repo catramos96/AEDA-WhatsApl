@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+/*
 #include "System.h"
 #include "Utilizador.h"
 #include "Comunidade.h"
@@ -18,7 +18,7 @@
 
 using namespace std;
 
-/* Classe Conversa */
+ Classe Conversa
 
 class Conversa
 {
@@ -32,7 +32,7 @@ public:
 	void imprimirConversa(); // chama o imprimeSms
 	int numSms();
 };
-
+*/
 /*! @ classe Conversa Mensagem.h "inc/Mensagem.h"
  *  @ brief Classe que constrói uma conversa constituida por vária mensagens por ordem cronológica
  *
