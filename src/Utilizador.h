@@ -5,14 +5,6 @@
 #define SRC_UTILIZADOR_H_
 
 #include "System.h"
-<<<<<<< HEAD
-#include "Conversa.h"
-=======
-#include "Utilizador.h"
-#include "Comunidade.h"
-#include "Grupo.h"
-#include "Mensagem.h"
->>>>>>> 15c18cc893a9f1ffbc12130e0811916857f3b415
 
 #include <iostream>
 #include <string>
@@ -25,20 +17,18 @@ private:
 	string login,nome,email;
 	vector<int> telemoveis;
 	Data dataAdesao;
-<<<<<<< HEAD
-	//vector<Conversa> conversas;
+	//vector<Conversa *> conversas;
 public:
-	Utilizador(string login, string nome, string email, int telemovel, Data dataAdesao);
-=======
-	vector<Conversa *> conversas;
-public:
+	Utilizador();
 	Utilizador(string login, string nome, string email, Data dataAdesao);
 	bool addTelemovel(int t);
-	bool addConversa(Conversa &c);
-	bool enviarSms(Mensagem &m);
->>>>>>> 15c18cc893a9f1ffbc12130e0811916857f3b415
-	//...
+	bool operator==(const Utilizador&u)const;
+	string getNome() const;
+	//bool addConversa(Conversa &c);
+	//bool enviarSms(Mensagem &m);
 
 };
+
+	//...
 
 #endif /* SRC_UTILIZADOR_H_ */

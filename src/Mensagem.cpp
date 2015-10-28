@@ -1,10 +1,3 @@
-/*
- * Mensagem.cpp
- *
- *  Created on: 23/10/2015
- *      Author: Catarina
- */
-
 #include <iostream>
 #include <vector>
 #include "System.h"
@@ -17,8 +10,8 @@ using namespace std;
 /********************************
  *		CLASSE MENSAGEM			*
  *******************************/
-Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor,
-		vector<string> destinatarios) {
+/*
+Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios) {
 	this->tipo = tipo;
 	this->data = data;
 	this->hora = hora;
@@ -27,8 +20,7 @@ Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor,
 	titulo = "";
 }
 
-Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor,
-		vector<string> destinatarios, string titulo) {
+Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios, string titulo) {
 	this->tipo = tipo;
 	this->data = data;
 	this->hora = hora;
@@ -82,11 +74,11 @@ string Mensagem::msgHeader() const {
 	s << "Titulo: " << titulo << endl;
 	return s.str();
 }
-
+*/
 /********************************
  *		CLASSE MSG TEXTO		*
  *******************************/
-
+/*
 string msgTexto::getConteudo() const {
 	return conteudo;
 }
@@ -101,24 +93,25 @@ ostream & operator<<(ostream & out, const msgTexto &mt) {
 	out << mt.getConteudo();
 	return out;
 }
-
+*/
 /********************************
  *		CLASSE MSG VIDEO		*
  *******************************/
-
+/*
 ostream & operator<<(ostream & out, const msgVideo &mv) {
 	out << mv.msgHeader();
 	out << "VIDEO";
 	return out;
 }
-
+*/
 /********************************
  *		CLASSE MSG IMAGEM		*
  *******************************/
-
+/*
 ostream & operator<<(ostream & out, const msgImagem &mi) {
 	out << mi.msgHeader();
 	out << "IMAGEM";
 
 	return out;
 }
+*/

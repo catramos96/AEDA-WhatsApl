@@ -53,5 +53,13 @@ int main()
 	catch (Horas::HoraInvalida){
 		cout << "Hora Invalida!" << endl;
 	}
+	/*
+	try{
+
+	}
+	catch(){
+
+	}
+	*/
 	return 0;
 }
