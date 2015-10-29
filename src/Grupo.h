@@ -1,8 +1,3 @@
-/** @ \file Grupo.h
- * header file que contém a classe Grupo
- */
-
-//testing git
 #ifndef SRC_GRUPO_H_
 #define SRC_GRUPO_H_
 
@@ -24,7 +19,8 @@ public:
 	void setData(Data d);
 	void setBloqueio(bool bloq);
 	bool isBloqueado() const;
-	bool operator<(const Membro &m) const;
+	bool operator==(const Membro &m) const;
+	friend ostream & operator<<(ostream & out, const Membro & m);
 };
 
 class Grupo {
@@ -73,6 +69,8 @@ public:
 	bool isModerador(Utilizador u);
 	int existeMembro(Membro *m);
 	Membro *membroNaPosicao(int pos);
+	void printStatus() const;
+	void printMembros() const;
 	bool pedidoAdesao(Utilizador u, Data adesao, Utilizador moderador, bool aceita); //um utilizador que pede permissao pode ser novo ou bloqueado
 	void retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual);
 	void bloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual);

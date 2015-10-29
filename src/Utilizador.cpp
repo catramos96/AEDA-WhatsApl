@@ -1,4 +1,3 @@
-#include "System.h"
 #include "Utilizador.h"
 #include <iostream>
 #include <string>
@@ -22,14 +21,16 @@ Utilizador::Utilizador(string login, string nome, string email, Data dataAdesao)
 }
 
 bool Utilizador::operator==(const Utilizador&u)const{
-	if (nome == u.nome && login == u.login && email == u.email)
-		return true;
-	else
-		return false;
+	return ((nome == u.nome) && (login == u.login) && (email == u.email));
 }
 
 string Utilizador::getNome() const{
 	return nome;
+}
+
+ostream & operator<<(ostream & out, const Utilizador & u){
+	out << u.getNome();
+	return out;
 }
 
 //bool addConversa(Conversa &c)

@@ -1,18 +1,24 @@
 #include <vector>
+using namespace std;
 
-template <class T>
-int BinarySearch(const vector<T> &v, T x)
+template <class Comparable>
+int sequentialSearch(const vector<Comparable> &v, Comparable x)
 {
-	int left = 0, right = v.size()-1;
-	while (left <= right)
-	{
-		int middle = (left + right) / 2;
-		if (v[middle] < x)
-			left = middle + 1;
-		else if (x < v[middle])
-			right = middle-1;
-		else
-			return middle; // encontrou
+	for (unsigned int i = 0; i < v.size(); i++){
+		if (*v[i] == *x)
+			return i;   // encontrou
 	}
-	return - 1; // não encontrou
+	return -1;     // não encontrou
+}
+
+template <class Comparable>
+void insertionSort(vector<Comparable> &v)
+{
+	for (unsigned int p = 1; p < v.size(); p++){
+		Comparable tmp = v[p];
+		int j;
+		for (j = p; j > 0 && tmp < v[j - 1]; j--)
+			v[j] = v[j - 1];
+		v[j] = tmp;
+	}
 }
