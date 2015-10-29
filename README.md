@@ -4,9 +4,9 @@
 
 2 - Utilizador.h ---> a trabalhar?
 
-3 - Grupo.h ---> a trabalhar
+3 - Grupo.h ---> acabado
 
-4 - Conversa.h ---> vou come�ar (pedro)
+4 - Conversa.h ---> vou começar (pedro)
 
 5 - Mensagem.h ---> a trabalhar
 
@@ -16,34 +16,34 @@
 
 # Comandos do git #
 
-## 1- Clonar o repositório para o vosso computador: ##
+## 1- Clonar o repositĂłrio para o vosso computador: ##
 
 * Abrir terminal no source tree
 
-* Fazer cd para a pasta onde querem o repositório
+* Fazer cd para a pasta onde querem o repositĂłrio
 
 * git clone https://ines_gomes@bitbucket.org/ines_gomes/ines_gomes-aeda_whatsapl.git
 
 ## 2- Para fazer commits: ##
 
-### Sempre que se abre o terminal é preciso fazer login ###
+### Sempre que se abre o terminal ĂŠ preciso fazer login ###
 
 * git config --global user.name "Vosso nome"
 
 * git config --global user.email "Vosso email da conta do bb"
 
-### Para fazer commits estes passos têm de ser seguidos. Todos e por esta ordem para evitar problemas ###
+### Para fazer commits estes passos tĂŞm de ser seguidos. Todos e por esta ordem para evitar problemas ###
 
 * git add -A    //Adiciona todos os ficheiros novos ou alterados ao commit
 
 * git commit -a -m "Mensagem do commit"
 
-* git pull      //Ir buscar qualquer atualização ao rep antes de fazer upload das 
-vossas adições de código
+* git pull      //Ir buscar qualquer atualizaĂ§ĂŁo ao rep antes de fazer upload das 
+vossas adiĂ§Ăľes de cĂłdigo
 
-* git push     //Faz upload do commit para o repositório
+* git push     //Faz upload do commit para o repositĂłrio
 
 
 ## Outros comandos ##
 
-* git status   //diz se o vosso rep está atualizado com o do site
+* git status   //diz se o vosso rep estĂĄ atualizado com o do site
