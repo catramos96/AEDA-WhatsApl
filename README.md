@@ -2,13 +2,13 @@
 
 1 - System.h  ---> acabado
 
-2 - Utilizador.h ---> a trabalhar
+2 - Utilizador.h ---> a trabalhar?
 
 3 - Grupo.h ---> a trabalhar
 
-4 - Conversa.h
+4 - Conversa.h ---> vou começar (pedro)
 
-5 - Mensagem.h ---> a trabalhar?
+5 - Mensagem.h ---> a trabalhar
 
 6 - Comunidade.h
 
