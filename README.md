@@ -6,7 +6,7 @@
 
 3 - Grupo.h ---> a trabalhar
 
-4 - Conversa.h
+4 - Conversa.h ---> vou começar (pedro)
 
 5 - Mensagem.h ---> a trabalhar
 
