@@ -20,7 +20,7 @@ o ideal era domingo mais tardar segunda feira, porque enquanto não acabarmos as
 
 Ps: Pedro, como andas com as coisas do Arraial e provavlmente tens muito com que te preocupar, eu posso adiantar a classe comunidade, porque é uma classe muito simples eu não me importo. A tua prioridade é a classe Conversa. 
 
-===============================================================================
+# -------------------------------------------------------------------------------- #
 
 ## Prioridade para desenvolver as classes: ##
 
@@ -36,7 +36,7 @@ Ps: Pedro, como andas com as coisas do Arraial e provavlmente tens muito com que
 
 6 - Comunidade.h
 
-# ------------------------------------------------------- #
+# ------------------------------------------------------------------------------- #
 
 # Comandos do git #
 
