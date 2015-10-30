@@ -23,13 +23,13 @@ private:
 	string titulo;
 public:
 	Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios);
-	Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios,string titulo);
 	virtual ~Mensagem();
 	virtual void imprimirMsg(); //imprime todos os membros private
 	string getTipo() const;
 	Data getData() const;
 	Horas getHora() const;
 	string getEmissor() const;
+	void setTitulo(string t);
 	vector<string> getDestinatarios() const;
 	string msgHeader() const; //Retorna "header de cada Mensagem"
 };
