@@ -8,7 +8,7 @@
 
 4 - Conversa.h ---> vou começar (pedro)
 
-5 - Mensagem.h ---> a trabalhar (Catarina)
+5 - Mensagem.h ---> acabado (Catarina)
 
 6 - Comunidade.h
 
