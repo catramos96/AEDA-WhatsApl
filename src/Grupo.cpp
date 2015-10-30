@@ -115,7 +115,7 @@ bool Grupo::pedidoAdesao(Utilizador u, Utilizador moderador, Data adesao, bool a
 			return false;
 	}
 	else
-		throw Grupo::NaoModerador(moderador);
+		throw NaoModerador(moderador);
 	return false;
 }
 
@@ -140,10 +140,10 @@ bool Grupo::bloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 				return false;
 		}
 		else
-			throw Grupo::UtilizadorInexistente(u);
+			throw UtilizadorInexistente(u);
 	}	
 	else
-		throw Grupo::NaoModerador(moderador);
+		throw NaoModerador(moderador);
 }
 
 bool Grupo::retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual){
@@ -161,10 +161,10 @@ bool Grupo::retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 			return true;
 		}
 		else
-			throw Grupo::UtilizadorInexistente(u);
+			throw UtilizadorInexistente(u);
 	}
 	else if(!isModerador(moderador))
-		throw Grupo::NaoModerador(moderador);
+		throw NaoModerador(moderador);
 	else
 		return false;
 }
@@ -190,8 +190,8 @@ bool Grupo::desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual)
 				return false;
 		}
 		else
-			throw Grupo::UtilizadorInexistente(u);
+			throw UtilizadorInexistente(u);
 	}
 	else
-		throw Grupo::NaoModerador(moderador);
+		throw NaoModerador(moderador);
 }

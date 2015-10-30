@@ -31,11 +31,6 @@ public:
 	Utilizador();
 	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel);
 	string getNome() const;
-<<<<<<< HEAD
-	string getLogin() const;
-	//bool addConversa(Conversa &c);
-	//bool enviarSms(Mensagem &m);
-=======
 
 	//GETS
 
@@ -87,7 +82,6 @@ public:
 	//OVERLOADING DE OPERADORES
 
 	bool operator==(const Utilizador&u)const;
->>>>>>> e2bf3dd4c4580ddda629b9d2243c44e21fa4b5ba
 	friend ostream & operator<<(ostream & out, const Utilizador & u);
 
 };

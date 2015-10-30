@@ -28,15 +28,15 @@ int main(){
 		cout << hora << endl;
 
 		//--------------------//
-		
+
 		Data d(1, 1, 1);
-		Utilizador Ana("123", "Ana", "ana@kdsf.com", d);
+		Utilizador Ana(false, "ana123", "Ana", "ana@kdsf.com", d, 123456);
 		Data d1(4,5,6);
-		Utilizador Rui("1234", "Rui", "rui@bgd.com", d1);
+		Utilizador Rui(false, "Rui1234", "Rui", "rui@bgd.com", d1,4455);
 		Data d2(2,3,4);
-		Utilizador Sofia("12345", "Sofia", "sofia@dsjh.com", d2);
+		Utilizador Sofia(false, "Sofia12345", "Sofia", "sofia@dsjh.com", d2, 7878);
 		Data d3(3,4,6);
-		Utilizador Carlos("456", "Carlos", "carlos.eedsnh.com", d3);
+		Utilizador Carlos(false, "456", "Carlos", "carlos.eedsnh.com", d3, 456456);
 
 		Grupo fixes("fixes",d,Ana);
 		
@@ -72,11 +72,11 @@ int main(){
 	catch (Horas::HoraInvalida &e){
 		cout << "Hora Invalida!" << endl;
 	}
-	catch(Grupo::NaoModerador &e){
+	catch(NaoModerador &e){
 		cout << "Utilizador " << e.getUtilizador() << " nao e moderador!" << endl;
 	}
-	catch(Grupo::UtilizadorInexistente &e){
-		cout << "Utilizador " << e.getUtilizador() << " nao existe!" << endl;
+	catch(UtilizadorInexistente &e){
+		cout << "Utilizador " << e.getLogin() << " nao existe!" << endl;
 	}
 
 	return 0;

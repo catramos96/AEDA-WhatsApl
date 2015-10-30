@@ -20,7 +20,7 @@ private:
 	Horas hora;
 	string emissor;
 	vector<string> destinatarios;
-	string titulo;
+	//string titulo;
 public:
 	Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios);
 	virtual ~Mensagem();
@@ -29,7 +29,7 @@ public:
 	Data getData() const;
 	Horas getHora() const;
 	string getEmissor() const;
-	void setTitulo(string t);
+	//void setTitulo(string t);
 	vector<string> getDestinatarios() const;
 	string msgHeader() const; //Retorna "header de cada Mensagem"
 };

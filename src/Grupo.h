@@ -84,53 +84,6 @@ private:
 	 	 	 	 	 	 	 	 	 Regista a entrada, saida, bloqueio ou desbloqueio de um membro com a respetiva data da ocorrencia*/
 public:
 	/**
-	 * @brief Classe que representa uma excecao da classe Utilizador
-	 * esta excecao e lancada no caso do utilizador nao existir
-	 */
-	class UtilizadorInexistente{
-	private:
-		Utilizador util; /**<  membro privado que representa o utilizador que cria a excecao */
-	public:
-		/**
-		 * @brief Construtor
-		 * inicializa o membro-dado util com o utilizador recebido
-		 */
-		UtilizadorInexistente(Utilizador u){
-			util = u;
-		};
-		/**
-		 * @brief retorna o utilizador que originou a excecao
-		 * @return util
-		 */
-		Utilizador getUtilizador() const{
-			return util;
-		};
-	};
-	/**
-	 * @brief Classe que representa uma excecao da classe grupo.
-	 * esta excecao e lancada no caso de o utilizador que esta a pedir permissoes nao ser o utilizador moderador
-	 */
-	class NaoModerador{
-	private:
-		Utilizador mod;  /**<  membro privado que representa o utilizador que cria a excecao */
-	public:
-		/**
-		 * @brief Construtor
-		 * inicializa o membro mod com o utilizador recebido
-		 * @param mod utilizador recebido
-		 */
-		NaoModerador(Utilizador mod){
-			this->mod = mod;
-		};
-		/**
-		 * @brief Funcao que retorna o utilizador
-		 * @return mod
-		 */
-		Utilizador getUtilizador() const{
-			return mod;
-		};
-	};
-	/**
 	 * @brief Construtor do grupo
 	 * Inicializa o titulo com o titulo recebido e a data com a data de criacao.
 	 * Cria o membro moderador com o parametro moderador, a data de criacao do grupo e coloca-o no vetor de membros.
@@ -214,6 +167,31 @@ public:
 	 * @return True se o membro e desbloqueado com sucesso e false se o membro ja se encontra desbloqueado
 	 */
 	bool desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual);
+};
+
+/**
+ * @brief Classe que representa uma excecao da classe grupo.
+ * esta excecao e lancada no caso de o utilizador que esta a pedir permissoes nao ser o utilizador moderador
+ */
+class NaoModerador{
+private:
+	Utilizador mod;  /**<  membro privado que representa o utilizador que cria a excecao */
+public:
+	/**
+	 * @brief Construtor
+	 * inicializa o membro mod com o utilizador recebido
+	 * @param mod utilizador recebido
+	 */
+	NaoModerador(Utilizador mod){
+		this->mod = mod;
+	};
+	/**
+	 * @brief Funcao que retorna o utilizador
+	 * @return mod
+	 */
+	Utilizador getUtilizador() const{
+		return mod;
+	};
 };
 
 #endif /* SRC_GRUPO_H_ */

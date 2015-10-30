@@ -60,7 +60,7 @@ string Mensagem::msgHeader() const {
 			s << ", ";
 	}
 	s << endl;
-	s << "Titulo: " << titulo << endl;
+	//s << "Titulo: " << titulo << endl;
 	return s.str();
 }
 
