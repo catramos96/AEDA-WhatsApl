@@ -2,7 +2,7 @@
 
 1 - System.h  ---> acabado
 
-2 - Utilizador.h ---> a trabalhar? (Catarina)
+2 - Utilizador.h ---> (Catarina)
 
 3 - Grupo.h ---> acabado
 
