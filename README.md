@@ -1,3 +1,27 @@
+# Muito Importante!!!! #
+
+Temos que apressar o projeto. Não estamos atrasados, mas depois de fazer as classes vamos ter que as juntar e criar uma interface e isso pode dar problemas porque estamos a trabalhar muito separados. 
+Como quinta feira vou voltar para lamego, convinha ter tudo o que é necessario fazer em conjunto feito até essa data.(sem falar que falta o relatório e a parte de uml). 
+Por isto tudo, divisão de tarefas:
+
+- Catarina: tens de mudar a classe utilizador. Lê o que eu escrevi no facebook.
+
+- Pedro: isto ficou uma grande salgalhada. Primeiro preciso que coloques todas as tuas atualizações do branch do timer no master. Eu tentei fazer merge e não consegui...
+### sem mudar a classe Data. A classe Data tem de ficar como eu fiz!! ###
+ Segundo, tens de acabar a classe conversa asap, e se conseguisses a classe Comunidade.
+ 
+- eu: Como já acabei 2 classes, neste momento estou a tratar de tudo da parte da uml e vou começar com o relatório. 
+Qualquer ajuda que precisem nas vossas classes eu posso adiantar. 
+
+### o doxygen já está a funcionar, não se esqueçam de fazer documentação. ###
+
+## Prazo para acabar as classes ##
+o ideal era domingo mais tardar segunda feira, porque enquanto não acabarmos as classes não podemos avançar no projeto. (juntar classes e main)
+
+Ps: Pedro, como andas com as coisas do Arraial e provavlmente tens muito com que te preocupar, eu posso adiantar a classe comunidade, porque é uma classe muito simples eu não me importo. A tua prioridade é a classe Conversa. 
+
+===============================================================================
+
 ## Prioridade para desenvolver as classes: ##
 
 1 - System.h  ---> acabado
