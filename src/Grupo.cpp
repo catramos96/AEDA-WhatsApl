@@ -35,7 +35,11 @@ bool Membro::operator==(const Membro &m) const{
 }
 
 ostream & operator<<(ostream & out, const Membro & m){
-	out << m.getUtilizador();
+	out <<  m.getUtilizador() << " , data de adesao : " << m.getData();
+	if(m.isBloqueado())
+		out << ", estado : bloqueado " << endl;
+	else
+		out << ", estado : desbloqueado " << endl;
 	return out;
 }
 
@@ -48,7 +52,7 @@ Grupo::Grupo(string titulo,Data criacao, Utilizador moderador){
 	this->moderador = moderador;
 	Membro *mod = new Membro(moderador, criacao);
 	membros.push_back(mod);
-	//out << " HISTORICO: \n" << "Grupo " << titulo << " criado no dia " << criacao << endl << "Moderador : " << *mod << endl;
+	out << " HISTORICO: \n" << "Grupo " << titulo << " criado no dia " << criacao << endl << "Moderador : " << *mod << endl;
 	status.push_back(out.str());
 }
 
@@ -75,11 +79,11 @@ void Grupo::printStatus() const{
 
 void Grupo::printMembros() const{
 	for(int i = 0; i < numMembros(); i++)
-		cout << i+1 << " : " << *membros.at(i) << endl;
+		cout << i+1 << endl << "    " << *membros.at(i) << endl;
 	cout << endl;
 }
 
-bool Grupo::pedidoAdesao(Utilizador u, Data adesao, Utilizador moderador, bool aceita){
+bool Grupo::pedidoAdesao(Utilizador u, Utilizador moderador, Data adesao, bool aceita){
 
 	stringstream out;
 
@@ -112,9 +116,10 @@ bool Grupo::pedidoAdesao(Utilizador u, Data adesao, Utilizador moderador, bool a
 	}
 	else
 		throw Grupo::NaoModerador(moderador);
+	return false;
 }
 
-void Grupo::bloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual){
+bool Grupo::bloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 
 	stringstream out;
 	Data d;
@@ -129,9 +134,10 @@ void Grupo::bloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 				temp->setBloqueio(true); //coloca como bloqueado
 				out << "Membro bloqueado : " << u.getNome() << endl << "Data : " << diaAtual << endl << endl;
 				status.push_back(out.str());
+				return true;
 			}
 			else
-				throw Grupo::MembroJaBloqueado(u);
+				return false;
 		}
 		else
 			throw Grupo::UtilizadorInexistente(u);
@@ -140,7 +146,7 @@ void Grupo::bloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 		throw Grupo::NaoModerador(moderador);
 }
 
-void Grupo::retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual){
+bool Grupo::retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 
 	stringstream out;
 	Data d;
@@ -148,22 +154,22 @@ void Grupo::retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 	int pos = existeMembro(temp);
 
 	if (isModerador(moderador)){
-
 		if (existeMembro(temp) != -1){ //encontra o utilizador
-			
 			membros.erase(membros.begin()+pos);
 			out << "Membro eliminado : " << u.getNome() << endl << "Data : " << diaAtual << endl << endl;
 			status.push_back(out.str());
-				
+			return true;
 		}
 		else
 			throw Grupo::UtilizadorInexistente(u);
 	}
-	else
+	else if(!isModerador(moderador))
 		throw Grupo::NaoModerador(moderador);
+	else
+		return false;
 }
 
-void Grupo::desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual){
+bool Grupo::desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 
 	stringstream out;
 	Data d;
@@ -178,7 +184,10 @@ void Grupo::desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual)
 				temp->setBloqueio(false); //coloca como desbloqueado
 				out << "Membro desbloqueado : " << u.getNome() << endl << "Data : " << diaAtual << endl << endl;
 				status.push_back(out.str());
+				return true;
 			}
+			else
+				return false;
 		}
 		else
 			throw Grupo::UtilizadorInexistente(u);

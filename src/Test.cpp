@@ -12,7 +12,7 @@ using namespace std;
 int main(){
 
 	try{	
-		/*
+
 		Data data;
 		int dia, m, a;
 		cout << "Dia, mes, ano ";
@@ -26,7 +26,7 @@ int main(){
 		cin >> h >> min;
 		hora.setHoras(h, min);
 		cout << hora << endl;
-		*/
+
 		//--------------------//
 		
 		Data d(1, 1, 1);
@@ -40,17 +40,17 @@ int main(){
 
 		Grupo fixes("fixes",d,Ana);
 		
-		fixes.pedidoAdesao(Rui, d1, Ana, true);
+		fixes.pedidoAdesao(Rui, Ana, d1, true);
 		//fixes.pedidoAdesao(Sofia, d2, Ana, false);
-		fixes.pedidoAdesao(Sofia, d2, Ana, true);
+		fixes.pedidoAdesao(Sofia, Ana, d2, true);
 		//fixes.pedidoAdesao(Carlos, d3, Rui, true); //nao é moderador
 		Data d4(7,8,9);
 		fixes.bloquearMembro(Rui, Ana, d4); //ver se está bloqueado
 		//fixes.bloquearMembro(Ana, Sofia, d4); // nao é moderador
 		//fixes.bloquearMembro(Carlos, Ana, d4); // nao é utilizador
 		Data d5(1,2,3);
-		//fixes.bloquearMembro(Rui, Ana, d5); //membro ja bloqueado
-		fixes.pedidoAdesao(Rui, d5, Ana, true); // desbloquear membro por pedido
+		fixes.bloquearMembro(Rui, Ana, d5); //membro ja bloqueado
+		fixes.pedidoAdesao(Rui, Ana, d5, true); // desbloquear membro por pedido
 		Data d6(5,7,9);
 		fixes.retiraMembro(Sofia, Ana, d6);
 		//fixes.retiraMembro(Carlos, Ana, d6); //Membro Inexistente
@@ -77,9 +77,6 @@ int main(){
 	}
 	catch(Grupo::UtilizadorInexistente &e){
 		cout << "Utilizador " << e.getUtilizador() << " nao existe!" << endl;
-	}
-	catch(Grupo::MembroJaBloqueado &e){
-		cout << "Utilizador " << e.getUtilizador() << " ja se encontra bloqueado!" << endl;
 	}
 
 	return 0;

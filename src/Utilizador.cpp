@@ -21,15 +21,19 @@ Utilizador::Utilizador(string login, string nome, string email, Data dataAdesao)
 }
 
 bool Utilizador::operator==(const Utilizador&u)const{
-	return ((nome == u.nome) && (login == u.login) && (email == u.email));
+	return (login == u.login);
 }
 
 string Utilizador::getNome() const{
 	return nome;
 }
 
+string Utilizador::getLogin() const{
+	return login;
+}
+
 ostream & operator<<(ostream & out, const Utilizador & u){
-	out << u.getNome();
+	out << "Nome : " << u.getNome() << " , login : " << u.getLogin();
 	return out;
 }
 

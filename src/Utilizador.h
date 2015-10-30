@@ -27,6 +27,7 @@ public:
 	bool addTelemovel(int t);
 	bool operator==(const Utilizador&u)const;
 	string getNome() const;
+	string getLogin() const;
 	//bool addConversa(Conversa &c);
 	//bool enviarSms(Mensagem &m);
 	friend ostream & operator<<(ostream & out, const Utilizador & u);

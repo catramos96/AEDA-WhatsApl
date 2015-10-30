@@ -1,6 +1,3 @@
-/** @ \file System.h
- * header file que contém a classe System
- */
 #ifndef SRC_SYSTEM_H_
 #define SRC_SYSTEM_H_
 
@@ -14,7 +11,7 @@ using namespace std;
 /**
  * @brief Classe Horas.
  * Classe que indica as horas (hora e minuto) ao utilizador.
- * É possivel modificar as horas.
+ * E possivel modificar as horas.
  */
 class Horas
 {
@@ -24,7 +21,7 @@ private:
 public:
 	/**
 	 * @brief Classe HoraInvalida.
-	 * É uma classe que indica uma exeção da classe Horas.
+	 * E uma classe que indica uma execao da classe Horas.
 	 */
 	class HoraInvalida{};
 	/**
@@ -33,39 +30,42 @@ public:
 	 */
 	Horas();
 	/**
-	 * @ brief Função que permite o utilizador alterar as horas e os minutos atuais com verificações de input.
+	 * @brief Construtor
+	 * Construtor que inicializa os membros hora e minutos com os valores introduzidos pelo utilizador
+	 */
+	Horas(int h,int m);
+	/**
+	 * @ brief Funcao que permite o utilizador alterar as horas e os minutos atuais com verificacoes de input.
 	 * @ param h : representa a hora
 	 * @ param min : representa os minutos
 	 * @ return void
 	 */
-	Horas(int h,int m);
 	void setHoras(int h,int min);
 	/**
-	 * @brief Função que retorna as horas atuais.
+	 * @brief Funcao que retorna as horas atuais.
 	 * @return hora atual
 	 */
 	int getHora() const;
 	/**
-	 * @brief Função que retorna os minutos atuais
+	 * @brief Funcao que retorna os minutos atuais
 	 * @return minutos
 	 */
 	int getMinutos() const;
 	/**
-	 * @brief Função friend: função que acede aos membros privados da classe.
-	 * operator<< permite imprimir no ecrã o objeto Horas
+	 * @brief Fuacao friend: funcao que acede aos membros privados da classe.
+	 * operator<< permite imprimir no ecra o objeto Horas
 	 * @param out output
 	 * @param h objeto Horas
 	 * @return out
 	 */
 
 	friend ostream & operator<<(ostream & out, const Horas & h);
-
 };
 
 /**
  * @brief Classe Data.
- * Classe que indica as data (dia mês e ano) ao utilizador.
- * É possivel modificar a data
+ * Classe que indica as data (dia mes e ano) ao utilizador.
+ * E possivel modificar a data
  */
 class Data
 {
@@ -76,7 +76,7 @@ private:
 public:
 	/**
 	 * @brief Classe DataInvalida.
-	 * É uma classe que indica uma exeção da classe Data.
+	 * E uma classe que indica uma execao da classe Data.
 	 */
 	class DataInvalida{};
 	/**
@@ -85,33 +85,36 @@ public:
 	 */
 	Data();
 	/**
-	 * @brief Função que permite o utilizador alterar o dia mês e ano atuais com verificações de input.
+	 * @brief Construtor
+	 * inicializa o dia, mes e ano com os dados que o utilizador insere
+	 */
+	Data(int d,int m,int a);
+	/**
+	 * @brief Funcao que permite o utilizador alterar o dia mes e ano atuais com verificações de input.
 	 * @ param d : representa o dia
 	 * @ param m : representa o mes
 	 * @ param a : represnta o ano
 	 * @return void
 	 */
-
-	Data(int d,int m,int a);
 	void setData(int d, int m, int a);
 	/**
-	 * @brief Função que retorna o dia atual.
+	 * @brief Funcao que retorna o dia atual.
 	 * @return dia atual
 	 */
 	int getDia() const;
 	/**
-	 * @brief Função que retorna o mês atual
-	 * @return mês atual
+	 * @brief Funcao que retorna o mes atual
+	 * @return mes atual
 	 */
 	int getMes() const;
 	/**
-	 * @brief Função que retorna o ano atual
+	 * @brief Funcao que retorna o ano atual
 	 * @return ano atual
 	 */
 	int getAno() const;
 	/**
-	 * @brief Função friend: função que acede aos membros privados da classe.
-	 * operator<< permite imprimir no ecrã o objeto Data
+	 * @brief Funcao friend: funcao que acede aos membros privados da classe.
+	 * operator<< permite imprimir no ecra o objeto Data
 	 * @param out output
 	 * @param d objeto Data
 	 * @return out

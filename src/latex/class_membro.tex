@@ -1,0 +1,173 @@
+\hypertarget{class_membro}{}\section{Membro Class Reference}
+\label{class_membro}\index{Membro@{Membro}}
+
+
+Classe \hyperlink{class_membro}{Membro}. Classe que define os parametros necessarios para um utilizador estar num grupo. Associa um utilizador a data de adesao no grupo e a um boleano que indica se o esta bloqueado.  
+
+
+
+
+{\ttfamily \#include $<$Grupo.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_membro_af9bd66f6df0d28ad735fee98a93d4144}{Membro} (\hyperlink{class_utilizador}{Utilizador} util, \hyperlink{class_data}{Data} adesao\+Grupo)
+\begin{DoxyCompactList}\small\item\em construtor \hyperlink{class_membro}{Membro} inicializa o \hyperlink{class_utilizador}{Utilizador} util com o utilizador dado, a \hyperlink{class_data}{Data} adesao\+Grupo com a data dada, e o boleano bloqueado a \textquotesingle{}false\textquotesingle{} \end{DoxyCompactList}\item 
+\hyperlink{class_utilizador}{Utilizador} \hyperlink{class_membro_afa0db1ade3bc300eeee7accb8e5978b3}{get\+Utilizador} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o \hyperlink{class_utilizador}{Utilizador} util. \end{DoxyCompactList}\item 
+\hyperlink{class_data}{Data} \hyperlink{class_membro_a7619c15445b61c099b0a6fcb1e5f9f51}{get\+Data} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a \hyperlink{class_data}{Data} de adesao do utilizador ao grupo. \end{DoxyCompactList}\item 
+void \hyperlink{class_membro_a251129b637633510a9e08fe29cc7dfaa}{set\+Data} (\hyperlink{class_data}{Data} d)
+\begin{DoxyCompactList}\small\item\em Funcao que permite alterar a data inicial. \end{DoxyCompactList}\item 
+void \hyperlink{class_membro_aaeea526aaa8f558d7e415c56c0b1be52}{set\+Bloqueio} (bool bloq)
+\begin{DoxyCompactList}\small\item\em Funcao que coloca um novo valor ao membro privado \textquotesingle{}bloqueado\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_membro_a4fee0ae7563027e70cf03456e74feffc}{is\+Bloqueado} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que indica o estado atual do membro privado \textquotesingle{}bloqueado\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_membro_a46bc54549fa9d3a84fbfdbc0f1ffe0b4}{operator==} (const \hyperlink{class_membro}{Membro} \&m) const 
+\begin{DoxyCompactList}\small\item\em operador de igualdade compara 2 membros através do utilizador \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{class_membro_afc9bed25c3d6144f71613273a59776fd}{operator$<$$<$} (ostream \&out, const \hyperlink{class_membro}{Membro} \&m)
+\begin{DoxyCompactList}\small\item\em operador de extracao faz o output dos membros privados da classe \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe \hyperlink{class_membro}{Membro}. Classe que define os parametros necessarios para um utilizador estar num grupo. Associa um utilizador a data de adesao no grupo e a um boleano que indica se o esta bloqueado. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_membro_af9bd66f6df0d28ad735fee98a93d4144}{}\index{Membro@{Membro}!Membro@{Membro}}
+\index{Membro@{Membro}!Membro@{Membro}}
+\subsubsection[{Membro(\+Utilizador util, Data adesao\+Grupo)}]{\setlength{\rightskip}{0pt plus 5cm}Membro\+::\+Membro (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador}}]{util, }
+\item[{{\bf Data}}]{adesao\+Grupo}
+\end{DoxyParamCaption}
+)}\label{class_membro_af9bd66f6df0d28ad735fee98a93d4144}
+
+
+construtor \hyperlink{class_membro}{Membro} inicializa o \hyperlink{class_utilizador}{Utilizador} util com o utilizador dado, a \hyperlink{class_data}{Data} adesao\+Grupo com a data dada, e o boleano bloqueado a \textquotesingle{}false\textquotesingle{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em util} & \hyperlink{class_utilizador}{Utilizador} \\
+\hline
+{\em adesao\+Grupo} & data em que aderiu ao grupo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_membro_a7619c15445b61c099b0a6fcb1e5f9f51}{}\index{Membro@{Membro}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Membro@{Membro}}
+\subsubsection[{get\+Data() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Membro\+::get\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_membro_a7619c15445b61c099b0a6fcb1e5f9f51}
+
+
+Funcao que retorna a \hyperlink{class_data}{Data} de adesao do utilizador ao grupo. 
+
+\begin{DoxyReturn}{Returns}
+adesao\+Grupo 
+\end{DoxyReturn}
+\hypertarget{class_membro_afa0db1ade3bc300eeee7accb8e5978b3}{}\index{Membro@{Membro}!get\+Utilizador@{get\+Utilizador}}
+\index{get\+Utilizador@{get\+Utilizador}!Membro@{Membro}}
+\subsubsection[{get\+Utilizador() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utilizador} Membro\+::get\+Utilizador (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_membro_afa0db1ade3bc300eeee7accb8e5978b3}
+
+
+Funcao que retorna o \hyperlink{class_utilizador}{Utilizador} util. 
+
+\begin{DoxyReturn}{Returns}
+util 
+\end{DoxyReturn}
+\hypertarget{class_membro_a4fee0ae7563027e70cf03456e74feffc}{}\index{Membro@{Membro}!is\+Bloqueado@{is\+Bloqueado}}
+\index{is\+Bloqueado@{is\+Bloqueado}!Membro@{Membro}}
+\subsubsection[{is\+Bloqueado() const }]{\setlength{\rightskip}{0pt plus 5cm}bool Membro\+::is\+Bloqueado (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_membro_a4fee0ae7563027e70cf03456e74feffc}
+
+
+Funcao que indica o estado atual do membro privado \textquotesingle{}bloqueado\textquotesingle{}. 
+
+\begin{DoxyReturn}{Returns}
+bloqueado 
+\end{DoxyReturn}
+\hypertarget{class_membro_a46bc54549fa9d3a84fbfdbc0f1ffe0b4}{}\index{Membro@{Membro}!operator==@{operator==}}
+\index{operator==@{operator==}!Membro@{Membro}}
+\subsubsection[{operator==(const Membro \&m) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Membro\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Membro} \&}]{m}
+\end{DoxyParamCaption}
+) const}\label{class_membro_a46bc54549fa9d3a84fbfdbc0f1ffe0b4}
+
+
+operador de igualdade compara 2 membros através do utilizador 
+
+\begin{DoxyReturn}{Returns}
+true se os utilizadores forem iguais, false se forem diferentes 
+\end{DoxyReturn}
+\hypertarget{class_membro_aaeea526aaa8f558d7e415c56c0b1be52}{}\index{Membro@{Membro}!set\+Bloqueio@{set\+Bloqueio}}
+\index{set\+Bloqueio@{set\+Bloqueio}!Membro@{Membro}}
+\subsubsection[{set\+Bloqueio(bool bloq)}]{\setlength{\rightskip}{0pt plus 5cm}void Membro\+::set\+Bloqueio (
+\begin{DoxyParamCaption}
+\item[{bool}]{bloq}
+\end{DoxyParamCaption}
+)}\label{class_membro_aaeea526aaa8f558d7e415c56c0b1be52}
+
+
+Funcao que coloca um novo valor ao membro privado \textquotesingle{}bloqueado\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bloq} & boleano com o valor true ou false \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_membro_a251129b637633510a9e08fe29cc7dfaa}{}\index{Membro@{Membro}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Membro@{Membro}}
+\subsubsection[{set\+Data(\+Data d)}]{\setlength{\rightskip}{0pt plus 5cm}void Membro\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Data}}]{d}
+\end{DoxyParamCaption}
+)}\label{class_membro_a251129b637633510a9e08fe29cc7dfaa}
+
+
+Funcao que permite alterar a data inicial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & nova data \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_membro_afc9bed25c3d6144f71613273a59776fd}{}\index{Membro@{Membro}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Membro@{Membro}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Membro} \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_membro_afc9bed25c3d6144f71613273a59776fd}
+
+
+operador de extracao faz o output dos membros privados da classe 
+
+\begin{DoxyReturn}{Returns}
+out 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Grupo.\+h\item 
+Grupo.\+cpp\end{DoxyCompactItemize}
