@@ -3,6 +3,7 @@
 #include "System.h"
 #include <string>
 #include <sstream>
+#include <time.h>
 #include "Mensagem.h"
 
 using namespace std;
@@ -10,20 +11,18 @@ using namespace std;
 /********************************
  *		CLASSE MENSAGEM			*
  *******************************/
-/*
-Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios) {
+
+Mensagem::Mensagem(string tipo, Data data, string emissor, vector<string> destinatarios) {
 	this->tipo = tipo;
 	this->data = data;
-	this->hora = hora;
 	this->emissor = emissor;
 	this->destinatarios = destinatarios;
 	titulo = "";
 }
 
-Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios, string titulo) {
+Mensagem::Mensagem(string tipo, Data data, string emissor, vector<string> destinatarios, string titulo) {
 	this->tipo = tipo;
 	this->data = data;
-	this->hora = hora;
 	this->emissor = emissor;
 	this->destinatarios = destinatarios;
 	this->titulo = titulo;
@@ -32,7 +31,6 @@ Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor, vector<st
 void Mensagem::imprimirMsg() {
 	cout << "Tipo: " << tipo << endl;
 	cout << "Data: " << data << endl;
-	cout << "Hora: " << hora << endl;
 	cout << "Emissor: " << emissor << endl;
 	cout << "Destinatarios: " << endl;
 	for (unsigned int i = 0; i < destinatarios.size(); i++) {
@@ -49,9 +47,6 @@ Data Mensagem::getData() const {
 	return data;
 }
 
-Horas Mensagem::getHora() const {
-	return hora;
-}
 
 string Mensagem::getEmissor() const {
 	return emissor;
@@ -74,7 +69,7 @@ string Mensagem::msgHeader() const {
 	s << "Titulo: " << titulo << endl;
 	return s.str();
 }
-*/
+
 /********************************
  *		CLASSE MSG TEXTO		*
  *******************************/

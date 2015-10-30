@@ -32,34 +32,6 @@ int main(int argc, char const *argv[]){
 
 int main()
 {
-	try{
-		Data data;
-		int d, m, a;
-		cout << "Dia, mes, ano ";
-		cin >> d >> m >> a;
-		data.setData(d, m, a);
-		cout << data << endl;
 
-		Horas hora;
-		int h, min;
-		cout << "Hora, minutos";
-		cin >> h >> min;
-		hora.setHoras(h, min);
-		cout << hora << endl;
-	}
-	catch(Data::DataInvalida){
-		cout << "Data Invalida!" << endl;
-	}
-	catch (Horas::HoraInvalida){
-		cout << "Hora Invalida!" << endl;
-	}
-	/*
-	try{
-
-	}
-	catch(){
-
-	}
-	*/
 	return 0;
 }

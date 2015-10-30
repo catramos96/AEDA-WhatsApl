@@ -6,29 +6,26 @@
 
 #include <iostream>
 #include <vector>
-
+#include <time.h>
 #include "System.h"
 
 using namespace std;
 
 class Mensagem
 {
-
 private:
 	string tipo; //texto, imagem, video...
 	Data data;
-	Horas hora;
 	string emissor;
 	vector<string> destinatarios;
 	string titulo;
 public:
-	Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios);
-	Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios,string titulo);
-	virtual ~Mensagem();
+	Mensagem(string tipo, Data data, string emissor, vector<string> destinatarios);
+	Mensagem(string tipo, Data data, string emissor, vector<string> destinatarios,string titulo);
+	virtual ~Mensagem(){};
 	virtual void imprimirMsg(); //imprime todos os membros private
 	string getTipo() const;
 	Data getData() const;
-	Horas getHora() const;
 	string getEmissor() const;
 	vector<string> getDestinatarios() const;
 	string msgHeader() const; //Retorna "header de cada Mensagem"
