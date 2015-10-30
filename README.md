@@ -4,7 +4,7 @@ Temos que apressar o projeto. Não estamos atrasados, mas depois de fazer as cla
 Como quinta feira vou voltar para lamego, convinha ter tudo o que é necessario fazer em conjunto feito até essa data.(sem falar que falta o relatório e a parte de uml). 
 Por isto tudo, divisão de tarefas:
 
-- Catarina: tens de mudar a classe utilizador. Lê o que eu escrevi no facebook.
+- Catarina: Primeiro, faz pull do meu ultimo commit e compoe aquelas cenas do merge. Segundo, tens de mudar a classe utilizador. Lê o que eu escrevi no facebook.
 
 - Pedro: isto ficou uma grande salgalhada. Primeiro preciso que coloques todas as tuas atualizações do branch do timer no master. Eu tentei fazer merge e não consegui...
 ### sem mudar a classe Data. A classe Data tem de ficar como eu fiz!! ###
