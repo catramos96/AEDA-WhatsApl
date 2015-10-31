@@ -28,8 +28,6 @@ public:
 	void removeSms(Data data);
 	void imprimirConversa(); // chama o imprimeSms
 	int numSms();
-
-
 };
 
 /*! @ classe Conversa Mensagem.h "inc/Mensagem.h"

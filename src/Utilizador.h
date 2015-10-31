@@ -1,4 +1,4 @@
-/** @ \file Utilizador.h
+\/** @ \file Utilizador.h
  * header file que contém a classe Utilizador
  */
 #ifndef SRC_UTILIZADOR_H_

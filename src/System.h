@@ -19,9 +19,10 @@ private:
 public:
 	Data();
 	Data(time_t time1);
-	void setData(time_t time1);
-	time_t getData();
-
+	void setData();
+	time_t getDataCompleta();
+	const string getHora();
+	const string getData();
 	friend ostream & operator<<(ostream & out, const Data & d);
 
 };

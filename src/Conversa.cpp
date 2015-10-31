@@ -31,7 +31,11 @@ void Conversa::adicionaSms(string tipo, Data data, string emissor, vector<string
 
 
 void Conversa::removeSms(Data data){
-
+	for(size_t i=0;i<mensagens.size();i++){
+		if(mensagens[i].getData().getDataCompleta()==data.getDataCompleta()){
+			mensagens.erase(mensagens.begin()+i);
+		}
+	}
 }
 
 void Conversa::imprimirConversa(){
