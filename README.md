@@ -6,8 +6,7 @@ Por isto tudo, divisão de tarefas:
 
 - Catarina: Primeiro, faz pull do meu ultimo commit e compoe aquelas cenas do merge. Segundo, tens de mudar a classe utilizador. Lê o que eu escrevi no facebook.
 
-- Pedro: isto ficou uma grande salgalhada. Primeiro preciso que coloques todas as tuas atualizações do branch do timer no master. Eu tentei fazer merge e não consegui...
-### sem mudar a classe Data. A classe Data tem de ficar como eu fiz!! ###
+- Pedro: isto ficou uma grande salgalhada. Primeiro preciso que coloques todas as tuas atualizações do branch do timer no master. Eu tentei fazer merge e não consegui...(sem mudar a classe Data. A classe Data tem de ficar como eu fiz)
  Segundo, tens de acabar a classe conversa asap, e se conseguisses a classe Comunidade.
  
 - eu: Como já acabei 2 classes, neste momento estou a tratar de tudo da parte da uml e vou começar com o relatório. 
@@ -18,7 +17,6 @@ Qualquer ajuda que precisem nas vossas classes eu posso adiantar.
 ## Prazo para acabar as classes ##
 o ideal era domingo mais tardar segunda feira, porque enquanto não acabarmos as classes não podemos avançar no projeto. (juntar classes e main)
 
-Ps: Pedro, como andas com as coisas do Arraial e provavlmente tens muito com que te preocupar, eu posso adiantar a classe comunidade, porque é uma classe muito simples eu não me importo. A tua prioridade é a classe Conversa. 
 
 # -------------------------------------------------------------------------------- #
 
