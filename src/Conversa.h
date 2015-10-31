@@ -17,20 +17,21 @@
 
 using namespace std;
 
+
 /* Classe Conversa*/
-/*
+
 class Conversa
 {
 private:
 	vector<Mensagem> mensagens;
 public:
 	Conversa(); //conversa vazia
-	Conversa(string sms);
-	void adicionaSms();
-	void removeSms(string sms);
+	Conversa(vector<Mensagem> sms);
+	void adicionaSms(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios);
+	void removeSms(Data data, Horas hora);
 	void imprimirConversa(); // chama o imprimeSms
 	int numSms();
+
 };
-*/
 
 #endif /* SRC_CONVERSA_H_ */

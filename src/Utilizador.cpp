@@ -1,5 +1,6 @@
 #include "Utilizador.h"
-#include "System.h"
+#include "Templates.h"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -19,8 +20,7 @@ Utilizador::Utilizador() {
 	dataAdesao = d;
 }
 
-Utilizador::Utilizador(bool visibilidade, string login, string nome,
-		string email, Data dataAdesao, int telemovel) {
+Utilizador::Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel) {
 	this->visibilidade = visibilidade;
 	this->login = login;
 	this->nome = nome;
@@ -29,28 +29,14 @@ Utilizador::Utilizador(bool visibilidade, string login, string nome,
 	telemoveis.push_back(telemovel);
 }
 
-<<<<<<< HEAD
-bool Utilizador::operator==(const Utilizador&u)const{
-	return (login == u.login);
-}
-=======
 /*******************************************************
  * 				   	FUNÇÕES GET				     	   *
  ******************************************************/
->>>>>>> e2bf3dd4c4580ddda629b9d2243c44e21fa4b5ba
 
 string Utilizador::getNome() const {
 	return nome;
 }
 
-<<<<<<< HEAD
-string Utilizador::getLogin() const{
-	return login;
-}
-
-ostream & operator<<(ostream & out, const Utilizador & u){
-	out << "Nome : " << u.getNome() << " , login : " << u.getLogin();
-=======
 string Utilizador::getEmail() const {
 	return email;
 }
@@ -107,7 +93,8 @@ bool Utilizador::setLogin(string login, vector<Utilizador*> comunidade) {
 	if (sequentialSearch(comunidade, &u) == -1) {
 		this->login = login;
 		return true;
-	} else
+	}
+	else
 		throw UtilizadorJaExiste(login);
 }
 
@@ -144,8 +131,9 @@ void Utilizador::addTelemovel(int t) {
 		throw TelemovelJaExiste(t);
 }
 
+/*
 void Utilizador::aceitarAmizade(Utilizador &u) {
-	vector<Utilizador *>::iterator it = find(pedidosAmizade.begin(),pedidosAmizade.end(), &u);
+	vector<Utilizador *>::iterator it = find(pedidosAmizade.begin(), pedidosAmizade.end(), &u);
 	if (it == pedidosAmizade.end())
 		throw UtilizadorInexistente(u);
 	else {
@@ -155,7 +143,7 @@ void Utilizador::aceitarAmizade(Utilizador &u) {
 }
 
 void Utilizador::bloquearUtilizador(Utilizador &u) {
-	vector<Utilizador *>::iterator it = find(comunidade.begin(),comunidade.end(), &u);
+	vector<Utilizador *>::iterator it = find(comunidade.begin(), comunidade.end(), &u);
 	if (it == comunidade.end())
 		throw UtilizadorInexistente(u);
 	else {
@@ -163,7 +151,7 @@ void Utilizador::bloquearUtilizador(Utilizador &u) {
 		u.setBloquearamMe(*this);
 	}
 }
-
+*/
 /*******************************************************
  * 				   	FUNÇÕES REMOVER			     	   *
  ******************************************************/
@@ -210,7 +198,7 @@ void Utilizador::imprimirDefinicoes() const {
 	}
 	cout << endl;
 	cout << "Visibilidade: ";
-	if(visibilidade)
+	if (visibilidade)
 		cout << "publica" << endl;
 	else
 		cout << "privada" << endl;
@@ -225,8 +213,8 @@ void Utilizador::imprimirNotificacoes() const
 
 void Utilizador::imprimirGrupo(vector<Utilizador *> v) const {
 	for (unsigned int i = 0; i < v.size(); ++i) {
-			cout << v[i] << endl;
-		}
+		cout << v[i] << endl;
+	}
 }
 
 /*******************************************************
@@ -239,7 +227,6 @@ bool Utilizador::operator==(const Utilizador&u) const {
 
 ostream & operator<<(ostream & out, const Utilizador & u) {
 	out << u.getNome();
->>>>>>> e2bf3dd4c4580ddda629b9d2243c44e21fa4b5ba
 	return out;
 }
 

@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <time.h>
 
 using namespace std;
 
@@ -52,13 +53,12 @@ public:
 	 */
 	int getMinutos() const;
 	/**
-	 * @brief Fuacao friend: funcao que acede aos membros privados da classe.
+	 * @brief Funcao friend: funcao que acede aos membros privados da classe.
 	 * operator<< permite imprimir no ecra o objeto Horas
 	 * @param out output
 	 * @param h objeto Horas
 	 * @return out
 	 */
-
 	friend ostream & operator<<(ostream & out, const Horas & h);
 };
 
@@ -70,10 +70,11 @@ public:
 class Data
 {
 private:
-	int dia, /**< membro provado que representa o dia */
-		mes, /**< membro provado que representa o mes */
-		ano; /**< membro provado que representa o ano */
+	int dia,
+		mes,
+		ano;
 public:
+
 	/**
 	 * @brief Classe DataInvalida.
 	 * E uma classe que indica uma execao da classe Data.
@@ -120,6 +121,16 @@ public:
 	 * @return out
 	 */
 	friend ostream & operator<<(ostream & out, const Data & d);
+};
+
+class HoraNova{
+private:
+	time_t t;
+public:
+	HoraNova();
+	HoraNova(time_t time1);
+	void setHoraNova(time_t time1);
+	time_t getHoraNova();
 };
 
 #endif /* SRC_SYSTEM_H_ */

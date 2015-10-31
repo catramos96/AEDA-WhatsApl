@@ -2,6 +2,8 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <time.h>
+
 #include "System.h"
 
 using namespace std;
@@ -14,15 +16,15 @@ Horas::Horas(){
 	min = 0;
 }
 
-Horas::Horas(int h,int m ){
-	if(h < 0 || h > 24 || m < 0 || m > 60)
-			throw HoraInvalida();
+Horas::Horas(int h, int m){
+	if (h < 0 || h > 24 || m < 0 || m > 60)
+		throw HoraInvalida();
 	hora = h;
 	min = m;
 }
 
 void Horas::setHoras(int h, int m){
-	if(h < 0 || h > 24 || m < 0 || m > 60)
+	if (h < 0 || h > 24 || m < 0 || m > 60)
 		throw HoraInvalida();
 	else{
 		hora = h;
@@ -39,7 +41,7 @@ int Horas::getMinutos() const{
 }
 
 std::ostream & operator<<(std::ostream & out, const Horas & h){
-	out << h.getHora()  << " : " << h.getMinutos();
+	out << h.getHora() << " : " << h.getMinutos();
 	return out;
 }
 
@@ -49,9 +51,9 @@ std::ostream & operator<<(std::ostream & out, const Horas & h){
  *******************************/
 
 Data::Data(){
-	dia=0;
-	mes=0;
-	ano=0;
+	dia = 0;
+	mes = 0;
+	ano = 0;
 }
 
 Data::Data(int d, int m, int a){
@@ -61,7 +63,7 @@ Data::Data(int d, int m, int a){
 }
 
 void Data::setData(int d, int m, int a){
-	if(d < 1 || d > 31 || m < 1 || m > 12 || a < 0)
+	if (d < 1 || d > 31 || m < 1 || m > 12 || a < 0)
 		throw DataInvalida();
 	else{
 		dia = d;
@@ -86,3 +88,30 @@ std::ostream & operator<<(std::ostream & out, const Data & d){
 	out << d.getDia() << " / " << d.getMes() << " / " << d.getAno();
 	return out;
 }
+
+/************************************
+ *	    	CLASSE HORA NOVA		*
+ ***********************************/
+
+
+HoraNova::HoraNova(){
+	t = 0;
+};
+
+HoraNova::HoraNova(time_t time1){
+	t = time1;
+}
+
+void HoraNova::setHoraNova(time_t time1){
+	t = time(0);
+}
+
+time_t HoraNova::getHoraNova(){
+	return t;
+}
+
+std::ostream & operator<<(std::ostream & out, const HoraNova & t){
+	out << t;
+	return out;
+}
+

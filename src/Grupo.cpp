@@ -1,5 +1,6 @@
 #include "Grupo.h"
 #include "Templates.h"
+
 #include <sstream>
 
 /* Classe Membro */
@@ -35,8 +36,8 @@ bool Membro::operator==(const Membro &m) const{
 }
 
 ostream & operator<<(ostream & out, const Membro & m){
-	out <<  m.getUtilizador() << " , data de adesao : " << m.getData();
-	if(m.isBloqueado())
+	out << m.getUtilizador() << " , data de adesao : " << m.getData();
+	if (m.isBloqueado())
 		out << ", estado : bloqueado " << endl;
 	else
 		out << ", estado : desbloqueado " << endl;
@@ -45,7 +46,7 @@ ostream & operator<<(ostream & out, const Membro & m){
 
 /* Classe Grupo*/
 
-Grupo::Grupo(string titulo,Data criacao, Utilizador moderador){
+Grupo::Grupo(string titulo, Data criacao, Utilizador moderador){
 	stringstream out;
 	this->titulo = titulo;
 	this->criacao = criacao;
@@ -73,13 +74,13 @@ Membro *Grupo::membroNaPosicao(int pos){
 }
 
 void Grupo::printStatus() const{
-	for(unsigned int i = 0; i < status.size(); i++)
+	for (unsigned int i = 0; i < status.size(); i++)
 		cout << status.at(i) << endl;
 }
 
 void Grupo::printMembros() const{
-	for(int i = 0; i < numMembros(); i++)
-		cout << i+1 << endl << "    " << *membros.at(i) << endl;
+	for (int i = 0; i < numMembros(); i++)
+		cout << i + 1 << endl << "    " << *membros.at(i) << endl;
 	cout << endl;
 }
 
@@ -102,6 +103,8 @@ bool Grupo::pedidoAdesao(Utilizador u, Utilizador moderador, Data adesao, bool a
 					status.push_back(out.str());
 					return true;
 				}
+				else
+					return false;
 			}
 			else{ // novo membro
 				Membro *novo = new Membro(u, adesao);
@@ -125,9 +128,9 @@ bool Grupo::bloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 	Data d;
 	Membro *temp = new Membro(u, d);
 	int pos = existeMembro(temp);
-	
+
 	if (isModerador(moderador)){
-		
+
 		if (pos != -1){ //encontra o membro
 			temp = membroNaPosicao(pos); //coloca os valores corretos do membro
 			if (temp->isBloqueado() == false){
@@ -141,7 +144,7 @@ bool Grupo::bloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 		}
 		else
 			throw UtilizadorInexistente(u);
-	}	
+	}
 	else
 		throw NaoModerador(moderador);
 }
@@ -155,7 +158,7 @@ bool Grupo::retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 
 	if (isModerador(moderador)){
 		if (existeMembro(temp) != -1){ //encontra o utilizador
-			membros.erase(membros.begin()+pos);
+			membros.erase(membros.begin() + pos);
 			out << "Membro eliminado : " << u.getNome() << endl << "Data : " << diaAtual << endl << endl;
 			status.push_back(out.str());
 			return true;
@@ -163,7 +166,7 @@ bool Grupo::retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 		else
 			throw UtilizadorInexistente(u);
 	}
-	else if(!isModerador(moderador))
+	else if (!isModerador(moderador))
 		throw NaoModerador(moderador);
 	else
 		return false;
@@ -177,10 +180,10 @@ bool Grupo::desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual)
 	int pos = existeMembro(temp);
 
 	if (isModerador(moderador)){
-		
+
 		if (pos != -1){ //encontra o utilizador
 			temp = membroNaPosicao(pos); //coloca os valores corretos do membro
-			if (temp->isBloqueado() ==  true){
+			if (temp->isBloqueado() == true){
 				temp->setBloqueio(false); //coloca como desbloqueado
 				out << "Membro desbloqueado : " << u.getNome() << endl << "Data : " << diaAtual << endl << endl;
 				status.push_back(out.str());

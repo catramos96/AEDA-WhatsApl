@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string>
 
-#include "System.h"
 #include "Utilizador.h"
 
 /**
@@ -81,7 +80,7 @@ private:
 	Data criacao;  /**<  membro privado que representa a data de criacao do grupo */
 	Utilizador moderador;  /**<  membro privado que representa o utilizador moderador do grupo */
 	vector<string> status;  /**<  membro privado que guarda todas as notificacoes acerca do grupo.
-	 	 	 	 	 	 	 	 	 Regista a entrada, saida, bloqueio ou desbloqueio de um membro com a respetiva data da ocorrencia*/
+									 Regista a entrada, saida, bloqueio ou desbloqueio de um membro com a respetiva data da ocorrencia*/
 public:
 	/**
 	 * @brief Construtor do grupo
@@ -92,7 +91,7 @@ public:
 	 * @param criacao Data de criacao do grupo
 	 * @param moderador Utilizador moderador do grupo
 	 */
-	Grupo(string titulo,Data criacao, Utilizador moderador);
+	Grupo(string titulo, Data criacao, Utilizador moderador);
 	/**
 	 * @brief Funcao que retorna o numero de elementos do grupo
 	 * @return Numero de elementos membro
@@ -189,7 +188,7 @@ public:
 	 * @brief Funcao que retorna o utilizador
 	 * @return mod
 	 */
-	Utilizador getUtilizador() const{
+	Utilizador getUtil() const{
 		return mod;
 	};
 };
