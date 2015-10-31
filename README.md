@@ -1,21 +1,14 @@
-# Muito Importante!!!! #
+# Coisas Imporatantes: #
 
-Temos que apressar o projeto. Não estamos atrasados, mas depois de fazer as classes vamos ter que as juntar e criar uma interface e isso pode dar problemas porque estamos a trabalhar muito separados. 
-Como quinta feira vou voltar para lamego, convinha ter tudo o que é necessario fazer em conjunto feito até essa data.(sem falar que falta o relatório e a parte de uml). 
-Por isto tudo, divisão de tarefas:
+1 - a partir de agora só se mexe no branch master
 
-- Catarina: Primeiro, faz pull do meu ultimo commit e compoe aquelas cenas do merge. Segundo, tens de mudar a classe utilizador. Lê o que eu escrevi no facebook.
+2 - componham coisas pequenas que achem que faltam no código
 
-- Pedro: isto ficou uma grande salgalhada. Primeiro preciso que coloques todas as tuas atualizações do branch do timer no master. Eu tentei fazer merge e não consegui...(sem mudar a classe Data. A classe Data tem de ficar como eu fiz)
- Segundo, tens de acabar a classe conversa asap, e se conseguisses a classe Comunidade.
- 
-- eu: Como já acabei 2 classes, neste momento estou a tratar de tudo da parte da uml e vou começar com o relatório. 
-Qualquer ajuda que precisem nas vossas classes eu posso adiantar. 
+3 - doxygen! façam documentação
 
-### o doxygen já está a funcionar, não se esqueçam de fazer documentação. ###
+4 - depois combinamos para nos encontrarmos segunda
 
-## Prazo para acabar as classes ##
-o ideal era domingo mais tardar segunda feira, porque enquanto não acabarmos as classes não podemos avançar no projeto. (juntar classes e main)
+5 - estou a trabalhar no visio 2013 para a parte de uml, se quiserem instalem este
 
 
 # -------------------------------------------------------------------------------- #
