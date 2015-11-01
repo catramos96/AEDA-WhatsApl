@@ -17,6 +17,11 @@
 
 using namespace std;
 
+<<<<<<< HEAD
+=======
+/* Classe Conversa*/
+/*
+>>>>>>> e2e427b9d7d34bc3626012ea8e7f3af908d8b503
 class Conversa
 {
 private:
@@ -29,6 +34,7 @@ public:
 	void imprimirConversa(); // chama o imprimeSms
 	int numSms();
 };
+<<<<<<< HEAD
 
 /*! @ classe Conversa Mensagem.h "inc/Mensagem.h"
  *  @ brief Classe que constrói uma conversa constituida por vária mensagens por ordem cronológica
@@ -36,5 +42,8 @@ public:
  *  @ private mensagens
  */
 
+=======
+*/
+>>>>>>> e2e427b9d7d34bc3626012ea8e7f3af908d8b503
 
 #endif /* SRC_CONVERSA_H_ */

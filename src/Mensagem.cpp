@@ -11,6 +11,7 @@ using namespace std;
 /********************************
  *		CLASSE MENSAGEM			*
  *******************************/
+<<<<<<< HEAD
 
 Mensagem::Mensagem(string tipo, Data data, string emissor, vector<string> destinatarios) {
 	this->tipo = tipo;
@@ -21,11 +22,14 @@ Mensagem::Mensagem(string tipo, Data data, string emissor, vector<string> destin
 }
 
 Mensagem::Mensagem(string tipo, Data data, string emissor, vector<string> destinatarios, string titulo) {
+=======
+
+Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios) {
+>>>>>>> e2e427b9d7d34bc3626012ea8e7f3af908d8b503
 	this->tipo = tipo;
 	this->data = data;
 	this->emissor = emissor;
 	this->destinatarios = destinatarios;
-	this->titulo = titulo;
 }
 
 void Mensagem::imprimirMsg() {
@@ -36,7 +40,6 @@ void Mensagem::imprimirMsg() {
 	for (unsigned int i = 0; i < destinatarios.size(); i++) {
 		cout << "    " << destinatarios[i] << endl;
 	}
-	cout << "Titulo: " << titulo << endl;
 }
 
 string Mensagem::getTipo() const {
@@ -66,14 +69,14 @@ string Mensagem::msgHeader() const {
 			s << ", ";
 	}
 	s << endl;
-	s << "Titulo: " << titulo << endl;
+	//s << "Titulo: " << titulo << endl;
 	return s.str();
 }
 
 /********************************
  *		CLASSE MSG TEXTO		*
  *******************************/
-/*
+
 string msgTexto::getConteudo() const {
 	return conteudo;
 }
@@ -88,25 +91,25 @@ ostream & operator<<(ostream & out, const msgTexto &mt) {
 	out << mt.getConteudo();
 	return out;
 }
-*/
+
 /********************************
  *		CLASSE MSG VIDEO		*
  *******************************/
-/*
+
 ostream & operator<<(ostream & out, const msgVideo &mv) {
 	out << mv.msgHeader();
 	out << "VIDEO";
 	return out;
 }
-*/
+
 /********************************
  *		CLASSE MSG IMAGEM		*
  *******************************/
-/*
+
 ostream & operator<<(ostream & out, const msgImagem &mi) {
 	out << mi.msgHeader();
 	out << "IMAGEM";
 
 	return out;
 }
-*/
+

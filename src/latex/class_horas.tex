@@ -1,0 +1,109 @@
+\hypertarget{class_horas}{}\section{Horas Class Reference}
+\label{class_horas}\index{Horas@{Horas}}
+
+
+Classe \hyperlink{class_horas}{Horas}. Classe que indica as horas (hora e minuto) ao utilizador. E possivel modificar as horas.  
+
+
+
+
+{\ttfamily \#include $<$System.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_horas_1_1_hora_invalida}{Hora\+Invalida}
+\begin{DoxyCompactList}\small\item\em Classe \hyperlink{class_horas_1_1_hora_invalida}{Hora\+Invalida}. E uma classe que indica uma execao da classe \hyperlink{class_horas}{Horas}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_horas_aeef70cbde1c7253dfbb2135fbadc483b}{}\hyperlink{class_horas_aeef70cbde1c7253dfbb2135fbadc483b}{Horas} ()\label{class_horas_aeef70cbde1c7253dfbb2135fbadc483b}
+
+\begin{DoxyCompactList}\small\item\em Constutor Construtor default que inicializa as horas e os minutos a zero. \end{DoxyCompactList}\item 
+\hypertarget{class_horas_abbbba3d917352ba3350cafe29753c60f}{}\hyperlink{class_horas_abbbba3d917352ba3350cafe29753c60f}{Horas} (int h, int m)\label{class_horas_abbbba3d917352ba3350cafe29753c60f}
+
+\begin{DoxyCompactList}\small\item\em Construtor Construtor que inicializa os membros hora e minutos com os valores introduzidos pelo utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_horas_a5da58fcd1a263e3c97e6e11c35b61d76}{set\+Horas} (int h, int min)
+\item 
+int \hyperlink{class_horas_af72b7e4e7206236f8dc9a4d4b68eff0c}{get\+Hora} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna as horas atuais. \end{DoxyCompactList}\item 
+int \hyperlink{class_horas_a51e1dd7ac2811960ac1c2faacd034a3c}{get\+Minutos} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os minutos atuais. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{class_horas_ad76a7152a5b1492bcda5507aa928db73}{operator$<$$<$} (ostream \&out, const \hyperlink{class_horas}{Horas} \&h)
+\begin{DoxyCompactList}\small\item\em Fuacao friend\+: funcao que acede aos membros privados da classe. operator$<$$<$ permite imprimir no ecra o objeto \hyperlink{class_horas}{Horas}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe \hyperlink{class_horas}{Horas}. Classe que indica as horas (hora e minuto) ao utilizador. E possivel modificar as horas. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_horas_af72b7e4e7206236f8dc9a4d4b68eff0c}{}\index{Horas@{Horas}!get\+Hora@{get\+Hora}}
+\index{get\+Hora@{get\+Hora}!Horas@{Horas}}
+\subsubsection[{get\+Hora() const }]{\setlength{\rightskip}{0pt plus 5cm}int Horas\+::get\+Hora (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_horas_af72b7e4e7206236f8dc9a4d4b68eff0c}
+
+
+Funcao que retorna as horas atuais. 
+
+\begin{DoxyReturn}{Returns}
+hora atual 
+\end{DoxyReturn}
+\hypertarget{class_horas_a51e1dd7ac2811960ac1c2faacd034a3c}{}\index{Horas@{Horas}!get\+Minutos@{get\+Minutos}}
+\index{get\+Minutos@{get\+Minutos}!Horas@{Horas}}
+\subsubsection[{get\+Minutos() const }]{\setlength{\rightskip}{0pt plus 5cm}int Horas\+::get\+Minutos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_horas_a51e1dd7ac2811960ac1c2faacd034a3c}
+
+
+Funcao que retorna os minutos atuais. 
+
+\begin{DoxyReturn}{Returns}
+minutos 
+\end{DoxyReturn}
+\hypertarget{class_horas_a5da58fcd1a263e3c97e6e11c35b61d76}{}\index{Horas@{Horas}!set\+Horas@{set\+Horas}}
+\index{set\+Horas@{set\+Horas}!Horas@{Horas}}
+\subsubsection[{set\+Horas(int h, int min)}]{\setlength{\rightskip}{0pt plus 5cm}void Horas\+::set\+Horas (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{min}
+\end{DoxyParamCaption}
+)}\label{class_horas_a5da58fcd1a263e3c97e6e11c35b61d76}
+@ brief Funcao que permite o utilizador alterar as horas e os minutos atuais com verificacoes de input. @ param h \+: representa a hora @ param min \+: representa os minutos @ return void 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_horas_ad76a7152a5b1492bcda5507aa928db73}{}\index{Horas@{Horas}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Horas@{Horas}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Horas} \&}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_horas_ad76a7152a5b1492bcda5507aa928db73}
+
+
+Fuacao friend\+: funcao que acede aos membros privados da classe. operator$<$$<$ permite imprimir no ecra o objeto \hyperlink{class_horas}{Horas}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output \\
+\hline
+{\em h} & objeto \hyperlink{class_horas}{Horas} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+out 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+System.\+h\item 
+System.\+cpp\end{DoxyCompactItemize}

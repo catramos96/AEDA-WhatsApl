@@ -1,0 +1,133 @@
+\hypertarget{class_data}{}\section{Data Class Reference}
+\label{class_data}\index{Data@{Data}}
+
+
+Classe \hyperlink{class_data}{Data}. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data.  
+
+
+
+
+{\ttfamily \#include $<$System.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_data_1_1_data_invalida}{Data\+Invalida}
+\begin{DoxyCompactList}\small\item\em Classe \hyperlink{class_data_1_1_data_invalida}{Data\+Invalida}. E uma classe que indica uma execao da classe \hyperlink{class_data}{Data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_data_af11f741cb7f587e2e495452a8905a22a}{}\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data} ()\label{class_data_af11f741cb7f587e2e495452a8905a22a}
+
+\begin{DoxyCompactList}\small\item\em Constutor Construtor default que inicializa o dia mes e ano a zero. \end{DoxyCompactList}\item 
+\hypertarget{class_data_ab19ff9142aad6f03e1a8be8284d9e8fa}{}\hyperlink{class_data_ab19ff9142aad6f03e1a8be8284d9e8fa}{Data} (int d, int m, int a)\label{class_data_ab19ff9142aad6f03e1a8be8284d9e8fa}
+
+\begin{DoxyCompactList}\small\item\em Construtor inicializa o dia, mes e ano com os dados que o utilizador insere. \end{DoxyCompactList}\item 
+void \hyperlink{class_data_a0d2b92a9f9a418ab45407f9c0a19e92b}{set\+Data} (int d, int m, int a)
+\begin{DoxyCompactList}\small\item\em Funcao que permite o utilizador alterar o dia mes e ano atuais com verificações de input. @ param d \+: representa o dia @ param m \+: representa o mes @ param a \+: represnta o ano. \end{DoxyCompactList}\item 
+int \hyperlink{class_data_a56e5ac1591af52df4bc391d3c840cb07}{get\+Dia} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o dia atual. \end{DoxyCompactList}\item 
+int \hyperlink{class_data_af73ca438bf53a0f386a6b1c03a6c0d3e}{get\+Mes} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o mes atual. \end{DoxyCompactList}\item 
+int \hyperlink{class_data_ad3981013cc47680fc4619063b7df4375}{get\+Ano} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o ano atual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{class_data_aa4314ba62ccb03334c7edc9a27dfa51d}{operator$<$$<$} (ostream \&out, const \hyperlink{class_data}{Data} \&d)
+\begin{DoxyCompactList}\small\item\em Funcao friend\+: funcao que acede aos membros privados da classe. operator$<$$<$ permite imprimir no ecra o objeto \hyperlink{class_data}{Data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe \hyperlink{class_data}{Data}. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_data_ad3981013cc47680fc4619063b7df4375}{}\index{Data@{Data}!get\+Ano@{get\+Ano}}
+\index{get\+Ano@{get\+Ano}!Data@{Data}}
+\subsubsection[{get\+Ano() const }]{\setlength{\rightskip}{0pt plus 5cm}int Data\+::get\+Ano (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_data_ad3981013cc47680fc4619063b7df4375}
+
+
+Funcao que retorna o ano atual. 
+
+\begin{DoxyReturn}{Returns}
+ano atual 
+\end{DoxyReturn}
+\hypertarget{class_data_a56e5ac1591af52df4bc391d3c840cb07}{}\index{Data@{Data}!get\+Dia@{get\+Dia}}
+\index{get\+Dia@{get\+Dia}!Data@{Data}}
+\subsubsection[{get\+Dia() const }]{\setlength{\rightskip}{0pt plus 5cm}int Data\+::get\+Dia (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_data_a56e5ac1591af52df4bc391d3c840cb07}
+
+
+Funcao que retorna o dia atual. 
+
+\begin{DoxyReturn}{Returns}
+dia atual 
+\end{DoxyReturn}
+\hypertarget{class_data_af73ca438bf53a0f386a6b1c03a6c0d3e}{}\index{Data@{Data}!get\+Mes@{get\+Mes}}
+\index{get\+Mes@{get\+Mes}!Data@{Data}}
+\subsubsection[{get\+Mes() const }]{\setlength{\rightskip}{0pt plus 5cm}int Data\+::get\+Mes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_data_af73ca438bf53a0f386a6b1c03a6c0d3e}
+
+
+Funcao que retorna o mes atual. 
+
+\begin{DoxyReturn}{Returns}
+mes atual 
+\end{DoxyReturn}
+\hypertarget{class_data_a0d2b92a9f9a418ab45407f9c0a19e92b}{}\index{Data@{Data}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Data@{Data}}
+\subsubsection[{set\+Data(int d, int m, int a)}]{\setlength{\rightskip}{0pt plus 5cm}void Data\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{int}]{d, }
+\item[{int}]{m, }
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_data_a0d2b92a9f9a418ab45407f9c0a19e92b}
+
+
+Funcao que permite o utilizador alterar o dia mes e ano atuais com verificações de input. @ param d \+: representa o dia @ param m \+: representa o mes @ param a \+: represnta o ano. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_data_aa4314ba62ccb03334c7edc9a27dfa51d}{}\index{Data@{Data}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Data@{Data}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Data} \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_data_aa4314ba62ccb03334c7edc9a27dfa51d}
+
+
+Funcao friend\+: funcao que acede aos membros privados da classe. operator$<$$<$ permite imprimir no ecra o objeto \hyperlink{class_data}{Data}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output \\
+\hline
+{\em d} & objeto \hyperlink{class_data}{Data} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+out 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+System.\+h\item 
+System.\+cpp\end{DoxyCompactItemize}
