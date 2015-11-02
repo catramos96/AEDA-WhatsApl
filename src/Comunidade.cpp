@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 
+
 Comunidade::Comunidade(){
 	comunidade.clear(); //inicializar o vetor
 }

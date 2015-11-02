@@ -9,7 +9,7 @@ using namespace std;
 class Comunidade
 {
 private:
-	vector<Utilizador *> comunidade;
+	vector<Utilizador*> comunidade;
 public:
 	Comunidade();
 	int existeUtil(Utilizador *util) const;

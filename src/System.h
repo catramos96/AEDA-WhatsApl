@@ -6,6 +6,7 @@
 #include <sstream>
 #include <vector>
 #include <time.h>
+#include <windows.h> 
 
 using namespace std;
 
@@ -137,6 +138,7 @@ public:
 	time_t getHoraNova();
 };
 
+void clrscr(void);
 
 
 #endif /* SRC_SYSTEM_H_ */

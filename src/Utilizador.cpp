@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -34,7 +35,7 @@ Utilizador::Utilizador(bool visibilidade, string login, string nome, string emai
 }
 
 /*******************************************************
- * 				    GET				     	   *
+ * 				                GET				               	   *
  ******************************************************/
 
 string Utilizador::getNome() const {
@@ -58,15 +59,12 @@ Data Utilizador::getDataAdesao() const {
 }
 
 vector<Utilizador *> Utilizador::getAmigos() const {
-	return amigos;
+  return amigos;
 }
 
-vector<Utilizador *> Utilizador::getPedidosAmizade() const {
-	return pedidosAmizade;
-}
 
 /*******************************************************
- * 				   	 SET				     	   *
+ * 			            	   	 SET				             	   *
  ******************************************************/
 
  void Utilizador::setLogin(string l)
@@ -86,37 +84,42 @@ void Utilizador::setVisibilidade(bool v) {
 	visibilidade = v;
 }
 
+void Utilizador::setAmigos(Utilizador *u) {
+  vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
+  if (it != amigos.end())
+    throw AmigoJaExiste(*u);
+  else
+    amigos.push_back(u);
+}
 
 /*******************************************************
- * 				   				     	   *
+ * 				   				 ADICIONAR                     	   *
  ******************************************************/
 
-void Utilizador::addUtilizador(vector<Utilizador *> v, Utilizador &u) {
-	vector<Utilizador *>::iterator it = find(v.begin(), v.end(), &u);
-	if (it != v.end())
-		throw UtilizadorJaExiste(u);
-	else
-		v.push_back(&u);
-}
+
+  void Utilizador::addAmigo(Utilizador &u) {
+    setAmigos(&u);
+    u.setAmigos(this);
+  }
 
 void Utilizador::addTelemovel(int t) {
 	vector<int>::iterator it = find(telemoveis.begin(), telemoveis.end(), t);
-	if (it != telemoveis.end())
+	if (it == telemoveis.end())
 		telemoveis.push_back(t);
 	else
 		throw TelemovelJaExiste(t);
 }
 
 /*******************************************************
- * 				   			     	   *
+ * 				   			      REMOVER                    	   *
  ******************************************************/
 
-void Utilizador::removerUtilizador(vector<Utilizador *> v, Utilizador &u) {
-	vector<Utilizador *>::iterator it = find(v.begin(), v.end(), &u);
-	if (it == v.end())
-		throw UtilizadorInexistente(u);
+void Utilizador::deletAmigo(Utilizador *u) {
+	vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
+	if (it == amigos.end())
+		throw UtilizadorInexistente(*u);
 	else
-		v.erase(it);
+		amigos.erase(it);
 }
 
 void Utilizador::removerTelemovel(int t) {
@@ -127,9 +130,10 @@ void Utilizador::removerTelemovel(int t) {
 		throw TelemovelInexistente(t);
 }
 
+
 void Utilizador::removerAmigo(Utilizador &u) {
-	removerUtilizador(amigos, u);
-	u.removerUtilizador(u.getAmigos(), *this);
+	deletAmigo(&u); //remove dos meus amigos
+	u.deletAmigo(this); //remove me dos amigos dele
 }
 
 /*******************************************************
@@ -149,6 +153,7 @@ void Utilizador::imprimirDefinicoes() const {
 			if (i == telemoveis.size() - 1)
 				cout << " , ";
 		}
+    cout << endl;
 	}
 	else{
 		cout << "Perfil : privado" << endl;
@@ -157,9 +162,15 @@ void Utilizador::imprimirDefinicoes() const {
 	}
 }
 
+void Utilizador::imprimirAmigos() const {
+  for (unsigned int i = 0; i < amigos.size(); i++)
+  {
+    cout << amigos[i]->getNome() << "    " << amigos[i]->getLogin() << endl;
+  }
+}
 
 /*******************************************************
- * 				   	OVERLOADING		     	   *
+ * 				          	OVERLOADING		              	   *
  ******************************************************/
 
 bool Utilizador::operator==(const Utilizador&u) const {
@@ -170,8 +181,9 @@ bool Utilizador::operator<(const Utilizador &u) const{
 	return (login < u.login);
 }
 
+
 ostream & operator<<(ostream & out, const Utilizador & u) {
-	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : " << u.getDataAdesao;
+	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : " << u.getDataAdesao();
 	return out;
 }
 
