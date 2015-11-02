@@ -3,19 +3,67 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_utilizador_ab7d7d3512337c2483f664f882d639ade}{}{\bfseries Utilizador} (string login, string nome, string email, \hyperlink{class_data}{Data} data\+Adesao)\label{class_utilizador_ab7d7d3512337c2483f664f882d639ade}
-
-\item 
-\hypertarget{class_utilizador_a124306ea46d9588481d500285c2acc11}{}bool {\bfseries add\+Telemovel} (int t)\label{class_utilizador_a124306ea46d9588481d500285c2acc11}
-
-\item 
-\hypertarget{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}{}bool {\bfseries operator==} (const \hyperlink{class_utilizador}{Utilizador} \&u) const \label{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}
+\hypertarget{class_utilizador_a470435e7e91ef2aa93eaf97b0615499b}{}{\bfseries Utilizador} (bool visibilidade, string login, string nome, string email, \hyperlink{class_data}{Data} data\+Adesao, int telemovel, int idade)\label{class_utilizador_a470435e7e91ef2aa93eaf97b0615499b}
 
 \item 
 \hypertarget{class_utilizador_aa5af9c1385b0a93116dd8a80264b887a}{}string {\bfseries get\+Nome} () const \label{class_utilizador_aa5af9c1385b0a93116dd8a80264b887a}
 
 \item 
+\hypertarget{class_utilizador_a9fc99ac7634ff085ca0f3afd4d502cc7}{}string {\bfseries get\+Email} () const \label{class_utilizador_a9fc99ac7634ff085ca0f3afd4d502cc7}
+
+\item 
 \hypertarget{class_utilizador_ad6c565c391bd19de3462e50a4e05c9a6}{}string {\bfseries get\+Login} () const \label{class_utilizador_ad6c565c391bd19de3462e50a4e05c9a6}
+
+\item 
+\hypertarget{class_utilizador_a99cdee165a8446fb67f3e0cab0831e80}{}bool {\bfseries get\+Visibilidade} () const \label{class_utilizador_a99cdee165a8446fb67f3e0cab0831e80}
+
+\item 
+\hypertarget{class_utilizador_af6c41442d2029ccb1a135092a5c27007}{}\hyperlink{class_data}{Data} {\bfseries get\+Data\+Adesao} () const \label{class_utilizador_af6c41442d2029ccb1a135092a5c27007}
+
+\item 
+\hypertarget{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}{}vector$<$ \hyperlink{class_utilizador}{Utilizador} $\ast$ $>$ {\bfseries get\+Amigos} () const \label{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}
+
+\item 
+\hypertarget{class_utilizador_a11032f76b9d07c21e9111155519407c5}{}void {\bfseries set\+Login} (string l)\label{class_utilizador_a11032f76b9d07c21e9111155519407c5}
+
+\item 
+\hypertarget{class_utilizador_a27aeea3bb85f457a2d42ff6f0a1240dd}{}void {\bfseries set\+Nome} (string n)\label{class_utilizador_a27aeea3bb85f457a2d42ff6f0a1240dd}
+
+\item 
+\hypertarget{class_utilizador_a97ccfb2ed2a5cff9a7464760e10e1102}{}void {\bfseries set\+Email} (string)\label{class_utilizador_a97ccfb2ed2a5cff9a7464760e10e1102}
+
+\item 
+\hypertarget{class_utilizador_a2228288656c31e63710c31bf0d8eb58f}{}void {\bfseries set\+Visibilidade} (bool v)\label{class_utilizador_a2228288656c31e63710c31bf0d8eb58f}
+
+\item 
+\hypertarget{class_utilizador_a3c3b8ed8bee11547245a7f13bfa7a8e7}{}void {\bfseries set\+Amigos} (\hyperlink{class_utilizador}{Utilizador} $\ast$u)\label{class_utilizador_a3c3b8ed8bee11547245a7f13bfa7a8e7}
+
+\item 
+\hypertarget{class_utilizador_a896ea43c9f3c7224b2985b012e14b70d}{}void {\bfseries add\+Amigo} (\hyperlink{class_utilizador}{Utilizador} \&u)\label{class_utilizador_a896ea43c9f3c7224b2985b012e14b70d}
+
+\item 
+\hypertarget{class_utilizador_a276824f7ae7a661f255a986cd402b1d9}{}void {\bfseries add\+Telemovel} (int t)\label{class_utilizador_a276824f7ae7a661f255a986cd402b1d9}
+
+\item 
+\hypertarget{class_utilizador_a16130fd5f65be8d5901b679c51611a28}{}void {\bfseries delet\+Amigo} (\hyperlink{class_utilizador}{Utilizador} $\ast$u)\label{class_utilizador_a16130fd5f65be8d5901b679c51611a28}
+
+\item 
+\hypertarget{class_utilizador_a7d098103df2ac15fb1da313065804f02}{}void {\bfseries remover\+Telemovel} (int t)\label{class_utilizador_a7d098103df2ac15fb1da313065804f02}
+
+\item 
+\hypertarget{class_utilizador_aeea440a088526eea36ebcc27d6472e4f}{}void {\bfseries remover\+Amigo} (\hyperlink{class_utilizador}{Utilizador} \&u)\label{class_utilizador_aeea440a088526eea36ebcc27d6472e4f}
+
+\item 
+\hypertarget{class_utilizador_a1d4b8650dfe1d7a86f10192153e132d5}{}void {\bfseries imprimir\+Definicoes} () const \label{class_utilizador_a1d4b8650dfe1d7a86f10192153e132d5}
+
+\item 
+\hypertarget{class_utilizador_a433c888d3d5d669cda5fcb8d22832b37}{}void {\bfseries imprimir\+Amigos} () const \label{class_utilizador_a433c888d3d5d669cda5fcb8d22832b37}
+
+\item 
+\hypertarget{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}{}bool {\bfseries operator==} (const \hyperlink{class_utilizador}{Utilizador} \&u) const \label{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}
+
+\item 
+\hypertarget{class_utilizador_a19b6202cece0cde531de23a1fd24b4c6}{}bool {\bfseries operator$<$} (const \hyperlink{class_utilizador}{Utilizador} \&u) const \label{class_utilizador_a19b6202cece0cde531de23a1fd24b4c6}
 
 \end{DoxyCompactItemize}
 \subsection*{Friends}

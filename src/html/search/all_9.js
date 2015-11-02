@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_3c_3c',['operator&lt;&lt;',['../class_membro.html#afc9bed25c3d6144f71613273a59776fd',1,'Membro::operator&lt;&lt;()'],['../class_horas.html#ad76a7152a5b1492bcda5507aa928db73',1,'Horas::operator&lt;&lt;()'],['../class_data.html#aa4314ba62ccb03334c7edc9a27dfa51d',1,'Data::operator&lt;&lt;()']]],
-  ['operator_3d_3d',['operator==',['../class_membro.html#a46bc54549fa9d3a84fbfdbc0f1ffe0b4',1,'Membro']]]
+  ['naomoderador',['NaoModerador',['../class_nao_moderador.html',1,'NaoModerador'],['../class_nao_moderador.html#a7b454f79c86898f0671d4dbcf7f60c6b',1,'NaoModerador::NaoModerador(Utilizador mod)'],['../class_nao_moderador.html#a7b454f79c86898f0671d4dbcf7f60c6b',1,'NaoModerador::NaoModerador(Utilizador mod)']]],
+  ['nummembros',['numMembros',['../class_grupo.html#a32080a4eae4ff9e2058d1ab8fe3e757f',1,'Grupo']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['naomoderador',['NaoModerador',['../class_grupo_1_1_nao_moderador.html#aa3414e6aa23955428633d53dcae7556d',1,'Grupo::NaoModerador']]],
-  ['nummembros',['numMembros',['../class_grupo.html#a32080a4eae4ff9e2058d1ab8fe3e757f',1,'Grupo']]]
+  ['isbloqueado',['isBloqueado',['../class_membro.html#a4fee0ae7563027e70cf03456e74feffc',1,'Membro']]],
+  ['ismoderador',['isModerador',['../class_grupo.html#a993d53539e7008420ff47baaa0628d85',1,'Grupo']]]
 ];

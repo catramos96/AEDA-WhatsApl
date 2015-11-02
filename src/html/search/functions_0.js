@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bloquearmembro',['bloquearMembro',['../class_grupo.html#a4d2d3a38bbc3bd324be9269b2ad9a11d',1,'Grupo']]]
+  ['adicionarutil',['adicionarUtil',['../class_comunidade.html#a1961b08389ea8fc40a7cdd099d733ad7',1,'Comunidade']]]
 ];
