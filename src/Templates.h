@@ -22,3 +22,19 @@ void insertionSort(vector<Comparable> &v)
 		v[j] = tmp;
 	}
 }
+
+/************************************
+*	    	    EXCECAO MAIN        		*
+***********************************/
+template <class N>
+class OpccaoInvalida {
+public:
+  OpccaoInvalida(N op, N min, N max) { this->op = op; this->min = min; this->max = max; };
+  getMin() const { return min; };
+  getMax() const { return max; };
+  getOp() const { return op; };
+private:
+  N op;
+  N min;
+  N max;
+};

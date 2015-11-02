@@ -137,4 +137,6 @@ public:
 	time_t getHoraNova();
 };
 
+
+
 #endif /* SRC_SYSTEM_H_ */

@@ -5,7 +5,7 @@
 #define SRC_UTILIZADOR_H_
 
 #include "System.h"
-
+#include "Conversa.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,63 +20,45 @@ private:
 	Data dataAdesao;
 	int idade;
 	vector<Utilizador *> amigos;
-	vector<Utilizador *> bloqueados;
-	vector<Utilizador *> bloquearamMe;
 	vector<Utilizador *> pedidosAmizade;
-	vector<Utilizador *> comunidade;
-	//vector<Conversa *> conversas;
-	vector<string> notificacoes;
+	vector<Conversa *> conversas;
 public:
 	Utilizador();
 	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
-	string getNome() const;
 
 	//GETS
 
+  string getNome() const;
 	string getEmail() const;
 	string getLogin() const;
 	bool getVisibilidade() const;
-	vector<int> getTelemoveis() const;
 	Data getDataAdesao() const;
 	vector<Utilizador *> getAmigos() const;
-	vector<Utilizador *> getBloqueados() const;
-	vector<Utilizador *> getBloquearamMe() const;
 	vector<Utilizador *> getPedidosAmizade() const;
-	//vector<Conversa *> getConversas() const;
-	vector<string> getNotificacoes() const;
 
 	//SETS
 
-	bool setLogin(string l, vector<Utilizador*> comunidade); //vector com os nomes da comunidade
+  void setLogin(string l);
 	void setNome(string n);
 	void setEmail(string);
 	void setVisibilidade(bool v);
 	//void setAmigos(Utilizador &u);
-	//void setBloquearamMe(Utilizador &u);
 
+  //void addConversa(Conversa &c);
 	void addUtilizador(vector<Utilizador *> v, Utilizador &u);
 	void addTelemovel(int t);
-	void aceitarAmizade(Utilizador &u); //de pedidos de amizade
-	void bloquearUtilizador(Utilizador &u);
+	//void aceitarAmizade(Utilizador &u); //de pedidos de amizade
+  //bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
 
 	void removerUtilizador(vector<Utilizador *> v, Utilizador &u);
 	void removerTelemovel(int t);
 	void removerAmigo(Utilizador &u);
-	void desbloquearUtilizador(Utilizador &u);
-	//void addConversa(Conversa &c);
 	//void removerConversa(Conversa &c);
-	//bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
+	
 
 	//IMPRESS STATUS
 
 	void imprimirDefinicoes() const;
-	void imprimirNotificacoes() const;
-	void imprimirGrupo(vector<Utilizador *> v) const;
-	void imprimirAmigos() const { imprimirGrupo(amigos); };
-	void imprimirBloqueados() const { imprimirGrupo(bloqueados); };
-	void imprimirBloquearamMe() const { imprimirGrupo(bloquearamMe); };
-	void imprimirPedidosAmizade() const { imprimirGrupo(pedidosAmizade); };
-	void imprimirComunidade() const { imprimirGrupo(comunidade); };
 
 	//OVERLOADING DE OPERADORES
 
@@ -123,5 +105,11 @@ public:
 	int getTelemovel() const { return t; };
 };
 
+class IdadeInsuficiente {
+public:
+  IdadeInsuficiente(int idade) { this->idade = idade; };
+private:
+  int idade;
+};
 
 #endif /* SRC_UTILIZADOR_H_ */

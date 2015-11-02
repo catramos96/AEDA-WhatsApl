@@ -1,6 +1,5 @@
 #include "Utilizador.h"
 #include "Templates.h"
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,7 +7,7 @@
 using namespace std;
 
 /*******************************************************
- * 					CLASSE UTILIZADOR				   *
+ * 				      	CLASSE UTILIZADOR			          	   *
  ******************************************************/
 
 Utilizador::Utilizador() {
@@ -16,6 +15,7 @@ Utilizador::Utilizador() {
 	login = "";
 	nome = "";
 	email = "";
+  idade = 100;
 	Data d;
 	idade = 0;
 	dataAdesao = d;
@@ -27,6 +27,8 @@ Utilizador::Utilizador(bool visibilidade, string login, string nome, string emai
 	this->nome = nome;
 	this->email = email;
 	this->dataAdesao = dataAdesao;
+  if (idade < 18)
+  throw IdadeInsuficiente(idade);
 	this->idade = idade;
 	telemoveis.push_back(telemovel);
 }
@@ -51,10 +53,6 @@ bool Utilizador::getVisibilidade() const {
 	return visibilidade;
 }
 
-vector<int> Utilizador::getTelemoveis() const {
-	return telemoveis;
-}
-
 Data Utilizador::getDataAdesao() const {
 	return dataAdesao;
 }
@@ -63,42 +61,18 @@ vector<Utilizador *> Utilizador::getAmigos() const {
 	return amigos;
 }
 
-vector<Utilizador *> Utilizador::getBloqueados() const {
-	return bloqueados;
-}
-
-vector<Utilizador *> Utilizador::getBloquearamMe() const {
-	return bloquearamMe;
-}
-
 vector<Utilizador *> Utilizador::getPedidosAmizade() const {
 	return pedidosAmizade;
-}
-
-/*
- vector<Conversa *> Utilizador::getConversa(Conversa &c){
- return conversas;
- }
- */
-
-vector<string> Utilizador::getNotificacoes() const {
-	return notificacoes;
 }
 
 /*******************************************************
  * 				   	FUN합ES SET				     	   *
  ******************************************************/
 
-bool Utilizador::setLogin(string login, vector<Utilizador*> comunidade) {
-	Data d;
-	Utilizador u(false, login, "", "", d, 0);
-	if (sequentialSearch(comunidade, &u) == -1) {
-		this->login = login;
-		return true;
-	}
-	else
-		throw UtilizadorJaExiste(login);
-}
+ void Utilizador::setLogin(string l)
+ {
+   login = l;
+ }
 
 void Utilizador::setNome(string n) {
 	nome = n;
@@ -133,27 +107,6 @@ void Utilizador::addTelemovel(int t) {
 		throw TelemovelJaExiste(t);
 }
 
-/*
-void Utilizador::aceitarAmizade(Utilizador &u) {
-vector<Utilizador *>::iterator it = find(pedidosAmizade.begin(), pedidosAmizade.end(), &u);
-if (it == pedidosAmizade.end())
-throw UtilizadorInexistente(u);
-else {
-amigos.push_back(&u);
-u.setAmigos(*this);
-}
-}
-
-void Utilizador::bloquearUtilizador(Utilizador &u) {
-vector<Utilizador *>::iterator it = find(comunidade.begin(), comunidade.end(), &u);
-if (it == comunidade.end())
-throw UtilizadorInexistente(u);
-else {
-bloqueados.push_back(&u);
-u.setBloquearamMe(*this);
-}
-}
-*/
 /*******************************************************
  * 				   	FUN합ES REMOVER			     	   *
  ******************************************************/
@@ -179,12 +132,6 @@ void Utilizador::removerAmigo(Utilizador &u) {
 	u.removerUtilizador(u.getAmigos(), *this);
 }
 
-/*
-void Utilizador::desbloquearUtilizador(Utilizador &u) {
-removerUtilizador(bloqueados, u);
-u.removerUtilizador(u.getBloqueados(), *this);
-}
-*/
 /*******************************************************
  * 				   	FUN합ES IMPRIMIR		     	   *
  ******************************************************/
@@ -210,18 +157,6 @@ void Utilizador::imprimirDefinicoes() const {
 	}
 }
 
-void Utilizador::imprimirNotificacoes() const
-{
-	for (unsigned int i = 0; i < notificacoes.size(); ++i) {
-		cout << notificacoes[i] << endl;
-	}
-}
-
-void Utilizador::imprimirGrupo(vector<Utilizador *> v) const {
-	for (unsigned int i = 0; i < v.size(); ++i) {
-		cout << v[i] << endl;
-	}
-}
 
 /*******************************************************
  * 				   	FUN합ES OVERLOADING		     	   *
