@@ -81,6 +81,7 @@ public:
 	//OVERLOADING DE OPERADORES
 
 	bool operator==(const Utilizador&u)const;
+	bool operator<(const Utilizador &u) const;
 	friend ostream & operator<<(ostream & out, const Utilizador & u);
 
 };

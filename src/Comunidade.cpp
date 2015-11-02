@@ -19,25 +19,26 @@ Utilizador *Comunidade::utilizadorNaPosicao(int pos) const{
 }
 
 void Comunidade::adicionarUtil(Utilizador *util){
-	if (existeUtil(util) != -1)
+	if (existeUtil(util) == -1)
 		comunidade.push_back(util);
 	else
-		throw UtilizadorInexistente(*util);
+		throw UtilizadorJaExiste(*util);
 }
 
-bool comparaData(const Utilizador&u1, const Utilizador&u2){
-	/*
-	if (u < d2)
-		return true;
-	else d1 < d2;*/
+bool comparaData(const Utilizador *u1, const Utilizador *u2){
+	return ((*u1).getDataAdesao() < (*u2).getDataAdesao());
 }
 
-bool Comunidade::ordenaData(){
+void Comunidade::ordenaData(){
 	sort(comunidade.begin(), comunidade.end(), comparaData);
 }
 
-bool Comunidade::ordenaLogin(){
-	insertionSort(comunidade);
+bool comparaLogin(const Utilizador *u1, const Utilizador *u2){
+	return ((*u1).getLogin() < (*u2).getLogin());
+}
+
+void Comunidade::ordenaLogin(){
+	sort(comunidade.begin(), comunidade.end(), comparaLogin);
 }
 
 void Comunidade::verUtilizador(Utilizador *util) const{
@@ -53,5 +54,5 @@ void Comunidade::verUtilizador(Utilizador *util) const{
 
 void Comunidade::printComunidade() const{
 	for (unsigned int i = 0; i < comunidade.size(); i++)
-		cout << comunidade.at(i);	
+		cout << *comunidade.at(i) << endl;
 }

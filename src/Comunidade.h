@@ -15,8 +15,8 @@ public:
 	int existeUtil(Utilizador *util) const;
 	Utilizador *utilizadorNaPosicao(int pos) const;
 	void adicionarUtil(Utilizador *util);
-	bool ordenaData();
-	bool ordenaLogin();
+	void ordenaData();
+	void ordenaLogin();
 	void verUtilizador(Utilizador *util) const;
 	void printComunidade() const;
 };

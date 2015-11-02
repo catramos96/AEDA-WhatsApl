@@ -12,6 +12,7 @@ using namespace std;
 int main(){
 
 	try{
+		/*
 		Data data;
 		int dia, m, a;
 		cout << "Dia, mes, ano ";
@@ -25,18 +26,19 @@ int main(){
 		cin >> h >> min;
 		hora.setHoras(h, min);
 		cout << hora << endl;
-
+		*/
 		//--------------------//
 
-		Data d(1, 1, 1);
-		Utilizador Ana(true, "ana123", "Ana", "ana@kdsf.com", d, 123456);
-		Data d1(4, 5, 6);
-		Utilizador Rui(false, "Rui1234", "Rui", "rui@bgd.com", d1, 4455);
-		Data d2(2, 3, 4);
-		Utilizador Sofia(true, "Sofia12345", "Sofia", "sofia@dsjh.com", d2, 7878);
-		Data d3(3, 4, 6);
-		Utilizador Carlos(false, "456", "Carlos", "carlos.eedsnh.com", d3, 456456);
+		Data d(1, 12, 2011);
+		Utilizador Ana(true, "anocas", "Ana","ana@kdsf.com", d, 123456, 20);
+		Data d1(4, 7, 2011);
+		Utilizador Rui(false, "rsihd", "Rui", "rui@bgd.com", d1, 4455, 30);
+		Data d2(2, 3, 2004);
+		Utilizador Sofia(true, "sofs", "Sofia", "sofia@dsjh.com", d2, 7878, 15);
+		Data d3(30, 4, 2015);
+		Utilizador Carlos(false, "ccppo", "Carlos", "carlos.eedsnh.com", d3, 456456, 24);
 
+		/*
 		Grupo fixes("fixes", d, Ana);
 
 		fixes.pedidoAdesao(Rui, Ana, d1, true);
@@ -63,7 +65,7 @@ int main(){
 		fixes.printStatus();
 		//fixes.desbloquearMembro(Carlos, Ana, d8); //membro inexistente
 		//fixes.desbloquearMembro(Ana, Rui, d8); // nao e moderador
-
+		*/
 		//--------------------------------------//
 
 		Comunidade global;
@@ -71,16 +73,24 @@ int main(){
 		global.adicionarUtil(&Rui);
 		global.adicionarUtil(&Carlos);
 		global.adicionarUtil(&Sofia);
-
+		
 		global.printComunidade();
+		cout << endl << endl;
 		global.ordenaData();
 		global.printComunidade();
+		cout << endl << endl;
 		global.ordenaLogin();
+		global.printComunidade();
+		cout << endl << endl;
+		
 		global.verUtilizador(&Ana);
+		cout << endl;
 		global.verUtilizador(&Rui);
+		cout << endl;
 		global.verUtilizador(&Carlos);
+		cout << endl;
 		global.verUtilizador(&Sofia);
-
+		
 	}
 	catch (Data::DataInvalida &e){
 		cout << "Data Invalida!" << endl;

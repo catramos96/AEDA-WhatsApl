@@ -11,6 +11,7 @@ int sequentialSearch(const vector<Comparable> &v, Comparable x)
 	return -1;     // não encontrou
 }
 
+/*
 template <class Comparable>
 void insertionSort(vector<Comparable> &v)
 {
@@ -22,3 +23,4 @@ void insertionSort(vector<Comparable> &v)
 		v[j] = tmp;
 	}
 }
+*/

@@ -89,6 +89,7 @@ vector<string> Utilizador::getNotificacoes() const {
  * 				   	FUNÇÕES SET				     	   *
  ******************************************************/
 
+/*
 bool Utilizador::setLogin(string login, vector<Utilizador*> comunidade) {
 	Data d;
 	Utilizador u(false, login, "", "", d, 0);
@@ -99,7 +100,7 @@ bool Utilizador::setLogin(string login, vector<Utilizador*> comunidade) {
 	else
 		throw UtilizadorJaExiste(login);
 }
-
+*/
 void Utilizador::setNome(string n) {
 	nome = n;
 }
@@ -231,8 +232,12 @@ bool Utilizador::operator==(const Utilizador&u) const {
 	return (login == u.login);
 }
 
+bool Utilizador::operator<(const Utilizador &u) const{
+	return (login < u.login);
+}
+
 ostream & operator<<(ostream & out, const Utilizador & u) {
-	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : " << u.getDataAdesao;
+	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : " << u.getDataAdesao();
 	return out;
 }
 
