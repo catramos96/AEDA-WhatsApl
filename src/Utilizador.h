@@ -42,6 +42,7 @@ public:
   void setLogin(string l);
 	void setNome(string n);
 	void setEmail(string);
+  void setIdade(int i);
 	void setVisibilidade(bool v);
 	void setAmigos(Utilizador *u);
 
@@ -62,6 +63,7 @@ public:
 	//IMPRESS STATUS
 
 	void imprimirDefinicoes() const;
+  void imprimirUtilizador() const;
   void imprimirAmigos() const;
 
 	//OVERLOADING DE OPERADORES

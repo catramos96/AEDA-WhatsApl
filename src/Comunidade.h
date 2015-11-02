@@ -13,6 +13,7 @@ private:
 public:
 	Comunidade();
 	int existeUtil(Utilizador *util) const;
+  bool existeLogin(string l) const;
 	Utilizador *utilizadorNaPosicao(int pos) const;
 	void adicionarUtil(Utilizador *util);
 	void ordenaData();

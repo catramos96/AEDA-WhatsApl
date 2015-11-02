@@ -80,6 +80,12 @@ void Utilizador::setEmail(string e) {
 	email = e;
 }
 
+void Utilizador::setIdade(int i) {
+  if (i < 18)
+    throw IdadeInsuficiente(i);
+  idade = i;
+}
+
 void Utilizador::setVisibilidade(bool v) {
 	visibilidade = v;
 }
@@ -141,25 +147,40 @@ void Utilizador::removerAmigo(Utilizador &u) {
  ******************************************************/
 
 void Utilizador::imprimirDefinicoes() const {
-	if (visibilidade){
-		cout << "Perfil : publico" << endl;
-		cout << "Nome: " << nome << endl;
-		cout << "Login: " << login << endl;
-		cout << "Idade: " << idade << endl;
-		cout << "Email: " << email << endl;
-		cout << "Telemoveis: ";
-		for (unsigned int i = 0; i < telemoveis.size(); ++i) {
-			cout << telemoveis[i];
-			if (i == telemoveis.size() - 1)
-				cout << " , ";
-		}
+  cout << "Perfil (1 - publico , 0 - privado): " << visibilidade << endl;
+  cout << "Nome: " << nome << endl;
+  cout << "Login: " << login << endl;
+  cout << "Idade: " << idade << endl;
+  cout << "Email: " << email << endl;
+  cout << "Telemoveis: ";
+  for (unsigned int i = 0; i < telemoveis.size(); ++i) {
+    cout << telemoveis[i];
+    if (i == telemoveis.size() - 2)
+      cout << " , ";
+  }
+  cout << endl;
+}
+
+void Utilizador::imprimirUtilizador() const {
+  if (visibilidade) {
+    cout << "Perfil : publico" << endl;
+    cout << "Nome: " << nome << endl;
+    cout << "Login: " << login << endl;
+    cout << "Idade: " << idade << endl;
+    cout << "Email: " << email << endl;
+    cout << "Telemoveis: ";
+    for (unsigned int i = 0; i < telemoveis.size(); ++i) {
+      cout << telemoveis[i];
+      if (i == telemoveis.size() - 2)
+        cout << " , ";
+    }
     cout << endl;
-	}
-	else{
-		cout << "Perfil : privado" << endl;
-		cout << "Nome: " << nome << endl;
-		cout << "Login: " << login << endl;
-	}
+  }
+  else {
+    cout << "Perfil : privado" << endl;
+    cout << "Nome: " << nome << endl;
+    cout << "Login: " << login << endl;
+  }
 }
 
 void Utilizador::imprimirAmigos() const {
