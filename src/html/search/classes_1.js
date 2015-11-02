@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['grupo',['Grupo',['../class_grupo.html',1,'']]]
+  ['comunidade',['Comunidade',['../class_comunidade.html',1,'']]],
+  ['conversa',['Conversa',['../class_conversa.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['existemembro',['existeMembro',['../class_grupo.html#a4ff40f770a79eed6b55b9432cb2f907f',1,'Grupo']]]
+  ['comunidade',['Comunidade',['../class_comunidade.html#ad44e0775322f253c3c28bae06bf844de',1,'Comunidade']]]
 ];

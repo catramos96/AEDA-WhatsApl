@@ -1,0 +1,92 @@
+\hypertarget{class_comunidade}{}\section{Comunidade Class Reference}
+\label{class_comunidade}\index{Comunidade@{Comunidade}}
+
+
+Classe \hyperlink{class_comunidade}{Comunidade}. Class que contem e gere todos os utilizadores E possivel ordenar os utilizadores por data de adesão, login.  
+
+
+
+
+{\ttfamily \#include $<$Comunidade.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_comunidade_ad44e0775322f253c3c28bae06bf844de}{}\hyperlink{class_comunidade_ad44e0775322f253c3c28bae06bf844de}{Comunidade} ()\label{class_comunidade_ad44e0775322f253c3c28bae06bf844de}
+
+\begin{DoxyCompactList}\small\item\em Construtor Construtor default que inicializa o vector de utilizadores a zero. \end{DoxyCompactList}\item 
+int \hyperlink{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{existe\+Util} (\hyperlink{class_utilizador}{Utilizador} $\ast$util) const 
+\item 
+\hyperlink{class_utilizador}{Utilizador} $\ast$ \hyperlink{class_comunidade_a4c537ae9c435a276154051da96e628af}{utilizador\+Na\+Posicao} (int pos) const 
+\item 
+void \hyperlink{class_comunidade_a1961b08389ea8fc40a7cdd099d733ad7}{adicionar\+Util} (\hyperlink{class_utilizador}{Utilizador} $\ast$util)
+\item 
+void \hyperlink{class_comunidade_a4770f5f57ce9e47e0a661b3b923061d8}{ordena\+Data} ()
+\item 
+void \hyperlink{class_comunidade_a80e54e2c6d1f2b6011453b5043860c82}{ordena\+Login} ()
+\item 
+void \hyperlink{class_comunidade_abcdd6a3eba7ff0c2c53e5ea024a98a46}{ver\+Utilizador} (\hyperlink{class_utilizador}{Utilizador} $\ast$util) const 
+\item 
+void \hyperlink{class_comunidade_ae7c4558f4f6174518b7e15ab007f04fd}{print\+Comunidade} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe \hyperlink{class_comunidade}{Comunidade}. Class que contem e gere todos os utilizadores E possivel ordenar os utilizadores por data de adesão, login. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_comunidade_a1961b08389ea8fc40a7cdd099d733ad7}{}\index{Comunidade@{Comunidade}!adicionar\+Util@{adicionar\+Util}}
+\index{adicionar\+Util@{adicionar\+Util}!Comunidade@{Comunidade}}
+\subsubsection[{adicionar\+Util(\+Utilizador $\ast$util)}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::adicionar\+Util (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{util}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_a1961b08389ea8fc40a7cdd099d733ad7}
+@ brief Funcao que adiciona um utilizador à comunidade @ param util\+: utilizador @ return void \hypertarget{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{}\index{Comunidade@{Comunidade}!existe\+Util@{existe\+Util}}
+\index{existe\+Util@{existe\+Util}!Comunidade@{Comunidade}}
+\subsubsection[{existe\+Util(\+Utilizador $\ast$util) const }]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::existe\+Util (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{util}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_accf146332d17ad07080bcee3bb2a727c}
+@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o utilizador @ return posicao \hypertarget{class_comunidade_a4770f5f57ce9e47e0a661b3b923061d8}{}\index{Comunidade@{Comunidade}!ordena\+Data@{ordena\+Data}}
+\index{ordena\+Data@{ordena\+Data}!Comunidade@{Comunidade}}
+\subsubsection[{ordena\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::ordena\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_a4770f5f57ce9e47e0a661b3b923061d8}
+@ brief Funcao ordena a comunidade por data de adesao @ return void \hypertarget{class_comunidade_a80e54e2c6d1f2b6011453b5043860c82}{}\index{Comunidade@{Comunidade}!ordena\+Login@{ordena\+Login}}
+\index{ordena\+Login@{ordena\+Login}!Comunidade@{Comunidade}}
+\subsubsection[{ordena\+Login()}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::ordena\+Login (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_a80e54e2c6d1f2b6011453b5043860c82}
+@ brief Funcao ordena a comunidade por login @ return void \hypertarget{class_comunidade_ae7c4558f4f6174518b7e15ab007f04fd}{}\index{Comunidade@{Comunidade}!print\+Comunidade@{print\+Comunidade}}
+\index{print\+Comunidade@{print\+Comunidade}!Comunidade@{Comunidade}}
+\subsubsection[{print\+Comunidade() const }]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::print\+Comunidade (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_ae7c4558f4f6174518b7e15ab007f04fd}
+@ brief Funcao imprime todos os utilizadores da comunidade @ return void \hypertarget{class_comunidade_a4c537ae9c435a276154051da96e628af}{}\index{Comunidade@{Comunidade}!utilizador\+Na\+Posicao@{utilizador\+Na\+Posicao}}
+\index{utilizador\+Na\+Posicao@{utilizador\+Na\+Posicao}!Comunidade@{Comunidade}}
+\subsubsection[{utilizador\+Na\+Posicao(int pos) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utilizador} $\ast$ Comunidade\+::utilizador\+Na\+Posicao (
+\begin{DoxyParamCaption}
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_a4c537ae9c435a276154051da96e628af}
+@ brief Funcao retorna o utilizador que se encontra na posicao \char`\"{}pos\char`\"{} do vetor comunidade @ param pos\+: posicao do utilizador @ return utilzador \hypertarget{class_comunidade_abcdd6a3eba7ff0c2c53e5ea024a98a46}{}\index{Comunidade@{Comunidade}!ver\+Utilizador@{ver\+Utilizador}}
+\index{ver\+Utilizador@{ver\+Utilizador}!Comunidade@{Comunidade}}
+\subsubsection[{ver\+Utilizador(\+Utilizador $\ast$util) const }]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::ver\+Utilizador (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{util}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_abcdd6a3eba7ff0c2c53e5ea024a98a46}
+@ brief Funcao que imprime informações acerca do utilizador @ return void 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Comunidade.\+h\item 
+Comunidade.\+cpp\end{DoxyCompactItemize}

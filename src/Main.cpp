@@ -11,12 +11,20 @@
 
 using namespace std;
 
+/*PROBLEMAS:
+-Exceccao OpcaoInvalida com problemas (está comentada)
+-Exceccao DataInvalida
+*/
+
 void esperar() {
   system("pause");
 }
 
-//MENU INICIAL
+/*****************************************************************
+*                          MENU UNICIAL                          *  
+*****************************************************************/
 
+//opccao login
 Utilizador * login(Comunidade *c) {
   string login;
   int i;
@@ -33,6 +41,7 @@ Utilizador * login(Comunidade *c) {
   return u;
 }
 
+//opccao registar
 void registar(Comunidade *c) {
   bool vis;
   string login, nome, email;
@@ -61,6 +70,7 @@ void registar(Comunidade *c) {
   c->adicionarUtil(u);
 }
 
+//opccao comunidade
 void comunidade(Comunidade *c) {
   int op;
   cout << "Comunidade" << endl << endl;
@@ -92,6 +102,7 @@ void comunidade(Comunidade *c) {
   esperar();
 }
 
+//Analiza a opccao escolhida do menu
 Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
  
   Utilizador *u = new Utilizador();
@@ -122,6 +133,7 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
   return u;
 }
 
+//Header do menu inicial
 int headerInicio() {
   int op;
   clrscr();
@@ -137,8 +149,9 @@ int headerInicio() {
   if (op < 1 || op > 4) //Resposta errada
     throw OpccaoInvalida<int>(op, 1, 4);
   return op;
-}
+} 
 
+//Try e catch
 Utilizador * MenuInicial(Comunidade *c) {
   bool login = false;
   bool sair = false;
@@ -146,7 +159,7 @@ Utilizador * MenuInicial(Comunidade *c) {
   Utilizador* u = new Utilizador;
   do
   {
-    try{
+    try {
       op1 = headerInicio();
       u = opccaoMenuInicial(op1, c);
       if (u->getNome() != "" && u->getNome() != "sair")
@@ -176,7 +189,7 @@ Utilizador * MenuInicial(Comunidade *c) {
       cout << "So e permitido usar a aplicacao com maiores de 18 anos" << endl;
       esperar();
     }
-   
+
     /*
     catch (DataInvalida()) {
       cout << "Data Invalida!" << endl;
@@ -188,11 +201,15 @@ Utilizador * MenuInicial(Comunidade *c) {
   return u;
 }
 
+/*****************************************************************
+*                         MENU UTILIZADOR                        *
+*****************************************************************/
 
-//MENU UTILIZADOR
-
+//Opcao Amigos
 void amigosUtilizador(Utilizador *u, Comunidade *c) {
   int op;
+
+  //Menu Amigos
   cout << "AMIGOS" << endl << endl;
   cout << "Adicionar Novo Amigo (1)" << endl;
   cout << "Remover Amigo (2)" << endl;
@@ -258,10 +275,12 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
   }
 }
 
+//Opcao Definicoes
 void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 
   int op;
 
+  //Menu Definicoes
   cout << "DEFINICOES" << endl << endl;
   u->imprimirDefinicoes();
   cout << endl;
@@ -344,6 +363,8 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
     cout << "Opcao: ";
     cin >> r;
     clrscr();
+    if(r > 2 || r < 1)
+      throw OpccaoInvalida<int>(op, 1, 2);
     if (r == 1) {
       cout << "ADICIONAR TELEMOVEL" << endl << endl;
       cout << "Telemovel: ";
@@ -356,15 +377,14 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
       cin >> t;
       u->removerTelemovel(t);
     }
-    else
-      throw OpccaoInvalida<int>(op,1,2);
     break;
   }
     }
-  cout << "Mudanca bem succedida!" << endl << endl;
+  cout << endl << "Mudanca bem succedida!" << endl << endl;
   esperar();
 }
 
+//header do menu Utilizador
   int menuUtilizador(Utilizador *u) {
     int op;
     clrscr();
@@ -376,7 +396,7 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
     cout << "Conversas (3)" << endl;
     cout << "Comunidade (4)" << endl;
     cout << "Definicoes (5)" << endl;
-    cout << "Terminar Seccão (6)" << endl;
+    cout << "Terminar Seccao (6)" << endl;
     cout << endl;
     cout << "Seleccione uma opccao: ";
 
@@ -386,6 +406,7 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
     return op;
   }
 
+  //Analiza a opcao escolhida do menu utilizador
   void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
     clrscr();
     switch (op)
@@ -431,50 +452,55 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
     }
   }
 
+  //try e catch
+void MenuUtilizador(Utilizador *u, Comunidade *c) {
+  bool terminar = false;
+  int op;
+  do
+  {
+    try {
+      op = menuUtilizador(u);
+      if (op == 6)
+        terminar = true;
+      opccaoMenuUtilizador(u, c, op);
+    }
+    catch (OpccaoInvalida<int>(o)) {
+      cout << o.getOp() << "nao se encontra entre " << o.getMin() << " e " << o.getMax() << endl;
+      esperar();
+    }
+    catch (UtilizadorInexistente(u)) {
+      cout << "Nao existe um utilizador com esse login " << endl;
+      esperar();
+    }
+    catch (UtilizadorJaExiste(u)) {
+      cout << "Ja existe um utilizador com esse login " << endl;
+      esperar();
+    }
+    /*
+    catch (OpccaoInvalida<int>(o)) {
+    cout << o.getOp() << "nao se encontra entre " << o.getMin() << " e " << o.getMax() << endl;
+    esperar();
+    }
+    */
+    catch (IdadeInsuficiente(i)) {
+      cout << "So e permitido usar a aplicacao com maiores de 18 anos" << endl;
+      esperar();
+    }
+  } while (terminar == false);
+  }
 
-  //MAIN
+
+/*****************************************************************
+*                             MAIN                               *
+*****************************************************************/
   int main() {
     Comunidade *c = new Comunidade;
-    int op2;
     Utilizador *u = new Utilizador;
 
     while (1) {
       u = MenuInicial(c);
       clrscr();
-
-      //menu Utilizador
-      bool terminar = false;
-      do
-      {
-        try {
-          op2 = menuUtilizador(u);
-          if (op2 == 6)
-            terminar = true;
-          opccaoMenuUtilizador(u, c, op2);
-        }
-        catch (OpccaoInvalida<int>(o)) {
-          cout << o.getOp() << "nao se encontra entre " << o.getMin() << " e " << o.getMax() << endl;
-          esperar();
-        }
-        catch (UtilizadorInexistente(u)) {
-          cout << "Nao existe um utilizador com esse login " << endl;
-          esperar();
-        }
-        catch (UtilizadorJaExiste(u)) {
-          cout << "Ja existe um utilizador com esse login " << endl;
-          esperar();
-        }
-        /*
-        catch (OpccaoInvalida<int>(o)) {
-          cout << o.getOp() << "nao se encontra entre " << o.getMin() << " e " << o.getMax() << endl;
-          esperar();
-        }
-        */
-        catch (IdadeInsuficiente(i)) {
-          cout << "So e permitido usar a aplicacao com maiores de 18 anos" << endl;
-          esperar();
-        }
-      } while (terminar == false);
+      MenuUtilizador(u, c);      
     }
     return 0;
   }

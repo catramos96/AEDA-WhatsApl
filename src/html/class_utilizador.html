@@ -93,21 +93,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab7d7d3512337c2483f664f882d639ade"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7d7d3512337c2483f664f882d639ade"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Utilizador</b> (string login, string nome, string email, <a class="el" href="class_data.html">Data</a> dataAdesao)</td></tr>
-<tr class="separator:ab7d7d3512337c2483f664f882d639ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a124306ea46d9588481d500285c2acc11"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a124306ea46d9588481d500285c2acc11"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>addTelemovel</b> (int t)</td></tr>
-<tr class="separator:a124306ea46d9588481d500285c2acc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a051ebe3fbeadbb5b00a78da320a9f49e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a051ebe3fbeadbb5b00a78da320a9f49e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="class_utilizador.html">Utilizador</a> &amp;u) const </td></tr>
-<tr class="separator:a051ebe3fbeadbb5b00a78da320a9f49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a470435e7e91ef2aa93eaf97b0615499b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a470435e7e91ef2aa93eaf97b0615499b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Utilizador</b> (bool visibilidade, string login, string nome, string email, <a class="el" href="class_data.html">Data</a> dataAdesao, int telemovel, int idade)</td></tr>
+<tr class="separator:a470435e7e91ef2aa93eaf97b0615499b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5af9c1385b0a93116dd8a80264b887a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5af9c1385b0a93116dd8a80264b887a"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>getNome</b> () const </td></tr>
 <tr class="separator:aa5af9c1385b0a93116dd8a80264b887a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc99ac7634ff085ca0f3afd4d502cc7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9fc99ac7634ff085ca0f3afd4d502cc7"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>getEmail</b> () const </td></tr>
+<tr class="separator:a9fc99ac7634ff085ca0f3afd4d502cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6c565c391bd19de3462e50a4e05c9a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6c565c391bd19de3462e50a4e05c9a6"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>getLogin</b> () const </td></tr>
 <tr class="separator:ad6c565c391bd19de3462e50a4e05c9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99cdee165a8446fb67f3e0cab0831e80"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99cdee165a8446fb67f3e0cab0831e80"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getVisibilidade</b> () const </td></tr>
+<tr class="separator:a99cdee165a8446fb67f3e0cab0831e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6c41442d2029ccb1a135092a5c27007"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6c41442d2029ccb1a135092a5c27007"></a>
+<a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getDataAdesao</b> () const </td></tr>
+<tr class="separator:af6c41442d2029ccb1a135092a5c27007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad76009d2278707a5c9a1e8088633cfd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad76009d2278707a5c9a1e8088633cfd2"></a>
+vector&lt; <a class="el" href="class_utilizador.html">Utilizador</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAmigos</b> () const </td></tr>
+<tr class="separator:ad76009d2278707a5c9a1e8088633cfd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11032f76b9d07c21e9111155519407c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11032f76b9d07c21e9111155519407c5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setLogin</b> (string l)</td></tr>
+<tr class="separator:a11032f76b9d07c21e9111155519407c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27aeea3bb85f457a2d42ff6f0a1240dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27aeea3bb85f457a2d42ff6f0a1240dd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setNome</b> (string n)</td></tr>
+<tr class="separator:a27aeea3bb85f457a2d42ff6f0a1240dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97ccfb2ed2a5cff9a7464760e10e1102"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97ccfb2ed2a5cff9a7464760e10e1102"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setEmail</b> (string)</td></tr>
+<tr class="separator:a97ccfb2ed2a5cff9a7464760e10e1102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2228288656c31e63710c31bf0d8eb58f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2228288656c31e63710c31bf0d8eb58f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setVisibilidade</b> (bool v)</td></tr>
+<tr class="separator:a2228288656c31e63710c31bf0d8eb58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c3b8ed8bee11547245a7f13bfa7a8e7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c3b8ed8bee11547245a7f13bfa7a8e7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setAmigos</b> (<a class="el" href="class_utilizador.html">Utilizador</a> *u)</td></tr>
+<tr class="separator:a3c3b8ed8bee11547245a7f13bfa7a8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a896ea43c9f3c7224b2985b012e14b70d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a896ea43c9f3c7224b2985b012e14b70d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addAmigo</b> (<a class="el" href="class_utilizador.html">Utilizador</a> &amp;u)</td></tr>
+<tr class="separator:a896ea43c9f3c7224b2985b012e14b70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a276824f7ae7a661f255a986cd402b1d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a276824f7ae7a661f255a986cd402b1d9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addTelemovel</b> (int t)</td></tr>
+<tr class="separator:a276824f7ae7a661f255a986cd402b1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16130fd5f65be8d5901b679c51611a28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16130fd5f65be8d5901b679c51611a28"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>deletAmigo</b> (<a class="el" href="class_utilizador.html">Utilizador</a> *u)</td></tr>
+<tr class="separator:a16130fd5f65be8d5901b679c51611a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d098103df2ac15fb1da313065804f02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d098103df2ac15fb1da313065804f02"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removerTelemovel</b> (int t)</td></tr>
+<tr class="separator:a7d098103df2ac15fb1da313065804f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea440a088526eea36ebcc27d6472e4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeea440a088526eea36ebcc27d6472e4f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removerAmigo</b> (<a class="el" href="class_utilizador.html">Utilizador</a> &amp;u)</td></tr>
+<tr class="separator:aeea440a088526eea36ebcc27d6472e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4b8650dfe1d7a86f10192153e132d5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d4b8650dfe1d7a86f10192153e132d5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>imprimirDefinicoes</b> () const </td></tr>
+<tr class="separator:a1d4b8650dfe1d7a86f10192153e132d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433c888d3d5d669cda5fcb8d22832b37"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a433c888d3d5d669cda5fcb8d22832b37"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>imprimirAmigos</b> () const </td></tr>
+<tr class="separator:a433c888d3d5d669cda5fcb8d22832b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051ebe3fbeadbb5b00a78da320a9f49e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a051ebe3fbeadbb5b00a78da320a9f49e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="class_utilizador.html">Utilizador</a> &amp;u) const </td></tr>
+<tr class="separator:a051ebe3fbeadbb5b00a78da320a9f49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b6202cece0cde531de23a1fd24b4c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19b6202cece0cde531de23a1fd24b4c6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (const <a class="el" href="class_utilizador.html">Utilizador</a> &amp;u) const </td></tr>
+<tr class="separator:a19b6202cece0cde531de23a1fd24b4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
