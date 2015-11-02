@@ -6,7 +6,9 @@
 #include <vector>
 #include <algorithm>
 
-
+/********************************
+ *		CLASSE COMUNIDADE		*
+ *******************************/
 Comunidade::Comunidade(){
 	comunidade.clear(); //inicializar o vetor
 }
