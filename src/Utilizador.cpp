@@ -17,15 +17,17 @@ Utilizador::Utilizador() {
 	nome = "";
 	email = "";
 	Data d;
+	idade = 0;
 	dataAdesao = d;
 }
 
-Utilizador::Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel) {
+Utilizador::Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade) {
 	this->visibilidade = visibilidade;
 	this->login = login;
 	this->nome = nome;
 	this->email = email;
 	this->dataAdesao = dataAdesao;
+	this->idade = idade;
 	telemoveis.push_back(telemovel);
 }
 
@@ -133,23 +135,23 @@ void Utilizador::addTelemovel(int t) {
 
 /*
 void Utilizador::aceitarAmizade(Utilizador &u) {
-	vector<Utilizador *>::iterator it = find(pedidosAmizade.begin(), pedidosAmizade.end(), &u);
-	if (it == pedidosAmizade.end())
-		throw UtilizadorInexistente(u);
-	else {
-		amigos.push_back(&u);
-		u.setAmigos(*this);
-	}
+vector<Utilizador *>::iterator it = find(pedidosAmizade.begin(), pedidosAmizade.end(), &u);
+if (it == pedidosAmizade.end())
+throw UtilizadorInexistente(u);
+else {
+amigos.push_back(&u);
+u.setAmigos(*this);
+}
 }
 
 void Utilizador::bloquearUtilizador(Utilizador &u) {
-	vector<Utilizador *>::iterator it = find(comunidade.begin(), comunidade.end(), &u);
-	if (it == comunidade.end())
-		throw UtilizadorInexistente(u);
-	else {
-		bloqueados.push_back(&u);
-		u.setBloquearamMe(*this);
-	}
+vector<Utilizador *>::iterator it = find(comunidade.begin(), comunidade.end(), &u);
+if (it == comunidade.end())
+throw UtilizadorInexistente(u);
+else {
+bloqueados.push_back(&u);
+u.setBloquearamMe(*this);
+}
 }
 */
 /*******************************************************
@@ -177,31 +179,35 @@ void Utilizador::removerAmigo(Utilizador &u) {
 	u.removerUtilizador(u.getAmigos(), *this);
 }
 
+/*
 void Utilizador::desbloquearUtilizador(Utilizador &u) {
-	removerUtilizador(bloqueados, u);
-	u.removerUtilizador(u.getBloqueados(), *this);
+removerUtilizador(bloqueados, u);
+u.removerUtilizador(u.getBloqueados(), *this);
 }
-
+*/
 /*******************************************************
  * 				   	FUNÇÕES IMPRIMIR		     	   *
  ******************************************************/
 
 void Utilizador::imprimirDefinicoes() const {
-	cout << "Nome: " << nome << endl;
-	cout << "Login: " << login << endl;
-	cout << "Email: " << email << endl;
-	cout << "Telemoveis: ";
-	for (unsigned int i = 0; i < telemoveis.size(); ++i) {
-		cout << telemoveis[i];
-		if (i == telemoveis.size() - 1)
-			cout << " , ";
+	if (visibilidade){
+		cout << "Perfil : publico" << endl;
+		cout << "Nome: " << nome << endl;
+		cout << "Login: " << login << endl;
+		cout << "Idade: " << idade << endl;
+		cout << "Email: " << email << endl;
+		cout << "Telemoveis: ";
+		for (unsigned int i = 0; i < telemoveis.size(); ++i) {
+			cout << telemoveis[i];
+			if (i == telemoveis.size() - 1)
+				cout << " , ";
+		}
 	}
-	cout << endl;
-	cout << "Visibilidade: ";
-	if (visibilidade)
-		cout << "publica" << endl;
-	else
-		cout << "privada" << endl;
+	else{
+		cout << "Perfil : privado" << endl;
+		cout << "Nome: " << nome << endl;
+		cout << "Login: " << login << endl;
+	}
 }
 
 void Utilizador::imprimirNotificacoes() const
@@ -226,7 +232,7 @@ bool Utilizador::operator==(const Utilizador&u) const {
 }
 
 ostream & operator<<(ostream & out, const Utilizador & u) {
-	out << u.getNome();
+	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : " << u.getDataAdesao;
 	return out;
 }
 

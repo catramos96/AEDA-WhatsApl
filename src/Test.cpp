@@ -29,11 +29,11 @@ int main(){
 		//--------------------//
 
 		Data d(1, 1, 1);
-		Utilizador Ana(false, "ana123", "Ana", "ana@kdsf.com", d, 123456);
+		Utilizador Ana(true, "ana123", "Ana", "ana@kdsf.com", d, 123456);
 		Data d1(4, 5, 6);
 		Utilizador Rui(false, "Rui1234", "Rui", "rui@bgd.com", d1, 4455);
 		Data d2(2, 3, 4);
-		Utilizador Sofia(false, "Sofia12345", "Sofia", "sofia@dsjh.com", d2, 7878);
+		Utilizador Sofia(true, "Sofia12345", "Sofia", "sofia@dsjh.com", d2, 7878);
 		Data d3(3, 4, 6);
 		Utilizador Carlos(false, "456", "Carlos", "carlos.eedsnh.com", d3, 456456);
 
@@ -63,6 +63,23 @@ int main(){
 		fixes.printStatus();
 		//fixes.desbloquearMembro(Carlos, Ana, d8); //membro inexistente
 		//fixes.desbloquearMembro(Ana, Rui, d8); // nao e moderador
+
+		//--------------------------------------//
+
+		Comunidade global;
+		global.adicionarUtil(&Ana);
+		global.adicionarUtil(&Rui);
+		global.adicionarUtil(&Carlos);
+		global.adicionarUtil(&Sofia);
+
+		global.printComunidade();
+		global.ordenaData();
+		global.printComunidade();
+		global.ordenaLogin();
+		global.verUtilizador(&Ana);
+		global.verUtilizador(&Rui);
+		global.verUtilizador(&Carlos);
+		global.verUtilizador(&Sofia);
 
 	}
 	catch (Data::DataInvalida &e){

@@ -114,6 +114,10 @@ public:
 	 */
 	int getAno() const;
 	/**
+	 *
+	 */
+	bool operator<(const Data&d) const;
+	/**
 	 * @brief Funcao friend: funcao que acede aos membros privados da classe.
 	 * operator<< permite imprimir no ecra o objeto Data
 	 * @param out output

@@ -12,7 +12,13 @@ private:
 	vector<Utilizador *> comunidade;
 public:
 	Comunidade();
-	void adicionarUtil(Utilizador *utilizador);
+	int existeUtil(Utilizador *util) const;
+	Utilizador *utilizadorNaPosicao(int pos) const;
+	void adicionarUtil(Utilizador *util);
+	bool ordenaData();
+	bool ordenaLogin();
+	void verUtilizador(Utilizador *util) const;
+	void printComunidade() const;
 };
 
 #endif /* SRC_COMUNIDADE_H_ */

@@ -84,6 +84,21 @@ int Data::getDia() const{
 	return dia;
 }
 
+bool Data::operator<(const Data&d) const{
+	if (dia == d.dia){
+		if (mes == d.mes){
+			if (ano == d.ano)
+				return false;
+			else
+				return (ano < d.ano);
+		}
+		else
+			return (mes < d.mes);
+	}
+	else
+		return (dia < d.dia);
+}
+
 std::ostream & operator<<(std::ostream & out, const Data & d){
 	out << d.getDia() << " / " << d.getMes() << " / " << d.getAno();
 	return out;

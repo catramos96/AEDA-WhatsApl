@@ -18,6 +18,7 @@ private:
 	string login, nome, email;
 	vector<int> telemoveis;
 	Data dataAdesao;
+	int idade;
 	vector<Utilizador *> amigos;
 	vector<Utilizador *> bloqueados;
 	vector<Utilizador *> bloquearamMe;
@@ -27,7 +28,7 @@ private:
 	vector<string> notificacoes;
 public:
 	Utilizador();
-	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel);
+	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
 	string getNome() const;
 
 	//GETS
