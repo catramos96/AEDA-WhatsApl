@@ -136,6 +136,9 @@ public:
 	HoraNova(time_t time1);
 	void setHoraNova(time_t time1);
 	time_t getHoraNova();
+	const string getHoraNovaCompleta();
+	const string getHoraNovaHoras();
+	const string getHoraNovaData();
 };
 
 void clrscr(void);
