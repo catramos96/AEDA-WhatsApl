@@ -230,6 +230,11 @@ bool Utilizador::enviarMensagemUtilizador(Mensagem sms, Utilizador *u){
 
 bool Utilizador::enviarMensagemGrupo(Mensagem sms, Grupo *g){
 	for (unsigned int i = 0; i < grupos.size(); i++){
-
+		if (g == grupos.at(i)){
+			g->enviarMensagem(login, sms);
+			sms.setEmissor(login);
+			return true;
+		}
 	}
+	return false;
 }

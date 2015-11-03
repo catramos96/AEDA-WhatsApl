@@ -1,6 +1,3 @@
-/** @ \file Mensagem.h
- * header file que contém a classe Mensagem
- */
 #ifndef SRC_MENSAGEM_H_
 #define SRC_MENSAGEM_H_
 

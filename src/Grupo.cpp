@@ -4,7 +4,7 @@
 #include <sstream>
 
 /* Classe Membro */
-/*
+
 Membro::Membro(Utilizador util, Data adesaoGrupo){
 	this->util = util;
 	this->adesaoGrupo = adesaoGrupo;
@@ -46,12 +46,13 @@ ostream & operator<<(ostream & out, const Membro & m){
 
 /* Classe Grupo*/
 
-/*
+
 Grupo::Grupo(string titulo, Data criacao, Utilizador moderador){
 	stringstream out;
 	this->titulo = titulo;
 	this->criacao = criacao;
 	this->moderador = moderador;
+	conversa.adicionaParticipante(&moderador);
 	Membro *mod = new Membro(moderador, criacao);
 	membros.push_back(mod);
 	out << " HISTORICO: \n" << "Grupo " << titulo << " criado no dia " << criacao << endl << "Moderador : " << *mod << endl;
@@ -110,6 +111,7 @@ bool Grupo::pedidoAdesao(Utilizador u, Utilizador moderador, Data adesao, bool a
 			else{ // novo membro
 				Membro *novo = new Membro(u, adesao);
 				membros.push_back(novo);
+				conversa.adicionaParticipante(&u);
 				out << "Novo membro : " << u.getNome() << endl << "Data : " << adesao << endl;
 				status.push_back(out.str());
 				return true;
@@ -160,6 +162,7 @@ bool Grupo::retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual){
 	if (isModerador(moderador)){
 		if (existeMembro(temp) != -1){ //encontra o utilizador
 			membros.erase(membros.begin() + pos);
+			conversa.removeParticipante(&u);
 			out << "Membro eliminado : " << u.getNome() << endl << "Data : " << diaAtual << endl << endl;
 			status.push_back(out.str());
 			return true;
@@ -199,4 +202,22 @@ bool Grupo::desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual)
 	else
 		throw NaoModerador(moderador);
 }
-*/
+
+bool Grupo::enviarMensagem(string emissor, Mensagem sms){
+	//corresponder um login a um membro
+	Utilizador u;
+	u.setLogin(emissor);
+	Data d;
+	Membro *temp = new Membro(u, d);
+	int pos = existeMembro(temp);
+
+	if (pos != -1) //utilizador existe
+	{
+		if (temp->isBloqueado())
+			throw;// excecao que não deixa o utilizador enviar uma mensagem
+		else
+			conversa.adicionaSms(sms);
+	}
+	else
+		throw; // acabar isto
+}
