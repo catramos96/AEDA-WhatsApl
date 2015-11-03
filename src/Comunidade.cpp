@@ -1,10 +1,10 @@
-#include "Comunidade.h"
-#include "Templates.h"
-
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
+
+#include "Comunidade.h"
+#include "Templates.h"
 
 /********************************
  *		CLASSE COMUNIDADE		*

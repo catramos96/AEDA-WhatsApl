@@ -1,5 +1,5 @@
-#include "Utilizador.h"
 #include "Templates.h"
+#include "Utilizador.h"
 
 #include <iostream>
 #include <string>
@@ -17,8 +17,9 @@ Utilizador::Utilizador() {
 	login = "";
 	nome = "";
 	email = "";
-	Data d;
 	idade = 0;
+	telemoveis.clear();
+	Data d;
 	dataAdesao = d;
 }
 
@@ -202,30 +203,37 @@ bool Utilizador::operator<(const Utilizador &u) const{
 }
 
 ostream & operator<<(ostream & out, const Utilizador & u) {
-	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : " << u.getDataAdesao();
+	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : "<< u.getDataAdesao();
 	return out;
 }
 
-void Utilizador::criarConversa(Conversa *c){
-	vector<Utilizador *> temp;
-	temp = c->getParticipantes();
-	for (int i = 0; i < c->numParticipantes(); i++) //coloca a conversa no vetor das conversas de cada participante
-		temp.at(i)->conversas.push_back(c);
+void Utilizador::criarConversa(Utilizador *u){
+	vector<string> destinatarios;
+	destinatarios.push_back(u->getLogin());
+	destinatarios.push_back(login);
+	Conversa c(destinatarios);
 }
 
 bool Utilizador::enviarMensagemUtilizador(Mensagem sms, Utilizador *u){
-	vector<Utilizador *> temp;
+	vector<string> temp;
 
 	for (unsigned int i = 0; i < conversas.size(); i++){ //procurar o utilizador no vetor de conversas
 		temp = conversas.at(i)->getParticipantes();
 		for (unsigned int j = 0; j < temp.size(); j++)
-			if (temp.at(j) == u){ //encontrou o utilizador
+			if (temp.at(j) == u->getLogin()){ //encontrou o utilizador
 				conversas.at(i)->adicionaSms(sms);
 				sms.setEmissor(login);
 				return true;
 			}
 	}
 	return false;
+
+
+}
+
+void Utilizador::criarGrupo(string titulo, Data dataAtual){
+	Grupo *g = new Grupo(titulo, dataAtual, login);
+	grupos.push_back(g);
 }
 
 bool Utilizador::enviarMensagemGrupo(Mensagem sms, Grupo *g){
@@ -237,4 +245,22 @@ bool Utilizador::enviarMensagemGrupo(Mensagem sms, Grupo *g){
 		}
 	}
 	return false;
+}
+
+bool Utilizador::bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual){
+	Data d;
+	Membro moderador(login, d);
+	return g->bloquearMembro(u->getLogin(),moderador, diaAtual);
+}
+
+bool Utilizador::desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual){
+	Data d;
+	Membro moderador(login, d);
+	return g->desbloquearMembro(u->getLogin(),moderador, diaAtual);
+}
+
+bool Utilizador::removerMembro(Utilizador *u, Grupo *g, Data diaAtual){
+	Data d;
+	Membro moderador(login, d);
+	return g->retiraMembro(u->getLogin(),moderador, diaAtual);
 }
