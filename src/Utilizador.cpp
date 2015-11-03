@@ -62,21 +62,10 @@ vector<Utilizador *> Utilizador::getAmigos() const {
   return amigos;
 }
 
-<<<<<<< HEAD
-/*
-vector<Utilizador *> Utilizador::getPedidosAmizade() const {
-return pedidosAmizade;
-}
-
-/*******************************************************
-* 				   	 SET				     	   *
-******************************************************/
-=======
-
 /*******************************************************
  * 			            	   	 SET				             	   *
  ******************************************************/
->>>>>>> 7bec163f4faf91f6b251470377c7c010fdf7b2f0
+
 
 void Utilizador::setLogin(string l)
 {
@@ -113,8 +102,7 @@ void Utilizador::setAmigos(Utilizador *u) {
  * 				   				 ADICIONAR                     	   *
  ******************************************************/
 
-
-  void Utilizador::addAmigo(Utilizador &u) {
+void Utilizador::addAmigo(Utilizador &u) {
     setAmigos(&u);
     u.setAmigos(this);
   }
@@ -202,11 +190,7 @@ void Utilizador::imprimirAmigos() const {
 }
 
 /*******************************************************
-<<<<<<< HEAD
  * 				   		OVERLOADING			     	   *
-=======
- * 				          	OVERLOADING		              	   *
->>>>>>> 7bec163f4faf91f6b251470377c7c010fdf7b2f0
  ******************************************************/
 
 bool Utilizador::operator==(const Utilizador&u) const {
@@ -216,7 +200,6 @@ bool Utilizador::operator==(const Utilizador&u) const {
 bool Utilizador::operator<(const Utilizador &u) const{
 	return (login < u.login);
 }
-
 
 ostream & operator<<(ostream & out, const Utilizador & u) {
 	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : " << u.getDataAdesao();

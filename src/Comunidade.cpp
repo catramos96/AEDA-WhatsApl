@@ -17,6 +17,16 @@ int Comunidade::existeUtil(Utilizador *util) const{
 	return sequentialSearch(comunidade, util);
 }
 
+bool Comunidade::existeLogin(string l) const {
+	Utilizador *u = new Utilizador;
+	u->setLogin(l);
+	if (existeUtil(u) == -1)
+		return true;
+	else
+		throw UtilizadorJaExiste(*u);
+}
+	
+
 Utilizador *Comunidade::utilizadorNaPosicao(int pos) const{
 	return comunidade.at(pos);
 }

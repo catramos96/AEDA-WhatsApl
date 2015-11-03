@@ -59,6 +59,8 @@ public:
 	* @ return void
 	*/
 	void printComunidade() const;
+
+	bool existeLogin(string l) const;
 };
 
 #endif /* SRC_COMUNIDADE_H_ */
