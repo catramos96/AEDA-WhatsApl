@@ -1,5 +1,6 @@
 #include "Utilizador.h"
 #include "Templates.h"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -7,7 +8,7 @@
 using namespace std;
 
 /*******************************************************
- * 				      	CLASSE UTILIZADOR			          	   *
+ * 				   CLASSE UTILIZADOR	          	   *
  ******************************************************/
 
 Utilizador::Utilizador() {
@@ -15,7 +16,6 @@ Utilizador::Utilizador() {
 	login = "";
 	nome = "";
 	email = "";
-  idade = 100;
 	Data d;
 	idade = 0;
 	dataAdesao = d;
@@ -27,8 +27,8 @@ Utilizador::Utilizador(bool visibilidade, string login, string nome, string emai
 	this->nome = nome;
 	this->email = email;
 	this->dataAdesao = dataAdesao;
-  if (idade < 18)
-  throw IdadeInsuficiente(idade);
+	if (idade < 18)
+		throw IdadeInsuficiente(idade);
 	this->idade = idade;
 	telemoveis.push_back(telemovel);
 }
@@ -61,18 +61,19 @@ vector<Utilizador *> Utilizador::getAmigos() const {
 	return amigos;
 }
 
+/*
 vector<Utilizador *> Utilizador::getPedidosAmizade() const {
-	return pedidosAmizade;
+return pedidosAmizade;
 }
 
 /*******************************************************
- * 				   	 SET				     	   *
- ******************************************************/
+* 				   	 SET				     	   *
+******************************************************/
 
- void Utilizador::setLogin(string l)
- {
-   login = l;
- }
+void Utilizador::setLogin(string l)
+{
+	login = l;
+}
 
 void Utilizador::setNome(string n) {
 	nome = n;
@@ -159,7 +160,7 @@ void Utilizador::imprimirDefinicoes() const {
 
 
 /*******************************************************
- * 				   	OVERLOADING		     	   *
+ * 				   		OVERLOADING			     	   *
  ******************************************************/
 
 bool Utilizador::operator==(const Utilizador&u) const {
@@ -171,8 +172,34 @@ bool Utilizador::operator<(const Utilizador &u) const{
 }
 
 ostream & operator<<(ostream & out, const Utilizador & u) {
-	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : " << u.getDataAdesao;
+	out << "Nome: " << u.getNome() << ", Login : " << u.getLogin() << ", Data : " << u.getDataAdesao();
 	return out;
 }
 
-//bool addConversa(Conversa &c)
+void Utilizador::criarConversa(Conversa *c){
+	vector<Utilizador *> temp;
+	temp = c->getParticipantes();
+	for (int i = 0; i < c->numParticipantes(); i++) //coloca a conversa no vetor das conversas de cada participante
+		temp.at(i)->conversas.push_back(c);
+}
+
+bool Utilizador::enviarMensagemUtilizador(Mensagem sms, Utilizador *u){
+	vector<Utilizador *> temp;
+
+	for (unsigned int i = 0; i < conversas.size(); i++){ //procurar o utilizador no vetor de conversas
+		temp = conversas.at(i)->getParticipantes();
+		for (unsigned int j = 0; j < temp.size(); j++)
+			if (temp.at(j) == u){ //encontrou o utilizador
+				conversas.at(i)->adicionaSms(sms);
+				sms.setEmissor(login);
+				return true;
+			}
+	}
+	return false;
+}
+
+bool Utilizador::enviarMensagemGrupo(Mensagem sms, Grupo *g){
+	for (unsigned int i = 0; i < grupos.size(); i++){
+
+	}
+}

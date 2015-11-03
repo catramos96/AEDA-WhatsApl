@@ -2,26 +2,23 @@
 #include <string>
 #include <sstream>
 #include <vector>
+
 #include "Conversa.h"
-#include "Mensagem.h"
 
 using namespace std;
 
-Conversa::Conversa(){
+Conversa::Conversa(vector<Utilizador *> part){
+	participantes = part;
 	mensagens.clear();
 }
 
-Conversa::Conversa(vector<Mensagem> sms){
-	mensagens=sms;
-}
 
-
-void Conversa::adicionaSms(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios){
+void Conversa::adicionaSms(Mensagem sms){
+	/*
 	Mensagem msg(tipo, data, hora,emissor,destinatarios);
 	mensagens.push_back(msg);
+	*/
 }
-
-
 
 void Conversa::removeSms(Data data, Horas hora){
 
@@ -33,6 +30,14 @@ void Conversa::imprimirConversa(){
 	}
 }
 
-int Conversa::numSms(){
+int Conversa::numSms() const{
 	return mensagens.size();
+}
+
+int Conversa::numParticipantes() const{
+	return participantes.size();
+}
+
+vector<Utilizador *> Conversa::getParticipantes() const{
+	return participantes;
 }

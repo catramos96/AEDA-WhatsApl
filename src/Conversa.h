@@ -1,7 +1,3 @@
-/** @ \file Conversa.h
- * header file que contém a classe Conversa
- */
-
 #ifndef SRC_CONVERSA_H_
 #define SRC_CONVERSA_H_
 
@@ -9,11 +5,9 @@
 #include <string>
 #include <vector>
 
-#include "System.h"
 #include "Utilizador.h"
-#include "Comunidade.h"
-#include "Grupo.h"
 #include "Mensagem.h"
+
 
 using namespace std;
 
@@ -24,14 +18,17 @@ class Conversa
 {
 private:
 	vector<Mensagem> mensagens;
+	vector<Utilizador *> participantes;
 public:
-	Conversa(); //conversa vazia
-	Conversa(vector<Mensagem> sms);
-	void adicionaSms(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios);
+	Conversa(vector<Utilizador *> part); //conversa vazia
+	void adicionaSms(Mensagem sms);
 	void removeSms(Data data, Horas hora);
-	void imprimirConversa(); // chama o imprimeSms
-	int numSms();
-
+	void imprimirConversa();
+	int numSms() const;
+	int numParticipantes() const;
+	vector<Utilizador *> getParticipantes() const;
 };
+
+
 
 #endif /* SRC_CONVERSA_H_ */

@@ -6,6 +6,8 @@
 
 #include "System.h"
 #include "Conversa.h"
+#include "Grupo.h"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,15 +22,17 @@ private:
 	Data dataAdesao;
 	int idade;
 	vector<Utilizador *> amigos;
-	vector<Utilizador *> pedidosAmizade;
 	vector<Conversa *> conversas;
+	vector<Grupo *> grupos;
+
+	//vector<Utilizador *> pedidosAmizade;
 public:
 	Utilizador();
 	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
 
 	//GETS
 
-  string getNome() const;
+	string getNome() const;
 	string getEmail() const;
 	string getLogin() const;
 	bool getVisibilidade() const;
@@ -38,23 +42,23 @@ public:
 
 	//SETS
 
-  void setLogin(string l);
+	void setLogin(string l);
 	void setNome(string n);
 	void setEmail(string);
 	void setVisibilidade(bool v);
 	//void setAmigos(Utilizador &u);
 
-  //void addConversa(Conversa &c);
+	//void addConversa(Conversa &c);
 	void addUtilizador(vector<Utilizador *> v, Utilizador &u);
 	void addTelemovel(int t);
 	//void aceitarAmizade(Utilizador &u); //de pedidos de amizade
-  //bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
+	//bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
 
 	void removerUtilizador(vector<Utilizador *> v, Utilizador &u);
 	void removerTelemovel(int t);
 	void removerAmigo(Utilizador &u);
 	//void removerConversa(Conversa &c);
-	
+
 
 	//IMPRESS STATUS
 
@@ -65,6 +69,10 @@ public:
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;
 	friend ostream & operator<<(ostream & out, const Utilizador & u);
+
+	void criarConversa(Conversa *c);
+	bool enviarMensagemUtilizador(Mensagem sms, Utilizador *u);
+	bool enviarMensagemGrupo(Mensagem sms, Grupo *g);
 
 };
 
@@ -108,9 +116,9 @@ public:
 
 class IdadeInsuficiente {
 public:
-  IdadeInsuficiente(int idade) { this->idade = idade; };
+	IdadeInsuficiente(int idade) { this->idade = idade; };
 private:
-  int idade;
+	int idade;
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

@@ -1,12 +1,9 @@
 #ifndef SRC_GRUPO_H_
 #define SRC_GRUPO_H_
 
-//descobrir como é que se fazem throws sem crashar o programa
-// mudar o criterio de comparacao para login em vez de nome
-//descobrir no enterprise como se colocam classes dentro de classes e friends
-
 #include <iostream>
 #include <string>
+
 #include "Utilizador.h"
 
 /**
@@ -74,6 +71,7 @@ public:
  */
 class Grupo {
 private:
+	Conversa conversa;
 	string titulo;  /**<  membro privado que indica o titulo do grupo */
 	vector <Membro *> membros;  /**<  membro privado que guarda os membros que pertencem ao grupo */
 	Data criacao;  /**<  membro privado que representa a data de criacao do grupo */
@@ -165,6 +163,7 @@ public:
 	 * @return True se o membro e desbloqueado com sucesso e false se o membro ja se encontra desbloqueado
 	 */
 	bool desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual);
+
 };
 
 /**
