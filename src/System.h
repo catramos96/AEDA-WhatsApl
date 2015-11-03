@@ -6,6 +6,7 @@
 #include <sstream>
 #include <vector>
 #include <time.h>
+#include <windows.h> 
 
 using namespace std;
 
@@ -135,8 +136,12 @@ public:
 	HoraNova(time_t time1);
 	void setHoraNova(time_t time1);
 	time_t getHoraNova();
+	const string getHoraNovaCompleta();
+	const string getHoraNovaHoras();
+	const string getHoraNovaData();
 };
 
+void clrscr(void);
 
 
 #endif /* SRC_SYSTEM_H_ */

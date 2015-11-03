@@ -4,7 +4,7 @@
 #include <sstream>
 
 /* Classe Membro */
-
+/*
 Membro::Membro(Utilizador util, Data adesaoGrupo){
 	this->util = util;
 	this->adesaoGrupo = adesaoGrupo;
@@ -46,6 +46,7 @@ ostream & operator<<(ostream & out, const Membro & m){
 
 /* Classe Grupo*/
 
+/*
 Grupo::Grupo(string titulo, Data criacao, Utilizador moderador){
 	stringstream out;
 	this->titulo = titulo;
@@ -198,3 +199,4 @@ bool Grupo::desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual)
 	else
 		throw NaoModerador(moderador);
 }
+*/

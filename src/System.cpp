@@ -1,8 +1,10 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <sstream>
 #include <vector>
 #include <time.h>
+#include <Windows.h>
+#include <stdio.h>
 
 #include "System.h"
 
@@ -125,9 +127,59 @@ time_t HoraNova::getHoraNova(){
 	return t;
 }
 
+
+const string HoraNova::getHoraNovaCompleta(){
+	time_t now=t;
+	struct tm tstruct;
+	char buf[80];
+	tstruct=*localtime(&now);
+	strftime(buf,sizeof(buf), "%Y-%m-%d.%X",&tstruct);
+	return buf;
+}
+
+
+const string HoraNova::getHoraNovaHoras(){
+	time_t now=t;
+	struct tm tstruct;
+	char buf[80];
+	tstruct=*localtime(&now);
+	strftime(buf,sizeof(buf), "%X",&tstruct);
+	return buf;
+}
+
+
+
+const string HoraNova::getHoraNovaData(){
+	time_t now=t;
+	struct tm tstruct;
+	char buf[80];
+	tstruct=*localtime(&now);
+	strftime(buf,sizeof(buf), "%Y-%m-%d",&tstruct);
+	return buf;
+}
+
 std::ostream & operator<<(std::ostream & out, const HoraNova & t){
 	out << t;
 	return out;
+}
+
+//Clears the screen
+
+void clrscr(void)
+{
+COORD coordScreen = { 0, 0 }; // upper left corner
+DWORD cCharsWritten;
+DWORD dwConSize;
+HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+CONSOLE_SCREEN_BUFFER_INFO csbi;
+GetConsoleScreenBufferInfo(hCon, &csbi);
+dwConSize = csbi.dwSize.X * csbi.dwSize.Y;
+// fill with spaces
+FillConsoleOutputCharacter(hCon, TEXT(' '), dwConSize, coordScreen, &cCharsWritten);
+GetConsoleScreenBufferInfo(hCon, &csbi);
+FillConsoleOutputAttribute(hCon, csbi.wAttributes, dwConSize, coordScreen, &cCharsWritten);
+// cursor to upper left corner
+SetConsoleCursorPosition(hCon, coordScreen);
 }
 
 

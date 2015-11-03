@@ -6,6 +6,9 @@
 #include <vector>
 #include <algorithm>
 
+/********************************
+ *		CLASSE COMUNIDADE		*
+ *******************************/
 Comunidade::Comunidade(){
 	comunidade.clear(); //inicializar o vetor
 }
@@ -49,7 +52,7 @@ void Comunidade::verUtilizador(Utilizador *util) const{
 	else
 		throw UtilizadorInexistente(*util);
 
-	u->imprimirDefinicoes();
+	u->imprimirUtilizador();
 }
 
 void Comunidade::printComunidade() const{

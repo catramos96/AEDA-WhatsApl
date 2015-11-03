@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['pedidoadesao',['pedidoAdesao',['../class_grupo.html#a2a9a985a35e0de395c5b63a4b1cb7452',1,'Grupo']]],
-  ['printmembros',['printMembros',['../class_grupo.html#aaea32821021b4a06faa11d906c84d409',1,'Grupo']]],
-  ['printstatus',['printStatus',['../class_grupo.html#a97f188af0d699ee9d5a423b654a9dbb2',1,'Grupo']]]
+  ['naomoderador',['NaoModerador',['../class_nao_moderador.html#a7b454f79c86898f0671d4dbcf7f60c6b',1,'NaoModerador::NaoModerador(Utilizador mod)'],['../class_nao_moderador.html#a7b454f79c86898f0671d4dbcf7f60c6b',1,'NaoModerador::NaoModerador(Utilizador mod)']]],
+  ['nummembros',['numMembros',['../class_grupo.html#a32080a4eae4ff9e2058d1ab8fe3e757f',1,'Grupo']]]
 ];

@@ -5,7 +5,11 @@
 #include <string>
 #include <vector>
 
+<<<<<<< HEAD
 #include "Utilizador.h"
+=======
+#include "System.h"
+>>>>>>> 7bec163f4faf91f6b251470377c7c010fdf7b2f0
 #include "Mensagem.h"
 
 

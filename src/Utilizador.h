@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 
 class Utilizador
@@ -22,6 +23,10 @@ private:
 	Data dataAdesao;
 	int idade;
 	vector<Utilizador *> amigos;
+<<<<<<< HEAD
+=======
+	//vector<Utilizador *> pedidosAmizade;
+>>>>>>> 7bec163f4faf91f6b251470377c7c010fdf7b2f0
 	vector<Conversa *> conversas;
 	vector<Grupo *> grupos;
 
@@ -37,17 +42,19 @@ public:
 	string getLogin() const;
 	bool getVisibilidade() const;
 	Data getDataAdesao() const;
-	vector<Utilizador *> getAmigos() const;
-	vector<Utilizador *> getPedidosAmizade() const;
+  vector<Utilizador *> getAmigos() const;
+	//vector<Utilizador *> getPedidosAmizade() const;
 
 	//SETS
 
 	void setLogin(string l);
 	void setNome(string n);
 	void setEmail(string);
+  void setIdade(int i);
 	void setVisibilidade(bool v);
-	//void setAmigos(Utilizador &u);
+	void setAmigos(Utilizador *u);
 
+<<<<<<< HEAD
 	//void addConversa(Conversa &c);
 	void addUtilizador(vector<Utilizador *> v, Utilizador &u);
 	void addTelemovel(int t);
@@ -55,14 +62,27 @@ public:
 	//bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
 
 	void removerUtilizador(vector<Utilizador *> v, Utilizador &u);
+=======
+  //void addConversa(Conversa &c);
+	//void addUtilizador(vector<Utilizador *> v, Utilizador u);
+  void addAmigo(Utilizador &u);
+	void addTelemovel(int t);
+	//void aceitarAmizade(Utilizador &u); //de pedidos de amizade
+  //bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
+  
+	void deletAmigo(Utilizador *u); //elimina dos amigos
+>>>>>>> 7bec163f4faf91f6b251470377c7c010fdf7b2f0
 	void removerTelemovel(int t);
-	void removerAmigo(Utilizador &u);
+	void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
+  
 	//void removerConversa(Conversa &c);
 
 
 	//IMPRESS STATUS
 
 	void imprimirDefinicoes() const;
+  void imprimirUtilizador() const;
+  void imprimirAmigos() const;
 
 	//OVERLOADING DE OPERADORES
 
@@ -85,9 +105,9 @@ private:
 	Utilizador u;
 	string login;
 public:
-	UtilizadorJaExiste(Utilizador u){ this->u = u; };
+	UtilizadorJaExiste(Utilizador u){ this->u = u; login = u.getLogin(); };
 	UtilizadorJaExiste(string login){ this->login = login; };
-	string getLogin() const { return u.getNome(); };
+  string getLogin() const { return login; };
 };
 
 class UtilizadorInexistente {
@@ -119,6 +139,13 @@ public:
 	IdadeInsuficiente(int idade) { this->idade = idade; };
 private:
 	int idade;
+};
+
+class AmigoJaExiste {
+public:
+  AmigoJaExiste(Utilizador u) { util = u; };
+private:
+  Utilizador util;
 };
 
 #endif /* SRC_UTILIZADOR_H_ */
