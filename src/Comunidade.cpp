@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <fstream>
 
 #include "Comunidade.h"
 #include "Templates.h"
@@ -15,6 +17,14 @@ Comunidade::Comunidade(){
 
 int Comunidade::existeUtil(Utilizador *util) const{
 	return sequentialSearch(comunidade, util);
+}
+
+int Comunidade::existeUtilNome(string nome) const{
+	for (unsigned int i = 0; i < comunidade.size(); i++){
+			if (comunidade[i]->getNome() == nome)
+				return i;   // encontrou
+		}
+		return -1;     // nao encontrou
 }
 
 bool Comunidade::existeLogin(string l) const {
@@ -68,4 +78,85 @@ void Comunidade::verUtilizador(Utilizador *util) const{
 void Comunidade::printComunidade() const{
 	for (unsigned int i = 0; i < comunidade.size(); i++)
 		cout << *comunidade.at(i) << endl;
+}
+
+int Comunidade::leComunidade(){
+	string line;
+	////
+	bool visibilidade;
+	string login, nome, email;
+	vector<int> telemoveis;
+	int idade;
+	Data dataAdesao;
+	bool flag=true;
+	bool flag2=true;
+	bool flag3=true;
+	bool flag4=true;
+	////
+	ifstream myfile ("comunidade.txt");
+
+	if (myfile.is_open())
+	{
+
+		while(flag){
+			Utilizador u;
+			getline (myfile,line);
+			u.setNome(line);
+			getline (myfile,line);
+			u.setLogin(line);
+			getline (myfile,line);
+			u.setEmail(line);
+
+			while(flag2){
+				getline (myfile,line);
+				if(line=="-"){
+					flag2=false;
+					break;
+				}
+				u.addTelemovel(atoi(line.c_str()));
+			}
+			getline (myfile,line);
+			//data;
+			getline (myfile,line);
+			u.setIdade(atoi(line.c_str()));
+			while(flag3){
+				getline (myfile,line);
+				if(line=="-"){
+					flag3=false;
+					break;
+				}
+				u.setAmigos(comunidade[existeUtilNome(line)]);
+			}
+			while(flag4){
+				getline (myfile,line);
+				if(line=="-"){
+					flag4=false;
+					break;
+				}
+				u.
+			}
+
+
+
+
+		}
+
+	    myfile.close();
+	}
+
+	else cout << "Unable to open file";
+
+	return 0;
+}
+
+int Comunidade::escreveComunidade(){
+	ofstream myfile ("example.txt");
+	  if (myfile.is_open())
+	  {
+	    myfile << "This is a line.\n";
+	    myfile << "This is another line.\n";
+	    myfile.close();
+	  }
+	  else cout << "Unable to open file";
+	  return 0;
 }

@@ -99,6 +99,10 @@ void Utilizador::setAmigos(Utilizador *u) {
     amigos.push_back(u);
 }
 
+void Utilizador::setGrupo(const Grupo grupo){
+	grupos.push_back(grupo);
+}
+
 /*******************************************************
  * 				   				 ADICIONAR                     	   *
  ******************************************************/

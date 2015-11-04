@@ -35,7 +35,7 @@ public:
 	//vector<Utilizador *> getPedidosAmizade() const;
 
 	//SETS
-
+	void setGrupo(const Grupo grupo);
 	void setLogin(string l);
 	void setNome(string n);
 	void setEmail(string);
