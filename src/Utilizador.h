@@ -16,7 +16,7 @@ private:
 	int telemovel;
 	Data dataAdesao;
 	int idade;
-	//vector<Utilizador *> amigos;
+	vector<Utilizador *> amigos;
 	vector<Conversa *> conversas; //quer com apenas 1 utilizador quer com grupos
 	vector<Grupo *> grupos;
 public:
@@ -24,17 +24,14 @@ public:
   ~Utilizador();
 	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
 
-	//GETS
-
 	string getNome() const;
 	string getEmail() const;
 	string getLogin() const;
 	bool getVisibilidade() const;
 	Data getDataAdesao() const;
-	//vector<Utilizador *> getAmigos() const;
-	//vector<Utilizador *> getPedidosAmizade() const;
+	vector<Utilizador *> getAmigos() const;
+	vector<Utilizador *> getPedidosAmizade() const;
 
-	//SETS
 	void setGrupo(const Grupo grupo);
 	void setLogin(string l);
 	void setNome(string n);
@@ -42,19 +39,15 @@ public:
 	void setIdade(int i);
 	void setVisibilidade(bool v);
 	void setAmigos(Utilizador *u);
-	 void setTelemovel(int i);
+	void setTelemovel(int i);
 
 	void addAmigo(Utilizador &u);
 	void deletAmigo(Utilizador *u); //elimina dos amigos
 	void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
 
-	//IMPRESS STATUS
-
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
-	//void imprimirAmigos() const;
-
-	//OVERLOADING DE OPERADORES
+	void imprimirAmigos() const;
 
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;
@@ -63,6 +56,8 @@ public:
 	Conversa *criarConversa(Utilizador *u);
 	void adicionarConversa(Conversa *c);
 	void enviarMensagem(Mensagem *sms, Conversa *c);
+
+	void pedirAdesao(Grupo *g);
 	Grupo *criarGrupo(string titulo, Data dataAtual);
 	void enviarMensagemGrupo(Mensagem *sms, Grupo *g);
 	bool aceitaMembro(string u, Grupo *g, Data d);
@@ -70,49 +65,6 @@ public:
 	bool bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
-	void pedirAdesao(Grupo *g);
-};
-
-//================================================================================================//
-
-class UtilizadorJaExiste {
-private:
-	Utilizador u;
-	string login;
-public:
-	UtilizadorJaExiste(Utilizador u){ this->u = u; login = u.getLogin(); };
-	UtilizadorJaExiste(string login){ this->login = login; };
-	string getLogin() const { return login; };
-};
-
-class TelemovelJaExiste {
-private:
-	int t;
-public:
-	TelemovelJaExiste(int t) { this->t = t; };
-	int getTelemovel() const { return t; };
-};
-
-class TelemovelInexistente {
-private:
-	int t;
-public:
-	TelemovelInexistente(int t) { this->t = t; };
-	int getTelemovel() const { return t; };
-};
-
-class IdadeInsuficiente {
-public:
-	IdadeInsuficiente(int idade) { this->idade = idade; };
-private:
-	int idade;
-};
-
-class AmigoJaExiste {
-public:
-	AmigoJaExiste(Utilizador u) { util = u; };
-private:
-	Utilizador util;
 };
 
 #endif /* SRC_UTILIZADOR_H_ */
