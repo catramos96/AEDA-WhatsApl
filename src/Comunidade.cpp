@@ -34,7 +34,7 @@ bool Comunidade::existeLogin(string l) const {
 	if (existeUtil(u) == -1)
 		return true;
 	else
-		throw UtilizadorJaExiste(*u);
+		throw UtilizadorJaExiste(u->getLogin());
 }
 	
 
@@ -46,7 +46,7 @@ void Comunidade::adicionarUtil(Utilizador *util){
 	if (existeUtil(util) == -1)
 		comunidade.push_back(util);
 	else
-		throw UtilizadorJaExiste(*util);
+		throw UtilizadorJaExiste(util->getLogin());
 }
 
 bool comparaData(const Utilizador *u1, const Utilizador *u2){

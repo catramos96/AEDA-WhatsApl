@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-
 #include "Grupo.h"
 
 class Utilizador
@@ -32,7 +31,12 @@ public:
 	vector<Utilizador *> getAmigos() const;
 	vector<Utilizador *> getPedidosAmizade() const;
 
+<<<<<<< HEAD
 	void setGrupo(const Grupo grupo);
+=======
+	//SETS
+	void setGrupo(Grupo grupo);
+>>>>>>> e2da83e0e3cc334dfdc47ea4fb92cac5a9ab4357
 	void setLogin(string l);
 	void setNome(string n);
 	void setEmail(string);
@@ -48,6 +52,11 @@ public:
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
 	void imprimirAmigos() const;
+<<<<<<< HEAD
+=======
+
+	//OVERLOADING DE OPERADORES
+>>>>>>> e2da83e0e3cc334dfdc47ea4fb92cac5a9ab4357
 
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;
@@ -65,6 +74,10 @@ public:
 	bool bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
+<<<<<<< HEAD
+=======
+	void pedirAdesao(Grupo *g);
+>>>>>>> e2da83e0e3cc334dfdc47ea4fb92cac5a9ab4357
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

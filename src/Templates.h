@@ -36,22 +36,4 @@ void insertionSort(vector<Comparable> &v)
 	}
 }
 */
-/************************************
-*	    	EXCECAO MAIN			*
-************************************/
-template <class N>
-class OpccaoInvalida {
-public:
-  OpccaoInvalida(N op, N min, N max) { this->op = op; this->min = min; this->max = max; };
-  N getMin() const { return min; };
-  N getMax() const { return max; };
-  N getOp() const { return op; };
-private:
-  N op;
-  N min;
-  N max;
-};
 
-class VoltarAtras {};
-
-class InputFail {};

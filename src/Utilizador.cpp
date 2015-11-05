@@ -1,7 +1,6 @@
 #include "Templates.h"
 #include "Utilizador.h"
 #include "Excecoes.h"
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -62,11 +61,10 @@ Data Utilizador::getDataAdesao() const {
 	return dataAdesao;
 }
 
-/*
 vector<Utilizador *> Utilizador::getAmigos() const {
   return amigos;
 }
-*/
+
 /*******************************************************
  * 			            	   	 SET				             	   *
  ******************************************************/
@@ -95,42 +93,37 @@ void Utilizador::setVisibilidade(bool v) {
 	visibilidade = v;
 }
 
-/*
 void Utilizador::setAmigos(Utilizador *u) {
   vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
   if (it != amigos.end())
-    throw AmigoJaExiste(*u);
+    throw AmigoJaExiste(u->getLogin());
   else
     amigos.push_back(u);
 }
-
-*/
 
 void Utilizador::setTelemovel(int t) {
   telemovel = t;
 }
 
-/*
-void Utilizador::setGrupo(const Grupo grupo){
-	grupos.push_back(grupo);
+
+void Utilizador::setGrupo(Grupo grupo){
+	grupos.push_back(&grupo);
 }
-*/
+
 
 /*******************************************************
  * 				   				 ADICIONAR                     	   *
  ******************************************************/
-/*
+
 void Utilizador::addAmigo(Utilizador &u) {
     setAmigos(&u);
     u.setAmigos(this);
   }
 
-  */
-
 /*******************************************************
  * 				   			      REMOVER                    	   *
  ******************************************************/
-/*
+
 void Utilizador::deletAmigo(Utilizador *u) {
 	vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
 	if (it == amigos.end())
@@ -138,15 +131,13 @@ void Utilizador::deletAmigo(Utilizador *u) {
 	else
 		amigos.erase(it);
 }
-*/
 
 
-/*
 void Utilizador::removerAmigo(Utilizador &u) {
 	deletAmigo(&u); //remove dos meus amigos
 	u.deletAmigo(this); //remove me dos amigos dele
 }
-*/
+
 /*******************************************************
  * 				   	 IMPRIMIR		     	   *
  ******************************************************/
@@ -178,14 +169,13 @@ void Utilizador::imprimirUtilizador() const {
   }
 }
 
-/*
 void Utilizador::imprimirAmigos() const {
   for (unsigned int i = 0; i < amigos.size(); i++)
   {
     cout << amigos[i]->getNome() << "    " << amigos[i]->getLogin() << endl;
   }
 }
-*/
+
 /*******************************************************
  * 				   		OVERLOADING			     	   *
  ******************************************************/

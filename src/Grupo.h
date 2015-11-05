@@ -6,6 +6,7 @@
 #include <vector>
 #include "Conversa.h"
 
+
 /**
  * @brief Classe Membro.
  * Classe que define os parametros necessarios para um utilizador estar num grupo.
