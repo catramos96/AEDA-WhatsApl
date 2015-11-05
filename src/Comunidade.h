@@ -33,8 +33,6 @@ public:
 	* @ return utilzador
 	*/
 
-	int Comunidade::existeUtilNome(string nome) const;
-
 	Utilizador *utilizadorNaPosicao(int pos) const;
 	/**
 	* @ brief Funcao que adiciona um utilizador à comunidade

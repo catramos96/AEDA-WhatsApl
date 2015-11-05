@@ -23,8 +23,6 @@ public:
   ~Utilizador();
 	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
 
-	//GETS
-
 	string getNome() const;
 	string getEmail() const;
 	string getLogin() const;
@@ -33,27 +31,32 @@ public:
 	vector<Utilizador *> getAmigos() const;
 	vector<Utilizador *> getPedidosAmizade() const;
 
+<<<<<<< HEAD
+	void setGrupo(const Grupo grupo);
+=======
 	//SETS
 	void setGrupo(Grupo grupo);
+>>>>>>> e2da83e0e3cc334dfdc47ea4fb92cac5a9ab4357
 	void setLogin(string l);
 	void setNome(string n);
 	void setEmail(string);
 	void setIdade(int i);
 	void setVisibilidade(bool v);
 	void setAmigos(Utilizador *u);
-	 void setTelemovel(int i);
+	void setTelemovel(int i);
 
 	void addAmigo(Utilizador &u);
 	void deletAmigo(Utilizador *u); //elimina dos amigos
 	void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
 
-	//IMPRESS STATUS
-
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
 	void imprimirAmigos() const;
+<<<<<<< HEAD
+=======
 
 	//OVERLOADING DE OPERADORES
+>>>>>>> e2da83e0e3cc334dfdc47ea4fb92cac5a9ab4357
 
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;
@@ -62,6 +65,8 @@ public:
 	Conversa *criarConversa(Utilizador *u);
 	void adicionarConversa(Conversa *c);
 	void enviarMensagem(Mensagem *sms, Conversa *c);
+
+	void pedirAdesao(Grupo *g);
 	Grupo *criarGrupo(string titulo, Data dataAtual);
 	void enviarMensagemGrupo(Mensagem *sms, Grupo *g);
 	bool aceitaMembro(string u, Grupo *g, Data d);
@@ -69,7 +74,10 @@ public:
 	bool bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
+<<<<<<< HEAD
+=======
 	void pedirAdesao(Grupo *g);
+>>>>>>> e2da83e0e3cc334dfdc47ea4fb92cac5a9ab4357
 };
 
 #endif /* SRC_UTILIZADOR_H_ */
