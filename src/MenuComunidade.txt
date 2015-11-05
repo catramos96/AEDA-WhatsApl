@@ -1,6 +1,0 @@
-				   Ordenar por:
-					 Login (1)
-					 Data (2)
-					 
-				  Voltar Atras (3)
-					

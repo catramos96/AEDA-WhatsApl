@@ -1,7 +1,0 @@
-				 Visibilidade (1)
-				     Nome(2)
-					Login (3)
-					Idade (4)
-					Email (5)
-				  Telemovel (6)
-				  

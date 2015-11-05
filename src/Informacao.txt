@@ -1,5 +1,0 @@
-//////////////////////////////////////////////////
-/					INFORMACAO					 /
-//////////////////////////////////////////////////
-
-Desenvlovido por Catarina Ramos, Ines Gomes e Pedro Duarte em algoritmos e estruturas de dados (AEDA),cadeira do 2 ano do curso de Mestrado Integrado de Engenharia Informatica e Computacao (MIEIC) na Faculdade de Engenharia da Universidade do Porto (FEUP).

@@ -177,25 +177,83 @@ FillConsoleOutputAttribute(hCon, csbi.wAttributes, dwConSize, coordScreen, &cCha
 SetConsoleCursorPosition(hCon, coordScreen);
 }
 
-//display de um ficheiro de texto
-void imprimirFicheiro(string textfile)
-{
-  fstream file;
-  string information;
 
-  file.open(textfile);
-
-  //If the file does not exist or is in another folder
-  if (file.fail())
-  {
-    cout << textfile << " is missing!" << endl;
-    exit(1);
-  }
-
-  while (!file.eof())
-  {
-    getline(file, information);
-    cout << information << endl;
-  }
+//COUTS
+void header(string msg) {
+  cout << "//////////////////////////////////////////////////" << endl;
+  cout << msg << endl;
+  cout << "//////////////////////////////////////////////////" << endl << endl;
 }
 
+void menuInicial(){
+  header("WHATS APL");
+  cout << "LOGIN (1)" << endl;
+  cout << "REGISTAR (2)" << endl;
+  cout << "COMUNIDADE (3)" << endl;
+  cout << "INFORMAÇOES (4)" << endl;
+  cout << "SAIR (5)" << endl << endl;
+}
+
+void menuLogin() {
+  header("LOGIN");
+  cout << "Fazer Login (1)" << endl;
+  cout << "Voltar Atras (2)" << endl << endl;
+}
+
+void menuRegistar() {
+  header("REGISTAR");
+  cout << "Registar (1)" << endl;
+  cout << "Voltar Atras (2)" << endl << endl;
+}
+
+void menuComunidade() {
+  header("COMUNIDADE");
+  cout << "Ordenar por:" << endl;
+  cout << "Login (1)" << endl;
+  cout << "Data (2)" << endl << endl;
+  cout << "Voltar Atras (3)" << endl << endl;
+}
+
+void menuUtilizador() {
+  header("UTILIZADOR");
+  cout << "Perfil (1)" << endl;
+  cout << "Amigos (2)" << endl;
+  cout << "Conversas (3)" << endl;
+  cout << "Comunidade (4)" << endl;
+  cout << "Definicoes (5)" << endl;
+  cout << "Terminar Seccao (6)" << endl << endl;
+}
+
+void menuAmigos() {
+  header("AMIGOS");
+  cout << "Adicionar Amigo (1)" << endl;
+  cout << "Remover Amigo (2)" << endl;
+  cout << "Ver Amigos (3)" << endl;
+  cout << "Voltar Atras (4)" << endl << endl;
+}
+
+void menuDefinicoes() {
+  cout << "Alterar (1)" << endl;
+  cout << "Voltar Atras (2)" << endl << endl;
+}
+
+void menuAlterarDefinicoes() {
+  header("DEFINICOES");
+  cout << "Alterar:" << endl;
+  cout << "Visibilidade (1)" << endl;
+  cout << "Nome (2)" << endl;
+  cout << "Login (3)" << endl;
+  cout << "Idade (4)" << endl;
+  cout << "Email (5)" << endl;
+  cout << "Telemovel (6)" << endl << endl;
+}
+
+void menuComunidadeOrdenada() {
+  header("COMUNIDADE");
+  cout << "Nome  /  Login  /  Data" << endl << endl;
+}
+
+void menuInformacao() {
+  header("INFORMACAO");
+  cout << "Desenvlovido por Catarina Ramos, Ines Gomes e Pedro Duarte em algoritmos e estruturas de dados (AEDA),cadeira do 2 ano do curso de Mestrado Integrado de Engenharia Informatica e Computacao (MIEIC) na Faculdade de Engenharia da Universidade do Porto (FEUP)." << endl << endl;
+}

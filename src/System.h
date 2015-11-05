@@ -139,15 +139,12 @@ public:
 	const string getHoraNovaData();
 };
 
-
-
 void clrscr(void);
 
 template <class N>
 void input(N &valor);
 
 void imprimirFicheiro(string textfile);
-
 
 template <class N>
 void input(N &valor) {
@@ -158,6 +155,28 @@ void input(N &valor) {
     throw InputFail();
   }
 }
+
+void header(string msg);
+
+void menuInicial();
+
+void menuLogin();
+
+void menuRegistar();
+
+void menuComunidade();
+
+void menuUtilizador();
+
+void menuAmigos();
+
+void menuDefinicoes();
+
+void menuAlterarDefinicoes();
+
+void menuComunidadeOrdenada();
+
+void menuInformacao();
 
 
 #endif /* SRC_SYSTEM_H_ */
