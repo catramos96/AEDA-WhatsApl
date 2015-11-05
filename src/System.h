@@ -7,6 +7,8 @@
 #include <vector>
 #include <time.h>
 #include <windows.h> 
+#include <typeinfo>
+#include <fstream>
 
 using namespace std;
 
@@ -76,11 +78,7 @@ private:
 		ano;
 public:
 
-	/**
-	 * @brief Classe DataInvalida.
-	 * E uma classe que indica uma execao da classe Data.
-	 */
-	class DataInvalida{};
+	
 	/**
 	 * @brief Constutor
 	 * Construtor default que inicializa o dia mes e ano a zero
@@ -141,7 +139,27 @@ public:
 	const string getHoraNovaData();
 };
 
+/**
+* @brief Classe DataInvalida.
+* E uma classe que indica uma execao da classe Data.
+*/
+class DataInvalida {
+public:
+  DataInvalida(Data d) { this->d = d; };
+  Data getData() const { return d; };
+private:
+  Data d;
+
+};
+
 void clrscr(void);
 
+template <class N>
+void input(N &valor);
+
+void imprimirFicheiro(string textfile);
+
+template <class N>
+void opccao(N &op,N min , N max);
 
 #endif /* SRC_SYSTEM_H_ */

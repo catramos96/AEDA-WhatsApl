@@ -1,0 +1,7 @@
+					Perfil (1)
+				    Amigos (2)
+				  Conversas (3)
+				  Comunidade (4)
+				  Definicoes (5)
+				Terminar Seccao (6)
+				

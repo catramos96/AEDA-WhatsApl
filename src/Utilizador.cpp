@@ -1,7 +1,10 @@
 #include "Templates.h"
 #include "Utilizador.h"
+<<<<<<< HEAD
 #include "Excecoes.h"
 
+=======
+>>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 #include <iostream>
 #include <string>
 #include <vector>
@@ -19,7 +22,7 @@ Utilizador::Utilizador() {
 	nome = "";
 	email = "";
 	idade = 0;
-	telemoveis.clear();
+  telemovel = 0;
 	Data d;
 	dataAdesao = d;
 }
@@ -33,8 +36,10 @@ Utilizador::Utilizador(bool visibilidade, string login, string nome, string emai
 	if (idade < 18)
 		throw IdadeInsuficiente(idade);
 	this->idade = idade;
-	telemoveis.push_back(telemovel);
+  this->telemovel = telemovel;
 }
+
+Utilizador::~Utilizador() {}
 
 /*******************************************************
  * 				                GET				               	   *
@@ -101,7 +106,21 @@ void Utilizador::setAmigos(Utilizador *u) {
   else
     amigos.push_back(u);
 }
+<<<<<<< HEAD
 */
+=======
+
+void Utilizador::setTelemovel(int t) {
+  telemovel = t;
+}
+
+/*
+void Utilizador::setGrupo(const Grupo grupo){
+	grupos.push_back(grupo);
+}
+*/
+
+>>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 /*******************************************************
  * 				   				 ADICIONAR                     	   *
  ******************************************************/
@@ -110,6 +129,7 @@ void Utilizador::addAmigo(Utilizador &u) {
     setAmigos(&u);
     u.setAmigos(this);
   }
+<<<<<<< HEAD
   */
 void Utilizador::addTelemovel(int t) {
 	vector<int>::iterator it = find(telemoveis.begin(), telemoveis.end(), t);
@@ -118,6 +138,8 @@ void Utilizador::addTelemovel(int t) {
 	else
 		throw TelemovelJaExiste(t);
 }
+=======
+>>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 
 /*******************************************************
  * 				   			      REMOVER                    	   *
@@ -130,6 +152,7 @@ void Utilizador::deletAmigo(Utilizador *u) {
 	else
 		amigos.erase(it);
 }
+<<<<<<< HEAD
 */
 void Utilizador::removerTelemovel(int t) {
 	vector<int>::iterator it = find(telemoveis.begin(), telemoveis.end(), t);
@@ -140,6 +163,9 @@ void Utilizador::removerTelemovel(int t) {
 }
 
 /*
+=======
+
+>>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 void Utilizador::removerAmigo(Utilizador &u) {
 	deletAmigo(&u); //remove dos meus amigos
 	u.deletAmigo(this); //remove me dos amigos dele
@@ -155,12 +181,7 @@ void Utilizador::imprimirDefinicoes() const {
   cout << "Login: " << login << endl;
   cout << "Idade: " << idade << endl;
   cout << "Email: " << email << endl;
-  cout << "Telemoveis: ";
-  for (unsigned int i = 0; i < telemoveis.size(); ++i) {
-    cout << telemoveis[i];
-    if (i == telemoveis.size() - 2)
-      cout << " , ";
-  }
+  cout << "Telemovel: " << telemovel << endl;
   cout << endl;
 }
 
@@ -171,12 +192,7 @@ void Utilizador::imprimirUtilizador() const {
     cout << "Login: " << login << endl;
     cout << "Idade: " << idade << endl;
     cout << "Email: " << email << endl;
-    cout << "Telemoveis: ";
-    for (unsigned int i = 0; i < telemoveis.size(); ++i) {
-      cout << telemoveis[i];
-      if (i == telemoveis.size() - 2)
-        cout << " , ";
-    }
+    cout << "Telemovel: " << telemovel << endl;
     cout << endl;
   }
   else {

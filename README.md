@@ -1,3 +1,16 @@
+#---------------------------------------------------------------------------------#
+#                                 MUITO IMPORTANTE                                #
+#---------------------------------------------------------------------------------#
+
+Todas as Excepções (ESCREVAM AS VOSSAS)
+- UtilizadorJaExiste
+- UtilizadorInexistente
+- DataInvalida
+- VoltarAtras
+- InputFail
+
+
+
 # Coisas Imporatantes: #
 
 1 - a partir de agora só se mexe no branch master

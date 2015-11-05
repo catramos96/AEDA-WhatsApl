@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+#include "Grupo.h"
+#include "Templates.h"
+>>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 #include <algorithm>
 #include <sstream>
 
@@ -246,6 +251,10 @@ bool comparaMembro(const Membro &m1, const Membro &m2){
 }
 
 bool Grupo::operator==(const Grupo &g)const{ //compara 2 grupos pelos membros
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 	for (int i = 0; i < numMembros(); i++){
 		if (g.membros.at(i) == membros.at(i))
 			continue;		// experimentar isto

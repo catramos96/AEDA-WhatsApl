@@ -65,13 +65,12 @@ Data::Data(int d, int m, int a){
 }
 
 void Data::setData(int d, int m, int a){
+  Data dA(d, m, a);
 	if (d < 1 || d > 31 || m < 1 || m > 12 || a < 0)
-		throw DataInvalida();
-	else{
-		dia = d;
-		mes = m;
-		ano = a;
-	}
+		throw DataInvalida(dA);
+  dia = d;
+  mes = m;
+  ano = a;
 }
 
 int Data::getAno() const{
@@ -123,11 +122,10 @@ void HoraNova::setHoraNova(time_t time1){
 	t = time(0);
 }
 
-time_t HoraNova::getHoraNova(){
-	return t;
+time_t HoraNova::getHoraNova() {
+  return t;
 }
-
-
+/*
 const string HoraNova::getHoraNovaCompleta(){
 	time_t now=t;
 	struct tm tstruct;
@@ -136,7 +134,6 @@ const string HoraNova::getHoraNovaCompleta(){
 	strftime(buf,sizeof(buf), "%Y-%m-%d.%X",&tstruct);
 	return buf;
 }
-
 
 const string HoraNova::getHoraNovaHoras(){
 	time_t now=t;
@@ -147,8 +144,6 @@ const string HoraNova::getHoraNovaHoras(){
 	return buf;
 }
 
-
-
 const string HoraNova::getHoraNovaData(){
 	time_t now=t;
 	struct tm tstruct;
@@ -157,7 +152,7 @@ const string HoraNova::getHoraNovaData(){
 	strftime(buf,sizeof(buf), "%Y-%m-%d",&tstruct);
 	return buf;
 }
-
+*/
 std::ostream & operator<<(std::ostream & out, const HoraNova & t){
 	out << t;
 	return out;
@@ -182,5 +177,44 @@ FillConsoleOutputAttribute(hCon, csbi.wAttributes, dwConSize, coordScreen, &cCha
 SetConsoleCursorPosition(hCon, coordScreen);
 }
 
+//Testa cin.fail
+template <class N>
+void input(N &valor) {
+  cin >> valor;
+  if (cin.fail()) {
+    cin.clear();
+    cin.ignore(1000, '\n');
+    throw InputFail();
+  }
+}
 
+//display de um ficheiro de texto
+void imprimirFicheiro(string textfile)
+{
+  fstream file;
+  string information;
+
+  file.open(textfile);
+
+  //If the file does not exist or is in another folder
+  if (file.fail())
+  {
+    cout << textfile << " is missing!" << endl;
+    exit(1);
+  }
+
+  while (!file.eof())
+  {
+    getline(file, information);
+    cout << information << endl;
+  }
+}
+
+template <class N>
+void opccao(N &op,N min,N max) {
+  cout << "Seleccione uma opccao: ";
+  cin >> op;
+  if(op < min || op > max)
+    throw OpccaoInvalida<N>(op, min, max);
+}
 
