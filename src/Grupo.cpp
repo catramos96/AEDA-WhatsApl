@@ -1,6 +1,5 @@
 #include "Grupo.h"
 #include "Templates.h"
-
 #include <algorithm>
 #include <sstream>
 
@@ -230,8 +229,6 @@ bool comparaMembro(const Membro &m1, const Membro &m2){
 }
 
 bool Grupo::operator==(const Grupo &g)const{ //compara 2 grupos pelos membros
-	sort(g.membros.begin(), g.membros.end(), comparaMembro);
-	sort(membros.begin(), membros.end(), comparaMembro);
 
 	for (int i = 0; i < numMembros(); i++){
 		if (g.membros.at(i) == membros.at(i))

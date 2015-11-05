@@ -39,3 +39,7 @@ private:
   N min;
   N max;
 };
+
+class VoltarAtras {};
+
+class InputFail {};

@@ -1,6 +1,5 @@
 #include "Templates.h"
 #include "Utilizador.h"
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -18,7 +17,7 @@ Utilizador::Utilizador() {
 	nome = "";
 	email = "";
 	idade = 0;
-	telemoveis.clear();
+  telemovel = 0;
 	Data d;
 	dataAdesao = d;
 }
@@ -32,8 +31,10 @@ Utilizador::Utilizador(bool visibilidade, string login, string nome, string emai
 	if (idade < 18)
 		throw IdadeInsuficiente(idade);
 	this->idade = idade;
-	telemoveis.push_back(telemovel);
+  this->telemovel = telemovel;
 }
+
+Utilizador::~Utilizador() {}
 
 /*******************************************************
  * 				                GET				               	   *
@@ -99,9 +100,15 @@ void Utilizador::setAmigos(Utilizador *u) {
     amigos.push_back(u);
 }
 
+void Utilizador::setTelemovel(int t) {
+  telemovel = t;
+}
+
+/*
 void Utilizador::setGrupo(const Grupo grupo){
 	grupos.push_back(grupo);
 }
+*/
 
 /*******************************************************
  * 				   				 ADICIONAR                     	   *
@@ -111,14 +118,6 @@ void Utilizador::addAmigo(Utilizador &u) {
     setAmigos(&u);
     u.setAmigos(this);
   }
-
-void Utilizador::addTelemovel(int t) {
-	vector<int>::iterator it = find(telemoveis.begin(), telemoveis.end(), t);
-	if (it == telemoveis.end())
-		telemoveis.push_back(t);
-	else
-		throw TelemovelJaExiste(t);
-}
 
 /*******************************************************
  * 				   			      REMOVER                    	   *
@@ -131,15 +130,6 @@ void Utilizador::deletAmigo(Utilizador *u) {
 	else
 		amigos.erase(it);
 }
-
-void Utilizador::removerTelemovel(int t) {
-	vector<int>::iterator it = find(telemoveis.begin(), telemoveis.end(), t);
-	if (it != telemoveis.end())
-		telemoveis.erase(it);
-	else
-		throw TelemovelInexistente(t);
-}
-
 
 void Utilizador::removerAmigo(Utilizador &u) {
 	deletAmigo(&u); //remove dos meus amigos
@@ -156,12 +146,7 @@ void Utilizador::imprimirDefinicoes() const {
   cout << "Login: " << login << endl;
   cout << "Idade: " << idade << endl;
   cout << "Email: " << email << endl;
-  cout << "Telemoveis: ";
-  for (unsigned int i = 0; i < telemoveis.size(); ++i) {
-    cout << telemoveis[i];
-    if (i == telemoveis.size() - 2)
-      cout << " , ";
-  }
+  cout << "Telemovel: " << telemovel << endl;
   cout << endl;
 }
 
@@ -172,12 +157,7 @@ void Utilizador::imprimirUtilizador() const {
     cout << "Login: " << login << endl;
     cout << "Idade: " << idade << endl;
     cout << "Email: " << email << endl;
-    cout << "Telemoveis: ";
-    for (unsigned int i = 0; i < telemoveis.size(); ++i) {
-      cout << telemoveis[i];
-      if (i == telemoveis.size() - 2)
-        cout << " , ";
-    }
+    cout << "Telemovel: " << telemovel << endl;
     cout << endl;
   }
   else {

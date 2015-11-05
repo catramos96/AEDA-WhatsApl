@@ -80,6 +80,7 @@ void Comunidade::printComunidade() const{
 		cout << *comunidade.at(i) << endl;
 }
 
+/*
 int Comunidade::leComunidade(){
 	string line;
 	////
@@ -160,3 +161,4 @@ int Comunidade::escreveComunidade(){
 	  else cout << "Unable to open file";
 	  return 0;
 }
+*/

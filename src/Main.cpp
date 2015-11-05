@@ -12,6 +12,7 @@
 using namespace std;
 
 /*PROBLEMAS:
+só um telemovel por utilizador
 */
 
 void esperar() {
@@ -30,15 +31,13 @@ Utilizador * login(Comunidade *c) {
   int i,op;
   Utilizador * u = new Utilizador();
 
-  cout << "Login de Utilizador" << endl << endl;
-  cout << "Fazer Login (1)" << endl;
-  cout << "Voltar Atras (2)" << endl << endl;
-  cout << "Seleccione uma opccao: ";
-  cin >> op;
+  imprimirFicheiro("HeaderLogin.txt");
+  imprimirFicheiro("MenuLogin.txt");
+  opccao<int>(op,1,2);
   
   clrscr(); //clears the screen
 
-  cout << "Login de Utilizador" << endl << endl;
+  imprimirFicheiro("HeaderLogin.txt");
 
   if (op == 1)
   {
@@ -49,13 +48,13 @@ Utilizador * login(Comunidade *c) {
     i = c->existeUtil(u);
     if (i != -1)
       u = c->utilizadorNaPosicao(i);
-    else
+    else {
+      delete u;
       throw UtilizadorInexistente(*u);
+    }
   }
   else if (op == 2)
   throw VoltarAtras();
-  else
-    throw OpccaoInvalida<int>(op, 1, 2);
   
   return u;
 }
@@ -69,11 +68,9 @@ void registar(Comunidade *c) {
   int op;
   Data dA;
 
-  cout << "Registar Utilizador" << endl << endl;
-  cout << "Registar (1)" << endl;
-  cout << "Voltar Atras (2)" << endl << endl;
-  cout << "Seleccione uma opccao: ";
-  cin >> op;
+  imprimirFicheiro("HeaderRegistar.txt");
+  imprimirFicheiro("MenuRegistar.txt");
+  opccao<int>(op, 1, 2);
 
   clrscr();
 
@@ -101,21 +98,14 @@ void registar(Comunidade *c) {
   }
   else if (op == 2)
     throw VoltarAtras();
-  else
-    throw OpccaoInvalida<int>(op, 1, 2);
 }
 
 //opccao comunidade
 void comunidade(Comunidade *c) {
   int op;
-  cout << "Comunidade" << endl << endl;
-  cout << "Ordenar por: " << endl;
-  cout << "Login (1)" << endl;
-  cout << "Data (2)" << endl << endl;
-  cout << "Voltar Atras (3)" << endl << endl;
-
-  cout << "Seleccione uma opccao: ";
-  cin >> op;   
+  imprimirFicheiro("HeaderComunidade.txt");
+  imprimirFicheiro("MenuComunidade.txt");
+  opccao<int>(op, 1, 3);
 
   clrscr();
  
@@ -133,11 +123,10 @@ void comunidade(Comunidade *c) {
   }
   case 3:
     throw VoltarAtras();
-  default:
-    throw OpccaoInvalida<int>(op, 1, 3);
   }
 
-  cout << "COMUNIDADE" << endl << "(nome/login)" << endl << endl;
+  imprimirFicheiro("HeaderComunidade.txt");
+  imprimirFicheiro("OrdenarComunidade.txt");
   c->printComunidade();
   cout << endl;
   esperar();
@@ -167,10 +156,13 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
   }
   case 4:
   {
+    imprimirFicheiro("Informacao.txt");
+    esperar();
+  }
+  case 5:
+  {
     exit(1);//sair
   }
-  default:
-    throw OpccaoInvalida<int>(op, 1, 4);
   }
   return u;
 }
@@ -179,15 +171,9 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 int headerInicio() {
   int op;
   clrscr();
-  cout << "MENU INICIAL" << endl << endl;
-  cout << "LOGIN (1)" << endl;
-  cout << "REGISTAR (2)" << endl;
-  cout << "COMUNIDADE (3)" << endl;
-  cout << "SAIR (4)" << endl;
-  cout << endl;
-  cout << "Seleccione uma opccao: ";
-  cin.clear();
-  cin >> op;
+  imprimirFicheiro("HeaderWhatsApl.txt");
+  imprimirFicheiro("MenuInicial.txt");
+  opccao<int>(op,1,5);
   return op;
 } 
 
@@ -246,28 +232,25 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
   int op;
 
   //Menu Amigos
-  cout << "AMIGOS" << endl << endl;
-  cout << "Adicionar Novo Amigo (1)" << endl;
-  cout << "Remover Amigo (2)" << endl;
-  cout << "Ver Amigos (3)" << endl;
-  cout << "Voltar Atras (4)" << endl << endl;
-  cout << endl;
-  cout << "Seleccione uma opccao: ";
-  cin >> op;
-  if (op < 1 || op > 4) //Resposta errada
-    throw OpccaoInvalida<int>(op, 1, 4);
+  imprimirFicheiro("HeaderAmigos.txt");
+  imprimirFicheiro("MenuAmigos.txt");
+  opccao<int>(op, 1, 4);
 
   string login;
   int i;
 
   clrscr();
+
   switch (op)
   {
   case 1:
   {
     //adicionar amigo
 
-    cout << "ADICIONAR AMIGO" << endl << endl;
+    imprimirFicheiro("HeaderAmigos.txt");
+    /**************************************************************************
+                              EM CONSTRUCAO    
+    **************************************************************************/
     cout << "Login:";
     cin >> login;
     Utilizador * a = new Utilizador();
@@ -320,26 +303,25 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
   int op;
 
   //Menu Definicoes
-  cout << "DEFINICOES" << endl << endl;
+  imprimirFicheiro("HeaderDefinicoes.txt");
   u->imprimirDefinicoes();
   cout << endl;
-
-  cout << "Alterar: " << endl;
-  cout << "Visibilidade (1)" << endl;
-  cout << "Nome (2)" << endl;
-  cout << "Login (3)" << endl;
-  cout << "Idade (4)" << endl;
-  cout << "Email (5)" << endl;
-  cout << "Telemovel (6)" << endl;
-  cout << endl;
-
-  cout << "Opcao: ";
-  cin >> op;
-  if (op > 6 || op < 1)
-    throw OpccaoInvalida<int>(op, 1, 6);
+  imprimirFicheiro("MenuDefinicoes.txt");
+  opccao<int>(op, 1, 2);
 
   clrscr();
-  cout << "DEFINICOES" << endl << endl;
+
+  if (op == 1) {
+    imprimirFicheiro("MenuAlterarDefinicoes.txt");
+    opccao<int>(op, 1, 6);
+  }
+  else
+    throw VoltarAtras();
+
+  clrscr();
+
+  imprimirFicheiro("HeaderDefinicoes.txt");
+
   switch (op)
   {
   case 1: //Alterar Visibilidade
@@ -359,7 +341,8 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
   {
     string n;
     cout << "Nome novo: " << endl;
-    cin >> n;
+    cin.ignore(1000, '\n');
+    getline(cin, n);
     u->setNome(n);
     break;
   }
@@ -374,8 +357,10 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
       u->setLogin(l);
       delete p;
     }
-    else
+    else {
+      delete p;
       throw UtilizadorJaExiste(*u);
+    }
     break;
   }
   case 4: //Alterar Idade
@@ -396,28 +381,10 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
   }
   case 6: //Telemovel
   {
-    int r;
     int t;
-    cout << "Adicionar telemovel (1)" << endl;
-    cout << "Remover telemovel (2)" << endl;
-    cout << endl;
-    cout << "Opcao: ";
-    cin >> r;
-    clrscr();
-    if(r > 2 || r < 1)
-      throw OpccaoInvalida<int>(op, 1, 2);
-    if (r == 1) {
-      cout << "ADICIONAR TELEMOVEL" << endl << endl;
-      cout << "Telemovel: ";
+    cout << "Novo telemovel: ";
       cin >> t;
-      u->addTelemovel(t);
-    }
-    else if (r == 2) {
-      cout << "REMOVER TELEMOVEL" << endl << endl;
-      cout << "Telemovel: ";
-      cin >> t;
-      u->removerTelemovel(t);
-    }
+      u->setTelemovel(t);
     break;
   }
     }
@@ -428,22 +395,12 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 //header do menu Utilizador
   int menuUtilizador(Utilizador *u) {
     int op;
-    clrscr();
-    cin.clear();
-    cout << "MENU UTILIZADOR - " << u->getNome() << endl << endl;
-    //OPCCOES
-    cout << "Perfil (1)" << endl;
-    cout << "Amigos (2)" << endl;
-    cout << "Conversas (3)" << endl;
-    cout << "Comunidade (4)" << endl;
-    cout << "Definicoes (5)" << endl;
-    cout << "Terminar Seccao (6)" << endl;
-    cout << endl;
-    cout << "Seleccione uma opccao: ";
 
-    cin >> op;
-    if (op < 1 || op > 6) //Resposta errada
-      throw OpccaoInvalida<int>(op, 1, 6);
+    clrscr();
+    imprimirFicheiro("HeaderUtilizador.txt");
+    imprimirFicheiro("MenuUtilizador.txt");
+    cout << "Seleccione uma opccao: ";
+    opccao<int>(op, 1, 6);
     return op;
   }
 
@@ -454,7 +411,7 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
     {
     case 1: //Perfil
     {
-      cout << "DEFINICOES" << endl << endl;
+      imprimirFicheiro("HeaderPerfil.txt");
       u->imprimirUtilizador();
       cout << endl;
       esperar();

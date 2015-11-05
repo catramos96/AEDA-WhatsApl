@@ -8,6 +8,7 @@
 #include <time.h>
 #include <windows.h> 
 #include <typeinfo>
+#include <fstream>
 
 using namespace std;
 
@@ -138,9 +139,6 @@ public:
 	const string getHoraNovaData();
 };
 
-void clrscr(void);
-
-
 /**
 * @brief Classe DataInvalida.
 * E uma classe que indica uma execao da classe Data.
@@ -154,18 +152,14 @@ private:
 
 };
 
-class VoltarAtras {};
+void clrscr(void);
 
-class InputFail {};
+template <class N>
+void input(N &valor);
 
-template <class N> 
-void input(N &valor) {
-    cin >> valor;
-  if (cin.fail()) {
-    cin.clear();
-    cin.ignore(1000,'\n');
-    throw InputFail();
-  }
-}
+void imprimirFicheiro(string textfile);
+
+template <class N>
+void opccao(N &op,N min , N max);
 
 #endif /* SRC_SYSTEM_H_ */

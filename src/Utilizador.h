@@ -14,7 +14,7 @@ class Utilizador
 private:
 	bool visibilidade; //publica = true , privado = false
 	string login, nome, email;
-	vector<int> telemoveis;
+  int telemovel;
 	Data dataAdesao;
 	int idade;
 	vector<Utilizador *> amigos; // destinatarios das mensagens
@@ -22,6 +22,7 @@ private:
 	vector<Grupo *> grupos;
 public:
 	Utilizador();
+  ~Utilizador();
 	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
 
 	//GETS
@@ -42,15 +43,16 @@ public:
 	void setIdade(int i);
 	void setVisibilidade(bool v);
 	void setAmigos(Utilizador *u);
+  void setTelemovel(int i);
+
+
 	//void addConversa(Conversa &c);
 	//void addUtilizador(vector<Utilizador *> v, Utilizador u);
 	void addAmigo(Utilizador &u);
-	void addTelemovel(int t);
 	//void aceitarAmizade(Utilizador &u); //de pedidos de amizade
 	//bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
 
 	void deletAmigo(Utilizador *u); //elimina dos amigos
-	void removerTelemovel(int t);
 	void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
 	//void removerConversa(Conversa &c);
 

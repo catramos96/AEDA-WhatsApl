@@ -1,0 +1,5 @@
+				 Adicionar Amigo (1)
+				  Remover Amigo (2)
+				   Ver Amigos (3)
+				  Voltar Atras (4)
+				  
