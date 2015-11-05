@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
-#include "System.h"
 #include <string>
 #include <sstream>
 #include <time.h>
+
 #include "Mensagem.h"
 
 using namespace std;
@@ -12,21 +12,16 @@ using namespace std;
  *		CLASSE MENSAGEM			*
  *******************************/
 
-Mensagem::Mensagem(string tipo, Data data, Horas hora, string emissor, vector<string> destinatarios){
+Mensagem::Mensagem(string tipo, Data data, Horas hora){
 	this->tipo = tipo;
 	this->data = data;
-	this->emissor = emissor;
-	this->destinatarios = destinatarios;
+	this->hora = hora;
 }
 
 void Mensagem::imprimirMsg() {
 	cout << "Tipo: " << tipo << endl;
 	cout << "Data: " << data << endl;
-	cout << "Emissor: " << emissor << endl;
-	cout << "Destinatarios: " << endl;
-	for (unsigned int i = 0; i < destinatarios.size(); i++) {
-		cout << "    " << destinatarios[i] << endl;
-	}
+//	cout << "Emissor: " << emissor << endl;
 }
 
 string Mensagem::getTipo() const {
@@ -37,15 +32,10 @@ Data Mensagem::getData() const {
 	return data;
 }
 
-
-string Mensagem::getEmissor() const {
-	return emissor;
+void Mensagem::setEmissor(string emissor){
+	this->emissor = emissor;
 }
-
-vector<string> Mensagem::getDestinatarios() const {
-	return destinatarios;
-}
-
+/*
 string Mensagem::msgHeader() const {
 	stringstream s;
 	s << "De: " << emissor << endl;

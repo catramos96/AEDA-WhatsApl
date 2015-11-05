@@ -1,9 +1,10 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <sstream>
 #include <vector>
 #include <time.h>
 #include <Windows.h>
+#include <stdio.h>
 
 #include "System.h"
 
@@ -125,7 +126,7 @@ time_t HoraNova::getHoraNova(){
 	return t;
 }
 
-/*
+
 const string HoraNova::getHoraNovaCompleta(){
 	time_t now=t;
 	struct tm tstruct;
@@ -145,6 +146,8 @@ const string HoraNova::getHoraNovaHoras(){
 	return buf;
 }
 
+
+
 const string HoraNova::getHoraNovaData(){
 	time_t now=t;
 	struct tm tstruct;
@@ -153,7 +156,7 @@ const string HoraNova::getHoraNovaData(){
 	strftime(buf,sizeof(buf), "%Y-%m-%d",&tstruct);
 	return buf;
 }
-*/
+
 std::ostream & operator<<(std::ostream & out, const HoraNova & t){
 	out << t;
 	return out;

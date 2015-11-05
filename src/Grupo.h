@@ -1,13 +1,11 @@
 #ifndef SRC_GRUPO_H_
 #define SRC_GRUPO_H_
 
-//descobrir como é que se fazem throws sem crashar o programa
-// mudar o criterio de comparacao para login em vez de nome
-//descobrir no enterprise como se colocam classes dentro de classes e friends
-
 #include <iostream>
 #include <string>
-#include "Utilizador.h"
+#include <vector>
+
+#include "Conversa.h"
 
 /**
  * @brief Classe Membro.
@@ -16,22 +14,23 @@
  */
 class Membro{
 private:
-	Utilizador util;  /**<  membro privado que representa o utilizador */
+	string login;  /**<  membro privado que representa o login do utilizador */
 	Data adesaoGrupo;  /**<  membro privado que representa a data de adesao ao grupo*/
 	bool bloqueado;  /**<  membro privado que indica se o utilizador está ou não bloqueado do grupo */
 public:
+	Membro();
 	/**
 	 * @brief construtor Membro
 	 * inicializa o Utilizador util com o utilizador dado, a Data adesaoGrupo com a data dada, e o boleano bloqueado a 'false'
 	 * @param util Utilizador
 	 * @param adesaoGrupo data em que aderiu ao grupo
 	 */
-	Membro(Utilizador util, Data adesaoGrupo);
+	Membro(string Login, Data adesaoGrupo);
 	/**
 	 * @brief Funcao que retorna o Utilizador util
 	 * @return util
 	 */
-	Utilizador getUtilizador() const;
+	string getLogin() const;
 	/**
 	 * @brief Funcao que retorna a Data de adesao do utilizador ao grupo
 	 * @return adesaoGrupo
@@ -66,6 +65,8 @@ public:
 	friend ostream & operator<<(ostream & out, const Membro & m);
 };
 
+//============================================================================================================================//
+
 /**
  * @brief Classe Grupo
  * classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador.
@@ -74,10 +75,11 @@ public:
  */
 class Grupo {
 private:
+	Conversa conversa;
 	string titulo;  /**<  membro privado que indica o titulo do grupo */
-	vector <Membro *> membros;  /**<  membro privado que guarda os membros que pertencem ao grupo */
+	vector <Membro> membros;  /**<  membro privado que guarda os membros que pertencem ao grupo */
 	Data criacao;  /**<  membro privado que representa a data de criacao do grupo */
-	Utilizador moderador;  /**<  membro privado que representa o utilizador moderador do grupo */
+	Membro moderador;  /**<  membro privado que representa o utilizador moderador do grupo */
 	vector<string> status;  /**<  membro privado que guarda todas as notificacoes acerca do grupo.
 									 Regista a entrada, saida, bloqueio ou desbloqueio de um membro com a respetiva data da ocorrencia*/
 public:
@@ -90,7 +92,7 @@ public:
 	 * @param criacao Data de criacao do grupo
 	 * @param moderador Utilizador moderador do grupo
 	 */
-	Grupo(string titulo, Data criacao, Utilizador moderador);
+	Grupo(string titulo, Data criacao, string moderador);
 	/**
 	 * @brief Funcao que retorna o numero de elementos do grupo
 	 * @return Numero de elementos membro
@@ -100,19 +102,19 @@ public:
 	 * @brief Funcao que indica se um utilizador e ou nao o mderador do grupo
 	 * @return True se o utilizador e moderador ou false se nao e.
 	 */
-	bool isModerador(Utilizador u);
+	bool isModerador(Membro m);
 	/**
 	 * @brief Funcao que procura um membro no vetor 'membros' através do metodo de pesquisa sequential search definido na header Templates.h
 	 * @param *m Membro que queremos encontrar
 	 * @return posicao no vetor do membro. -1 se nao encontra.
 	 */
-	int existeMembro(Membro *m);
+	int existeMembro(Membro m);
 	/**
 	 * @brief Funcao que devolve o membro indicado na posicao 'pos'
 	 * @param pos Posicao do elemento no vetor 'membros'
 	 * @return Membro na posicao pos
 	 */
-	Membro *membroNaPosicao(int pos);
+	Membro membroNaPosicao(int pos);
 	/**
 	 * @brief Funcao que imprime o membro privado Status
 	 */
@@ -132,7 +134,7 @@ public:
 	 * @param aceita Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao
 	 * @return True se aceita o pedido, false se rejeita
 	 */
-	bool pedidoAdesao(Utilizador u, Utilizador moderador, Data adesao, bool aceita);
+	bool pedidoAdesao(string novo, Membro moderador, Data adesao, bool aceita);
 	/**
 	 * @brief Funcao que elimina um membro do gupo.
 	 * A eliminacao e registada no membro-dado 'status'
@@ -142,7 +144,7 @@ public:
 	 * @param diaAtual Data em que o utilizador e eliminado do grupo
 	 * @return True se e eliminado com sucesso
 	 */
-	bool retiraMembro(Utilizador u, Utilizador moderador, Data diaAtual);
+	bool retiraMembro(string login, Membro moderador, Data diaAtual);
 	/**
 	 * @brief Funcao que bloqueia um membro.
 	 * Um membro bloqueado nao pode enviar mensagens dentro do grupo, no entanto continua a pertencer ao grupo e a ver mensagens enviadas entre outros utilizadores.
@@ -153,7 +155,7 @@ public:
 	 * @param diaAtual Data em que o utilizador e bloqueado
 	 * @return True se o membro e bloqueado com sucesso e false se o membro ja se encontra bloqueado
 	 */
-	bool bloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual);
+	bool bloquearMembro(string login, Membro moderador, Data diaAtual);
 	/**
 	 * @brief Funcao que desbloqueia um membro.
 	 * Esta funcao, ao contrario da funcao pedidoAdesao, nao implica que o utilizador peca para ser desbloqueado
@@ -164,32 +166,11 @@ public:
 	 * @param diaAtual Data em que o utilizador e desbloqueado
 	 * @return True se o membro e desbloqueado com sucesso e false se o membro ja se encontra desbloqueado
 	 */
-	bool desbloquearMembro(Utilizador u, Utilizador moderador, Data diaAtual);
-};
+	bool desbloquearMembro(string login, Membro moderador, Data diaAtual);
 
-/**
- * @brief Classe que representa uma excecao da classe grupo.
- * esta excecao e lancada no caso de o utilizador que esta a pedir permissoes nao ser o utilizador moderador
- */
-class NaoModerador{
-private:
-	Utilizador mod;  /**<  membro privado que representa o utilizador que cria a excecao */
-public:
-	/**
-	 * @brief Construtor
-	 * inicializa o membro mod com o utilizador recebido
-	 * @param mod utilizador recebido
-	 */
-	NaoModerador(Utilizador mod){
-		this->mod = mod;
-	};
-	/**
-	 * @brief Funcao que retorna o utilizador
-	 * @return mod
-	 */
-	Utilizador getUtil() const{
-		return mod;
-	};
+	bool enviarMensagem(string emissor, Mensagem sms);
+
+	bool operator==(const Grupo&g)const;
 };
 
 #endif /* SRC_GRUPO_H_ */

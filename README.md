@@ -17,7 +17,7 @@
 
 1 - System.h  ---> acabado
 
-2 - Utilizador.h ---> (Catarina)
+2 - Utilizador.h ---> acabado (Catarina)
 
 3 - Grupo.h ---> acabado
 
@@ -26,6 +26,8 @@
 5 - Mensagem.h ---> acabado (Catarina)
 
 6 - Comunidade.h
+
+7 - Main.cpp Catarina (por agora)
 
 # ------------------------------------------------------------------------------- #
 

@@ -1,15 +1,12 @@
-/** @ \file Utilizador.h
- * header file que contém a classe Utilizador
- */
 #ifndef SRC_UTILIZADOR_H_
 #define SRC_UTILIZADOR_H_
 
-#include "System.h"
-#include "Conversa.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
+
+#include "Grupo.h"
 
 
 class Utilizador
@@ -20,51 +17,48 @@ private:
 	vector<int> telemoveis;
 	Data dataAdesao;
 	int idade;
-	vector<Utilizador *> amigos;
-	//vector<Utilizador *> pedidosAmizade;
+	vector<Utilizador *> amigos; // destinatarios das mensagens
 	vector<Conversa *> conversas;
+	vector<Grupo *> grupos;
 public:
 	Utilizador();
 	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
 
 	//GETS
 
-  string getNome() const;
+	string getNome() const;
 	string getEmail() const;
 	string getLogin() const;
 	bool getVisibilidade() const;
 	Data getDataAdesao() const;
-  vector<Utilizador *> getAmigos() const;
+	vector<Utilizador *> getAmigos() const;
 	//vector<Utilizador *> getPedidosAmizade() const;
 
 	//SETS
-
-  void setLogin(string l);
+	void setGrupo(const Grupo grupo);
+	void setLogin(string l);
 	void setNome(string n);
 	void setEmail(string);
-  void setIdade(int i);
+	void setIdade(int i);
 	void setVisibilidade(bool v);
 	void setAmigos(Utilizador *u);
-
-  //void addConversa(Conversa &c);
+	//void addConversa(Conversa &c);
 	//void addUtilizador(vector<Utilizador *> v, Utilizador u);
-  void addAmigo(Utilizador &u);
+	void addAmigo(Utilizador &u);
 	void addTelemovel(int t);
 	//void aceitarAmizade(Utilizador &u); //de pedidos de amizade
-  //bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
-  
+	//bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
+
 	void deletAmigo(Utilizador *u); //elimina dos amigos
 	void removerTelemovel(int t);
 	void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
-  
 	//void removerConversa(Conversa &c);
-	
 
 	//IMPRESS STATUS
 
 	void imprimirDefinicoes() const;
-  void imprimirUtilizador() const;
-  void imprimirAmigos() const;
+	void imprimirUtilizador() const;
+	void imprimirAmigos() const;
 
 	//OVERLOADING DE OPERADORES
 
@@ -72,11 +66,18 @@ public:
 	bool operator<(const Utilizador &u) const;
 	friend ostream & operator<<(ostream & out, const Utilizador & u);
 
+	void criarConversa(Utilizador *u);
+	bool enviarMensagemUtilizador(Mensagem sms, Utilizador *u);
+	void criarGrupo(string titulo, Data dataAtual);
+	bool enviarMensagemGrupo(Mensagem sms, Grupo *g);
+	bool bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
+	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
+	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
+	//pedidos de adesao
+
 };
 
-/*******************************************************
- * 				   	CLASSES EXCECÇÃO		     	   *
- *****************************************************/
+//================================================================================================//
 
 class UtilizadorJaExiste {
 private:
@@ -85,7 +86,7 @@ private:
 public:
 	UtilizadorJaExiste(Utilizador u){ this->u = u; login = u.getLogin(); };
 	UtilizadorJaExiste(string login){ this->login = login; };
-  string getLogin() const { return login; };
+	string getLogin() const { return login; };
 };
 
 class UtilizadorInexistente {
@@ -114,16 +115,16 @@ public:
 
 class IdadeInsuficiente {
 public:
-  IdadeInsuficiente(int idade) { this->idade = idade; };
+	IdadeInsuficiente(int idade) { this->idade = idade; };
 private:
-  int idade;
+	int idade;
 };
 
 class AmigoJaExiste {
 public:
-  AmigoJaExiste(Utilizador u) { util = u; };
+	AmigoJaExiste(Utilizador u) { util = u; };
 private:
-  Utilizador util;
+	Utilizador util;
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

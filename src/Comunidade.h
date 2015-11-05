@@ -32,6 +32,9 @@ public:
 	* @ param pos: posicao do utilizador
 	* @ return utilzador
 	*/
+
+	int Comunidade::existeUtilNome(string nome) const;
+
 	Utilizador *utilizadorNaPosicao(int pos) const;
 	/**
 	* @ brief Funcao que adiciona um utilizador à comunidade
@@ -59,6 +62,12 @@ public:
 	* @ return void
 	*/
 	void printComunidade() const;
+
+	bool existeLogin(string l) const;
+
+	int leComunidade();
+
+	int escreveComunidade();
 };
 
 #endif /* SRC_COMUNIDADE_H_ */
