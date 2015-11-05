@@ -13,7 +13,9 @@
 using namespace std;
 
 /*PROBLEMAS:
-só um telemovel por utilizador
+- dentro do utilizador poder procurar na comunidade
+- dividir o meu conversas em conversas/grupo
+- mandar mensagem
 */
 void esperar() {
   system("pause");
@@ -22,8 +24,11 @@ void esperar() {
 void opccao(int &op, int min, int max) {
   cout << "Seleccione uma opccao: ";
   cin >> op;
-  if (op < min || op > max)
+  if (op < min || op > max) {
+    cin.clear();
+    cin.ignore(1000,'\n');
     throw OpccaoInvalida<int>(op, min, max);
+  }
 }
 
 /*****************************************************************
@@ -37,6 +42,7 @@ Utilizador * login(Comunidade *c) {
 	Utilizador * u = new Utilizador();
 
   menuLogin();
+
 	opccao(op,1, 2);
 
 	clrscr(); //clears the screen
@@ -47,13 +53,13 @@ Utilizador * login(Comunidade *c) {
 	{
 		cout << "Login: ";
 		cin >> login;
-
 		u->setLogin(login);
 		i = c->existeUtil(u);
+    c->printComunidade();
+    cout << i << endl;
 		if (i != -1)
 			u = c->utilizadorNaPosicao(i);
 		else {
-			delete u;
 			throw UtilizadorInexistente(u->getLogin());
 		}
 	}
@@ -64,7 +70,6 @@ Utilizador * login(Comunidade *c) {
 }
 
 //opccao registar
-
 void registar(Comunidade *c) {
 	bool vis;
 	string login, nome, email;
@@ -105,7 +110,6 @@ void registar(Comunidade *c) {
 }
 
 //opccao comunidade
-
 void comunidade(Comunidade *c) {
   menuComunidade();
   int op;
@@ -163,7 +167,6 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 	}
 	case 5:
 	{
-    delete u;
 		exit(1);//sair
 	}
 	}
@@ -230,7 +233,6 @@ Utilizador * MenuInicial(Comunidade *c) {
 *****************************************************************/
 
 //Opcao Amigos
-
 void amigosUtilizador(Utilizador *u, Comunidade *c) {
 	//Menu Amigos
   menuAmigos();
@@ -294,6 +296,47 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 	case 4:
 		throw VoltarAtras();
 	}
+}
+
+//Opcao Conversas
+void conversasUtilizador(Utilizador *u, Comunidade *c) {
+  menuConversas();
+  int op;
+  opccao(op, 1, 6);
+  switch (op)
+  {
+  case 1: //criar conversa
+  {
+    string login;
+
+    header("CRIAR CONVERSA");
+    cout << "Amigos:" << endl << endl;
+    u->imprimirAmigos();
+    cout << endl;
+    cout << "Login do destinatario: ";
+    input<string>(login);
+    u->criarConversa(u->getAmigo(login));
+    break;
+  }
+  case 2: //criar grupo
+  {
+    string t;
+    int d, m, a;
+    cout << "Titulo do grupo: ";
+    cin.ignore(1000, '\n');
+    getline(cin, t);
+    cout << "Data (dia mes ano): ";
+    cin >> d >> m >> a;
+    Data data;
+    data.setData(d, m, a);
+    u->criarGrupo(t, data);
+    break;
+  }
+  case 3:
+  {
+
+  }
+  }
 }
 
 //Opcao Definicoes
@@ -392,6 +435,7 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 //header do menu Utilizador
 int menuUtilizador(Utilizador *u) {
 	clrscr();
+  header("Utilizador - " + u->getLogin());
   menuUtilizador();
   int op;
   opccao(op,1, 6);
@@ -407,7 +451,6 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 	{
     header("PERFIL");
 		u->imprimirUtilizador();
-		cout << endl;
 		esperar();
 		break;
 	}
@@ -418,7 +461,7 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 	}
 	case 3: //Conversas
 	{
-		//conversasUtilizador(u, c);
+		conversasUtilizador(u, c);
 		break;
 	}
 	case 4: //Comunidade
@@ -476,6 +519,14 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
       cout << d.getDia() << "/" << d.getMes() << "/" << d.getAno() << " e invalida!" << endl << endl;
 			esperar();
 		}
+    catch (AmigoJaExiste(a)) {
+      cout << a.getLogin() << " ja e seu amigo!" << endl << endl;
+      esperar();
+    }
+    catch (AmigoInexistente(a)) {
+      cout << a.getLogin() << " nao e seu amigo!" << endl << endl;
+      esperar();
+    }
 	} while (terminar == false);
 }
 

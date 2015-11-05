@@ -246,3 +246,12 @@ bool Utilizador::removerMembro(Utilizador *u, Grupo *g, Data diaAtual){
 void Utilizador::pedirAdesao(Grupo *g){
 	g->adicionarPedido(login);
 }
+
+Utilizador* Utilizador::getAmigo(string login) const {
+  Utilizador *u = new Utilizador;
+  u->setLogin(login);
+  int i = pointerSequentialSearch(amigos, u);
+  if (i == -1)
+    throw AmigoInexistente(u->getLogin());
+  return amigos[i];
+}

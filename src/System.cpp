@@ -215,10 +215,9 @@ void menuComunidade() {
 }
 
 void menuUtilizador() {
-  header("UTILIZADOR");
   cout << "Perfil (1)" << endl;
   cout << "Amigos (2)" << endl;
-  cout << "Conversas (3)" << endl;
+  cout << "Conversas / Grupos (3)" << endl;
   cout << "Comunidade (4)" << endl;
   cout << "Definicoes (5)" << endl;
   cout << "Terminar Seccao (6)" << endl << endl;
@@ -230,6 +229,16 @@ void menuAmigos() {
   cout << "Remover Amigo (2)" << endl;
   cout << "Ver Amigos (3)" << endl;
   cout << "Voltar Atras (4)" << endl << endl;
+}
+
+void menuConversas() {
+  header("CONVERSAS / GRUPOS");
+  cout << "Criar nova conversa (1)" << endl;
+  cout << "Criar novo grupo (2)" << endl;
+  cout << "Ver conversas (3)" << endl;
+  cout << "Ver grupos (4)" << endl;
+  cout << "Voltar Atras (5)" << endl << endl;
+
 }
 
 void menuDefinicoes() {

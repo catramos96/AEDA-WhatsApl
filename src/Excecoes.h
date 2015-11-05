@@ -34,6 +34,15 @@ private:
 class AmigoJaExiste {
 public:
   AmigoJaExiste(string l) { login = l; };
+  string getLogin() const { return login; };
+private:
+  string login;
+};
+
+class AmigoInexistente {
+public:
+  AmigoInexistente(string l) { login = l; };
+  string getLogin() const { return login; };
 private:
   string login;
 };
