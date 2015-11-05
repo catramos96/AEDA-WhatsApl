@@ -64,13 +64,12 @@ Data::Data(int d, int m, int a){
 }
 
 void Data::setData(int d, int m, int a){
+  Data dA(d, m, a);
 	if (d < 1 || d > 31 || m < 1 || m > 12 || a < 0)
-		throw DataInvalida();
-	else{
-		dia = d;
-		mes = m;
-		ano = a;
-	}
+		throw DataInvalida(dA);
+  dia = d;
+  mes = m;
+  ano = a;
 }
 
 int Data::getAno() const{
