@@ -13,7 +13,7 @@ class Utilizador
 private:
 	bool visibilidade; //publica = true , privado = false
 	string login, nome, email;
-  int telemovel;
+	int telemovel;
 	Data dataAdesao;
 	int idade;
 	//vector<Utilizador *> amigos;
@@ -41,29 +41,12 @@ public:
 	void setEmail(string);
 	void setIdade(int i);
 	void setVisibilidade(bool v);
-<<<<<<< HEAD
-	//void setAmigos(Utilizador *u);
-	//void addAmigo(Utilizador &u);
-	void addTelemovel(int t);
-
-	//void deletAmigo(Utilizador *u); //elimina dos amigos
-	void removerTelemovel(int t);
-	//void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
-=======
 	void setAmigos(Utilizador *u);
-  void setTelemovel(int i);
+	 void setTelemovel(int i);
 
-
-	//void addConversa(Conversa &c);
-	//void addUtilizador(vector<Utilizador *> v, Utilizador u);
 	void addAmigo(Utilizador &u);
-	//void aceitarAmizade(Utilizador &u); //de pedidos de amizade
-	//bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
-
 	void deletAmigo(Utilizador *u); //elimina dos amigos
 	void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
->>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
-	//void removerConversa(Conversa &c);
 
 	//IMPRESS STATUS
 

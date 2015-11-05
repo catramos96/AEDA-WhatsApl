@@ -1,10 +1,7 @@
 #include "Templates.h"
 #include "Utilizador.h"
-<<<<<<< HEAD
 #include "Excecoes.h"
 
-=======
->>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 #include <iostream>
 #include <string>
 #include <vector>
@@ -106,9 +103,8 @@ void Utilizador::setAmigos(Utilizador *u) {
   else
     amigos.push_back(u);
 }
-<<<<<<< HEAD
+
 */
-=======
 
 void Utilizador::setTelemovel(int t) {
   telemovel = t;
@@ -120,7 +116,6 @@ void Utilizador::setGrupo(const Grupo grupo){
 }
 */
 
->>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 /*******************************************************
  * 				   				 ADICIONAR                     	   *
  ******************************************************/
@@ -129,17 +124,8 @@ void Utilizador::addAmigo(Utilizador &u) {
     setAmigos(&u);
     u.setAmigos(this);
   }
-<<<<<<< HEAD
+
   */
-void Utilizador::addTelemovel(int t) {
-	vector<int>::iterator it = find(telemoveis.begin(), telemoveis.end(), t);
-	if (it == telemoveis.end())
-		telemoveis.push_back(t);
-	else
-		throw TelemovelJaExiste(t);
-}
-=======
->>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 
 /*******************************************************
  * 				   			      REMOVER                    	   *
@@ -152,20 +138,10 @@ void Utilizador::deletAmigo(Utilizador *u) {
 	else
 		amigos.erase(it);
 }
-<<<<<<< HEAD
 */
-void Utilizador::removerTelemovel(int t) {
-	vector<int>::iterator it = find(telemoveis.begin(), telemoveis.end(), t);
-	if (it != telemoveis.end())
-		telemoveis.erase(it);
-	else
-		throw TelemovelInexistente(t);
-}
+
 
 /*
-=======
-
->>>>>>> 8e2b1313dc929ae35ef2cba3a1fecebf8bb83186
 void Utilizador::removerAmigo(Utilizador &u) {
 	deletAmigo(&u); //remove dos meus amigos
 	u.deletAmigo(this); //remove me dos amigos dele
