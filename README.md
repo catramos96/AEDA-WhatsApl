@@ -3,11 +3,11 @@
 #---------------------------------------------------------------------------------#
 
 Todas as Excepções (ESCREVAM AS VOSSAS)
- - UtilizadorJaExiste
- - UtilizadorInexistente
- - DataInvalida
- - VoltarAtras
- - InputFail
+- UtilizadorJaExiste
+- UtilizadorInexistente
+- DataInvalida
+- VoltarAtras
+- InputFail
 
 
 
