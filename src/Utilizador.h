@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-
 #include "Grupo.h"
 
 class Utilizador
@@ -16,7 +15,7 @@ private:
 	int telemovel;
 	Data dataAdesao;
 	int idade;
-	//vector<Utilizador *> amigos;
+	vector<Utilizador *> amigos;
 	vector<Conversa *> conversas; //quer com apenas 1 utilizador quer com grupos
 	vector<Grupo *> grupos;
 public:
@@ -31,11 +30,11 @@ public:
 	string getLogin() const;
 	bool getVisibilidade() const;
 	Data getDataAdesao() const;
-	//vector<Utilizador *> getAmigos() const;
-	//vector<Utilizador *> getPedidosAmizade() const;
+	vector<Utilizador *> getAmigos() const;
+	vector<Utilizador *> getPedidosAmizade() const;
 
 	//SETS
-	void setGrupo(const Grupo grupo);
+	void setGrupo(Grupo grupo);
 	void setLogin(string l);
 	void setNome(string n);
 	void setEmail(string);
@@ -52,7 +51,7 @@ public:
 
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
-	//void imprimirAmigos() const;
+	void imprimirAmigos() const;
 
 	//OVERLOADING DE OPERADORES
 
@@ -71,48 +70,6 @@ public:
 	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	void pedirAdesao(Grupo *g);
-};
-
-//================================================================================================//
-
-class UtilizadorJaExiste {
-private:
-	Utilizador u;
-	string login;
-public:
-	UtilizadorJaExiste(Utilizador u){ this->u = u; login = u.getLogin(); };
-	UtilizadorJaExiste(string login){ this->login = login; };
-	string getLogin() const { return login; };
-};
-
-class TelemovelJaExiste {
-private:
-	int t;
-public:
-	TelemovelJaExiste(int t) { this->t = t; };
-	int getTelemovel() const { return t; };
-};
-
-class TelemovelInexistente {
-private:
-	int t;
-public:
-	TelemovelInexistente(int t) { this->t = t; };
-	int getTelemovel() const { return t; };
-};
-
-class IdadeInsuficiente {
-public:
-	IdadeInsuficiente(int idade) { this->idade = idade; };
-private:
-	int idade;
-};
-
-class AmigoJaExiste {
-public:
-	AmigoJaExiste(Utilizador u) { util = u; };
-private:
-	Utilizador util;
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

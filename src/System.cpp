@@ -5,7 +5,7 @@
 #include <time.h>
 #include <Windows.h>
 #include <stdio.h>
-
+#include "Excecoes.h"
 #include "System.h"
 
 using namespace std;
@@ -67,7 +67,7 @@ Data::Data(int d, int m, int a){
 void Data::setData(int d, int m, int a){
   Data dA(d, m, a);
 	if (d < 1 || d > 31 || m < 1 || m > 12 || a < 0)
-		throw DataInvalida(dA);
+		throw DataInvalida(d,m,a);
   dia = d;
   mes = m;
   ano = a;
@@ -177,17 +177,6 @@ FillConsoleOutputAttribute(hCon, csbi.wAttributes, dwConSize, coordScreen, &cCha
 SetConsoleCursorPosition(hCon, coordScreen);
 }
 
-//Testa cin.fail
-template <class N>
-void input(N &valor) {
-  cin >> valor;
-  if (cin.fail()) {
-    cin.clear();
-    cin.ignore(1000, '\n');
-    throw InputFail();
-  }
-}
-
 //display de um ficheiro de texto
 void imprimirFicheiro(string textfile)
 {
@@ -208,13 +197,5 @@ void imprimirFicheiro(string textfile)
     getline(file, information);
     cout << information << endl;
   }
-}
-
-template <class N>
-void opccao(N &op,N min,N max) {
-  cout << "Seleccione uma opccao: ";
-  cin >> op;
-  if(op < min || op > max)
-    throw OpccaoInvalida<N>(op, min, max);
 }
 

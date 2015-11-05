@@ -1,6 +1,5 @@
 #include <algorithm>
 #include <sstream>
-
 #include "Grupo.h"
 #include "Templates.h"
 #include "Excecoes.h"

@@ -7,18 +7,24 @@
 #include "Templates.h"
 #include "Mensagem.h"
 #include "Conversa.h"
-
+#include "Excecoes.h"
+#include <fstream>
 
 using namespace std;
 
 /*PROBLEMAS:
 só um telemovel por utilizador
 */
-
 void esperar() {
-	system("pause");
+  system("pause");
 }
 
+void opccao(int &op, int min, int max) {
+  cout << "Seleccione uma opccao: ";
+  cin >> op;
+  if (op < min || op > max)
+    throw OpccaoInvalida<int>(op, min, max);
+}
 
 
 /*****************************************************************
@@ -28,12 +34,12 @@ void esperar() {
 //opccao login
 Utilizador * login(Comunidade *c) {
 	string login;
-	int i, op;
+  int i, op;
 	Utilizador * u = new Utilizador();
 
 	imprimirFicheiro("HeaderLogin.txt");
 	imprimirFicheiro("MenuLogin.txt");
-	opccao<int>(op, 1, 2);
+	opccao(op,1, 2);
 
 	clrscr(); //clears the screen
 
@@ -50,7 +56,7 @@ Utilizador * login(Comunidade *c) {
 			u = c->utilizadorNaPosicao(i);
 		else {
 			delete u;
-			throw UtilizadorInexistente(*u);
+			throw UtilizadorInexistente(u->getLogin());
 		}
 	}
 	else if (op == 2)
@@ -60,17 +66,18 @@ Utilizador * login(Comunidade *c) {
 }
 
 //opccao registar
+
 void registar(Comunidade *c) {
 	bool vis;
 	string login, nome, email;
 	int telemovel;
 	int idade, dia, mes, ano;
-	int op;
 	Data dA;
 
 	imprimirFicheiro("HeaderRegistar.txt");
 	imprimirFicheiro("MenuRegistar.txt");
-	opccao<int>(op, 1, 2);
+  int op;
+  opccao(op, 1, 2);
 
 	clrscr();
 
@@ -101,11 +108,12 @@ void registar(Comunidade *c) {
 }
 
 //opccao comunidade
+
 void comunidade(Comunidade *c) {
-	int op;
 	imprimirFicheiro("HeaderComunidade.txt");
 	imprimirFicheiro("MenuComunidade.txt");
-	opccao<int>(op, 1, 3);
+  int op;
+  opccao(op, 1, 3);
 
 	clrscr();
 
@@ -161,6 +169,7 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 	}
 	case 5:
 	{
+    delete u;
 		exit(1);//sair
 	}
 	}
@@ -169,11 +178,11 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 
 //Header do menu inicial
 int headerInicio() {
-	int op;
 	clrscr();
 	imprimirFicheiro("HeaderWhatsApl.txt");
 	imprimirFicheiro("MenuInicial.txt");
-	opccao<int>(op, 1, 5);
+  int op;
+  opccao(op,1, 5);
 	return op;
 }
 
@@ -196,11 +205,11 @@ Utilizador * MenuInicial(Comunidade *c) {
 			esperar();
 		}
 		catch (UtilizadorInexistente(u)) {
-			cout << "Nao existe um utilizador com esse login " << endl << endl;
+			cout << "Nao existe um utilizador com o login " << u.getLogin() << endl << endl;
 			esperar();
 		}
 		catch (UtilizadorJaExiste(u)) {
-			cout << "Ja existe um utilizador com esse login " << endl << endl;
+			cout << "Ja existe um utilizador com o login " << u.getLogin() << endl << endl;
 			esperar();
 		}
 		catch (VoltarAtras) {
@@ -210,7 +219,7 @@ Utilizador * MenuInicial(Comunidade *c) {
 			esperar();
 		}
 		catch (DataInvalida(d)) {
-			cout << d.getData() << " data Invalida!" << endl << endl;
+      cout << d.getDia() << "/" << d.getMes() << "/" << d.getAno() << " é invalida!" << endl << endl;
 			esperar();
 		}
 		catch (InputFail) {
@@ -228,13 +237,13 @@ Utilizador * MenuInicial(Comunidade *c) {
 *****************************************************************/
 
 //Opcao Amigos
-void amigosUtilizador(Utilizador *u, Comunidade *c) {
-	int op;
 
+void amigosUtilizador(Utilizador *u, Comunidade *c) {
 	//Menu Amigos
 	imprimirFicheiro("HeaderAmigos.txt");
 	imprimirFicheiro("MenuAmigos.txt");
-	opccao<int>(op, 1, 4);
+  int op;
+  opccao(op, 1, 4);
 
 	string login;
 	int i;
@@ -248,9 +257,6 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 		//adicionar amigo
 
 		imprimirFicheiro("HeaderAmigos.txt");
-		/**************************************************************************
-		EM CONSTRUCAO
-		**************************************************************************/
 		cout << "Login:";
 		cin >> login;
 		Utilizador * a = new Utilizador();
@@ -258,7 +264,7 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 
 		i = c->existeUtil(a); //Existe na comunidade ?
 		if (i == -1)
-			throw UtilizadorInexistente(*a);
+			throw UtilizadorInexistente(a->getLogin());
 
 		u->addAmigo(*c->utilizadorNaPosicao(i)); //Já é meu amigo? se sim adiciona
 		cout << endl << login << " adicionado com sucesso" << endl << endl;
@@ -276,7 +282,7 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 		a->setLogin(login);
 		i = c->existeUtil(a); //Existe na comunidade ?
 		if (i == -1)
-			throw UtilizadorInexistente(*a);
+			throw UtilizadorInexistente(a->getLogin());
 
 		u->removerAmigo(*c->utilizadorNaPosicao(i)); //É amigo ? se sim remove
 		cout << endl << login << " removido com sucesso" << endl << endl;
@@ -299,21 +305,19 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 
 //Opcao Definicoes
 void definicoesUtilizador(Utilizador *u, Comunidade *c) {
-
-	int op;
-
-	//Menu Definicoes
+  //Menu Definicoes
 	imprimirFicheiro("HeaderDefinicoes.txt");
 	u->imprimirDefinicoes();
 	cout << endl;
 	imprimirFicheiro("MenuDefinicoes.txt");
-	opccao<int>(op, 1, 2);
+  int op;
+  opccao(op,1, 2);
 
 	clrscr();
 
 	if (op == 1) {
 		imprimirFicheiro("MenuAlterarDefinicoes.txt");
-		opccao<int>(op, 1, 6);
+		opccao(op,1, 6);
 	}
 	else
 		throw VoltarAtras();
@@ -359,7 +363,7 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 		}
 		else {
 			delete p;
-			throw UtilizadorJaExiste(*u);
+			throw UtilizadorJaExiste(u->getLogin());
 		}
 		break;
 	}
@@ -394,13 +398,12 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 
 //header do menu Utilizador
 int menuUtilizador(Utilizador *u) {
-	int op;
-
 	clrscr();
 	imprimirFicheiro("HeaderUtilizador.txt");
 	imprimirFicheiro("MenuUtilizador.txt");
 	cout << "Seleccione uma opccao: ";
-	opccao<int>(op, 1, 6);
+  int op;
+  opccao(op,1, 6);
 	return op;
 }
 
@@ -419,7 +422,7 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 	}
 	case 2: //Amigos
 	{
-		amigosUtilizador(u, c);
+		//amigosUtilizador(u, c);
 		break;
 	}
 	case 3: //Conversas
@@ -438,7 +441,7 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 		a->setLogin(login);
 		i = c->existeUtil(a); //Existe na comunidade ?
 		if (i == -1)
-			throw UtilizadorInexistente(*a);
+			throw UtilizadorInexistente(a->getLogin());
 		a->imprimirDefinicoes();
 		break;
 	}
@@ -463,23 +466,23 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
 			opccaoMenuUtilizador(u, c, op);
 		}
 		catch (OpccaoInvalida<int>(o)) {
-			cout << o.getOp() << " nao se encontra entre as opccoes " << o.getMin() << " e " << o.getMax() << endl;
+      cout << o.getOp() << " nao se encontra entre as opccoes " << o.getMin() << " e " << o.getMax() << endl << endl;
 			esperar();
 		}
 		catch (UtilizadorInexistente(u)) {
-			cout << "Nao existe um utilizador com esse login " << endl;
+			cout << "Nao existe um utilizador com o login " << u.getLogin() << endl << endl;
 			esperar();
 		}
 		catch (UtilizadorJaExiste(u)) {
-			cout << "Ja existe um utilizador com esse login " << endl;
+      cout << "Ja existe um utilizador com o login " << u.getLogin() << endl << endl;
 			esperar();
 		}
 		catch (IdadeInsuficiente(i)) {
-			cout << "So e permitido usar a aplicacao com maiores de 18 anos" << endl;
+      cout << "So e permitido usar a aplicacao com maiores de 18 anos!" << endl << endl;
 			esperar();
 		}
 		catch (DataInvalida(d)) {
-			cout << d.getData() << " data Invalida!" << endl;
+      cout << d.getDia() << "/" << d.getMes() << "/" << d.getAno() << " é invalida!" << endl << endl;
 			esperar();
 		}
 	} while (terminar == false);

@@ -7,8 +7,8 @@
 #include <vector>
 #include <time.h>
 #include <windows.h> 
-#include <typeinfo>
 #include <fstream>
+#include "Excecoes.h"
 
 using namespace std;
 
@@ -139,18 +139,7 @@ public:
 	const string getHoraNovaData();
 };
 
-/**
-* @brief Classe DataInvalida.
-* E uma classe que indica uma execao da classe Data.
-*/
-class DataInvalida {
-public:
-  DataInvalida(Data d) { this->d = d; };
-  Data getData() const { return d; };
-private:
-  Data d;
 
-};
 
 void clrscr(void);
 
@@ -159,7 +148,16 @@ void input(N &valor);
 
 void imprimirFicheiro(string textfile);
 
+
 template <class N>
-void opccao(N &op,N min , N max);
+void input(N &valor) {
+  cin >> valor;
+  if (cin.fail()) {
+    cin.clear();
+    cin.ignore(1000, '\n');
+    throw InputFail();
+  }
+}
+
 
 #endif /* SRC_SYSTEM_H_ */
