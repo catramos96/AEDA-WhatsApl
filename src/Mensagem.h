@@ -12,39 +12,43 @@ using namespace std;
 class Mensagem
 {
 private:
-	string tipo; //texto, imagem, video...
 	Data data;
 	Horas hora;
 	string emissor;
+	static int id;
 public:
-	Mensagem(string tipo, Data data, Horas hora);
+	Mensagem(Data data, Horas hora);
 	//virtual ~Mensagem();
 	virtual void imprimirMsg(); //imprime todos os membros private
 	string getTipo() const;
 	Data getData() const;
+	static int getID();
 	void setEmissor(string emissor);
-	string msgHeader() const; //Retorna "header de cada Mensagem"
+	//string msgHeader() const; //Retorna "header de cada Mensagem"
 	
 };
 
-class msgTexto : public Mensagem
+class MsgTexto : public Mensagem
 {
 
 private:
 	string conteudo;
 public:
+	MsgTexto(string conteudo, Data d, Horas h);
 	string getConteudo() const;
 	void imprimirMsg();
-friend ostream & operator<<(ostream & out, const msgTexto &mt);
-
 };
 
-class msgVideo : public Mensagem{
-	friend ostream & operator<<(ostream & out, const msgVideo &mv);
+class MsgVideo : public Mensagem{
+public:
+	MsgVideo(Data d, Horas h);
+	void imprimirMsg();
 };
 
-class msgImagem : public Mensagem{
-	friend ostream & operator<<(ostream & out, const msgImagem &mi);
+class MsgImagem : public Mensagem{
+public:
+	MsgImagem(Data d, Horas h);
+	void imprimirMsg();
 };
 
 #endif /* SRC_MENSAGEM_H_ */

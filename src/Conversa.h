@@ -12,15 +12,15 @@
 class Conversa
 {
 private:
-	vector<Mensagem> mensagens;
+	vector<Mensagem *> mensagens;
 	vector<string> participantes;
 public:
 	Conversa();
 	Conversa(vector<string> partLogin); //conversa vazia
-	void adicionaSms(Mensagem sms);
+	void adicionaSms(Mensagem *sms);
 	void adicionaParticipante(string partNovo);
 	void removeParticipante(string part);
-	void removeSms(Data data, Horas hora);
+	void removeSms(int id);
 	void imprimirConversa();
 	int numSms() const;
 	int numParticipantes() const;

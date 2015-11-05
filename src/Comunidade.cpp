@@ -5,6 +5,7 @@
 
 #include "Comunidade.h"
 #include "Templates.h"
+#include "Excecoes.h"
 
 /********************************
  *		CLASSE COMUNIDADE		*
@@ -60,7 +61,7 @@ void Comunidade::verUtilizador(Utilizador *util) const{
 	if (i != -1)
 		u = utilizadorNaPosicao(i);
 	else
-		throw UtilizadorInexistente(*util);
+		throw UtilizadorInexistente((*util).getLogin());
 
 	u->imprimirUtilizador();
 }

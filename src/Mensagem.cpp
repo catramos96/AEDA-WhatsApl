@@ -12,24 +12,26 @@ using namespace std;
  *		CLASSE MENSAGEM			*
  *******************************/
 
-Mensagem::Mensagem(string tipo, Data data, Horas hora){
-	this->tipo = tipo;
+int Mensagem::id = 0;
+
+Mensagem::Mensagem(Data data, Horas hora){
 	this->data = data;
 	this->hora = hora;
+	id++;
 }
 
 void Mensagem::imprimirMsg() {
-	cout << "Tipo: " << tipo << endl;
-	cout << "Data: " << data << endl;
-//	cout << "Emissor: " << emissor << endl;
-}
-
-string Mensagem::getTipo() const {
-	return tipo;
+	cout << "Mensagem : "<< id << endl;
+	cout << "Data: " << data << " Hora : " << hora << endl;
+	cout << "Emissor: " << emissor << endl;
 }
 
 Data Mensagem::getData() const {
 	return data;
+}
+
+int Mensagem::getID(){
+	return id;
 }
 
 void Mensagem::setEmissor(string emissor){
@@ -54,39 +56,40 @@ string Mensagem::msgHeader() const {
  *		CLASSE MSG TEXTO		*
  *******************************/
 
-string msgTexto::getConteudo() const {
+MsgTexto::MsgTexto(string conteudo, Data d, Horas h) : Mensagem(d,h)
+{
+	this->conteudo = conteudo;
+}
+
+string MsgTexto::getConteudo() const {
 	return conteudo;
 }
 
-void msgTexto::imprimirMsg() {
+void MsgTexto::imprimirMsg() {
 	Mensagem::imprimirMsg();
+	cout << "Tipo: texto " << endl;
 	cout << "Conteudo: \n   " << conteudo << endl;
-}
-
-ostream & operator<<(ostream & out, const msgTexto &mt) {
-	out << mt.msgHeader();
-	out << mt.getConteudo();
-	return out;
 }
 
 /********************************
  *		CLASSE MSG VIDEO		*
  *******************************/
 
-ostream & operator<<(ostream & out, const msgVideo &mv) {
-	out << mv.msgHeader();
-	out << "VIDEO";
-	return out;
+MsgVideo::MsgVideo(Data d, Horas h) : Mensagem(d,h)
+{}
+
+void MsgVideo::imprimirMsg(){
+	Mensagem::imprimirMsg();
+	cout << "Tipo: video " << endl;
 }
 
 /********************************
  *		CLASSE MSG IMAGEM		*
  *******************************/
+MsgImagem::MsgImagem(Data d, Horas h) : Mensagem(d,h)
+{}
 
-ostream & operator<<(ostream & out, const msgImagem &mi) {
-	out << mi.msgHeader();
-	out << "IMAGEM";
-
-	return out;
+void MsgImagem::imprimirMsg(){
+	Mensagem::imprimirMsg();
+	cout << "Tipo: imagem " << endl;
 }
-

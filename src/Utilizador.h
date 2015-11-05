@@ -8,7 +8,6 @@
 
 #include "Grupo.h"
 
-
 class Utilizador
 {
 private:
@@ -17,8 +16,8 @@ private:
 	vector<int> telemoveis;
 	Data dataAdesao;
 	int idade;
-	vector<Utilizador *> amigos; // destinatarios das mensagens
-	vector<Conversa *> conversas;
+	//vector<Utilizador *> amigos;
+	vector<Conversa *> conversas; //quer com apenas 1 utilizador quer com grupos
 	vector<Grupo *> grupos;
 public:
 	Utilizador();
@@ -31,7 +30,7 @@ public:
 	string getLogin() const;
 	bool getVisibilidade() const;
 	Data getDataAdesao() const;
-	vector<Utilizador *> getAmigos() const;
+	//vector<Utilizador *> getAmigos() const;
 	//vector<Utilizador *> getPedidosAmizade() const;
 
 	//SETS
@@ -41,24 +40,20 @@ public:
 	void setEmail(string);
 	void setIdade(int i);
 	void setVisibilidade(bool v);
-	void setAmigos(Utilizador *u);
-	//void addConversa(Conversa &c);
-	//void addUtilizador(vector<Utilizador *> v, Utilizador u);
-	void addAmigo(Utilizador &u);
+	//void setAmigos(Utilizador *u);
+	//void addAmigo(Utilizador &u);
 	void addTelemovel(int t);
-	//void aceitarAmizade(Utilizador &u); //de pedidos de amizade
-	//bool enviarMsg(Mensagem &m,Utilizador &u,string tipo);
 
-	void deletAmigo(Utilizador *u); //elimina dos amigos
+	//void deletAmigo(Utilizador *u); //elimina dos amigos
 	void removerTelemovel(int t);
-	void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
+	//void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
 	//void removerConversa(Conversa &c);
 
 	//IMPRESS STATUS
 
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
-	void imprimirAmigos() const;
+	//void imprimirAmigos() const;
 
 	//OVERLOADING DE OPERADORES
 
@@ -66,15 +61,17 @@ public:
 	bool operator<(const Utilizador &u) const;
 	friend ostream & operator<<(ostream & out, const Utilizador & u);
 
-	void criarConversa(Utilizador *u);
-	bool enviarMensagemUtilizador(Mensagem sms, Utilizador *u);
-	void criarGrupo(string titulo, Data dataAtual);
-	bool enviarMensagemGrupo(Mensagem sms, Grupo *g);
+	Conversa *criarConversa(Utilizador *u);
+	void adicionarConversa(Conversa *c);
+	void enviarMensagem(Mensagem *sms, Conversa *c);
+	Grupo *criarGrupo(string titulo, Data dataAtual);
+	void enviarMensagemGrupo(Mensagem *sms, Grupo *g);
+	bool aceitaMembro(string u, Grupo *g, Data d);
+	bool rejeitaMembro(string u, Grupo *g, Data d);
 	bool bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
-	//pedidos de adesao
-
+	void pedirAdesao(Grupo *g);
 };
 
 //================================================================================================//
@@ -87,14 +84,6 @@ public:
 	UtilizadorJaExiste(Utilizador u){ this->u = u; login = u.getLogin(); };
 	UtilizadorJaExiste(string login){ this->login = login; };
 	string getLogin() const { return login; };
-};
-
-class UtilizadorInexistente {
-private:
-	Utilizador u;
-public:
-	UtilizadorInexistente(Utilizador u){ this->u = u; };
-	string getLogin() const { return u.getNome(); };
 };
 
 class TelemovelJaExiste {

@@ -1,5 +1,6 @@
 #include "Templates.h"
 #include "Utilizador.h"
+#include "Excecoes.h"
 
 #include <iostream>
 #include <string>
@@ -59,10 +60,11 @@ Data Utilizador::getDataAdesao() const {
 	return dataAdesao;
 }
 
+/*
 vector<Utilizador *> Utilizador::getAmigos() const {
   return amigos;
 }
-
+*/
 /*******************************************************
  * 			            	   	 SET				             	   *
  ******************************************************/
@@ -91,6 +93,7 @@ void Utilizador::setVisibilidade(bool v) {
 	visibilidade = v;
 }
 
+/*
 void Utilizador::setAmigos(Utilizador *u) {
   vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
   if (it != amigos.end())
@@ -98,16 +101,16 @@ void Utilizador::setAmigos(Utilizador *u) {
   else
     amigos.push_back(u);
 }
-
+*/
 /*******************************************************
  * 				   				 ADICIONAR                     	   *
  ******************************************************/
-
+/*
 void Utilizador::addAmigo(Utilizador &u) {
     setAmigos(&u);
     u.setAmigos(this);
   }
-
+  */
 void Utilizador::addTelemovel(int t) {
 	vector<int>::iterator it = find(telemoveis.begin(), telemoveis.end(), t);
 	if (it == telemoveis.end())
@@ -119,15 +122,15 @@ void Utilizador::addTelemovel(int t) {
 /*******************************************************
  * 				   			      REMOVER                    	   *
  ******************************************************/
-
+/*
 void Utilizador::deletAmigo(Utilizador *u) {
 	vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
 	if (it == amigos.end())
-		throw UtilizadorInexistente(*u);
+		throw UtilizadorInexistente((*u).getLogin());
 	else
 		amigos.erase(it);
 }
-
+*/
 void Utilizador::removerTelemovel(int t) {
 	vector<int>::iterator it = find(telemoveis.begin(), telemoveis.end(), t);
 	if (it != telemoveis.end())
@@ -136,12 +139,12 @@ void Utilizador::removerTelemovel(int t) {
 		throw TelemovelInexistente(t);
 }
 
-
+/*
 void Utilizador::removerAmigo(Utilizador &u) {
 	deletAmigo(&u); //remove dos meus amigos
 	u.deletAmigo(this); //remove me dos amigos dele
 }
-
+*/
 /*******************************************************
  * 				   	 IMPRIMIR		     	   *
  ******************************************************/
@@ -183,13 +186,14 @@ void Utilizador::imprimirUtilizador() const {
   }
 }
 
+/*
 void Utilizador::imprimirAmigos() const {
   for (unsigned int i = 0; i < amigos.size(); i++)
   {
     cout << amigos[i]->getNome() << "    " << amigos[i]->getLogin() << endl;
   }
 }
-
+*/
 /*******************************************************
  * 				   		OVERLOADING			     	   *
  ******************************************************/
@@ -207,60 +211,56 @@ ostream & operator<<(ostream & out, const Utilizador & u) {
 	return out;
 }
 
-void Utilizador::criarConversa(Utilizador *u){
-	vector<string> destinatarios;
-	destinatarios.push_back(u->getLogin());
-	destinatarios.push_back(login);
-	Conversa c(destinatarios);
+Conversa *Utilizador::criarConversa(Utilizador *u){
+	vector<string> participantes;
+	participantes.push_back(u->getLogin()); //destinatario da conversa
+	participantes.push_back(login); //emissor
+	Conversa *c = new Conversa(participantes);
+	conversas.push_back(c); //coloca a conversa no vetor de conversas
+	u->adicionarConversa(c);//adiciona a conversa criada ao vetor de conversas do amigo
+	return c;
 }
 
-bool Utilizador::enviarMensagemUtilizador(Mensagem sms, Utilizador *u){
-	vector<string> temp;
-
-	for (unsigned int i = 0; i < conversas.size(); i++){ //procurar o utilizador no vetor de conversas
-		temp = conversas.at(i)->getParticipantes();
-		for (unsigned int j = 0; j < temp.size(); j++)
-			if (temp.at(j) == u->getLogin()){ //encontrou o utilizador
-				conversas.at(i)->adicionaSms(sms);
-				sms.setEmissor(login);
-				return true;
-			}
-	}
-	return false;
-
-
+void Utilizador::adicionarConversa(Conversa *c){
+	conversas.push_back(c);
 }
 
-void Utilizador::criarGrupo(string titulo, Data dataAtual){
+void Utilizador::enviarMensagem(Mensagem *sms, Conversa *c){
+	c->adicionaSms(sms);
+	sms->setEmissor(login);
+}
+
+Grupo *Utilizador::criarGrupo(string titulo, Data dataAtual){
 	Grupo *g = new Grupo(titulo, dataAtual, login);
 	grupos.push_back(g);
+	return g;
 }
 
-bool Utilizador::enviarMensagemGrupo(Mensagem sms, Grupo *g){
-	for (unsigned int i = 0; i < grupos.size(); i++){
-		if (g == grupos.at(i)){
-			g->enviarMensagem(login, sms);
-			sms.setEmissor(login);
-			return true;
-		}
-	}
-	return false;
+void Utilizador::enviarMensagemGrupo(Mensagem *sms, Grupo *g){
+	g->enviarMensagem(login, sms);
+	sms->setEmissor(login);
+}
+
+bool Utilizador::aceitaMembro(string u, Grupo *g, Data d){
+	return g->pedidoAdesao(u,login,d,true);
+}
+
+bool Utilizador::rejeitaMembro(string u, Grupo *g, Data d){
+	return g->pedidoAdesao(u,login,d,false);
 }
 
 bool Utilizador::bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual){
-	Data d;
-	Membro moderador(login, d);
-	return g->bloquearMembro(u->getLogin(),moderador, diaAtual);
+	return g->bloquearMembro(u->getLogin(),login, diaAtual);
 }
 
 bool Utilizador::desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual){
-	Data d;
-	Membro moderador(login, d);
-	return g->desbloquearMembro(u->getLogin(),moderador, diaAtual);
+	return g->desbloquearMembro(u->getLogin(),login, diaAtual);
 }
 
 bool Utilizador::removerMembro(Utilizador *u, Grupo *g, Data diaAtual){
-	Data d;
-	Membro moderador(login, d);
-	return g->retiraMembro(u->getLogin(),moderador, diaAtual);
+	return g->retiraMembro(u->getLogin(),login, diaAtual);
+}
+
+void Utilizador::pedirAdesao(Grupo *g){
+	g->adicionarPedido(login);
 }

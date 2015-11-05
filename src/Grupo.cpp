@@ -1,13 +1,14 @@
-#include "Grupo.h"
-#include "Templates.h"
-
 #include <algorithm>
 #include <sstream>
+
+#include "Grupo.h"
+#include "Templates.h"
+#include "Excecoes.h"
 
 /* Classe Membro */
 
 Membro::Membro(){
-
+	bloqueado = false;
 }
 
 Membro::Membro(string login, Data adesaoGrupo){
@@ -57,8 +58,8 @@ Grupo::Grupo(string titulo, Data criacao, string moderador){
 	this->criacao = criacao;
 	Membro mod(moderador, criacao);
 	this->moderador = mod;
-	conversa.adicionaParticipante(moderador);
 	membros.push_back(mod);
+	conversa.adicionaParticipante(moderador);
 	out << " HISTORICO: \n" << "Grupo " << titulo << " criado no dia " << criacao << endl << "Moderador : " << moderador << endl;
 	status.push_back(out.str());
 }
@@ -67,8 +68,8 @@ int Grupo::numMembros() const{
 	return membros.size();
 }
 
-bool Grupo::isModerador(Membro m){
-	return (m == moderador);
+bool Grupo::isModerador(string m){
+	return (m == moderador.getLogin());
 }
 
 int Grupo::existeMembro(Membro m){
@@ -90,12 +91,23 @@ void Grupo::printMembros() const{
 	cout << endl;
 }
 
-bool Grupo::pedidoAdesao(string novo, Membro moderador, Data adesao, bool aceita){
+bool Grupo::pedidoAdesao(string novo, string moderador, Data adesao, bool aceita){
 
 	stringstream out;
 
-	if (isModerador(moderador)){
 
+	if (isModerador(moderador)){
+		bool encontrou = false;
+		//procurar o 'novo' no vetor de pedidos e eliminar esse pedido
+		for(size_t i = 0; i < pedidos.size(); i++){
+			if(pedidos.at(i) == novo){
+				pedidos.erase(pedidos.begin()+i);
+				encontrou = true;
+				break;
+			}
+			if(!encontrou)
+				throw; //pedidoInexistente()
+		}
 		if (aceita == true){
 			//primeiro passo: criar um membro temporario com a informacao que conhecemos (login)
 			Data d;
@@ -126,11 +138,11 @@ bool Grupo::pedidoAdesao(string novo, Membro moderador, Data adesao, bool aceita
 			return false;
 	}
 	else
-		throw;// NaoModerador(moderador);
+		throw NaoModerador(moderador);
 	return false;
 }
 
-bool Grupo::bloquearMembro(string login, Membro moderador, Data diaAtual){
+bool Grupo::bloquearMembro(string login, string moderador, Data diaAtual){
 
 	stringstream out;
 	Data d;
@@ -151,13 +163,13 @@ bool Grupo::bloquearMembro(string login, Membro moderador, Data diaAtual){
 				return false;
 		}
 		else
-			throw;// UtilizadorInexistente(nome);
+			throw UtilizadorInexistente(login);
 	}
 	else
-		throw; // NaoModerador(moderador);
+		throw NaoModerador(moderador);
 }
 
-bool Grupo::retiraMembro(string login, Membro moderador, Data diaAtual){
+bool Grupo::retiraMembro(string login, string moderador, Data diaAtual){
 
 	stringstream out;
 	Data d;
@@ -176,12 +188,12 @@ bool Grupo::retiraMembro(string login, Membro moderador, Data diaAtual){
 			throw; // UtilizadorInexistente(u);
 	}
 	else if (!isModerador(moderador))
-		throw;// NaoModerador(moderador);
+		throw NaoModerador(moderador);
 	else
 		return false;
 }
 
-bool Grupo::desbloquearMembro(string login, Membro moderador, Data diaAtual){
+bool Grupo::desbloquearMembro(string login, string moderador, Data diaAtual){
 
 	stringstream out;
 	Data d;
@@ -205,10 +217,10 @@ bool Grupo::desbloquearMembro(string login, Membro moderador, Data diaAtual){
 			throw; // UtilizadorInexistente(u);
 	}
 	else
-		throw;// NaoModerador(moderador);
+		throw NaoModerador(moderador);
 }
 
-bool Grupo::enviarMensagem(string emissor, Mensagem sms){
+bool Grupo::enviarMensagem(string emissor, Mensagem *sms){
 	//corresponder um login a um membro
 	Data d;
 	Membro temp(emissor, d);
@@ -218,11 +230,15 @@ bool Grupo::enviarMensagem(string emissor, Mensagem sms){
 	{
 		if (temp.isBloqueado())
 			throw;// excecao que não deixa o utilizador enviar uma mensagem
-		else
+		else{
 			conversa.adicionaSms(sms);
+			return true;
+		}
 	}
 	else
-		throw; // acabar isto
+		throw UtilizadorInexistente(emissor);
+
+	return false;
 }
 
 bool comparaMembro(const Membro &m1, const Membro &m2){
@@ -230,38 +246,28 @@ bool comparaMembro(const Membro &m1, const Membro &m2){
 }
 
 bool Grupo::operator==(const Grupo &g)const{ //compara 2 grupos pelos membros
-	sort(g.membros.begin(), g.membros.end(), comparaMembro);
-	sort(membros.begin(), membros.end(), comparaMembro);
-
 	for (int i = 0; i < numMembros(); i++){
 		if (g.membros.at(i) == membros.at(i))
 			continue;		// experimentar isto
 		else
 			return false;
 	}
+	return false;
 }
 
-/**
- * @brief Classe que representa uma excecao da classe grupo.
- * esta excecao e lancada no caso de o utilizador que esta a pedir permissoes nao ser o utilizador moderador
- */
-class NaoModerador{
-private:
-	string mod;  /**<  membro privado que representa o utilizador que cria a excecao */
-public:
-	/**
-	 * @brief Construtor
-	 * inicializa o membro mod com o utilizador recebido
-	 * @param mod utilizador recebido
-	 */
-	NaoModerador(string mod){
-		this->mod = mod;
-	};
-	/**
-	 * @brief Funcao que retorna o utilizador
-	 * @return mod
-	 */
-	string getNome() const{
-		return mod;
-	};
-};
+int Grupo::numPedidos() const{
+	return pedidos.size();
+}
+
+void Grupo::printPedidos() const{
+	for (int i = 0; i < numPedidos(); i++)
+		cout << "Pedido nº " << i + 1 << endl << "Utilizador : " << pedidos.at(i) << endl << endl;
+}
+
+void Grupo::adicionarPedido(string login){
+	pedidos.push_back(login);
+}
+
+void Grupo::printConversa(){
+	conversa.imprimirConversa();
+}

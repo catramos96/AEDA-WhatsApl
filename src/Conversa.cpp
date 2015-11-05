@@ -27,20 +27,29 @@ void Conversa::removeParticipante(string part){
 			participantes.erase(participantes.begin() + i);
 }
 
-void Conversa::adicionaSms(Mensagem sms){
-	/*
-	Mensagem msg(tipo, data, hora,emissor,destinatarios);
-	mensagens.push_back(msg);
-	*/
+void Conversa::adicionaSms(Mensagem *sms){
+	mensagens.push_back(sms);
 }
 
-void Conversa::removeSms(Data data, Horas hora){
-
+/*
+void Conversa::removeSms(int id){
+	for (int i = 0; i < numSms(); i++){
+		if (mensagens.at(i).Mensagem::getID() == id)
+			mensagens.erase(mensagens.begin() + i);
+	}
 }
-
+*/
 void Conversa::imprimirConversa(){
-	for (size_t i = 0; i < mensagens.size(); i++){
-		mensagens[i].imprimirMsg();
+	cout << "Chat : ";
+	for (int j = 0; j < numParticipantes(); j++){
+		if (j == numParticipantes() - 1)
+			cout << participantes.at(j) << endl;
+		else
+			cout << participantes.at(j) << " ,";
+	}
+	for (int i = 0; i < numSms(); i++){
+		mensagens[i]->imprimirMsg();
+		cout << endl;
 	}
 }
 
@@ -56,12 +65,11 @@ vector<string> Conversa::getParticipantes() const{
 	return participantes;
 }
 
-bool Conversa::operator==(const Conversa&c)const{ //compara 2 conversas pelos de participantes
-	//insertionSort(&participantes); //*???
-	//insertionSort(c.participantes);
-	//sort(c.participantes.begin(), c.participantes.end(), compara);
-	//sort(participantes.begin(), participantes.end(), compara);
+bool compara(const string s1,const string s2){
+	return (s1<s2);
+}
 
+bool Conversa::operator==(const Conversa&c)const{ //compara 2 conversas pelos de participantes
 	for (int i = 0; i < numParticipantes(); i++){
 		if (participantes.at(i) == participantes.at(i))
 			continue;		// experimentar isto

@@ -82,6 +82,7 @@ private:
 	Membro moderador;  /**<  membro privado que representa o utilizador moderador do grupo */
 	vector<string> status;  /**<  membro privado que guarda todas as notificacoes acerca do grupo.
 									 Regista a entrada, saida, bloqueio ou desbloqueio de um membro com a respetiva data da ocorrencia*/
+	vector<string> pedidos; /**< membro privado que indica os pedidos de adesao ao grupo */
 public:
 	/**
 	 * @brief Construtor do grupo
@@ -102,7 +103,7 @@ public:
 	 * @brief Funcao que indica se um utilizador e ou nao o mderador do grupo
 	 * @return True se o utilizador e moderador ou false se nao e.
 	 */
-	bool isModerador(Membro m);
+	bool isModerador(string m);
 	/**
 	 * @brief Funcao que procura um membro no vetor 'membros' através do metodo de pesquisa sequential search definido na header Templates.h
 	 * @param *m Membro que queremos encontrar
@@ -134,7 +135,7 @@ public:
 	 * @param aceita Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao
 	 * @return True se aceita o pedido, false se rejeita
 	 */
-	bool pedidoAdesao(string novo, Membro moderador, Data adesao, bool aceita);
+	bool pedidoAdesao(string novo, string moderador, Data adesao, bool aceita);
 	/**
 	 * @brief Funcao que elimina um membro do gupo.
 	 * A eliminacao e registada no membro-dado 'status'
@@ -144,7 +145,7 @@ public:
 	 * @param diaAtual Data em que o utilizador e eliminado do grupo
 	 * @return True se e eliminado com sucesso
 	 */
-	bool retiraMembro(string login, Membro moderador, Data diaAtual);
+	bool retiraMembro(string login, string moderador, Data diaAtual);
 	/**
 	 * @brief Funcao que bloqueia um membro.
 	 * Um membro bloqueado nao pode enviar mensagens dentro do grupo, no entanto continua a pertencer ao grupo e a ver mensagens enviadas entre outros utilizadores.
@@ -155,7 +156,7 @@ public:
 	 * @param diaAtual Data em que o utilizador e bloqueado
 	 * @return True se o membro e bloqueado com sucesso e false se o membro ja se encontra bloqueado
 	 */
-	bool bloquearMembro(string login, Membro moderador, Data diaAtual);
+	bool bloquearMembro(string login, string moderador, Data diaAtual);
 	/**
 	 * @brief Funcao que desbloqueia um membro.
 	 * Esta funcao, ao contrario da funcao pedidoAdesao, nao implica que o utilizador peca para ser desbloqueado
@@ -166,11 +167,19 @@ public:
 	 * @param diaAtual Data em que o utilizador e desbloqueado
 	 * @return True se o membro e desbloqueado com sucesso e false se o membro ja se encontra desbloqueado
 	 */
-	bool desbloquearMembro(string login, Membro moderador, Data diaAtual);
+	bool desbloquearMembro(string login, string moderador, Data diaAtual);
 
-	bool enviarMensagem(string emissor, Mensagem sms);
+	bool enviarMensagem(string emissor, Mensagem *sms);
 
 	bool operator==(const Grupo&g)const;
+
+	void printPedidos() const;
+
+	int numPedidos() const;
+
+	void adicionarPedido(string login);
+
+	void printConversa();
 };
 
 #endif /* SRC_GRUPO_H_ */
