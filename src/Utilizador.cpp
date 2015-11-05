@@ -37,10 +37,6 @@ Utilizador::Utilizador(bool visibilidade, string login, string nome, string emai
 
 Utilizador::~Utilizador() {}
 
-/*******************************************************
- * 				                GET				               	   *
- ******************************************************/
-
 string Utilizador::getNome() const {
 	return nome;
 }
@@ -64,11 +60,6 @@ Data Utilizador::getDataAdesao() const {
 vector<Utilizador *> Utilizador::getAmigos() const {
   return amigos;
 }
-
-/*******************************************************
- * 			            	   	 SET				             	   *
- ******************************************************/
-
 
 void Utilizador::setLogin(string l)
 {
@@ -105,24 +96,14 @@ void Utilizador::setTelemovel(int t) {
   telemovel = t;
 }
 
-
 void Utilizador::setGrupo(Grupo grupo){
 	grupos.push_back(&grupo);
 }
 
-
-/*******************************************************
- * 				   				 ADICIONAR                     	   *
- ******************************************************/
-
 void Utilizador::addAmigo(Utilizador &u) {
     setAmigos(&u);
     u.setAmigos(this);
-  }
-
-/*******************************************************
- * 				   			      REMOVER                    	   *
- ******************************************************/
+}
 
 void Utilizador::deletAmigo(Utilizador *u) {
 	vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
@@ -138,9 +119,6 @@ void Utilizador::removerAmigo(Utilizador &u) {
 	u.deletAmigo(this); //remove me dos amigos dele
 }
 
-/*******************************************************
- * 				   	 IMPRIMIR		     	   *
- ******************************************************/
 
 void Utilizador::imprimirDefinicoes() const {
   cout << "Perfil (1 - publico , 0 - privado): " << visibilidade << endl;
@@ -175,10 +153,6 @@ void Utilizador::imprimirAmigos() const {
     cout << amigos[i]->getNome() << "    " << amigos[i]->getLogin() << endl;
   }
 }
-
-/*******************************************************
- * 				   		OVERLOADING			     	   *
- ******************************************************/
 
 bool Utilizador::operator==(const Utilizador&u) const {
 	return (login == u.login);

@@ -2,7 +2,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-
+#include <algorithm>
 #include "Utilizador.h"
 #include "Templates.h"
 
@@ -30,7 +30,6 @@ void Conversa::removeParticipante(string part){
 void Conversa::adicionaSms(Mensagem *sms){
 	mensagens.push_back(sms);
 }
-
 /*
 void Conversa::removeSms(int id){
 	for (int i = 0; i < numSms(); i++){
@@ -77,4 +76,12 @@ bool Conversa::operator==(const Conversa&c)const{ //compara 2 conversas pelos de
 			return false;
 	}
 	return false;
+}
+
+bool comp(const Mensagem &m1, const Mensagem &m2){
+	return (m1.getData() < m2.getData());
+}
+
+void Conversa::ordenarData(){
+	sort(mensagens.begin(), mensagens.end(), comp);
 }

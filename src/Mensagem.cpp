@@ -37,20 +37,6 @@ int Mensagem::getID(){
 void Mensagem::setEmissor(string emissor){
 	this->emissor = emissor;
 }
-/*
-string Mensagem::msgHeader() const {
-	stringstream s;
-	s << "De: " << emissor << endl;
-	s << "Para: ";
-	for (unsigned int i = 0; i < destinatarios.size(); i++) {
-		s << destinatarios[i];
-		if (i + 1 < destinatarios.size())
-			s << ", ";
-	}
-	s << endl;
-	//s << "Titulo: " << titulo << endl;
-	return s.str();
-}
 
 /********************************
  *		CLASSE MSG TEXTO		*

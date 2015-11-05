@@ -35,7 +35,6 @@ bool Comunidade::existeLogin(string l) const {
 		throw UtilizadorJaExiste(u->getLogin());
 }
 	
-
 Utilizador *Comunidade::utilizadorNaPosicao(int pos) const{
 	return comunidade.at(pos);
 }

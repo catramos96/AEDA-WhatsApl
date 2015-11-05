@@ -31,7 +31,10 @@ public:
 	vector<Utilizador *> getAmigos() const;
 	vector<Utilizador *> getPedidosAmizade() const;
 
+<<<<<<< HEAD
+=======
 	//SETS
+>>>>>>> 5ea1658437d32d9e229bf99e2dd4c8f886635780
 	void setGrupo(Grupo grupo);
 	void setLogin(string l);
 	void setNome(string n);
@@ -48,8 +51,11 @@ public:
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
 	void imprimirAmigos() const;
+<<<<<<< HEAD
+=======
 
 	//OVERLOADING DE OPERADORES
+>>>>>>> 5ea1658437d32d9e229bf99e2dd4c8f886635780
 
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;

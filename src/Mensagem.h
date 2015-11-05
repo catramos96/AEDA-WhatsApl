@@ -18,19 +18,15 @@ private:
 	static int id;
 public:
 	Mensagem(Data data, Horas hora);
-	//virtual ~Mensagem();
+	virtual ~Mensagem();
 	virtual void imprimirMsg(); //imprime todos os membros private
 	string getTipo() const;
 	Data getData() const;
 	static int getID();
 	void setEmissor(string emissor);
-	//string msgHeader() const; //Retorna "header de cada Mensagem"
-	
 };
 
-class MsgTexto : public Mensagem
-{
-
+class MsgTexto : public Mensagem{
 private:
 	string conteudo;
 public:
