@@ -26,7 +26,6 @@ void opccao(int &op, int min, int max) {
     throw OpccaoInvalida<int>(op, min, max);
 }
 
-
 /*****************************************************************
 *                          MENU UNICIAL                          *
 *****************************************************************/
@@ -37,13 +36,12 @@ Utilizador * login(Comunidade *c) {
   int i, op;
 	Utilizador * u = new Utilizador();
 
-	imprimirFicheiro("HeaderLogin.txt");
-	imprimirFicheiro("MenuLogin.txt");
+  menuLogin();
 	opccao(op,1, 2);
 
 	clrscr(); //clears the screen
 
-	imprimirFicheiro("HeaderLogin.txt");
+  header("LOGIN");
 
 	if (op == 1)
 	{
@@ -74,15 +72,14 @@ void registar(Comunidade *c) {
 	int idade, dia, mes, ano;
 	Data dA;
 
-	imprimirFicheiro("HeaderRegistar.txt");
-	imprimirFicheiro("MenuRegistar.txt");
+  menuRegistar();
   int op;
   opccao(op, 1, 2);
 
 	clrscr();
 
 	if (op == 1) {
-		cout << "Registar Utilizador" << endl << endl;
+    header("REGISTAR");
 		cout << "Login: ";
 		input<string>(login);
 		cout << "Nome: ";
@@ -110,8 +107,7 @@ void registar(Comunidade *c) {
 //opccao comunidade
 
 void comunidade(Comunidade *c) {
-	imprimirFicheiro("HeaderComunidade.txt");
-	imprimirFicheiro("MenuComunidade.txt");
+  menuComunidade();
   int op;
   opccao(op, 1, 3);
 
@@ -133,8 +129,7 @@ void comunidade(Comunidade *c) {
 		throw VoltarAtras();
 	}
 
-	imprimirFicheiro("HeaderComunidade.txt");
-	imprimirFicheiro("OrdenarComunidade.txt");
+  menuComunidadeOrdenada();
 	c->printComunidade();
 	cout << endl;
 	esperar();
@@ -164,8 +159,7 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 	}
 	case 4:
 	{
-		imprimirFicheiro("Informacao.txt");
-		esperar();
+    menuInformacao();
 	}
 	case 5:
 	{
@@ -179,8 +173,7 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 //Header do menu inicial
 int headerInicio() {
 	clrscr();
-	imprimirFicheiro("HeaderWhatsApl.txt");
-	imprimirFicheiro("MenuInicial.txt");
+  menuInicial();
   int op;
   opccao(op,1, 5);
 	return op;
@@ -219,7 +212,7 @@ Utilizador * MenuInicial(Comunidade *c) {
 			esperar();
 		}
 		catch (DataInvalida(d)) {
-      cout << d.getDia() << "/" << d.getMes() << "/" << d.getAno() << " é invalida!" << endl << endl;
+      cout << d.getDia() << "/" << d.getMes() << "/" << d.getAno() << " e invalida!" << endl << endl;
 			esperar();
 		}
 		catch (InputFail) {
@@ -240,8 +233,7 @@ Utilizador * MenuInicial(Comunidade *c) {
 
 void amigosUtilizador(Utilizador *u, Comunidade *c) {
 	//Menu Amigos
-	imprimirFicheiro("HeaderAmigos.txt");
-	imprimirFicheiro("MenuAmigos.txt");
+  menuAmigos();
   int op;
   opccao(op, 1, 4);
 
@@ -256,7 +248,7 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 	{
 		//adicionar amigo
 
-		imprimirFicheiro("HeaderAmigos.txt");
+    header("AMIGOS");
 		cout << "Login:";
 		cin >> login;
 		Utilizador * a = new Utilizador();
@@ -275,7 +267,7 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 	//Remover Amigo
 	case 2:
 	{
-		cout << "REMOVER AMIGO" << endl << endl;
+    header("REMOVER AMIGOS");
 		cout << "Login:";
 		cin >> login;
 		Utilizador * a = new Utilizador();
@@ -292,7 +284,8 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 	//Ver amigos
 	case 3:
 	{
-		cout << "AMIGOS" << endl << "(nome/login)" << endl << endl;
+    header("AMIGOS");
+		cout << "Nome  /  Login" << endl << endl;
 		u->imprimirAmigos();
 		cout << endl;
 		esperar();
@@ -306,17 +299,17 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 //Opcao Definicoes
 void definicoesUtilizador(Utilizador *u, Comunidade *c) {
   //Menu Definicoes
-	imprimirFicheiro("HeaderDefinicoes.txt");
+  header("DEFINICOES");
 	u->imprimirDefinicoes();
 	cout << endl;
-	imprimirFicheiro("MenuDefinicoes.txt");
+  menuDefinicoes();
   int op;
   opccao(op,1, 2);
 
 	clrscr();
 
 	if (op == 1) {
-		imprimirFicheiro("MenuAlterarDefinicoes.txt");
+    menuAlterarDefinicoes();
 		opccao(op,1, 6);
 	}
 	else
@@ -324,7 +317,7 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 
 	clrscr();
 
-	imprimirFicheiro("HeaderDefinicoes.txt");
+  header("DEFINICOES");
 
 	switch (op)
 	{
@@ -399,9 +392,7 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 //header do menu Utilizador
 int menuUtilizador(Utilizador *u) {
 	clrscr();
-	imprimirFicheiro("HeaderUtilizador.txt");
-	imprimirFicheiro("MenuUtilizador.txt");
-	cout << "Seleccione uma opccao: ";
+  menuUtilizador();
   int op;
   opccao(op,1, 6);
 	return op;
@@ -414,7 +405,7 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 	{
 	case 1: //Perfil
 	{
-		imprimirFicheiro("HeaderPerfil.txt");
+    header("PERFIL");
 		u->imprimirUtilizador();
 		cout << endl;
 		esperar();
@@ -422,7 +413,7 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 	}
 	case 2: //Amigos
 	{
-		//amigosUtilizador(u, c);
+		amigosUtilizador(u, c);
 		break;
 	}
 	case 3: //Conversas
@@ -482,7 +473,7 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
 			esperar();
 		}
 		catch (DataInvalida(d)) {
-      cout << d.getDia() << "/" << d.getMes() << "/" << d.getAno() << " é invalida!" << endl << endl;
+      cout << d.getDia() << "/" << d.getMes() << "/" << d.getAno() << " e invalida!" << endl << endl;
 			esperar();
 		}
 	} while (terminar == false);
