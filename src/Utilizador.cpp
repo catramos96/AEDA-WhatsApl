@@ -49,6 +49,14 @@ string Utilizador::getLogin() const {
 	return login;
 }
 
+int Utilizador::getIdade() const{
+	return idade;
+}
+
+int Utilizador::getTelemovel() const{
+	return telemovel;
+}
+
 bool Utilizador::getVisibilidade() const {
 	return visibilidade;
 }
