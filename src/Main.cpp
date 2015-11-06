@@ -17,6 +17,7 @@ using namespace std;
 - dividir o meu conversas em conversas/grupo
 - mandar mensagem
 */
+
 void esperar() {
   system("pause");
 }
@@ -55,8 +56,6 @@ Utilizador * login(Comunidade *c) {
 		cin >> login;
 		u->setLogin(login);
 		i = c->existeUtil(u);
-    c->printComunidade();
-    cout << i << endl;
 		if (i != -1)
 			u = c->utilizadorNaPosicao(i);
 		else {
@@ -208,8 +207,7 @@ Utilizador * MenuInicial(Comunidade *c) {
 			cout << "Ja existe um utilizador com o login " << u.getLogin() << endl << endl;
 			esperar();
 		}
-		catch (VoltarAtras) {
-		}
+		catch (VoltarAtras) {}
 		catch (IdadeInsuficiente(i)) {
 			cout << "So e permitido usar a aplicacao com maiores de 18 anos" << endl << endl;
 			esperar();
@@ -298,15 +296,128 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 	}
 }
 
-//Opcao Conversas
-void conversasUtilizador(Utilizador *u, Comunidade *c) {
-  menuConversas();
+void gruposUtilizador(Utilizador *u, Comunidade *c) {
   int op;
-  opccao(op, 1, 6);
+  int d, m, a;
+  clrscr();
+  menuGrupos();
+  opccao(op, 1, 5);
+  clrscr();
   switch (op)
   {
-  case 1: //criar conversa
+  case 1:
   {
+    header("CRIAR NOVO GRUPO");
+    string t;
+    cout << "Titulo do grupo: ";
+    cin.ignore(1000, '\n');
+    getline(cin, t);
+    cout << "Data (dia mes ano): ";
+    cin >> d >> m >> a;
+    Data data;
+    data.setData(d, m, a);
+    u->criarGrupo(t, data);
+    cout << "\nGrupo criado com sucesso!" << endl << endl;
+    break;
+  }
+  case 2: //ENVIAR MENSAGEM PARA UM GRUPO E VER AS CONVERSAS
+  {
+    int i, tipo, h, m;
+    header("ENVIAR MENSAGEM");
+    u->imprimirGrupos();
+    cout << endl;
+    cout << "Enviar mensagem para o grupo: ";
+    input<int>(i);
+
+    cout << endl;
+    cout << "Data (dia mes ano): ";
+    cin >> d >> m >> a;
+    Data data;
+    data.setData(d, m, a);
+    cout << "Hora (horas minutos): ";
+    cin >> h >> m;
+    Horas hora(h, m);
+    cout << "\nTipo:" << endl << "Texto (1)" << endl << "Imagem (2)" << endl << "Video (3)" << endl << endl;
+    opccao(tipo, 1, 3);
+    Mensagem *msg = new Mensagem(data, hora);
+    switch (tipo)
+    {
+    case 1:
+    {
+      string cont;
+      cout << "Conteudo: ";
+      cin.ignore(1000, '\n');
+      getline(cin, cont);
+      msg = new MsgTexto(cont, data, hora);
+      break;
+    }
+    case 2:
+    {
+      msg = new MsgImagem(data, hora);
+      break;
+    }
+    case 3:
+      msg = new MsgVideo(data, hora);
+      break;
+    }
+    u->enviarMensagemGrupo(msg, u->getGrupo(i-1));
+    clrscr();
+    header("Grupo - " + u->getGrupo(i-1)->getTitulo());
+    u->getGrupo(i-1)->printConversa();
+    esperar();
+    throw VoltarAtras();
+  }
+  case 3:
+  {
+    header("GRUPOS");
+    u->imprimirGrupos();
+    cout << endl;
+    cout << "Ver Status (1)" << endl;
+    cout << "Ver Conversa de Grupo (2)" << endl;
+    cout << "Voltar Atras (3)" << endl << endl;
+    int op;
+    input<int>(op);
+    opccao(op, 1, 3);
+    if (op != 3)
+    {
+      int n;
+      cout << "\nGrupo (n): ";
+      input<int>(n);
+      clrscr();
+      header("Grupo - " + u->getGrupo(n-1)->getTitulo());
+      if (op == 1)
+        u->getGrupo(n-1)->printStatus();
+      else
+        u->getGrupo(n-1)->printConversa();
+      esperar();
+    }
+    else
+      throw VoltarAtras();
+    break;
+  }
+  case 4:
+  {
+
+    }
+
+    break;
+  }
+  esperar();
+  }
+
+//Opcao Mensagens
+void mensagensUtilizador(Utilizador *u, Comunidade *c) {
+  menuMensagens();
+  int op;
+  opccao(op, 1, 3);
+
+  switch (op)
+  {
+  case 1: 
+  {
+    gruposUtilizador(u, c);
+    break;
+    /*//criar conversa
     string login;
 
     header("CRIAR CONVERSA");
@@ -317,24 +428,16 @@ void conversasUtilizador(Utilizador *u, Comunidade *c) {
     input<string>(login);
     u->criarConversa(u->getAmigo(login));
     break;
+    */
   }
-  case 2: //criar grupo
+  case 2:
   {
-    string t;
-    int d, m, a;
-    cout << "Titulo do grupo: ";
-    cin.ignore(1000, '\n');
-    getline(cin, t);
-    cout << "Data (dia mes ano): ";
-    cin >> d >> m >> a;
-    Data data;
-    data.setData(d, m, a);
-    u->criarGrupo(t, data);
+    //conversasUtilizador(u, c);
     break;
   }
   case 3:
   {
-
+    throw VoltarAtras();
   }
   }
 }
@@ -461,7 +564,7 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 	}
 	case 3: //Conversas
 	{
-		conversasUtilizador(u, c);
+		mensagensUtilizador(u, c);
 		break;
 	}
 	case 4: //Comunidade
@@ -527,6 +630,19 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
       cout << a.getLogin() << " nao e seu amigo!" << endl << endl;
       esperar();
     }
+    catch (VoltarAtras) {}
+    catch (InputFail) {
+      cout << endl;
+      esperar();
+    }
+    catch (HoraInvalida) {
+      cout << "Hora Invalida!" << endl << endl;
+      esperar();
+    }
+    catch (GrupoInexistente(i)) {
+      cout << "Grupo numero " << i.getGrupo() << " inexistente!" << endl << endl;
+      esperar();
+    }
 	} while (terminar == false);
 }
 
@@ -534,7 +650,7 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
 /*****************************************************************
 *                             MAIN                               *
 *****************************************************************/
-/*
+
 int main() {
 	Comunidade *c = new Comunidade;
 	Utilizador *u = new Utilizador;
@@ -546,7 +662,7 @@ int main() {
 	}
 	return 0;
 }
-*/
+
 /*
 try{
 Data data;

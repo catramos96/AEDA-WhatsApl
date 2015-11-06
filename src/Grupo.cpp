@@ -268,3 +268,7 @@ void Grupo::adicionarPedido(string login){
 void Grupo::printConversa(){
 	conversa.imprimirConversa();
 }
+
+void Grupo::printGrupo() const {
+  cout << "Titulo: " << titulo << " , Gerente: " << moderador.getLogin() << " , Data: " << criacao << endl;
+}

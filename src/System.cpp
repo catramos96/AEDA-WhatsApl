@@ -230,7 +230,7 @@ void menuComunidade() {
 void menuUtilizador() {
   cout << "Perfil (1)" << endl;
   cout << "Amigos (2)" << endl;
-  cout << "Conversas / Grupos (3)" << endl;
+  cout << "Mensagens (3)" << endl;
   cout << "Comunidade (4)" << endl;
   cout << "Definicoes (5)" << endl;
   cout << "Terminar Seccao (6)" << endl << endl;
@@ -244,14 +244,28 @@ void menuAmigos() {
   cout << "Voltar Atras (4)" << endl << endl;
 }
 
-void menuConversas() {
-  header("CONVERSAS / GRUPOS");
-  cout << "Criar nova conversa (1)" << endl;
-  cout << "Criar novo grupo (2)" << endl;
-  cout << "Ver conversas (3)" << endl;
-  cout << "Ver grupos (4)" << endl;
-  cout << "Voltar Atras (5)" << endl << endl;
+void menuMensagens() {
+  header("MENSAGENS");
+  cout << "Grupos (1)" << endl;
+  cout << "Conversas (2)" << endl;
+  cout << "Voltar Atras (3)" << endl << endl;
+}
 
+void menuGrupos() {
+  header("GRUPOS");
+  cout << "Criar novo grupo (1)" << endl;
+  cout << "Enviar mensagem (2)" << endl;
+  cout << "Ver grupos (3)" << endl;
+  cout << "Gerir os meus grupos (4)" << endl;
+  cout << "Voltar Atras (5)" << endl << endl;
+}
+
+void menuConversas() {
+  header("CONVERSA");
+  cout << "Criar nova conversa (1)" << endl;
+  cout << "Enviar mensagem (2)" << endl;
+  cout << "Ver conversas (3)" << endl;
+  cout << "Voltar Atras (4)" << endl << endl;
 }
 
 void menuDefinicoes() {

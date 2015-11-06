@@ -29,6 +29,7 @@ public:
 	bool getVisibilidade() const;
 	Data getDataAdesao() const;
 	vector<Utilizador *> getAmigos() const;
+  Grupo* getGrupo(int i) const;
 	vector<Utilizador *> getPedidosAmizade() const;
 
 	void setGrupo(Grupo grupo);
@@ -47,6 +48,7 @@ public:
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
 	void imprimirAmigos() const;
+  void imprimirGrupos() const;
 
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;

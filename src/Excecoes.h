@@ -231,6 +231,14 @@ public:
 	string getLogin() const{return login;};
 };
 
+class GrupoInexistente {
+public:
+  GrupoInexistente(int n) { this->n = n; };
+  int getGrupo() const { return n; };
+private:
+  int n;
+};
+
 /********************************
 *		EXCECAO SYSTEM			*
 ********************************/
@@ -268,6 +276,12 @@ public:
      */
   int getAno() const { return ano; };
 };
+
+/**
+* @brief Classe HoraInvalida.
+* E uma classe que indica uma execao da classe Horas.
+*/
+class HoraInvalida {};
 
 /********************************
 *		EXCECAO CONVERSA		*

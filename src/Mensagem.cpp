@@ -21,7 +21,7 @@ Mensagem::Mensagem(Data data, Horas hora) : numero(++id){
 
 void Mensagem::imprimirMsg() {
 	cout << "Mensagem : "<< numero << endl;
-	cout << "Data: " << data << " Hora : " << hora << endl;
+	cout << "Data: " << data << " Hora: " << hora << endl;
 	cout << "Emissor: " << emissor << endl;
 }
 

@@ -205,6 +205,14 @@ public:
 	 * @brief Funcao que imprime a conversa que pertence ao grupo.
 	 */
 	void printConversa();
+  /**
+  * @brief Funcao que imprime o titulo do grupo, o gerente e a data de criação
+  */
+  void printGrupo() const;
+  /**
+  * @brief Funcao que retorna o titulo do grupo
+  */
+  string getTitulo() const { return titulo; };
 };
 
 #endif /* SRC_GRUPO_H_ */

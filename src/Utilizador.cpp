@@ -61,6 +61,13 @@ vector<Utilizador *> Utilizador::getAmigos() const {
   return amigos;
 }
 
+Grupo* Utilizador::getGrupo(int i) const {
+  if (i < 0 || i > amigos.size()-1){
+    throw GrupoInexistente(i);
+}
+  return grupos[i];
+}
+
 void Utilizador::setLogin(string l)
 {
 	login = l;
@@ -149,6 +156,14 @@ void Utilizador::imprimirAmigos() const {
   for (unsigned int i = 0; i < amigos.size(); i++)
   {
     cout << amigos[i]->getNome() << "    " << amigos[i]->getLogin() << endl;
+  }
+}
+
+void Utilizador::imprimirGrupos() const {
+  for (unsigned int i = 0; i < grupos.size(); i++)
+  {
+    cout << "Grupo: "<<  i + 1 << " , ";
+    grupos[i]->printGrupo();
   }
 }
 

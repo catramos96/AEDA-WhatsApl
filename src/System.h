@@ -23,11 +23,7 @@ private:
 	int hora, /**<  membro privado que representa a hora */
 		min; /**<  membro privado que representa os minutos*/
 public:
-	/**
-	 * @brief Classe HoraInvalida.
-	 * E uma classe que indica uma execao da classe Horas.
-	 */
-	class HoraInvalida{};
+	
 	/**
 	 * @brief Constutor
 	 * Construtor default que inicializa as horas e os minutos a zero
@@ -189,6 +185,10 @@ void menuComunidade();
 void menuUtilizador();
 
 void menuAmigos();
+
+void menuMensagens();
+
+void menuGrupos();
 
 void menuConversas();
 
