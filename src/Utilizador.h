@@ -26,12 +26,15 @@ public:
 	string getNome() const;
 	string getEmail() const;
 	string getLogin() const;
+	int getTelemovel()const;
+	int getIdade() const;
 	bool getVisibilidade() const;
 	Data getDataAdesao() const;
 	vector<Utilizador *> getAmigos() const;
   Grupo* getGrupo(int i) const;
 	vector<Utilizador *> getPedidosAmizade() const;
   vector<Grupo *> getGrupos() const;
+	//vector<Grupo>getGrupos()const;
 
 	void setGrupo(Grupo grupo);
 	void setLogin(string l);

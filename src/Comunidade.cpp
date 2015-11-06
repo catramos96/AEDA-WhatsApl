@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <iostream>
 #include <fstream>
-
 #include "Comunidade.h"
 #include "Templates.h"
 #include "Excecoes.h"
@@ -17,14 +16,34 @@ Comunidade::Comunidade(){
 }
 
 int Comunidade::existeUtil(Utilizador *util) const{
-  /*for (size_t i = 0; i < comunidade.size(); i++)
+  for (int i = 0; i < comunidade.size(); i++)
   {
     if (*comunidade[i] == *util)
       return i;
   }
-  return -1;*/
-  return pointerSequentialSearch(comunidade, util);
+  return -1;
 }
+
+int Comunidade::existeUtilNome(string nome) const{
+	for (unsigned int i = 0; i < comunidade.size(); i++){
+			if (comunidade[i]->getNome() == nome)
+				return i;   // encontrou
+		}
+		return -1;     // nao encontrou
+}
+
+/*
+Grupo *Comunidade::existeGrupo(string grupo) const{
+	for (unsigned int i = 0; i < comunidade.size(); i++){
+		for(size_t x=0;x<comunidade[i]->getGrupos().size();x++)
+		{
+			if (comunidade[i]->getGrupos()[x].getTitulo() == grupo)
+				return comunidade[i]->getGrupos()[x];   // encontrou
+		}
+	}
+  throw GrupoInexistente();     // nao encontrou
+}
+*/
 
 bool Comunidade::existeLogin(string l) const {
 	Utilizador *u = new Utilizador;
@@ -77,7 +96,6 @@ void Comunidade::printComunidade() const{
 	for (unsigned int i = 0; i < comunidade.size(); i++)
 		cout << *comunidade.at(i) << endl;
 }
-
 /*
 int Comunidade::leComunidade(){
 	string line;
@@ -96,24 +114,16 @@ int Comunidade::leComunidade(){
 
 	if (myfile.is_open())
 	{
-
+		getline (myfile,line);
 		while(flag){
 			Utilizador u;
-			getline (myfile,line);
 			u.setNome(line);
 			getline (myfile,line);
 			u.setLogin(line);
 			getline (myfile,line);
 			u.setEmail(line);
-
-			while(flag2){
-				getline (myfile,line);
-				if(line=="-"){
-					flag2=false;
-					break;
-				}
-				u.addTelemovel(atoi(line.c_str()));
-			}
+			getline (myfile,line);
+			u.setTelemovel(atoi(line.c_str()));
 			getline (myfile,line);
 			//data;
 			getline (myfile,line);
@@ -132,14 +142,17 @@ int Comunidade::leComunidade(){
 					flag4=false;
 					break;
 				}
-				u.
+				u.setGrupo(*existeGrupo(line));
 			}
+			getline (myfile,line);
+			u.setVisibilidade(atoi(line.c_str()));
 
+			adicionarUtil(&u);
 
-
-
+			if(getline (myfile,line))
+				flag=true;
+			else flag=false;
 		}
-
 	    myfile.close();
 	}
 
@@ -147,13 +160,31 @@ int Comunidade::leComunidade(){
 
 	return 0;
 }
-
+*/
+/*
 int Comunidade::escreveComunidade(){
 	ofstream myfile ("example.txt");
 	  if (myfile.is_open())
 	  {
-	    myfile << "This is a line.\n";
-	    myfile << "This is another line.\n";
+		  for(size_t i=0;i<comunidade.size();i++){
+			  myfile << comunidade[i]->getNome() << "\n";
+			  myfile << comunidade[i]->getLogin() << "\n";
+			  myfile << comunidade[i]->getEmail() << "\n";
+			  myfile << comunidade[i]->getTelemovel() << "\n";
+			  myfile << comunidade[i]->getDataAdesao() << "\n";
+			  myfile << comunidade[i]->getIdade() << "\n";
+			  for(size_t x=0;x<comunidade[i]->getAmigos().size();x++){
+				  myfile << comunidade[i]->getAmigos()[x]->getNome() << "\n";
+			  }
+			  myfile << "-" << "\n";
+			  for(size_t x=0;x<comunidade[i]->getGrupos().size();x++){
+			  	 myfile << comunidade[i]->getGrupos()[x].getTitulo() << "\n";
+			  }
+			  myfile << "-" << "\n";
+			  myfile << comunidade[i]->getVisibilidade();
+		  }
+
+
 	    myfile.close();
 	  }
 	  else cout << "Unable to open file";

@@ -285,3 +285,4 @@ void Grupo::setModerador(string login) {
   if (!encontrou)
     throw MembroInexistente(login);
 }
+

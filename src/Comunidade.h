@@ -17,16 +17,30 @@ private:
 	vector<Utilizador*> comunidade; /**<  membro privado que contem todos os utilizadores */
 public:
 	/**
-	* @brief Construtor
-	* Construtor default que inicializa o vector de utilizadores a zero
-	*/
-	Comunidade();
-	/**
-	 * @ brief Funcao que verifica a existencia de um certo utilizador
-	 * @ param util : indica o utilizador
-	 * @ return posicao
-	 */
-	int existeUtil(Utilizador *util) const;
+		* @brief Construtor
+		* Construtor default que inicializa o vector de utilizadores a zero
+		*/
+		Comunidade();
+		/**
+		 * @ brief Funcao que verifica a existencia de um certo utilizador
+		 * @ param util : indica o utilizador
+		 * @ return posicao
+		 */
+		int existeUtil(Utilizador *util) const;
+
+		/**
+		 * @ brief Funcao que verifica a existencia de um certo utilizador
+		 * @ param util : indica o nome do utilizador
+		 * @ return posicao
+		 */
+		int existeUtilNome(string nome) const;
+
+		/**
+		 * @ brief Funcao que verifica a existencia de um certo grupo
+		 * @ param util : indica o nome do grupo
+		 * @ return Grupo
+		 */
+		//Grupo* existeGrupo(string grupo) const;
 	/**
 	* @ brief Funcao retorna o utilizador que se encontra na posicao "pos" do vetor comunidade
 	* @ param pos: posicao do utilizador

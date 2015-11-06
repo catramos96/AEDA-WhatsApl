@@ -59,11 +59,12 @@ Utilizador * login(Comunidade *c) {
     cin >> login;
     u->setLogin(login);
     i = c->existeUtil(u);
-    if (i != -1)
+    if (i != -1) {
       u = c->utilizadorNaPosicao(i);
-    else {
-      throw UtilizadorInexistente(u->getLogin());
+      cout << i;
     }
+    else
+      throw UtilizadorInexistente(u->getLogin());
   }
   else if (op == 2)
     throw VoltarAtras();
