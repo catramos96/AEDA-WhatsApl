@@ -80,20 +80,33 @@ public:
     * @param l Login do amigo do utilizador recebido.
     */
   AmigoJaExiste(string l) { login = l; };
-<<<<<<< HEAD
-=======
+  /**
+   * @brief Funcao que retorna o login do utilizador que criou a excecao.
+   * @return Login do amigo do utilizador.
+   */
   string getLogin() const { return login; };
-private:
-  string login;
+
 };
 
+/**
+ * @brief Classe que representa uma excecao da classe utilizador.
+ * Esta excecao e lancada quando o amigo do utilizador nao existe
+ */
 class AmigoInexistente {
-public:
-  AmigoInexistente(string l) { login = l; };
-  string getLogin() const { return login; };
 private:
-  string login;
->>>>>>> f5a603996ce0c360e6acbad41c2ded9a73aa3ee0
+  string login; /**<  membro privado que representa o login do utilizador que cria a excecao */
+public:
+  /**
+   * @brief Construtor.
+   * Inicializa o membro login com o login do amigo do utilizador.
+   * @param l Login do amigo do utilizador recebido.
+   */
+  AmigoInexistente(string l) { login = l; };
+  /**
+   * @brief Funcao que retorna o login do utilizador que criou a excecao.
+   * @return Login do utilizador.
+   */
+  string getLogin() const { return login; };
 };
 
 /********************************
