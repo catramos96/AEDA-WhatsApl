@@ -254,7 +254,9 @@ bool Utilizador::removerMembro(Utilizador *u, Grupo *g, Data diaAtual){
 void Utilizador::pedirAdesao(Grupo *g){
 	g->adicionarPedido(login);
 }
-
+void Utilizador::setData(int d, int m, int a){
+	dataAdesao.setData(d,m,a);
+}
 
 
 vector<Grupo *> Utilizador::meusGrupos() const {
