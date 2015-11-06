@@ -17,7 +17,13 @@ Comunidade::Comunidade(){
 }
 
 int Comunidade::existeUtil(Utilizador *util) const{
-	return sequentialSearch(comunidade, util);
+  /*for (size_t i = 0; i < comunidade.size(); i++)
+  {
+    if (*comunidade[i] == *util)
+      return i;
+  }
+  return -1;*/
+  return pointerSequentialSearch(comunidade, util);
 }
 
 bool Comunidade::existeLogin(string l) const {

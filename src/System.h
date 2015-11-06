@@ -185,9 +185,12 @@ void menuRegistar();
 
 void menuComunidade();
 
+//cout utilizador
 void menuUtilizador();
 
 void menuAmigos();
+
+void menuConversas();
 
 void menuDefinicoes();
 

@@ -80,6 +80,20 @@ public:
     * @param l Login do amigo do utilizador recebido.
     */
   AmigoJaExiste(string l) { login = l; };
+<<<<<<< HEAD
+=======
+  string getLogin() const { return login; };
+private:
+  string login;
+};
+
+class AmigoInexistente {
+public:
+  AmigoInexistente(string l) { login = l; };
+  string getLogin() const { return login; };
+private:
+  string login;
+>>>>>>> f5a603996ce0c360e6acbad41c2ded9a73aa3ee0
 };
 
 /********************************

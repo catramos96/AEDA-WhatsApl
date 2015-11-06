@@ -64,6 +64,7 @@ public:
 	bool bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
+  Utilizador * getAmigo(string login) const;
 };
 
 #endif /* SRC_UTILIZADOR_H_ */
