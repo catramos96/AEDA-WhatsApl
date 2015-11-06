@@ -40,7 +40,7 @@ public:
 		 * @ param util : indica o nome do grupo
 		 * @ return Grupo
 		 */
-		//Grupo* existeGrupo(string grupo) const;
+		Grupo* existeGrupo(string grupo) const;
 	/**
 	* @ brief Funcao retorna o utilizador que se encontra na posicao "pos" do vetor comunidade
 	* @ param pos: posicao do utilizador

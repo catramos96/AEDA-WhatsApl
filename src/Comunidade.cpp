@@ -32,18 +32,18 @@ int Comunidade::existeUtilNome(string nome) const{
 		return -1;     // nao encontrou
 }
 
-/*
+
 Grupo *Comunidade::existeGrupo(string grupo) const{
 	for (unsigned int i = 0; i < comunidade.size(); i++){
 		for(size_t x=0;x<comunidade[i]->getGrupos().size();x++)
 		{
-			if (comunidade[i]->getGrupos()[x].getTitulo() == grupo)
+			if (comunidade[i]->getGrupos()[x]->getTitulo() == grupo)
 				return comunidade[i]->getGrupos()[x];   // encontrou
 		}
 	}
   throw GrupoInexistente();     // nao encontrou
 }
-*/
+
 
 bool Comunidade::existeLogin(string l) const {
 	Utilizador *u = new Utilizador;
@@ -96,7 +96,7 @@ void Comunidade::printComunidade() const{
 	for (unsigned int i = 0; i < comunidade.size(); i++)
 		cout << *comunidade.at(i) << endl;
 }
-/*
+
 int Comunidade::leComunidade(){
 	string line;
 	////
@@ -160,8 +160,8 @@ int Comunidade::leComunidade(){
 
 	return 0;
 }
-*/
-/*
+
+
 int Comunidade::escreveComunidade(){
 	ofstream myfile ("example.txt");
 	  if (myfile.is_open())
@@ -178,7 +178,7 @@ int Comunidade::escreveComunidade(){
 			  }
 			  myfile << "-" << "\n";
 			  for(size_t x=0;x<comunidade[i]->getGrupos().size();x++){
-			  	 myfile << comunidade[i]->getGrupos()[x].getTitulo() << "\n";
+			  	 myfile << comunidade[i]->getGrupos()[x]->getTitulo() << "\n";
 			  }
 			  myfile << "-" << "\n";
 			  myfile << comunidade[i]->getVisibilidade();
@@ -190,4 +190,4 @@ int Comunidade::escreveComunidade(){
 	  else cout << "Unable to open file";
 	  return 0;
 }
-*/
+
