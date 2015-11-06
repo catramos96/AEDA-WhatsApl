@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['comunidade',['Comunidade',['../class_comunidade.html',1,'']]],
-  ['conversa',['Conversa',['../class_conversa.html',1,'']]]
+  ['bloqueado',['Bloqueado',['../class_bloqueado.html',1,'']]]
 ];

@@ -91,22 +91,19 @@ void Grupo::printMembros() const{
 }
 
 bool Grupo::pedidoAdesao(string novo, string moderador, Data adesao, bool aceita){
-
 	stringstream out;
-
-
+	
 	if (isModerador(moderador)){
 		bool encontrou = false;
 		//procurar o 'novo' no vetor de pedidos e eliminar esse pedido
-		for(size_t i = 0; i < pedidos.size(); i++){
+		for(size_t i = 0; i < pedidos.size(); i++)
 			if(pedidos.at(i) == novo){
 				pedidos.erase(pedidos.begin()+i);
 				encontrou = true;
 				break;
 			}
-			if(!encontrou)
-				throw; //pedidoInexistente()
-		}
+		if (!encontrou)
+			throw PedidoInexistente(novo);
 		if (aceita == true){
 			//primeiro passo: criar um membro temporario com a informacao que conhecemos (login)
 			Data d;
@@ -184,7 +181,7 @@ bool Grupo::retiraMembro(string login, string moderador, Data diaAtual){
 			return true;
 		}
 		else
-			throw; // UtilizadorInexistente(u);
+			throw UtilizadorInexistente(login);
 	}
 	else if (!isModerador(moderador))
 		throw NaoModerador(moderador);
@@ -213,7 +210,7 @@ bool Grupo::desbloquearMembro(string login, string moderador, Data diaAtual){
 				return false;
 		}
 		else
-			throw; // UtilizadorInexistente(u);
+			throw UtilizadorInexistente(login);
 	}
 	else
 		throw NaoModerador(moderador);
@@ -228,7 +225,7 @@ bool Grupo::enviarMensagem(string emissor, Mensagem *sms){
 	if (pos != -1) //utilizador existe
 	{
 		if (temp.isBloqueado())
-			throw;// excecao que não deixa o utilizador enviar uma mensagem
+			throw Bloqueado(emissor);// excecao que não deixa o utilizador enviar uma mensagem
 		else{
 			conversa.adicionaSms(sms);
 			return true;
@@ -261,7 +258,7 @@ int Grupo::numPedidos() const{
 
 void Grupo::printPedidos() const{
 	for (int i = 0; i < numPedidos(); i++)
-		cout << "Pedido nº " << i + 1 << endl << "Utilizador : " << pedidos.at(i) << endl << endl;
+		cout << "Pedido numero " << i + 1 << endl << "Utilizador : " << pedidos.at(i) << endl << endl;
 }
 
 void Grupo::adicionarPedido(string login){

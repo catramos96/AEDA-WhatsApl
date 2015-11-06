@@ -63,6 +63,13 @@ public:
 	 * @return out
 	 */
 	friend ostream & operator<<(ostream & out, const Horas & h);
+	/**
+	 * @brief Operator <. Funcao que faz o overloading do operador < para o Objeto Horas.
+	 * Os fatores de comparacao sao as horas e os minutos.
+	 * @param h Horas com que vamos comparar.
+	 * @return True se as horas forem menores que h ou false se se verificar o contrario.
+	 */
+	bool operator<(const Horas &h) const;
 };
 
 /**
@@ -73,47 +80,50 @@ public:
 class Data
 {
 private:
-	int dia,
-		mes,
-		ano;
+	int dia,	/**< membro privado que representa o dia */
+		mes,	/** < membro privado que representa o mes */
+		ano;	/** < membro privado que representa o ano */
 public:
-
-	
 	/**
 	 * @brief Constutor
-	 * Construtor default que inicializa o dia mes e ano a zero
+	 * Construtor default que inicializa o dia mes e ano a zero.
 	 */
 	Data();
 	/**
-	 * @brief Construtor
-	 * inicializa o dia, mes e ano com os dados que o utilizador insere
+	 * @brief Construtor.
+	 * Inicializa o dia, mes e ano com os dados que o utilizador insere.
+	 * @param d Dia.
+	 * @param m Mes.
+	 * @param a Ano.
 	 */
 	Data(int d,int m,int a);
 	/**
 	 * @brief Funcao que permite o utilizador alterar o dia mes e ano atuais com verificações de input.
-	 * @ param d : representa o dia
-	 * @ param m : representa o mes
-	 * @ param a : represnta o ano
-	 * @return void
+	 * @ param d Representa o dia.
+	 * @ param m Representa o mes.
+	 * @ param a Represnta o ano.
 	 */
 	void setData(int d, int m, int a);
 	/**
 	 * @brief Funcao que retorna o dia atual.
-	 * @return dia atual
+	 * @return Dia atual.
 	 */
 	int getDia() const;
 	/**
-	 * @brief Funcao que retorna o mes atual
-	 * @return mes atual
+	 * @brief Funcao que retorna o mes atual.
+	 * @return Mes atual.
 	 */
 	int getMes() const;
 	/**
-	 * @brief Funcao que retorna o ano atual
-	 * @return ano atual
+	 * @brief Funcao que retorna o ano atual.
+	 * @return Ano atual
 	 */
 	int getAno() const;
 	/**
-	 *
+	 * @brief Operator <. Funcao que faz o overloading do operador < para o Objeto Data.
+	 * Os fatores de comparacao sao o ano, o mes e o dia.
+	 * @param d Data com que vamos comparar.
+	 * @return True se a data for menores que d ou false se se verificar o contrario.
 	 */
 	bool operator<(const Data&d) const;
 	/**
@@ -124,7 +134,16 @@ public:
 	 * @return out
 	 */
 	friend ostream & operator<<(ostream & out, const Data & d);
+	/**
+	 * @brief Operador==. Funcao que faz o overloafing do operador == para o objeto Data.
+	 * Os fatores de comparacao sao o ano, o mes e o dia.
+	 * @param d Data que usamos para comparacao.
+	 * @return True se as datas forem iguais, false se nao se verificar a igualdade.
+	 */
+	bool operator==(const Data&d) const;
 };
+
+// ainda nao sei se devo comentar
 
 class HoraNova{
 private:

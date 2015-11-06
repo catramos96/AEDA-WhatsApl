@@ -92,21 +92,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7f3871352a73f5c4a2c83b0ac0f2bf7b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f3871352a73f5c4a2c83b0ac0f2bf7b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Conversa</b> (vector&lt; <a class="el" href="class_mensagem.html">Mensagem</a> &gt; sms)</td></tr>
-<tr class="separator:a7f3871352a73f5c4a2c83b0ac0f2bf7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fcfd519877340aa3602f00dac1738d6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fcfd519877340aa3602f00dac1738d6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>adicionaSms</b> (string tipo, <a class="el" href="class_data.html">Data</a> data, <a class="el" href="class_horas.html">Horas</a> hora, string emissor, vector&lt; string &gt; destinatarios)</td></tr>
-<tr class="separator:a3fcfd519877340aa3602f00dac1738d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4668868dda811bce5e8da4b82e1047d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4668868dda811bce5e8da4b82e1047d8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeSms</b> (<a class="el" href="class_data.html">Data</a> data, <a class="el" href="class_horas.html">Horas</a> hora)</td></tr>
-<tr class="separator:a4668868dda811bce5e8da4b82e1047d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00aae9cbb21f271ac1d6ba578ca820ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00aae9cbb21f271ac1d6ba578ca820ec"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Conversa</b> (vector&lt; string &gt; partLogin)</td></tr>
+<tr class="separator:a00aae9cbb21f271ac1d6ba578ca820ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee6541eeaa269a26b14e7d5170ab82e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee6541eeaa269a26b14e7d5170ab82e0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>adicionaSms</b> (<a class="el" href="class_mensagem.html">Mensagem</a> *sms)</td></tr>
+<tr class="separator:aee6541eeaa269a26b14e7d5170ab82e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e050856c96cc40bd6dd16044b167cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7e050856c96cc40bd6dd16044b167cb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>adicionaParticipante</b> (string partNovo)</td></tr>
+<tr class="separator:ab7e050856c96cc40bd6dd16044b167cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa90ab666242fc6079cc847be1396e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfa90ab666242fc6079cc847be1396e2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeParticipante</b> (string part)</td></tr>
+<tr class="separator:adfa90ab666242fc6079cc847be1396e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85952428a550fe77c42347b487624027"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85952428a550fe77c42347b487624027"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeSms</b> (int id)</td></tr>
+<tr class="separator:a85952428a550fe77c42347b487624027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bb99c60f68841f6a7a01c1c68db15df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bb99c60f68841f6a7a01c1c68db15df"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>imprimirConversa</b> ()</td></tr>
 <tr class="separator:a9bb99c60f68841f6a7a01c1c68db15df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5738b11d39a41e1373f2502ddadcd3fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5738b11d39a41e1373f2502ddadcd3fb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>numSms</b> ()</td></tr>
-<tr class="separator:a5738b11d39a41e1373f2502ddadcd3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b1035a3f780e63963dc11d8cc9fcb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35b1035a3f780e63963dc11d8cc9fcb8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numSms</b> () const </td></tr>
+<tr class="separator:a35b1035a3f780e63963dc11d8cc9fcb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae206bbcfb7fe25d6cbca2a7dc9266b0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae206bbcfb7fe25d6cbca2a7dc9266b0e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numParticipantes</b> () const </td></tr>
+<tr class="separator:ae206bbcfb7fe25d6cbca2a7dc9266b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe17736f50a6ab6b471be57c64da79dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe17736f50a6ab6b471be57c64da79dc"></a>
+vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getParticipantes</b> () const </td></tr>
+<tr class="separator:afe17736f50a6ab6b471be57c64da79dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f575a8d5137b94f5190e85998b01b8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f575a8d5137b94f5190e85998b01b8d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ordenarData</b> ()</td></tr>
+<tr class="separator:a8f575a8d5137b94f5190e85998b01b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14487547f1756a0069393894dc6f326c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a14487547f1756a0069393894dc6f326c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="class_conversa.html">Conversa</a> &amp;c) const </td></tr>
+<tr class="separator:a14487547f1756a0069393894dc6f326c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_conversa_8h_source.html">Conversa.h</a></li>

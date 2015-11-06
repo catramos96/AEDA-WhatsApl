@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['grupo',['Grupo',['../class_grupo.html',1,'']]]
+  ['data',['Data',['../class_data.html',1,'']]],
+  ['datainvalida',['DataInvalida',['../class_data_invalida.html',1,'']]]
 ];

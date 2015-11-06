@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['retiramembro',['retiraMembro',['../class_grupo.html#a8ce3fd6f74aacd2e527ccb75d9d8627d',1,'Grupo']]]
+  ['retiramembro',['retiraMembro',['../class_grupo.html#a88a49f345349cf6eec083371ecfd23b3',1,'Grupo']]]
 ];

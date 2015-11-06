@@ -14,24 +14,31 @@ using namespace std;
 
 int Mensagem::id = 0;
 
-Mensagem::Mensagem(Data data, Horas hora){
+Mensagem::Mensagem(Data data, Horas hora) : numero(++id){
 	this->data = data;
 	this->hora = hora;
-	id++;
 }
 
 void Mensagem::imprimirMsg() {
-	cout << "Mensagem : "<< id << endl;
+	cout << "Mensagem : "<< numero << endl;
 	cout << "Data: " << data << " Hora : " << hora << endl;
 	cout << "Emissor: " << emissor << endl;
+}
+
+string Mensagem::getEmissor() const{
+	return emissor;
 }
 
 Data Mensagem::getData() const {
 	return data;
 }
 
-int Mensagem::getID(){
-	return id;
+Horas Mensagem::getHora() const {
+	return hora;
+}
+
+int Mensagem::getNumero() const{
+	return numero;
 }
 
 void Mensagem::setEmissor(string emissor){

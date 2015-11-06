@@ -28,7 +28,9 @@ void \hyperlink{class_horas_a5da58fcd1a263e3c97e6e11c35b61d76}{set\+Horas} (int 
 int \hyperlink{class_horas_af72b7e4e7206236f8dc9a4d4b68eff0c}{get\+Hora} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna as horas atuais. \end{DoxyCompactList}\item 
 int \hyperlink{class_horas_a51e1dd7ac2811960ac1c2faacd034a3c}{get\+Minutos} () const 
-\begin{DoxyCompactList}\small\item\em Funcao que retorna os minutos atuais. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os minutos atuais. \end{DoxyCompactList}\item 
+bool \hyperlink{class_horas_a3e491978c400b71edf4cb3cff6b81877}{operator$<$} (const \hyperlink{class_horas}{Horas} \&h) const 
+\begin{DoxyCompactList}\small\item\em Operator $<$. Funcao que faz o overloading do operador $<$ para o Objeto \hyperlink{class_horas}{Horas}. Os fatores de comparacao sao as horas e os minutos. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,6 +69,25 @@ Funcao que retorna os minutos atuais.
 
 \begin{DoxyReturn}{Returns}
 minutos 
+\end{DoxyReturn}
+\hypertarget{class_horas_a3e491978c400b71edf4cb3cff6b81877}{}\index{Horas@{Horas}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Horas@{Horas}}
+\subsubsection[{operator$<$(const Horas \&h) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Horas\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Horas} \&}]{h}
+\end{DoxyParamCaption}
+) const}\label{class_horas_a3e491978c400b71edf4cb3cff6b81877}
+
+
+Operator $<$. Funcao que faz o overloading do operador $<$ para o Objeto \hyperlink{class_horas}{Horas}. Os fatores de comparacao sao as horas e os minutos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & \hyperlink{class_horas}{Horas} com que vamos comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se as horas forem menores que h ou false se se verificar o contrario. 
 \end{DoxyReturn}
 \hypertarget{class_horas_a5da58fcd1a263e3c97e6e11c35b61d76}{}\index{Horas@{Horas}!set\+Horas@{set\+Horas}}
 \index{set\+Horas@{set\+Horas}!Horas@{Horas}}

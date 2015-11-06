@@ -47,6 +47,15 @@ std::ostream & operator<<(std::ostream & out, const Horas & h){
 	return out;
 }
 
+bool Horas::operator<(const Horas &h) const{
+	if (hora == h.hora){
+		if (min == h.min)
+			return false;
+		else
+			return (min < h.min);
+	}else
+		return (hora < h.hora);
+}
 
 /********************************
  *	    	CLASSE DATA			*
@@ -105,10 +114,14 @@ std::ostream & operator<<(std::ostream & out, const Data & d){
 	return out;
 }
 
+bool Data::operator==(const Data&d) const{
+	return (ano == d.getAno() && mes == d.getMes() && dia == d.getDia());
+}
+
 /************************************
  *	    	CLASSE HORA NOVA		*
  ***********************************/
-
+/*
 
 HoraNova::HoraNova(){
 	t = 0;
@@ -125,7 +138,7 @@ void HoraNova::setHoraNova(time_t time1){
 time_t HoraNova::getHoraNova() {
   return t;
 }
-/*
+
 const string HoraNova::getHoraNovaCompleta(){
 	time_t now=t;
 	struct tm tstruct;
@@ -152,12 +165,12 @@ const string HoraNova::getHoraNovaData(){
 	strftime(buf,sizeof(buf), "%Y-%m-%d",&tstruct);
 	return buf;
 }
-*/
-std::ostream & operator<<(std::ostream & out, const HoraNova & t){
+
+ostream & operator<<(std::ostream & out, const HoraNova & t){
 	out << t;
 	return out;
 }
-
+*/
 //Clears the screen
 
 void clrscr(void)

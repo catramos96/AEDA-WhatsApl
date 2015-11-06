@@ -31,10 +31,6 @@ public:
 	vector<Utilizador *> getAmigos() const;
 	vector<Utilizador *> getPedidosAmizade() const;
 
-<<<<<<< HEAD
-=======
-	//SETS
->>>>>>> 5ea1658437d32d9e229bf99e2dd4c8f886635780
 	void setGrupo(Grupo grupo);
 	void setLogin(string l);
 	void setNome(string n);
@@ -45,24 +41,19 @@ public:
 	void setTelemovel(int i);
 
 	void addAmigo(Utilizador &u);
-	void deletAmigo(Utilizador *u); //elimina dos amigos
-	void removerAmigo(Utilizador &u); //remove me dos amigos de u e u dos meus amigos
+	void removerAmigoAux(Utilizador *u); //eliminar um amigo
+	void removerAmigo(Utilizador &u); //remove u dos meus amigos, e remove-me dos amigos de u
 
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
 	void imprimirAmigos() const;
-<<<<<<< HEAD
-=======
-
-	//OVERLOADING DE OPERADORES
->>>>>>> 5ea1658437d32d9e229bf99e2dd4c8f886635780
 
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;
 	friend ostream & operator<<(ostream & out, const Utilizador & u);
 
 	Conversa *criarConversa(Utilizador *u);
-	void adicionarConversa(Conversa *c);
+	void adicionarConversa(Conversa *c); // se outro utilizador criar a conversa pode adicionar a conversa criada a este utilizador
 	void enviarMensagem(Mensagem *sms, Conversa *c);
 
 	void pedirAdesao(Grupo *g);

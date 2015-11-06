@@ -91,19 +91,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Classe <a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a>. Classe que define os parametros necessarios para um utilizador estar num grupo. Associa um utilizador a data de adesao no grupo e a um boleano que indica se o esta bloqueado.  
+<p>Classe <a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a>. Classe que define os parametros necessarios para um utilizador estar num grupo. Associa o login de um utilizador a data de adesao no grupo e a um boleano que indica se esta bloqueado.  
  <a href="class_membro.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_grupo_8h_source.html">Grupo.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af9bd66f6df0d28ad735fee98a93d4144"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_membro.html#af9bd66f6df0d28ad735fee98a93d4144">Membro</a> (<a class="el" href="class_utilizador.html">Utilizador</a> util, <a class="el" href="class_data.html">Data</a> adesaoGrupo)</td></tr>
-<tr class="memdesc:af9bd66f6df0d28ad735fee98a93d4144"><td class="mdescLeft">&#160;</td><td class="mdescRight">construtor <a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a> inicializa o <a class="el" href="class_utilizador.html">Utilizador</a> util com o utilizador dado, a <a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> adesaoGrupo com a data dada, e o boleano bloqueado a 'false'  <a href="#af9bd66f6df0d28ad735fee98a93d4144">More...</a><br /></td></tr>
-<tr class="separator:af9bd66f6df0d28ad735fee98a93d4144"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa0db1ade3bc300eeee7accb8e5978b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utilizador.html">Utilizador</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_membro.html#afa0db1ade3bc300eeee7accb8e5978b3">getUtilizador</a> () const </td></tr>
-<tr class="memdesc:afa0db1ade3bc300eeee7accb8e5978b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que retorna o <a class="el" href="class_utilizador.html">Utilizador</a> util.  <a href="#afa0db1ade3bc300eeee7accb8e5978b3">More...</a><br /></td></tr>
-<tr class="separator:afa0db1ade3bc300eeee7accb8e5978b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29dfd4ec647ea5cdefcd11d85deb5d1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29dfd4ec647ea5cdefcd11d85deb5d1d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_membro.html#a29dfd4ec647ea5cdefcd11d85deb5d1d">Membro</a> ()</td></tr>
+<tr class="memdesc:a29dfd4ec647ea5cdefcd11d85deb5d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor default. <br /></td></tr>
+<tr class="separator:a29dfd4ec647ea5cdefcd11d85deb5d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4808e95a13bcc2eee96f4ef771c199e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_membro.html#a4808e95a13bcc2eee96f4ef771c199e8">Membro</a> (string login, <a class="el" href="class_data.html">Data</a> adesaoGrupo)</td></tr>
+<tr class="memdesc:a4808e95a13bcc2eee96f4ef771c199e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">construtor <a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a>. Inicializa o <a class="el" href="class_utilizador.html">Utilizador</a> util com o utilizador dado, a <a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> adesaoGrupo com a data dada, e o boleano bloqueado a 'false'.  <a href="#a4808e95a13bcc2eee96f4ef771c199e8">More...</a><br /></td></tr>
+<tr class="separator:a4808e95a13bcc2eee96f4ef771c199e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa45e6c73454118f919a035bdf5df37e0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_membro.html#aa45e6c73454118f919a035bdf5df37e0">getLogin</a> () const </td></tr>
+<tr class="memdesc:aa45e6c73454118f919a035bdf5df37e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que retorna o login do <a class="el" href="class_utilizador.html">Utilizador</a> util.  <a href="#aa45e6c73454118f919a035bdf5df37e0">More...</a><br /></td></tr>
+<tr class="separator:aa45e6c73454118f919a035bdf5df37e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7619c15445b61c099b0a6fcb1e5f9f51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_membro.html#a7619c15445b61c099b0a6fcb1e5f9f51">getData</a> () const </td></tr>
 <tr class="memdesc:a7619c15445b61c099b0a6fcb1e5f9f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que retorna a <a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> de adesao do utilizador ao grupo.  <a href="#a7619c15445b61c099b0a6fcb1e5f9f51">More...</a><br /></td></tr>
 <tr class="separator:a7619c15445b61c099b0a6fcb1e5f9f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,27 +121,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4fee0ae7563027e70cf03456e74feffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que indica o estado atual do membro privado 'bloqueado'.  <a href="#a4fee0ae7563027e70cf03456e74feffc">More...</a><br /></td></tr>
 <tr class="separator:a4fee0ae7563027e70cf03456e74feffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46bc54549fa9d3a84fbfdbc0f1ffe0b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_membro.html#a46bc54549fa9d3a84fbfdbc0f1ffe0b4">operator==</a> (const <a class="el" href="class_membro.html">Membro</a> &amp;m) const </td></tr>
-<tr class="memdesc:a46bc54549fa9d3a84fbfdbc0f1ffe0b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">operador de igualdade compara 2 membros através do utilizador  <a href="#a46bc54549fa9d3a84fbfdbc0f1ffe0b4">More...</a><br /></td></tr>
+<tr class="memdesc:a46bc54549fa9d3a84fbfdbc0f1ffe0b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operador de igualdade. Compara 2 membros através do utilizador.  <a href="#a46bc54549fa9d3a84fbfdbc0f1ffe0b4">More...</a><br /></td></tr>
 <tr class="separator:a46bc54549fa9d3a84fbfdbc0f1ffe0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:afc9bed25c3d6144f71613273a59776fd"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_membro.html#afc9bed25c3d6144f71613273a59776fd">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="class_membro.html">Membro</a> &amp;m)</td></tr>
-<tr class="memdesc:afc9bed25c3d6144f71613273a59776fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">operador de extracao faz o output dos membros privados da classe  <a href="#afc9bed25c3d6144f71613273a59776fd">More...</a><br /></td></tr>
+<tr class="memdesc:afc9bed25c3d6144f71613273a59776fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operador de extracao. Faz o output dos membros privados da classe.  <a href="#afc9bed25c3d6144f71613273a59776fd">More...</a><br /></td></tr>
 <tr class="separator:afc9bed25c3d6144f71613273a59776fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Classe <a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a>. Classe que define os parametros necessarios para um utilizador estar num grupo. Associa um utilizador a data de adesao no grupo e a um boleano que indica se o esta bloqueado. </p>
+<div class="textblock"><p>Classe <a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a>. Classe que define os parametros necessarios para um utilizador estar num grupo. Associa o login de um utilizador a data de adesao no grupo e a um boleano que indica se esta bloqueado. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af9bd66f6df0d28ad735fee98a93d4144"></a>
+<a class="anchor" id="a4808e95a13bcc2eee96f4ef771c199e8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Membro::Membro </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_utilizador.html">Utilizador</a>&#160;</td>
-          <td class="paramname"><em>util</em>, </td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -153,11 +157,11 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>construtor <a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a> inicializa o <a class="el" href="class_utilizador.html">Utilizador</a> util com o utilizador dado, a <a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> adesaoGrupo com a data dada, e o boleano bloqueado a 'false' </p>
+<p>construtor <a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a>. Inicializa o <a class="el" href="class_utilizador.html">Utilizador</a> util com o utilizador dado, a <a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> adesaoGrupo com a data dada, e o boleano bloqueado a 'false'. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">util</td><td><a class="el" href="class_utilizador.html">Utilizador</a> </td></tr>
-    <tr><td class="paramname">adesaoGrupo</td><td>data em que aderiu ao grupo </td></tr>
+    <tr><td class="paramname">login</td><td>Login do utilizador. </td></tr>
+    <tr><td class="paramname">adesaoGrupo</td><td>data em que aderiu ao grupo. </td></tr>
   </table>
   </dd>
 </dl>
@@ -179,16 +183,16 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Funcao que retorna a <a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> de adesao do utilizador ao grupo. </p>
-<dl class="section return"><dt>Returns</dt><dd>adesaoGrupo </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>AdesaoGrupo. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="afa0db1ade3bc300eeee7accb8e5978b3"></a>
+<a class="anchor" id="aa45e6c73454118f919a035bdf5df37e0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_utilizador.html">Utilizador</a> Membro::getUtilizador </td>
+          <td class="memname">string Membro::getLogin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -196,8 +200,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Funcao que retorna o <a class="el" href="class_utilizador.html">Utilizador</a> util. </p>
-<dl class="section return"><dt>Returns</dt><dd>util </dd></dl>
+<p>Funcao que retorna o login do <a class="el" href="class_utilizador.html">Utilizador</a> util. </p>
+<dl class="section return"><dt>Returns</dt><dd>util. </dd></dl>
 
 </div>
 </div>
@@ -215,7 +219,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Funcao que indica o estado atual do membro privado 'bloqueado'. </p>
-<dl class="section return"><dt>Returns</dt><dd>bloqueado </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bloqueado. </dd></dl>
 
 </div>
 </div>
@@ -233,8 +237,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>operador de igualdade compara 2 membros através do utilizador </p>
-<dl class="section return"><dt>Returns</dt><dd>true se os utilizadores forem iguais, false se forem diferentes </dd></dl>
+<p>Operador de igualdade. Compara 2 membros através do utilizador. </p>
+<dl class="section return"><dt>Returns</dt><dd>true se os utilizadores forem iguais, false se forem diferentes. </dd></dl>
 
 </div>
 </div>
@@ -255,7 +259,7 @@ Friends</h2></td></tr>
 <p>Funcao que coloca um novo valor ao membro privado 'bloqueado'. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bloq</td><td>boleano com o valor true ou false </td></tr>
+    <tr><td class="paramname">bloq</td><td>Boleano com o valor true ou false. </td></tr>
   </table>
   </dd>
 </dl>
@@ -279,7 +283,7 @@ Friends</h2></td></tr>
 <p>Funcao que permite alterar a data inicial. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">d</td><td>nova data </td></tr>
+    <tr><td class="paramname">d</td><td>Nova data. </td></tr>
   </table>
   </dd>
 </dl>
@@ -319,13 +323,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>operador de extracao faz o output dos membros privados da classe </p>
+<p>Operador de extracao. Faz o output dos membros privados da classe. </p>
 <dl class="section return"><dt>Returns</dt><dd>out </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_grupo_8h_source.html">Grupo.h</a></li>
+<li>Grupo.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

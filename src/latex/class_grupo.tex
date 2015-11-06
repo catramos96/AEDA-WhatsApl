@@ -2,7 +2,7 @@
 \label{class_grupo}\index{Grupo@{Grupo}}
 
 
-Classe \hyperlink{class_grupo}{Grupo} classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador. O moderador e o utilizador que gere o grupo\+: permite aceitar pedidos de adesao ao grupo, retirar, bloquear ou desbloquear elementos, Um grupo tem um titulo e uma data de criacao. o utilizador moderador e o utilizador que cria o grupo, logo contem a mesma data de adesao que a data de criacao do grupo.  
+Classe \hyperlink{class_grupo}{Grupo}. Classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador. O moderador e o utilizador que gere o grupo\+: permite aceitar pedidos de adesao ao grupo, retirar, bloquear ou desbloquear elementos, Um grupo tem um titulo e uma data de criacao. O utilizador moderador e o utilizador que cria o grupo, logo contem a mesma data de adesao que a data de criacao do grupo. Um grupo contem uma unica conversa que contem todos os utilizadores. No entanto podem estar bloqueados, pelo que nao podem enviar mensagens.  
 
 
 
@@ -12,15 +12,15 @@ Classe \hyperlink{class_grupo}{Grupo} classe que forma um grupo. Um grupo pode t
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_grupo_ab2a25d25a6a6a1ee9c9205be07546a81}{Grupo} (string titulo, \hyperlink{class_data}{Data} criacao, \hyperlink{class_utilizador}{Utilizador} moderador)
-\begin{DoxyCompactList}\small\item\em Construtor do grupo Inicializa o titulo com o titulo recebido e a data com a data de criacao. Cria o membro moderador com o parametro moderador, a data de criacao do grupo e coloca-\/o no vetor de membros. Inicializa o membro status com as informacoes iniciais sobre o grupo. \end{DoxyCompactList}\item 
+\hyperlink{class_grupo_ac8b06040549c8c9020067f34238818dc}{Grupo} (string titulo, \hyperlink{class_data}{Data} criacao, string moderador)
+\begin{DoxyCompactList}\small\item\em Construtor do grupo. Inicializa o titulo com o titulo recebido e a data com a data de criacao. Cria o membro moderador com o parametro moderador, a data de criacao do grupo e coloca-\/o no vetor de membros. Inicializa o membro status com as informacoes iniciais sobre o grupo. \end{DoxyCompactList}\item 
 int \hyperlink{class_grupo_a32080a4eae4ff9e2058d1ab8fe3e757f}{num\+Membros} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o numero de elementos do grupo. \end{DoxyCompactList}\item 
-bool \hyperlink{class_grupo_a993d53539e7008420ff47baaa0628d85}{is\+Moderador} (\hyperlink{class_utilizador}{Utilizador} u)
+bool \hyperlink{class_grupo_a9a9bedb25b3d23d366c84203d1998663}{is\+Moderador} (string m)
 \begin{DoxyCompactList}\small\item\em Funcao que indica se um utilizador e ou nao o mderador do grupo. \end{DoxyCompactList}\item 
-int \hyperlink{class_grupo_a4ff40f770a79eed6b55b9432cb2f907f}{existe\+Membro} (\hyperlink{class_membro}{Membro} $\ast$m)
+int \hyperlink{class_grupo_ae47743b312afead1d38b67e9a770dff4}{existe\+Membro} (\hyperlink{class_membro}{Membro} m)
 \begin{DoxyCompactList}\small\item\em Funcao que procura um membro no vetor \textquotesingle{}membros\textquotesingle{} através do metodo de pesquisa sequential search definido na header \hyperlink{_templates_8h_source}{Templates.\+h}. \end{DoxyCompactList}\item 
-\hyperlink{class_membro}{Membro} $\ast$ \hyperlink{class_grupo_a34d90d6a5fadee36e3b30c37d3f55c56}{membro\+Na\+Posicao} (int pos)
+\hyperlink{class_membro}{Membro} \hyperlink{class_grupo_a1c5a333df13698f6b0c6326b9ce76c50}{membro\+Na\+Posicao} (int pos)
 \begin{DoxyCompactList}\small\item\em Funcao que devolve o membro indicado na posicao \textquotesingle{}pos\textquotesingle{}. \end{DoxyCompactList}\item 
 \hypertarget{class_grupo_a97f188af0d699ee9d5a423b654a9dbb2}{}void \hyperlink{class_grupo_a97f188af0d699ee9d5a423b654a9dbb2}{print\+Status} () const \label{class_grupo_a97f188af0d699ee9d5a423b654a9dbb2}
 
@@ -28,146 +28,198 @@ int \hyperlink{class_grupo_a4ff40f770a79eed6b55b9432cb2f907f}{existe\+Membro} (\
 \hypertarget{class_grupo_aaea32821021b4a06faa11d906c84d409}{}void \hyperlink{class_grupo_aaea32821021b4a06faa11d906c84d409}{print\+Membros} () const \label{class_grupo_aaea32821021b4a06faa11d906c84d409}
 
 \begin{DoxyCompactList}\small\item\em Funcao que imprime os membros existentes no vetor \textquotesingle{}membros\textquotesingle{}. \end{DoxyCompactList}\item 
-bool \hyperlink{class_grupo_a2a9a985a35e0de395c5b63a4b1cb7452}{pedido\+Adesao} (\hyperlink{class_utilizador}{Utilizador} u, \hyperlink{class_utilizador}{Utilizador} moderador, \hyperlink{class_data}{Data} adesao, bool aceita)
-\begin{DoxyCompactList}\small\item\em Funcao que aceita um novo membro no grupo. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{} Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
-bool \hyperlink{class_grupo_a8ce3fd6f74aacd2e527ccb75d9d8627d}{retira\+Membro} (\hyperlink{class_utilizador}{Utilizador} u, \hyperlink{class_utilizador}{Utilizador} moderador, \hyperlink{class_data}{Data} dia\+Atual)
-\begin{DoxyCompactList}\small\item\em Funcao que elimina um membro do gupo. A eliminacao e registada no membro-\/dado \textquotesingle{}status\textquotesingle{} Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
-bool \hyperlink{class_grupo_a4d2d3a38bbc3bd324be9269b2ad9a11d}{bloquear\+Membro} (\hyperlink{class_utilizador}{Utilizador} u, \hyperlink{class_utilizador}{Utilizador} moderador, \hyperlink{class_data}{Data} dia\+Atual)
-\begin{DoxyCompactList}\small\item\em Funcao que bloqueia um membro. Um membro bloqueado nao pode enviar mensagens dentro do grupo, no entanto continua a pertencer ao grupo e a ver mensagens enviadas entre outros utilizadores. O bloqueio e registado no membro-\/dado \textquotesingle{}status\textquotesingle{} Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
-bool \hyperlink{class_grupo_aaee0237389a0550a5f7f5f55b6aefe1c}{desbloquear\+Membro} (\hyperlink{class_utilizador}{Utilizador} u, \hyperlink{class_utilizador}{Utilizador} moderador, \hyperlink{class_data}{Data} dia\+Atual)
-\begin{DoxyCompactList}\small\item\em Funcao que desbloqueia um membro. Esta funcao, ao contrario da funcao pedido\+Adesao, nao implica que o utilizador peca para ser desbloqueado O desbloqueio e registado no membro-\/dado \textquotesingle{}status\textquotesingle{} Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \hyperlink{class_grupo_a9b0aca29a05044b1bd8eb3b012950149}{pedido\+Adesao} (string novo, string moderador, \hyperlink{class_data}{Data} adesao, bool aceita)
+\begin{DoxyCompactList}\small\item\em Funcao que aceita um novo membro no grupo. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
+bool \hyperlink{class_grupo_a88a49f345349cf6eec083371ecfd23b3}{retira\+Membro} (string login, string moderador, \hyperlink{class_data}{Data} dia\+Atual)
+\begin{DoxyCompactList}\small\item\em Funcao que elimina um membro do gupo. A eliminacao e registada no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
+bool \hyperlink{class_grupo_a9d9aaa23c2c01ec6cf71d642b5b1551c}{bloquear\+Membro} (string login, string moderador, \hyperlink{class_data}{Data} dia\+Atual)
+\begin{DoxyCompactList}\small\item\em Funcao que bloqueia um membro. Um membro bloqueado nao pode enviar mensagens dentro do grupo, no entanto continua a pertencer ao grupo e a ver mensagens enviadas entre outros utilizadores. O bloqueio e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
+bool \hyperlink{class_grupo_a8e58dce790752c7f19d67fabcc163ad3}{desbloquear\+Membro} (string login, string moderador, \hyperlink{class_data}{Data} dia\+Atual)
+\begin{DoxyCompactList}\small\item\em Funcao que desbloqueia um membro. Esta funcao, ao contrario da funcao pedido\+Adesao, nao implica que o utilizador peca para ser desbloqueado. O desbloqueio e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
+bool \hyperlink{class_grupo_a78e37207f8c0384d1a0cc06dd74c0fa1}{enviar\+Mensagem} (string emissor, \hyperlink{class_mensagem}{Mensagem} $\ast$sms)
+\begin{DoxyCompactList}\small\item\em Funcao que envia uma mensagem para a conversa de grupo. Gera excecoes se o utilizador que quer enviar a mensagem esta bloqueado ou se nao existe. \end{DoxyCompactList}\item 
+bool \hyperlink{class_grupo_ace18db9a5770707b1b625f06c980c760}{operator==} (const \hyperlink{class_grupo}{Grupo} \&g) const 
+\begin{DoxyCompactList}\small\item\em Funcao que permite fazer o overloading do operador == de modo a conseguir igualar 2 objetos do tipo \hyperlink{class_grupo}{Grupo}. O criterio de igualdade sao os participantes. \end{DoxyCompactList}\item 
+\hypertarget{class_grupo_a290892a90ca39fa1b35fba2d292366f7}{}void \hyperlink{class_grupo_a290892a90ca39fa1b35fba2d292366f7}{print\+Pedidos} () const \label{class_grupo_a290892a90ca39fa1b35fba2d292366f7}
+
+\begin{DoxyCompactList}\small\item\em Funcao que imprime o membro privado pedidos. \end{DoxyCompactList}\item 
+int \hyperlink{class_grupo_a43dfe18242ba72a51634ddc79ee5f25d}{num\+Pedidos} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o numero de pedidos de adesao ao grupo. \end{DoxyCompactList}\item 
+void \hyperlink{class_grupo_ae358292c3dbb687910f0c4c365260a9c}{adicionar\+Pedido} (string login)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona o pedido de adesao de um utilizador ao membro privado \textquotesingle{}pedidos\textquotesingle{}. \end{DoxyCompactList}\item 
+\hypertarget{class_grupo_a892b603306ef718ffcebb040f7028ab4}{}void \hyperlink{class_grupo_a892b603306ef718ffcebb040f7028ab4}{print\+Conversa} ()\label{class_grupo_a892b603306ef718ffcebb040f7028ab4}
+
+\begin{DoxyCompactList}\small\item\em Funcao que imprime a conversa que pertence ao grupo. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Classe \hyperlink{class_grupo}{Grupo} classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador. O moderador e o utilizador que gere o grupo\+: permite aceitar pedidos de adesao ao grupo, retirar, bloquear ou desbloquear elementos, Um grupo tem um titulo e uma data de criacao. o utilizador moderador e o utilizador que cria o grupo, logo contem a mesma data de adesao que a data de criacao do grupo. 
+Classe \hyperlink{class_grupo}{Grupo}. Classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador. O moderador e o utilizador que gere o grupo\+: permite aceitar pedidos de adesao ao grupo, retirar, bloquear ou desbloquear elementos, Um grupo tem um titulo e uma data de criacao. O utilizador moderador e o utilizador que cria o grupo, logo contem a mesma data de adesao que a data de criacao do grupo. Um grupo contem uma unica conversa que contem todos os utilizadores. No entanto podem estar bloqueados, pelo que nao podem enviar mensagens. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_grupo_ab2a25d25a6a6a1ee9c9205be07546a81}{}\index{Grupo@{Grupo}!Grupo@{Grupo}}
+\hypertarget{class_grupo_ac8b06040549c8c9020067f34238818dc}{}\index{Grupo@{Grupo}!Grupo@{Grupo}}
 \index{Grupo@{Grupo}!Grupo@{Grupo}}
-\subsubsection[{Grupo(string titulo, Data criacao, Utilizador moderador)}]{\setlength{\rightskip}{0pt plus 5cm}Grupo\+::\+Grupo (
+\subsubsection[{Grupo(string titulo, Data criacao, string moderador)}]{\setlength{\rightskip}{0pt plus 5cm}Grupo\+::\+Grupo (
 \begin{DoxyParamCaption}
 \item[{string}]{titulo, }
 \item[{{\bf Data}}]{criacao, }
-\item[{{\bf Utilizador}}]{moderador}
+\item[{string}]{moderador}
 \end{DoxyParamCaption}
-)}\label{class_grupo_ab2a25d25a6a6a1ee9c9205be07546a81}
+)}\label{class_grupo_ac8b06040549c8c9020067f34238818dc}
 
 
-Construtor do grupo Inicializa o titulo com o titulo recebido e a data com a data de criacao. Cria o membro moderador com o parametro moderador, a data de criacao do grupo e coloca-\/o no vetor de membros. Inicializa o membro status com as informacoes iniciais sobre o grupo. 
+Construtor do grupo. Inicializa o titulo com o titulo recebido e a data com a data de criacao. Cria o membro moderador com o parametro moderador, a data de criacao do grupo e coloca-\/o no vetor de membros. Inicializa o membro status com as informacoes iniciais sobre o grupo. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em titulo} & Titulo do grupo \\
+{\em titulo} & Titulo do grupo. \\
 \hline
-{\em criacao} & \hyperlink{class_data}{Data} de criacao do grupo \\
+{\em criacao} & \hyperlink{class_data}{Data} de criacao do grupo. \\
 \hline
-{\em moderador} & \hyperlink{class_utilizador}{Utilizador} moderador do grupo \\
+{\em moderador} & \hyperlink{class_utilizador}{Utilizador} moderador do grupo. \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_grupo_a4d2d3a38bbc3bd324be9269b2ad9a11d}{}\index{Grupo@{Grupo}!bloquear\+Membro@{bloquear\+Membro}}
+\hypertarget{class_grupo_ae358292c3dbb687910f0c4c365260a9c}{}\index{Grupo@{Grupo}!adicionar\+Pedido@{adicionar\+Pedido}}
+\index{adicionar\+Pedido@{adicionar\+Pedido}!Grupo@{Grupo}}
+\subsubsection[{adicionar\+Pedido(string login)}]{\setlength{\rightskip}{0pt plus 5cm}void Grupo\+::adicionar\+Pedido (
+\begin{DoxyParamCaption}
+\item[{string}]{login}
+\end{DoxyParamCaption}
+)}\label{class_grupo_ae358292c3dbb687910f0c4c365260a9c}
+
+
+Funcao que adiciona o pedido de adesao de um utilizador ao membro privado \textquotesingle{}pedidos\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & Login do utilizador que quer pertencer ao grupo. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_grupo_a9d9aaa23c2c01ec6cf71d642b5b1551c}{}\index{Grupo@{Grupo}!bloquear\+Membro@{bloquear\+Membro}}
 \index{bloquear\+Membro@{bloquear\+Membro}!Grupo@{Grupo}}
-\subsubsection[{bloquear\+Membro(\+Utilizador u, Utilizador moderador, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::bloquear\+Membro (
+\subsubsection[{bloquear\+Membro(string login, string moderador, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::bloquear\+Membro (
 \begin{DoxyParamCaption}
-\item[{{\bf Utilizador}}]{u, }
-\item[{{\bf Utilizador}}]{moderador, }
+\item[{string}]{login, }
+\item[{string}]{moderador, }
 \item[{{\bf Data}}]{dia\+Atual}
 \end{DoxyParamCaption}
-)}\label{class_grupo_a4d2d3a38bbc3bd324be9269b2ad9a11d}
+)}\label{class_grupo_a9d9aaa23c2c01ec6cf71d642b5b1551c}
 
 
-Funcao que bloqueia um membro. Um membro bloqueado nao pode enviar mensagens dentro do grupo, no entanto continua a pertencer ao grupo e a ver mensagens enviadas entre outros utilizadores. O bloqueio e registado no membro-\/dado \textquotesingle{}status\textquotesingle{} Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
+Funcao que bloqueia um membro. Um membro bloqueado nao pode enviar mensagens dentro do grupo, no entanto continua a pertencer ao grupo e a ver mensagens enviadas entre outros utilizadores. O bloqueio e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em u} & \hyperlink{class_utilizador}{Utilizador} que vai ser bloqueado \\
+{\em login} & Login do \hyperlink{class_utilizador}{Utilizador} que vai ser bloqueado. \\
 \hline
-{\em moderador} & \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode bloquear membros) \\
+{\em moderador} & \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode bloquear membros). \\
 \hline
-{\em dia\+Atual} & \hyperlink{class_data}{Data} em que o utilizador e bloqueado \\
+{\em dia\+Atual} & \hyperlink{class_data}{Data} em que o utilizador e bloqueado. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True se o membro e bloqueado com sucesso e false se o membro ja se encontra bloqueado 
+True se o membro e bloqueado com sucesso e false se o membro ja se encontra bloqueado. 
 \end{DoxyReturn}
-\hypertarget{class_grupo_aaee0237389a0550a5f7f5f55b6aefe1c}{}\index{Grupo@{Grupo}!desbloquear\+Membro@{desbloquear\+Membro}}
+\hypertarget{class_grupo_a8e58dce790752c7f19d67fabcc163ad3}{}\index{Grupo@{Grupo}!desbloquear\+Membro@{desbloquear\+Membro}}
 \index{desbloquear\+Membro@{desbloquear\+Membro}!Grupo@{Grupo}}
-\subsubsection[{desbloquear\+Membro(\+Utilizador u, Utilizador moderador, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::desbloquear\+Membro (
+\subsubsection[{desbloquear\+Membro(string login, string moderador, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::desbloquear\+Membro (
 \begin{DoxyParamCaption}
-\item[{{\bf Utilizador}}]{u, }
-\item[{{\bf Utilizador}}]{moderador, }
+\item[{string}]{login, }
+\item[{string}]{moderador, }
 \item[{{\bf Data}}]{dia\+Atual}
 \end{DoxyParamCaption}
-)}\label{class_grupo_aaee0237389a0550a5f7f5f55b6aefe1c}
+)}\label{class_grupo_a8e58dce790752c7f19d67fabcc163ad3}
 
 
-Funcao que desbloqueia um membro. Esta funcao, ao contrario da funcao pedido\+Adesao, nao implica que o utilizador peca para ser desbloqueado O desbloqueio e registado no membro-\/dado \textquotesingle{}status\textquotesingle{} Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
+Funcao que desbloqueia um membro. Esta funcao, ao contrario da funcao pedido\+Adesao, nao implica que o utilizador peca para ser desbloqueado. O desbloqueio e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em u} & \hyperlink{class_utilizador}{Utilizador} que vai ser desbloqueado \\
+{\em login} & Login do \hyperlink{class_utilizador}{Utilizador} que vai ser desbloqueado. \\
 \hline
-{\em moderador} & \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode desbloquear membros) \\
+{\em moderador} & \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode desbloquear membros). \\
 \hline
-{\em dia\+Atual} & \hyperlink{class_data}{Data} em que o utilizador e desbloqueado \\
+{\em dia\+Atual} & \hyperlink{class_data}{Data} em que o utilizador e desbloqueado. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True se o membro e desbloqueado com sucesso e false se o membro ja se encontra desbloqueado 
+True se o membro e desbloqueado com sucesso e false se o membro ja se encontra desbloqueado. 
 \end{DoxyReturn}
-\hypertarget{class_grupo_a4ff40f770a79eed6b55b9432cb2f907f}{}\index{Grupo@{Grupo}!existe\+Membro@{existe\+Membro}}
-\index{existe\+Membro@{existe\+Membro}!Grupo@{Grupo}}
-\subsubsection[{existe\+Membro(\+Membro $\ast$m)}]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::existe\+Membro (
+\hypertarget{class_grupo_a78e37207f8c0384d1a0cc06dd74c0fa1}{}\index{Grupo@{Grupo}!enviar\+Mensagem@{enviar\+Mensagem}}
+\index{enviar\+Mensagem@{enviar\+Mensagem}!Grupo@{Grupo}}
+\subsubsection[{enviar\+Mensagem(string emissor, Mensagem $\ast$sms)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::enviar\+Mensagem (
 \begin{DoxyParamCaption}
-\item[{{\bf Membro} $\ast$}]{m}
+\item[{string}]{emissor, }
+\item[{{\bf Mensagem} $\ast$}]{sms}
 \end{DoxyParamCaption}
-)}\label{class_grupo_a4ff40f770a79eed6b55b9432cb2f907f}
+)}\label{class_grupo_a78e37207f8c0384d1a0cc06dd74c0fa1}
+
+
+Funcao que envia uma mensagem para a conversa de grupo. Gera excecoes se o utilizador que quer enviar a mensagem esta bloqueado ou se nao existe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em emissor} & Login do utilizador que envia a mensagem. \\
+\hline
+{\em $\ast$sms} & \hyperlink{class_mensagem}{Mensagem} que vai ser enviada, \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True em caso de sucesso ou false se insucesso. 
+\end{DoxyReturn}
+\hypertarget{class_grupo_ae47743b312afead1d38b67e9a770dff4}{}\index{Grupo@{Grupo}!existe\+Membro@{existe\+Membro}}
+\index{existe\+Membro@{existe\+Membro}!Grupo@{Grupo}}
+\subsubsection[{existe\+Membro(\+Membro m)}]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::existe\+Membro (
+\begin{DoxyParamCaption}
+\item[{{\bf Membro}}]{m}
+\end{DoxyParamCaption}
+)}\label{class_grupo_ae47743b312afead1d38b67e9a770dff4}
 
 
 Funcao que procura um membro no vetor \textquotesingle{}membros\textquotesingle{} através do metodo de pesquisa sequential search definido na header \hyperlink{_templates_8h_source}{Templates.\+h}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em $\ast$m} & \hyperlink{class_membro}{Membro} que queremos encontrar \\
+{\em m} & \hyperlink{class_membro}{Membro} que queremos encontrar. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 posicao no vetor do membro. -\/1 se nao encontra. 
 \end{DoxyReturn}
-\hypertarget{class_grupo_a993d53539e7008420ff47baaa0628d85}{}\index{Grupo@{Grupo}!is\+Moderador@{is\+Moderador}}
+\hypertarget{class_grupo_a9a9bedb25b3d23d366c84203d1998663}{}\index{Grupo@{Grupo}!is\+Moderador@{is\+Moderador}}
 \index{is\+Moderador@{is\+Moderador}!Grupo@{Grupo}}
-\subsubsection[{is\+Moderador(\+Utilizador u)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::is\+Moderador (
+\subsubsection[{is\+Moderador(string m)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::is\+Moderador (
 \begin{DoxyParamCaption}
-\item[{{\bf Utilizador}}]{u}
+\item[{string}]{m}
 \end{DoxyParamCaption}
-)}\label{class_grupo_a993d53539e7008420ff47baaa0628d85}
+)}\label{class_grupo_a9a9bedb25b3d23d366c84203d1998663}
 
 
 Funcao que indica se um utilizador e ou nao o mderador do grupo. 
 
 \begin{DoxyReturn}{Returns}
-True se o utilizador e moderador ou false se nao e. 
+True se o utilizador e moderador ou false se nao. 
 \end{DoxyReturn}
-\hypertarget{class_grupo_a34d90d6a5fadee36e3b30c37d3f55c56}{}\index{Grupo@{Grupo}!membro\+Na\+Posicao@{membro\+Na\+Posicao}}
+\hypertarget{class_grupo_a1c5a333df13698f6b0c6326b9ce76c50}{}\index{Grupo@{Grupo}!membro\+Na\+Posicao@{membro\+Na\+Posicao}}
 \index{membro\+Na\+Posicao@{membro\+Na\+Posicao}!Grupo@{Grupo}}
-\subsubsection[{membro\+Na\+Posicao(int pos)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Membro}$\ast$ Grupo\+::membro\+Na\+Posicao (
+\subsubsection[{membro\+Na\+Posicao(int pos)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Membro} Grupo\+::membro\+Na\+Posicao (
 \begin{DoxyParamCaption}
 \item[{int}]{pos}
 \end{DoxyParamCaption}
-)}\label{class_grupo_a34d90d6a5fadee36e3b30c37d3f55c56}
+)}\label{class_grupo_a1c5a333df13698f6b0c6326b9ce76c50}
 
 
 Funcao que devolve o membro indicado na posicao \textquotesingle{}pos\textquotesingle{}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em pos} & Posicao do elemento no vetor \textquotesingle{}membros\textquotesingle{} \\
+{\em pos} & Posicao do elemento no vetor \textquotesingle{}membros\textquotesingle{}. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\hyperlink{class_membro}{Membro} na posicao pos 
+\hyperlink{class_membro}{Membro} na posicao pos. 
 \end{DoxyReturn}
 \hypertarget{class_grupo_a32080a4eae4ff9e2058d1ab8fe3e757f}{}\index{Grupo@{Grupo}!num\+Membros@{num\+Membros}}
 \index{num\+Membros@{num\+Membros}!Grupo@{Grupo}}
@@ -181,63 +233,97 @@ Funcao que devolve o membro indicado na posicao \textquotesingle{}pos\textquotes
 Funcao que retorna o numero de elementos do grupo. 
 
 \begin{DoxyReturn}{Returns}
-Numero de elementos membro 
+Numero de elementos membro. 
 \end{DoxyReturn}
-\hypertarget{class_grupo_a2a9a985a35e0de395c5b63a4b1cb7452}{}\index{Grupo@{Grupo}!pedido\+Adesao@{pedido\+Adesao}}
-\index{pedido\+Adesao@{pedido\+Adesao}!Grupo@{Grupo}}
-\subsubsection[{pedido\+Adesao(\+Utilizador u, Utilizador moderador, Data adesao, bool aceita)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::pedido\+Adesao (
+\hypertarget{class_grupo_a43dfe18242ba72a51634ddc79ee5f25d}{}\index{Grupo@{Grupo}!num\+Pedidos@{num\+Pedidos}}
+\index{num\+Pedidos@{num\+Pedidos}!Grupo@{Grupo}}
+\subsubsection[{num\+Pedidos() const }]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::num\+Pedidos (
 \begin{DoxyParamCaption}
-\item[{{\bf Utilizador}}]{u, }
-\item[{{\bf Utilizador}}]{moderador, }
+{}
+\end{DoxyParamCaption}
+) const}\label{class_grupo_a43dfe18242ba72a51634ddc79ee5f25d}
+
+
+Funcao que retorna o numero de pedidos de adesao ao grupo. 
+
+\begin{DoxyReturn}{Returns}
+numero de pedidos 
+\end{DoxyReturn}
+\hypertarget{class_grupo_ace18db9a5770707b1b625f06c980c760}{}\index{Grupo@{Grupo}!operator==@{operator==}}
+\index{operator==@{operator==}!Grupo@{Grupo}}
+\subsubsection[{operator==(const Grupo \&g) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Grupo} \&}]{g}
+\end{DoxyParamCaption}
+) const}\label{class_grupo_ace18db9a5770707b1b625f06c980c760}
+
+
+Funcao que permite fazer o overloading do operador == de modo a conseguir igualar 2 objetos do tipo \hyperlink{class_grupo}{Grupo}. O criterio de igualdade sao os participantes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \hyperlink{class_grupo}{Grupo} que vamos comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se forem iguais, false se diferentes. 
+\end{DoxyReturn}
+\hypertarget{class_grupo_a9b0aca29a05044b1bd8eb3b012950149}{}\index{Grupo@{Grupo}!pedido\+Adesao@{pedido\+Adesao}}
+\index{pedido\+Adesao@{pedido\+Adesao}!Grupo@{Grupo}}
+\subsubsection[{pedido\+Adesao(string novo, string moderador, Data adesao, bool aceita)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::pedido\+Adesao (
+\begin{DoxyParamCaption}
+\item[{string}]{novo, }
+\item[{string}]{moderador, }
 \item[{{\bf Data}}]{adesao, }
 \item[{bool}]{aceita}
 \end{DoxyParamCaption}
-)}\label{class_grupo_a2a9a985a35e0de395c5b63a4b1cb7452}
+)}\label{class_grupo_a9b0aca29a05044b1bd8eb3b012950149}
 
 
-Funcao que aceita um novo membro no grupo. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{} Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
+Funcao que aceita um novo membro no grupo. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em u} & \hyperlink{class_utilizador}{Utilizador} que pede permissao \\
+{\em novo} & Login do \hyperlink{class_utilizador}{Utilizador} que pede permissao. \\
 \hline
-{\em moderador} & \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao) \\
+{\em moderador} & Login do \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao). \\
 \hline
-{\em adesao} & \hyperlink{class_data}{Data} em que o utilizador pede permissao para entrar no grupo \\
+{\em adesao} & \hyperlink{class_data}{Data} em que o utilizador pede permissao para entrar no grupo. \\
 \hline
-{\em aceita} & Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao \\
+{\em aceita} & Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True se aceita o pedido, false se rejeita 
+True se aceita o pedido, false se rejeita. 
 \end{DoxyReturn}
-\hypertarget{class_grupo_a8ce3fd6f74aacd2e527ccb75d9d8627d}{}\index{Grupo@{Grupo}!retira\+Membro@{retira\+Membro}}
+\hypertarget{class_grupo_a88a49f345349cf6eec083371ecfd23b3}{}\index{Grupo@{Grupo}!retira\+Membro@{retira\+Membro}}
 \index{retira\+Membro@{retira\+Membro}!Grupo@{Grupo}}
-\subsubsection[{retira\+Membro(\+Utilizador u, Utilizador moderador, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::retira\+Membro (
+\subsubsection[{retira\+Membro(string login, string moderador, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::retira\+Membro (
 \begin{DoxyParamCaption}
-\item[{{\bf Utilizador}}]{u, }
-\item[{{\bf Utilizador}}]{moderador, }
+\item[{string}]{login, }
+\item[{string}]{moderador, }
 \item[{{\bf Data}}]{dia\+Atual}
 \end{DoxyParamCaption}
-)}\label{class_grupo_a8ce3fd6f74aacd2e527ccb75d9d8627d}
+)}\label{class_grupo_a88a49f345349cf6eec083371ecfd23b3}
 
 
-Funcao que elimina um membro do gupo. A eliminacao e registada no membro-\/dado \textquotesingle{}status\textquotesingle{} Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
+Funcao que elimina um membro do gupo. A eliminacao e registada no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em u} & \hyperlink{class_utilizador}{Utilizador} que vai ser eliminado \\
+{\em login} & Login do \hyperlink{class_utilizador}{Utilizador} que vai ser eliminado. \\
 \hline
-{\em moderador} & \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode eliminar membros) \\
+{\em moderador} & Login do \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode eliminar membros). \\
 \hline
-{\em dia\+Atual} & \hyperlink{class_data}{Data} em que o utilizador e eliminado do grupo \\
+{\em dia\+Atual} & \hyperlink{class_data}{Data} em que o utilizador e eliminado do grupo. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True se e eliminado com sucesso 
+True se e eliminado com sucesso. 
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Grupo.\+h\end{DoxyCompactItemize}
+Grupo.\+h\item 
+Grupo.\+cpp\end{DoxyCompactItemize}

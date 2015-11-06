@@ -12,17 +12,20 @@ using namespace std;
 class Mensagem
 {
 private:
+	static int id; // incrementa a cada mensagem
 	Data data;
 	Horas hora;
 	string emissor;
-	static int id;
+	int numero; // numero da mensagem atual
 public:
 	Mensagem(Data data, Horas hora);
-	virtual ~Mensagem();
+	//virtual ~Mensagem();
 	virtual void imprimirMsg(); //imprime todos os membros private
-	string getTipo() const;
+	string getEmissor() const;
 	Data getData() const;
-	static int getID();
+	Horas getHora() const;
+	static int getID(){return id;};
+	int getNumero() const;
 	void setEmissor(string emissor);
 };
 

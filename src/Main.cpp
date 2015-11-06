@@ -483,6 +483,7 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
 /*****************************************************************
 *                             MAIN                               *
 *****************************************************************/
+/*
 int main() {
 	Comunidade *c = new Comunidade;
 	Utilizador *u = new Utilizador;
@@ -494,7 +495,7 @@ int main() {
 	}
 	return 0;
 }
-
+*/
 /*
 try{
 Data data;

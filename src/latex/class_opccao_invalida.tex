@@ -1,22 +1,76 @@
 \hypertarget{class_opccao_invalida}{}\section{Opccao\+Invalida$<$ N $>$ Class Template Reference}
 \label{class_opccao_invalida}\index{Opccao\+Invalida$<$ N $>$@{Opccao\+Invalida$<$ N $>$}}
+
+
+Classe que representa uma excecao da classe Main. Esta excecao e lancada quando a opcao colocada nao esta entre os limites estabelecidos. E uma classe template pois pode receber mais que um tipo de dados.  
+
+
+
+
+{\ttfamily \#include $<$Excecoes.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_opccao_invalida_a19b191db4d1cc8c074c24a940571dd4b}{}{\bfseries Opccao\+Invalida} (N op, N min, N max)\label{class_opccao_invalida_a19b191db4d1cc8c074c24a940571dd4b}
-
-\item 
+\hyperlink{class_opccao_invalida_a19b191db4d1cc8c074c24a940571dd4b}{Opccao\+Invalida} (N op, N min, N max)
+\begin{DoxyCompactList}\small\item\em Construtor. Inicializa os membros op, min e max com, repetivamente, a opcao escolhida, a opcao minima e a opcao maxima. \end{DoxyCompactList}\item 
 \hypertarget{class_opccao_invalida_abac2e9c809f6b1dc5e0179e28604f528}{}N {\bfseries get\+Min} () const \label{class_opccao_invalida_abac2e9c809f6b1dc5e0179e28604f528}
 
 \item 
 \hypertarget{class_opccao_invalida_a98bb7934220a9b27b9da823207b72db3}{}N {\bfseries get\+Max} () const \label{class_opccao_invalida_a98bb7934220a9b27b9da823207b72db3}
 
 \item 
-\hypertarget{class_opccao_invalida_ac9afa1ee68970cddd39a9873fd2c357f}{}N {\bfseries get\+Op} () const \label{class_opccao_invalida_ac9afa1ee68970cddd39a9873fd2c357f}
+N \hyperlink{class_opccao_invalida_ac9afa1ee68970cddd39a9873fd2c357f}{get\+Op} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a opcao escolhida. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\end{DoxyCompactItemize}
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class N$>$class Opccao\+Invalida$<$ N $>$}
+
+Classe que representa uma excecao da classe Main. Esta excecao e lancada quando a opcao colocada nao esta entre os limites estabelecidos. E uma classe template pois pode receber mais que um tipo de dados. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_opccao_invalida_a19b191db4d1cc8c074c24a940571dd4b}{}\index{Opccao\+Invalida@{Opccao\+Invalida}!Opccao\+Invalida@{Opccao\+Invalida}}
+\index{Opccao\+Invalida@{Opccao\+Invalida}!Opccao\+Invalida@{Opccao\+Invalida}}
+\subsubsection[{Opccao\+Invalida(\+N op, N min, N max)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class N $>$ {\bf Opccao\+Invalida}$<$ N $>$\+::{\bf Opccao\+Invalida} (
+\begin{DoxyParamCaption}
+\item[{N}]{op, }
+\item[{N}]{min, }
+\item[{N}]{max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_opccao_invalida_a19b191db4d1cc8c074c24a940571dd4b}
+
+
+Construtor. Inicializa os membros op, min e max com, repetivamente, a opcao escolhida, a opcao minima e a opcao maxima. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & Opcao escolhida. \\
+\hline
+{\em min} & Opcao minima. \\
+\hline
+{\em max} & Opcao maxima. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_opccao_invalida_ac9afa1ee68970cddd39a9873fd2c357f}{}\index{Opccao\+Invalida@{Opccao\+Invalida}!get\+Op@{get\+Op}}
+\index{get\+Op@{get\+Op}!Opccao\+Invalida@{Opccao\+Invalida}}
+\subsubsection[{get\+Op() const }]{\setlength{\rightskip}{0pt plus 5cm}template$<$class N $>$ N {\bf Opccao\+Invalida}$<$ N $>$\+::get\+Op (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_opccao_invalida_ac9afa1ee68970cddd39a9873fd2c357f}
+
+
+Funcao que retorna a opcao escolhida. 
+
+\begin{DoxyReturn}{Returns}
+Opcao escolhida. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Templates.\+h\end{DoxyCompactItemize}
+Excecoes.\+h\end{DoxyCompactItemize}

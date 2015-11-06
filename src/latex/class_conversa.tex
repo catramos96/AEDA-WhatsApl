@@ -3,24 +3,42 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_conversa_a7f3871352a73f5c4a2c83b0ac0f2bf7b}{}{\bfseries Conversa} (vector$<$ \hyperlink{class_mensagem}{Mensagem} $>$ sms)\label{class_conversa_a7f3871352a73f5c4a2c83b0ac0f2bf7b}
+\hypertarget{class_conversa_a00aae9cbb21f271ac1d6ba578ca820ec}{}{\bfseries Conversa} (vector$<$ string $>$ part\+Login)\label{class_conversa_a00aae9cbb21f271ac1d6ba578ca820ec}
 
 \item 
-\hypertarget{class_conversa_a3fcfd519877340aa3602f00dac1738d6}{}void {\bfseries adiciona\+Sms} (string tipo, \hyperlink{class_data}{Data} data, \hyperlink{class_horas}{Horas} hora, string emissor, vector$<$ string $>$ destinatarios)\label{class_conversa_a3fcfd519877340aa3602f00dac1738d6}
+\hypertarget{class_conversa_aee6541eeaa269a26b14e7d5170ab82e0}{}void {\bfseries adiciona\+Sms} (\hyperlink{class_mensagem}{Mensagem} $\ast$sms)\label{class_conversa_aee6541eeaa269a26b14e7d5170ab82e0}
 
 \item 
-\hypertarget{class_conversa_a4668868dda811bce5e8da4b82e1047d8}{}void {\bfseries remove\+Sms} (\hyperlink{class_data}{Data} data, \hyperlink{class_horas}{Horas} hora)\label{class_conversa_a4668868dda811bce5e8da4b82e1047d8}
+\hypertarget{class_conversa_ab7e050856c96cc40bd6dd16044b167cb}{}void {\bfseries adiciona\+Participante} (string part\+Novo)\label{class_conversa_ab7e050856c96cc40bd6dd16044b167cb}
+
+\item 
+\hypertarget{class_conversa_adfa90ab666242fc6079cc847be1396e2}{}void {\bfseries remove\+Participante} (string part)\label{class_conversa_adfa90ab666242fc6079cc847be1396e2}
+
+\item 
+\hypertarget{class_conversa_a85952428a550fe77c42347b487624027}{}void {\bfseries remove\+Sms} (int id)\label{class_conversa_a85952428a550fe77c42347b487624027}
 
 \item 
 \hypertarget{class_conversa_a9bb99c60f68841f6a7a01c1c68db15df}{}void {\bfseries imprimir\+Conversa} ()\label{class_conversa_a9bb99c60f68841f6a7a01c1c68db15df}
 
 \item 
-\hypertarget{class_conversa_a5738b11d39a41e1373f2502ddadcd3fb}{}int {\bfseries num\+Sms} ()\label{class_conversa_a5738b11d39a41e1373f2502ddadcd3fb}
+\hypertarget{class_conversa_a35b1035a3f780e63963dc11d8cc9fcb8}{}int {\bfseries num\+Sms} () const \label{class_conversa_a35b1035a3f780e63963dc11d8cc9fcb8}
+
+\item 
+\hypertarget{class_conversa_ae206bbcfb7fe25d6cbca2a7dc9266b0e}{}int {\bfseries num\+Participantes} () const \label{class_conversa_ae206bbcfb7fe25d6cbca2a7dc9266b0e}
+
+\item 
+\hypertarget{class_conversa_afe17736f50a6ab6b471be57c64da79dc}{}vector$<$ string $>$ {\bfseries get\+Participantes} () const \label{class_conversa_afe17736f50a6ab6b471be57c64da79dc}
+
+\item 
+\hypertarget{class_conversa_a8f575a8d5137b94f5190e85998b01b8d}{}void {\bfseries ordenar\+Data} ()\label{class_conversa_a8f575a8d5137b94f5190e85998b01b8d}
+
+\item 
+\hypertarget{class_conversa_a14487547f1756a0069393894dc6f326c}{}bool {\bfseries operator==} (const \hyperlink{class_conversa}{Conversa} \&c) const \label{class_conversa_a14487547f1756a0069393894dc6f326c}
 
 \end{DoxyCompactItemize}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{_conversa_8h}{Conversa.\+h}\item 
+Conversa.\+h\item 
 Conversa.\+cpp\end{DoxyCompactItemize}

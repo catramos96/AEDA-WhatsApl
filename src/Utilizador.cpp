@@ -105,7 +105,7 @@ void Utilizador::addAmigo(Utilizador &u) {
     u.setAmigos(this);
 }
 
-void Utilizador::deletAmigo(Utilizador *u) {
+void Utilizador::removerAmigoAux(Utilizador *u) {
 	vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
 	if (it == amigos.end())
 		throw UtilizadorInexistente((*u).getLogin());
@@ -113,12 +113,10 @@ void Utilizador::deletAmigo(Utilizador *u) {
 		amigos.erase(it);
 }
 
-
 void Utilizador::removerAmigo(Utilizador &u) {
-	deletAmigo(&u); //remove dos meus amigos
-	u.deletAmigo(this); //remove me dos amigos dele
+	removerAmigoAux(&u); //remove dos meus amigos
+	u.removerAmigoAux(this); //remove me dos amigos dele
 }
-
 
 void Utilizador::imprimirDefinicoes() const {
   cout << "Perfil (1 - publico , 0 - privado): " << visibilidade << endl;
@@ -182,8 +180,8 @@ void Utilizador::adicionarConversa(Conversa *c){
 }
 
 void Utilizador::enviarMensagem(Mensagem *sms, Conversa *c){
-	c->adicionaSms(sms);
 	sms->setEmissor(login);
+	c->adicionaSms(sms);
 }
 
 Grupo *Utilizador::criarGrupo(string titulo, Data dataAtual){
@@ -193,8 +191,8 @@ Grupo *Utilizador::criarGrupo(string titulo, Data dataAtual){
 }
 
 void Utilizador::enviarMensagemGrupo(Mensagem *sms, Grupo *g){
-	g->enviarMensagem(login, sms);
 	sms->setEmissor(login);
+	g->enviarMensagem(login, sms);
 }
 
 bool Utilizador::aceitaMembro(string u, Grupo *g, Data d){

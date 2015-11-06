@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['opccaoinvalida',['OpccaoInvalida',['../class_opccao_invalida.html',1,'']]]
+  ['naomoderador',['NaoModerador',['../class_nao_moderador.html',1,'']]],
+  ['naoparticipante',['NaoParticipante',['../class_nao_participante.html',1,'']]]
 ];

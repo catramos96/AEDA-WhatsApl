@@ -5,6 +5,7 @@
 #include <algorithm>
 #include "Utilizador.h"
 #include "Templates.h"
+#include "Excecoes.h"
 
 using namespace std;
 
@@ -28,17 +29,21 @@ void Conversa::removeParticipante(string part){
 }
 
 void Conversa::adicionaSms(Mensagem *sms){
+	string temp = sms->getEmissor();
+	if (sequentialSearch<string>(participantes, temp) == -1)
+		throw NaoParticipante(temp);
 	mensagens.push_back(sms);
 }
-/*
+
 void Conversa::removeSms(int id){
 	for (int i = 0; i < numSms(); i++){
-		if (mensagens.at(i).Mensagem::getID() == id)
+		if (mensagens.at(i)->getNumero() == id)
 			mensagens.erase(mensagens.begin() + i);
 	}
 }
-*/
+
 void Conversa::imprimirConversa(){
+	ordenarData();
 	cout << "Chat : ";
 	for (int j = 0; j < numParticipantes(); j++){
 		if (j == numParticipantes() - 1)
@@ -78,8 +83,11 @@ bool Conversa::operator==(const Conversa&c)const{ //compara 2 conversas pelos de
 	return false;
 }
 
-bool comp(const Mensagem &m1, const Mensagem &m2){
-	return (m1.getData() < m2.getData());
+bool comp(const Mensagem *m1, const Mensagem *m2){
+	if((*m1).getData() ==(*m2).getData()){
+		return ((*m1).getHora() < (*m2).getHora());
+	}else
+		return ((*m1).getData() < (*m2).getData());
 }
 
 void Conversa::ordenarData(){
