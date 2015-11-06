@@ -241,13 +241,23 @@ public:
 	 */
 	string getLogin() const{return login;};
 };
-
+/**
+* @brief Classe excepção que é lançada quando se procura um grupo que nao existe
+*/
 class GrupoInexistente {
 public:
+  /**
+  * @brief Construtor.
+  * @param n posicao de um grupo num vector de grupos.
+  */
   GrupoInexistente(int n) { this->n = n; };
+  /**
+  * @brief retorna a posicao do grupo num vector de grupos
+  * @return n posicao
+  */
   int getGrupo() const { return n; };
 private:
-  int n;
+  int n;/**< membro privado que representa a posicao do grupo que criou a excecao */
 };
 
 /********************************

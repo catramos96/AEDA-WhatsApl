@@ -69,8 +69,17 @@ vector<Utilizador *> Utilizador::getAmigos() const {
   return amigos;
 }
 
+Utilizador* Utilizador::getAmigo(string login) const {
+  Utilizador *u = new Utilizador;
+  u->setLogin(login);
+  int i = pointerSequentialSearch(amigos, u);
+  if (i == -1)
+    throw AmigoInexistente(u->getLogin());
+  return amigos[i];
+}
+
 Grupo* Utilizador::getGrupo(int i) const {
-  if (i < 0 || i > amigos.size()-1){
+  if (i < 0 || i > grupos.size()-1){
     throw GrupoInexistente(i);
 }
   return grupos[i];
@@ -246,14 +255,7 @@ void Utilizador::pedirAdesao(Grupo *g){
 	g->adicionarPedido(login);
 }
 
-Utilizador* Utilizador::getAmigo(string login) const {
-  Utilizador *u = new Utilizador;
-  u->setLogin(login);
-  int i = pointerSequentialSearch(amigos, u);
-  if (i == -1)
-    throw AmigoInexistente(u->getLogin());
-  return amigos[i];
-}
+
 
 vector<Grupo *> Utilizador::meusGrupos() const {
   vector<Grupo *> g;

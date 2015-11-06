@@ -153,14 +153,14 @@ public:
 	const string getHoraNovaHoras();
 	const string getHoraNovaData();
 };
-
+/**
+* @brief Limpa o ecra da consola
+*/
 void clrscr(void);
-
-template <class N>
-void input(N &valor);
-
-void imprimirFicheiro(string textfile);
-
+/**
+* @brief template de uma classe excepção que é lançada quando o input não é do tipo correcto N
+* @param valor que é onde será guardado o valor de input
+*/
 template <class N>
 void input(N &valor) {
   cin >> valor;
@@ -170,36 +170,66 @@ void input(N &valor) {
     throw InputFail();
   }
 }
-
+/**
+* @brief Representa no ecra uma header
+*/
 void header(string msg);
-
+/**
+* @brief Representa no ecra o menu inicial
+*/
 void menuInicial();
-
+/**
+* @brief Representa no ecra o menu login (menuInicial->menuLogin)
+*/
 void menuLogin();
-
+/**
+* @brief Representa no ecra o menu registar (menuInicial->menuRegistar)
+*/
 void menuRegistar();
-
+/**
+* @brief Representa no ecra o menu comunidade (menuInicial->menuComunidade)
+*/
 void menuComunidade();
-
-//cout utilizador
+/**
+* @brief Representa no ecra o menu utilizador (menuInicial->menuLogin->menuUtilizador)
+*/
 void menuUtilizador();
-
+/**
+* @brief Representa no ecra o menu amigos (menuInicial->menuLogin->menuUtilizador->menuAmigos)
+*/
 void menuAmigos();
-
+/**
+* @brief Representa no ecra o menu mensagem (menuInicial->menuLogin->menuUtilizador->menuMensagem)
+*/
 void menuMensagens();
-
+/**
+* @brief Representa no ecra o menu mensagem (menuInicial->menuLogin->menuUtilizador->menuMensagem->menuGrupos)
+*/
 void menuGrupos();
 
+/**
+* @brief Representa no ecra o menu mensagem (menuInicial->menuLogin->menuUtilizador->menuMensagem->menuGrupos->menuGerirGrupos)
+*/
 void menuGerirGrupos();
-
+/**
+* @brief Representa no ecra o menu mensagem (menuInicial->menuLogin->menuUtilizador->menuMensagem->menuConversas)
+*/
 void menuConversas();
-
+/**
+* @brief Representa no ecra o menu mensagem (menuInicial->menuLogin->menuUtilizador->menuDefinicoes)
+*/
 void menuDefinicoes();
-
+/**
+* @brief Representa no ecra o menu mensagem (menuInicial->menuLogin->menuUtilizador->menuDefinicoes->menuAlterarDefinicoes)
+*/
 void menuAlterarDefinicoes();
-
+/**
+* @brief Representa no ecra o menu mensagem (menuInicial->menuLogin->menuUtilizador->menuComunidadeOrdenada)
+*/
 void menuComunidadeOrdenada();
-
+/**
+* @brief Representa no ecra o menu mensagem (menuInicial->menuInformacao);
+*/
 void menuInformacao();
 
 
