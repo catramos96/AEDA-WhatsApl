@@ -108,6 +108,7 @@ public:
 	void setVisibilidade(bool v);
 	void setAmigos(Utilizador *u);
 	void setTelemovel(int i);
+	void setData(int d, int m, int a);
 
 	void addAmigo(Utilizador &u);
 	void removerAmigoAux(Utilizador *u); //eliminar um amigo

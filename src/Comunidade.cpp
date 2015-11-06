@@ -32,18 +32,18 @@ int Comunidade::existeUtilNome(string nome) const{
 		return -1;     // nao encontrou
 }
 
-/*
+
 Grupo *Comunidade::existeGrupo(string grupo) const{
 	for (unsigned int i = 0; i < comunidade.size(); i++){
 		for(size_t x=0;x<comunidade[i]->getGrupos().size();x++)
 		{
-			if (comunidade[i]->getGrupos()[x].getTitulo() == grupo)
+			if (comunidade[i]->getGrupos()[x]->getTitulo() == grupo)
 				return comunidade[i]->getGrupos()[x];   // encontrou
 		}
 	}
-  throw GrupoInexistente();     // nao encontrou
+  //throw GrupoInexistente();     // nao encontrou
 }
-*/
+
 
 bool Comunidade::existeLogin(string l) const {
 	Utilizador *u = new Utilizador;
@@ -96,10 +96,10 @@ void Comunidade::printComunidade() const{
 	for (unsigned int i = 0; i < comunidade.size(); i++)
 		cout << *comunidade.at(i) << endl;
 }
-/*
+
 int Comunidade::leComunidade(){
 	string line;
-	////
+	int d,m,a;
 	bool visibilidade;
 	string login, nome, email;
 	vector<int> telemoveis;
@@ -111,7 +111,8 @@ int Comunidade::leComunidade(){
 	bool flag4=true;
 	////
 	ifstream myfile ("comunidade.txt");
-
+	vector<string>amigos;
+	vector<string>grupos;
 	if (myfile.is_open())
 	{
 		getline (myfile,line);
@@ -125,7 +126,12 @@ int Comunidade::leComunidade(){
 			getline (myfile,line);
 			u.setTelemovel(atoi(line.c_str()));
 			getline (myfile,line);
-			//data;
+			d=atoi(line.c_str());
+			getline (myfile,line);
+			m=atoi(line.c_str());
+			getline (myfile,line);
+			a=atoi(line.c_str());
+			u.setData(d,m,a);
 			getline (myfile,line);
 			u.setIdade(atoi(line.c_str()));
 			while(flag3){
@@ -134,7 +140,8 @@ int Comunidade::leComunidade(){
 					flag3=false;
 					break;
 				}
-				u.setAmigos(comunidade[existeUtilNome(line)]);
+				amigos.push_back(line);
+				//u.setAmigos(comunidade[existeUtilNome(line)]);
 			}
 			while(flag4){
 				getline (myfile,line);
@@ -142,7 +149,8 @@ int Comunidade::leComunidade(){
 					flag4=false;
 					break;
 				}
-				u.setGrupo(*existeGrupo(line));
+
+				//u.setGrupo(*existeGrupo(line));
 			}
 			getline (myfile,line);
 			u.setVisibilidade(atoi(line.c_str()));
@@ -158,10 +166,22 @@ int Comunidade::leComunidade(){
 
 	else cout << "Unable to open file";
 
+	for(size_t i=0;i<comunidade.size();i++){
+		for(size_t x=0;x<amigos.size();x++){
+			comunidade[i]->setAmigos(comunidade[existeUtilNome(amigos[x])]);
+		}
+	}
+	for(size_t i=0;i<comunidade.size();i++){
+			for(size_t x=0;x<grupos.size();x++){
+				comunidade[i]->setGrupo(*existeGrupo(grupos[x]));
+			}
+		}
+
+
 	return 0;
 }
-*/
-/*
+
+
 int Comunidade::escreveComunidade(){
 	ofstream myfile ("example.txt");
 	  if (myfile.is_open())
@@ -178,7 +198,7 @@ int Comunidade::escreveComunidade(){
 			  }
 			  myfile << "-" << "\n";
 			  for(size_t x=0;x<comunidade[i]->getGrupos().size();x++){
-			  	 myfile << comunidade[i]->getGrupos()[x].getTitulo() << "\n";
+			  	 myfile << comunidade[i]->getGrupos()[x]->getTitulo() << "\n";
 			  }
 			  myfile << "-" << "\n";
 			  myfile << comunidade[i]->getVisibilidade();
@@ -190,4 +210,4 @@ int Comunidade::escreveComunidade(){
 	  else cout << "Unable to open file";
 	  return 0;
 }
-*/
+
