@@ -272,3 +272,16 @@ void Grupo::printConversa(){
 void Grupo::printGrupo() const {
   cout << "Titulo: " << titulo << " , Gerente: " << moderador.getLogin() << " , Data: " << criacao << endl;
 }
+
+void Grupo::setModerador(string login) {
+  bool encontrou = false;
+  for (int i = 0; i < membros.size(); i++)
+  {
+    if (membros[i].getLogin() == login) {
+      moderador = membros[i];
+      encontrou = true;
+    }
+  }
+  if (!encontrou)
+    throw MembroInexistente(login);
+}

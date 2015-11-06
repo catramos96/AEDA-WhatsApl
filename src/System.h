@@ -190,6 +190,8 @@ void menuMensagens();
 
 void menuGrupos();
 
+void menuGerirGrupos();
+
 void menuConversas();
 
 void menuDefinicoes();

@@ -260,6 +260,15 @@ void menuGrupos() {
   cout << "Voltar Atras (5)" << endl << endl;
 }
 
+void menuGerirGrupos() {
+  cout << "Adicionar utilizador (1)" << endl;
+  cout << "Remover utilizador (2)" << endl;
+  cout << "Bloquear utilizador (3)" << endl;
+  cout << "Desbloquear utilizador (4)" << endl;
+  cout << "Pedido de adesao (5)" << endl;
+  cout << "Voltar Atras (6)" << endl << endl;
+}
+
 void menuConversas() {
   header("CONVERSA");
   cout << "Criar nova conversa (1)" << endl;

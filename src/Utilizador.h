@@ -31,6 +31,7 @@ public:
 	vector<Utilizador *> getAmigos() const;
   Grupo* getGrupo(int i) const;
 	vector<Utilizador *> getPedidosAmizade() const;
+  vector<Grupo *> getGrupos() const;
 
 	void setGrupo(Grupo grupo);
 	void setLogin(string l);
@@ -48,7 +49,7 @@ public:
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
 	void imprimirAmigos() const;
-  void imprimirGrupos() const;
+  void imprimirGrupos(vector<Grupo*> g) const;
 
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;
@@ -67,6 +68,7 @@ public:
 	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
   Utilizador * getAmigo(string login) const;
+  vector<Grupo *> meusGrupos() const;
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

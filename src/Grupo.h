@@ -213,6 +213,10 @@ public:
   * @brief Funcao que retorna o titulo do grupo
   */
   string getTitulo() const { return titulo; };
+  /**
+  * @brief Funcao que altera o moderador
+  */
+  void setModerador(string login);
 };
 
 #endif /* SRC_GRUPO_H_ */

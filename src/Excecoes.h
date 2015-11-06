@@ -167,6 +167,17 @@ class InputFail {};
 ********************************/
 /**
 * @brief Classe que representa uma excecao da classe grupo.
+* Esta excecao e lancada no caso de não haver um membro com um determinado login
+*/
+class MembroInexistente {
+public:
+  MembroInexistente(string login) { this->login = login; };
+  string getLogin() const { return login; };
+private:
+  string login;
+};
+/**
+* @brief Classe que representa uma excecao da classe grupo.
 * Esta excecao e lancada no caso de o utilizador que esta a pedir permissoes nao ser o utilizador moderador do grupo.
 */
 class NaoModerador{

@@ -68,6 +68,10 @@ Grupo* Utilizador::getGrupo(int i) const {
   return grupos[i];
 }
 
+vector<Grupo *> Utilizador::getGrupos() const {
+  return grupos;
+}
+
 void Utilizador::setLogin(string l)
 {
 	login = l;
@@ -159,11 +163,11 @@ void Utilizador::imprimirAmigos() const {
   }
 }
 
-void Utilizador::imprimirGrupos() const {
-  for (unsigned int i = 0; i < grupos.size(); i++)
+void Utilizador::imprimirGrupos(vector<Grupo*> g) const {
+  for (unsigned int i = 0; i < g.size(); i++)
   {
-    cout << "Grupo: "<<  i + 1 << " , ";
-    grupos[i]->printGrupo();
+    cout << "Grupo: " << i + 1 << " , ";
+    g[i]->printGrupo();
   }
 }
 
@@ -242,3 +246,14 @@ Utilizador* Utilizador::getAmigo(string login) const {
     throw AmigoInexistente(u->getLogin());
   return amigos[i];
 }
+
+vector<Grupo *> Utilizador::meusGrupos() const {
+  vector<Grupo *> g;
+  for (int i = 0; i < grupos.size(); i++)
+  {
+    if (grupos[i]->isModerador(login))
+      g.push_back(grupos[i]);
+  }
+  return g;
+}
+
