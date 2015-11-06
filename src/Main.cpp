@@ -167,6 +167,8 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
   case 4:
   {
     menuInformacao();
+    esperar();
+    throw VoltarAtras();
   }
   case 5:
   {
