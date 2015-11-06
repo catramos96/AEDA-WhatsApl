@@ -292,6 +292,20 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
     cout << "Nome  /  Login" << endl << endl;
     u->imprimirAmigos();
     cout << endl;
+    cout << "Ver Perfil (1)" << endl;
+    cout << "Voltar Atras (2)" << endl << endl;
+    opccao(op, 1, 2);
+    if (op == 1) {
+      cout << endl << "Login: ";
+      input<string>(login);
+
+      clrscr();
+
+      header(u->getAmigo(login)->getLogin());
+      u->getAmigo(login)->imprimirUtilizador();
+    }
+    else
+      throw VoltarAtras();
     esperar();
     break;
   }
@@ -590,7 +604,6 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
   //Menu Definicoes
   header("DEFINICOES");
   u->imprimirDefinicoes();
-  cout << endl;
   menuDefinicoes();
   int op;
   opccao(op, 1, 2);
@@ -716,13 +729,23 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
     int i;
     comunidade(c);
     cout << endl;
-    cout << "Login de utilizador: " << login;
-    Utilizador * a = new Utilizador();
-    a->setLogin(login);
-    i = c->existeUtil(a); //Existe na comunidade ?
-    if (i == -1)
-      throw UtilizadorInexistente(a->getLogin());
-    a->imprimirDefinicoes();
+
+    cout << "Ver Perfil (1)" << endl;
+    cout << "Voltar Atras (2)" << endl << endl;
+
+    opccao(op, 1, 2);
+    if (op == 1) {
+      cout << endl << "Login: ";
+      input<string>(login);
+
+      clrscr();
+
+      header(u->getAmigo(login)->getLogin());
+      u->getAmigo(login)->imprimirUtilizador();
+    }
+    else
+      throw VoltarAtras();
+    esperar();
     break;
   }
   case 5: //Definicoes

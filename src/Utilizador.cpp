@@ -149,7 +149,7 @@ void Utilizador::imprimirDefinicoes() const {
 
 void Utilizador::imprimirUtilizador() const {
   if (visibilidade) {
-    cout << "Perfil : publico" << endl;
+    cout << "Perfil: publico" << endl;
     cout << "Nome: " << nome << endl;
     cout << "Login: " << login << endl;
     cout << "Idade: " << idade << endl;
@@ -158,7 +158,7 @@ void Utilizador::imprimirUtilizador() const {
     cout << endl;
   }
   else {
-    cout << "Perfil : privado" << endl;
+    cout << "Perfil: privado" << endl;
     cout << "Nome: " << nome << endl;
     cout << "Login: " << login << endl;
   }
