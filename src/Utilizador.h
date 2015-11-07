@@ -112,52 +112,224 @@ public:
 	*                             SETS                               *
 	*****************************************************************/
 
-	void setGrupo(Grupo grupo);
+  /**
+  * @ brief Funcao que altera o login de um utilizador
+  * @ param l novo login do utilizador
+  */
 	void setLogin(string l);
+  /**
+  * @ brief Funcao que altera o nome de um utilizador
+  * @ param n novo nome do utilizador
+  */
 	void setNome(string n);
-	void setEmail(string);
+  /**
+  * @ brief Funcao que altera o email de um utilizador
+  * @ param e novo email do utilizador
+  */
+	void setEmail(string e);
+  /**
+  * @ brief Funcao que altera a idade do Utilizador
+  * lanca a excepção IdadeInsuficiente se for < 18
+  * @ param i nova idade
+  */
 	void setIdade(int i);
+  /**
+  * @ brief Funcao que altera a visibilidade de um utilizador
+  * @ param v nova visibilidade do utilizador
+  */
 	void setVisibilidade(bool v);
-	void setAmigos(Utilizador *u);
-	void setTelemovel(int i);
+  /**
+  * @ brief Funcao que altera o telemovel de um utilizador
+  * @ param t novo telemovel do utilizador
+  */
+	void setTelemovel(int t);
+  /**
+  * @ brief Funcao que altera a data de adesao de um utilizador
+  * @ param d dia de adesao
+  * @ param m mes de adesao
+  * @ param a ano de adesao
+  */
 	void setData(int d, int m, int a);
 
+  /*****************************************************************
+  *                             ADDS                               *
+  *****************************************************************/
+
+  /**
+  * @ brief Funcao que adiciona um utilizador aos amigos do utilizador
+  * @ param u utilizador a adicionar
+  */
+  void addAmigosAux(Utilizador *u);
+  /**
+  * @ brief Funcao que adiciona um utilizador como amigos
+  * chama a funcao addAmigosAux para adicionar o utilizador u aos meus amigos
+  * e para eu ser adicionado aos amigos de u
+  * @ param u utilizador a adicionar
+  */
 	void addAmigo(Utilizador &u);
+  /**
+  * @ brief Funcao que adiciona um grupo aos grupos do utilizador
+  * se o grupo nao pertencer aos meus grupos
+  * @ param g grupo a adicionar
+  * @ return bool true - adicionado , false - já existe (não adicionado)
+  */
+  bool addGrupo(Grupo *g);
+  /**
+  * @ brief Funcao que adiciona uma conversa as conversas do utilizador
+  * se a conversa já não existir
+  * @ param c conversa a adicionar
+  */
+  void addConversa(Conversa *c); 
+  /**
+  * @ brief Funcao que adiciona um membro u a um grupo d
+  * @ param u utilizador a adicionar
+  * @ param g grupo a adicionar
+  * @ param d data de adicionado
+  * @ return bool , true - adicionado , false - nao adicionado
+  */
+  bool adicionaMembro(Utilizador *u, Grupo *g, Data d);
+
+  /*****************************************************************
+  *                            REMOVER                             *
+  *****************************************************************/
+
+  /**
+  * @ brief Funcao que retira o utilizador u dos amigos do utilizador
+  * @ param u utilizador a remover
+  */
 	void removerAmigoAux(Utilizador *u); //eliminar um amigo
+  /**
+  * @ brief Funcao que remove u dos meus amigos e eu dos amigos de u
+  * usando a fun~cao removerAmigoAux
+  * @ param u utilizador a remover
+  */
 	void removerAmigo(Utilizador &u); //remove u dos meus amigos, e remove-me dos amigos de u
+  /**
+  * @ brief Funcao que remove um utilizador u de um grupo g
+  * @ param u utilizador a remover
+  * @ param g grupo onde u vai ser removeido
+  * @ param diaAtual data em que foi removido
+  * return bool , true - removido , false - nao removido
+  */
+  bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
+  /**
+  * @ brief Funcao que remove a conversa c das conversas do utilizador
+  * @ param c conversa a remover
+  */
+  void removerConversa(Conversa *c);
 
+  /*****************************************************************
+  *                           IMPRIMIR                             *
+  *****************************************************************/
+
+  /**
+  * @ brief Funcao que imprime no ecra as definicoes do utilizador
+  */
 	void imprimirDefinicoes() const;
+  /**
+  * @ brief Funcao que imprime no ecra o perfil do utilizador
+  * com as informações do mesmo dependendo da visibilidade.
+  */
 	void imprimirUtilizador() const;
+  /**
+  * @ brief Funcao que imprime no ecra os amigos do utilizador
+  */
 	void imprimirAmigos() const;
+  /**
+  * @ brief Funcao que imprime no ecra os grupos do utilizador
+  */
 	void imprimirGrupos() const;
+  /**
+  * @ brief Funcao que imprime no ecra as conversas do utilizador
+  */
   void imprimirConversas() const;
+  /**
+  * @ brief Funcao que imprime no ecra todos os grupos (não repetidos)
+  * de todos os amigos do utilizador incluindo os do proprio
+  */
+  void imprimirGruposAmigos() const;
 
+  /*****************************************************************
+  *                         OPERADORES                             *
+  *****************************************************************/
+
+  /**
+  * @ brief overloading do operador == que compara o utilzador e u
+  * @ param u utilizador com quem se vai comparar
+  * @ return bool , true - se tiverem o mesmo login
+  */
 	bool operator==(const Utilizador&u)const;
+  /**
+  * @ brief overloading do operador < que compara o utilzador e u
+  * @ param u utilizador com quem se vai comparar
+  * @ return bool , true - o login do utilizador for < que o de u
+  */
 	bool operator<(const Utilizador &u) const;
+  /**
+  * @ brief overloading do operador << do utilizador
+  * @ param out ostream de saida
+  * @ param u utilizador a imprimir
+  * @ return out
+  */
 	friend ostream & operator<<(ostream & out, const Utilizador & u);
 
-	Conversa *criarConversa(Utilizador *u);
-	void adicionarConversa(Conversa *c); // se outro utilizador criar a conversa pode adicionar a conversa criada a este utilizador
-	void enviarMensagem(Mensagem *sms, Conversa *c);
+  /*****************************************************************
+  *                             SAIR                               *
+  *****************************************************************/
 
-	void pedirAdesao(Grupo *g);
-	Grupo *criarGrupo(string titulo, Data dataAtual);
-	bool adicionarGrupo(Grupo *g);
-	bool eliminarGrupo(Grupo *g);
-	void enviarMensagemGrupo(Mensagem *sms, Grupo *g);
-	bool adicionaMembro(Utilizador *u, Grupo *g, Data d);
-	bool aceitaMembro(Utilizador *u, Grupo *g, Data d);
-	bool rejeitaMembro(Utilizador *u, Grupo *g, Data d);
-	bool bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
-	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
-	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
-
-	void imprimirGruposAmigos() const;
-	Grupo *escolheGruposAmigos(int i) const;
-
-  void removerConversa(Conversa *c);
+  /**
+  * @ brief Funcao que me remove a conversa c das minhas conversas
+  * e c das conversas do destinatario da mesma
+  * @ param c conversa a eliminar
+  */
   void sairConversa(Conversa * c);
+  /**
+  * @ brief Funcao que remove o grupo g dos meus grupos
+  * @ param g grupo a remover
+  */
   void sairGrupo(Grupo *g);
+
+  /*****************************************************************
+  *                           OUTROS                               *
+  *****************************************************************/
+
+  /**
+  * @ brief Funcao que cria uma conversa com o utilizador u e adiciona-a as conversas 
+  * de ambos os participantes
+  * @ param u utilizador que participa na conversa
+  * @ return retorna a conversa criada
+  */
+  Conversa *criarConversa(Utilizador *u);
+  /**
+  * @ brief Funcao que adiciona uma mensagem a uma conversa
+  * @ param sms mensagem a adicionar
+  * @ param c conversa a que vai ser adicionada a mensagem
+  */
+  void enviarMensagem(Mensagem *sms, Conversa *c);
+  /**
+  * @ brief Funcao que adiciona um pedido de adesao do utilizador ao grupo g
+  * @ param g grupo a que o utilizador quer aderir
+  */
+  void pedirAdesao(Grupo *g);
+  /**
+  * @ brief Funcao que cria um grupo e o adiciona aos grupos do utilizador
+  * @ param titulo titulo do grupo
+  * @ param dataAtual data da criacao do grupo
+  * @ return Grupo * grupo criado
+  */
+  Grupo *criarGrupo(string titulo, Data dataAtual);
+  /**
+  * @ brief Funcao que envia uma mensagem para um grupo
+  * @ param sms mensagem que se quer enviar
+  * @ param g grupo para o qual se quer enviar a mensagem
+  */
+  void enviarMensagemGrupo(Mensagem *sms, Grupo *g);
+  bool aceitaMembro(Utilizador *u, Grupo *g, Data d);
+  bool rejeitaMembro(Utilizador *u, Grupo *g, Data d);
+  bool bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
+  bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
+  Grupo *escolheGruposAmigos(int i) const;
+  
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

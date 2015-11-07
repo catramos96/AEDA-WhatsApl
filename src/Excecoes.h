@@ -109,6 +109,26 @@ public:
   string getLogin() const { return login; };
 };
 
+/**
+* @brief Classe que representa uma excecao da classe utilizador.
+* Esta excecao e lancada quando se tenta adicionar uma conversa que já faz parte das conversas do utilizador.
+*/
+class ConversaJaExiste {
+public: 
+  /**
+  * @brief Construtor de ConversaJaExiste
+  */
+  ConversaJaExiste(vector<string> p) { participantes = p; };
+  /**
+  * @brief Funcao que imprime os participantes da conversa
+  */
+  void imprimirParticipantes() const {
+    cout << participantes[0] << " , " << participantes[1] << endl;
+  };
+private:
+  vector<string> participantes;/**<  membro privado que representa a conversa que cria a excecao */
+};
+
 /********************************
 *			EXCECAO MAIN		*
 ********************************/

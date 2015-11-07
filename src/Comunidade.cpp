@@ -168,12 +168,12 @@ int Comunidade::leComunidade(){
 
 	for(size_t i=0;i<comunidade.size();i++){
 		for(size_t x=0;x<amigos.size();x++){
-			comunidade[i]->setAmigos(comunidade[existeUtilNome(amigos[x])]);
+			comunidade[i]->addAmigosAux(comunidade[existeUtilNome(amigos[x])]);
 		}
 	}
 	for(size_t i=0;i<comunidade.size();i++){
 			for(size_t x=0;x<grupos.size();x++){
-				comunidade[i]->setGrupo(*existeGrupo(grupos[x]));
+				comunidade[i]->addGrupo(existeGrupo(grupos[x]));
 			}
 		}
 
