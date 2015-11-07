@@ -7,6 +7,12 @@
 #include <algorithm>
 #include "Grupo.h"
 
+/**
+* @brief Classe Utilizador.
+* Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de 18 anos.
+* A Classe Utilizador permite ter conversas e grupos com aqueles que apenas fazem parte do seu grupo de amigos.
+* Esta Classe permite a gestao e a criacao de novos objectos Grupo, Conversa e Mensagens.
+*/
 class Utilizador
 {
 private:

@@ -12,11 +12,11 @@ using namespace std;
 class Mensagem
 {
 private:
-	static int id; // incrementa a cada mensagem
-	Data data;
-	Horas hora;
-	string emissor;
-	int numero; // numero da mensagem atual
+	static int id; /**< membro estatico privado id que e incrementado a cada criacao de uma mensagem */
+	Data data; /**< membro privado que representa a data de criacao da mensagem */
+	Horas hora; /**< membro privado que representa a hora de criacao da mensagem */
+	string emissor; /**< membro privado que representa o emissor da mensagem */
+	int numero; /**< membro privado que representa o numero da mensagem*/
 public:
 	Mensagem(Data data, Horas hora);
 	//virtual ~Mensagem();
@@ -31,7 +31,7 @@ public:
 
 class MsgTexto : public Mensagem{
 private:
-	string conteudo;
+	string conteudo; /**< membro privado que representa o conteudo da mensagem de texto */
 public:
 	MsgTexto(string conteudo, Data d, Horas h);
 	string getConteudo() const;
