@@ -98,21 +98,20 @@ void Comunidade::printComunidade() const{
 }
 
 int Comunidade::leComunidade(){
-	string line;
 	int d,m,a;
-	bool visibilidade;
-	string login, nome, email;
-	vector<int> telemoveis;
-	int idade;
-	Data dataAdesao;
+	//bool visibilidade;
+	//string login, nome, email;
+	//vector<int> telemoveis;
+	//int idade;
+	//Data dataAdesao;
 	bool flag=true;
-	bool flag2=true;
+	//bool flag2=true;
 	bool flag3=true;
 	bool flag4=true;
-	////
-	ifstream myfile ("comunidade.txt");
 	vector<string>amigos;
 	vector<string>grupos;
+	string line;
+	ifstream myfile ("comunidade.txt");
 	if (myfile.is_open())
 	{
 		getline (myfile,line);
