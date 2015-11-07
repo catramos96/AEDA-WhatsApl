@@ -180,10 +180,6 @@ void header(string msg);
 */
 void menuInicial();
 /**
-* @brief Representa no ecra o menu registar (menuInicial->menuRegistar)
-*/
-void menuRegistar();
-/**
 * @brief Representa no ecra o menu comunidade (menuInicial->menuComunidade)
 */
 void menuComunidade();

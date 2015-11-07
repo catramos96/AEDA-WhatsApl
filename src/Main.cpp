@@ -87,13 +87,8 @@ void registar(Comunidade *c) {
   int idade, dia, mes, ano;
   Data dA;
 
-  menuRegistar();
-  int op;
-  opccao(op, 1, 2);
-
   clrscr();
 
-  if (op == 1) {
     header("REGISTAR");
     cout << "Login: ";
     input<string>(login);
@@ -114,9 +109,6 @@ void registar(Comunidade *c) {
 
     Utilizador * u = new Utilizador(vis, login, nome, email, dA, telemovel, idade);
     c->adicionarUtil(u);
-  }
-  else if (op == 2)
-    throw VoltarAtras();
 }
 
 /**
