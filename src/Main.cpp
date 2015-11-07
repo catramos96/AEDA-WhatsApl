@@ -45,16 +45,8 @@ Utilizador * login(Comunidade *c) {
   int i, op;
   Utilizador * u = new Utilizador();
 
-  menuLogin();
-
-  opccao(op, 1, 2);
-
-  clrscr(); //clears the screen
-
   header("LOGIN");
 
-  if (op == 1)
-  {
     cout << "Login: ";
     cin >> login;
     u->setLogin(login);
@@ -65,10 +57,6 @@ Utilizador * login(Comunidade *c) {
     }
     else
       throw UtilizadorInexistente(u->getLogin());
-  }
-  else if (op == 2)
-    throw VoltarAtras();
-
   return u;
 }
 
@@ -202,25 +190,25 @@ Utilizador * MenuInicial(Comunidade *c) {
       if (u->getNome() != "")
         login = true;
     }
-    catch (OpccaoInvalida<int>(o)) {
-      cout << o.getOp() << " nao se encontra entre as opccoes " << o.getMin() << " e " << o.getMax() << endl << endl;
+    catch (OpccaoInvalida<int>(x)) {
+      cout << x.getOp() << " nao se encontra entre as opccoes " << x.getMin() << " e " << x.getMax() << endl << endl;
       esperar();
     }
-    catch (UtilizadorInexistente(u)) {
-      cout << "Nao existe um utilizador com o login " << u.getLogin() << endl << endl;
+    catch (UtilizadorInexistente(x)) {
+      cout << "Nao existe um utilizador com o login " << x.getLogin() << endl << endl;
       esperar();
     }
-    catch (UtilizadorJaExiste(u)) {
-      cout << "Ja existe um utilizador com o login " << u.getLogin() << endl << endl;
+    catch (UtilizadorJaExiste(x)) {
+      cout << "Ja existe um utilizador com o login " << x.getLogin() << endl << endl;
       esperar();
     }
     catch (VoltarAtras) {}
-    catch (IdadeInsuficiente(i)) {
+    catch (IdadeInsuficiente(x)) {
       cout << "So e permitido usar a aplicacao com maiores de 18 anos" << endl << endl;
       esperar();
     }
-    catch (DataInvalida(d)) {
-      cout << d.getDia() << "/" << d.getMes() << "/" << d.getAno() << " e invalida!" << endl << endl;
+    catch (DataInvalida(x)) {
+      cout << x.getDia() << "/" << x.getMes() << "/" << x.getAno() << " e invalida!" << endl << endl;
       esperar();
     }
     catch (InputFail) {
@@ -318,7 +306,6 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 }
 
 //Enviar mensagem
-
 Mensagem * escreverMsg() {
   int h, m, tipo;
   cout << "Hora (horas minutos): ";
@@ -950,131 +937,3 @@ int main() {
   }
   return 0;
 }
-
-/*
-try{
-Data data;
-int dia, m, a;
-cout << "Dia, mes, ano ";
-cin >> dia >> m >> a;
-data.setData(dia, m, a);
-cout << data << endl;
-
-Horas hora;
-int h, min;
-cout << "Hora, minutos";
-cin >> h >> min;
-hora.setHoras(h, min);
-cout << hora << endl;
-
-//--------------------//
-
-Data d(1, 1, 1);
-Utilizador Ana(true, "ana123", "Ana", "ana@kdsf.com", d, 123456);
-Data d1(4, 5, 6);
-Utilizador Rui(false, "Rui1234", "Rui", "rui@bgd.com", d1, 4455);
-Data d2(2, 3, 4);
-Utilizador Sofia(true, "Sofia12345", "Sofia", "sofia@dsjh.com", d2, 7878);
-Data d3(3, 4, 6);
-Utilizador Carlos(false, "456", "Carlos", "carlos.eedsnh.com", d3, 456456);
-
-Grupo fixes("fixes", d, Ana);
-
-fixes.pedidoAdesao(Rui, Ana, d1, true);
-//fixes.pedidoAdesao(Sofia, d2, Ana, false);
-fixes.pedidoAdesao(Sofia, Ana, d2, true);
-//fixes.pedidoAdesao(Carlos, d3, Rui, true); //nao é moderador
-Data d4(7, 8, 9);
-fixes.bloquearMembro(Rui, Ana, d4); //ver se está bloqueado
-//fixes.bloquearMembro(Ana, Sofia, d4); // nao é moderador
-//fixes.bloquearMembro(Carlos, Ana, d4); // nao é utilizador
-Data d5(1, 2, 3);
-fixes.bloquearMembro(Rui, Ana, d5); //membro ja bloqueado
-fixes.pedidoAdesao(Rui, Ana, d5, true); // desbloquear membro por pedido
-Data d6(5, 7, 9);
-fixes.retiraMembro(Sofia, Ana, d6);
-//fixes.retiraMembro(Carlos, Ana, d6); //Membro Inexistente
-//fixes.retiraMembro(Ana, Rui, d6); //nao e moderador
-
-Data d7(1, 2, 3);
-fixes.bloquearMembro(Rui, Ana, d7);
-Data d8(3, 5, 7);
-fixes.desbloquearMembro(Rui, Ana, d8);
-fixes.printMembros();
-fixes.printStatus();
-//fixes.desbloquearMembro(Carlos, Ana, d8); //membro inexistente
-//fixes.desbloquearMembro(Ana, Rui, d8); // nao e moderador
-
-//--------------------------------------//
-
-Comunidade global;
-global.adicionarUtil(&Ana);
-global.adicionarUtil(&Rui);
-global.adicionarUtil(&Carlos);
-global.adicionarUtil(&Sofia);
-
-global.printComunidade();
-global.ordenaData();
-global.printComunidade();
-global.ordenaLogin();
-global.verUtilizador(&Ana);
-global.verUtilizador(&Rui);
-global.verUtilizador(&Carlos);
-global.verUtilizador(&Sofia);
-
-}
-catch (Data::DataInvalida &e){
-cout << "Data Invalida!" << endl;
-}
-catch (Horas::HoraInvalida &e){
-cout << "Hora Invalida!" << endl;
-}
-catch (NaoModerador &e){
-cout << "Utilizador " << e.getUtil() << " nao e moderador!" << endl;
-}
-/*
-catch(UtilizadorInexistente &e){
-cout << "Utilizador " << e.getLogin() << " nao existe!" << endl;
-}
-
-return 0;
-}
-
-Conversa *c1;
-c1 = Ana.criarConversa(&Rui);
-
-Mensagem *sms1 = new MsgTexto("ola rui, tudo bem?", d4,h1);
-Ana.enviarMensagem(sms1,c1);
-Horas h2(12,28);
-Mensagem *sms2 = new MsgTexto("ola Ana. tudo, e contigo?",d4, h2);
-Rui.enviarMensagem(sms2, c1);
-Horas h3(12, 30);
-Mensagem *sms3 = new MsgImagem(d4, h3);
-Ana.enviarMensagem(sms3, c1);
-Horas h4(12, 35);
-Mensagem *sms4 = new MsgVideo(d4, h4);
-Rui.enviarMensagem(sms4, c1);
-c1->imprimirConversa();
-
-Grupo *g1;
-Data d5(7, 11, 2015);
-Horas h5(13, 42);
-g1 = Rui.criarGrupo("Os fixes", d4);
-Ana.pedirAdesao(g1);
-Sofia.pedirAdesao(g1);
-Carlos.pedirAdesao(g1);
-g1->printPedidos();
-Rui.aceitaMembro(Ana.getLogin(), g1, d4);
-Rui.rejeitaMembro(Sofia.getLogin(), g1, d5);
-Rui.aceitaMembro(Carlos.getLogin(), g1, d5);
-g1->printPedidos();
-g1->printMembros();
-g1->printStatus();
-Mensagem *sms5 = new MsgTexto("Ola fixes.", d5, h5);
-Rui.enviarMensagemGrupo(sms5, g1);
-Horas h6(13, 45);
-Mensagem *sms6 = new MsgTexto("oi", d5, h6);
-Carlos.enviarMensagemGrupo(sms6, g1);
-g1->printConversa();
-return 0;
-*/
