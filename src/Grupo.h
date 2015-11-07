@@ -66,6 +66,8 @@ public:
 	 * @return out
 	 */
 	friend ostream & operator<<(ostream & out, const Membro & m);
+
+	bool operator<(const Membro &m) const;
 };
 
 //============================================================================================================================//
@@ -197,7 +199,7 @@ public:
 	 * @param g Grupo que vamos comparar.
 	 * @return True se forem iguais, false se diferentes.
 	 */
-	bool operator==(const Grupo&g)const;
+	bool operator==(Grupo&g)const;
 	/**
 	 * @brief Funcao que imprime o membro privado pedidos.
 	 */

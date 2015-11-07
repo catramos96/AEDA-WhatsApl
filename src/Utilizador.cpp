@@ -84,7 +84,7 @@ Utilizador* Utilizador::getAmigo(string login) const {
 
 Grupo* Utilizador::getGrupo(int i) const {
 	if (i < 0 || i >= grupos.size())
-		throw GrupoInexistente(i+1);
+		throw GrupoInexistente(i + 1);
 	return grupos[i];
 }
 
@@ -93,17 +93,30 @@ vector<Grupo *> Utilizador::getGrupos() const {
 }
 
 Conversa* Utilizador::getConversa(int i) const {
-  if (i < 0 || i >= conversas.size())
-    throw ConversaInexistente(i + 1);
-  return conversas[i];
+	if (i < 0 || i >= conversas.size())
+		throw ConversaInexistente(i + 1);
+	return conversas[i];
 }
 
 string Utilizador::getDestinatarioConversa(Conversa *c) const {
-  for (unsigned int i = 0; i < c->getParticipantes().size(); i++)
-  {
-    if (c->getParticipantes()[i] != login)
-      return c->getParticipantes()[i];
+	for (unsigned int i = 0; i < c->getParticipantes().size(); i++)
+	{
+		if (c->getParticipantes()[i] != login)
+			return c->getParticipantes()[i];
+	}
+}
+
+vector<Grupo *> Utilizador::getGruposAmigos() const {
+  vector<Grupo *> temp;
+  vector<Grupo *> gruposAmigos;
+
+  for (size_t i = 0; i < amigos.size(); i++) { //percorre os amigos
+    temp = amigos.at(i)->getGrupos();
+    for (size_t j = 0; j < temp.size(); j++)
+      gruposAmigos.push_back(temp.at(j));
   }
+  eliminaRepetidos(gruposAmigos);
+  return gruposAmigos;
 }
 
 /*****************************************************************
@@ -138,7 +151,7 @@ void Utilizador::setTelemovel(int t) {
 }
 
 void Utilizador::setData(int d, int m, int a) {
-  dataAdesao.setData(d, m, a);
+	dataAdesao.setData(d, m, a);
 }
 
 /*****************************************************************
@@ -146,11 +159,11 @@ void Utilizador::setData(int d, int m, int a) {
 *****************************************************************/
 
 void Utilizador::addAmigosAux(Utilizador *u) {
-  vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
-  if (it != amigos.end())
-    throw AmigoJaExiste(u->getLogin());
-  else
-    amigos.push_back(u);
+	vector<Utilizador *>::iterator it = find(amigos.begin(), amigos.end(), u);
+	if (it != amigos.end())
+		throw AmigoJaExiste(u->getLogin());
+	else
+		amigos.push_back(u);
 }
 
 void Utilizador::addAmigo(Utilizador &u) {
@@ -159,23 +172,23 @@ void Utilizador::addAmigo(Utilizador &u) {
 }
 
 bool Utilizador::addGrupo(Grupo *g) {
-  if (pointerSequentialSearch(grupos, g) != -1) // ja existe aquele grupo, nao precisa de ser adicionado
-    return false;
-  else
-    grupos.push_back(g);
-  return true;
+	if (pointerSequentialSearch(grupos, g) != -1) // ja existe aquele grupo, nao precisa de ser adicionado
+		return false;
+	else
+		grupos.push_back(g);
+	return true;
 }
 
 void Utilizador::addConversa(Conversa *c) {
-  if (pointerSequentialSearch(conversas, c) != -1) // ja existe aquele grupo, nao precisa de ser adicionado
-    throw ConversaJaExiste(c->getParticipantes());
-  else
-    conversas.push_back(c);
+	if (pointerSequentialSearch(conversas, c) != -1) // ja existe aquele grupo, nao precisa de ser adicionado
+		throw ConversaJaExiste(c->getParticipantes());
+	else
+		conversas.push_back(c);
 }
 
 bool Utilizador::adicionaMembro(Utilizador *u, Grupo *g, Data d) {
-  u->addGrupo(g);
-  return g->adicionarMembro(u->getLogin(), login, d);
+	u->addGrupo(g);
+	return g->adicionarMembro(u->getLogin(), login, d);
 }
 
 /*****************************************************************
@@ -196,16 +209,16 @@ void Utilizador::removerAmigo(Utilizador &u) {
 }
 
 bool Utilizador::removerMembro(Utilizador *u, Grupo *g, Data diaAtual) {
-  u->sairGrupo(g);
-  return g->retiraMembro(u->getLogin(), login, diaAtual);
+	u->sairGrupo(g);
+	return g->retiraMembro(u->getLogin(), login, diaAtual);
 }
 
 void Utilizador::removerConversa(Conversa *c) {
-  for (unsigned int i = 0; i < conversas.size(); i++)
-  {
-    if (conversas[i] == c)
-      conversas.erase(conversas.begin() + i);
-  }
+	for (unsigned int i = 0; i < conversas.size(); i++)
+	{
+		if (conversas[i] == c)
+			conversas.erase(conversas.begin() + i);
+	}
 }
 
 /*****************************************************************
@@ -255,30 +268,19 @@ void Utilizador::imprimirGrupos() const {
 }
 
 void Utilizador::imprimirConversas() const {
-  for (unsigned int i = 0; i < conversas.size(); i++)
-  {
-    cout << "Conversa: " << i + 1 << " , ";
-    conversas.at(i)->imprimirParticipantes();
-    cout << endl;
-  }
+	for (unsigned int i = 0; i < conversas.size(); i++)
+	{
+		cout << "Conversa: " << i + 1 << " , ";
+		conversas.at(i)->imprimirParticipantes();
+		cout << endl;
+	}
 }
 
 void Utilizador::imprimirGruposAmigos() const {
-  vector<Grupo *> temp;
-  vector<Grupo *> gruposAmigos;
-
-  for (size_t i = 0; i < amigos.size(); i++) { //percorre os amigos
-    temp = amigos.at(i)->getGrupos();
-    for (size_t j = 0; j < temp.size(); j++)
-      gruposAmigos.push_back(temp.at(j));
-  }
-  eliminaRepetidos(gruposAmigos);
-
-  for (size_t k = 0; k < gruposAmigos.size(); k++) {
-    cout << "Grupo: " << k + 1 << " , ";
-    gruposAmigos.at(k)->printGrupo();
-  }
-
+	for (size_t k = 0; k < getGruposAmigos().size(); k++) {
+		cout << "Grupo: " << k + 1 << " , ";
+		getGruposAmigos().at(k)->printGrupo();
+	}
 }
 
 /*****************************************************************
@@ -303,18 +305,18 @@ ostream & operator<<(ostream & out, const Utilizador & u) {
 *****************************************************************/
 
 void Utilizador::sairConversa(Conversa *c) {
-  getAmigo(getDestinatarioConversa(c))->removerConversa(c);
-  removerConversa(c);
-  delete c;
+	getAmigo(getDestinatarioConversa(c))->removerConversa(c);
+	removerConversa(c);
+	delete c;
 }
 
 void Utilizador::sairGrupo(Grupo* g) {
-  for (int i = 0; i < grupos.size(); i++)
-  {
-    if (grupos[i] == g) {
-      grupos.erase(grupos.begin() + i);
-    }
-  }
+	for (int i = 0; i < grupos.size(); i++)
+	{
+		if (grupos[i] == g) {
+			grupos.erase(grupos.begin() + i);
+		}
+	}
 }
 
 /*****************************************************************
@@ -322,64 +324,81 @@ void Utilizador::sairGrupo(Grupo* g) {
 *****************************************************************/
 
 Conversa *Utilizador::criarConversa(Utilizador *u) {
-  vector<string> participantes;
-  participantes.push_back(u->getLogin()); //destinatario da conversa
-  participantes.push_back(login); //emissor
-  Conversa *c = new Conversa(participantes);
-  addConversa(c); //coloca a conversa no vetor de conversas
-  u->addConversa(c);//adiciona a conversa criada ao vetor de conversas do amigo
-  return c;
+	vector<string> participantes;
+	participantes.push_back(u->getLogin()); //destinatario da conversa
+	participantes.push_back(login); //emissor
+	Conversa *c = new Conversa(participantes);
+	bool encontrou = false;
+	for (size_t i = 0; i < conversas.size(); i++){
+		if (conversas.at(i) == c){ // já existe essa conversa
+			encontrou = true;
+			throw ConversaJaExiste(participantes);
+		}
+	}
+	if (!encontrou){
+		addConversa(c); //coloca a conversa no vetor de conversas
+		u->addConversa(c);//adiciona a conversa criada ao vetor de conversas do amigo
+		return c;
+	}
 }
 
 void Utilizador::enviarMensagem(Mensagem *sms, Conversa *c) {
-  sms->setEmissor(login);
-  c->adicionaSms(sms);
+	sms->setEmissor(login);
+	c->adicionaSms(sms);
 }
 
 void Utilizador::pedirAdesao(Grupo *g) {
-  g->adicionarPedido(login);
+	g->adicionarPedido(login);
 }
 
 Grupo *Utilizador::criarGrupo(string titulo, Data dataAtual) {
-  Grupo *g = new Grupo(titulo, dataAtual, login);
-  grupos.push_back(g);
-  return g;
+	Grupo *g = new Grupo(titulo, dataAtual, login);
+	grupos.push_back(g);
+	return g;
 }
 
 void Utilizador::enviarMensagemGrupo(Mensagem *sms, Grupo *g) {
-  sms->setEmissor(login);
-  g->enviarMensagem(login, sms);
+	sms->setEmissor(login);
+	g->enviarMensagem(login, sms);
 }
 
 bool Utilizador::aceitaMembro(Utilizador *u, Grupo *g, Data d) {
-  u->addGrupo(g);
-  return g->pedidoAdesao(u->getLogin(), login, d, true);
+	u->addGrupo(g);
+	return g->pedidoAdesao(u->getLogin(), login, d, true);
 }
 
 bool Utilizador::rejeitaMembro(Utilizador *u, Grupo *g, Data d) {
-  return g->pedidoAdesao(u->getLogin(), login, d, false);
+	return g->pedidoAdesao(u->getLogin(), login, d, false);
 }
 
 bool Utilizador::bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual) {
-  return g->bloquearMembro(u->getLogin(), login, diaAtual);
+	return g->bloquearMembro(u->getLogin(), login, diaAtual);
 }
 
 bool Utilizador::desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual) {
-  return g->desbloquearMembro(u->getLogin(), login, diaAtual);
+	return g->desbloquearMembro(u->getLogin(), login, diaAtual);
 }
 
 Grupo *Utilizador::escolheGruposAmigos(int pos) const {
-  vector<Grupo *> temp;
-  vector<Grupo *> gruposAmigos;
+	vector<Grupo *> temp;
+	vector<Grupo *> gruposAmigos;
 
-  for (size_t i = 0; i < amigos.size(); i++) { //percorre os amigos
-    temp = amigos.at(i)->getGrupos();
-    for (size_t j = 0; j < temp.size(); j++)
-      gruposAmigos.push_back(temp.at(j));
-  }
-  eliminaRepetidos(gruposAmigos);
+	for (size_t i = 0; i < amigos.size(); i++) { //percorre os amigos
+		temp = amigos.at(i)->getGrupos();
+		for (size_t j = 0; j < temp.size(); j++)
+			gruposAmigos.push_back(temp.at(j));
+	}
+	eliminaRepetidos(gruposAmigos);
 
-  if (gruposAmigos.at(pos - 1) == NULL)
-    throw GrupoInexistente(pos);
-  return gruposAmigos.at(pos - 1);
+	for (size_t j = 0; j < grupos.size(); j++){ //elimina os grupos a que o utilizador já pertence
+		for (size_t k = 0; k < gruposAmigos.size(); k++)
+			if (grupos.at(j) == grupos.at(k)){
+				gruposAmigos.erase(gruposAmigos.begin() + k);
+				k--;
+			}
+	}
+
+	if (gruposAmigos.size() < (pos - 1))
+		throw GrupoInexistente(pos);
+	return gruposAmigos.at(pos - 1);
 }

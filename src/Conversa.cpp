@@ -73,7 +73,11 @@ bool compara(const string s1,const string s2){
 	return (s1<s2);
 }
 
-bool Conversa::operator==(const Conversa&c)const{ //compara 2 conversas pelos de participantes
+bool Conversa::operator==(Conversa&c)const{ //compara 2 conversas pelos de participantes
+	vector<string> p = participantes;
+	insertionSort(c.participantes); //ordenar primeiro os 2 vetores para ter a certeza que não comparamos membros diferentes que na verdade existem mas estão só por ordem diferente
+	insertionSort(p);
+
 	for (int i = 0; i < numParticipantes(); i++){
 		if (participantes.at(i) == participantes.at(i))
 			continue;		// experimentar isto

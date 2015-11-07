@@ -40,6 +40,10 @@ bool Membro::operator==(const Membro &m) const{
 	return (login == m.login);
 }
 
+bool Membro::operator<(const Membro &m) const{
+	return login < m.login;
+}
+
 ostream & operator<<(ostream & out, const Membro & m){
 	out << m.getLogin() << " , data de adesao : " << m.getData();
 	if (m.isBloqueado())
@@ -276,7 +280,10 @@ bool comparaMembro(const Membro &m1, const Membro &m2){
 	return (m1.getLogin() < m2.getLogin());
 }
 
-bool Grupo::operator==(const Grupo &g)const{ //compara 2 grupos pelos membros
+bool Grupo::operator==(Grupo &g)const{ //compara 2 grupos pelos membros
+	vector<Membro > temp = membros;
+	insertionSort(g.membros);
+	insertionSort(temp);
 
 	for (int i = 0; i < numMembros(); i++){
 		if (g.membros.at(i) == membros.at(i))

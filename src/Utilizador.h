@@ -120,6 +120,11 @@ public:
   *@return string (nome destinatario)
   */
   string getDestinatarioConversa(Conversa *c) const;
+  /**
+  *@brief Funcao que retorna um vector com os grupos do meu circulo de amigos incluindo os meus
+  *@return vector<Grupo *>
+  */
+  vector<Grupo *> Utilizador::getGruposAmigos() const;
   
 	/*****************************************************************
 	*                             SETS                               *
