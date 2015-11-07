@@ -572,7 +572,7 @@ void gruposUtilizador(Utilizador *u) {
         gerirGrupos(u,n);
         break;
       }
-      case 4: //Sair de um grupo ////REESCREVER
+      case 4: 
       {
         string login;
         Grupo *temp = u->getGrupo(n - 1); //grupo com que vamos trabalhar
@@ -606,11 +606,15 @@ void gruposUtilizador(Utilizador *u) {
   {
     int n;
     header("GRUPOS DO CIRCULO DE AMIGOS");
+    if (u->getGrupos().size() == 0)
+      cout << "Nao existe nenhum grupo" << endl << endl;
+    else {
     u->imprimirGruposAmigos();
     cout << endl << "Enviar pedido ao grupo numero : ";
     input<int>(n);
     u->pedirAdesao(u->escolheGruposAmigos(n));
     cout << "\nPedido efetuado com sucesso!" << endl << endl;
+  }
     esperar();
     throw VoltarAtras();
   }
