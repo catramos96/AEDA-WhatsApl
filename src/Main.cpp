@@ -553,19 +553,23 @@ void gruposUtilizador(Utilizador *u) {
         string login;
         Grupo *temp = u->getGrupo(n - 1); //grupo com que vamos trabalhar
 
-        if (u->getGrupo(n - 1)->numMembros() == 1) { //Sou o unico membro
-          u->removerMembro(u, temp, dataHoje);
-          delete u->getGrupo(n - 1);
+        if (temp->numMembros() != 1) {
+          if (temp->isModerador(u->getLogin())) { //se u for moderador precisa de escolher o proximo moderador
+            temp->printMembros();
+            cout << "Login do proximo moderador: ";
+            input<string>(login);
+            Membro m(login, dataHoje);
+            if (temp->existeMembro(m) != -1) {
+              u->removerMembro(u, temp, dataHoje);
+              temp->setModerador(login, dataHoje);
+            }
+            else
+              throw MembroInexistente(m.getLogin());
+          }
+          else
+            u->removerMembro(u, temp, dataHoje);
         }
-        else if (temp->isModerador(u->getLogin())) { //se u for moderador precisa de escolher o proximo moderador
-          temp->printMembros();
-          cout << "Login do proximo moderador: ";
-          input<string>(login);
-          temp->setModerador(login, dataHoje);
-          u->removerMembro(u, temp, dataHoje);
-        }
-        else
-          u->removerMembro(u, temp, dataHoje);
+        u->sairGrupo(temp);
         cout << "Removido com sucesso! \n";
       }
       }
@@ -577,12 +581,12 @@ void gruposUtilizador(Utilizador *u) {
   case 4: //enviar um pedido de adesao a um grupo
   {
     int n;
-    cout << "Grupos disponiveis no meu circulo de amigos : " << endl;
+    header("GRUPOS DO CIRCULO DE AMIGOS");
     u->imprimirGruposAmigos();
     cout << endl << "Enviar pedido ao grupo numero : ";
     input<int>(n);
     u->pedirAdesao(u->escolheGruposAmigos(n));
-    cout << "Pedido efetuado com sucesso! \n";
+    cout << "\nPedido efetuado com sucesso!" << endl << endl;
     esperar();
     throw VoltarAtras();
   }

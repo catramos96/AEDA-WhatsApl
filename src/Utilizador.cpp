@@ -349,4 +349,14 @@ void Utilizador::removerConversa(Conversa *c) {
 void Utilizador::sairConversa(Conversa *c) {
   getAmigo(getDestinatarioConversa(c))->removerConversa(c);
   removerConversa(c);
+  delete c;
+}
+
+void Utilizador::sairGrupo(Grupo* g) {
+  for (int i = 0; i < grupos.size(); i++)
+  {
+    if (grupos[i] == g) {
+      grupos.erase(grupos.begin() + i);
+    }
+  }
 }

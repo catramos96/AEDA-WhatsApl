@@ -157,6 +157,7 @@ public:
 
   void removerConversa(Conversa *c);
   void sairConversa(Conversa * c);
+  void sairGrupo(Grupo *g);
 };
 
 #endif /* SRC_UTILIZADOR_H_ */
