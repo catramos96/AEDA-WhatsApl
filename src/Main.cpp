@@ -145,37 +145,37 @@ void comunidade(Comunidade *c) {
 //Analiza a opccao escolhida do menu
 Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 
-	Utilizador *u = new Utilizador();
-	clrscr();
-	switch (op)
-	{
-	case 1:
-	{
-		u = login(c);
-		break;
-	}
-	case 2:
-	{
-		registar(c);
-		break;
-	}
-	case 3:
-	{
-		comunidade(c);
-		break;
-	}
-	case 4:
-	{
-		menuInformacao();
-		esperar();
-		throw VoltarAtras();
-	}
-	case 5:
-	{
-		exit(1);//sair
-	}
-	}
-	return u;
+  Utilizador *u = new Utilizador();
+  clrscr();
+  switch (op)
+  {
+  case 1:
+  {
+    u = login(c);
+    break;
+  }
+  case 2:
+  {
+    registar(c);
+    break;
+  }
+  case 3:
+  {
+    comunidade(c);
+    break;
+  }
+  case 4:
+  {
+    menuInformacao();
+    esperar();
+    throw VoltarAtras();
+  }
+  case 5:
+  {
+    exit(1);//sair
+  }
+  }
+  return u;
 }
 
 //Header do menu inicial
