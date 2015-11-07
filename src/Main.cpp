@@ -21,10 +21,19 @@ using namespace std;
 
 static Data dataHoje;
 
+/**
+* @brief Funcao que cria uma interrupção no programa para o utilizador poder visualizar o ecra
+*/
 void esperar() {
   system("pause");
 }
-
+/**
+* @brief Funcao que verifica se op esta entre o min e o max
+* caso nao esteja lanca a excepcao OpccaoInvalida
+* @param op opccao escolhida
+* @param min opccao minima
+* @param max opccao maxima
+*/
 void opccao(int &op, int min, int max) {
   cout << "Seleccione uma opccao: ";
   cin >> op;
@@ -39,7 +48,12 @@ void opccao(int &op, int min, int max) {
 *                          MENU UNICIAL                          *
 *****************************************************************/
 
-//opccao login
+/**
+* @brief Funcao que faz o login do utilizador.
+* Verifica se o login existe na comunidade e se nao existir lanca a excepcao UtilizadorInexistente.
+* @param c comunidade que contem todos os utilizadores inscritos.
+* @return Utilizador com que se fez o login.
+*/
 Utilizador * login(Comunidade *c) {
   string login;
   int i, op;
@@ -60,7 +74,12 @@ Utilizador * login(Comunidade *c) {
   return u;
 }
 
-//opccao registar
+/**
+* @brief Funcao que regista um utilizador na comunidade c.
+* Caso o utilizador com o login inserido exista, e lancada a excepcao UtilizadorJaExiste.
+* Caso o input de algum dos paramentros requeridos para o registo sejam do tipo errado lanca a excepcao InputFail.
+* @param c comunidade que contem todos os utilizadores inscritos.
+*/
 void registar(Comunidade *c) {
   bool vis;
   string login, nome, email;
@@ -100,7 +119,10 @@ void registar(Comunidade *c) {
     throw VoltarAtras();
 }
 
-//opccao comunidade
+/**
+* @brief Funcao em que visualizamos os utilizadores inscritos e podemos ordena-los por login ou data de adesao.
+* @param c comunidade que contem todos os utilizadores inscritos.
+*/
 void comunidade(Comunidade *c) {
   menuComunidade();
   int op;
@@ -129,7 +151,11 @@ void comunidade(Comunidade *c) {
   
 }
 
-//Analiza a opccao escolhida do menu
+/**
+* @brief Funcao que analisa a opccao op.
+* @param c comunidade que contem todos os utilizadores inscritos.
+* @return Utilizador caso se tenha feito o login.
+*/
 Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 
   Utilizador *u = new Utilizador();
@@ -167,7 +193,10 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
   return u;
 }
 
-//Header do menu inicial
+/**
+* @brief Funcao que mostra no ecra o menu inicial com varias opccoes
+* @return op opccao escolhida apartir do menu inicial
+*/
 int headerInicio() {
   clrscr();
   menuInicial();
@@ -176,7 +205,13 @@ int headerInicio() {
   return op;
 }
 
-//Try e catch
+/**
+* @brief Funcao da interface inicial quando se inicializa o programa.
+* Mostra as diferentes opccoes do menu inicial desde criar novos utilzadores (registar) a entrar dentro do ambiente de um so utilizador (login).
+* Ao registar-se o utilizador e guardado na comunidade e so se pode efetuar o login se esse utilizador estiver na comunidade.
+* @param c comunidade que contem todos os utilizadores inscritos.
+* @return Utilizador com quem se fez o login
+*/
 Utilizador * MenuInicial(Comunidade *c) {
   bool login = false;
   bool sair = false;
