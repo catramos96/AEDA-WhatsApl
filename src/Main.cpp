@@ -606,15 +606,15 @@ void gruposUtilizador(Utilizador *u) {
 	{
 		int n;
 		header("GRUPOS DO CIRCULO DE AMIGOS");
-    if (u->getGruposAmigos().size() == 0)
-      cout << "Nenhum grupo de amigos" << endl << endl;
-    else {
+    if (u->getAmigos().size() != 0) {
       u->imprimirGruposAmigos();
       cout << endl << "Enviar pedido ao grupo numero : ";
       input<int>(n);
       u->pedirAdesao(u->escolheGruposAmigos(n));
       cout << "\nPedido efetuado com sucesso!" << endl << endl;
     }
+    else
+      cout << "Nao existem grupos para aderir" << endl << endl;
 		esperar();
 		throw VoltarAtras();
 	}
