@@ -17,6 +17,10 @@ Classe \hyperlink{class_comunidade}{Comunidade}. Class que contem e gere todos o
 \begin{DoxyCompactList}\small\item\em Construtor Construtor default que inicializa o vector de utilizadores a zero. \end{DoxyCompactList}\item 
 int \hyperlink{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{existe\+Util} (\hyperlink{class_utilizador}{Utilizador} $\ast$util) const 
 \item 
+int \hyperlink{class_comunidade_a8c7188c4db52d049b25b158497ac8c14}{existe\+Util\+Nome} (string nome) const 
+\item 
+\hyperlink{class_grupo}{Grupo} $\ast$ \hyperlink{class_comunidade_adfc1f95d2fc409985c291bd29c9b7855}{existe\+Grupo} (string grupo) const 
+\item 
 \hyperlink{class_utilizador}{Utilizador} $\ast$ \hyperlink{class_comunidade_a4c537ae9c435a276154051da96e628af}{utilizador\+Na\+Posicao} (int pos) const 
 \item 
 void \hyperlink{class_comunidade_a1961b08389ea8fc40a7cdd099d733ad7}{adicionar\+Util} (\hyperlink{class_utilizador}{Utilizador} $\ast$util)
@@ -51,14 +55,28 @@ Classe \hyperlink{class_comunidade}{Comunidade}. Class que contem e gere todos o
 \item[{{\bf Utilizador} $\ast$}]{util}
 \end{DoxyParamCaption}
 )}\label{class_comunidade_a1961b08389ea8fc40a7cdd099d733ad7}
-@ brief Funcao que adiciona um utilizador à comunidade @ param util\+: utilizador @ return void \hypertarget{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{}\index{Comunidade@{Comunidade}!existe\+Util@{existe\+Util}}
+@ brief Funcao que adiciona um utilizador à comunidade @ param util\+: utilizador @ return void \hypertarget{class_comunidade_adfc1f95d2fc409985c291bd29c9b7855}{}\index{Comunidade@{Comunidade}!existe\+Grupo@{existe\+Grupo}}
+\index{existe\+Grupo@{existe\+Grupo}!Comunidade@{Comunidade}}
+\subsubsection[{existe\+Grupo(string grupo) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grupo} $\ast$ Comunidade\+::existe\+Grupo (
+\begin{DoxyParamCaption}
+\item[{string}]{grupo}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_adfc1f95d2fc409985c291bd29c9b7855}
+@ brief Funcao que verifica a existencia de um certo grupo @ param util \+: indica o nome do grupo @ return \hyperlink{class_grupo}{Grupo} \hypertarget{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{}\index{Comunidade@{Comunidade}!existe\+Util@{existe\+Util}}
 \index{existe\+Util@{existe\+Util}!Comunidade@{Comunidade}}
 \subsubsection[{existe\+Util(\+Utilizador $\ast$util) const }]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::existe\+Util (
 \begin{DoxyParamCaption}
 \item[{{\bf Utilizador} $\ast$}]{util}
 \end{DoxyParamCaption}
 ) const}\label{class_comunidade_accf146332d17ad07080bcee3bb2a727c}
-@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o utilizador @ return posicao \hypertarget{class_comunidade_a4770f5f57ce9e47e0a661b3b923061d8}{}\index{Comunidade@{Comunidade}!ordena\+Data@{ordena\+Data}}
+@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o utilizador @ return posicao \hypertarget{class_comunidade_a8c7188c4db52d049b25b158497ac8c14}{}\index{Comunidade@{Comunidade}!existe\+Util\+Nome@{existe\+Util\+Nome}}
+\index{existe\+Util\+Nome@{existe\+Util\+Nome}!Comunidade@{Comunidade}}
+\subsubsection[{existe\+Util\+Nome(string nome) const }]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::existe\+Util\+Nome (
+\begin{DoxyParamCaption}
+\item[{string}]{nome}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_a8c7188c4db52d049b25b158497ac8c14}
+@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o nome do utilizador @ return posicao \hypertarget{class_comunidade_a4770f5f57ce9e47e0a661b3b923061d8}{}\index{Comunidade@{Comunidade}!ordena\+Data@{ordena\+Data}}
 \index{ordena\+Data@{ordena\+Data}!Comunidade@{Comunidade}}
 \subsubsection[{ordena\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::ordena\+Data (
 \begin{DoxyParamCaption}

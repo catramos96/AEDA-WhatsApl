@@ -11,9 +11,9 @@ class Utilizador
 {
 private:
 	bool visibilidade; /**< membro privado que representa a visibilidade, 1 - publico e 0 - privado */
-  string login; /**< membro privado que representa login (unico para cada utilizador que existe) */
-  string nome; /**< membro privado que representa o nome */
-  string email; /**< membro privado que representa o email */
+	string login; /**< membro privado que representa login (unico para cada utilizador que existe) */
+	string nome; /**< membro privado que representa o nome */
+	string email; /**< membro privado que representa o email */
 	int telemovel; /**< membro privado que representa o telemovel */
 	Data dataAdesao; /**< membro privado que representa a data de adesao (criacao do utilizador) */
 	int idade; /**< membro privado que representa a idade */
@@ -21,84 +21,84 @@ private:
 	vector<Conversa *> conversas; /**< membro privado que representa as conversas */
 	vector<Grupo *> grupos; /**< membro privado que representa os grupos de conversas */
 public:
-  /**
-  * @ brief Construtor Utilizador;
-  */
+	/**
+	* @ brief Construtor Utilizador;
+	*/
 	Utilizador();
-  /**
-  * @ brief Destrutor Utilizador;
-  */
-  ~Utilizador();
-  /**
-		 * @ brief Construtor que inicializa a visiblidade, login, email, data de adesao, telemovel e idade)
-		 */
+	/**
+	* @ brief Destrutor Utilizador;
+	*/
+	~Utilizador();
+	/**
+		   * @ brief Construtor que inicializa a visiblidade, login, email, data de adesao, telemovel e idade)
+		   */
 	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
-  
-  /*****************************************************************
-  *                             GETS                               *
-  *****************************************************************/
-  
-  /**
-  * @ brief Funcao que retorna o nome do Utilizador
-  * @ return nome
-  */
+
+	/*****************************************************************
+	*                             GETS                               *
+	*****************************************************************/
+
+	/**
+	* @ brief Funcao que retorna o nome do Utilizador
+	* @ return nome
+	*/
 	string getNome() const;
-  /**
-  * @ brief Funcao que retorna o email do Utilizador
-  * @ return email
-  */
+	/**
+	* @ brief Funcao que retorna o email do Utilizador
+	* @ return email
+	*/
 	string getEmail() const;
-  /**
-  * @ brief Funcao que retorna o login do Utilizador
-  * @ return login
-  */
+	/**
+	* @ brief Funcao que retorna o login do Utilizador
+	* @ return login
+	*/
 	string getLogin() const;
-  /**
-  * @ brief Funcao que retorna o telemovel do Utilizador
-  * @ return telemovel
-  */
+	/**
+	* @ brief Funcao que retorna o telemovel do Utilizador
+	* @ return telemovel
+	*/
 	int getTelemovel()const;
-  /**
-  * @ brief Funcao que retorna a idade do Utilizador
-  * @ return idade
-  */
+	/**
+	* @ brief Funcao que retorna a idade do Utilizador
+	* @ return idade
+	*/
 	int getIdade() const;
-  /**
-  * @ brief Funcao que retorna a visibilidade do Utilizador
-  * @ return visibilidade
-  */
+	/**
+	* @ brief Funcao que retorna a visibilidade do Utilizador
+	* @ return visibilidade
+	*/
 	bool getVisibilidade() const;
-  /**
-  * @ brief Funcao que retorna a data de adesao do Utilizador
-  * @ return dataAdesao
-  */
+	/**
+	* @ brief Funcao que retorna a data de adesao do Utilizador
+	* @ return dataAdesao
+	*/
 	Data getDataAdesao() const;
-  /**
-  * @ brief Funcao que retorna um vector de Utilizadores que sao os amigos do Utilizador
-  * @ return amigos
-  */
+	/**
+	* @ brief Funcao que retorna um vector de Utilizadores que sao os amigos do Utilizador
+	* @ return amigos
+	*/
 	vector<Utilizador *> getAmigos() const;
-  /**
-  * @ brief Funcao que retorna um apontador para um Utilizador dos amigos com um determinado login
-  * @ param login login do Utilizador pertencente aos amigo do Utilizador
-  * @ return Utilizador*
-  */
-  Utilizador * getAmigo(string login) const;
-  /**
-  * @ brief Funcao que retorna um apontador para um Grupo dos grupos de conversa de indice i
-  * @ param i posicao nos grupos do utilizador 
-  * @ return Grupo*
-  */
-  Grupo* getGrupo(int i) const;
-  /**
-  * @ brief Funcao que retorna os grupos do utilizador
-  * @ return grupos
-  */
-  vector<Grupo *> getGrupos() const;
-  
-  /*****************************************************************
-  *                             SETS                               *
-  *****************************************************************/
+	/**
+	* @ brief Funcao que retorna um apontador para um Utilizador dos amigos com um determinado login
+	* @ param login login do Utilizador pertencente aos amigo do Utilizador
+	* @ return Utilizador*
+	*/
+	Utilizador * getAmigo(string login) const;
+	/**
+	* @ brief Funcao que retorna um apontador para um Grupo dos grupos de conversa de indice i
+	* @ param i posicao nos grupos do utilizador
+	* @ return Grupo*
+	*/
+	Grupo* getGrupo(int i) const;
+	/**
+	* @ brief Funcao que retorna os grupos do utilizador
+	* @ return grupos
+	*/
+	vector<Grupo *> getGrupos() const;
+
+	/*****************************************************************
+	*                             SETS                               *
+	*****************************************************************/
 
 	void setGrupo(Grupo grupo);
 	void setLogin(string l);
@@ -108,6 +108,7 @@ public:
 	void setVisibilidade(bool v);
 	void setAmigos(Utilizador *u);
 	void setTelemovel(int i);
+	void setData(int d, int m, int a);
 
 	void addAmigo(Utilizador &u);
 	void removerAmigoAux(Utilizador *u); //eliminar um amigo
@@ -116,7 +117,7 @@ public:
 	void imprimirDefinicoes() const;
 	void imprimirUtilizador() const;
 	void imprimirAmigos() const;
-  void imprimirGrupos(vector<Grupo*> g) const;
+	void imprimirGrupos() const;
 
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;
@@ -128,14 +129,18 @@ public:
 
 	void pedirAdesao(Grupo *g);
 	Grupo *criarGrupo(string titulo, Data dataAtual);
+	bool adicionarGrupo(Grupo *g);
+	bool eliminarGrupo(Grupo *g);
 	void enviarMensagemGrupo(Mensagem *sms, Grupo *g);
-	bool aceitaMembro(string u, Grupo *g, Data d);
-	bool rejeitaMembro(string u, Grupo *g, Data d);
+	bool adicionaMembro(Utilizador *u, Grupo *g, Data d);
+	bool aceitaMembro(Utilizador *u, Grupo *g, Data d);
+	bool rejeitaMembro(Utilizador *u, Grupo *g, Data d);
 	bool bloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool desbloquearMembro(Utilizador *u, Grupo *g, Data diaAtual);
 	bool removerMembro(Utilizador *u, Grupo *g, Data diaAtual);
-  
-  vector<Grupo *> meusGrupos() const;
+
+	void imprimirGruposAmigos() const;
+	Grupo *escolheGruposAmigos(int i) const;
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

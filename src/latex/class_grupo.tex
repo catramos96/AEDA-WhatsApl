@@ -28,8 +28,10 @@ int \hyperlink{class_grupo_ae47743b312afead1d38b67e9a770dff4}{existe\+Membro} (\
 \hypertarget{class_grupo_aaea32821021b4a06faa11d906c84d409}{}void \hyperlink{class_grupo_aaea32821021b4a06faa11d906c84d409}{print\+Membros} () const \label{class_grupo_aaea32821021b4a06faa11d906c84d409}
 
 \begin{DoxyCompactList}\small\item\em Funcao que imprime os membros existentes no vetor \textquotesingle{}membros\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_grupo_acbbc1d9ffef8f4d59564f31cc094c896}{adicionar\+Membro} (string novo, string moderador, \hyperlink{class_data}{Data} adesao)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um pedido de adesao. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
 bool \hyperlink{class_grupo_a9b0aca29a05044b1bd8eb3b012950149}{pedido\+Adesao} (string novo, string moderador, \hyperlink{class_data}{Data} adesao, bool aceita)
-\begin{DoxyCompactList}\small\item\em Funcao que aceita um novo membro no grupo. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Funcao que aceita um novo membro no grupo através de pedido de adesao. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
 bool \hyperlink{class_grupo_a88a49f345349cf6eec083371ecfd23b3}{retira\+Membro} (string login, string moderador, \hyperlink{class_data}{Data} dia\+Atual)
 \begin{DoxyCompactList}\small\item\em Funcao que elimina um membro do gupo. A eliminacao e registada no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
 bool \hyperlink{class_grupo_a9d9aaa23c2c01ec6cf71d642b5b1551c}{bloquear\+Membro} (string login, string moderador, \hyperlink{class_data}{Data} dia\+Atual)
@@ -49,7 +51,15 @@ void \hyperlink{class_grupo_ae358292c3dbb687910f0c4c365260a9c}{adicionar\+Pedido
 \begin{DoxyCompactList}\small\item\em Funcao que adiciona o pedido de adesao de um utilizador ao membro privado \textquotesingle{}pedidos\textquotesingle{}. \end{DoxyCompactList}\item 
 \hypertarget{class_grupo_a892b603306ef718ffcebb040f7028ab4}{}void \hyperlink{class_grupo_a892b603306ef718ffcebb040f7028ab4}{print\+Conversa} ()\label{class_grupo_a892b603306ef718ffcebb040f7028ab4}
 
-\begin{DoxyCompactList}\small\item\em Funcao que imprime a conversa que pertence ao grupo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao que imprime a conversa que pertence ao grupo. \end{DoxyCompactList}\item 
+\hypertarget{class_grupo_a3519ff974212b2f767aa45f0c59335a0}{}void \hyperlink{class_grupo_a3519ff974212b2f767aa45f0c59335a0}{print\+Grupo} () const \label{class_grupo_a3519ff974212b2f767aa45f0c59335a0}
+
+\begin{DoxyCompactList}\small\item\em Funcao que imprime o titulo do grupo, o gerente e a data de criação. \end{DoxyCompactList}\item 
+\hypertarget{class_grupo_ae5c4e0887f3f759884b11beb6b56f115}{}string \hyperlink{class_grupo_ae5c4e0887f3f759884b11beb6b56f115}{get\+Titulo} () const \label{class_grupo_ae5c4e0887f3f759884b11beb6b56f115}
+
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o titulo do grupo. \end{DoxyCompactList}\item 
+void \hyperlink{class_grupo_afb167f10ddb461bcc4c3020b8c57df69}{set\+Moderador} (string login, \hyperlink{class_data}{Data} dia\+Atual)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o moderador. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -81,6 +91,33 @@ Construtor do grupo. Inicializa o titulo com o titulo recebido e a data com a da
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_grupo_acbbc1d9ffef8f4d59564f31cc094c896}{}\index{Grupo@{Grupo}!adicionar\+Membro@{adicionar\+Membro}}
+\index{adicionar\+Membro@{adicionar\+Membro}!Grupo@{Grupo}}
+\subsubsection[{adicionar\+Membro(string novo, string moderador, Data adesao)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::adicionar\+Membro (
+\begin{DoxyParamCaption}
+\item[{string}]{novo, }
+\item[{string}]{moderador, }
+\item[{{\bf Data}}]{adesao}
+\end{DoxyParamCaption}
+)}\label{class_grupo_acbbc1d9ffef8f4d59564f31cc094c896}
+
+
+Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um pedido de adesao. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em novo} & Login do \hyperlink{class_utilizador}{Utilizador} que pede permissao. \\
+\hline
+{\em moderador} & Login do \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao). \\
+\hline
+{\em adesao} & \hyperlink{class_data}{Data} em que o utilizador pede permissao para entrar no grupo. \\
+\hline
+{\em aceita} & Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se aceita o pedido, false se rejeita. 
+\end{DoxyReturn}
 \hypertarget{class_grupo_ae358292c3dbb687910f0c4c365260a9c}{}\index{Grupo@{Grupo}!adicionar\+Pedido@{adicionar\+Pedido}}
 \index{adicionar\+Pedido@{adicionar\+Pedido}!Grupo@{Grupo}}
 \subsubsection[{adicionar\+Pedido(string login)}]{\setlength{\rightskip}{0pt plus 5cm}void Grupo\+::adicionar\+Pedido (
@@ -280,7 +317,7 @@ True se forem iguais, false se diferentes.
 )}\label{class_grupo_a9b0aca29a05044b1bd8eb3b012950149}
 
 
-Funcao que aceita um novo membro no grupo. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
+Funcao que aceita um novo membro no grupo através de pedido de adesao. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -321,6 +358,23 @@ Funcao que elimina um membro do gupo. A eliminacao e registada no membro-\/dado 
 \begin{DoxyReturn}{Returns}
 True se e eliminado com sucesso. 
 \end{DoxyReturn}
+\hypertarget{class_grupo_afb167f10ddb461bcc4c3020b8c57df69}{}\index{Grupo@{Grupo}!set\+Moderador@{set\+Moderador}}
+\index{set\+Moderador@{set\+Moderador}!Grupo@{Grupo}}
+\subsubsection[{set\+Moderador(string login, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}void Grupo\+::set\+Moderador (
+\begin{DoxyParamCaption}
+\item[{string}]{login, }
+\item[{{\bf Data}}]{dia\+Atual}
+\end{DoxyParamCaption}
+)}\label{class_grupo_afb167f10ddb461bcc4c3020b8c57df69}
+
+
+Funcao que altera o moderador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & Login do proximo moderador \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

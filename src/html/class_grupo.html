@@ -120,8 +120,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#aaea32821021b4a06faa11d906c84d409">printMembros</a> () const </td></tr>
 <tr class="memdesc:aaea32821021b4a06faa11d906c84d409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que imprime os membros existentes no vetor 'membros'. <br /></td></tr>
 <tr class="separator:aaea32821021b4a06faa11d906c84d409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbbc1d9ffef8f4d59564f31cc094c896"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#acbbc1d9ffef8f4d59564f31cc094c896">adicionarMembro</a> (string novo, string moderador, <a class="el" href="class_data.html">Data</a> adesao)</td></tr>
+<tr class="memdesc:acbbc1d9ffef8f4d59564f31cc094c896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um pedido de adesao. O surgimento de um novo membro e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe.  <a href="#acbbc1d9ffef8f4d59564f31cc094c896">More...</a><br /></td></tr>
+<tr class="separator:acbbc1d9ffef8f4d59564f31cc094c896"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b0aca29a05044b1bd8eb3b012950149"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a9b0aca29a05044b1bd8eb3b012950149">pedidoAdesao</a> (string novo, string moderador, <a class="el" href="class_data.html">Data</a> adesao, bool aceita)</td></tr>
-<tr class="memdesc:a9b0aca29a05044b1bd8eb3b012950149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que aceita um novo membro no grupo. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe.  <a href="#a9b0aca29a05044b1bd8eb3b012950149">More...</a><br /></td></tr>
+<tr class="memdesc:a9b0aca29a05044b1bd8eb3b012950149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que aceita um novo membro no grupo através de pedido de adesao. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe.  <a href="#a9b0aca29a05044b1bd8eb3b012950149">More...</a><br /></td></tr>
 <tr class="separator:a9b0aca29a05044b1bd8eb3b012950149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a49f345349cf6eec083371ecfd23b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a88a49f345349cf6eec083371ecfd23b3">retiraMembro</a> (string login, string moderador, <a class="el" href="class_data.html">Data</a> diaAtual)</td></tr>
 <tr class="memdesc:a88a49f345349cf6eec083371ecfd23b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que elimina um membro do gupo. A eliminacao e registada no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe.  <a href="#a88a49f345349cf6eec083371ecfd23b3">More...</a><br /></td></tr>
@@ -152,6 +155,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a892b603306ef718ffcebb040f7028ab4">printConversa</a> ()</td></tr>
 <tr class="memdesc:a892b603306ef718ffcebb040f7028ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que imprime a conversa que pertence ao grupo. <br /></td></tr>
 <tr class="separator:a892b603306ef718ffcebb040f7028ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3519ff974212b2f767aa45f0c59335a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3519ff974212b2f767aa45f0c59335a0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a3519ff974212b2f767aa45f0c59335a0">printGrupo</a> () const </td></tr>
+<tr class="memdesc:a3519ff974212b2f767aa45f0c59335a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que imprime o titulo do grupo, o gerente e a data de criação. <br /></td></tr>
+<tr class="separator:a3519ff974212b2f767aa45f0c59335a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c4e0887f3f759884b11beb6b56f115"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5c4e0887f3f759884b11beb6b56f115"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#ae5c4e0887f3f759884b11beb6b56f115">getTitulo</a> () const </td></tr>
+<tr class="memdesc:ae5c4e0887f3f759884b11beb6b56f115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que retorna o titulo do grupo. <br /></td></tr>
+<tr class="separator:ae5c4e0887f3f759884b11beb6b56f115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb167f10ddb461bcc4c3020b8c57df69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#afb167f10ddb461bcc4c3020b8c57df69">setModerador</a> (string login, <a class="el" href="class_data.html">Data</a> diaAtual)</td></tr>
+<tr class="memdesc:afb167f10ddb461bcc4c3020b8c57df69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que altera o moderador.  <a href="#afb167f10ddb461bcc4c3020b8c57df69">More...</a><br /></td></tr>
+<tr class="separator:afb167f10ddb461bcc4c3020b8c57df69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe <a class="el" href="class_grupo.html" title="Classe Grupo. Classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador...">Grupo</a>. Classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador. O moderador e o utilizador que gere o grupo: permite aceitar pedidos de adesao ao grupo, retirar, bloquear ou desbloquear elementos, Um grupo tem um titulo e uma data de criacao. O utilizador moderador e o utilizador que cria o grupo, logo contem a mesma data de adesao que a data de criacao do grupo. Um grupo contem uma unica conversa que contem todos os utilizadores. No entanto podem estar bloqueados, pelo que nao podem enviar mensagens. </p>
@@ -199,6 +213,50 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="acbbc1d9ffef8f4d59564f31cc094c896"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Grupo::adicionarMembro </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>novo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>moderador</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_data.html">Data</a>&#160;</td>
+          <td class="paramname"><em>adesao</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um pedido de adesao. O surgimento de um novo membro e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">novo</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> que pede permissao. </td></tr>
+    <tr><td class="paramname">moderador</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao). </td></tr>
+    <tr><td class="paramname">adesao</td><td><a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> em que o utilizador pede permissao para entrar no grupo. </td></tr>
+    <tr><td class="paramname">aceita</td><td>Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True se aceita o pedido, false se rejeita. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ae358292c3dbb687910f0c4c365260a9c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -511,7 +569,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Funcao que aceita um novo membro no grupo. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. </p>
+<p>Funcao que aceita um novo membro no grupo através de pedido de adesao. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">novo</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> que pede permissao. </td></tr>
@@ -565,6 +623,40 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True se e eliminado com sucesso. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afb167f10ddb461bcc4c3020b8c57df69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grupo::setModerador </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_data.html">Data</a>&#160;</td>
+          <td class="paramname"><em>diaAtual</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao que altera o moderador. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Login do proximo moderador </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

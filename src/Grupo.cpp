@@ -90,15 +90,50 @@ void Grupo::printMembros() const{
 	cout << endl;
 }
 
+bool Grupo::adicionarMembro(string novo, string moderador, Data adesao){
+	stringstream out;
+
+	if (isModerador(moderador)){
+
+		//primeiro passo: criar um membro temporario com a informacao que conhecemos (login)
+		Data d;
+		Membro m(novo, d);
+		int pos = existeMembro(m);
+		if (pos != -1){ // já existe o membro
+			m = membroNaPosicao(pos);
+
+			if (m.isBloqueado()){ //desbloqueia caso esteja bloqueado
+				m.setBloqueio(false); //coloca como bloqueado
+				out << "Membro desbloqueado : " << novo << endl << "Data : " << adesao << endl;
+				status.push_back(out.str());
+				return true;
+			}
+			else
+				return false;
+		}
+		else{ // novo membro
+			Membro m(novo, adesao);
+			membros.push_back(m);
+			conversa.adicionaParticipante(novo);
+			out << "Novo membro : " << novo << endl << "Data : " << adesao << endl;
+			status.push_back(out.str());
+			return true;
+		}
+	}
+	else
+		throw NaoModerador(moderador);
+	return false;
+}
+
 bool Grupo::pedidoAdesao(string novo, string moderador, Data adesao, bool aceita){
 	stringstream out;
-	
+
 	if (isModerador(moderador)){
 		bool encontrou = false;
 		//procurar o 'novo' no vetor de pedidos e eliminar esse pedido
-		for(size_t i = 0; i < pedidos.size(); i++)
-			if(pedidos.at(i) == novo){
-				pedidos.erase(pedidos.begin()+i);
+		for (size_t i = 0; i < pedidos.size(); i++)
+			if (pedidos.at(i) == novo){
+				pedidos.erase(pedidos.begin() + i);
 				encontrou = true;
 				break;
 			}
@@ -270,19 +305,22 @@ void Grupo::printConversa(){
 }
 
 void Grupo::printGrupo() const {
-  cout << "Titulo: " << titulo << " , Gerente: " << moderador.getLogin() << " , Data: " << criacao << endl;
+	cout << "Titulo: " << titulo << " , Gerente: " << moderador.getLogin() << " , Data: " << criacao << endl;
 }
 
-void Grupo::setModerador(string login) {
-  bool encontrou = false;
-  for (int i = 0; i < membros.size(); i++)
-  {
-    if (membros[i].getLogin() == login) {
-      moderador = membros[i];
-      encontrou = true;
-    }
-  }
-  if (!encontrou)
-    throw MembroInexistente(login);
+void Grupo::setModerador(string login, Data diaAtual) {
+	stringstream out;
+	bool encontrou = false;
+	for (int i = 0; i < membros.size(); i++)
+	{
+		if (membros[i].getLogin() == login) {
+			moderador = membros[i];
+			encontrou = true;
+			out << "Mudança de moderador! \n Novo moderador : " << login << endl << "Data : " << diaAtual << endl << endl;
+			status.push_back(out.str());
+		}
+	}
+	if (!encontrou)
+		throw MembroInexistente(login);
 }
 

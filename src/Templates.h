@@ -3,7 +3,7 @@
 using namespace std;
 
 template <class Comparable>
-int sequentialSearch(const vector<Comparable> v, Comparable x)
+int sequentialSearch(const vector<Comparable> &v, Comparable x)
 {
 	for (unsigned int i = 0; i < v.size(); i++){
 		if (v[i] == x)
@@ -12,15 +12,14 @@ int sequentialSearch(const vector<Comparable> v, Comparable x)
 	return -1;     // nao encontrou
 }
 
-
 template <class Comparable>
 int pointerSequentialSearch(const vector<Comparable*> v, Comparable *x)
 {
-  for (unsigned int i = 0; i < v.size(); i++) {
-    if (*v[i] == *x)
-      return i;   // encontrou
-  }
-  return -1;     // nao encontrou
+	for (unsigned int i = 0; i < v.size(); i++) {
+		if (*v[i] == *x)
+			return i;   // encontrou
+	}
+	return -1;     // nao encontrou
 }
 
 template <class Comparable>
@@ -33,4 +32,12 @@ void insertionSort(vector<Comparable> &v)
 			v[j] = v[j - 1];
 		v[j] = tmp;
 	}
+}
+
+template <class Comparable>
+void eliminaRepetidos(vector<Comparable*> &v){
+	for (unsigned int i = 0; i < v.size() - 1; i++) //dá o elemento
+		for (unsigned int j = i + 1; v.size(); j++) //percorre o vetor
+			if (v.at(i) == v.at(j))
+				v.erase(v.begin() + j);
 }

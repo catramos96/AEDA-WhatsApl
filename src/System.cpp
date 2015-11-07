@@ -256,7 +256,7 @@ void menuGrupos() {
   cout << "Criar novo grupo (1)" << endl;
   cout << "Enviar mensagem (2)" << endl;
   cout << "Ver grupos (3)" << endl;
-  cout << "Gerir os meus grupos (4)" << endl;
+  cout << "Enviar pedido de Adesao a um grupo (4)" << endl;
   cout << "Voltar Atras (5)" << endl << endl;
 }
 

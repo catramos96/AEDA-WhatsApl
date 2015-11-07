@@ -129,7 +129,18 @@ public:
 	 */
 	void printMembros() const;
 	/**
-	 * @brief Funcao que aceita um novo membro no grupo.
+	 * @brief Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um pedido de adesao.
+	 * O surgimento de um novo membro e registado no membro-dado 'status'.
+	 * Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe.
+	 * @param novo Login do Utilizador que pede permissao.
+	 * @param moderador Login do Utilizador moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao).
+	 * @param adesao Data em que o utilizador pede permissao para entrar no grupo.
+	 * @param aceita Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao.
+	 * @return True se aceita o pedido, false se rejeita.
+	 */
+	bool adicionarMembro(string novo, string moderador, Data adesao);
+	/**
+	 * @brief Funcao que aceita um novo membro no grupo através de pedido de adesao.
 	 * Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado.
 	 * O surgimento de um novo membro e registado no membro-dado 'status'.
 	 * Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe.
@@ -205,18 +216,19 @@ public:
 	 * @brief Funcao que imprime a conversa que pertence ao grupo.
 	 */
 	void printConversa();
-  /**
-  * @brief Funcao que imprime o titulo do grupo, o gerente e a data de criação
-  */
-  void printGrupo() const;
-  /**
-  * @brief Funcao que retorna o titulo do grupo
-  */
-  string getTitulo() const { return titulo; };
-  /**
-  * @brief Funcao que altera o moderador
-  */
-  void setModerador(string login);
+	/**
+	* @brief Funcao que imprime o titulo do grupo, o gerente e a data de criação
+	*/
+	void printGrupo() const;
+	/**
+	* @brief Funcao que retorna o titulo do grupo
+	*/
+	string getTitulo() const { return titulo; };
+	/**
+	* @brief Funcao que altera o moderador.
+	* @param login Login do proximo moderador
+	*/
+	void setModerador(string login, Data diaAtual);
 };
 
 #endif /* SRC_GRUPO_H_ */
