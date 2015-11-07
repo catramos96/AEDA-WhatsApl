@@ -9,6 +9,11 @@
 
 using namespace std;
 
+/**
+* @brief Classe Mensagem.
+* Cada Mensagem tem um id unico que representa o numero da mensgem.
+* Cata Mensagem pode ainda ser de texto, video ou imagem.
+*/
 class Mensagem
 {
 private:
@@ -18,6 +23,11 @@ private:
 	string emissor; /**< membro privado que representa o emissor da mensagem */
 	int numero; /**< membro privado que representa o numero da mensagem*/
 public:
+  /**
+  * @brief Construtor da classe Mensagem;
+  * @ param data data de criacao
+  * @ para hora hora de criacao
+  */
 	Mensagem(Data data, Horas hora);
 	//virtual ~Mensagem();
 	virtual void imprimirMsg(); //imprime todos os membros private
