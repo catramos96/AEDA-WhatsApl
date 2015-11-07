@@ -39,7 +39,11 @@ public:
   * @brief Construtor classe Utilizador
   * @param visibilidade do utilizador
   * @param login do utilizador
-  * @param 
+  * @param nome do utilizador
+  * @param email do utilizador
+  * @para dataAdesao data de adesao do utilizador
+  * @param telemovel do utilizador
+  * @param idade do utilizador
   */
 	Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
 
@@ -48,60 +52,60 @@ public:
 	*****************************************************************/
 
 	/**
-	*@ brief Funcao que retorna o nome do Utilizador
-	*@ return nome
+	*@brief Funcao que retorna o nome do Utilizador
+	*@return nome
 	*/
 	string getNome() const;
 	/**
-	*@ brief Funcao que retorna o email do Utilizador
-	*@ return email
+	*@brief Funcao que retorna o email do Utilizador
+	*@return email
 	*/
 	string getEmail() const;
 	/**
-	*@ brief Funcao que retorna o login do Utilizador
-	*@ return login
+	*@brief Funcao que retorna o login do Utilizador
+	*@return login
 	*/
 	string getLogin() const;
 	/**
-	*@ brief Funcao que retorna o telemovel do Utilizador
-	*@ return telemovel
+	*@brief Funcao que retorna o telemovel do Utilizador
+	*@return telemovel
 	*/
 	int getTelemovel()const;
 	/**
-	*@ brief Funcao que retorna a idade do Utilizador
-	*@ return idade
+	*@brief Funcao que retorna a idade do Utilizador
+	*@return idade
 	*/
 	int getIdade() const;
 	/**
-	*@ brief Funcao que retorna a visibilidade do Utilizador
-	*@ return visibilidade
+	*@brief Funcao que retorna a visibilidade do Utilizador
+	*@return visibilidade
 	*/
 	bool getVisibilidade() const;
 	/**
-	*@ brief Funcao que retorna a data de adesao do Utilizador
-	*@ return dataAdesao
+	*@brief Funcao que retorna a data de adesao do Utilizador
+	*@return dataAdesao
 	*/
 	Data getDataAdesao() const;
 	/**
-	*@ brief Funcao que retorna um vector de Utilizadores que sao os amigos do Utilizador
-	*@ return amigos
+	*@brief Funcao que retorna um vector de Utilizadores que sao os amigos do Utilizador
+	*@return amigos
 	*/
 	vector<Utilizador *> getAmigos() const;
 	/**
-	*@ brief Funcao que retorna um apontador para um Utilizador dos amigos com um determinado login
-	*@ param login login do Utilizador pertencente aos amigo do Utilizador
-	*@ return Utilizador*
+	*@brief Funcao que retorna um apontador para um Utilizador dos amigos com um determinado login
+	*@param login login do Utilizador pertencente aos amigo do Utilizador
+	*@return Utilizador*
 	*/
 	Utilizador * getAmigo(string login) const;
 	/**
-	*@ brief Funcao que retorna um apontador para um Grupo dos grupos de conversa de indice i
-	*@ param i posicao nos grupos do utilizador
-	*@ return Grupo*
+	*@brief Funcao que retorna um apontador para um Grupo dos grupos de conversa de indice i
+	*@param i posicao nos grupos do utilizador
+	*@return Grupo*
 	*/
 	Grupo* getGrupo(int i) const;
 	/**
-	*@ brief Funcao que retorna os grupos do utilizador
-	*@ return grupos
+	*@brief Funcao que retorna os grupos do utilizador
+	*@return grupos
 	*/
 	vector<Grupo *> getGrupos() const;
   /**
@@ -232,28 +236,28 @@ public:
   *****************************************************************/
 
   /**
-  *@ brief Funcao que imprime no ecra as definicoes do utilizador
+  *@brief Funcao que imprime no ecra as definicoes do utilizador
   */
 	void imprimirDefinicoes() const;
   /**
-  *@ brief Funcao que imprime no ecra o perfil do utilizador
+  *@brief Funcao que imprime no ecra o perfil do utilizador
   * com as informações do mesmo dependendo da visibilidade.
   */
 	void imprimirUtilizador() const;
   /**
-  *@ brief Funcao que imprime no ecra os amigos do utilizador
+  *@brief Funcao que imprime no ecra os amigos do utilizador
   */
 	void imprimirAmigos() const;
   /**
-  *@ brief Funcao que imprime no ecra os grupos do utilizador
+  *@brief Funcao que imprime no ecra os grupos do utilizador
   */
 	void imprimirGrupos() const;
   /**
-  *@ brief Funcao que imprime no ecra as conversas do utilizador
+  *@brief Funcao que imprime no ecra as conversas do utilizador
   */
   void imprimirConversas() const;
   /**
-  *@ brief Funcao que imprime no ecra todos os grupos (não repetidos)
+  *@brief Funcao que imprime no ecra todos os grupos (não repetidos)
   * de todos os amigos do utilizador incluindo os do proprio
   */
   void imprimirGruposAmigos() const;

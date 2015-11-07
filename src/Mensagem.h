@@ -25,38 +25,105 @@ private:
 public:
   /**
   * @brief Construtor da classe Mensagem;
-  * @ param data data de criacao
-  * @ para hora hora de criacao
+  * @param data data de criacao
+  * @para hora hora de criacao
   */
 	Mensagem(Data data, Horas hora);
-	//virtual ~Mensagem();
-	virtual void imprimirMsg(); //imprime todos os membros private
+  /**
+  * @brief Funcao que imprime todos os membros privados da mensagem
+  */
+	virtual void imprimirMsg(); 
+  /**
+  * @brief Funcao que retorna o emissor
+  * @return emissor
+  */
 	string getEmissor() const;
+  /**
+  * @brief Funcao que retorna a data
+  * @return data
+  */
 	Data getData() const;
+  /**
+  * @brief Funcao que retorna a hora
+  * @return hora
+  */
 	Horas getHora() const;
+  /**
+  * @brief Funcao que retorna o id
+  * @return id
+  */
 	static int getID(){return id;};
+  /**
+  * @brief Funcao que retorna o numero
+  * @return numero
+  */
 	int getNumero() const;
+  /**
+  * @brief Funcao que altera o emissor
+  * @param emissor
+  */
 	void setEmissor(string emissor);
 };
 
+/**
+* @brief Classe MsgTexto.
+* E uma classe derivada da classe Mensagem que representa o tipo de mensagem.
+*/
 class MsgTexto : public Mensagem{
 private:
 	string conteudo; /**< membro privado que representa o conteudo da mensagem de texto */
 public:
+  /**
+  * @brief Construtor de MsgTexto
+  * @param conteudo
+  * @param d data
+  * @param h hora
+  */
 	MsgTexto(string conteudo, Data d, Horas h);
+  /**
+  * @brief Funcao que retorna o conteudo
+  * @param conteudo
+  */
 	string getConteudo() const;
+  /**
+  * @brief Funcao que imprime no ecra a mensagem
+  */
 	void imprimirMsg();
 };
 
+/**
+* @brief Classe MsgVideo.
+* E uma classe derivada da classe Mensagem que representa o tipo de mensagem.
+*/
 class MsgVideo : public Mensagem{
 public:
+  /**
+  * @brief Construtor de MsgVideo
+  * @param d data
+  * @param h hora
+  */
 	MsgVideo(Data d, Horas h);
+  /**
+  * @brief Funcao que imprime no ecra a mensagem
+  */
 	void imprimirMsg();
 };
 
+/**
+* @brief Classe MsgImagem.
+* E uma classe derivada da classe Mensagem que representa o tipo de mensagem.
+*/
 class MsgImagem : public Mensagem{
 public:
+  /**
+  * @brief Construtor de MsgImagem
+  * @param d data
+  * @param h hora
+  */
 	MsgImagem(Data d, Horas h);
+  /**
+  * @brief Funcao que imprime no ecra a mensagem
+  */
 	void imprimirMsg();
 };
 
