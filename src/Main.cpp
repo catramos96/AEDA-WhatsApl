@@ -207,8 +207,7 @@ int headerInicio() {
 
 /**
 * @brief Funcao da interface inicial quando se inicializa o programa.
-* Mostra as diferentes opccoes do menu inicial desde criar novos utilzadores (registar) a entrar dentro do ambiente de um so utilizador (login).
-* Ao registar-se o utilizador e guardado na comunidade e so se pode efetuar o login se esse utilizador estiver na comunidade.
+* Mostra as diferentes opccoes do menu inicial e gere a escolhida.
 * @param c comunidade que contem todos os utilizadores inscritos.
 * @return Utilizador com quem se fez o login
 */
@@ -260,7 +259,10 @@ Utilizador * MenuInicial(Comunidade *c) {
 *                         MENU UTILIZADOR                        *
 *****************************************************************/
 
-//Opcao Amigos
+/**
+* @brief Funcao que analisa e gere a opccao amigos do utilizador.
+* @param u utilizador que se esta a gerir.
+*/
 void amigosUtilizador(Utilizador *u, Comunidade *c) {
   //Menu Amigos
   menuAmigos();
@@ -340,7 +342,9 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
   }
 }
 
-//Enviar mensagem
+/**
+* @brief Funcao que escreve uma mensagem
+*/
 Mensagem * escreverMsg() {
   int h, m, tipo;
   cout << "Hora (horas minutos): ";
@@ -375,7 +379,10 @@ Mensagem * escreverMsg() {
   return msg;
 }
 
-//Gerir Grupos
+/**
+* @brief Funcao que analisa e gere os grupos do utilizador.
+* @param u utilizador que se esta a gerir.
+*/
 void gerirGrupos(Utilizador *u,int i) {
   string login;
   int op;
@@ -485,7 +492,10 @@ void gerirGrupos(Utilizador *u,int i) {
   }
 }
 
-//Opcao Mensagens->Grupos
+/**
+* @brief Funcao que analisa e gere a opccao mensagens->grupos do utilizador.
+* @param u utilizador que se esta a gerir.
+*/
 void gruposUtilizador(Utilizador *u) {
   int op;
 
@@ -620,7 +630,10 @@ void gruposUtilizador(Utilizador *u) {
   esperar();
 }
 
-//Opcao Mensagens->Conversas
+/**
+* @brief Funcao que analisa e gere a opccao mensagens->conversas do utilizador.
+* @param u utilizador que se esta a gerir.
+*/
 void conversasUtilizador(Utilizador *u) {
   int op;
   int i;
@@ -700,7 +713,11 @@ void conversasUtilizador(Utilizador *u) {
   }
 }
 
-//Opcao Mensagens
+/**
+* @brief Funcao que gere a opccao mensagens do utilizador.
+* @param c comunidade que contem todos os utilizadores inscritos.
+* @param u utilizador que se esta a gerir.
+*/
 void mensagensUtilizador(Utilizador *u, Comunidade *c) {
   menuMensagens();
   int op;
@@ -723,7 +740,11 @@ void mensagensUtilizador(Utilizador *u, Comunidade *c) {
   }
 }
 
-//Opcao Definicoes
+/**
+* @brief Funcao que gere a opccao definicoes do utilizador.
+* @param c comunidade que contem todos os utilizadores inscritos.
+* @param u utilizador que se esta a gerir.
+*/
 void definicoesUtilizador(Utilizador *u, Comunidade *c) {
   //Menu Definicoes
   header("DEFINICOES");
@@ -815,7 +836,11 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
   esperar();
 }
 
-//header do menu Utilizador
+/**
+* @brief Funcao que mostra o menu do utilizador.
+* @param u utilizador que se esta a gerir.
+* @return op opccao escolhida do menu.
+*/
 int menuUtilizador(Utilizador *u) {
   clrscr();
   header("Utilizador - " + u->getLogin());
@@ -825,7 +850,11 @@ int menuUtilizador(Utilizador *u) {
   return op;
 }
 
-//Analiza a opcao escolhida do menu utilizador
+/**
+* @brief Funcao que analisa e gere a opccao op do menu do utilizador.
+* @param c comunidade que contem todos os utilizadores inscritos.
+* @param u utilizador que se esta a gerir.
+*/
 void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
   clrscr();
   switch (op)
@@ -880,7 +909,12 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
   }
 }
 
-//try e catch
+/**
+* @brief Funcao da interface do utilizador.
+* Mostra as diferentes opccoes do menu utilizador e gere a escolhida.
+* @param c comunidade que contem todos os utilizadores inscritos.
+* @param u utilizador que estamos a gerir.
+*/
 void MenuUtilizador(Utilizador *u, Comunidade *c) {
   bool terminar = false;
   int op;
@@ -956,6 +990,10 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
 *                             MAIN                               *
 *****************************************************************/
 
+/**
+* @brief Main do programa.
+* Gere a interacao entre os diferentes utilizadores de uma comunidade.
+*/
 int main() {
 
   Comunidade *c = new Comunidade;
