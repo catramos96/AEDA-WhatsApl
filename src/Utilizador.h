@@ -154,6 +154,9 @@ public:
 
 	void imprimirGruposAmigos() const;
 	Grupo *escolheGruposAmigos(int i) const;
+
+  void removerConversa(Conversa *c);
+  void sairConversa(Conversa * c);
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

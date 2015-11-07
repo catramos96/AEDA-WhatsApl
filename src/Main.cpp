@@ -138,8 +138,7 @@ void comunidade(Comunidade *c) {
 
   menuComunidadeOrdenada();
   c->printComunidade();
-  cout << endl;
-  esperar();
+  
 }
 
 //Analiza a opccao escolhida do menu
@@ -162,6 +161,8 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
   case 3:
   {
     comunidade(c);
+    cout << endl;
+    esperar();
     break;
   }
   case 4:
@@ -353,17 +354,9 @@ Mensagem * escreverMsg() {
 }
 
 //Gerir Grupos
-void gerirGrupos(Utilizador *u) {
+void gerirGrupos(Utilizador *u,int i) {
   string login;
-  int i, op;
-
-  header("GERIR");
-
-    u->imprimirGrupos();
-  cout << endl;
-
-  cout << "Gerir o grupo numero: ";
-  input<int>(i);
+  int op;
 
   Grupo *temp = u->getGrupo(i - 1); //grupo com que vamos trabalhar
   Utilizador *amigo; //membro que eventualmente vamos utilizar
@@ -552,21 +545,27 @@ void gruposUtilizador(Utilizador *u) {
       }
       case 3: //Gerir grupo
       {
-        gerirGrupos(u);
+        gerirGrupos(u,n);
         break;
       }
-      case 4: //Sair de um grupo
+      case 4: //Sair de um grupo ////REESCREVER
       {
         string login;
         Grupo *temp = u->getGrupo(n - 1); //grupo com que vamos trabalhar
 
-        if (temp->isModerador(u->getLogin())) { //se u for moderador precisa de escolher o proximo moderador
+        if (u->getGrupo(n - 1)->numMembros() == 1) { //Sou o unico membro
+          u->removerMembro(u, temp, dataHoje);
+          delete u->getGrupo(n - 1);
+        }
+        else if (temp->isModerador(u->getLogin())) { //se u for moderador precisa de escolher o proximo moderador
           temp->printMembros();
           cout << "Login do proximo moderador: ";
           input<string>(login);
           temp->setModerador(login, dataHoje);
+          u->removerMembro(u, temp, dataHoje);
         }
-        u->removerMembro(u, temp, dataHoje);
+        else
+          u->removerMembro(u, temp, dataHoje);
         cout << "Removido com sucesso! \n";
       }
       }
@@ -647,7 +646,7 @@ void conversasUtilizador(Utilizador *u) {
     u->imprimirConversas();
     cout << endl;
     cout << "Ver Conversa (1)" << endl;
-    cout << "Apagar Conversa (2)" << endl;
+    cout << "Sair de Conversa (2)" << endl;
     cout << "Voltar Atras (3)" << endl << endl;
     opccao(op, 1, 3);
 
@@ -655,13 +654,15 @@ void conversasUtilizador(Utilizador *u) {
       cout << "Conversa numero: ";
       input<int>(i);
 
-      if (i == 1) { //ver conversa x
+      if (op == 1) { //ver conversa x
         clrscr();
         header("Conversa - " + u->getDestinatarioConversa(u->getConversa(i - 1)));
         u->getConversa(i - 1)->imprimirConversa();
+        cout << endl;
       }
-      else {
-
+      else { //apagar conversa x
+        u->sairConversa(u->getConversa(i - 1));
+        cout << "\nSaida da conversa com sucesso!" << endl << endl;
       }
       esperar();
       throw VoltarAtras();

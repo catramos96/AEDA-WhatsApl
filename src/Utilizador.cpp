@@ -338,4 +338,15 @@ Grupo *Utilizador::escolheGruposAmigos(int pos) const{
 	return gruposAmigos.at(pos - 1);
 }
 
+void Utilizador::removerConversa(Conversa *c) {
+  for (int i = 0; i < conversas.size(); i++)
+  {
+    if (conversas[i] == c)
+      conversas.erase(conversas.begin() + i);
+  }
+}
 
+void Utilizador::sairConversa(Conversa *c) {
+  getAmigo(getDestinatarioConversa(c))->removerConversa(c);
+  removerConversa(c);
+}
