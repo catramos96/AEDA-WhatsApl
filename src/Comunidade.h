@@ -77,7 +77,7 @@ public:
 
 	bool existeLogin(string l) const;
 
-	int leComunidade();
+	void leComunidade();
 
 	int escreveComunidade();
 };

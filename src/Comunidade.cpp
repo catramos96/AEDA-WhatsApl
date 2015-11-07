@@ -97,15 +97,8 @@ void Comunidade::printComunidade() const{
 		cout << *comunidade.at(i) << endl;
 }
 
-int Comunidade::leComunidade(){
+void Comunidade::leComunidade(){
 	int d,m,a;
-	//bool visibilidade;
-	//string login, nome, email;
-	//vector<int> telemoveis;
-	//int idade;
-	//Data dataAdesao;
-	bool flag=true;
-	//bool flag2=true;
 	bool flag3=true;
 	bool flag4=true;
 	vector<string>amigos;
@@ -114,9 +107,9 @@ int Comunidade::leComunidade(){
 	ifstream myfile ("C:\\Users\\pedro\\Documents\\aeda2\\src\\comunidade.txt");
 	if (myfile.is_open())
 	{
-		getline (myfile,line);
-		while(flag){
+		while(myfile.good()){
 			Utilizador u;
+			getline (myfile,line);
 			u.setNome(line);
 			getline (myfile,line);
 			u.setLogin(line);
@@ -156,14 +149,15 @@ int Comunidade::leComunidade(){
 
 			adicionarUtil(&u);
 
-			if(getline (myfile,line))
-				flag=true;
-			else flag=false;
 		}
 	    myfile.close();
 	}
 
-	else cout << "Unable to open file";
+	else{
+		cout << "Unable to open file";
+		myfile.close();
+	}
+
 
 	for(size_t i=0;i<comunidade.size();i++){
 		for(size_t x=0;x<amigos.size();x++){
@@ -175,9 +169,6 @@ int Comunidade::leComunidade(){
 				comunidade[i]->addGrupo(existeGrupo(grupos[x]));
 			}
 		}
-
-
-	return 0;
 }
 
 

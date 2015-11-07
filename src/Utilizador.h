@@ -124,7 +124,7 @@ public:
   *@brief Funcao que retorna um vector com os grupos do meu circulo de amigos incluindo os meus
   *@return vector<Grupo *>
   */
-  vector<Grupo *> Utilizador::getGruposAmigos() const;
+  vector<Grupo *> getGruposAmigos() const;
   
 	/*****************************************************************
 	*                             SETS                               *
