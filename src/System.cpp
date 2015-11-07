@@ -207,12 +207,6 @@ void menuInicial(){
   cout << "SAIR (5)" << endl << endl;
 }
 
-void menuRegistar() {
-  header("REGISTAR");
-  cout << "Registar (1)" << endl;
-  cout << "Voltar Atras (2)" << endl << endl;
-}
-
 void menuComunidade() {
   header("COMUNIDADE");
   cout << "Ordenar por:" << endl;
