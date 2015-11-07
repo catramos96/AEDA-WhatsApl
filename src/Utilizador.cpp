@@ -291,12 +291,11 @@ void Utilizador::imprimirGruposAmigos() const{
 		for (size_t j = 0; j < temp.size(); j++)
 			gruposAmigos.push_back(temp.at(j));
 	}
-
 	eliminaRepetidos(gruposAmigos);
 
 	for (size_t k = 0; k < gruposAmigos.size(); k++){
 		cout << "Grupo: " << k + 1 << " , ";
-		grupos.at(k)->printGrupo();
+		gruposAmigos.at(k)->printGrupo();
 	}
 
 }

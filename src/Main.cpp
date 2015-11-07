@@ -859,6 +859,7 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
 *****************************************************************/
 
 int main() {
+
 	Comunidade *c = new Comunidade;
 	Utilizador *u = new Utilizador;
 	int d, m, a;

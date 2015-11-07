@@ -34,10 +34,15 @@ void insertionSort(vector<Comparable> &v)
 	}
 }
 
-template <class Comparable>
-void eliminaRepetidos(vector<Comparable*> &v){
-	for (unsigned int i = 0; i < v.size() - 1; i++) //dá o elemento
-		for (unsigned int j = i + 1; v.size(); j++) //percorre o vetor
-			if (v.at(i) == v.at(j))
+template<class Comparable>
+void eliminaRepetidos(vector<Comparable *> &v)
+{
+	int size = v.size();
+	for (unsigned int i = 0; i < size - 1; i++) //dá o elemento
+		for (unsigned int j = i + 1; j < size; j++) //percorre o vetor
+			if (v.at(i) == v.at(j)){
 				v.erase(v.begin() + j);
+				size--;
+				j--;
+			}
 }
