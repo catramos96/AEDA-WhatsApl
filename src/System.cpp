@@ -265,7 +265,7 @@ void menuGerirGrupos() {
   cout << "Remover utilizador (2)" << endl;
   cout << "Bloquear utilizador (3)" << endl;
   cout << "Desbloquear utilizador (4)" << endl;
-  cout << "Pedido de adesao (5)" << endl;
+  cout << "Pedidos de adesao (5)" << endl;
   cout << "Voltar Atras (6)" << endl << endl;
 }
 

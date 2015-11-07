@@ -202,7 +202,7 @@ public:
 	 * @brief Funcao que imprime o membro privado pedidos.
 	 */
 	void printPedidos() const;
-	/**
+	/*
 	 * @brief Funcao que retorna o numero de pedidos de adesao ao grupo
 	 * @return numero de pedidos
 	 */

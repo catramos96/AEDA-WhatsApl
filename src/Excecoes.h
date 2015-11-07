@@ -328,5 +328,24 @@ public:
 	 */
 	string getlogin() const{return p;};
 };
+/**
+* @brief Classe que representa uma excecao da classe conversa.
+* Esta excecao e lancada quando um utilizador escolhe a posicao de uma conversa que não existe 
+*/
+class ConversaInexistente {
+public:
+  /**
+  * @brief Construtor da classe ConversaInexistente
+  * @param i posicao da conversa inexistente
+  */
+  ConversaInexistente(int i) { this->i = i; };
+  /**
+  * @brief Funcao que retorna a posicao da conversa inexistente
+  * @return i
+  */
+  int getPosicao() const { return i; };
+private:
+  int i;/**< membro privado que representa a posicao que lancou a excessao */
+};
 
 #endif

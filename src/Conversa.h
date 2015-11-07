@@ -27,6 +27,7 @@ public:
 	vector<string> getParticipantes() const;
 	void ordenarData();
 	bool operator==(const Conversa&c)const;
+  void imprimirParticipantes() const;
 };
 
 #endif /* SRC_CONVERSA_H_ */

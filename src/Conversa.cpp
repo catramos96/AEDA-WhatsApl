@@ -93,3 +93,10 @@ bool comp(const Mensagem *m1, const Mensagem *m2){
 void Conversa::ordenarData(){
 	sort(mensagens.begin(), mensagens.end(), comp);
 }
+
+void Conversa::imprimirParticipantes() const {
+  for (unsigned int i = 0; i < participantes.size(); i++)
+  {
+    cout << participantes[i] << "  ";
+  }
+}

@@ -16,7 +16,7 @@ Comunidade::Comunidade(){
 }
 
 int Comunidade::existeUtil(Utilizador *util) const{
-  for (int i = 0; i < comunidade.size(); i++)
+  for (unsigned int i = 0; i < comunidade.size(); i++)
   {
     if (*comunidade[i] == *util)
       return i;

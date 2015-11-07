@@ -311,7 +311,7 @@ void Grupo::printGrupo() const {
 void Grupo::setModerador(string login, Data diaAtual) {
 	stringstream out;
 	bool encontrou = false;
-	for (int i = 0; i < membros.size(); i++)
+	for (unsigned int i = 0; i < membros.size(); i++)
 	{
 		if (membros[i].getLogin() == login) {
 			moderador = membros[i];

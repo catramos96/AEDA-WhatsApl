@@ -95,7 +95,19 @@ public:
 	* @ return grupos
 	*/
 	vector<Grupo *> getGrupos() const;
-
+  /**
+  * @ brief Funcao que retorna a conversa na posicao i
+  * @ param i posicao da conversa
+  * @ return conversas[i]
+  */
+  Conversa* getConversa(int i) const;
+  /**
+  * @ brief Funcao que retorna o nome destinatario da Conversa
+  * @ param c conversa
+  * @ return string (nome destinatario)
+  */
+  string getDestinatarioConversa(Conversa *c) const;
+  
 	/*****************************************************************
 	*                             SETS                               *
 	*****************************************************************/
@@ -118,6 +130,7 @@ public:
 	void imprimirUtilizador() const;
 	void imprimirAmigos() const;
 	void imprimirGrupos() const;
+  void imprimirConversas() const;
 
 	bool operator==(const Utilizador&u)const;
 	bool operator<(const Utilizador &u) const;

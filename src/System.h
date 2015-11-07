@@ -158,7 +158,8 @@ public:
 */
 void clrscr(void);
 /**
-* @brief template de uma classe excepção que é lançada quando o input não é do tipo correcto N
+* @brief função template que recebe um valor e verifica se é de acordo com o seu tipo
+* se não for de acordo lanca a excepção InputFail()
 * @param valor que é onde será guardado o valor de input
 */
 template <class N>

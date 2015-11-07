@@ -79,14 +79,27 @@ Utilizador* Utilizador::getAmigo(string login) const {
 }
 
 Grupo* Utilizador::getGrupo(int i) const {
-	if (i < 0 || i > grupos.size() - 1){
-		throw GrupoInexistente(i);
-	}
+	if (i < 0 || i >= grupos.size())
+		throw GrupoInexistente(i+1);
 	return grupos[i];
 }
 
 vector<Grupo *> Utilizador::getGrupos() const {
 	return grupos;
+}
+
+Conversa* Utilizador::getConversa(int i) const {
+  if (i < 0 || i >= conversas.size())
+    throw ConversaInexistente(i + 1);
+  return conversas[i];
+}
+
+string Utilizador::getDestinatarioConversa(Conversa *c) const {
+  for (int i = 0; i < c->getParticipantes().size(); i++)
+  {
+    if (c->getParticipantes()[i] != login)
+      return c->getParticipantes()[i];
+  }
 }
 
 void Utilizador::setLogin(string l)
@@ -186,6 +199,15 @@ void Utilizador::imprimirGrupos() const {
 		cout << "Grupo: " << i + 1 << " , ";
 		grupos.at(i)->printGrupo();
 	}
+}
+
+void Utilizador::imprimirConversas() const {
+  for (unsigned int i = 0; i < conversas.size(); i++)
+  {
+    cout << "Conversa: " << i + 1 << " , ";
+    conversas.at(i)->imprimirParticipantes();
+    cout << endl;
+  }
 }
 
 bool Utilizador::operator==(const Utilizador&u) const {
@@ -311,5 +333,9 @@ Grupo *Utilizador::escolheGruposAmigos(int pos) const{
 	}
 	eliminaRepetidos(gruposAmigos);
 
+  if (gruposAmigos.at(pos - 1) == NULL)
+    throw GrupoInexistente(pos);
 	return gruposAmigos.at(pos - 1);
 }
+
+
