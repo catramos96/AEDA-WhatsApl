@@ -111,7 +111,7 @@ int Comunidade::leComunidade(){
 	vector<string>amigos;
 	vector<string>grupos;
 	string line;
-	ifstream myfile ("comunidade.txt");
+	ifstream myfile ("C:\\Users\\pedro\\Documents\\aeda2\\src\\comunidade.txt");
 	if (myfile.is_open())
 	{
 		getline (myfile,line);
