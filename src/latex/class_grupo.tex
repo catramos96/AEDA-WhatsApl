@@ -60,7 +60,11 @@ void \hyperlink{class_grupo_ae358292c3dbb687910f0c4c365260a9c}{adicionar\+Pedido
 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o titulo do grupo. \end{DoxyCompactList}\item 
 void \hyperlink{class_grupo_afb167f10ddb461bcc4c3020b8c57df69}{set\+Moderador} (string login, \hyperlink{class_data}{Data} dia\+Atual)
-\begin{DoxyCompactList}\small\item\em Funcao que altera o moderador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao que altera o moderador. \end{DoxyCompactList}\item 
+void \hyperlink{class_grupo_a928e7d26214ada7c478d9959b7b63d1f}{coloca\+Membro} (\hyperlink{class_membro}{Membro} m)
+\begin{DoxyCompactList}\small\item\em Funcao que coloca um membro no vetor de membros. \end{DoxyCompactList}\item 
+void \hyperlink{class_grupo_a8f7b75882e8c20576254f316e9f2a866}{escreve\+Status} (string linha)
+\begin{DoxyCompactList}\small\item\em Funcao que escreve no status. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -158,6 +162,22 @@ Funcao que bloqueia um membro. Um membro bloqueado nao pode enviar mensagens den
 \begin{DoxyReturn}{Returns}
 True se o membro e bloqueado com sucesso e false se o membro ja se encontra bloqueado. 
 \end{DoxyReturn}
+\hypertarget{class_grupo_a928e7d26214ada7c478d9959b7b63d1f}{}\index{Grupo@{Grupo}!coloca\+Membro@{coloca\+Membro}}
+\index{coloca\+Membro@{coloca\+Membro}!Grupo@{Grupo}}
+\subsubsection[{coloca\+Membro(\+Membro m)}]{\setlength{\rightskip}{0pt plus 5cm}void Grupo\+::coloca\+Membro (
+\begin{DoxyParamCaption}
+\item[{{\bf Membro}}]{m}
+\end{DoxyParamCaption}
+)}\label{class_grupo_a928e7d26214ada7c478d9959b7b63d1f}
+
+
+Funcao que coloca um membro no vetor de membros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \hyperlink{class_membro}{Membro} \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_grupo_a8e58dce790752c7f19d67fabcc163ad3}{}\index{Grupo@{Grupo}!desbloquear\+Membro@{desbloquear\+Membro}}
 \index{desbloquear\+Membro@{desbloquear\+Membro}!Grupo@{Grupo}}
 \subsubsection[{desbloquear\+Membro(string login, string moderador, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::desbloquear\+Membro (
@@ -205,6 +225,22 @@ Funcao que envia uma mensagem para a conversa de grupo. Gera excecoes se o utili
 \begin{DoxyReturn}{Returns}
 True em caso de sucesso ou false se insucesso. 
 \end{DoxyReturn}
+\hypertarget{class_grupo_a8f7b75882e8c20576254f316e9f2a866}{}\index{Grupo@{Grupo}!escreve\+Status@{escreve\+Status}}
+\index{escreve\+Status@{escreve\+Status}!Grupo@{Grupo}}
+\subsubsection[{escreve\+Status(string linha)}]{\setlength{\rightskip}{0pt plus 5cm}void Grupo\+::escreve\+Status (
+\begin{DoxyParamCaption}
+\item[{string}]{linha}
+\end{DoxyParamCaption}
+)}\label{class_grupo_a8f7b75882e8c20576254f316e9f2a866}
+
+
+Funcao que escreve no status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em linha} & Linha que contem a informacao \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_grupo_ae47743b312afead1d38b67e9a770dff4}{}\index{Grupo@{Grupo}!existe\+Membro@{existe\+Membro}}
 \index{existe\+Membro@{existe\+Membro}!Grupo@{Grupo}}
 \subsubsection[{existe\+Membro(\+Membro m)}]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::existe\+Membro (

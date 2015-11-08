@@ -950,9 +950,9 @@ int main() {
 	Utilizador *u = new Utilizador;
 
 	c->leComunidade();
-	c->printComunidade();
-	c->escreveComunidade();
-	/*
+	//c->printComunidade();
+	//c->escreveComunidade();
+	
 	int d, m, a;
 	while (1) {
 		u = MenuInicial(c);
@@ -963,6 +963,6 @@ int main() {
 		dataHoje.setData(d, m, a);
 		MenuUtilizador(u, c);
 	}
-	*/
 	return 0;
+
 }

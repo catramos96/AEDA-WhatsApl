@@ -28,6 +28,13 @@ public:
 	int existeUtil(Utilizador *util) const;
 
 	/**
+	* @brief Funcao que procura um utilizador na comunidade pelo login
+	* @param login Login do utilizador
+	* @return posicao
+	*/
+	int existeUtilLogin(string login) const;
+
+	/**
 	 * @ brief Funcao que verifica a existencia de um certo utilizador
 	 * @ param util : indica o nome do utilizador
 	 * @ return posicao

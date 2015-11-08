@@ -11,6 +11,7 @@ var searchData=
   ['setlogin',['setLogin',['../class_utilizador.html#a11032f76b9d07c21e9111155519407c5',1,'Utilizador']]],
   ['setmoderador',['setModerador',['../class_grupo.html#afb167f10ddb461bcc4c3020b8c57df69',1,'Grupo']]],
   ['setnome',['setNome',['../class_utilizador.html#a27aeea3bb85f457a2d42ff6f0a1240dd',1,'Utilizador']]],
+  ['setnumero',['setNumero',['../class_mensagem.html#a042a57d4dca817ed0450340b42111a9a',1,'Mensagem']]],
   ['settelemovel',['setTelemovel',['../class_utilizador.html#a74e3737924910c4306bac26cacb5f8e1',1,'Utilizador']]],
   ['setvisibilidade',['setVisibilidade',['../class_utilizador.html#a2228288656c31e63710c31bf0d8eb58f',1,'Utilizador']]]
 ];

@@ -326,3 +326,10 @@ void Grupo::setModerador(string login, Data diaAtual) {
 		throw MembroInexistente(login);
 }
 
+void Grupo::colocaMembro(Membro m){
+	membros.push_back(m);
+}
+void Grupo::escreveStatus(string linha){
+	status.push_back(linha);
+}
+

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['colocamembro',['colocaMembro',['../class_grupo.html#a928e7d26214ada7c478d9959b7b63d1f',1,'Grupo']]],
   ['comunidade',['Comunidade',['../class_comunidade.html',1,'Comunidade'],['../class_comunidade.html#ad44e0775322f253c3c28bae06bf844de',1,'Comunidade::Comunidade()']]],
   ['conversa',['Conversa',['../class_conversa.html',1,'']]],
   ['conversainexistente',['ConversaInexistente',['../class_conversa_inexistente.html',1,'ConversaInexistente'],['../class_conversa_inexistente.html#a51efff1606ddff25d00824c51a5d6dac',1,'ConversaInexistente::ConversaInexistente()']]],

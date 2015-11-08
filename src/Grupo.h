@@ -237,6 +237,16 @@ public:
 	* @param diaAtual dia da mudanca.
 	*/
 	void setModerador(string login, Data diaAtual);
+	/**
+	* @brief Funcao que coloca um membro no vetor de membros
+	* @param m Membro
+	*/
+	void colocaMembro(Membro m);
+	/**
+	* @brief Funcao que escreve no status
+	* @param linha Linha que contem a informacao
+	*/
+	void escreveStatus(string linha);
 };
 
 #endif /* SRC_GRUPO_H_ */

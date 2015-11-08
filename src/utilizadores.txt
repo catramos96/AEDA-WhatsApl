@@ -9,22 +9,17 @@ pedrodc@outlook.com
 tomas
 quina
 -
-Familia
-amigos
--
-1 (visibilidade, 1=visivel, 0=privado)
+1
 Tomas Caldas
 tomas
 tomas@mail.com
 921321312
 20
 12
-2015
+2014
 19
 pedro
 quina
--
-amigos
 -
 1
 Ines Ferreira
@@ -33,11 +28,9 @@ quina@mail.com
 921321312
 20
 12
-2015
+2014
 20
 tomas
 pedro
--
-amigos
 -
 1

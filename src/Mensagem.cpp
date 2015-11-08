@@ -45,6 +45,10 @@ void Mensagem::setEmissor(string emissor){
 	this->emissor = emissor;
 }
 
+void Mensagem::setNumero(int num){
+	this->numero = num;
+}
+
 /********************************
  *		CLASSE MSG TEXTO		*
  *******************************/

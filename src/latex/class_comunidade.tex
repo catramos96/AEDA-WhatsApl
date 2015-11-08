@@ -17,6 +17,8 @@ Classe \hyperlink{class_comunidade}{Comunidade}. Class que contem e gere todos o
 \begin{DoxyCompactList}\small\item\em Construtor Construtor default que inicializa o vector de utilizadores a zero. \end{DoxyCompactList}\item 
 int \hyperlink{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{existe\+Util} (\hyperlink{class_utilizador}{Utilizador} $\ast$util) const 
 \item 
+int \hyperlink{class_comunidade_a467973e3790e6fdd832bb9702eb635bb}{existe\+Util\+Login} (string login) const 
+\begin{DoxyCompactList}\small\item\em Funcao que procura um utilizador na comunidade pelo login. \end{DoxyCompactList}\item 
 int \hyperlink{class_comunidade_a8c7188c4db52d049b25b158497ac8c14}{existe\+Util\+Nome} (string nome) const 
 \item 
 \hyperlink{class_grupo}{Grupo} $\ast$ \hyperlink{class_comunidade_adfc1f95d2fc409985c291bd29c9b7855}{existe\+Grupo} (string grupo) const 
@@ -69,7 +71,26 @@ Classe \hyperlink{class_comunidade}{Comunidade}. Class que contem e gere todos o
 \item[{{\bf Utilizador} $\ast$}]{util}
 \end{DoxyParamCaption}
 ) const}\label{class_comunidade_accf146332d17ad07080bcee3bb2a727c}
-@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o utilizador @ return posicao \hypertarget{class_comunidade_a8c7188c4db52d049b25b158497ac8c14}{}\index{Comunidade@{Comunidade}!existe\+Util\+Nome@{existe\+Util\+Nome}}
+@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o utilizador @ return posicao \hypertarget{class_comunidade_a467973e3790e6fdd832bb9702eb635bb}{}\index{Comunidade@{Comunidade}!existe\+Util\+Login@{existe\+Util\+Login}}
+\index{existe\+Util\+Login@{existe\+Util\+Login}!Comunidade@{Comunidade}}
+\subsubsection[{existe\+Util\+Login(string login) const }]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::existe\+Util\+Login (
+\begin{DoxyParamCaption}
+\item[{string}]{login}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_a467973e3790e6fdd832bb9702eb635bb}
+
+
+Funcao que procura um utilizador na comunidade pelo login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & Login do utilizador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+posicao 
+\end{DoxyReturn}
+\hypertarget{class_comunidade_a8c7188c4db52d049b25b158497ac8c14}{}\index{Comunidade@{Comunidade}!existe\+Util\+Nome@{existe\+Util\+Nome}}
 \index{existe\+Util\+Nome@{existe\+Util\+Nome}!Comunidade@{Comunidade}}
 \subsubsection[{existe\+Util\+Nome(string nome) const }]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::existe\+Util\+Nome (
 \begin{DoxyParamCaption}

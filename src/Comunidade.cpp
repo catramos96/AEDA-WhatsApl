@@ -23,6 +23,14 @@ int Comunidade::existeUtil(Utilizador *util) const {
 	return -1;
 }
 
+int Comunidade::existeUtilLogin(string login) const{
+	for (unsigned int i = 0; i < comunidade.size(); i++) {
+		if (comunidade[i]->getLogin() == login)
+			return i;   // encontrou
+	}
+	return -1;     // nao encontrou
+}
+
 int Comunidade::existeUtilNome(string nome) const {
 	for (unsigned int i = 0; i < comunidade.size(); i++) {
 		if (comunidade[i]->getNome() == nome)
@@ -95,75 +103,241 @@ void Comunidade::printComunidade() const {
 
 
 void Comunidade::leComunidade() {
-	int d, m, a;
+	int d, m, a, h, min, num, pos, bloq;
+	string titulo, moderador, novo;
 	bool flag3 = true;
-	bool flag4 = true;
-	vector<string> amigos;
-	vector<string> grupos;
+	vector<string> amigos; //amigos de 1 utilizador
+	vector<vector<string> > todosAmigos; // vetor com vetores de amigos. cada posicao corresponde a um utilizador pela ordem da comunidade
 	string line;
-	ifstream myfile("C:\\Users\\pedro\\Documents\\aeda2\\src\\comunidade.txt");
-	if (myfile.is_open()) {
-		while (!myfile.good())
+
+	/* parte 1 - le utilizadores */
+
+	ifstream util("C:\\utilizadores.txt");
+	if (util.is_open()) {
+		while (util.good())
 		{
-			cout << "+";
 			Utilizador *u = new Utilizador;
-			getline(myfile, line);
-			u->setNome(line);
-			getline(myfile, line);
-			u->setLogin(line);
-			getline(myfile, line);
-			u->setEmail(line);
-			getline(myfile, line);
-			u->setTelemovel(atoi(line.c_str()));
-			getline(myfile, line);
+			getline(util, line);
+			u->setNome(line);	//nome
+			getline(util, line);
+			u->setLogin(line);	//login
+			getline(util, line);
+			u->setEmail(line);	//email
+			getline(util, line);
+			u->setTelemovel(atoi(line.c_str()));	//telemovel
+			getline(util, line);
 			d = atoi(line.c_str());
-			getline(myfile, line);
+			getline(util, line);
 			m = atoi(line.c_str());
-			getline(myfile, line);
+			getline(util, line);
 			a = atoi(line.c_str());
-			u->setData(d, m, a);
-			getline(myfile, line);
-			u->setIdade(atoi(line.c_str()));
-			while (flag3) {
-				getline(myfile, line);
+			u->setData(d, m, a);	//data
+			getline(util, line);
+			u->setIdade(atoi(line.c_str()));	//idade
+			while (flag3) { //amigos
+				getline(util, line);
 				if (line == "-") {
 					flag3 = false;
 					break;
 				}
 				amigos.push_back(line);
-				//u.setAmigos(comunidade[existeUtilNome(line)]);
 			}
-			while (flag4) {
-				getline(myfile, line);
-				if (line == "-") {
-					flag4 = false;
-					break;
-				}
+			todosAmigos.push_back(amigos);
+			amigos.clear();
+			
+			getline(util, line);
+			u->setVisibilidade(atoi(line.c_str())); //visibilidade
 
-				//u.setGrupo(*existeGrupo(line));
-			}
-			getline(myfile, line);
-			u->setVisibilidade(atoi(line.c_str()));
 			adicionarUtil(u);
-			flag3 = true;
-			flag4 = true;
-		}
-		myfile.close();
-	}
 
+			flag3 = true;
+		}
+		util.close();
+	}
 	else {
 		cout << "Unable to open file";
-		myfile.close();
+		util.close();
 	}
-	for (size_t i = 0; i < comunidade.size(); i++) {
-		for (size_t x = 0; x < amigos.size(); x++) {
-			comunidade[i]->addAmigosAux(comunidade[existeUtilNome(amigos[x])]);
+
+	for (size_t i = 0; i < todosAmigos.size(); i++){
+		for (size_t j = 0; j < todosAmigos.at(i).size(); j++){
+			int pos = existeUtilLogin(todosAmigos.at(i).at(j));
+			if (pos != -1)
+				comunidade.at(i)->addAmigosAux(comunidade.at(pos));
 		}
 	}
-	for (size_t i = 0; i < comunidade.size(); i++) {
-		for (size_t x = 0; x < grupos.size(); x++) {
-			comunidade[i]->addGrupo(existeGrupo(grupos[x]));
+
+	/* parte 2 - le conversas */
+
+	ifstream conv("C:\\conversas.txt");
+	if (conv.is_open()) {
+		while (conv.good())
+		{
+			Conversa *c = new Conversa;
+
+			getline(conv, line); //adicionar participantes
+			c->adicionaParticipante(line);
+			pos = existeUtilLogin(line);
+			if (pos != -1)
+				comunidade.at(pos)->addConversa(c); //adiciona a conversa ao participante
+
+			getline(conv, line);
+			c->adicionaParticipante(line);
+			pos = existeUtilLogin(line);
+			if (pos != -1)
+				comunidade.at(pos)->addConversa(c);
+
+			while (line != "-"){ //adicionar mensagens
+				getline(conv, line);
+				d = atoi(line.c_str());
+				getline(conv, line);
+				m = atoi(line.c_str());
+				getline(conv, line);
+				a = atoi(line.c_str());
+				Data data(d, m, a);	//data
+				getline(conv, line);
+				h = atoi(line.c_str());
+				getline(conv, line);
+				min = atoi(line.c_str());
+				Horas hora(h, min);
+				getline(conv, line);
+				num = atoi(line.c_str()); //numero da mensagem
+				getline(conv, line);
+				if (line == "t"){ //mensagem de texto
+					getline(conv, line); //conteudo
+					Mensagem *sms = new MsgTexto(line, data, hora);
+					sms->setNumero(num);
+					getline(conv, line); //emissor
+					sms->setEmissor(line);
+					c->adicionaSms(sms);
+				}
+				else if (line == "v"){ //mensagem de video
+					Mensagem *sms = new MsgVideo(data, hora);
+					sms->setNumero(num);
+					getline(conv, line); //emissor
+					sms->setEmissor(line);
+					c->adicionaSms(sms);
+				}
+				else if (line == "i"){ //mensagem de imagem
+					Mensagem *sms = new MsgImagem(data, hora);
+					sms->setNumero(num);
+					getline(conv, line); //emissor
+					sms->setEmissor(line);
+					c->adicionaSms(sms);
+				}
+			}
 		}
+		conv.close();
+	}
+	else {
+		cout << "Unable to open file";
+		conv.close();
+	}
+
+	/* parte 3 - le grupos */
+
+	ifstream grupo("C:\\grupos.txt");
+	if (grupo.is_open()) {
+		while (grupo.good())
+		{
+			getline(grupo, line);
+			titulo = line;	//titulo
+			getline(grupo, line);
+			d = atoi(line.c_str());
+			getline(grupo, line);
+			m = atoi(line.c_str());
+			getline(grupo, line);
+			a = atoi(line.c_str());
+			Data datag(d, m, a);	//data
+			getline(grupo, line); //moderador
+			Grupo *g= new Grupo(titulo, datag, line);
+			moderador = line;
+
+			pos = existeUtilLogin(line); //adicionar o grupo ao utilizador
+			if (pos != -1)
+				comunidade.at(pos)->addGrupo(g);
+
+			getline(grupo, line);
+			while (line != "-"){ //membros
+				d = atoi(line.c_str());
+				getline(grupo, line);
+				m = atoi(line.c_str());
+				getline(grupo, line);
+				a = atoi(line.c_str());
+				Data dataAd(d, m, a); //data de addesao ao grupo
+				getline(grupo, line); //nome
+				g->adicionarMembro(line, moderador, dataAd); //juntar o membro ao grupo
+				novo = line;
+				getline(grupo, line);
+				bloq = atoi(line.c_str()); // se o bloqueio for = 0, nao fazemos mais nada
+				if (bloq == 1){ // se o bloqueio for 1 temos de ler a date de bloqueio
+					getline(grupo, line);
+					d = atoi(line.c_str());
+					getline(grupo, line);
+					m = atoi(line.c_str());
+					getline(grupo, line);
+					a = atoi(line.c_str());
+					Data datab(d, m, a); //data de addesao ao grupo
+					g->bloquearMembro(novo, moderador, datab);
+				}
+				pos = existeUtilLogin(novo); //adicionar o grupo ao utilizador
+				if (pos != -1)
+					comunidade.at(pos)->addGrupo(g);
+				getline(grupo, line);
+			}
+
+			getline(grupo, line);
+			while (line != "-"){ //pedidos de adesao
+				g->adicionarPedido(line);
+				getline(grupo, line);
+			}
+
+			getline(grupo, line);
+			while (line != "-"){ //conversa de grupo
+				d = atoi(line.c_str());
+				getline(grupo, line);
+				m = atoi(line.c_str());
+				getline(grupo, line);
+				a = atoi(line.c_str());
+				Data data(d, m, a);	//data
+				getline(grupo, line);
+				h = atoi(line.c_str());
+				getline(grupo, line);
+				min = atoi(line.c_str());
+				Horas hora(h, min); //horas
+				getline(grupo, line);
+				num = atoi(line.c_str()); //numero da mensagem
+				getline(grupo, line);
+				if (line == "t"){ //mensagem de texto
+					getline(grupo, line); //conteudo
+					Mensagem *sms = new MsgTexto(line, data, hora);
+					sms->setNumero(num);
+					getline(grupo, line); //emissor
+					sms->setEmissor(line);
+					g->enviarMensagem(line, sms);
+				}
+				else if (line == "v"){ //mensagem de video
+					Mensagem *sms = new MsgVideo(data, hora);
+					sms->setNumero(num);
+					getline(grupo, line); //emissor
+					sms->setEmissor(line);
+					g->enviarMensagem(line, sms);
+				}
+				else if (line == "i"){ //mensagem de imagem
+					Mensagem *sms = new MsgImagem(data, hora);
+					sms->setNumero(num);
+					getline(grupo, line); //emissor
+					sms->setEmissor(line);
+					g->enviarMensagem(line, sms);
+				}
+				getline(grupo, line);
+			}
+		}
+		grupo.close();
+	}
+	else {
+		cout << "Unable to open file";
+		conv.close();
 	}
 }
 

@@ -63,6 +63,11 @@ public:
   * @param emissor
   */
 	void setEmissor(string emissor);
+	/**
+	 * @brief Funcao que altera o numero da mensagem
+	 * @param num Numero novo
+	 */
+	void setNumero(int num);
 };
 
 /**
