@@ -950,6 +950,8 @@ int main() {
 	Utilizador *u = new Utilizador;
 
 	c->leComunidade();
+	c->printComunidade();
+	c->escreveComunidade();
 	/*
 	int d, m, a;
 	while (1) {

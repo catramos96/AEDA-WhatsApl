@@ -101,9 +101,10 @@ void Comunidade::leComunidade() {
 	vector<string> amigos;
 	vector<string> grupos;
 	string line;
-	ifstream myfile("C:\\ola.txt");
+	ifstream myfile("C:\\Users\\pedro\\Documents\\aeda2\\src\\comunidade.txt");
 	if (myfile.is_open()) {
-		while (!myfile.eof()) {
+		while (!myfile.good())
+		{
 			cout << "+";
 			Utilizador *u = new Utilizador;
 			getline(myfile, line);
@@ -167,7 +168,7 @@ void Comunidade::leComunidade() {
 }
 
 int Comunidade::escreveComunidade() {
-	ofstream myfile("example.txt");
+	ofstream myfile("comnidade2.txt");
 	if (myfile.is_open()) {
 		for (size_t i = 0; i < comunidade.size(); i++) {
 			myfile << comunidade[i]->getNome() << "\n";
