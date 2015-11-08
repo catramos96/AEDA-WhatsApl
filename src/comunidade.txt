@@ -9,7 +9,10 @@ pedrodc@outlook.com
 tomas
 quina
 -
-1
+Familia
+amigos
+-
+1 (visibilidade, 1=visivel, 0=privado)
 Tomas Caldas
 tomas
 tomas@mail.com
@@ -21,7 +24,9 @@ tomas@mail.com
 pedro
 quina
 -
-0
+amigos
+-
+1
 Ines Ferreira
 quina
 quina@mail.com
@@ -33,32 +38,6 @@ quina@mail.com
 tomas
 pedro
 -
-0
-Ines Gomes
-ines
-ines@mail.com
-923214212
-19
-10
-2015
-18
-tomas
-quina
-catarina
-pedro
--
-1
-Catarina Ramos
-catarina
-catarina@mail.com
-923213212
-13
-11
-2015
-19
-tomas
-pedro
-quina
-ines
+amigos
 -
 1
