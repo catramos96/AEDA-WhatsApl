@@ -1,162 +1,143 @@
 \hypertarget{class_utilizador}{}\section{Utilizador Class Reference}
 \label{class_utilizador}\index{Utilizador@{Utilizador}}
+
+
+Classe \hyperlink{class_utilizador}{Utilizador}. Cada \hyperlink{class_utilizador}{Utilizador} tem como unico o seu login e tem que ter como obrigatorio maior de 18 anos. A Classe \hyperlink{class_utilizador}{Utilizador} permite ter conversas e grupos com aqueles que apenas fazem parte do seu grupo de amigos. Esta Classe permite a gestao e a criacao de novos objectos \hyperlink{class_grupo}{Grupo}, \hyperlink{class_conversa}{Conversa} e Mensagens.  
+
+
+
+
+{\ttfamily \#include $<$Utilizador.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_utilizador_a264cb21da71b44fc2d5cfb21e58fa24a}{Utilizador} ()
-\item 
-\hyperlink{class_utilizador_aa0c2432b0a0f7b64ca5e7232ceec2869}{$\sim$\+Utilizador} ()
-\item 
+\hypertarget{class_utilizador_a264cb21da71b44fc2d5cfb21e58fa24a}{}\hyperlink{class_utilizador_a264cb21da71b44fc2d5cfb21e58fa24a}{Utilizador} ()\label{class_utilizador_a264cb21da71b44fc2d5cfb21e58fa24a}
+
+\begin{DoxyCompactList}\small\item\em Construtor \hyperlink{class_utilizador}{Utilizador};. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_aa0c2432b0a0f7b64ca5e7232ceec2869}{}\hyperlink{class_utilizador_aa0c2432b0a0f7b64ca5e7232ceec2869}{$\sim$\+Utilizador} ()\label{class_utilizador_aa0c2432b0a0f7b64ca5e7232ceec2869}
+
+\begin{DoxyCompactList}\small\item\em Destrutor \hyperlink{class_utilizador}{Utilizador};. \end{DoxyCompactList}\item 
 \hyperlink{class_utilizador_a470435e7e91ef2aa93eaf97b0615499b}{Utilizador} (bool visibilidade, string login, string nome, string email, \hyperlink{class_data}{Data} data\+Adesao, int telemovel, int idade)
-\item 
+\begin{DoxyCompactList}\small\item\em Construtor classe \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 string \hyperlink{class_utilizador_aa5af9c1385b0a93116dd8a80264b887a}{get\+Nome} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o nome do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 string \hyperlink{class_utilizador_a9fc99ac7634ff085ca0f3afd4d502cc7}{get\+Email} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o email do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 string \hyperlink{class_utilizador_ad6c565c391bd19de3462e50a4e05c9a6}{get\+Login} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o login do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 int \hyperlink{class_utilizador_a60b66b8e80767719861a2d712f1bcbe4}{get\+Telemovel} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o telemovel do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 int \hyperlink{class_utilizador_a9abaeb6fbff49683f57164a57e6f0c90}{get\+Idade} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a idade do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 bool \hyperlink{class_utilizador_a99cdee165a8446fb67f3e0cab0831e80}{get\+Visibilidade} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a visibilidade do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 \hyperlink{class_data}{Data} \hyperlink{class_utilizador_af6c41442d2029ccb1a135092a5c27007}{get\+Data\+Adesao} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a data de adesao do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{class_utilizador}{Utilizador} $\ast$ $>$ \hyperlink{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}{get\+Amigos} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna um vector de Utilizadores que sao os amigos do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 \hyperlink{class_utilizador}{Utilizador} $\ast$ \hyperlink{class_utilizador_a13a11370779713c7de00ea62f5c3799b}{get\+Amigo} (string login) const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna um apontador para um \hyperlink{class_utilizador}{Utilizador} dos amigos com um determinado login. \end{DoxyCompactList}\item 
 \hyperlink{class_grupo}{Grupo} $\ast$ \hyperlink{class_utilizador_a0b6cd97f274e49649b0c2c7ba0497261}{get\+Grupo} (int i) const 
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna um apontador para um \hyperlink{class_grupo}{Grupo} dos grupos de conversa de indice i. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{class_grupo}{Grupo} $\ast$ $>$ \hyperlink{class_utilizador_ad3f06aaa4199be8c1742e7126633ec26}{get\+Grupos} () const 
-\item 
-\hypertarget{class_utilizador_abacb3c819ca3de558fcab28f4af50c2e}{}void {\bfseries set\+Grupo} (\hyperlink{class_grupo}{Grupo} grupo)\label{class_utilizador_abacb3c819ca3de558fcab28f4af50c2e}
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os grupos do utilizador. \end{DoxyCompactList}\item 
+\hyperlink{class_conversa}{Conversa} $\ast$ \hyperlink{class_utilizador_a07745e2c5f5d9236aea0c7357f1325b7}{get\+Conversa} (int i) const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a conversa na posicao i. \end{DoxyCompactList}\item 
+string \hyperlink{class_utilizador_a5d4275b4d23d955ef295773d3d9eb3b5}{get\+Destinatario\+Conversa} (\hyperlink{class_conversa}{Conversa} $\ast$c) const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o nome destinatario da \hyperlink{class_conversa}{Conversa}. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_grupo}{Grupo} $\ast$ $>$ \hyperlink{class_utilizador_ac5e58137167b1cf097d10f862f036998}{get\+Grupos\+Amigos} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna um vector com os grupos do meu circulo de amigos. Esta funcao retira os grupos repetidos e os grupos que ja incluem o utilizador atual. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a11032f76b9d07c21e9111155519407c5}{set\+Login} (string l)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o login de um utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a27aeea3bb85f457a2d42ff6f0a1240dd}{set\+Nome} (string n)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o nome de um utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_aa5ad3c6ed417e2b3aebc96bfa5432dfb}{set\+Email} (string e)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o email de um utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_aacc48e9ec11446c11029c3d062533034}{set\+Idade} (int i)
+\begin{DoxyCompactList}\small\item\em Funcao que altera a idade do \hyperlink{class_utilizador}{Utilizador} lanca a excepção \hyperlink{class_idade_insuficiente}{Idade\+Insuficiente} se for $<$ 18. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a2228288656c31e63710c31bf0d8eb58f}{set\+Visibilidade} (bool v)
+\begin{DoxyCompactList}\small\item\em Funcao que altera a visibilidade de um utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a74e3737924910c4306bac26cacb5f8e1}{set\+Telemovel} (int t)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o telemovel de um utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a8cd2a3b9c962eeef6ffa497ce6e39a3c}{set\+Data} (int d, int m, int a)
+\begin{DoxyCompactList}\small\item\em Funcao que altera a data de adesao de um utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a4b31c37715158bd7f672b8d2a546883f}{add\+Amigos\+Aux} (\hyperlink{class_utilizador}{Utilizador} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona um utilizador aos amigos do utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a896ea43c9f3c7224b2985b012e14b70d}{add\+Amigo} (\hyperlink{class_utilizador}{Utilizador} \&u)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona um utilizador como amigos chama a funcao add\+Amigos\+Aux para adicionar o utilizador u aos meus amigos e para eu ser adicionado aos amigos de u. \end{DoxyCompactList}\item 
+bool \hyperlink{class_utilizador_ac67ae90cd1dd3f13884ae905536741ea}{add\+Grupo} (\hyperlink{class_grupo}{Grupo} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona um grupo aos grupos do utilizador se o grupo nao pertencer aos meus grupos. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_ad17ea854a0b048c52cc0bda0682a6533}{add\+Conversa} (\hyperlink{class_conversa}{Conversa} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona uma conversa as conversas do utilizador se a conversa já não existir. \end{DoxyCompactList}\item 
+bool \hyperlink{class_utilizador_a355f9a633b971d28a926cfcb3a20f8a7}{adiciona\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} d)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona um utilizador u a um grupo g, por iniciativa propria do moderador (sem pedido de adesao) Esta funcao chama a funcao adicionar\+Membro da classe grupo e coloca no vetor de grupos de u o novo grupo a que foi adicionado. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_ac779bbfd15bd307b86cc7c06793509a2}{remover\+Amigo\+Aux} (\hyperlink{class_utilizador}{Utilizador} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Funcao que retira o utilizador u dos amigos do utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_aeea440a088526eea36ebcc27d6472e4f}{remover\+Amigo} (\hyperlink{class_utilizador}{Utilizador} \&u)
+\begin{DoxyCompactList}\small\item\em Funcao que remove u dos meus amigos e eu dos amigos de u usando a fun$\sim$cao remover\+Amigo\+Aux. \end{DoxyCompactList}\item 
+bool \hyperlink{class_utilizador_a05e62bd42a3e3a324cea8d9c998c2391}{remover\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} dia\+Atual)
+\begin{DoxyCompactList}\small\item\em Funcao que remove um utilizador u de um grupo g. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a2f5cc4525c249995615ec7693230ee0d}{remover\+Conversa} (\hyperlink{class_conversa}{Conversa} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Funcao que remove a conversa c das conversas do utilizador. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_a1d4b8650dfe1d7a86f10192153e132d5}{}void \hyperlink{class_utilizador_a1d4b8650dfe1d7a86f10192153e132d5}{imprimir\+Definicoes} () const \label{class_utilizador_a1d4b8650dfe1d7a86f10192153e132d5}
 
-\item 
-\hypertarget{class_utilizador_a11032f76b9d07c21e9111155519407c5}{}void {\bfseries set\+Login} (string l)\label{class_utilizador_a11032f76b9d07c21e9111155519407c5}
+\begin{DoxyCompactList}\small\item\em Funcao que imprime no ecra as definicoes do utilizador. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_abf2814a0783cdc5ef39326981474767b}{}void \hyperlink{class_utilizador_abf2814a0783cdc5ef39326981474767b}{imprimir\+Utilizador} () const \label{class_utilizador_abf2814a0783cdc5ef39326981474767b}
 
-\item 
-\hypertarget{class_utilizador_a27aeea3bb85f457a2d42ff6f0a1240dd}{}void {\bfseries set\+Nome} (string n)\label{class_utilizador_a27aeea3bb85f457a2d42ff6f0a1240dd}
+\begin{DoxyCompactList}\small\item\em Funcao que imprime no ecra o perfil do utilizador com as informações do mesmo dependendo da visibilidade. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_a433c888d3d5d669cda5fcb8d22832b37}{}void \hyperlink{class_utilizador_a433c888d3d5d669cda5fcb8d22832b37}{imprimir\+Amigos} () const \label{class_utilizador_a433c888d3d5d669cda5fcb8d22832b37}
 
-\item 
-\hypertarget{class_utilizador_a97ccfb2ed2a5cff9a7464760e10e1102}{}void {\bfseries set\+Email} (string)\label{class_utilizador_a97ccfb2ed2a5cff9a7464760e10e1102}
+\begin{DoxyCompactList}\small\item\em Funcao que imprime no ecra os amigos do utilizador. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_ad4bf7b549a337d684e43189db2d0d57c}{}void \hyperlink{class_utilizador_ad4bf7b549a337d684e43189db2d0d57c}{imprimir\+Grupos} () const \label{class_utilizador_ad4bf7b549a337d684e43189db2d0d57c}
 
-\item 
-\hypertarget{class_utilizador_aacc48e9ec11446c11029c3d062533034}{}void {\bfseries set\+Idade} (int i)\label{class_utilizador_aacc48e9ec11446c11029c3d062533034}
+\begin{DoxyCompactList}\small\item\em Funcao que imprime no ecra os grupos do utilizador. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_a14ea24f6a46b47206709bbb1c99247b2}{}void \hyperlink{class_utilizador_a14ea24f6a46b47206709bbb1c99247b2}{imprimir\+Conversas} () const \label{class_utilizador_a14ea24f6a46b47206709bbb1c99247b2}
 
-\item 
-\hypertarget{class_utilizador_a2228288656c31e63710c31bf0d8eb58f}{}void {\bfseries set\+Visibilidade} (bool v)\label{class_utilizador_a2228288656c31e63710c31bf0d8eb58f}
+\begin{DoxyCompactList}\small\item\em Funcao que imprime no ecra as conversas do utilizador. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_af66c1361f6bb54a587c405adb71d50d5}{}void \hyperlink{class_utilizador_af66c1361f6bb54a587c405adb71d50d5}{imprimir\+Grupos\+Amigos} () const \label{class_utilizador_af66c1361f6bb54a587c405adb71d50d5}
 
-\item 
-\hypertarget{class_utilizador_a3c3b8ed8bee11547245a7f13bfa7a8e7}{}void {\bfseries set\+Amigos} (\hyperlink{class_utilizador}{Utilizador} $\ast$u)\label{class_utilizador_a3c3b8ed8bee11547245a7f13bfa7a8e7}
-
-\item 
-\hypertarget{class_utilizador_a1e34ab70d4af4af911ec7e070189bbe5}{}void {\bfseries set\+Telemovel} (int i)\label{class_utilizador_a1e34ab70d4af4af911ec7e070189bbe5}
-
-\item 
-\hypertarget{class_utilizador_a8cd2a3b9c962eeef6ffa497ce6e39a3c}{}void {\bfseries set\+Data} (int d, int m, int a)\label{class_utilizador_a8cd2a3b9c962eeef6ffa497ce6e39a3c}
-
-\item 
-\hypertarget{class_utilizador_a896ea43c9f3c7224b2985b012e14b70d}{}void {\bfseries add\+Amigo} (\hyperlink{class_utilizador}{Utilizador} \&u)\label{class_utilizador_a896ea43c9f3c7224b2985b012e14b70d}
-
-\item 
-\hypertarget{class_utilizador_ac779bbfd15bd307b86cc7c06793509a2}{}void {\bfseries remover\+Amigo\+Aux} (\hyperlink{class_utilizador}{Utilizador} $\ast$u)\label{class_utilizador_ac779bbfd15bd307b86cc7c06793509a2}
-
-\item 
-\hypertarget{class_utilizador_aeea440a088526eea36ebcc27d6472e4f}{}void {\bfseries remover\+Amigo} (\hyperlink{class_utilizador}{Utilizador} \&u)\label{class_utilizador_aeea440a088526eea36ebcc27d6472e4f}
-
-\item 
-\hypertarget{class_utilizador_a1d4b8650dfe1d7a86f10192153e132d5}{}void {\bfseries imprimir\+Definicoes} () const \label{class_utilizador_a1d4b8650dfe1d7a86f10192153e132d5}
-
-\item 
-\hypertarget{class_utilizador_abf2814a0783cdc5ef39326981474767b}{}void {\bfseries imprimir\+Utilizador} () const \label{class_utilizador_abf2814a0783cdc5ef39326981474767b}
-
-\item 
-\hypertarget{class_utilizador_a433c888d3d5d669cda5fcb8d22832b37}{}void {\bfseries imprimir\+Amigos} () const \label{class_utilizador_a433c888d3d5d669cda5fcb8d22832b37}
-
-\item 
-\hypertarget{class_utilizador_ad4bf7b549a337d684e43189db2d0d57c}{}void {\bfseries imprimir\+Grupos} () const \label{class_utilizador_ad4bf7b549a337d684e43189db2d0d57c}
-
-\item 
-\hypertarget{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}{}bool {\bfseries operator==} (const \hyperlink{class_utilizador}{Utilizador} \&u) const \label{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}
-
-\item 
-\hypertarget{class_utilizador_a19b6202cece0cde531de23a1fd24b4c6}{}bool {\bfseries operator$<$} (const \hyperlink{class_utilizador}{Utilizador} \&u) const \label{class_utilizador_a19b6202cece0cde531de23a1fd24b4c6}
-
-\item 
-\hypertarget{class_utilizador_add4089c62dfb1b5ef5a9d320073e078f}{}\hyperlink{class_conversa}{Conversa} $\ast$ {\bfseries criar\+Conversa} (\hyperlink{class_utilizador}{Utilizador} $\ast$u)\label{class_utilizador_add4089c62dfb1b5ef5a9d320073e078f}
-
-\item 
-\hypertarget{class_utilizador_abd1eca6464a9825467763b1478cbc911}{}void {\bfseries adicionar\+Conversa} (\hyperlink{class_conversa}{Conversa} $\ast$c)\label{class_utilizador_abd1eca6464a9825467763b1478cbc911}
-
-\item 
-\hypertarget{class_utilizador_a7fba688a167c9ffedec736f21e28ea64}{}void {\bfseries enviar\+Mensagem} (\hyperlink{class_mensagem}{Mensagem} $\ast$sms, \hyperlink{class_conversa}{Conversa} $\ast$c)\label{class_utilizador_a7fba688a167c9ffedec736f21e28ea64}
-
-\item 
-\hypertarget{class_utilizador_aba7f8c8306ae34617d5af06678a8cd12}{}void {\bfseries pedir\+Adesao} (\hyperlink{class_grupo}{Grupo} $\ast$g)\label{class_utilizador_aba7f8c8306ae34617d5af06678a8cd12}
-
-\item 
-\hypertarget{class_utilizador_a68471f49e5980a4bf43d48b7ce2118a3}{}\hyperlink{class_grupo}{Grupo} $\ast$ {\bfseries criar\+Grupo} (string titulo, \hyperlink{class_data}{Data} data\+Atual)\label{class_utilizador_a68471f49e5980a4bf43d48b7ce2118a3}
-
-\item 
-\hypertarget{class_utilizador_abf4ecb088d3ce0512d3225a77a958536}{}bool {\bfseries adicionar\+Grupo} (\hyperlink{class_grupo}{Grupo} $\ast$g)\label{class_utilizador_abf4ecb088d3ce0512d3225a77a958536}
-
-\item 
-\hypertarget{class_utilizador_a488989600af5553e7377812fdd611fe6}{}bool {\bfseries eliminar\+Grupo} (\hyperlink{class_grupo}{Grupo} $\ast$g)\label{class_utilizador_a488989600af5553e7377812fdd611fe6}
-
-\item 
-\hypertarget{class_utilizador_af58be0db512c246659d4fc5210bdc081}{}void {\bfseries enviar\+Mensagem\+Grupo} (\hyperlink{class_mensagem}{Mensagem} $\ast$sms, \hyperlink{class_grupo}{Grupo} $\ast$g)\label{class_utilizador_af58be0db512c246659d4fc5210bdc081}
-
-\item 
-\hypertarget{class_utilizador_a355f9a633b971d28a926cfcb3a20f8a7}{}bool {\bfseries adiciona\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} d)\label{class_utilizador_a355f9a633b971d28a926cfcb3a20f8a7}
-
-\item 
-\hypertarget{class_utilizador_a0f6e7e02554b5d9cadc81c0f089f4a76}{}bool {\bfseries aceita\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} d)\label{class_utilizador_a0f6e7e02554b5d9cadc81c0f089f4a76}
-
-\item 
-\hypertarget{class_utilizador_aa31a2ff79c063bce4c810eaae801bdd5}{}bool {\bfseries rejeita\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} d)\label{class_utilizador_aa31a2ff79c063bce4c810eaae801bdd5}
-
-\item 
-\hypertarget{class_utilizador_a70f4f75f649f4ca5aefebc99e556a20b}{}bool {\bfseries bloquear\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} dia\+Atual)\label{class_utilizador_a70f4f75f649f4ca5aefebc99e556a20b}
-
-\item 
-\hypertarget{class_utilizador_a7424cd944ea535338280e821666768f7}{}bool {\bfseries desbloquear\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} dia\+Atual)\label{class_utilizador_a7424cd944ea535338280e821666768f7}
-
-\item 
-\hypertarget{class_utilizador_a05e62bd42a3e3a324cea8d9c998c2391}{}bool {\bfseries remover\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} dia\+Atual)\label{class_utilizador_a05e62bd42a3e3a324cea8d9c998c2391}
-
-\item 
-\hypertarget{class_utilizador_af66c1361f6bb54a587c405adb71d50d5}{}void {\bfseries imprimir\+Grupos\+Amigos} () const \label{class_utilizador_af66c1361f6bb54a587c405adb71d50d5}
-
-\item 
-\hypertarget{class_utilizador_a8292ead93b56ba0c48b9fc92265134c3}{}\hyperlink{class_grupo}{Grupo} $\ast$ {\bfseries escolhe\+Grupos\+Amigos} (int i) const \label{class_utilizador_a8292ead93b56ba0c48b9fc92265134c3}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao que imprime no ecra todos os grupos (não repetidos) de todos os amigos do utilizador incluindo os do proprio. \end{DoxyCompactList}\item 
+bool \hyperlink{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}{operator==} (const \hyperlink{class_utilizador}{Utilizador} \&u) const 
+\begin{DoxyCompactList}\small\item\em overloading do operador == que compara o utilzador e u \end{DoxyCompactList}\item 
+bool \hyperlink{class_utilizador_a19b6202cece0cde531de23a1fd24b4c6}{operator$<$} (const \hyperlink{class_utilizador}{Utilizador} \&u) const 
+\begin{DoxyCompactList}\small\item\em overloading do operador $<$ que compara o utilzador e u \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_ad6fcf7fc9cf998c5578ce64cc0721a9b}{sair\+Conversa} (\hyperlink{class_conversa}{Conversa} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Funcao que me remove a conversa c das minhas conversas e c das conversas do destinatario da mesma. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a6b77341ab59960b86c54a0a82c100f5c}{sair\+Grupo} (\hyperlink{class_grupo}{Grupo} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Funcao que remove o grupo g dos meus grupos. \end{DoxyCompactList}\item 
+\hyperlink{class_conversa}{Conversa} $\ast$ \hyperlink{class_utilizador_add4089c62dfb1b5ef5a9d320073e078f}{criar\+Conversa} (\hyperlink{class_utilizador}{Utilizador} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Funcao que cria uma conversa com o utilizador u e adiciona-\/a as conversas de ambos os participantes. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_a7fba688a167c9ffedec736f21e28ea64}{enviar\+Mensagem} (\hyperlink{class_mensagem}{Mensagem} $\ast$sms, \hyperlink{class_conversa}{Conversa} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona uma mensagem a uma conversa. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_aba7f8c8306ae34617d5af06678a8cd12}{pedir\+Adesao} (\hyperlink{class_grupo}{Grupo} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona um pedido de adesao do utilizador ao grupo g. \end{DoxyCompactList}\item 
+\hyperlink{class_grupo}{Grupo} $\ast$ \hyperlink{class_utilizador_a68471f49e5980a4bf43d48b7ce2118a3}{criar\+Grupo} (string titulo, \hyperlink{class_data}{Data} data\+Atual)
+\begin{DoxyCompactList}\small\item\em Funcao que cria um grupo e o adiciona aos grupos do utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_af58be0db512c246659d4fc5210bdc081}{enviar\+Mensagem\+Grupo} (\hyperlink{class_mensagem}{Mensagem} $\ast$sms, \hyperlink{class_grupo}{Grupo} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Funcao que envia uma mensagem para um grupo. \end{DoxyCompactList}\item 
+bool \hyperlink{class_utilizador_a0f6e7e02554b5d9cadc81c0f089f4a76}{aceita\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} d)
+\begin{DoxyCompactList}\small\item\em Funcao que aceita um utilizador num grupo. O utilizador atual pode aceitar um pedido de adesao de um utilizador a um dado grupo, desde que o utilizador atual seja o moderador do grupo. Chama a classe pedido\+Adesao da classe grupo. \end{DoxyCompactList}\item 
+bool \hyperlink{class_utilizador_aa31a2ff79c063bce4c810eaae801bdd5}{rejeita\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} d)
+\begin{DoxyCompactList}\small\item\em Funcao que rejeita um utilizador num grupo. O utilizador atual pode rejeitar um pedido de adesao de um utilizador a um dado grupo, desde que o utilizador atual seja o moderador do grupo. Chama a funcao pedido\+Adesao da classe grupo. \end{DoxyCompactList}\item 
+bool \hyperlink{class_utilizador_a70f4f75f649f4ca5aefebc99e556a20b}{bloquear\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} dia\+Atual)
+\begin{DoxyCompactList}\small\item\em Funcao que bloqueia um utilizador de um grupo. O utilizador atual pode bloquear outro utilizador de um dado grupo, desde que o utilizador atual seja o moderador do grupo. Esta funcao chama a funcao bloquear\+Membro da classe grupo. \end{DoxyCompactList}\item 
+bool \hyperlink{class_utilizador_a7424cd944ea535338280e821666768f7}{desbloquear\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} dia\+Atual)
+\begin{DoxyCompactList}\small\item\em Funcao que desbloqueia um utilizador de um grupo. O utilizador atual pode desbloquear outro utilizador de um dado grupo, desde que o utilizador atual seja o moderador do grupo. Esta funcao chama a funcao desbloquear\+Membro da classe grupo. \end{DoxyCompactList}\item 
+\hyperlink{class_grupo}{Grupo} $\ast$ \hyperlink{class_utilizador_a8292ead93b56ba0c48b9fc92265134c3}{escolhe\+Grupos\+Amigos} (int i) const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o grupo escolhido pelo utilizador. Antes desta função é feito um print dos grupos do circulo de amigos do utilizador com numeros. A partir dai o utilizador escolhe um grupo que é devolvido pela funcao. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_utilizador_ad02a468bf3828d06a96b41947147c754}{}ostream \& {\bfseries operator$<$$<$} (ostream \&out, const \hyperlink{class_utilizador}{Utilizador} \&u)\label{class_utilizador_ad02a468bf3828d06a96b41947147c754}
+ostream \& \hyperlink{class_utilizador_ad02a468bf3828d06a96b41947147c754}{operator$<$$<$} (ostream \&out, const \hyperlink{class_utilizador}{Utilizador} \&u)
+\begin{DoxyCompactList}\small\item\em overloading do operador $<$$<$ do utilizador \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\end{DoxyCompactItemize}
 
+\subsection{Detailed Description}
+Classe \hyperlink{class_utilizador}{Utilizador}. Cada \hyperlink{class_utilizador}{Utilizador} tem como unico o seu login e tem que ter como obrigatorio maior de 18 anos. A Classe \hyperlink{class_utilizador}{Utilizador} permite ter conversas e grupos com aqueles que apenas fazem parte do seu grupo de amigos. Esta Classe permite a gestao e a criacao de novos objectos \hyperlink{class_grupo}{Grupo}, \hyperlink{class_conversa}{Conversa} e Mensagens. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_utilizador_a264cb21da71b44fc2d5cfb21e58fa24a}{}\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
-\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
-\subsubsection[{Utilizador()}]{\setlength{\rightskip}{0pt plus 5cm}Utilizador\+::\+Utilizador (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{class_utilizador_a264cb21da71b44fc2d5cfb21e58fa24a}
-@ brief Construtor \hyperlink{class_utilizador}{Utilizador}; \hypertarget{class_utilizador_aa0c2432b0a0f7b64ca5e7232ceec2869}{}\index{Utilizador@{Utilizador}!````~Utilizador@{$\sim$\+Utilizador}}
-\index{````~Utilizador@{$\sim$\+Utilizador}!Utilizador@{Utilizador}}
-\subsubsection[{$\sim$\+Utilizador()}]{\setlength{\rightskip}{0pt plus 5cm}Utilizador\+::$\sim$\+Utilizador (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{class_utilizador_aa0c2432b0a0f7b64ca5e7232ceec2869}
-@ brief Destrutor \hyperlink{class_utilizador}{Utilizador}; \hypertarget{class_utilizador_a470435e7e91ef2aa93eaf97b0615499b}{}\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
+\hypertarget{class_utilizador_a470435e7e91ef2aa93eaf97b0615499b}{}\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
 \index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
 \subsubsection[{Utilizador(bool visibilidade, string login, string nome, string email, Data data\+Adesao, int telemovel, int idade)}]{\setlength{\rightskip}{0pt plus 5cm}Utilizador\+::\+Utilizador (
 \begin{DoxyParamCaption}
@@ -169,9 +150,295 @@ vector$<$ \hyperlink{class_grupo}{Grupo} $\ast$ $>$ \hyperlink{class_utilizador_
 \item[{int}]{idade}
 \end{DoxyParamCaption}
 )}\label{class_utilizador_a470435e7e91ef2aa93eaf97b0615499b}
-@ brief Construtor que inicializa a visiblidade, login, email, data de adesao, telemovel e idade) 
+
+
+Construtor classe \hyperlink{class_utilizador}{Utilizador}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visibilidade} & do utilizador \\
+\hline
+{\em login} & do utilizador \\
+\hline
+{\em nome} & do utilizador \\
+\hline
+{\em email} & do utilizador \\
+\hline
+{\em data\+Adesao} & data de adesao do utilizador \\
+\hline
+{\em telemovel} & do utilizador \\
+\hline
+{\em idade} & do utilizador \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
+\hypertarget{class_utilizador_a0f6e7e02554b5d9cadc81c0f089f4a76}{}\index{Utilizador@{Utilizador}!aceita\+Membro@{aceita\+Membro}}
+\index{aceita\+Membro@{aceita\+Membro}!Utilizador@{Utilizador}}
+\subsubsection[{aceita\+Membro(\+Utilizador $\ast$u, Grupo $\ast$g, Data d)}]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::aceita\+Membro (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{u, }
+\item[{{\bf Grupo} $\ast$}]{g, }
+\item[{{\bf Data}}]{d}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a0f6e7e02554b5d9cadc81c0f089f4a76}
+
+
+Funcao que aceita um utilizador num grupo. O utilizador atual pode aceitar um pedido de adesao de um utilizador a um dado grupo, desde que o utilizador atual seja o moderador do grupo. Chama a classe pedido\+Adesao da classe grupo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \hyperlink{class_utilizador}{Utilizador} que efetuou o pedido de adesao \\
+\hline
+{\em g} & \hyperlink{class_grupo}{Grupo} ao qual se quer juntar \\
+\hline
+{\em d} & \hyperlink{class_data}{Data} em que se juntou ao grupo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se bem sucedido ou false se nao. 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a896ea43c9f3c7224b2985b012e14b70d}{}\index{Utilizador@{Utilizador}!add\+Amigo@{add\+Amigo}}
+\index{add\+Amigo@{add\+Amigo}!Utilizador@{Utilizador}}
+\subsubsection[{add\+Amigo(\+Utilizador \&u)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::add\+Amigo (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} \&}]{u}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a896ea43c9f3c7224b2985b012e14b70d}
+
+
+Funcao que adiciona um utilizador como amigos chama a funcao add\+Amigos\+Aux para adicionar o utilizador u aos meus amigos e para eu ser adicionado aos amigos de u. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & utilizador a adicionar \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a4b31c37715158bd7f672b8d2a546883f}{}\index{Utilizador@{Utilizador}!add\+Amigos\+Aux@{add\+Amigos\+Aux}}
+\index{add\+Amigos\+Aux@{add\+Amigos\+Aux}!Utilizador@{Utilizador}}
+\subsubsection[{add\+Amigos\+Aux(\+Utilizador $\ast$u)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::add\+Amigos\+Aux (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{u}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a4b31c37715158bd7f672b8d2a546883f}
+
+
+Funcao que adiciona um utilizador aos amigos do utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & utilizador a adicionar \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_ad17ea854a0b048c52cc0bda0682a6533}{}\index{Utilizador@{Utilizador}!add\+Conversa@{add\+Conversa}}
+\index{add\+Conversa@{add\+Conversa}!Utilizador@{Utilizador}}
+\subsubsection[{add\+Conversa(\+Conversa $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::add\+Conversa (
+\begin{DoxyParamCaption}
+\item[{{\bf Conversa} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_ad17ea854a0b048c52cc0bda0682a6533}
+
+
+Funcao que adiciona uma conversa as conversas do utilizador se a conversa já não existir. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & conversa a adicionar \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_ac67ae90cd1dd3f13884ae905536741ea}{}\index{Utilizador@{Utilizador}!add\+Grupo@{add\+Grupo}}
+\index{add\+Grupo@{add\+Grupo}!Utilizador@{Utilizador}}
+\subsubsection[{add\+Grupo(\+Grupo $\ast$g)}]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::add\+Grupo (
+\begin{DoxyParamCaption}
+\item[{{\bf Grupo} $\ast$}]{g}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_ac67ae90cd1dd3f13884ae905536741ea}
+
+
+Funcao que adiciona um grupo aos grupos do utilizador se o grupo nao pertencer aos meus grupos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & grupo a adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true -\/ adicionado , false -\/ já existe (não adicionado) 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a355f9a633b971d28a926cfcb3a20f8a7}{}\index{Utilizador@{Utilizador}!adiciona\+Membro@{adiciona\+Membro}}
+\index{adiciona\+Membro@{adiciona\+Membro}!Utilizador@{Utilizador}}
+\subsubsection[{adiciona\+Membro(\+Utilizador $\ast$u, Grupo $\ast$g, Data d)}]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::adiciona\+Membro (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{u, }
+\item[{{\bf Grupo} $\ast$}]{g, }
+\item[{{\bf Data}}]{d}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a355f9a633b971d28a926cfcb3a20f8a7}
+
+
+Funcao que adiciona um utilizador u a um grupo g, por iniciativa propria do moderador (sem pedido de adesao) Esta funcao chama a funcao adicionar\+Membro da classe grupo e coloca no vetor de grupos de u o novo grupo a que foi adicionado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & utilizador a adicionar \\
+\hline
+{\em g} & grupo a adicionar \\
+\hline
+{\em d} & data de adicionado\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool , true -\/ adicionado , false -\/ nao adicionado 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a70f4f75f649f4ca5aefebc99e556a20b}{}\index{Utilizador@{Utilizador}!bloquear\+Membro@{bloquear\+Membro}}
+\index{bloquear\+Membro@{bloquear\+Membro}!Utilizador@{Utilizador}}
+\subsubsection[{bloquear\+Membro(\+Utilizador $\ast$u, Grupo $\ast$g, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::bloquear\+Membro (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{u, }
+\item[{{\bf Grupo} $\ast$}]{g, }
+\item[{{\bf Data}}]{dia\+Atual}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a70f4f75f649f4ca5aefebc99e556a20b}
+
+
+Funcao que bloqueia um utilizador de um grupo. O utilizador atual pode bloquear outro utilizador de um dado grupo, desde que o utilizador atual seja o moderador do grupo. Esta funcao chama a funcao bloquear\+Membro da classe grupo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \hyperlink{class_utilizador}{Utilizador} que vai ser bloqueado \\
+\hline
+{\em g} & \hyperlink{class_grupo}{Grupo} em questao \\
+\hline
+{\em dia\+Atual} & \hyperlink{class_data}{Data} do acontecimento\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se bem sucedido ou false se nao. 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_add4089c62dfb1b5ef5a9d320073e078f}{}\index{Utilizador@{Utilizador}!criar\+Conversa@{criar\+Conversa}}
+\index{criar\+Conversa@{criar\+Conversa}!Utilizador@{Utilizador}}
+\subsubsection[{criar\+Conversa(\+Utilizador $\ast$u)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversa} $\ast$ Utilizador\+::criar\+Conversa (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{u}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_add4089c62dfb1b5ef5a9d320073e078f}
+
+
+Funcao que cria uma conversa com o utilizador u e adiciona-\/a as conversas de ambos os participantes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & utilizador que participa na conversa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna a conversa criada 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a68471f49e5980a4bf43d48b7ce2118a3}{}\index{Utilizador@{Utilizador}!criar\+Grupo@{criar\+Grupo}}
+\index{criar\+Grupo@{criar\+Grupo}!Utilizador@{Utilizador}}
+\subsubsection[{criar\+Grupo(string titulo, Data data\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grupo} $\ast$ Utilizador\+::criar\+Grupo (
+\begin{DoxyParamCaption}
+\item[{string}]{titulo, }
+\item[{{\bf Data}}]{data\+Atual}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a68471f49e5980a4bf43d48b7ce2118a3}
+
+
+Funcao que cria um grupo e o adiciona aos grupos do utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titulo} & titulo do grupo \\
+\hline
+{\em data\+Atual} & data da criacao do grupo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_grupo}{Grupo} $\ast$ grupo criado 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a7424cd944ea535338280e821666768f7}{}\index{Utilizador@{Utilizador}!desbloquear\+Membro@{desbloquear\+Membro}}
+\index{desbloquear\+Membro@{desbloquear\+Membro}!Utilizador@{Utilizador}}
+\subsubsection[{desbloquear\+Membro(\+Utilizador $\ast$u, Grupo $\ast$g, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::desbloquear\+Membro (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{u, }
+\item[{{\bf Grupo} $\ast$}]{g, }
+\item[{{\bf Data}}]{dia\+Atual}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a7424cd944ea535338280e821666768f7}
+
+
+Funcao que desbloqueia um utilizador de um grupo. O utilizador atual pode desbloquear outro utilizador de um dado grupo, desde que o utilizador atual seja o moderador do grupo. Esta funcao chama a funcao desbloquear\+Membro da classe grupo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \hyperlink{class_utilizador}{Utilizador} que vai ser desbloqueado \\
+\hline
+{\em g} & \hyperlink{class_grupo}{Grupo} em questao \\
+\hline
+{\em dia\+Atual} & \hyperlink{class_data}{Data} do acontecimento\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se bem sucedido ou false se nao. 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a7fba688a167c9ffedec736f21e28ea64}{}\index{Utilizador@{Utilizador}!enviar\+Mensagem@{enviar\+Mensagem}}
+\index{enviar\+Mensagem@{enviar\+Mensagem}!Utilizador@{Utilizador}}
+\subsubsection[{enviar\+Mensagem(\+Mensagem $\ast$sms, Conversa $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::enviar\+Mensagem (
+\begin{DoxyParamCaption}
+\item[{{\bf Mensagem} $\ast$}]{sms, }
+\item[{{\bf Conversa} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a7fba688a167c9ffedec736f21e28ea64}
+
+
+Funcao que adiciona uma mensagem a uma conversa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sms} & mensagem a adicionar \\
+\hline
+{\em c} & conversa a que vai ser adicionada a mensagem \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_af58be0db512c246659d4fc5210bdc081}{}\index{Utilizador@{Utilizador}!enviar\+Mensagem\+Grupo@{enviar\+Mensagem\+Grupo}}
+\index{enviar\+Mensagem\+Grupo@{enviar\+Mensagem\+Grupo}!Utilizador@{Utilizador}}
+\subsubsection[{enviar\+Mensagem\+Grupo(\+Mensagem $\ast$sms, Grupo $\ast$g)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::enviar\+Mensagem\+Grupo (
+\begin{DoxyParamCaption}
+\item[{{\bf Mensagem} $\ast$}]{sms, }
+\item[{{\bf Grupo} $\ast$}]{g}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_af58be0db512c246659d4fc5210bdc081}
+
+
+Funcao que envia uma mensagem para um grupo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sms} & mensagem que se quer enviar \\
+\hline
+{\em g} & grupo para o qual se quer enviar a mensagem \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a8292ead93b56ba0c48b9fc92265134c3}{}\index{Utilizador@{Utilizador}!escolhe\+Grupos\+Amigos@{escolhe\+Grupos\+Amigos}}
+\index{escolhe\+Grupos\+Amigos@{escolhe\+Grupos\+Amigos}!Utilizador@{Utilizador}}
+\subsubsection[{escolhe\+Grupos\+Amigos(int i) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grupo} $\ast$ Utilizador\+::escolhe\+Grupos\+Amigos (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\label{class_utilizador_a8292ead93b56ba0c48b9fc92265134c3}
+
+
+Funcao que retorna o grupo escolhido pelo utilizador. Antes desta função é feito um print dos grupos do circulo de amigos do utilizador com numeros. A partir dai o utilizador escolhe um grupo que é devolvido pela funcao. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Posicao no vetor grupos\+Amigos\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+grupo escolhido 
+\end{DoxyReturn}
 \hypertarget{class_utilizador_a13a11370779713c7de00ea62f5c3799b}{}\index{Utilizador@{Utilizador}!get\+Amigo@{get\+Amigo}}
 \index{get\+Amigo@{get\+Amigo}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Amigo(string login) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utilizador} $\ast$ Utilizador\+::get\+Amigo (
@@ -179,77 +446,540 @@ vector$<$ \hyperlink{class_grupo}{Grupo} $\ast$ $>$ \hyperlink{class_utilizador_
 \item[{string}]{login}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_a13a11370779713c7de00ea62f5c3799b}
-@ brief Funcao que retorna um apontador para um \hyperlink{class_utilizador}{Utilizador} dos amigos com um determinado login @ param login login do \hyperlink{class_utilizador}{Utilizador} pertencente aos amigo do \hyperlink{class_utilizador}{Utilizador} @ return Utilizador$\ast$ \hypertarget{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}{}\index{Utilizador@{Utilizador}!get\+Amigos@{get\+Amigos}}
+
+
+Funcao que retorna um apontador para um \hyperlink{class_utilizador}{Utilizador} dos amigos com um determinado login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & login do \hyperlink{class_utilizador}{Utilizador} pertencente aos amigo do \hyperlink{class_utilizador}{Utilizador} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Utilizador$\ast$ 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}{}\index{Utilizador@{Utilizador}!get\+Amigos@{get\+Amigos}}
 \index{get\+Amigos@{get\+Amigos}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Amigos() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Utilizador} $\ast$ $>$ Utilizador\+::get\+Amigos (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}
-@ brief Funcao que retorna um vector de Utilizadores que sao os amigos do \hyperlink{class_utilizador}{Utilizador} @ return amigos \hypertarget{class_utilizador_af6c41442d2029ccb1a135092a5c27007}{}\index{Utilizador@{Utilizador}!get\+Data\+Adesao@{get\+Data\+Adesao}}
+
+
+Funcao que retorna um vector de Utilizadores que sao os amigos do \hyperlink{class_utilizador}{Utilizador}. 
+
+\begin{DoxyReturn}{Returns}
+amigos 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a07745e2c5f5d9236aea0c7357f1325b7}{}\index{Utilizador@{Utilizador}!get\+Conversa@{get\+Conversa}}
+\index{get\+Conversa@{get\+Conversa}!Utilizador@{Utilizador}}
+\subsubsection[{get\+Conversa(int i) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversa} $\ast$ Utilizador\+::get\+Conversa (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\label{class_utilizador_a07745e2c5f5d9236aea0c7357f1325b7}
+
+
+Funcao que retorna a conversa na posicao i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & posicao da conversa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+conversas\mbox{[}i\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_af6c41442d2029ccb1a135092a5c27007}{}\index{Utilizador@{Utilizador}!get\+Data\+Adesao@{get\+Data\+Adesao}}
 \index{get\+Data\+Adesao@{get\+Data\+Adesao}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Data\+Adesao() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Utilizador\+::get\+Data\+Adesao (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_af6c41442d2029ccb1a135092a5c27007}
-@ brief Funcao que retorna a data de adesao do \hyperlink{class_utilizador}{Utilizador} @ return data\+Adesao \hypertarget{class_utilizador_a9fc99ac7634ff085ca0f3afd4d502cc7}{}\index{Utilizador@{Utilizador}!get\+Email@{get\+Email}}
+
+
+Funcao que retorna a data de adesao do \hyperlink{class_utilizador}{Utilizador}. 
+
+\begin{DoxyReturn}{Returns}
+data\+Adesao 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a5d4275b4d23d955ef295773d3d9eb3b5}{}\index{Utilizador@{Utilizador}!get\+Destinatario\+Conversa@{get\+Destinatario\+Conversa}}
+\index{get\+Destinatario\+Conversa@{get\+Destinatario\+Conversa}!Utilizador@{Utilizador}}
+\subsubsection[{get\+Destinatario\+Conversa(\+Conversa $\ast$c) const }]{\setlength{\rightskip}{0pt plus 5cm}string Utilizador\+::get\+Destinatario\+Conversa (
+\begin{DoxyParamCaption}
+\item[{{\bf Conversa} $\ast$}]{c}
+\end{DoxyParamCaption}
+) const}\label{class_utilizador_a5d4275b4d23d955ef295773d3d9eb3b5}
+
+
+Funcao que retorna o nome destinatario da \hyperlink{class_conversa}{Conversa}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & conversa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string (nome destinatario) 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a9fc99ac7634ff085ca0f3afd4d502cc7}{}\index{Utilizador@{Utilizador}!get\+Email@{get\+Email}}
 \index{get\+Email@{get\+Email}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Email() const }]{\setlength{\rightskip}{0pt plus 5cm}string Utilizador\+::get\+Email (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_a9fc99ac7634ff085ca0f3afd4d502cc7}
-@ brief Funcao que retorna o email do \hyperlink{class_utilizador}{Utilizador} @ return email \hypertarget{class_utilizador_a0b6cd97f274e49649b0c2c7ba0497261}{}\index{Utilizador@{Utilizador}!get\+Grupo@{get\+Grupo}}
+
+
+Funcao que retorna o email do \hyperlink{class_utilizador}{Utilizador}. 
+
+\begin{DoxyReturn}{Returns}
+email 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a0b6cd97f274e49649b0c2c7ba0497261}{}\index{Utilizador@{Utilizador}!get\+Grupo@{get\+Grupo}}
 \index{get\+Grupo@{get\+Grupo}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Grupo(int i) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grupo} $\ast$ Utilizador\+::get\+Grupo (
 \begin{DoxyParamCaption}
 \item[{int}]{i}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_a0b6cd97f274e49649b0c2c7ba0497261}
-@ brief Funcao que retorna um apontador para um \hyperlink{class_grupo}{Grupo} dos grupos de conversa de indice i @ param i posicao nos grupos do utilizador @ return Grupo$\ast$ \hypertarget{class_utilizador_ad3f06aaa4199be8c1742e7126633ec26}{}\index{Utilizador@{Utilizador}!get\+Grupos@{get\+Grupos}}
+
+
+Funcao que retorna um apontador para um \hyperlink{class_grupo}{Grupo} dos grupos de conversa de indice i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & posicao nos grupos do utilizador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Grupo$\ast$ 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_ad3f06aaa4199be8c1742e7126633ec26}{}\index{Utilizador@{Utilizador}!get\+Grupos@{get\+Grupos}}
 \index{get\+Grupos@{get\+Grupos}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Grupos() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Grupo} $\ast$ $>$ Utilizador\+::get\+Grupos (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_ad3f06aaa4199be8c1742e7126633ec26}
-@ brief Funcao que retorna os grupos do utilizador @ return grupos \hypertarget{class_utilizador_a9abaeb6fbff49683f57164a57e6f0c90}{}\index{Utilizador@{Utilizador}!get\+Idade@{get\+Idade}}
+
+
+Funcao que retorna os grupos do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+grupos 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_ac5e58137167b1cf097d10f862f036998}{}\index{Utilizador@{Utilizador}!get\+Grupos\+Amigos@{get\+Grupos\+Amigos}}
+\index{get\+Grupos\+Amigos@{get\+Grupos\+Amigos}!Utilizador@{Utilizador}}
+\subsubsection[{get\+Grupos\+Amigos() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Grupo} $\ast$ $>$ Utilizador\+::get\+Grupos\+Amigos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_utilizador_ac5e58137167b1cf097d10f862f036998}
+
+
+Funcao que retorna um vector com os grupos do meu circulo de amigos. Esta funcao retira os grupos repetidos e os grupos que ja incluem o utilizador atual. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+Grupo $\ast$$>$ grupos\+Amigos 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a9abaeb6fbff49683f57164a57e6f0c90}{}\index{Utilizador@{Utilizador}!get\+Idade@{get\+Idade}}
 \index{get\+Idade@{get\+Idade}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Idade() const }]{\setlength{\rightskip}{0pt plus 5cm}int Utilizador\+::get\+Idade (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_a9abaeb6fbff49683f57164a57e6f0c90}
-@ brief Funcao que retorna a idade do \hyperlink{class_utilizador}{Utilizador} @ return idade \hypertarget{class_utilizador_ad6c565c391bd19de3462e50a4e05c9a6}{}\index{Utilizador@{Utilizador}!get\+Login@{get\+Login}}
+
+
+Funcao que retorna a idade do \hyperlink{class_utilizador}{Utilizador}. 
+
+\begin{DoxyReturn}{Returns}
+idade 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_ad6c565c391bd19de3462e50a4e05c9a6}{}\index{Utilizador@{Utilizador}!get\+Login@{get\+Login}}
 \index{get\+Login@{get\+Login}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Login() const }]{\setlength{\rightskip}{0pt plus 5cm}string Utilizador\+::get\+Login (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_ad6c565c391bd19de3462e50a4e05c9a6}
-@ brief Funcao que retorna o login do \hyperlink{class_utilizador}{Utilizador} @ return login \hypertarget{class_utilizador_aa5af9c1385b0a93116dd8a80264b887a}{}\index{Utilizador@{Utilizador}!get\+Nome@{get\+Nome}}
+
+
+Funcao que retorna o login do \hyperlink{class_utilizador}{Utilizador}. 
+
+\begin{DoxyReturn}{Returns}
+login 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_aa5af9c1385b0a93116dd8a80264b887a}{}\index{Utilizador@{Utilizador}!get\+Nome@{get\+Nome}}
 \index{get\+Nome@{get\+Nome}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Nome() const }]{\setlength{\rightskip}{0pt plus 5cm}string Utilizador\+::get\+Nome (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_aa5af9c1385b0a93116dd8a80264b887a}
-@ brief Funcao que retorna o nome do \hyperlink{class_utilizador}{Utilizador} @ return nome \hypertarget{class_utilizador_a60b66b8e80767719861a2d712f1bcbe4}{}\index{Utilizador@{Utilizador}!get\+Telemovel@{get\+Telemovel}}
+
+
+Funcao que retorna o nome do \hyperlink{class_utilizador}{Utilizador}. 
+
+\begin{DoxyReturn}{Returns}
+nome 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a60b66b8e80767719861a2d712f1bcbe4}{}\index{Utilizador@{Utilizador}!get\+Telemovel@{get\+Telemovel}}
 \index{get\+Telemovel@{get\+Telemovel}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Telemovel() const }]{\setlength{\rightskip}{0pt plus 5cm}int Utilizador\+::get\+Telemovel (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_a60b66b8e80767719861a2d712f1bcbe4}
-@ brief Funcao que retorna o telemovel do \hyperlink{class_utilizador}{Utilizador} @ return telemovel \hypertarget{class_utilizador_a99cdee165a8446fb67f3e0cab0831e80}{}\index{Utilizador@{Utilizador}!get\+Visibilidade@{get\+Visibilidade}}
+
+
+Funcao que retorna o telemovel do \hyperlink{class_utilizador}{Utilizador}. 
+
+\begin{DoxyReturn}{Returns}
+telemovel 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a99cdee165a8446fb67f3e0cab0831e80}{}\index{Utilizador@{Utilizador}!get\+Visibilidade@{get\+Visibilidade}}
 \index{get\+Visibilidade@{get\+Visibilidade}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Visibilidade() const }]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::get\+Visibilidade (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_utilizador_a99cdee165a8446fb67f3e0cab0831e80}
-@ brief Funcao que retorna a visibilidade do \hyperlink{class_utilizador}{Utilizador} @ return visibilidade 
+
+
+Funcao que retorna a visibilidade do \hyperlink{class_utilizador}{Utilizador}. 
+
+\begin{DoxyReturn}{Returns}
+visibilidade 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a19b6202cece0cde531de23a1fd24b4c6}{}\index{Utilizador@{Utilizador}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Utilizador@{Utilizador}}
+\subsubsection[{operator$<$(const Utilizador \&u) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Utilizador} \&}]{u}
+\end{DoxyParamCaption}
+) const}\label{class_utilizador_a19b6202cece0cde531de23a1fd24b4c6}
+
+
+overloading do operador $<$ que compara o utilzador e u 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & utilizador com quem se vai comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool , true -\/ o login do utilizador for $<$ que o de u 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}{}\index{Utilizador@{Utilizador}!operator==@{operator==}}
+\index{operator==@{operator==}!Utilizador@{Utilizador}}
+\subsubsection[{operator==(const Utilizador \&u) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Utilizador} \&}]{u}
+\end{DoxyParamCaption}
+) const}\label{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}
+
+
+overloading do operador == que compara o utilzador e u 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & utilizador com quem se vai comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool , true -\/ se tiverem o mesmo login 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_aba7f8c8306ae34617d5af06678a8cd12}{}\index{Utilizador@{Utilizador}!pedir\+Adesao@{pedir\+Adesao}}
+\index{pedir\+Adesao@{pedir\+Adesao}!Utilizador@{Utilizador}}
+\subsubsection[{pedir\+Adesao(\+Grupo $\ast$g)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::pedir\+Adesao (
+\begin{DoxyParamCaption}
+\item[{{\bf Grupo} $\ast$}]{g}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_aba7f8c8306ae34617d5af06678a8cd12}
+
+
+Funcao que adiciona um pedido de adesao do utilizador ao grupo g. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & grupo a que o utilizador quer aderir \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_aa31a2ff79c063bce4c810eaae801bdd5}{}\index{Utilizador@{Utilizador}!rejeita\+Membro@{rejeita\+Membro}}
+\index{rejeita\+Membro@{rejeita\+Membro}!Utilizador@{Utilizador}}
+\subsubsection[{rejeita\+Membro(\+Utilizador $\ast$u, Grupo $\ast$g, Data d)}]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::rejeita\+Membro (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{u, }
+\item[{{\bf Grupo} $\ast$}]{g, }
+\item[{{\bf Data}}]{d}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_aa31a2ff79c063bce4c810eaae801bdd5}
+
+
+Funcao que rejeita um utilizador num grupo. O utilizador atual pode rejeitar um pedido de adesao de um utilizador a um dado grupo, desde que o utilizador atual seja o moderador do grupo. Chama a funcao pedido\+Adesao da classe grupo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \hyperlink{class_utilizador}{Utilizador} que efetuou o pedido de adesao \\
+\hline
+{\em g} & \hyperlink{class_grupo}{Grupo} ao qual se quer juntar \\
+\hline
+{\em d} & \hyperlink{class_data}{Data} em que se tentou juntar ao grupo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se bem sucedido ou false se nao. 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_aeea440a088526eea36ebcc27d6472e4f}{}\index{Utilizador@{Utilizador}!remover\+Amigo@{remover\+Amigo}}
+\index{remover\+Amigo@{remover\+Amigo}!Utilizador@{Utilizador}}
+\subsubsection[{remover\+Amigo(\+Utilizador \&u)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::remover\+Amigo (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} \&}]{u}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_aeea440a088526eea36ebcc27d6472e4f}
+
+
+Funcao que remove u dos meus amigos e eu dos amigos de u usando a fun$\sim$cao remover\+Amigo\+Aux. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & utilizador a remover \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_ac779bbfd15bd307b86cc7c06793509a2}{}\index{Utilizador@{Utilizador}!remover\+Amigo\+Aux@{remover\+Amigo\+Aux}}
+\index{remover\+Amigo\+Aux@{remover\+Amigo\+Aux}!Utilizador@{Utilizador}}
+\subsubsection[{remover\+Amigo\+Aux(\+Utilizador $\ast$u)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::remover\+Amigo\+Aux (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{u}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_ac779bbfd15bd307b86cc7c06793509a2}
+
+
+Funcao que retira o utilizador u dos amigos do utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & utilizador a remover \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a2f5cc4525c249995615ec7693230ee0d}{}\index{Utilizador@{Utilizador}!remover\+Conversa@{remover\+Conversa}}
+\index{remover\+Conversa@{remover\+Conversa}!Utilizador@{Utilizador}}
+\subsubsection[{remover\+Conversa(\+Conversa $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::remover\+Conversa (
+\begin{DoxyParamCaption}
+\item[{{\bf Conversa} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a2f5cc4525c249995615ec7693230ee0d}
+
+
+Funcao que remove a conversa c das conversas do utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & conversa a remover \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a05e62bd42a3e3a324cea8d9c998c2391}{}\index{Utilizador@{Utilizador}!remover\+Membro@{remover\+Membro}}
+\index{remover\+Membro@{remover\+Membro}!Utilizador@{Utilizador}}
+\subsubsection[{remover\+Membro(\+Utilizador $\ast$u, Grupo $\ast$g, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::remover\+Membro (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{u, }
+\item[{{\bf Grupo} $\ast$}]{g, }
+\item[{{\bf Data}}]{dia\+Atual}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a05e62bd42a3e3a324cea8d9c998c2391}
+
+
+Funcao que remove um utilizador u de um grupo g. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & utilizador a remover \\
+\hline
+{\em g} & grupo onde u vai ser removeido \\
+\hline
+{\em dia\+Atual} & data em que foi removido return bool , true -\/ removido , false -\/ nao removido \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_ad6fcf7fc9cf998c5578ce64cc0721a9b}{}\index{Utilizador@{Utilizador}!sair\+Conversa@{sair\+Conversa}}
+\index{sair\+Conversa@{sair\+Conversa}!Utilizador@{Utilizador}}
+\subsubsection[{sair\+Conversa(\+Conversa $\ast$c)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::sair\+Conversa (
+\begin{DoxyParamCaption}
+\item[{{\bf Conversa} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_ad6fcf7fc9cf998c5578ce64cc0721a9b}
+
+
+Funcao que me remove a conversa c das minhas conversas e c das conversas do destinatario da mesma. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & conversa a eliminar \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a6b77341ab59960b86c54a0a82c100f5c}{}\index{Utilizador@{Utilizador}!sair\+Grupo@{sair\+Grupo}}
+\index{sair\+Grupo@{sair\+Grupo}!Utilizador@{Utilizador}}
+\subsubsection[{sair\+Grupo(\+Grupo $\ast$g)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::sair\+Grupo (
+\begin{DoxyParamCaption}
+\item[{{\bf Grupo} $\ast$}]{g}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a6b77341ab59960b86c54a0a82c100f5c}
+
+
+Funcao que remove o grupo g dos meus grupos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & grupo a remover \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a8cd2a3b9c962eeef6ffa497ce6e39a3c}{}\index{Utilizador@{Utilizador}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Utilizador@{Utilizador}}
+\subsubsection[{set\+Data(int d, int m, int a)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{int}]{d, }
+\item[{int}]{m, }
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a8cd2a3b9c962eeef6ffa497ce6e39a3c}
+
+
+Funcao que altera a data de adesao de um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & dia de adesao \\
+\hline
+{\em m} & mes de adesao \\
+\hline
+{\em a} & ano de adesao \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_aa5ad3c6ed417e2b3aebc96bfa5432dfb}{}\index{Utilizador@{Utilizador}!set\+Email@{set\+Email}}
+\index{set\+Email@{set\+Email}!Utilizador@{Utilizador}}
+\subsubsection[{set\+Email(string e)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::set\+Email (
+\begin{DoxyParamCaption}
+\item[{string}]{e}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_aa5ad3c6ed417e2b3aebc96bfa5432dfb}
+
+
+Funcao que altera o email de um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & novo email do utilizador \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_aacc48e9ec11446c11029c3d062533034}{}\index{Utilizador@{Utilizador}!set\+Idade@{set\+Idade}}
+\index{set\+Idade@{set\+Idade}!Utilizador@{Utilizador}}
+\subsubsection[{set\+Idade(int i)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::set\+Idade (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_aacc48e9ec11446c11029c3d062533034}
+
+
+Funcao que altera a idade do \hyperlink{class_utilizador}{Utilizador} lanca a excepção \hyperlink{class_idade_insuficiente}{Idade\+Insuficiente} se for $<$ 18. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & nova idade \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a11032f76b9d07c21e9111155519407c5}{}\index{Utilizador@{Utilizador}!set\+Login@{set\+Login}}
+\index{set\+Login@{set\+Login}!Utilizador@{Utilizador}}
+\subsubsection[{set\+Login(string l)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::set\+Login (
+\begin{DoxyParamCaption}
+\item[{string}]{l}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a11032f76b9d07c21e9111155519407c5}
+
+
+Funcao que altera o login de um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & novo login do utilizador \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a27aeea3bb85f457a2d42ff6f0a1240dd}{}\index{Utilizador@{Utilizador}!set\+Nome@{set\+Nome}}
+\index{set\+Nome@{set\+Nome}!Utilizador@{Utilizador}}
+\subsubsection[{set\+Nome(string n)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::set\+Nome (
+\begin{DoxyParamCaption}
+\item[{string}]{n}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a27aeea3bb85f457a2d42ff6f0a1240dd}
+
+
+Funcao que altera o nome de um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & novo nome do utilizador \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a74e3737924910c4306bac26cacb5f8e1}{}\index{Utilizador@{Utilizador}!set\+Telemovel@{set\+Telemovel}}
+\index{set\+Telemovel@{set\+Telemovel}!Utilizador@{Utilizador}}
+\subsubsection[{set\+Telemovel(int t)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::set\+Telemovel (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a74e3737924910c4306bac26cacb5f8e1}
+
+
+Funcao que altera o telemovel de um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & novo telemovel do utilizador \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_a2228288656c31e63710c31bf0d8eb58f}{}\index{Utilizador@{Utilizador}!set\+Visibilidade@{set\+Visibilidade}}
+\index{set\+Visibilidade@{set\+Visibilidade}!Utilizador@{Utilizador}}
+\subsubsection[{set\+Visibilidade(bool v)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::set\+Visibilidade (
+\begin{DoxyParamCaption}
+\item[{bool}]{v}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a2228288656c31e63710c31bf0d8eb58f}
+
+
+Funcao que altera a visibilidade de um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & nova visibilidade do utilizador \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_utilizador_ad02a468bf3828d06a96b41947147c754}{}\index{Utilizador@{Utilizador}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Utilizador@{Utilizador}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Utilizador} \&}]{u}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_utilizador_ad02a468bf3828d06a96b41947147c754}
+
+
+overloading do operador $<$$<$ do utilizador 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & ostream de saida \\
+\hline
+{\em u} & utilizador a imprimir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+out 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

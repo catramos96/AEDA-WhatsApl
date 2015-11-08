@@ -25,8 +25,8 @@ private:
 public:
   /**
   * @brief Construtor da classe Mensagem;
-  * @param data data de criacao
-  * @para hora hora de criacao
+  * @param data Data de criacao
+  * @param hora Hora de criacao
   */
 	Mensagem(Data data, Horas hora);
   /**
@@ -82,7 +82,7 @@ public:
 	MsgTexto(string conteudo, Data d, Horas h);
   /**
   * @brief Funcao que retorna o conteudo
-  * @param conteudo
+  * @return conteudo
   */
 	string getConteudo() const;
   /**

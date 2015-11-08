@@ -28,7 +28,9 @@ void \hyperlink{class_membro_aaeea526aaa8f558d7e415c56c0b1be52}{set\+Bloqueio} (
 bool \hyperlink{class_membro_a4fee0ae7563027e70cf03456e74feffc}{is\+Bloqueado} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que indica o estado atual do membro privado \textquotesingle{}bloqueado\textquotesingle{}. \end{DoxyCompactList}\item 
 bool \hyperlink{class_membro_a46bc54549fa9d3a84fbfdbc0f1ffe0b4}{operator==} (const \hyperlink{class_membro}{Membro} \&m) const 
-\begin{DoxyCompactList}\small\item\em Operador de igualdade. Compara 2 membros através do utilizador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Operador de igualdade. Compara 2 membros através do utilizador. \end{DoxyCompactList}\item 
+bool \hyperlink{class_membro_a2163804ffc4f179aee282fc6ce1fa0d8}{operator$<$} (const \hyperlink{class_membro}{Membro} \&m) const 
+\begin{DoxyCompactList}\small\item\em Overloading do operador menor. E usado o login dos memsbros como termo de comparacao. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -103,6 +105,25 @@ Funcao que indica o estado atual do membro privado \textquotesingle{}bloqueado\t
 
 \begin{DoxyReturn}{Returns}
 bloqueado. 
+\end{DoxyReturn}
+\hypertarget{class_membro_a2163804ffc4f179aee282fc6ce1fa0d8}{}\index{Membro@{Membro}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Membro@{Membro}}
+\subsubsection[{operator$<$(const Membro \&m) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Membro\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Membro} \&}]{m}
+\end{DoxyParamCaption}
+) const}\label{class_membro_a2163804ffc4f179aee282fc6ce1fa0d8}
+
+
+Overloading do operador menor. E usado o login dos memsbros como termo de comparacao. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \hyperlink{class_membro}{Membro} com que vamos comparar o membro atual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se e menor, ou false em caso contrario. 
 \end{DoxyReturn}
 \hypertarget{class_membro_a46bc54549fa9d3a84fbfdbc0f1ffe0b4}{}\index{Membro@{Membro}!operator==@{operator==}}
 \index{operator==@{operator==}!Membro@{Membro}}

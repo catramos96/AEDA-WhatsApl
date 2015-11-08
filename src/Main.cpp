@@ -12,28 +12,21 @@
 
 using namespace std;
 
-/*PROBLEMAS:
-- dentro do utilizador poder procurar na comunidade
-- dividir o meu conversas em conversas/grupo
-- mandar mensagem
-- Não faz push back dos grupos quando adicionados
-*/
-
 static Data dataHoje;
 
 /**
-* @brief Funcao que cria uma interrupção no programa para o utilizador poder visualizar o ecra
-*/
+ * @brief Funcao que cria uma interrupção no programa para o utilizador poder visualizar o ecra
+ */
 void esperar() {
 	system("pause");
 }
 /**
-* @brief Funcao que verifica se op esta entre o min e o max
-* caso nao esteja lanca a excepcao OpccaoInvalida
-* @param op opccao escolhida
-* @param min opccao minima
-* @param max opccao maxima
-*/
+ * @brief Funcao que verifica se op esta entre o min e o max
+ * caso nao esteja lanca a excepcao OpccaoInvalida
+ * @param op opccao escolhida
+ * @param min opccao minima
+ * @param max opccao maxima
+ */
 void opccao(int &op, int min, int max) {
 	cout << "Seleccione uma opccao: ";
 	cin >> op;
@@ -45,15 +38,15 @@ void opccao(int &op, int min, int max) {
 }
 
 /*****************************************************************
-*                          MENU UNICIAL                          *
-*****************************************************************/
+ *                          MENU UNICIAL                          *
+ *****************************************************************/
 
 /**
-* @brief Funcao que faz o login do utilizador.
-* Verifica se o login existe na comunidade e se nao existir lanca a excepcao UtilizadorInexistente.
-* @param c comunidade que contem todos os utilizadores inscritos.
-* @return Utilizador com que se fez o login.
-*/
+ * @brief Funcao que faz o login do utilizador.
+ * Verifica se o login existe na comunidade e se nao existir lanca a excepcao UtilizadorInexistente.
+ * @param c comunidade que contem todos os utilizadores inscritos.
+ * @return Utilizador com que se fez o login.
+ */
 Utilizador * login(Comunidade *c) {
 	string login;
 	int i, op;
@@ -68,53 +61,53 @@ Utilizador * login(Comunidade *c) {
 	if (i != -1) {
 		u = c->utilizadorNaPosicao(i);
 		cout << i;
-	}
-	else
+	} else
 		throw UtilizadorInexistente(u->getLogin());
 	return u;
 }
 
 /**
-* @brief Funcao que regista um utilizador na comunidade c.
-* Caso o utilizador com o login inserido exista, e lancada a excepcao UtilizadorJaExiste.
-* Caso o input de algum dos paramentros requeridos para o registo sejam do tipo errado lanca a excepcao InputFail.
-* @param c comunidade que contem todos os utilizadores inscritos.
-*/
+ * @brief Funcao que regista um utilizador na comunidade c.
+ * Caso o utilizador com o login inserido exista, e lancada a excepcao UtilizadorJaExiste.
+ * Caso o input de algum dos paramentros requeridos para o registo sejam do tipo errado lanca a excepcao InputFail.
+ * @param c comunidade que contem todos os utilizadores inscritos.
+ */
 void registar(Comunidade *c) {
-  bool vis;
-  string login, nome, email;
-  int telemovel;
-  int idade, dia, mes, ano;
-  Data dA;
+	bool vis;
+	string login, nome, email;
+	int telemovel;
+	int idade, dia, mes, ano;
+	Data dA;
 
-  clrscr();
+	clrscr();
 
-    header("REGISTAR");
-    cout << "Login: ";
-    input<string>(login);
-    cout << "Nome: ";
-    cin.ignore(1000, '\n');
-    getline(cin, nome);
-    cout << "Email: ";
-    input<string>(email);
-    cout << "Idade: ";
-    input<int>(idade);
-    cout << "Telemovel: ";
-    input<int>(telemovel);
-    cout << "Data (dia mes ano): ";
-    cin >> dia >> mes >> ano;
-    dA.setData(dia, mes, ano);
-    cout << "Perfil publico/privado (1/0): ";
-    input<bool>(vis);
+	header("REGISTAR");
+	cout << "Login: ";
+	input<string>(login);
+	cout << "Nome: ";
+	cin.ignore(1000, '\n');
+	getline(cin, nome);
+	cout << "Email: ";
+	input<string>(email);
+	cout << "Idade: ";
+	input<int>(idade);
+	cout << "Telemovel: ";
+	input<int>(telemovel);
+	cout << "Data (dia mes ano): ";
+	cin >> dia >> mes >> ano;
+	dA.setData(dia, mes, ano);
+	cout << "Perfil publico/privado (1/0): ";
+	input<bool>(vis);
 
-    Utilizador * u = new Utilizador(vis, login, nome, email, dA, telemovel, idade);
-    c->adicionarUtil(u);
+	Utilizador * u = new Utilizador(vis, login, nome, email, dA, telemovel,
+			idade);
+	c->adicionarUtil(u);
 }
 
 /**
-* @brief Funcao em que visualizamos os utilizadores inscritos e podemos ordena-los por login ou data de adesao.
-* @param c comunidade que contem todos os utilizadores inscritos.
-*/
+ * @brief Funcao em que visualizamos os utilizadores inscritos e podemos ordena-los por login ou data de adesao.
+ * @param c comunidade que contem todos os utilizadores inscritos.
+ */
 void comunidade(Comunidade *c) {
 	menuComunidade();
 	int op;
@@ -122,15 +115,12 @@ void comunidade(Comunidade *c) {
 
 	clrscr();
 
-	switch (op)
-	{
-	case 1:
-	{
+	switch (op) {
+	case 1: {
 		c->ordenaLogin();
 		break;
 	}
-	case 2:
-	{
+	case 2: {
 		c->ordenaData();
 		break;
 	}
@@ -144,51 +134,45 @@ void comunidade(Comunidade *c) {
 }
 
 /**
-* @brief Funcao que analisa a opccao op.
-* @param c comunidade que contem todos os utilizadores inscritos.
-* @return Utilizador caso se tenha feito o login.
-*/
+ * @brief Funcao que analisa a opccao op.
+ * @param c comunidade que contem todos os utilizadores inscritos.
+ * @return Utilizador caso se tenha feito o login.
+ */
 Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 
 	Utilizador *u = new Utilizador();
 	clrscr();
-	switch (op)
-	{
-	case 1:
-	{
+	switch (op) {
+	case 1: {
 		u = login(c);
 		break;
 	}
-	case 2:
-	{
+	case 2: {
 		registar(c);
 		break;
 	}
-	case 3:
-	{
+	case 3: {
 		comunidade(c);
 		cout << endl;
 		esperar();
 		break;
 	}
-	case 4:
-	{
+	case 4: {
 		menuInformacao();
 		esperar();
 		throw VoltarAtras();
 	}
-	case 5:
-	{
-		exit(1);//sair
+	case 5: {
+		exit(1); //sair
 	}
 	}
 	return u;
 }
 
 /**
-* @brief Funcao que mostra no ecra o menu inicial com varias opccoes
-* @return op opccao escolhida apartir do menu inicial
-*/
+ * @brief Funcao que mostra no ecra o menu inicial com varias opccoes
+ * @return op opccao escolhida apartir do menu inicial
+ */
 int headerInicio() {
 	clrscr();
 	menuInicial();
@@ -198,46 +182,44 @@ int headerInicio() {
 }
 
 /**
-* @brief Funcao da interface inicial quando se inicializa o programa.
-* Mostra as diferentes opccoes do menu inicial e gere a escolhida.
-* @param c comunidade que contem todos os utilizadores inscritos.
-* @return Utilizador com quem se fez o login
-*/
+ * @brief Funcao da interface inicial quando se inicializa o programa.
+ * Mostra as diferentes opccoes do menu inicial e gere a escolhida.
+ * @param c comunidade que contem todos os utilizadores inscritos.
+ * @return Utilizador com quem se fez o login
+ */
 Utilizador * MenuInicial(Comunidade *c) {
 	bool login = false;
-	bool sair = false;
+	//bool sair = false;
 	int op;
 	Utilizador* u = new Utilizador;
-	do
-	{
+	do {
 		try {
 			op = headerInicio();
 			u = opccaoMenuInicial(op, c);
 			if (u->getNome() != "")
 				login = true;
-		}
-		catch (OpccaoInvalida<int>(x)) {
-			cout << x.getOp() << " nao se encontra entre as opccoes " << x.getMin() << " e " << x.getMax() << endl << endl;
+		} catch (OpccaoInvalida<int> (x)) {
+			cout << x.getOp() << " nao se encontra entre as opccoes "
+					<< x.getMin() << " e " << x.getMax() << endl << endl;
 			esperar();
-		}
-		catch (UtilizadorInexistente(x)) {
-			cout << "Nao existe um utilizador com o login " << x.getLogin() << endl << endl;
+		} catch (UtilizadorInexistente (x)) {
+			cout << "Nao existe um utilizador com o login " << x.getLogin()
+					<< endl << endl;
 			esperar();
-		}
-		catch (UtilizadorJaExiste(x)) {
-			cout << "Ja existe um utilizador com o login " << x.getLogin() << endl << endl;
+		} catch (UtilizadorJaExiste (x)) {
+			cout << "Ja existe um utilizador com o login " << x.getLogin()
+					<< endl << endl;
 			esperar();
-		}
-		catch (VoltarAtras) {}
-		catch (IdadeInsuficiente(x)) {
-			cout << "So e permitido usar a aplicacao com maiores de 18 anos" << endl << endl;
+		} catch (VoltarAtras) {
+		} catch (IdadeInsuficiente (x)) {
+			cout << "So e permitido usar a aplicacao com maiores de 18 anos"
+					<< endl << endl;
 			esperar();
-		}
-		catch (DataInvalida(x)) {
-			cout << x.getDia() << "/" << x.getMes() << "/" << x.getAno() << " e invalida!" << endl << endl;
+		} catch (DataInvalida (x)) {
+			cout << x.getDia() << "/" << x.getMes() << "/" << x.getAno()
+					<< " e invalida!" << endl << endl;
 			esperar();
-		}
-		catch (InputFail) {
+		} catch (InputFail) {
 			cout << "Input fail!" << endl << endl;
 			esperar();
 		}
@@ -248,13 +230,13 @@ Utilizador * MenuInicial(Comunidade *c) {
 }
 
 /*****************************************************************
-*                         MENU UTILIZADOR                        *
-*****************************************************************/
+ *                         MENU UTILIZADOR                        *
+ *****************************************************************/
 
 /**
-* @brief Funcao que analisa e gere a opccao amigos do utilizador.
-* @param u utilizador que se esta a gerir.
-*/
+ * @brief Funcao que analisa e gere a opccao amigos do utilizador.
+ * @param u utilizador que se esta a gerir.
+ */
 void amigosUtilizador(Utilizador *u, Comunidade *c) {
 	//Menu Amigos
 	menuAmigos();
@@ -266,10 +248,8 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 
 	clrscr();
 
-	switch (op)
-	{
-	case 1:
-	{
+	switch (op) {
+	case 1: {
 		//adicionar amigo
 
 		header("AMIGOS");
@@ -288,9 +268,8 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 		break;
 	}
 
-	//Remover Amigo
-	case 2:
-	{
+		//Remover Amigo
+	case 2: {
 		header("REMOVER AMIGOS");
 		cout << "Login:";
 		cin >> login;
@@ -305,9 +284,8 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 		esperar();
 		break;
 	}
-	//Ver amigos
-	case 3:
-	{
+		//Ver amigos
+	case 3: {
 		header("AMIGOS");
 		cout << "Nome  /  Login" << endl << endl;
 		u->imprimirAmigos();
@@ -323,8 +301,7 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 
 			header(u->getAmigo(login)->getLogin());
 			u->getAmigo(login)->imprimirUtilizador();
-		}
-		else
+		} else
 			throw VoltarAtras();
 		esperar();
 		break;
@@ -335,19 +312,19 @@ void amigosUtilizador(Utilizador *u, Comunidade *c) {
 }
 
 /**
-* @brief Funcao que escreve uma mensagem
-*/
+ * @brief Funcao que escreve uma mensagem
+ */
 Mensagem * escreverMsg() {
 	int h, m, tipo;
 	cout << "Hora (horas minutos): ";
 	cin >> h >> m;
 	Horas hora(h, m);
-	cout << "\nTipo:" << endl << "Texto (1)" << endl << "Imagem (2)" << endl << "Video (3)" << endl << endl;
+	cout << "\nTipo:" << endl << "Texto (1)" << endl << "Imagem (2)" << endl
+			<< "Video (3)" << endl << endl;
 	opccao(tipo, 1, 3);
 	Mensagem *msg = new Mensagem(dataHoje, hora);
 
-	switch (tipo)
-	{
+	switch (tipo) {
 	case 1: // de texto ... 
 	{
 		string cont;
@@ -372,122 +349,120 @@ Mensagem * escreverMsg() {
 }
 
 /**
-* @brief Funcao que analisa e gere os grupos do utilizador.
-* @param u utilizador que se esta a gerir.
-*/
-void gerirGrupos(Utilizador *u,int i) {
-  string login;
-  int op;
+ * @brief Funcao que analisa e gere os grupos do utilizador.
+ * @param u utilizador que se esta a gerir.
+ */
+void gerirGrupos(Utilizador *u, int i) {
+	string login;
+	int op;
 
-  Grupo *temp = u->getGrupo(i - 1); //grupo com que vamos trabalhar
-  Utilizador *amigo; //membro que eventualmente vamos utilizar
+	Grupo *temp = u->getGrupo(i - 1); //grupo com que vamos trabalhar
+	Utilizador *amigo; //membro que eventualmente vamos utilizar
 
-  clrscr();
+	clrscr();
 
-  header("GERIR - " + temp->getTitulo());
-  menuGerirGrupos();
-  opccao(op, 1, 6);
+	header("GERIR - " + temp->getTitulo());
+	menuGerirGrupos();
+	opccao(op, 1, 6);
 
-  clrscr();
+	clrscr();
 
-  header("GERIR - " + temp->getTitulo());
+	header("GERIR - " + temp->getTitulo());
 
-  switch (op)
-  {
-  case 1: //Adicionar -> adiciona um amigo mesmo que este não tenha feito um pedido de adesao
-  {
-    u->imprimirAmigos();
-    cout << endl;
-    cout << "Adicionar login: ";
-    input<string>(login);
-    amigo = u->getAmigo(login);
-    u->adicionaMembro(amigo, temp, dataHoje);
-    cout << "\nAdicionado com sucesso!" << endl << endl;
-    esperar();
-    throw VoltarAtras();
-    break;
-  }
-  case 2: //Remover um membro de um grupo
-  {
-    temp->printMembros();
-    cout << endl;
-    cout << "Remover login: ";
-    input<string>(login);
-    amigo = u->getAmigo(login);
-    u->removerMembro(amigo, temp, dataHoje);
-    cout << "\nRemovido com sucesso!" << endl << endl;
-    esperar();
-    throw VoltarAtras();
-    break;
-  }
-  case 3: //bloquear um membro do grupo
-  {
-    temp->printMembros();
-    cout << endl;
-    cout << "Bloquear login: ";
-    input<string>(login);
-    amigo = u->getAmigo(login);
-    u->bloquearMembro(amigo, temp, dataHoje);
-    cout << "\nBloqueado com sucesso!" << endl << endl;
-    esperar();
-    throw VoltarAtras();
-    break;
-  }
-  case 4: //desbloquear um membro por iniciativa do moderador
-  {
-    temp->printStatus();
-    cout << endl;
-    cout << "Desbloquear login: ";
-    input<string>(login);
-    amigo = u->getAmigo(login);
-    u->desbloquearMembro(amigo, temp, dataHoje);
-    cout << "\nDesbloqueado com sucesso!" << endl << endl;
-    esperar();
-    throw VoltarAtras();
-    break;
-  }
-  case 5: //Ver pedidos de adesao ao grupo atual
-  {
-    int n;
-    cout << "Pedidos de adesao:" << endl;
-    temp->printPedidos();
-    cout << endl;
-    cout << "Aceitar (1)" << endl;
-    cout << "Recusar (2)" << endl;
-    cout << "Voltar Atras (3)" << endl << endl;
-    opccao(op, 1, 3);
+	switch (op) {
+	case 1: //Adicionar -> adiciona um amigo mesmo que este não tenha feito um pedido de adesao
+	{
+		u->imprimirAmigos();
+		cout << endl;
+		cout << "Adicionar login: ";
+		input<string>(login);
+		amigo = u->getAmigo(login);
+		u->adicionaMembro(amigo, temp, dataHoje);
+		cout << "\nAdicionado com sucesso!" << endl << endl;
+		esperar();
+		throw VoltarAtras();
+		break;
+	}
+	case 2: //Remover um membro de um grupo
+	{
+		temp->printMembros();
+		cout << endl;
+		cout << "Remover login: ";
+		input<string>(login);
+		amigo = u->getAmigo(login);
+		u->removerMembro(amigo, temp, dataHoje);
+		cout << "\nRemovido com sucesso!" << endl << endl;
+		esperar();
+		throw VoltarAtras();
+		break;
+	}
+	case 3: //bloquear um membro do grupo
+	{
+		temp->printMembros();
+		cout << endl;
+		cout << "Bloquear login: ";
+		input<string>(login);
+		amigo = u->getAmigo(login);
+		u->bloquearMembro(amigo, temp, dataHoje);
+		cout << "\nBloqueado com sucesso!" << endl << endl;
+		esperar();
+		throw VoltarAtras();
+		break;
+	}
+	case 4: //desbloquear um membro por iniciativa do moderador
+	{
+		temp->printStatus();
+		cout << endl;
+		cout << "Desbloquear login: ";
+		input<string>(login);
+		amigo = u->getAmigo(login);
+		u->desbloquearMembro(amigo, temp, dataHoje);
+		cout << "\nDesbloqueado com sucesso!" << endl << endl;
+		esperar();
+		throw VoltarAtras();
+		break;
+	}
+	case 5: //Ver pedidos de adesao ao grupo atual
+	{
+		//int n;
+		cout << "Pedidos de adesao:" << endl;
+		temp->printPedidos();
+		cout << endl;
+		cout << "Aceitar (1)" << endl;
+		cout << "Recusar (2)" << endl;
+		cout << "Voltar Atras (3)" << endl << endl;
+		opccao(op, 1, 3);
 
-    switch (op)
-    {
-    case 1: // aceitar pedido de adesao
-    {
-      cout << endl << "Aceitar login: ";
-      input<string>(login);
-      amigo = u->getAmigo(login);
-      u->aceitaMembro(amigo, temp, dataHoje);
-      break;
-    }
-    case 2: // recusar pedido de adesao
-    {
-      cout << endl << "Aceitar login: ";
-      input<string>(login);
-      amigo = u->getAmigo(login);
-      u->rejeitaMembro(amigo, temp, dataHoje);
-      break;
-    }
-    case 3: //voltar atras
-      throw VoltarAtras();
-    }
-  }
-  case 6:
-    throw VoltarAtras();
-  }
+		switch (op) {
+		case 1: // aceitar pedido de adesao
+		{
+			cout << endl << "Aceitar login: ";
+			input<string>(login);
+			amigo = u->getAmigo(login);
+			u->aceitaMembro(amigo, temp, dataHoje);
+			break;
+		}
+		case 2: // recusar pedido de adesao
+		{
+			cout << endl << "Aceitar login: ";
+			input<string>(login);
+			amigo = u->getAmigo(login);
+			u->rejeitaMembro(amigo, temp, dataHoje);
+			break;
+		}
+		case 3: //voltar atras
+			throw VoltarAtras();
+		}
+	}
+	case 6:
+		throw VoltarAtras();
+	}
 }
 
 /**
-* @brief Funcao que analisa e gere a opccao mensagens->grupos do utilizador.
-* @param u utilizador que se esta a gerir.
-*/
+ * @brief Funcao que analisa e gere a opccao mensagens->grupos do utilizador.
+ * @param u utilizador que se esta a gerir.
+ */
 void gruposUtilizador(Utilizador *u) {
 	int op;
 
@@ -498,8 +473,7 @@ void gruposUtilizador(Utilizador *u) {
 
 	clrscr();
 
-	switch (op)
-	{
+	switch (op) {
 	case 1: //CRIAR GRUPO
 	{
 		header("CRIAR NOVO GRUPO");
@@ -511,8 +485,7 @@ void gruposUtilizador(Utilizador *u) {
 		cout << "\nGrupo criado com sucesso!" << endl << endl;
 		break;
 	}
-	case 2:
-	{
+	case 2: {
 		int i;
 
 		header("ENVIAR MENSAGEM");
@@ -537,7 +510,7 @@ void gruposUtilizador(Utilizador *u) {
 	case 3: //VER GRUPOS EM QUE PARTICIPO
 	{
 		header("GRUPOS");
-		u->imprimirGrupos(); // u->getGrupos());
+		u->imprimirGrupos();
 		cout << endl;
 		cout << "Ver Status (1)" << endl;
 		cout << "Ver Conversa de Grupo (2)" << endl;
@@ -546,8 +519,7 @@ void gruposUtilizador(Utilizador *u) {
 		cout << "Voltar Atras (5)" << endl << endl;
 		int op;
 		opccao(op, 1, 5);
-		if (op != 5)
-		{
+		if (op != 5) {
 			int n;
 			cout << "\nGrupo numero: ";
 			input<int>(n);
@@ -555,8 +527,7 @@ void gruposUtilizador(Utilizador *u) {
 			clrscr();
 
 			header("Grupo - " + temp->getTitulo());
-			switch (op)
-			{
+			switch (op) {
 			case 1: //Ver status
 			{
 				temp->printStatus();
@@ -572,33 +543,30 @@ void gruposUtilizador(Utilizador *u) {
 				gerirGrupos(u, n);
 				break;
 			}
-      case 4: //Sair de um grupo ////REESCREVER
-      {
-        string login;
-        Grupo *temp = u->getGrupo(n - 1); //grupo com que vamos trabalhar
+			case 4: //Sair de um grupo
+			{
+				string login;
+				Grupo *temp = u->getGrupo(n - 1); //grupo com que vamos trabalhar
 
-        if (temp->numMembros() != 1) {
-          if (temp->isModerador(u->getLogin())) { //se u for moderador precisa de escolher o proximo moderador
-            temp->printMembros();
-            cout << "Login do proximo moderador: ";
-            input<string>(login);
-            Membro m(login, dataHoje);
-            if (temp->existeMembro(m) != -1) {
-              u->removerMembro(u, temp, dataHoje);
-              temp->setModerador(login, dataHoje);
-            }
-            else
-              throw MembroInexistente(m.getLogin());
-          }
-          else
-            u->removerMembro(u, temp, dataHoje);
-        }
-        u->sairGrupo(temp);
-        cout << "Removido com sucesso! \n";
+				if (temp->numMembros() != 1) {
+					if (temp->isModerador(u->getLogin())) { //se u for moderador precisa de escolher o proximo moderador
+						temp->printMembros();
+						cout << "\nLogin do proximo moderador: ";
+						input<string>(login);
+						Membro m(login, dataHoje);
+						if (temp->existeMembro(m) != -1) {
+							temp->setModerador(login, dataHoje);
+							u->removerMembro(u, temp, dataHoje);
+						} else
+							throw MembroInexistente(m.getLogin());
+					} else
+						u->removerMembro(u, temp, dataHoje);
+				}else
+					u->sairGrupo(temp);
+				cout << "Removido com sucesso! \n";
 			}
 			}
-		}
-		else
+		} else
 			throw VoltarAtras();
 		break;
 	}
@@ -606,15 +574,14 @@ void gruposUtilizador(Utilizador *u) {
 	{
 		int n;
 		header("GRUPOS DO CIRCULO DE AMIGOS");
-    if (u->getAmigos().size() != 0) {
-      u->imprimirGruposAmigos();
-      cout << endl << "Enviar pedido ao grupo numero : ";
-      input<int>(n);
-      u->pedirAdesao(u->escolheGruposAmigos(n));
-      cout << "\nPedido efetuado com sucesso!" << endl << endl;
-    }
-    else
-      cout << "Nao existem grupos para aderir" << endl << endl;
+		if (u->getAmigos().size() != 0) {
+			u->imprimirGruposAmigos();
+			cout << endl << "Enviar pedido ao grupo numero : ";
+			input<int>(n);
+			u->pedirAdesao(u->escolheGruposAmigos(n));
+			cout << "\nPedido efetuado com sucesso!" << endl << endl;
+		} else
+			cout << "Nao existem grupos para aderir" << endl << endl;
 		esperar();
 		throw VoltarAtras();
 	}
@@ -627,9 +594,9 @@ void gruposUtilizador(Utilizador *u) {
 }
 
 /**
-* @brief Funcao que analisa e gere a opccao mensagens->conversas do utilizador.
-* @param u utilizador que se esta a gerir.
-*/
+ * @brief Funcao que analisa e gere a opccao mensagens->conversas do utilizador.
+ * @param u utilizador que se esta a gerir.
+ */
 void conversasUtilizador(Utilizador *u) {
 	int op;
 	int i;
@@ -640,8 +607,7 @@ void conversasUtilizador(Utilizador *u) {
 
 	clrscr();
 
-	switch (op)
-	{
+	switch (op) {
 	case 1: //CRIAR
 	{
 		string login;
@@ -669,7 +635,9 @@ void conversasUtilizador(Utilizador *u) {
 		clrscr();
 
 		//imprime as conversas desse grupo
-		header("Conversa - " + u->getDestinatarioConversa(u->getConversa(i - 1)));
+		header(
+				"Conversa - "
+						+ u->getDestinatarioConversa(u->getConversa(i - 1)));
 		u->getConversa(i - 1)->imprimirConversa();
 
 		esperar();
@@ -691,43 +659,41 @@ void conversasUtilizador(Utilizador *u) {
 
 			if (op == 1) { //ver conversa x
 				clrscr();
-				header("Conversa - " + u->getDestinatarioConversa(u->getConversa(i - 1)));
+				header(
+						"Conversa - "
+								+ u->getDestinatarioConversa(
+										u->getConversa(i - 1)));
 				u->getConversa(i - 1)->imprimirConversa();
 				cout << endl;
-			}
-			else { //apagar conversa x
+			} else { //apagar conversa x
 				u->sairConversa(u->getConversa(i - 1));
 				cout << "\nSaida da conversa com sucesso!" << endl << endl;
 			}
 			esperar();
 			throw VoltarAtras();
-		}
-		else
+		} else
 			throw VoltarAtras();
 	}
-	throw VoltarAtras();
+		throw VoltarAtras();
 	}
 }
 
 /**
-* @brief Funcao que gere a opccao mensagens do utilizador.
-* @param c comunidade que contem todos os utilizadores inscritos.
-* @param u utilizador que se esta a gerir.
-*/
+ * @brief Funcao que gere a opccao mensagens do utilizador.
+ * @param c comunidade que contem todos os utilizadores inscritos.
+ * @param u utilizador que se esta a gerir.
+ */
 void mensagensUtilizador(Utilizador *u, Comunidade *c) {
 	menuMensagens();
 	int op;
 	opccao(op, 1, 3);
 
-	switch (op)
-	{
-	case 1:
-	{
+	switch (op) {
+	case 1: {
 		gruposUtilizador(u);
 		break;
 	}
-	case 2:
-	{
+	case 2: {
 		conversasUtilizador(u);
 		break;
 	}
@@ -737,10 +703,10 @@ void mensagensUtilizador(Utilizador *u, Comunidade *c) {
 }
 
 /**
-* @brief Funcao que gere a opccao definicoes do utilizador.
-* @param c comunidade que contem todos os utilizadores inscritos.
-* @param u utilizador que se esta a gerir.
-*/
+ * @brief Funcao que gere a opccao definicoes do utilizador.
+ * @param c comunidade que contem todos os utilizadores inscritos.
+ * @param u utilizador que se esta a gerir.
+ */
 void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 	//Menu Definicoes
 	header("DEFINICOES");
@@ -754,16 +720,14 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 	if (op == 1) {
 		menuAlterarDefinicoes();
 		opccao(op, 1, 6);
-	}
-	else
+	} else
 		throw VoltarAtras();
 
 	clrscr();
 
 	header("DEFINICOES");
 
-	switch (op)
-	{
+	switch (op) {
 	case 1: //Alterar Visibilidade
 	{
 		int v;
@@ -796,8 +760,7 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 		if (c->existeUtil(p) == -1) {
 			u->setLogin(l);
 			delete p;
-		}
-		else {
+		} else {
 			delete p;
 			throw UtilizadorJaExiste(u->getLogin());
 		}
@@ -833,10 +796,10 @@ void definicoesUtilizador(Utilizador *u, Comunidade *c) {
 }
 
 /**
-* @brief Funcao que mostra o menu do utilizador.
-* @param u utilizador que se esta a gerir.
-* @return op opccao escolhida do menu.
-*/
+ * @brief Funcao que mostra o menu do utilizador.
+ * @param u utilizador que se esta a gerir.
+ * @return op opccao escolhida do menu.
+ */
 int menuUtilizador(Utilizador *u) {
 	clrscr();
 	header("Utilizador - " + u->getLogin());
@@ -847,14 +810,13 @@ int menuUtilizador(Utilizador *u) {
 }
 
 /**
-* @brief Funcao que analisa e gere a opccao op do menu do utilizador.
-* @param c comunidade que contem todos os utilizadores inscritos.
-* @param u utilizador que se esta a gerir.
-*/
+ * @brief Funcao que analisa e gere a opccao op do menu do utilizador.
+ * @param c comunidade que contem todos os utilizadores inscritos.
+ * @param u utilizador que se esta a gerir.
+ */
 void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 	clrscr();
-	switch (op)
-	{
+	switch (op) {
 	case 1: //Perfil
 	{
 		header("PERFIL");
@@ -875,7 +837,7 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 	case 4: //Comunidade
 	{
 		string login;
-		int i;
+		//int i;
 		comunidade(c);
 		cout << endl;
 
@@ -891,8 +853,7 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 
 			header(u->getAmigo(login)->getLogin());
 			u->getAmigo(login)->imprimirUtilizador();
-		}
-		else
+		} else
 			throw VoltarAtras();
 		esperar();
 		break;
@@ -906,94 +867,90 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
 }
 
 /**
-* @brief Funcao da interface do utilizador.
-* Mostra as diferentes opccoes do menu utilizador e gere a escolhida.
-* @param c comunidade que contem todos os utilizadores inscritos.
-* @param u utilizador que estamos a gerir.
-*/
+ * @brief Funcao da interface do utilizador.
+ * Mostra as diferentes opccoes do menu utilizador e gere a escolhida.
+ * @param c comunidade que contem todos os utilizadores inscritos.
+ * @param u utilizador que estamos a gerir.
+ */
 void MenuUtilizador(Utilizador *u, Comunidade *c) {
 	bool terminar = false;
 	int op;
-	do
-	{
+	do {
 		try {
 			op = menuUtilizador(u);
 			if (op == 6)
 				terminar = true;
 			opccaoMenuUtilizador(u, c, op);
-		}
-		catch (OpccaoInvalida<int>(x)) {
-			cout << x.getOp() << " nao se encontra entre as opccoes " << x.getMin() << " e " << x.getMax() << endl << endl;
+		} catch (OpccaoInvalida<int> (x)) {
+			cout << x.getOp() << " nao se encontra entre as opccoes "
+					<< x.getMin() << " e " << x.getMax() << endl << endl;
 			esperar();
-		}
-		catch (UtilizadorInexistente(x)) {
-			cout << "Nao existe um utilizador com o login " << x.getLogin() << endl << endl;
+		} catch (UtilizadorInexistente (x)) {
+			cout << "Nao existe um utilizador com o login " << x.getLogin()
+					<< endl << endl;
 			esperar();
-		}
-		catch (UtilizadorJaExiste(x)) {
-			cout << "Ja existe um utilizador com o login " << x.getLogin() << endl << endl;
+		} catch (UtilizadorJaExiste (x)) {
+			cout << "Ja existe um utilizador com o login " << x.getLogin()
+					<< endl << endl;
 			esperar();
-		}
-		catch (IdadeInsuficiente(x)) {
-			cout << "So e permitido usar a aplicacao com maiores de 18 anos!" << endl << endl;
+		} catch (IdadeInsuficiente (x)) {
+			cout << "So e permitido usar a aplicacao com maiores de 18 anos!"
+					<< endl << endl;
 			esperar();
-		}
-		catch (DataInvalida(x)) {
-			cout << x.getDia() << "/" << x.getMes() << "/" << x.getAno() << " e invalida!" << endl << endl;
+		} catch (DataInvalida (x)) {
+			cout << x.getDia() << "/" << x.getMes() << "/" << x.getAno()
+					<< " e invalida!" << endl << endl;
 			esperar();
-		}
-		catch (AmigoJaExiste(x)) {
+		} catch (AmigoJaExiste (x)) {
 			cout << x.getLogin() << " ja e seu amigo!" << endl << endl;
 			esperar();
-		}
-		catch (AmigoInexistente(x)) {
+		} catch (AmigoInexistente (x)) {
 			cout << x.getLogin() << " nao e seu amigo!" << endl << endl;
 			esperar();
-		}
-		catch (VoltarAtras) {}
-		catch (InputFail) {
+		} catch (VoltarAtras) {
+		} catch (InputFail) {
 			cout << endl;
 			esperar();
-		}
-		catch (HoraInvalida) {
+		} catch (HoraInvalida) {
 			cout << "Hora Invalida!" << endl << endl;
 			esperar();
-		}
-		catch (GrupoInexistente(x)) {
-			cout << "Grupo numero " << x.getGrupo() << " inexistente!" << endl << endl;
+		} catch (GrupoInexistente (x)) {
+			cout << "Grupo numero " << x.getGrupo() << " inexistente!" << endl
+					<< endl;
 			esperar();
-		}
-		catch (MembroInexistente(x)) {
-			cout << "Nao existe nenhum membro do grupo com o login " << x.getLogin() << endl << endl;
+		} catch (MembroInexistente (x)) {
+			cout << "Nao existe nenhum membro do grupo com o login "
+					<< x.getLogin() << endl << endl;
 			esperar();
-		}
-		catch (NaoModerador(x)) {
-			cout << "O membro " << x.getNome() << " nao e moderador" << endl << endl;
+		} catch (NaoModerador (x)) {
+			cout << "O membro " << x.getNome() << " nao e moderador" << endl
+					<< endl;
 			esperar();
-		}
-		catch (PedidoInexistente(x)) {
-			cout << "Nao existe nenhum pedido de adesao com o login " << x.getLogin() << endl << endl;
-		}
-		catch (ConversaInexistente(x)) {
-			cout << "Conversa numero " << x.getPosicao() << " inexistente!" << endl << endl;
+		} catch (PedidoInexistente (x)) {
+			cout << "Nao existe nenhum pedido de adesao com o login "
+					<< x.getLogin() << endl << endl;
+		} catch (ConversaInexistente (x)) {
+			cout << "Conversa numero " << x.getPosicao() << " inexistente!"
+					<< endl << endl;
 			esperar();
 		}
 	} while (terminar == false);
 }
 
-
 /*****************************************************************
-*                             MAIN                               *
-*****************************************************************/
+ *                             MAIN                               *
+ *****************************************************************/
 
 /**
-* @brief Main do programa.
-* Gere a interacao entre os diferentes utilizadores de uma comunidade.
-*/
+ * @brief Main do programa.
+ * Gere a interacao entre os diferentes utilizadores de uma comunidade.
+ */
 int main() {
-
 	Comunidade *c = new Comunidade;
 	Utilizador *u = new Utilizador;
+
+	c->leComunidade();
+	/*
 	int d, m, a;
 	while (1) {
 		u = MenuInicial(c);
@@ -1004,5 +961,6 @@ int main() {
 		dataHoje.setData(d, m, a);
 		MenuUtilizador(u, c);
 	}
+	*/
 	return 0;
 }

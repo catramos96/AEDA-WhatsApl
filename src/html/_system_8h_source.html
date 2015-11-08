@@ -146,39 +146,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> getHoraNovaData();</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;};</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keywordtype">void</span> clrscr(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> N&gt;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keywordtype">void</span> input(N &amp;valor) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  cin &gt;&gt; valor;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">if</span> (cin.fail()) {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    cin.clear();</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    cin.ignore(1000, <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="class_input_fail.html">InputFail</a>();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keywordtype">void</span> header(<span class="keywordtype">string</span> msg);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keywordtype">void</span> menuInicial();</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keywordtype">void</span> menuLogin();</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keywordtype">void</span> menuRegistar();</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keywordtype">void</span> menuComunidade();</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keywordtype">void</span> menuUtilizador();</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keywordtype">void</span> menuAmigos();</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keywordtype">void</span> menuMensagens();</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keywordtype">void</span> menuGrupos();</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keywordtype">void</span> menuGerirGrupos();</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keywordtype">void</span> menuConversas();</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keywordtype">void</span> menuDefinicoes();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keywordtype">void</span> menuAlterarDefinicoes();</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keywordtype">void</span> menuComunidadeOrdenada();</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="keywordtype">void</span> menuInformacao();</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_SYSTEM_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> N&gt;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keywordtype">void</span> input(N &amp;valor) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  cin &gt;&gt; valor;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">if</span> (cin.fail()) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    cin.clear();</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    cin.ignore(1000, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="class_input_fail.html">InputFail</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keywordtype">void</span> header(<span class="keywordtype">string</span> msg);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keywordtype">void</span> menuInicial();</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keywordtype">void</span> menuComunidade();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keywordtype">void</span> menuUtilizador();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keywordtype">void</span> menuAmigos();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keywordtype">void</span> menuMensagens();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keywordtype">void</span> menuGrupos();</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keywordtype">void</span> menuGerirGrupos();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keywordtype">void</span> menuConversas();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="keywordtype">void</span> menuDefinicoes();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="keywordtype">void</span> menuAlterarDefinicoes();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keywordtype">void</span> menuComunidadeOrdenada();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keywordtype">void</span> menuInformacao();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_SYSTEM_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="class_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdoc">Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...</div><div class="ttdef"><b>Definition:</b> System.h:76</div></div>
 <div class="ttc" id="class_hora_nova_html"><div class="ttname"><a href="class_hora_nova.html">HoraNova</a></div><div class="ttdef"><b>Definition:</b> System.h:144</div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
 <div class="ttc" id="class_horas_html"><div class="ttname"><a href="class_horas.html">Horas</a></div><div class="ttdoc">Classe Horas. Classe que indica as horas (hora e minuto) ao utilizador. E possivel modificar as horas...</div><div class="ttdef"><b>Definition:</b> System.h:20</div></div>
-<div class="ttc" id="class_input_fail_html"><div class="ttname"><a href="class_input_fail.html">InputFail</a></div><div class="ttdoc">Classe que representa uma excecao da classe main. Impede que o programa aborte quando sao introduzido...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:163</div></div>
+<div class="ttc" id="class_input_fail_html"><div class="ttname"><a href="class_input_fail.html">InputFail</a></div><div class="ttdoc">Classe que representa uma excecao da classe main. Impede que o programa aborte quando sao introduzido...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:229</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

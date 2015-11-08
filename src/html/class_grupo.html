@@ -138,15 +138,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a78e37207f8c0384d1a0cc06dd74c0fa1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a78e37207f8c0384d1a0cc06dd74c0fa1">enviarMensagem</a> (string emissor, <a class="el" href="class_mensagem.html">Mensagem</a> *sms)</td></tr>
 <tr class="memdesc:a78e37207f8c0384d1a0cc06dd74c0fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que envia uma mensagem para a conversa de grupo. Gera excecoes se o utilizador que quer enviar a mensagem esta bloqueado ou se nao existe.  <a href="#a78e37207f8c0384d1a0cc06dd74c0fa1">More...</a><br /></td></tr>
 <tr class="separator:a78e37207f8c0384d1a0cc06dd74c0fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace18db9a5770707b1b625f06c980c760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#ace18db9a5770707b1b625f06c980c760">operator==</a> (const <a class="el" href="class_grupo.html">Grupo</a> &amp;g) const </td></tr>
-<tr class="memdesc:ace18db9a5770707b1b625f06c980c760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que permite fazer o overloading do operador == de modo a conseguir igualar 2 objetos do tipo <a class="el" href="class_grupo.html" title="Classe Grupo. Classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador...">Grupo</a>. O criterio de igualdade sao os participantes.  <a href="#ace18db9a5770707b1b625f06c980c760">More...</a><br /></td></tr>
-<tr class="separator:ace18db9a5770707b1b625f06c980c760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af48627bf744786574c3caa66b75c2421"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#af48627bf744786574c3caa66b75c2421">operator==</a> (<a class="el" href="class_grupo.html">Grupo</a> &amp;g) const </td></tr>
+<tr class="memdesc:af48627bf744786574c3caa66b75c2421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que permite fazer o overloading do operador == de modo a conseguir igualar 2 objetos do tipo <a class="el" href="class_grupo.html" title="Classe Grupo. Classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador...">Grupo</a>. O criterio de igualdade sao os participantes.  <a href="#af48627bf744786574c3caa66b75c2421">More...</a><br /></td></tr>
+<tr class="separator:af48627bf744786574c3caa66b75c2421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a290892a90ca39fa1b35fba2d292366f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a290892a90ca39fa1b35fba2d292366f7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a290892a90ca39fa1b35fba2d292366f7">printPedidos</a> () const </td></tr>
 <tr class="memdesc:a290892a90ca39fa1b35fba2d292366f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que imprime o membro privado pedidos. <br /></td></tr>
 <tr class="separator:a290892a90ca39fa1b35fba2d292366f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43dfe18242ba72a51634ddc79ee5f25d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a43dfe18242ba72a51634ddc79ee5f25d">numPedidos</a> () const </td></tr>
-<tr class="memdesc:a43dfe18242ba72a51634ddc79ee5f25d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que retorna o numero de pedidos de adesao ao grupo.  <a href="#a43dfe18242ba72a51634ddc79ee5f25d">More...</a><br /></td></tr>
+<tr class="memitem:a43dfe18242ba72a51634ddc79ee5f25d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43dfe18242ba72a51634ddc79ee5f25d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numPedidos</b> () const </td></tr>
 <tr class="separator:a43dfe18242ba72a51634ddc79ee5f25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae358292c3dbb687910f0c4c365260a9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#ae358292c3dbb687910f0c4c365260a9c">adicionarPedido</a> (string login)</td></tr>
 <tr class="memdesc:ae358292c3dbb687910f0c4c365260a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que adiciona o pedido de adesao de um utilizador ao membro privado 'pedidos'.  <a href="#ae358292c3dbb687910f0c4c365260a9c">More...</a><br /></td></tr>
@@ -205,7 +205,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
   <table class="params">
     <tr><td class="paramname">titulo</td><td>Titulo do grupo. </td></tr>
     <tr><td class="paramname">criacao</td><td><a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> de criacao do grupo. </td></tr>
-    <tr><td class="paramname">moderador</td><td><a class="el" href="class_utilizador.html">Utilizador</a> moderador do grupo. </td></tr>
+    <tr><td class="paramname">moderador</td><td><a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> moderador do grupo. </td></tr>
   </table>
   </dd>
 </dl>
@@ -246,10 +246,9 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <p>Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um pedido de adesao. O surgimento de um novo membro e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">novo</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> que pede permissao. </td></tr>
-    <tr><td class="paramname">moderador</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao). </td></tr>
+    <tr><td class="paramname">novo</td><td>Login do <a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> que pede permissao. </td></tr>
+    <tr><td class="paramname">moderador</td><td>Login do <a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao). </td></tr>
     <tr><td class="paramname">adesao</td><td><a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> em que o utilizador pede permissao para entrar no grupo. </td></tr>
-    <tr><td class="paramname">aceita</td><td>Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao. </td></tr>
   </table>
   </dd>
 </dl>
@@ -314,8 +313,8 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <p>Funcao que bloqueia um membro. Um membro bloqueado nao pode enviar mensagens dentro do grupo, no entanto continua a pertencer ao grupo e a ver mensagens enviadas entre outros utilizadores. O bloqueio e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">login</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> que vai ser bloqueado. </td></tr>
-    <tr><td class="paramname">moderador</td><td><a class="el" href="class_utilizador.html">Utilizador</a> moderador (apenas ele pode bloquear membros). </td></tr>
+    <tr><td class="paramname">login</td><td>Login do <a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> que vai ser bloqueado. </td></tr>
+    <tr><td class="paramname">moderador</td><td><a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> moderador (apenas ele pode bloquear membros). </td></tr>
     <tr><td class="paramname">diaAtual</td><td><a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> em que o utilizador e bloqueado. </td></tr>
   </table>
   </dd>
@@ -357,8 +356,8 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <p>Funcao que desbloqueia um membro. Esta funcao, ao contrario da funcao pedidoAdesao, nao implica que o utilizador peca para ser desbloqueado. O desbloqueio e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">login</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> que vai ser desbloqueado. </td></tr>
-    <tr><td class="paramname">moderador</td><td><a class="el" href="class_utilizador.html">Utilizador</a> moderador (apenas ele pode desbloquear membros). </td></tr>
+    <tr><td class="paramname">login</td><td>Login do <a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> que vai ser desbloqueado. </td></tr>
+    <tr><td class="paramname">moderador</td><td><a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> moderador (apenas ele pode desbloquear membros). </td></tr>
     <tr><td class="paramname">diaAtual</td><td><a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> em que o utilizador e desbloqueado. </td></tr>
   </table>
   </dd>
@@ -395,7 +394,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">emissor</td><td>Login do utilizador que envia a mensagem. </td></tr>
-    <tr><td class="paramname">*sms</td><td><a class="el" href="class_mensagem.html">Mensagem</a> que vai ser enviada, </td></tr>
+    <tr><td class="paramname">*sms</td><td><a class="el" href="class_mensagem.html" title="Classe Mensagem. Cada Mensagem tem um id unico que representa o numero da mensgem. Cata Mensagem pode ainda ser de texto, video ou imagem. ">Mensagem</a> que vai ser enviada, </td></tr>
   </table>
   </dd>
 </dl>
@@ -490,32 +489,14 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
-<a class="anchor" id="a43dfe18242ba72a51634ddc79ee5f25d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Grupo::numPedidos </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Funcao que retorna o numero de pedidos de adesao ao grupo. </p>
-<dl class="section return"><dt>Returns</dt><dd>numero de pedidos </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ace18db9a5770707b1b625f06c980c760"></a>
+<a class="anchor" id="af48627bf744786574c3caa66b75c2421"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool Grupo::operator== </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_grupo.html">Grupo</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_grupo.html">Grupo</a> &amp;&#160;</td>
           <td class="paramname"><em>g</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -572,8 +553,8 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <p>Funcao que aceita um novo membro no grupo através de pedido de adesao. Um utilizador que pede permissao pode ser novo ou pode apenas estar bloqueado. O surgimento de um novo membro e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">novo</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> que pede permissao. </td></tr>
-    <tr><td class="paramname">moderador</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao). </td></tr>
+    <tr><td class="paramname">novo</td><td>Login do <a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> que pede permissao. </td></tr>
+    <tr><td class="paramname">moderador</td><td>Login do <a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao). </td></tr>
     <tr><td class="paramname">adesao</td><td><a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> em que o utilizador pede permissao para entrar no grupo. </td></tr>
     <tr><td class="paramname">aceita</td><td>Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao. </td></tr>
   </table>
@@ -616,8 +597,8 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <p>Funcao que elimina um membro do gupo. A eliminacao e registada no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">login</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> que vai ser eliminado. </td></tr>
-    <tr><td class="paramname">moderador</td><td>Login do <a class="el" href="class_utilizador.html">Utilizador</a> moderador (apenas ele pode eliminar membros). </td></tr>
+    <tr><td class="paramname">login</td><td>Login do <a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> que vai ser eliminado. </td></tr>
+    <tr><td class="paramname">moderador</td><td>Login do <a class="el" href="class_utilizador.html" title="Classe Utilizador. Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de...">Utilizador</a> moderador (apenas ele pode eliminar membros). </td></tr>
     <tr><td class="paramname">diaAtual</td><td><a class="el" href="class_data.html" title="Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...">Data</a> em que o utilizador e eliminado do grupo. </td></tr>
   </table>
   </dd>
@@ -654,6 +635,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">login</td><td>Login do proximo moderador </td></tr>
+    <tr><td class="paramname">diaAtual</td><td>dia da mudanca. </td></tr>
   </table>
   </dd>
 </dl>

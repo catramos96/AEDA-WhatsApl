@@ -40,13 +40,14 @@ bool \hyperlink{class_grupo_a8e58dce790752c7f19d67fabcc163ad3}{desbloquear\+Memb
 \begin{DoxyCompactList}\small\item\em Funcao que desbloqueia um membro. Esta funcao, ao contrario da funcao pedido\+Adesao, nao implica que o utilizador peca para ser desbloqueado. O desbloqueio e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
 bool \hyperlink{class_grupo_a78e37207f8c0384d1a0cc06dd74c0fa1}{enviar\+Mensagem} (string emissor, \hyperlink{class_mensagem}{Mensagem} $\ast$sms)
 \begin{DoxyCompactList}\small\item\em Funcao que envia uma mensagem para a conversa de grupo. Gera excecoes se o utilizador que quer enviar a mensagem esta bloqueado ou se nao existe. \end{DoxyCompactList}\item 
-bool \hyperlink{class_grupo_ace18db9a5770707b1b625f06c980c760}{operator==} (const \hyperlink{class_grupo}{Grupo} \&g) const 
+bool \hyperlink{class_grupo_af48627bf744786574c3caa66b75c2421}{operator==} (\hyperlink{class_grupo}{Grupo} \&g) const 
 \begin{DoxyCompactList}\small\item\em Funcao que permite fazer o overloading do operador == de modo a conseguir igualar 2 objetos do tipo \hyperlink{class_grupo}{Grupo}. O criterio de igualdade sao os participantes. \end{DoxyCompactList}\item 
 \hypertarget{class_grupo_a290892a90ca39fa1b35fba2d292366f7}{}void \hyperlink{class_grupo_a290892a90ca39fa1b35fba2d292366f7}{print\+Pedidos} () const \label{class_grupo_a290892a90ca39fa1b35fba2d292366f7}
 
 \begin{DoxyCompactList}\small\item\em Funcao que imprime o membro privado pedidos. \end{DoxyCompactList}\item 
-int \hyperlink{class_grupo_a43dfe18242ba72a51634ddc79ee5f25d}{num\+Pedidos} () const 
-\begin{DoxyCompactList}\small\item\em Funcao que retorna o numero de pedidos de adesao ao grupo. \end{DoxyCompactList}\item 
+\hypertarget{class_grupo_a43dfe18242ba72a51634ddc79ee5f25d}{}int {\bfseries num\+Pedidos} () const \label{class_grupo_a43dfe18242ba72a51634ddc79ee5f25d}
+
+\item 
 void \hyperlink{class_grupo_ae358292c3dbb687910f0c4c365260a9c}{adicionar\+Pedido} (string login)
 \begin{DoxyCompactList}\small\item\em Funcao que adiciona o pedido de adesao de um utilizador ao membro privado \textquotesingle{}pedidos\textquotesingle{}. \end{DoxyCompactList}\item 
 \hypertarget{class_grupo_a892b603306ef718ffcebb040f7028ab4}{}void \hyperlink{class_grupo_a892b603306ef718ffcebb040f7028ab4}{print\+Conversa} ()\label{class_grupo_a892b603306ef718ffcebb040f7028ab4}
@@ -111,8 +112,6 @@ Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um p
 {\em moderador} & Login do \hyperlink{class_utilizador}{Utilizador} moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao). \\
 \hline
 {\em adesao} & \hyperlink{class_data}{Data} em que o utilizador pede permissao para entrar no grupo. \\
-\hline
-{\em aceita} & Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -272,27 +271,13 @@ Funcao que retorna o numero de elementos do grupo.
 \begin{DoxyReturn}{Returns}
 Numero de elementos membro. 
 \end{DoxyReturn}
-\hypertarget{class_grupo_a43dfe18242ba72a51634ddc79ee5f25d}{}\index{Grupo@{Grupo}!num\+Pedidos@{num\+Pedidos}}
-\index{num\+Pedidos@{num\+Pedidos}!Grupo@{Grupo}}
-\subsubsection[{num\+Pedidos() const }]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::num\+Pedidos (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\label{class_grupo_a43dfe18242ba72a51634ddc79ee5f25d}
-
-
-Funcao que retorna o numero de pedidos de adesao ao grupo. 
-
-\begin{DoxyReturn}{Returns}
-numero de pedidos 
-\end{DoxyReturn}
-\hypertarget{class_grupo_ace18db9a5770707b1b625f06c980c760}{}\index{Grupo@{Grupo}!operator==@{operator==}}
+\hypertarget{class_grupo_af48627bf744786574c3caa66b75c2421}{}\index{Grupo@{Grupo}!operator==@{operator==}}
 \index{operator==@{operator==}!Grupo@{Grupo}}
-\subsubsection[{operator==(const Grupo \&g) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::operator== (
+\subsubsection[{operator==(\+Grupo \&g) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::operator== (
 \begin{DoxyParamCaption}
-\item[{const {\bf Grupo} \&}]{g}
+\item[{{\bf Grupo} \&}]{g}
 \end{DoxyParamCaption}
-) const}\label{class_grupo_ace18db9a5770707b1b625f06c980c760}
+) const}\label{class_grupo_af48627bf744786574c3caa66b75c2421}
 
 
 Funcao que permite fazer o overloading do operador == de modo a conseguir igualar 2 objetos do tipo \hyperlink{class_grupo}{Grupo}. O criterio de igualdade sao os participantes. 
@@ -373,6 +358,8 @@ Funcao que altera o moderador.
 
 \begin{DoxyParams}{Parameters}
 {\em login} & Login do proximo moderador \\
+\hline
+{\em dia\+Atual} & dia da mudanca. \\
 \hline
 \end{DoxyParams}
 

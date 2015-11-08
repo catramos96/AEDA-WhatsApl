@@ -1,5 +1,14 @@
 \hypertarget{class_mensagem}{}\section{Mensagem Class Reference}
 \label{class_mensagem}\index{Mensagem@{Mensagem}}
+
+
+Classe \hyperlink{class_mensagem}{Mensagem}. Cada \hyperlink{class_mensagem}{Mensagem} tem um id unico que representa o numero da mensgem. Cata \hyperlink{class_mensagem}{Mensagem} pode ainda ser de texto, video ou imagem.  
+
+
+
+
+{\ttfamily \#include $<$Mensagem.\+h$>$}
+
 Inheritance diagram for Mensagem\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,33 +18,140 @@ Inheritance diagram for Mensagem\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_mensagem_a4152f41a1dbfd03eb058d6a9926f4426}{}{\bfseries Mensagem} (\hyperlink{class_data}{Data} data, \hyperlink{class_horas}{Horas} hora)\label{class_mensagem_a4152f41a1dbfd03eb058d6a9926f4426}
+\hyperlink{class_mensagem_a4152f41a1dbfd03eb058d6a9926f4426}{Mensagem} (\hyperlink{class_data}{Data} data, \hyperlink{class_horas}{Horas} hora)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \hyperlink{class_mensagem}{Mensagem};. \end{DoxyCompactList}\item 
+\hypertarget{class_mensagem_a4490a1cfe88288fa1ff4b41327e769ed}{}virtual void \hyperlink{class_mensagem_a4490a1cfe88288fa1ff4b41327e769ed}{imprimir\+Msg} ()\label{class_mensagem_a4490a1cfe88288fa1ff4b41327e769ed}
 
-\item 
-\hypertarget{class_mensagem_a4490a1cfe88288fa1ff4b41327e769ed}{}virtual void {\bfseries imprimir\+Msg} ()\label{class_mensagem_a4490a1cfe88288fa1ff4b41327e769ed}
-
-\item 
-\hypertarget{class_mensagem_a5438dfe93aec2e6512042704e134d5db}{}string {\bfseries get\+Emissor} () const \label{class_mensagem_a5438dfe93aec2e6512042704e134d5db}
-
-\item 
-\hypertarget{class_mensagem_a8d3b52e1c20fac96c4df60c79b5b7846}{}\hyperlink{class_data}{Data} {\bfseries get\+Data} () const \label{class_mensagem_a8d3b52e1c20fac96c4df60c79b5b7846}
-
-\item 
-\hypertarget{class_mensagem_a7285a85c11aea596e25c6f87a68ad86f}{}\hyperlink{class_horas}{Horas} {\bfseries get\+Hora} () const \label{class_mensagem_a7285a85c11aea596e25c6f87a68ad86f}
-
-\item 
-\hypertarget{class_mensagem_a376309b58e69c41bf10acb7adad7bd3d}{}int {\bfseries get\+Numero} () const \label{class_mensagem_a376309b58e69c41bf10acb7adad7bd3d}
-
-\item 
-\hypertarget{class_mensagem_a74d42818d3796b28496f400e02328c92}{}void {\bfseries set\+Emissor} (string emissor)\label{class_mensagem_a74d42818d3796b28496f400e02328c92}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao que imprime todos os membros privados da mensagem. \end{DoxyCompactList}\item 
+string \hyperlink{class_mensagem_a5438dfe93aec2e6512042704e134d5db}{get\+Emissor} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o emissor. \end{DoxyCompactList}\item 
+\hyperlink{class_data}{Data} \hyperlink{class_mensagem_a8d3b52e1c20fac96c4df60c79b5b7846}{get\+Data} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a data. \end{DoxyCompactList}\item 
+\hyperlink{class_horas}{Horas} \hyperlink{class_mensagem_a7285a85c11aea596e25c6f87a68ad86f}{get\+Hora} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a hora. \end{DoxyCompactList}\item 
+int \hyperlink{class_mensagem_a376309b58e69c41bf10acb7adad7bd3d}{get\+Numero} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o numero. \end{DoxyCompactList}\item 
+void \hyperlink{class_mensagem_a74d42818d3796b28496f400e02328c92}{set\+Emissor} (string emissor)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o emissor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_mensagem_aedda3752e5473856e88644839a16fb10}{}static int {\bfseries get\+I\+D} ()\label{class_mensagem_aedda3752e5473856e88644839a16fb10}
+static int \hyperlink{class_mensagem_aedda3752e5473856e88644839a16fb10}{get\+I\+D} ()
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\end{DoxyCompactItemize}
+
+\subsection{Detailed Description}
+Classe \hyperlink{class_mensagem}{Mensagem}. Cada \hyperlink{class_mensagem}{Mensagem} tem um id unico que representa o numero da mensgem. Cata \hyperlink{class_mensagem}{Mensagem} pode ainda ser de texto, video ou imagem. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_mensagem_a4152f41a1dbfd03eb058d6a9926f4426}{}\index{Mensagem@{Mensagem}!Mensagem@{Mensagem}}
+\index{Mensagem@{Mensagem}!Mensagem@{Mensagem}}
+\subsubsection[{Mensagem(\+Data data, Horas hora)}]{\setlength{\rightskip}{0pt plus 5cm}Mensagem\+::\+Mensagem (
+\begin{DoxyParamCaption}
+\item[{{\bf Data}}]{data, }
+\item[{{\bf Horas}}]{hora}
+\end{DoxyParamCaption}
+)}\label{class_mensagem_a4152f41a1dbfd03eb058d6a9926f4426}
+
+
+Construtor da classe \hyperlink{class_mensagem}{Mensagem};. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \hyperlink{class_data}{Data} de criacao \\
+\hline
+{\em hora} & Hora de criacao \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_mensagem_a8d3b52e1c20fac96c4df60c79b5b7846}{}\index{Mensagem@{Mensagem}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Mensagem@{Mensagem}}
+\subsubsection[{get\+Data() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Mensagem\+::get\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_mensagem_a8d3b52e1c20fac96c4df60c79b5b7846}
+
+
+Funcao que retorna a data. 
+
+\begin{DoxyReturn}{Returns}
+data 
+\end{DoxyReturn}
+\hypertarget{class_mensagem_a5438dfe93aec2e6512042704e134d5db}{}\index{Mensagem@{Mensagem}!get\+Emissor@{get\+Emissor}}
+\index{get\+Emissor@{get\+Emissor}!Mensagem@{Mensagem}}
+\subsubsection[{get\+Emissor() const }]{\setlength{\rightskip}{0pt plus 5cm}string Mensagem\+::get\+Emissor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_mensagem_a5438dfe93aec2e6512042704e134d5db}
+
+
+Funcao que retorna o emissor. 
+
+\begin{DoxyReturn}{Returns}
+emissor 
+\end{DoxyReturn}
+\hypertarget{class_mensagem_a7285a85c11aea596e25c6f87a68ad86f}{}\index{Mensagem@{Mensagem}!get\+Hora@{get\+Hora}}
+\index{get\+Hora@{get\+Hora}!Mensagem@{Mensagem}}
+\subsubsection[{get\+Hora() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Horas} Mensagem\+::get\+Hora (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_mensagem_a7285a85c11aea596e25c6f87a68ad86f}
+
+
+Funcao que retorna a hora. 
+
+\begin{DoxyReturn}{Returns}
+hora 
+\end{DoxyReturn}
+\hypertarget{class_mensagem_aedda3752e5473856e88644839a16fb10}{}\index{Mensagem@{Mensagem}!get\+I\+D@{get\+I\+D}}
+\index{get\+I\+D@{get\+I\+D}!Mensagem@{Mensagem}}
+\subsubsection[{get\+I\+D()}]{\setlength{\rightskip}{0pt plus 5cm}static int Mensagem\+::get\+I\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{class_mensagem_aedda3752e5473856e88644839a16fb10}
+
+
+Funcao que retorna o id. 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\hypertarget{class_mensagem_a376309b58e69c41bf10acb7adad7bd3d}{}\index{Mensagem@{Mensagem}!get\+Numero@{get\+Numero}}
+\index{get\+Numero@{get\+Numero}!Mensagem@{Mensagem}}
+\subsubsection[{get\+Numero() const }]{\setlength{\rightskip}{0pt plus 5cm}int Mensagem\+::get\+Numero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_mensagem_a376309b58e69c41bf10acb7adad7bd3d}
+
+
+Funcao que retorna o numero. 
+
+\begin{DoxyReturn}{Returns}
+numero 
+\end{DoxyReturn}
+\hypertarget{class_mensagem_a74d42818d3796b28496f400e02328c92}{}\index{Mensagem@{Mensagem}!set\+Emissor@{set\+Emissor}}
+\index{set\+Emissor@{set\+Emissor}!Mensagem@{Mensagem}}
+\subsubsection[{set\+Emissor(string emissor)}]{\setlength{\rightskip}{0pt plus 5cm}void Mensagem\+::set\+Emissor (
+\begin{DoxyParamCaption}
+\item[{string}]{emissor}
+\end{DoxyParamCaption}
+)}\label{class_mensagem_a74d42818d3796b28496f400e02328c92}
+
+
+Funcao que altera o emissor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em emissor} & \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

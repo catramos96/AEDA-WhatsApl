@@ -67,6 +67,12 @@ public:
 	 */
 	friend ostream & operator<<(ostream & out, const Membro & m);
 
+	/**
+	 * @brief Overloading do operador menor.
+	 * E usado o login dos memsbros como termo de comparacao.
+	 * @param m Membro com que vamos comparar o membro atual.
+	 * @return True se e menor, ou false em caso contrario.
+	 */
 	bool operator<(const Membro &m) const;
 };
 
@@ -137,7 +143,6 @@ public:
 	 * @param novo Login do Utilizador que pede permissao.
 	 * @param moderador Login do Utilizador moderador (apenas ele pode aceitar ou rejeitar pedidos de adesao).
 	 * @param adesao Data em que o utilizador pede permissao para entrar no grupo.
-	 * @param aceita Boleano com a indicacao se o moderador aceitou ou nao o pedido de adesao.
 	 * @return True se aceita o pedido, false se rejeita.
 	 */
 	bool adicionarMembro(string novo, string moderador, Data adesao);
@@ -229,6 +234,7 @@ public:
 	/**
 	* @brief Funcao que altera o moderador.
 	* @param login Login do proximo moderador
+	* @param diaAtual dia da mudanca.
 	*/
 	void setModerador(string login, Data diaAtual);
 };

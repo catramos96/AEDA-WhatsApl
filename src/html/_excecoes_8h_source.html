@@ -91,194 +91,319 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/********************************</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*       EXCECAO UTILIZADOR      *</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">********************************/</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *      EXCECAO UTILIZADOR      *</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ********************************/</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_utilizador_inexistente.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_utilizador_inexistente.html">UtilizadorInexistente</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">string</span> u; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">string</span> u; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_utilizador_inexistente.html#a71e1fc482f66795222c887857bd868b5">   24</a></span>&#160;  <a class="code" href="class_utilizador_inexistente.html#a71e1fc482f66795222c887857bd868b5">UtilizadorInexistente</a>(<span class="keywordtype">string</span> u) { this-&gt;u = u; };</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_utilizador_inexistente.html#aa43e8ef928916c8ae7f7c80a25c1e435">   29</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="class_utilizador_inexistente.html#aa43e8ef928916c8ae7f7c80a25c1e435">getLogin</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> u; };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_utilizador_ja_existe.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_utilizador_ja_existe.html">UtilizadorJaExiste</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">string</span> login; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_utilizador_ja_existe.html#af7a157575758e439854a9d7234ae673f">   45</a></span>&#160;  <a class="code" href="class_utilizador_ja_existe.html#af7a157575758e439854a9d7234ae673f">UtilizadorJaExiste</a>(<span class="keywordtype">string</span> l) { l = login; };</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_utilizador_ja_existe.html#a545e95145227b85f40f6342ccbdfcab1">   50</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="class_utilizador_ja_existe.html#a545e95145227b85f40f6342ccbdfcab1">getLogin</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> login; };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_idade_insuficiente.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_idade_insuficiente.html">IdadeInsuficiente</a> {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">int</span> idade; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_idade_insuficiente.html#a3343305dda977a7ff7af6ebc5d2808f1">   66</a></span>&#160;  <a class="code" href="class_idade_insuficiente.html#a3343305dda977a7ff7af6ebc5d2808f1">IdadeInsuficiente</a>(<span class="keywordtype">int</span> idade) { this-&gt;idade = idade; };</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_amigo_ja_existe.html">   73</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_amigo_ja_existe.html">AmigoJaExiste</a> {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">string</span> login; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_amigo_ja_existe.html#a9d61f8dc97244fdd468b7d70b5f35409">   82</a></span>&#160;  <a class="code" href="class_amigo_ja_existe.html#a9d61f8dc97244fdd468b7d70b5f35409">AmigoJaExiste</a>(<span class="keywordtype">string</span> l) { login = l; };</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_amigo_ja_existe.html#a12bf65d64c1be52121373270dbdf3fc4">   87</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="class_amigo_ja_existe.html#a12bf65d64c1be52121373270dbdf3fc4">getLogin</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> login; };</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_amigo_inexistente.html">   95</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_amigo_inexistente.html">AmigoInexistente</a> {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">string</span> login; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_amigo_inexistente.html#a214d9d7a9579e42d67f8c7fe290958f3">  104</a></span>&#160;  <a class="code" href="class_amigo_inexistente.html#a214d9d7a9579e42d67f8c7fe290958f3">AmigoInexistente</a>(<span class="keywordtype">string</span> l) { login = l; };</div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_amigo_inexistente.html#a72d6ea60bacc6a8deacefc1f130ce883">  109</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="class_amigo_inexistente.html#a72d6ea60bacc6a8deacefc1f130ce883">getLogin</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> login; };</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_utilizador_inexistente.html#a71e1fc482f66795222c887857bd868b5">   24</a></span>&#160;    <a class="code" href="class_utilizador_inexistente.html#a71e1fc482f66795222c887857bd868b5">UtilizadorInexistente</a>(<span class="keywordtype">string</span> u) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        this-&gt;u = u;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_utilizador_inexistente.html#aa43e8ef928916c8ae7f7c80a25c1e435">   32</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_utilizador_inexistente.html#aa43e8ef928916c8ae7f7c80a25c1e435">getLogin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> u;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_utilizador_ja_existe.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_utilizador_ja_existe.html">UtilizadorJaExiste</a> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">string</span> login; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_utilizador_ja_existe.html#af7a157575758e439854a9d7234ae673f">   51</a></span>&#160;    <a class="code" href="class_utilizador_ja_existe.html#af7a157575758e439854a9d7234ae673f">UtilizadorJaExiste</a>(<span class="keywordtype">string</span> l) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        l = login;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    ;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_utilizador_ja_existe.html#a545e95145227b85f40f6342ccbdfcab1">   59</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_utilizador_ja_existe.html#a545e95145227b85f40f6342ccbdfcab1">getLogin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> login;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_idade_insuficiente.html">   69</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_idade_insuficiente.html">IdadeInsuficiente</a> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> idade; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_idade_insuficiente.html#a3343305dda977a7ff7af6ebc5d2808f1">   78</a></span>&#160;    <a class="code" href="class_idade_insuficiente.html#a3343305dda977a7ff7af6ebc5d2808f1">IdadeInsuficiente</a>(<span class="keywordtype">int</span> idade) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        this-&gt;idade = idade;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    ;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_amigo_ja_existe.html">   88</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_amigo_ja_existe.html">AmigoJaExiste</a> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">string</span> login; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_amigo_ja_existe.html#a9d61f8dc97244fdd468b7d70b5f35409">   97</a></span>&#160;    <a class="code" href="class_amigo_ja_existe.html#a9d61f8dc97244fdd468b7d70b5f35409">AmigoJaExiste</a>(<span class="keywordtype">string</span> l) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        login = l;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_amigo_ja_existe.html#a12bf65d64c1be52121373270dbdf3fc4">  105</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_amigo_ja_existe.html#a12bf65d64c1be52121373270dbdf3fc4">getLogin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> login;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    ;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/********************************</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">*           EXCECAO MAIN        *</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">********************************/</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> N&gt;</div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="class_opccao_invalida.html">  122</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_opccao_invalida.html">OpccaoInvalida</a> {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  N op;     </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  N min;    </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  N max;    </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_opccao_invalida.html#a19b191db4d1cc8c074c24a940571dd4b">  135</a></span>&#160;  <a class="code" href="class_opccao_invalida.html#a19b191db4d1cc8c074c24a940571dd4b">OpccaoInvalida</a>(N op, N min, N max) { this-&gt;op = op; this-&gt;min = min; this-&gt;max = max; };</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="comment">/*</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">   * @brief Funcao que retorna a opcao minima.</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">   * @return Opcao minima.</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  N getMin()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> min; };</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="comment">/*</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">   * @brief Funcao que retorna a opcao maxima.</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">   * @return Opcao maxima.</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  N getMax()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> max; };</div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="class_opccao_invalida.html#ac9afa1ee68970cddd39a9873fd2c357f">  150</a></span>&#160;  N <a class="code" href="class_opccao_invalida.html#ac9afa1ee68970cddd39a9873fd2c357f">getOp</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> op; };</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;};</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="class_voltar_atras.html">  157</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_voltar_atras.html">VoltarAtras</a> {};</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="class_input_fail.html">  163</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_input_fail.html">InputFail</a> {};</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">/********************************</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">*           EXCECAO GRUPO       *</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">********************************/</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="class_membro_inexistente.html">  172</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_membro_inexistente.html">MembroInexistente</a> {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <a class="code" href="class_membro_inexistente.html">MembroInexistente</a>(<span class="keywordtype">string</span> login) { this-&gt;login = login; };</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">string</span> getLogin()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> login; };</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordtype">string</span> login;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;};</div>
-<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="class_nao_moderador.html">  183</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nao_moderador.html">NaoModerador</a>{</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">string</span> mod;  </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="class_nao_moderador.html#aa57843875543c5246fc733f87b6ef3dd">  192</a></span>&#160;    <a class="code" href="class_nao_moderador.html#aa57843875543c5246fc733f87b6ef3dd">NaoModerador</a>(<span class="keywordtype">string</span> mod){</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        this-&gt;mod = mod;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    };</div>
-<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="class_nao_moderador.html#aff0ecf62b3446554d93d4032276a6f29">  199</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_nao_moderador.html#aff0ecf62b3446554d93d4032276a6f29">getNome</a>()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">return</span> mod;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    };</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;};</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="class_pedido_inexistente.html">  208</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_pedido_inexistente.html">PedidoInexistente</a>{</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">string</span> login; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="class_pedido_inexistente.html#ae30b81fc0eff41039f0efd87b055daca">  217</a></span>&#160;    <a class="code" href="class_pedido_inexistente.html#ae30b81fc0eff41039f0efd87b055daca">PedidoInexistente</a>(<span class="keywordtype">string</span> l){login = l;};</div>
-<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="class_pedido_inexistente.html#a4922d9813deb3df3880405abef24cc74">  222</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_pedido_inexistente.html#a4922d9813deb3df3880405abef24cc74">getLogin</a>()<span class="keyword"> const</span>{<span class="keywordflow">return</span> login;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_amigo_inexistente.html">  116</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_amigo_inexistente.html">AmigoInexistente</a> {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">string</span> login; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_amigo_inexistente.html#a214d9d7a9579e42d67f8c7fe290958f3">  125</a></span>&#160;    <a class="code" href="class_amigo_inexistente.html#a214d9d7a9579e42d67f8c7fe290958f3">AmigoInexistente</a>(<span class="keywordtype">string</span> l) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        login = l;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    ;</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="class_amigo_inexistente.html#a72d6ea60bacc6a8deacefc1f130ce883">  133</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_amigo_inexistente.html#a72d6ea60bacc6a8deacefc1f130ce883">getLogin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span> login;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    ;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_conversa_ja_existe.html">  143</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_conversa_ja_existe.html">ConversaJaExiste</a> {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="class_conversa_ja_existe.html#a3c2bc0ac8427fca85cb642cbf2f4d068">  148</a></span>&#160;    <a class="code" href="class_conversa_ja_existe.html#a3c2bc0ac8427fca85cb642cbf2f4d068">ConversaJaExiste</a>(vector&lt;string&gt; p) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        participantes = p;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    ;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="class_conversa_ja_existe.html#ad830cc518411774efe43885cb3003371">  155</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_conversa_ja_existe.html#ad830cc518411774efe43885cb3003371">imprimirParticipantes</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        cout &lt;&lt; participantes[0] &lt;&lt; <span class="stringliteral">&quot; , &quot;</span> &lt;&lt; participantes[1] &lt;&lt; endl;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    ;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    vector&lt;string&gt; participantes;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;};</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">/********************************</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment"> *          EXCECAO MAIN        *</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment"> ********************************/</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> N&gt;</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="class_opccao_invalida.html">  173</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_opccao_invalida.html">OpccaoInvalida</a> {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    N op; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    N min; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    N max; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="class_opccao_invalida.html#a19b191db4d1cc8c074c24a940571dd4b">  186</a></span>&#160;    <a class="code" href="class_opccao_invalida.html#a19b191db4d1cc8c074c24a940571dd4b">OpccaoInvalida</a>(N op, N min, N max) {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        this-&gt;op = op;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        this-&gt;min = min;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        this-&gt;max = max;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    ;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">     * @brief Funcao que retorna a opcao minima.</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">     * @return Opcao minima.</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    N getMin()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">return</span> min;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    ;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">     * @brief Funcao que retorna a opcao maxima.</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">     * @return Opcao maxima.</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    N getMax()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">return</span> max;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    ;</div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="class_opccao_invalida.html#ac9afa1ee68970cddd39a9873fd2c357f">  212</a></span>&#160;    N <a class="code" href="class_opccao_invalida.html#ac9afa1ee68970cddd39a9873fd2c357f">getOp</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">return</span> op;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    ;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;};</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="class_voltar_atras.html">  222</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_voltar_atras.html">VoltarAtras</a> {</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;};</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
-<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="class_bloqueado.html">  229</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_bloqueado.html">Bloqueado</a>{</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">string</span> login; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="class_bloqueado.html#aeed14705a1258de654aa8017418f9da4">  238</a></span>&#160;    <a class="code" href="class_bloqueado.html#aeed14705a1258de654aa8017418f9da4">Bloqueado</a>(<span class="keywordtype">string</span> l){login = l;};</div>
-<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="class_bloqueado.html#a4be9531006bc7b1ca77c9c9dbe5789a7">  242</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_bloqueado.html#a4be9531006bc7b1ca77c9c9dbe5789a7">getLogin</a>()<span class="keyword"> const</span>{<span class="keywordflow">return</span> login;};</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;};</div>
-<div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="class_grupo_inexistente.html">  247</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_grupo_inexistente.html">GrupoInexistente</a> {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="class_grupo_inexistente.html#a5a6d0c0193ff73430804be4290576381">  253</a></span>&#160;  <a class="code" href="class_grupo_inexistente.html#a5a6d0c0193ff73430804be4290576381">GrupoInexistente</a>(<span class="keywordtype">int</span> n) { this-&gt;n = n; };</div>
-<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="class_grupo_inexistente.html#af6897fd16e37eb928b5a75efbd4ffcc2">  258</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_grupo_inexistente.html#af6897fd16e37eb928b5a75efbd4ffcc2">getGrupo</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> n; };</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="keywordtype">int</span> n;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;};</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">/********************************</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">*       EXCECAO SYSTEM          *</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">********************************/</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="class_data_invalida.html">  270</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_data_invalida.html">DataInvalida</a> {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordtype">int</span> dia; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keywordtype">int</span> mes; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keywordtype">int</span> ano; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="class_data_invalida.html#ab137bea2db6633300269c0d97d1bae69">  283</a></span>&#160;  <a class="code" href="class_data_invalida.html#ab137bea2db6633300269c0d97d1bae69">DataInvalida</a>(<span class="keywordtype">int</span> d, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> a) { dia = d; mes = m; ano = a; };</div>
-<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="class_data_invalida.html#a3cffc26bb41b7bbddb96c1422d3fe60b">  288</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_data_invalida.html#a3cffc26bb41b7bbddb96c1422d3fe60b">getDia</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> dia; };</div>
-<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="class_data_invalida.html#a22f39fe99f467b66d61dc576d750d4c6">  293</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_data_invalida.html#a22f39fe99f467b66d61dc576d750d4c6">getMes</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mes; };</div>
-<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="class_data_invalida.html#afafe67093a501d5d861b8475695f29fe">  298</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_data_invalida.html#afafe67093a501d5d861b8475695f29fe">getAno</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ano; };</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;};</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
-<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="class_hora_invalida.html">  305</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_hora_invalida.html">HoraInvalida</a> {};</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">/********************************</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">*       EXCECAO CONVERSA        *</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">********************************/</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
-<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="class_nao_participante.html">  315</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nao_participante.html">NaoParticipante</a>{</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordtype">string</span> p; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00324"></a><span class="lineno"><a class="line" href="class_nao_participante.html#af0a256b2f1b44f856076b083966793f6">  324</a></span>&#160;    <a class="code" href="class_nao_participante.html#af0a256b2f1b44f856076b083966793f6">NaoParticipante</a>(<span class="keywordtype">string</span> p){this-&gt;p = p;};</div>
-<div class="line"><a name="l00329"></a><span class="lineno"><a class="line" href="class_nao_participante.html#a6199680fa5f2abfb8abb583d11fc3fd9">  329</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_nao_participante.html#a6199680fa5f2abfb8abb583d11fc3fd9">getlogin</a>()<span class="keyword"> const</span>{<span class="keywordflow">return</span> p;};</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;};</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_utilizador_ja_existe_html_af7a157575758e439854a9d7234ae673f"><div class="ttname"><a href="class_utilizador_ja_existe.html#af7a157575758e439854a9d7234ae673f">UtilizadorJaExiste::UtilizadorJaExiste</a></div><div class="ttdeci">UtilizadorJaExiste(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login do utilizador recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:45</div></div>
-<div class="ttc" id="class_amigo_inexistente_html"><div class="ttname"><a href="class_amigo_inexistente.html">AmigoInexistente</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lancada quando o amigo do util...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:95</div></div>
-<div class="ttc" id="class_data_invalida_html_a3cffc26bb41b7bbddb96c1422d3fe60b"><div class="ttname"><a href="class_data_invalida.html#a3cffc26bb41b7bbddb96c1422d3fe60b">DataInvalida::getDia</a></div><div class="ttdeci">int getDia() const </div><div class="ttdoc">Funcao que retorna o dia invalido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:288</div></div>
-<div class="ttc" id="class_idade_insuficiente_html_a3343305dda977a7ff7af6ebc5d2808f1"><div class="ttname"><a href="class_idade_insuficiente.html#a3343305dda977a7ff7af6ebc5d2808f1">IdadeInsuficiente::IdadeInsuficiente</a></div><div class="ttdeci">IdadeInsuficiente(int idade)</div><div class="ttdoc">Construtor. Inicializa o membro idade com a idade do utilizador recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:66</div></div>
-<div class="ttc" id="class_bloqueado_html_a4be9531006bc7b1ca77c9c9dbe5789a7"><div class="ttname"><a href="class_bloqueado.html#a4be9531006bc7b1ca77c9c9dbe5789a7">Bloqueado::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador que retorna a excecao. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:242</div></div>
-<div class="ttc" id="class_opccao_invalida_html_a19b191db4d1cc8c074c24a940571dd4b"><div class="ttname"><a href="class_opccao_invalida.html#a19b191db4d1cc8c074c24a940571dd4b">OpccaoInvalida::OpccaoInvalida</a></div><div class="ttdeci">OpccaoInvalida(N op, N min, N max)</div><div class="ttdoc">Construtor. Inicializa os membros op, min e max com, repetivamente, a opcao escolhida, a opcao minima e a opcao maxima. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:135</div></div>
-<div class="ttc" id="class_bloqueado_html_aeed14705a1258de654aa8017418f9da4"><div class="ttname"><a href="class_bloqueado.html#aeed14705a1258de654aa8017418f9da4">Bloqueado::Bloqueado</a></div><div class="ttdeci">Bloqueado(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:238</div></div>
-<div class="ttc" id="class_opccao_invalida_html_ac9afa1ee68970cddd39a9873fd2c357f"><div class="ttname"><a href="class_opccao_invalida.html#ac9afa1ee68970cddd39a9873fd2c357f">OpccaoInvalida::getOp</a></div><div class="ttdeci">N getOp() const </div><div class="ttdoc">Funcao que retorna a opcao escolhida. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:150</div></div>
-<div class="ttc" id="class_nao_participante_html_af0a256b2f1b44f856076b083966793f6"><div class="ttname"><a href="class_nao_participante.html#af0a256b2f1b44f856076b083966793f6">NaoParticipante::NaoParticipante</a></div><div class="ttdeci">NaoParticipante(string p)</div><div class="ttdoc">Construtor. Inicializa o membro p com o login do utilizador que nao e participante. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:324</div></div>
-<div class="ttc" id="class_pedido_inexistente_html_ae30b81fc0eff41039f0efd87b055daca"><div class="ttname"><a href="class_pedido_inexistente.html#ae30b81fc0eff41039f0efd87b055daca">PedidoInexistente::PedidoInexistente</a></div><div class="ttdeci">PedidoInexistente(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login do utilizador que criou a excecao. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:217</div></div>
-<div class="ttc" id="class_data_invalida_html_afafe67093a501d5d861b8475695f29fe"><div class="ttname"><a href="class_data_invalida.html#afafe67093a501d5d861b8475695f29fe">DataInvalida::getAno</a></div><div class="ttdeci">int getAno() const </div><div class="ttdoc">Funcao que retorna o ano invalido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:298</div></div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="class_input_fail.html">  229</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_input_fail.html">InputFail</a> {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;};</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">/********************************</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment"> *          EXCECAO GRUPO       *</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment"> ********************************/</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="class_membro_inexistente.html">  239</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_membro_inexistente.html">MembroInexistente</a> {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="class_membro_inexistente.html#a6d379cb19c24d4d0e0d2ada0f17acc99">  246</a></span>&#160;    <a class="code" href="class_membro_inexistente.html#a6d379cb19c24d4d0e0d2ada0f17acc99">MembroInexistente</a>(<span class="keywordtype">string</span> login) {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        this-&gt;login = login;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    ;</div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="class_membro_inexistente.html#a06c787d0849f0622de964bf61a566b67">  254</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_membro_inexistente.html#a06c787d0849f0622de964bf61a566b67">getLogin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">return</span> login;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    ;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">string</span> login; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;};</div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="class_nao_moderador.html">  265</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nao_moderador.html">NaoModerador</a> {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">string</span> mod; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00274"></a><span class="lineno"><a class="line" href="class_nao_moderador.html#aa57843875543c5246fc733f87b6ef3dd">  274</a></span>&#160;    <a class="code" href="class_nao_moderador.html#aa57843875543c5246fc733f87b6ef3dd">NaoModerador</a>(<span class="keywordtype">string</span> mod) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        this-&gt;mod = mod;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    ;</div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="class_nao_moderador.html#aff0ecf62b3446554d93d4032276a6f29">  282</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_nao_moderador.html#aff0ecf62b3446554d93d4032276a6f29">getNome</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">return</span> mod;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    ;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;};</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="class_pedido_inexistente.html">  292</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_pedido_inexistente.html">PedidoInexistente</a> {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordtype">string</span> login; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00301"></a><span class="lineno"><a class="line" href="class_pedido_inexistente.html#ae30b81fc0eff41039f0efd87b055daca">  301</a></span>&#160;    <a class="code" href="class_pedido_inexistente.html#ae30b81fc0eff41039f0efd87b055daca">PedidoInexistente</a>(<span class="keywordtype">string</span> l) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        login = l;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    ;</div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="class_pedido_inexistente.html#a4922d9813deb3df3880405abef24cc74">  309</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_pedido_inexistente.html#a4922d9813deb3df3880405abef24cc74">getLogin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">return</span> login;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    ;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;};</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00319"></a><span class="lineno"><a class="line" href="class_bloqueado.html">  319</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_bloqueado.html">Bloqueado</a> {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordtype">string</span> login; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="class_bloqueado.html#aeed14705a1258de654aa8017418f9da4">  328</a></span>&#160;    <a class="code" href="class_bloqueado.html#aeed14705a1258de654aa8017418f9da4">Bloqueado</a>(<span class="keywordtype">string</span> l) {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        login = l;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    ;</div>
+<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="class_bloqueado.html#a4be9531006bc7b1ca77c9c9dbe5789a7">  335</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_bloqueado.html#a4be9531006bc7b1ca77c9c9dbe5789a7">getLogin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">return</span> login;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    ;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;};</div>
+<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="class_grupo_inexistente.html">  343</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_grupo_inexistente.html">GrupoInexistente</a> {</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="class_grupo_inexistente.html#a5a6d0c0193ff73430804be4290576381">  349</a></span>&#160;    <a class="code" href="class_grupo_inexistente.html#a5a6d0c0193ff73430804be4290576381">GrupoInexistente</a>(<span class="keywordtype">int</span> n) {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        this-&gt;n = n;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    }</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    ;</div>
+<div class="line"><a name="l00357"></a><span class="lineno"><a class="line" href="class_grupo_inexistente.html#af6897fd16e37eb928b5a75efbd4ffcc2">  357</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_grupo_inexistente.html#af6897fd16e37eb928b5a75efbd4ffcc2">getGrupo</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    ;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordtype">int</span> n;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;};</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">/********************************</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment"> *      EXCECAO SYSTEM          *</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment"> ********************************/</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno"><a class="line" href="class_data_invalida.html">  372</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_data_invalida.html">DataInvalida</a> {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordtype">int</span> dia; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordtype">int</span> mes; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordtype">int</span> ano; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00385"></a><span class="lineno"><a class="line" href="class_data_invalida.html#ab137bea2db6633300269c0d97d1bae69">  385</a></span>&#160;    <a class="code" href="class_data_invalida.html#ab137bea2db6633300269c0d97d1bae69">DataInvalida</a>(<span class="keywordtype">int</span> d, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> a) {</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        dia = d;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        mes = m;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        ano = a;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    ;</div>
+<div class="line"><a name="l00395"></a><span class="lineno"><a class="line" href="class_data_invalida.html#a3cffc26bb41b7bbddb96c1422d3fe60b">  395</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_data_invalida.html#a3cffc26bb41b7bbddb96c1422d3fe60b">getDia</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordflow">return</span> dia;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    }</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    ;</div>
+<div class="line"><a name="l00403"></a><span class="lineno"><a class="line" href="class_data_invalida.html#a22f39fe99f467b66d61dc576d750d4c6">  403</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_data_invalida.html#a22f39fe99f467b66d61dc576d750d4c6">getMes</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="keywordflow">return</span> mes;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    ;</div>
+<div class="line"><a name="l00411"></a><span class="lineno"><a class="line" href="class_data_invalida.html#afafe67093a501d5d861b8475695f29fe">  411</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_data_invalida.html#afafe67093a501d5d861b8475695f29fe">getAno</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">return</span> ano;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    }</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    ;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;};</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;</div>
+<div class="line"><a name="l00421"></a><span class="lineno"><a class="line" href="class_hora_invalida.html">  421</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_hora_invalida.html">HoraInvalida</a> {</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;};</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="comment">/********************************</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="comment"> *      EXCECAO CONVERSA        *</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="comment"> ********************************/</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;</div>
+<div class="line"><a name="l00432"></a><span class="lineno"><a class="line" href="class_nao_participante.html">  432</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nao_participante.html">NaoParticipante</a> {</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordtype">string</span> p; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00441"></a><span class="lineno"><a class="line" href="class_nao_participante.html#af0a256b2f1b44f856076b083966793f6">  441</a></span>&#160;    <a class="code" href="class_nao_participante.html#af0a256b2f1b44f856076b083966793f6">NaoParticipante</a>(<span class="keywordtype">string</span> p) {</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        this-&gt;p = p;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    }</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    ;</div>
+<div class="line"><a name="l00449"></a><span class="lineno"><a class="line" href="class_nao_participante.html#a6199680fa5f2abfb8abb583d11fc3fd9">  449</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_nao_participante.html#a6199680fa5f2abfb8abb583d11fc3fd9">getlogin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        <span class="keywordflow">return</span> p;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    }</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    ;</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;};</div>
+<div class="line"><a name="l00458"></a><span class="lineno"><a class="line" href="class_conversa_inexistente.html">  458</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_conversa_inexistente.html">ConversaInexistente</a> {</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00464"></a><span class="lineno"><a class="line" href="class_conversa_inexistente.html#a51efff1606ddff25d00824c51a5d6dac">  464</a></span>&#160;    <a class="code" href="class_conversa_inexistente.html#a51efff1606ddff25d00824c51a5d6dac">ConversaInexistente</a>(<span class="keywordtype">int</span> i) {</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        this-&gt;i = i;</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    }</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    ;</div>
+<div class="line"><a name="l00472"></a><span class="lineno"><a class="line" href="class_conversa_inexistente.html#a8cd77144051893773e469b8dcf5140ba">  472</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_conversa_inexistente.html#a8cd77144051893773e469b8dcf5140ba">getPosicao</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    }</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    ;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;};</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_conversa_ja_existe_html"><div class="ttname"><a href="class_conversa_ja_existe.html">ConversaJaExiste</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lancada quando se tenta adicio...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:143</div></div>
+<div class="ttc" id="class_utilizador_ja_existe_html_af7a157575758e439854a9d7234ae673f"><div class="ttname"><a href="class_utilizador_ja_existe.html#af7a157575758e439854a9d7234ae673f">UtilizadorJaExiste::UtilizadorJaExiste</a></div><div class="ttdeci">UtilizadorJaExiste(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login do utilizador recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:51</div></div>
+<div class="ttc" id="class_amigo_inexistente_html"><div class="ttname"><a href="class_amigo_inexistente.html">AmigoInexistente</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lancada quando o amigo do util...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:116</div></div>
+<div class="ttc" id="class_data_invalida_html_a3cffc26bb41b7bbddb96c1422d3fe60b"><div class="ttname"><a href="class_data_invalida.html#a3cffc26bb41b7bbddb96c1422d3fe60b">DataInvalida::getDia</a></div><div class="ttdeci">int getDia() const </div><div class="ttdoc">Funcao que retorna o dia invalido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:395</div></div>
+<div class="ttc" id="class_idade_insuficiente_html_a3343305dda977a7ff7af6ebc5d2808f1"><div class="ttname"><a href="class_idade_insuficiente.html#a3343305dda977a7ff7af6ebc5d2808f1">IdadeInsuficiente::IdadeInsuficiente</a></div><div class="ttdeci">IdadeInsuficiente(int idade)</div><div class="ttdoc">Construtor. Inicializa o membro idade com a idade do utilizador recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:78</div></div>
+<div class="ttc" id="class_bloqueado_html_a4be9531006bc7b1ca77c9c9dbe5789a7"><div class="ttname"><a href="class_bloqueado.html#a4be9531006bc7b1ca77c9c9dbe5789a7">Bloqueado::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador que retorna a excecao. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:335</div></div>
+<div class="ttc" id="class_opccao_invalida_html_a19b191db4d1cc8c074c24a940571dd4b"><div class="ttname"><a href="class_opccao_invalida.html#a19b191db4d1cc8c074c24a940571dd4b">OpccaoInvalida::OpccaoInvalida</a></div><div class="ttdeci">OpccaoInvalida(N op, N min, N max)</div><div class="ttdoc">Construtor. Inicializa os membros op, min e max com, repetivamente, a opcao escolhida, a opcao minima e a opcao maxima. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:186</div></div>
+<div class="ttc" id="class_bloqueado_html_aeed14705a1258de654aa8017418f9da4"><div class="ttname"><a href="class_bloqueado.html#aeed14705a1258de654aa8017418f9da4">Bloqueado::Bloqueado</a></div><div class="ttdeci">Bloqueado(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:328</div></div>
+<div class="ttc" id="class_opccao_invalida_html_ac9afa1ee68970cddd39a9873fd2c357f"><div class="ttname"><a href="class_opccao_invalida.html#ac9afa1ee68970cddd39a9873fd2c357f">OpccaoInvalida::getOp</a></div><div class="ttdeci">N getOp() const </div><div class="ttdoc">Funcao que retorna a opcao escolhida. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:212</div></div>
+<div class="ttc" id="class_nao_participante_html_af0a256b2f1b44f856076b083966793f6"><div class="ttname"><a href="class_nao_participante.html#af0a256b2f1b44f856076b083966793f6">NaoParticipante::NaoParticipante</a></div><div class="ttdeci">NaoParticipante(string p)</div><div class="ttdoc">Construtor. Inicializa o membro p com o login do utilizador que nao e participante. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:441</div></div>
+<div class="ttc" id="class_pedido_inexistente_html_ae30b81fc0eff41039f0efd87b055daca"><div class="ttname"><a href="class_pedido_inexistente.html#ae30b81fc0eff41039f0efd87b055daca">PedidoInexistente::PedidoInexistente</a></div><div class="ttdeci">PedidoInexistente(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login do utilizador que criou a excecao. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:301</div></div>
+<div class="ttc" id="class_data_invalida_html_afafe67093a501d5d861b8475695f29fe"><div class="ttname"><a href="class_data_invalida.html#afafe67093a501d5d861b8475695f29fe">DataInvalida::getAno</a></div><div class="ttdeci">int getAno() const </div><div class="ttdoc">Funcao que retorna o ano invalido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:411</div></div>
+<div class="ttc" id="class_membro_inexistente_html_a6d379cb19c24d4d0e0d2ada0f17acc99"><div class="ttname"><a href="class_membro_inexistente.html#a6d379cb19c24d4d0e0d2ada0f17acc99">MembroInexistente::MembroInexistente</a></div><div class="ttdeci">MembroInexistente(string login)</div><div class="ttdoc">Construtor. Inicializa o membro privado login com o login recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:246</div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
-<div class="ttc" id="class_nao_moderador_html"><div class="ttname"><a href="class_nao_moderador.html">NaoModerador</a></div><div class="ttdoc">Classe que representa uma excecao da classe grupo. Esta excecao e lancada no caso de o utilizador que...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:183</div></div>
-<div class="ttc" id="class_pedido_inexistente_html"><div class="ttname"><a href="class_pedido_inexistente.html">PedidoInexistente</a></div><div class="ttdoc">Classe que representa uma excecao da classe grupo. Esta excecao e lancada quando nao existe no vetor ...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:208</div></div>
-<div class="ttc" id="class_amigo_inexistente_html_a214d9d7a9579e42d67f8c7fe290958f3"><div class="ttname"><a href="class_amigo_inexistente.html#a214d9d7a9579e42d67f8c7fe290958f3">AmigoInexistente::AmigoInexistente</a></div><div class="ttdeci">AmigoInexistente(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login do amigo do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:104</div></div>
-<div class="ttc" id="class_nao_participante_html"><div class="ttname"><a href="class_nao_participante.html">NaoParticipante</a></div><div class="ttdoc">Classe que representa uma excecao da classe conversa. Esta excecao e lancada quando um utilizador que...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:315</div></div>
-<div class="ttc" id="class_bloqueado_html"><div class="ttname"><a href="class_bloqueado.html">Bloqueado</a></div><div class="ttdoc">Classe que representa uma excecao da classe grupo. Esta excecao e lancada quando um utilizador que fo...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:229</div></div>
-<div class="ttc" id="class_data_invalida_html"><div class="ttname"><a href="class_data_invalida.html">DataInvalida</a></div><div class="ttdoc">Classe DataInvalida. E uma classe que indica uma execao da classe Data. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:270</div></div>
+<div class="ttc" id="class_nao_moderador_html"><div class="ttname"><a href="class_nao_moderador.html">NaoModerador</a></div><div class="ttdoc">Classe que representa uma excecao da classe grupo. Esta excecao e lancada no caso de o utilizador que...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:265</div></div>
+<div class="ttc" id="class_pedido_inexistente_html"><div class="ttname"><a href="class_pedido_inexistente.html">PedidoInexistente</a></div><div class="ttdoc">Classe que representa uma excecao da classe grupo. Esta excecao e lancada quando nao existe no vetor ...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:292</div></div>
+<div class="ttc" id="class_conversa_ja_existe_html_ad830cc518411774efe43885cb3003371"><div class="ttname"><a href="class_conversa_ja_existe.html#ad830cc518411774efe43885cb3003371">ConversaJaExiste::imprimirParticipantes</a></div><div class="ttdeci">void imprimirParticipantes() const </div><div class="ttdoc">Funcao que imprime os participantes da conversa. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:155</div></div>
+<div class="ttc" id="class_amigo_inexistente_html_a214d9d7a9579e42d67f8c7fe290958f3"><div class="ttname"><a href="class_amigo_inexistente.html#a214d9d7a9579e42d67f8c7fe290958f3">AmigoInexistente::AmigoInexistente</a></div><div class="ttdeci">AmigoInexistente(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login do amigo do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:125</div></div>
+<div class="ttc" id="class_conversa_inexistente_html"><div class="ttname"><a href="class_conversa_inexistente.html">ConversaInexistente</a></div><div class="ttdoc">Classe que representa uma excecao da classe conversa. Esta excecao e lancada quando um utilizador esc...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:458</div></div>
+<div class="ttc" id="class_nao_participante_html"><div class="ttname"><a href="class_nao_participante.html">NaoParticipante</a></div><div class="ttdoc">Classe que representa uma excecao da classe conversa. Esta excecao e lancada quando um utilizador que...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:432</div></div>
+<div class="ttc" id="class_bloqueado_html"><div class="ttname"><a href="class_bloqueado.html">Bloqueado</a></div><div class="ttdoc">Classe que representa uma excecao da classe grupo. Esta excecao e lancada quando um utilizador que fo...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:319</div></div>
+<div class="ttc" id="class_data_invalida_html"><div class="ttname"><a href="class_data_invalida.html">DataInvalida</a></div><div class="ttdoc">Classe DataInvalida. E uma classe que indica uma execao da classe Data. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:372</div></div>
 <div class="ttc" id="class_utilizador_inexistente_html"><div class="ttname"><a href="class_utilizador_inexistente.html">UtilizadorInexistente</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lançada quando um utilizador não...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:15</div></div>
-<div class="ttc" id="class_hora_invalida_html"><div class="ttname"><a href="class_hora_invalida.html">HoraInvalida</a></div><div class="ttdoc">Classe HoraInvalida. E uma classe que indica uma execao da classe Horas. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:305</div></div>
-<div class="ttc" id="class_nao_participante_html_a6199680fa5f2abfb8abb583d11fc3fd9"><div class="ttname"><a href="class_nao_participante.html#a6199680fa5f2abfb8abb583d11fc3fd9">NaoParticipante::getlogin</a></div><div class="ttdeci">string getlogin() const </div><div class="ttdoc">Funcao que retorna o login do nao participante. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:329</div></div>
-<div class="ttc" id="class_data_invalida_html_ab137bea2db6633300269c0d97d1bae69"><div class="ttname"><a href="class_data_invalida.html#ab137bea2db6633300269c0d97d1bae69">DataInvalida::DataInvalida</a></div><div class="ttdeci">DataInvalida(int d, int m, int a)</div><div class="ttdoc">Construtor. Inicializa os mebros privados dia mes e ano com os parametros reecebidos correspondentes...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:283</div></div>
-<div class="ttc" id="class_membro_inexistente_html"><div class="ttname"><a href="class_membro_inexistente.html">MembroInexistente</a></div><div class="ttdoc">Classe que representa uma excecao da classe grupo. Esta excecao e lancada no caso de não haver um memb...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:172</div></div>
-<div class="ttc" id="class_idade_insuficiente_html"><div class="ttname"><a href="class_idade_insuficiente.html">IdadeInsuficiente</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lancada quando um utilizador n...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:57</div></div>
-<div class="ttc" id="class_amigo_ja_existe_html_a12bf65d64c1be52121373270dbdf3fc4"><div class="ttname"><a href="class_amigo_ja_existe.html#a12bf65d64c1be52121373270dbdf3fc4">AmigoJaExiste::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador que criou a excecao. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:87</div></div>
-<div class="ttc" id="class_grupo_inexistente_html_af6897fd16e37eb928b5a75efbd4ffcc2"><div class="ttname"><a href="class_grupo_inexistente.html#af6897fd16e37eb928b5a75efbd4ffcc2">GrupoInexistente::getGrupo</a></div><div class="ttdeci">int getGrupo() const </div><div class="ttdoc">retorna a posicao do grupo num vector de grupos </div><div class="ttdef"><b>Definition:</b> Excecoes.h:258</div></div>
-<div class="ttc" id="class_grupo_inexistente_html"><div class="ttname"><a href="class_grupo_inexistente.html">GrupoInexistente</a></div><div class="ttdoc">Classe excepção que é lançada quando se procura um grupo que nao existe. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:247</div></div>
-<div class="ttc" id="class_pedido_inexistente_html_a4922d9813deb3df3880405abef24cc74"><div class="ttname"><a href="class_pedido_inexistente.html#a4922d9813deb3df3880405abef24cc74">PedidoInexistente::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:222</div></div>
-<div class="ttc" id="class_input_fail_html"><div class="ttname"><a href="class_input_fail.html">InputFail</a></div><div class="ttdoc">Classe que representa uma excecao da classe main. Impede que o programa aborte quando sao introduzido...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:163</div></div>
-<div class="ttc" id="class_grupo_inexistente_html_a5a6d0c0193ff73430804be4290576381"><div class="ttname"><a href="class_grupo_inexistente.html#a5a6d0c0193ff73430804be4290576381">GrupoInexistente::GrupoInexistente</a></div><div class="ttdeci">GrupoInexistente(int n)</div><div class="ttdoc">Construtor. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:253</div></div>
-<div class="ttc" id="class_amigo_ja_existe_html"><div class="ttname"><a href="class_amigo_ja_existe.html">AmigoJaExiste</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lancada quando o amigo do util...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:73</div></div>
-<div class="ttc" id="class_utilizador_ja_existe_html_a545e95145227b85f40f6342ccbdfcab1"><div class="ttname"><a href="class_utilizador_ja_existe.html#a545e95145227b85f40f6342ccbdfcab1">UtilizadorJaExiste::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:50</div></div>
-<div class="ttc" id="class_utilizador_inexistente_html_aa43e8ef928916c8ae7f7c80a25c1e435"><div class="ttname"><a href="class_utilizador_inexistente.html#aa43e8ef928916c8ae7f7c80a25c1e435">UtilizadorInexistente::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:29</div></div>
-<div class="ttc" id="class_amigo_inexistente_html_a72d6ea60bacc6a8deacefc1f130ce883"><div class="ttname"><a href="class_amigo_inexistente.html#a72d6ea60bacc6a8deacefc1f130ce883">AmigoInexistente::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador que criou a excecao. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:109</div></div>
-<div class="ttc" id="class_opccao_invalida_html"><div class="ttname"><a href="class_opccao_invalida.html">OpccaoInvalida</a></div><div class="ttdoc">Classe que representa uma excecao da classe Main. Esta excecao e lancada quando a opcao colocada nao ...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:122</div></div>
-<div class="ttc" id="class_amigo_ja_existe_html_a9d61f8dc97244fdd468b7d70b5f35409"><div class="ttname"><a href="class_amigo_ja_existe.html#a9d61f8dc97244fdd468b7d70b5f35409">AmigoJaExiste::AmigoJaExiste</a></div><div class="ttdeci">AmigoJaExiste(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login do amigo do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:82</div></div>
-<div class="ttc" id="class_utilizador_ja_existe_html"><div class="ttname"><a href="class_utilizador_ja_existe.html">UtilizadorJaExiste</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lancada quando um utilizador j...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:36</div></div>
-<div class="ttc" id="class_nao_moderador_html_aff0ecf62b3446554d93d4032276a6f29"><div class="ttname"><a href="class_nao_moderador.html#aff0ecf62b3446554d93d4032276a6f29">NaoModerador::getNome</a></div><div class="ttdeci">string getNome() const </div><div class="ttdoc">Funcao que retorna o utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:199</div></div>
-<div class="ttc" id="class_nao_moderador_html_aa57843875543c5246fc733f87b6ef3dd"><div class="ttname"><a href="class_nao_moderador.html#aa57843875543c5246fc733f87b6ef3dd">NaoModerador::NaoModerador</a></div><div class="ttdeci">NaoModerador(string mod)</div><div class="ttdoc">Construtor. Inicializa o membro mod com o utilizador recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:192</div></div>
+<div class="ttc" id="class_hora_invalida_html"><div class="ttname"><a href="class_hora_invalida.html">HoraInvalida</a></div><div class="ttdoc">Classe HoraInvalida. E uma classe que indica uma execao da classe Horas. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:421</div></div>
+<div class="ttc" id="class_nao_participante_html_a6199680fa5f2abfb8abb583d11fc3fd9"><div class="ttname"><a href="class_nao_participante.html#a6199680fa5f2abfb8abb583d11fc3fd9">NaoParticipante::getlogin</a></div><div class="ttdeci">string getlogin() const </div><div class="ttdoc">Funcao que retorna o login do nao participante. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:449</div></div>
+<div class="ttc" id="class_data_invalida_html_ab137bea2db6633300269c0d97d1bae69"><div class="ttname"><a href="class_data_invalida.html#ab137bea2db6633300269c0d97d1bae69">DataInvalida::DataInvalida</a></div><div class="ttdeci">DataInvalida(int d, int m, int a)</div><div class="ttdoc">Construtor. Inicializa os mebros privados dia mes e ano com os parametros reecebidos correspondentes...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:385</div></div>
+<div class="ttc" id="class_membro_inexistente_html"><div class="ttname"><a href="class_membro_inexistente.html">MembroInexistente</a></div><div class="ttdoc">Classe que representa uma excecao da classe grupo. Esta excecao e lancada no caso de não haver um memb...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:239</div></div>
+<div class="ttc" id="class_idade_insuficiente_html"><div class="ttname"><a href="class_idade_insuficiente.html">IdadeInsuficiente</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lancada quando um utilizador n...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:69</div></div>
+<div class="ttc" id="class_conversa_inexistente_html_a8cd77144051893773e469b8dcf5140ba"><div class="ttname"><a href="class_conversa_inexistente.html#a8cd77144051893773e469b8dcf5140ba">ConversaInexistente::getPosicao</a></div><div class="ttdeci">int getPosicao() const </div><div class="ttdoc">Funcao que retorna a posicao da conversa inexistente. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:472</div></div>
+<div class="ttc" id="class_amigo_ja_existe_html_a12bf65d64c1be52121373270dbdf3fc4"><div class="ttname"><a href="class_amigo_ja_existe.html#a12bf65d64c1be52121373270dbdf3fc4">AmigoJaExiste::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador que criou a excecao. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:105</div></div>
+<div class="ttc" id="class_grupo_inexistente_html_af6897fd16e37eb928b5a75efbd4ffcc2"><div class="ttname"><a href="class_grupo_inexistente.html#af6897fd16e37eb928b5a75efbd4ffcc2">GrupoInexistente::getGrupo</a></div><div class="ttdeci">int getGrupo() const </div><div class="ttdoc">retorna a posicao do grupo num vector de grupos </div><div class="ttdef"><b>Definition:</b> Excecoes.h:357</div></div>
+<div class="ttc" id="class_grupo_inexistente_html"><div class="ttname"><a href="class_grupo_inexistente.html">GrupoInexistente</a></div><div class="ttdoc">Classe excepção que é lançada quando se procura um grupo que nao existe. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:343</div></div>
+<div class="ttc" id="class_pedido_inexistente_html_a4922d9813deb3df3880405abef24cc74"><div class="ttname"><a href="class_pedido_inexistente.html#a4922d9813deb3df3880405abef24cc74">PedidoInexistente::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:309</div></div>
+<div class="ttc" id="class_membro_inexistente_html_a06c787d0849f0622de964bf61a566b67"><div class="ttname"><a href="class_membro_inexistente.html#a06c787d0849f0622de964bf61a566b67">MembroInexistente::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que devolve o utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:254</div></div>
+<div class="ttc" id="class_input_fail_html"><div class="ttname"><a href="class_input_fail.html">InputFail</a></div><div class="ttdoc">Classe que representa uma excecao da classe main. Impede que o programa aborte quando sao introduzido...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:229</div></div>
+<div class="ttc" id="class_grupo_inexistente_html_a5a6d0c0193ff73430804be4290576381"><div class="ttname"><a href="class_grupo_inexistente.html#a5a6d0c0193ff73430804be4290576381">GrupoInexistente::GrupoInexistente</a></div><div class="ttdeci">GrupoInexistente(int n)</div><div class="ttdoc">Construtor. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:349</div></div>
+<div class="ttc" id="class_amigo_ja_existe_html"><div class="ttname"><a href="class_amigo_ja_existe.html">AmigoJaExiste</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lancada quando o amigo do util...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:88</div></div>
+<div class="ttc" id="class_utilizador_ja_existe_html_a545e95145227b85f40f6342ccbdfcab1"><div class="ttname"><a href="class_utilizador_ja_existe.html#a545e95145227b85f40f6342ccbdfcab1">UtilizadorJaExiste::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:59</div></div>
+<div class="ttc" id="class_utilizador_inexistente_html_aa43e8ef928916c8ae7f7c80a25c1e435"><div class="ttname"><a href="class_utilizador_inexistente.html#aa43e8ef928916c8ae7f7c80a25c1e435">UtilizadorInexistente::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:32</div></div>
+<div class="ttc" id="class_amigo_inexistente_html_a72d6ea60bacc6a8deacefc1f130ce883"><div class="ttname"><a href="class_amigo_inexistente.html#a72d6ea60bacc6a8deacefc1f130ce883">AmigoInexistente::getLogin</a></div><div class="ttdeci">string getLogin() const </div><div class="ttdoc">Funcao que retorna o login do utilizador que criou a excecao. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:133</div></div>
+<div class="ttc" id="class_opccao_invalida_html"><div class="ttname"><a href="class_opccao_invalida.html">OpccaoInvalida</a></div><div class="ttdoc">Classe que representa uma excecao da classe Main. Esta excecao e lancada quando a opcao colocada nao ...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:173</div></div>
+<div class="ttc" id="class_amigo_ja_existe_html_a9d61f8dc97244fdd468b7d70b5f35409"><div class="ttname"><a href="class_amigo_ja_existe.html#a9d61f8dc97244fdd468b7d70b5f35409">AmigoJaExiste::AmigoJaExiste</a></div><div class="ttdeci">AmigoJaExiste(string l)</div><div class="ttdoc">Construtor. Inicializa o membro login com o login do amigo do utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:97</div></div>
+<div class="ttc" id="class_conversa_inexistente_html_a51efff1606ddff25d00824c51a5d6dac"><div class="ttname"><a href="class_conversa_inexistente.html#a51efff1606ddff25d00824c51a5d6dac">ConversaInexistente::ConversaInexistente</a></div><div class="ttdeci">ConversaInexistente(int i)</div><div class="ttdoc">Construtor da classe ConversaInexistente. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:464</div></div>
+<div class="ttc" id="class_utilizador_ja_existe_html"><div class="ttname"><a href="class_utilizador_ja_existe.html">UtilizadorJaExiste</a></div><div class="ttdoc">Classe que representa uma excecao da classe utilizador. Esta excecao e lancada quando um utilizador j...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:42</div></div>
+<div class="ttc" id="class_nao_moderador_html_aff0ecf62b3446554d93d4032276a6f29"><div class="ttname"><a href="class_nao_moderador.html#aff0ecf62b3446554d93d4032276a6f29">NaoModerador::getNome</a></div><div class="ttdeci">string getNome() const </div><div class="ttdoc">Funcao que retorna o utilizador. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:282</div></div>
+<div class="ttc" id="class_nao_moderador_html_aa57843875543c5246fc733f87b6ef3dd"><div class="ttname"><a href="class_nao_moderador.html#aa57843875543c5246fc733f87b6ef3dd">NaoModerador::NaoModerador</a></div><div class="ttdeci">NaoModerador(string mod)</div><div class="ttdoc">Construtor. Inicializa o membro mod com o utilizador recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:274</div></div>
 <div class="ttc" id="class_utilizador_inexistente_html_a71e1fc482f66795222c887857bd868b5"><div class="ttname"><a href="class_utilizador_inexistente.html#a71e1fc482f66795222c887857bd868b5">UtilizadorInexistente::UtilizadorInexistente</a></div><div class="ttdeci">UtilizadorInexistente(string u)</div><div class="ttdoc">Construtor. Inicializa o membro u com o login do utilizador recebido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:24</div></div>
-<div class="ttc" id="class_data_invalida_html_a22f39fe99f467b66d61dc576d750d4c6"><div class="ttname"><a href="class_data_invalida.html#a22f39fe99f467b66d61dc576d750d4c6">DataInvalida::getMes</a></div><div class="ttdeci">int getMes() const </div><div class="ttdoc">Funcao que retorna o mes invalido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:293</div></div>
-<div class="ttc" id="class_voltar_atras_html"><div class="ttname"><a href="class_voltar_atras.html">VoltarAtras</a></div><div class="ttdoc">Classe que representa uma excecao da classe main. Permite ter a opcao de voltar a tras nos menus...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:157</div></div>
+<div class="ttc" id="class_data_invalida_html_a22f39fe99f467b66d61dc576d750d4c6"><div class="ttname"><a href="class_data_invalida.html#a22f39fe99f467b66d61dc576d750d4c6">DataInvalida::getMes</a></div><div class="ttdeci">int getMes() const </div><div class="ttdoc">Funcao que retorna o mes invalido. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:403</div></div>
+<div class="ttc" id="class_conversa_ja_existe_html_a3c2bc0ac8427fca85cb642cbf2f4d068"><div class="ttname"><a href="class_conversa_ja_existe.html#a3c2bc0ac8427fca85cb642cbf2f4d068">ConversaJaExiste::ConversaJaExiste</a></div><div class="ttdeci">ConversaJaExiste(vector&lt; string &gt; p)</div><div class="ttdoc">Construtor de ConversaJaExiste. </div><div class="ttdef"><b>Definition:</b> Excecoes.h:148</div></div>
+<div class="ttc" id="class_voltar_atras_html"><div class="ttname"><a href="class_voltar_atras.html">VoltarAtras</a></div><div class="ttdoc">Classe que representa uma excecao da classe main. Permite ter a opcao de voltar a tras nos menus...</div><div class="ttdef"><b>Definition:</b> Excecoes.h:222</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
