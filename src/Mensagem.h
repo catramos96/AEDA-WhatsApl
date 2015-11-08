@@ -68,6 +68,16 @@ public:
 	 * @param num Numero novo
 	 */
 	void setNumero(int num);
+	/**
+	* @brief Funcao abstrata que retorna uma string com o tipo dependendo da classe derivada
+	* @return string com  i, v ou t
+	*/
+	virtual string tipo() const ;
+	/**
+	* @brief Funcao abstrata que retorna o conteudo da classe derivada
+	* @return string com  o conteudo
+	*/
+	virtual string getConteudo() const ;
 };
 
 /**
@@ -94,6 +104,12 @@ public:
   * @brief Funcao que imprime no ecra a mensagem
   */
 	void imprimirMsg();
+
+	/**
+	* @brief Funcao que retorna o tipo de mensagem
+	* @return string com  t
+	*/
+	string tipo() const;
 };
 
 /**
@@ -112,6 +128,18 @@ public:
   * @brief Funcao que imprime no ecra a mensagem
   */
 	void imprimirMsg();
+
+	/**
+	* @brief Funcao que retorna o tipo de mensagem
+	* @return string com  v
+	*/
+	string tipo() const;
+
+	/**
+	* @brief Funcao que retorna um 'video'
+	* @return string com  o conteudo
+	*/
+	string getConteudo() const;
 };
 
 /**
@@ -130,6 +158,18 @@ public:
   * @brief Funcao que imprime no ecra a mensagem
   */
 	void imprimirMsg();
+
+	/**
+	* @brief Funcao que retorna o tipo de mensagem
+	* @return string com  i
+	*/
+	string tipo() const;
+
+	/**
+	* @brief Funcao que retorna uma 'imagem'
+	* @return string com  o conteudo
+	*/
+	string getConteudo() const;
 };
 
 #endif /* SRC_MENSAGEM_H_ */

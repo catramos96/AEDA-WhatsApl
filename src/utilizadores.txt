@@ -1,3 +1,13 @@
+a
+a
+a
+1
+1
+1
+1
+32
+-
+1
 Pedro Costa
 pedro
 pedrodc@outlook.com
@@ -7,18 +17,6 @@ pedrodc@outlook.com
 2015
 19
 tomas
-quina
--
-1
-Tomas Caldas
-tomas
-tomas@mail.com
-921321312
-20
-12
-2014
-19
-pedro
 quina
 -
 1
@@ -32,5 +30,17 @@ quina@mail.com
 20
 tomas
 pedro
+-
+1
+Tomas Caldas
+tomas
+tomas@mail.com
+921321312
+20
+12
+2014
+19
+pedro
+quina
 -
 1

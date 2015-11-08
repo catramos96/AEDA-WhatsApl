@@ -25,6 +25,7 @@ public:
 	int numSms() const;
 	int numParticipantes() const;
 	vector<string> getParticipantes() const;
+	vector<Mensagem *> getMensagens() const;
 	void ordenarData();
 	bool operator==(Conversa&c)const;
   void imprimirParticipantes() const;

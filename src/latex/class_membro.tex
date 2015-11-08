@@ -21,8 +21,12 @@ string \hyperlink{class_membro_aa45e6c73454118f919a035bdf5df37e0}{get\+Login} ()
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o login do \hyperlink{class_utilizador}{Utilizador} util. \end{DoxyCompactList}\item 
 \hyperlink{class_data}{Data} \hyperlink{class_membro_a7619c15445b61c099b0a6fcb1e5f9f51}{get\+Data} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna a \hyperlink{class_data}{Data} de adesao do utilizador ao grupo. \end{DoxyCompactList}\item 
+\hyperlink{class_data}{Data} \hyperlink{class_membro_ab46a305310ad7f3ada262bc3a7229da0}{get\+Data\+Bloqueio} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a \hyperlink{class_data}{Data} de bloqueio do utilizador ao grupo. \end{DoxyCompactList}\item 
 void \hyperlink{class_membro_a251129b637633510a9e08fe29cc7dfaa}{set\+Data} (\hyperlink{class_data}{Data} d)
 \begin{DoxyCompactList}\small\item\em Funcao que permite alterar a data inicial. \end{DoxyCompactList}\item 
+void \hyperlink{class_membro_a93771e7b02097f22334205ff5f97de42}{set\+Data\+Bloqueio} (\hyperlink{class_data}{Data} d)
+\begin{DoxyCompactList}\small\item\em Funcao que coloca uma nova data de bloqueio de um membro. \end{DoxyCompactList}\item 
 void \hyperlink{class_membro_aaeea526aaa8f558d7e415c56c0b1be52}{set\+Bloqueio} (bool bloq)
 \begin{DoxyCompactList}\small\item\em Funcao que coloca um novo valor ao membro privado \textquotesingle{}bloqueado\textquotesingle{}. \end{DoxyCompactList}\item 
 bool \hyperlink{class_membro_a4fee0ae7563027e70cf03456e74feffc}{is\+Bloqueado} () const 
@@ -77,6 +81,20 @@ Funcao que retorna a \hyperlink{class_data}{Data} de adesao do utilizador ao gru
 
 \begin{DoxyReturn}{Returns}
 Adesao\+Grupo. 
+\end{DoxyReturn}
+\hypertarget{class_membro_ab46a305310ad7f3ada262bc3a7229da0}{}\index{Membro@{Membro}!get\+Data\+Bloqueio@{get\+Data\+Bloqueio}}
+\index{get\+Data\+Bloqueio@{get\+Data\+Bloqueio}!Membro@{Membro}}
+\subsubsection[{get\+Data\+Bloqueio() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Membro\+::get\+Data\+Bloqueio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_membro_ab46a305310ad7f3ada262bc3a7229da0}
+
+
+Funcao que retorna a \hyperlink{class_data}{Data} de bloqueio do utilizador ao grupo. 
+
+\begin{DoxyReturn}{Returns}
+bloqueio. 
 \end{DoxyReturn}
 \hypertarget{class_membro_aa45e6c73454118f919a035bdf5df37e0}{}\index{Membro@{Membro}!get\+Login@{get\+Login}}
 \index{get\+Login@{get\+Login}!Membro@{Membro}}
@@ -169,6 +187,22 @@ Funcao que permite alterar a data inicial.
 
 \begin{DoxyParams}{Parameters}
 {\em d} & Nova data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_membro_a93771e7b02097f22334205ff5f97de42}{}\index{Membro@{Membro}!set\+Data\+Bloqueio@{set\+Data\+Bloqueio}}
+\index{set\+Data\+Bloqueio@{set\+Data\+Bloqueio}!Membro@{Membro}}
+\subsubsection[{set\+Data\+Bloqueio(\+Data d)}]{\setlength{\rightskip}{0pt plus 5cm}void Membro\+::set\+Data\+Bloqueio (
+\begin{DoxyParamCaption}
+\item[{{\bf Data}}]{d}
+\end{DoxyParamCaption}
+)}\label{class_membro_a93771e7b02097f22334205ff5f97de42}
+
+
+Funcao que coloca uma nova data de bloqueio de um membro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & \hyperlink{class_data}{Data} de bloqueio. \\
 \hline
 \end{DoxyParams}
 

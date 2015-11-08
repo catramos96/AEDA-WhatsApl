@@ -69,6 +69,10 @@ vector<string> Conversa::getParticipantes() const{
 	return participantes;
 }
 
+vector<Mensagem *> Conversa::getMensagens() const{
+	return mensagens;
+}
+
 bool compara(const string s1,const string s2){
 	return (s1<s2);
 }

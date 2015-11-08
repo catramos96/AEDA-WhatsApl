@@ -44,6 +44,8 @@ vector$<$ \hyperlink{class_grupo}{Grupo} $\ast$ $>$ \hyperlink{class_utilizador_
 \begin{DoxyCompactList}\small\item\em Funcao que retorna os grupos do utilizador. \end{DoxyCompactList}\item 
 \hyperlink{class_conversa}{Conversa} $\ast$ \hyperlink{class_utilizador_a07745e2c5f5d9236aea0c7357f1325b7}{get\+Conversa} (int i) const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna a conversa na posicao i. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_conversa}{Conversa} $\ast$ $>$ \hyperlink{class_utilizador_a2593f5a4722a536786593a762ec934be}{get\+Conversas} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna as conversas de um utilizador. \end{DoxyCompactList}\item 
 string \hyperlink{class_utilizador_a5d4275b4d23d955ef295773d3d9eb3b5}{get\+Destinatario\+Conversa} (\hyperlink{class_conversa}{Conversa} $\ast$c) const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o nome destinatario da \hyperlink{class_conversa}{Conversa}. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{class_grupo}{Grupo} $\ast$ $>$ \hyperlink{class_utilizador_ac5e58137167b1cf097d10f862f036998}{get\+Grupos\+Amigos} () const 
@@ -125,7 +127,10 @@ bool \hyperlink{class_utilizador_a70f4f75f649f4ca5aefebc99e556a20b}{bloquear\+Me
 bool \hyperlink{class_utilizador_a7424cd944ea535338280e821666768f7}{desbloquear\+Membro} (\hyperlink{class_utilizador}{Utilizador} $\ast$u, \hyperlink{class_grupo}{Grupo} $\ast$g, \hyperlink{class_data}{Data} dia\+Atual)
 \begin{DoxyCompactList}\small\item\em Funcao que desbloqueia um utilizador de um grupo. O utilizador atual pode desbloquear outro utilizador de um dado grupo, desde que o utilizador atual seja o moderador do grupo. Esta funcao chama a funcao desbloquear\+Membro da classe grupo. \end{DoxyCompactList}\item 
 \hyperlink{class_grupo}{Grupo} $\ast$ \hyperlink{class_utilizador_a8292ead93b56ba0c48b9fc92265134c3}{escolhe\+Grupos\+Amigos} (int i) const 
-\begin{DoxyCompactList}\small\item\em Funcao que retorna o grupo escolhido pelo utilizador. Antes desta função é feito um print dos grupos do circulo de amigos do utilizador com numeros. A partir dai o utilizador escolhe um grupo que é devolvido pela funcao. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o grupo escolhido pelo utilizador. Antes desta função é feito um print dos grupos do circulo de amigos do utilizador com numeros. A partir dai o utilizador escolhe um grupo que é devolvido pela funcao. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_a56049150a07b5da75017efe35d5a7d61}{}void {\bfseries escreve\+Utilizador} (string linha, bool novo)\label{class_utilizador_a56049150a07b5da75017efe35d5a7d61}
+
+\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -490,6 +495,20 @@ Funcao que retorna a conversa na posicao i.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 conversas\mbox{[}i\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{class_utilizador_a2593f5a4722a536786593a762ec934be}{}\index{Utilizador@{Utilizador}!get\+Conversas@{get\+Conversas}}
+\index{get\+Conversas@{get\+Conversas}!Utilizador@{Utilizador}}
+\subsubsection[{get\+Conversas() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Conversa} $\ast$ $>$ Utilizador\+::get\+Conversas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_utilizador_a2593f5a4722a536786593a762ec934be}
+
+
+Funcao que retorna as conversas de um utilizador. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+Conversa$\ast$$>$ 
 \end{DoxyReturn}
 \hypertarget{class_utilizador_af6c41442d2029ccb1a135092a5c27007}{}\index{Utilizador@{Utilizador}!get\+Data\+Adesao@{get\+Data\+Adesao}}
 \index{get\+Data\+Adesao@{get\+Data\+Adesao}!Utilizador@{Utilizador}}

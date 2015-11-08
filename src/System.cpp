@@ -118,59 +118,6 @@ bool Data::operator==(const Data&d) const{
 	return (ano == d.getAno() && mes == d.getMes() && dia == d.getDia());
 }
 
-/************************************
- *	    	CLASSE HORA NOVA		*
- ***********************************/
-/*
-
-HoraNova::HoraNova(){
-	t = 0;
-};
-
-HoraNova::HoraNova(time_t time1){
-	t = time1;
-}
-
-void HoraNova::setHoraNova(time_t time1){
-	t = time(0);
-}
-
-time_t HoraNova::getHoraNova() {
-  return t;
-}
-
-const string HoraNova::getHoraNovaCompleta(){
-	time_t now=t;
-	struct tm tstruct;
-	char buf[80];
-	tstruct=*localtime(&now);
-	strftime(buf,sizeof(buf), "%Y-%m-%d.%X",&tstruct);
-	return buf;
-}
-
-const string HoraNova::getHoraNovaHoras(){
-	time_t now=t;
-	struct tm tstruct;
-	char buf[80];
-	tstruct=*localtime(&now);
-	strftime(buf,sizeof(buf), "%X",&tstruct);
-	return buf;
-}
-
-const string HoraNova::getHoraNovaData(){
-	time_t now=t;
-	struct tm tstruct;
-	char buf[80];
-	tstruct=*localtime(&now);
-	strftime(buf,sizeof(buf), "%Y-%m-%d",&tstruct);
-	return buf;
-}
-
-ostream & operator<<(std::ostream & out, const HoraNova & t){
-	out << t;
-	return out;
-}
-*/
 //Clears the screen
 
 void clrscr(void)

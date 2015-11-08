@@ -112,38 +112,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> getNumero() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> setEmissor(<span class="keywordtype">string</span> emissor);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> setNumero(<span class="keywordtype">int</span> num);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_msg_texto.html">   77</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_msg_texto.html">MsgTexto</a> : <span class="keyword">public</span> <a class="code" href="class_mensagem.html">Mensagem</a>{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">string</span> conteudo; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="class_msg_texto.html">MsgTexto</a>(<span class="keywordtype">string</span> conteudo, <a class="code" href="class_data.html">Data</a> d, <a class="code" href="class_horas.html">Horas</a> h);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">string</span> getConteudo() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> imprimirMsg();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_msg_video.html">  103</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_msg_video.html">MsgVideo</a> : <span class="keyword">public</span> <a class="code" href="class_mensagem.html">Mensagem</a>{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="class_msg_video.html">MsgVideo</a>(<a class="code" href="class_data.html">Data</a> d, <a class="code" href="class_horas.html">Horas</a> h);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> imprimirMsg();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="class_msg_imagem.html">  121</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_msg_imagem.html">MsgImagem</a> : <span class="keyword">public</span> <a class="code" href="class_mensagem.html">Mensagem</a>{</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="class_msg_imagem.html">MsgImagem</a>(<a class="code" href="class_data.html">Data</a> d, <a class="code" href="class_horas.html">Horas</a> h);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> imprimirMsg();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;};</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_MENSAGEM_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">string</span> tipo() <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">string</span> getConteudo() <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_msg_texto.html">   87</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_msg_texto.html">MsgTexto</a> : <span class="keyword">public</span> <a class="code" href="class_mensagem.html">Mensagem</a>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">string</span> conteudo; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="class_msg_texto.html">MsgTexto</a>(<span class="keywordtype">string</span> conteudo, <a class="code" href="class_data.html">Data</a> d, <a class="code" href="class_horas.html">Horas</a> h);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">string</span> getConteudo() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> imprimirMsg();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">string</span> tipo() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_msg_video.html">  119</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_msg_video.html">MsgVideo</a> : <span class="keyword">public</span> <a class="code" href="class_mensagem.html">Mensagem</a>{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="class_msg_video.html">MsgVideo</a>(<a class="code" href="class_data.html">Data</a> d, <a class="code" href="class_horas.html">Horas</a> h);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> imprimirMsg();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">string</span> tipo() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">string</span> getConteudo() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;};</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_msg_imagem.html">  149</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_msg_imagem.html">MsgImagem</a> : <span class="keyword">public</span> <a class="code" href="class_mensagem.html">Mensagem</a>{</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="class_msg_imagem.html">MsgImagem</a>(<a class="code" href="class_data.html">Data</a> d, <a class="code" href="class_horas.html">Horas</a> h);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> imprimirMsg();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">string</span> tipo() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">string</span> getConteudo() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;};</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_MENSAGEM_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="class_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdoc">Classe Data. Classe que indica as data (dia mes e ano) ao utilizador. E possivel modificar a data...</div><div class="ttdef"><b>Definition:</b> System.h:76</div></div>
 <div class="ttc" id="class_mensagem_html"><div class="ttname"><a href="class_mensagem.html">Mensagem</a></div><div class="ttdoc">Classe Mensagem. Cada Mensagem tem um id unico que representa o numero da mensgem. Cata Mensagem pode ainda ser de texto, video ou imagem. </div><div class="ttdef"><b>Definition:</b> Mensagem.h:17</div></div>
-<div class="ttc" id="class_msg_video_html"><div class="ttname"><a href="class_msg_video.html">MsgVideo</a></div><div class="ttdoc">Classe MsgVideo. E uma classe derivada da classe Mensagem que representa o tipo de mensagem...</div><div class="ttdef"><b>Definition:</b> Mensagem.h:103</div></div>
+<div class="ttc" id="class_msg_video_html"><div class="ttname"><a href="class_msg_video.html">MsgVideo</a></div><div class="ttdoc">Classe MsgVideo. E uma classe derivada da classe Mensagem que representa o tipo de mensagem...</div><div class="ttdef"><b>Definition:</b> Mensagem.h:119</div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
 <div class="ttc" id="class_horas_html"><div class="ttname"><a href="class_horas.html">Horas</a></div><div class="ttdoc">Classe Horas. Classe que indica as horas (hora e minuto) ao utilizador. E possivel modificar as horas...</div><div class="ttdef"><b>Definition:</b> System.h:20</div></div>
 <div class="ttc" id="class_mensagem_html_aedda3752e5473856e88644839a16fb10"><div class="ttname"><a href="class_mensagem.html#aedda3752e5473856e88644839a16fb10">Mensagem::getID</a></div><div class="ttdeci">static int getID()</div><div class="ttdoc">Funcao que retorna o id. </div><div class="ttdef"><b>Definition:</b> Mensagem.h:55</div></div>
-<div class="ttc" id="class_msg_texto_html"><div class="ttname"><a href="class_msg_texto.html">MsgTexto</a></div><div class="ttdoc">Classe MsgTexto. E uma classe derivada da classe Mensagem que representa o tipo de mensagem...</div><div class="ttdef"><b>Definition:</b> Mensagem.h:77</div></div>
-<div class="ttc" id="class_msg_imagem_html"><div class="ttname"><a href="class_msg_imagem.html">MsgImagem</a></div><div class="ttdoc">Classe MsgImagem. E uma classe derivada da classe Mensagem que representa o tipo de mensagem...</div><div class="ttdef"><b>Definition:</b> Mensagem.h:121</div></div>
+<div class="ttc" id="class_msg_texto_html"><div class="ttname"><a href="class_msg_texto.html">MsgTexto</a></div><div class="ttdoc">Classe MsgTexto. E uma classe derivada da classe Mensagem que representa o tipo de mensagem...</div><div class="ttdef"><b>Definition:</b> Mensagem.h:87</div></div>
+<div class="ttc" id="class_msg_imagem_html"><div class="ttname"><a href="class_msg_imagem.html">MsgImagem</a></div><div class="ttdoc">Classe MsgImagem. E uma classe derivada da classe Mensagem que representa o tipo de mensagem...</div><div class="ttdef"><b>Definition:</b> Mensagem.h:149</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -24,6 +24,14 @@ Data Membro::getData() const {
 	return adesaoGrupo;
 }
 
+Data Membro::getDataBloqueio() const{
+	return bloqueio;
+}
+
+void Membro::setDataBloqueio(Data d) {
+	bloqueio = d;
+}
+
 void Membro::setData(Data d) {
 	adesaoGrupo = d;
 }
@@ -189,6 +197,7 @@ bool Grupo::bloquearMembro(string login, string moderador, Data diaAtual) {
 			temp = membroNaPosicao(pos); //coloca os valores corretos do membro
 			if (temp.isBloqueado() == false) {
 				temp.setBloqueio(true); //coloca como bloqueado
+				temp.setDataBloqueio(diaAtual);
 				out << "Membro bloqueado : " << login << endl << "Data : "
 						<< diaAtual << endl << endl;
 				status.push_back(out.str());
@@ -329,7 +338,23 @@ void Grupo::setModerador(string login, Data diaAtual) {
 void Grupo::colocaMembro(Membro m){
 	membros.push_back(m);
 }
-void Grupo::escreveStatus(string linha){
-	status.push_back(linha);
+
+Data Grupo::getDataCriacao() const{
+	return criacao;
 }
 
+string Grupo::getModerador() const{
+	return moderador.getLogin();
+}
+
+vector<Membro> Grupo::getMembros() const{
+	return membros;
+}
+
+Conversa Grupo::getConversa() const{
+	return conversa;
+}
+
+vector<string> Grupo::getPedidos() const{
+	return pedidos;
+}

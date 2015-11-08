@@ -13,6 +13,7 @@
 using namespace std;
 
 static Data dataHoje;
+static string pathUtilizadores, pathGrupos, pathConversas;
 
 /**
  * @brief Funcao que cria uma interrupção no programa para o utilizador poder visualizar o ecra
@@ -163,6 +164,9 @@ Utilizador * opccaoMenuInicial(int op, Comunidade *c) {
 		throw VoltarAtras();
 	}
 	case 5: {
+		c->escreveUtilizador(pathUtilizadores);
+		c->escreveConversa(pathConversas);
+		c->escreveGrupo(pathGrupos);
 		exit(1); //sair
 	}
 	}
@@ -937,6 +941,17 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
 	} while (terminar == false);
 }
 
+void leCaminhos(){
+	cout << "Path do ficheiro utilizadores.txt: ";
+	cin >> pathUtilizadores;
+	cout << "Path do ficheiro conversas.txt: ";
+	cin >> pathConversas;
+	cout << "Path do ficheiro grupos.txt: ";
+	cin >> pathGrupos;
+	esperar();
+	clrscr();
+}
+
 /*****************************************************************
  *                             MAIN                               *
  *****************************************************************/
@@ -949,9 +964,11 @@ int main() {
 	Comunidade *c = new Comunidade;
 	Utilizador *u = new Utilizador;
 
-	c->leComunidade();
-	//c->printComunidade();
-	//c->escreveComunidade();
+	leCaminhos();
+
+	c->leUtilizador(pathUtilizadores);
+	c->leConversa(pathConversas);
+	c->leGrupo(pathGrupos);
 	
 	int d, m, a;
 	while (1) {
@@ -964,5 +981,5 @@ int main() {
 		MenuUtilizador(u, c);
 	}
 	return 0;
-
+	
 }

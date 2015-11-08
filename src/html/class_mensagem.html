@@ -134,6 +134,12 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a042a57d4dca817ed0450340b42111a9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mensagem.html#a042a57d4dca817ed0450340b42111a9a">setNumero</a> (int num)</td></tr>
 <tr class="memdesc:a042a57d4dca817ed0450340b42111a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que altera o numero da mensagem.  <a href="#a042a57d4dca817ed0450340b42111a9a">More...</a><br /></td></tr>
 <tr class="separator:a042a57d4dca817ed0450340b42111a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d814fb7b7540c4df98f522208e0c1ac"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mensagem.html#a3d814fb7b7540c4df98f522208e0c1ac">tipo</a> () const </td></tr>
+<tr class="memdesc:a3d814fb7b7540c4df98f522208e0c1ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao abstrata que retorna uma string com o tipo dependendo da classe derivada.  <a href="#a3d814fb7b7540c4df98f522208e0c1ac">More...</a><br /></td></tr>
+<tr class="separator:a3d814fb7b7540c4df98f522208e0c1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4bbb32ae268565c8f87c370f9793db6"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mensagem.html#ab4bbb32ae268565c8f87c370f9793db6">getConteudo</a> () const </td></tr>
+<tr class="memdesc:ab4bbb32ae268565c8f87c370f9793db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao abstrata que retorna o conteudo da classe derivada.  <a href="#ab4bbb32ae268565c8f87c370f9793db6">More...</a><br /></td></tr>
+<tr class="separator:ab4bbb32ae268565c8f87c370f9793db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -180,6 +186,34 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab4bbb32ae268565c8f87c370f9793db6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Mensagem::getConteudo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funcao abstrata que retorna o conteudo da classe derivada. </p>
+<dl class="section return"><dt>Returns</dt><dd>string com o conteudo </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_msg_imagem.html#accf2ff0d0a89b5cff9051eaad8930e25">MsgImagem</a>, <a class="el" href="class_msg_video.html#a7031c0283267d133f84e79a037ca43dc">MsgVideo</a>, and <a class="el" href="class_msg_texto.html#a9743e624bf980d9b4ed0db65a947f203">MsgTexto</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a8d3b52e1c20fac96c4df60c79b5b7846"></a>
 <div class="memitem">
 <div class="memproto">
@@ -323,6 +357,34 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a3d814fb7b7540c4df98f522208e0c1ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Mensagem::tipo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funcao abstrata que retorna uma string com o tipo dependendo da classe derivada. </p>
+<dl class="section return"><dt>Returns</dt><dd>string com i, v ou t </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_msg_imagem.html#a031cfa1eb0a38eb9f95d2d3b5e569c2e">MsgImagem</a>, <a class="el" href="class_msg_video.html#ae5bb59188c75751e655afcc29578380f">MsgVideo</a>, and <a class="el" href="class_msg_texto.html#acd54b047498f468c1f57a694c1bea591">MsgTexto</a>.</p>
 
 </div>
 </div>

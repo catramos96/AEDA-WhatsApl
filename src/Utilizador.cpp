@@ -98,6 +98,10 @@ Conversa* Utilizador::getConversa(int i) const {
 	return conversas[i];
 }
 
+vector<Conversa *> Utilizador::getConversas() const{
+	return conversas;
+}
+
 string Utilizador::getDestinatarioConversa(Conversa *c) const {
 	for (unsigned int i = 0; i < c->getParticipantes().size(); i++)
 		if (c->getParticipantes()[i] != login)

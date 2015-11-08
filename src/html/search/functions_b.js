@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['pedidoadesao',['pedidoAdesao',['../class_grupo.html#a9b0aca29a05044b1bd8eb3b012950149',1,'Grupo']]],
-  ['pedidoinexistente',['PedidoInexistente',['../class_pedido_inexistente.html#ae30b81fc0eff41039f0efd87b055daca',1,'PedidoInexistente']]],
-  ['pediradesao',['pedirAdesao',['../class_utilizador.html#aba7f8c8306ae34617d5af06678a8cd12',1,'Utilizador']]],
-  ['printcomunidade',['printComunidade',['../class_comunidade.html#ae7c4558f4f6174518b7e15ab007f04fd',1,'Comunidade']]],
-  ['printconversa',['printConversa',['../class_grupo.html#a892b603306ef718ffcebb040f7028ab4',1,'Grupo']]],
-  ['printgrupo',['printGrupo',['../class_grupo.html#a3519ff974212b2f767aa45f0c59335a0',1,'Grupo']]],
-  ['printmembros',['printMembros',['../class_grupo.html#aaea32821021b4a06faa11d906c84d409',1,'Grupo']]],
-  ['printpedidos',['printPedidos',['../class_grupo.html#a290892a90ca39fa1b35fba2d292366f7',1,'Grupo']]],
-  ['printstatus',['printStatus',['../class_grupo.html#a97f188af0d699ee9d5a423b654a9dbb2',1,'Grupo']]]
+  ['opccaoinvalida',['OpccaoInvalida',['../class_opccao_invalida.html#a19b191db4d1cc8c074c24a940571dd4b',1,'OpccaoInvalida']]],
+  ['operator_3c',['operator&lt;',['../class_membro.html#a2163804ffc4f179aee282fc6ce1fa0d8',1,'Membro::operator&lt;()'],['../class_horas.html#a3e491978c400b71edf4cb3cff6b81877',1,'Horas::operator&lt;()'],['../class_data.html#a349af81ceb2564873b7ff6ea2ca40826',1,'Data::operator&lt;()'],['../class_utilizador.html#a19b6202cece0cde531de23a1fd24b4c6',1,'Utilizador::operator&lt;()']]],
+  ['operator_3d_3d',['operator==',['../class_membro.html#a46bc54549fa9d3a84fbfdbc0f1ffe0b4',1,'Membro::operator==()'],['../class_grupo.html#af48627bf744786574c3caa66b75c2421',1,'Grupo::operator==()'],['../class_data.html#ac1a8623728aaf1b9164e9bcc54c6dc57',1,'Data::operator==()'],['../class_utilizador.html#a051ebe3fbeadbb5b00a78da320a9f49e',1,'Utilizador::operator==()']]],
+  ['ordenadata',['ordenaData',['../class_comunidade.html#a4770f5f57ce9e47e0a661b3b923061d8',1,'Comunidade']]],
+  ['ordenalogin',['ordenaLogin',['../class_comunidade.html#a80e54e2c6d1f2b6011453b5043860c82',1,'Comunidade']]]
 ];

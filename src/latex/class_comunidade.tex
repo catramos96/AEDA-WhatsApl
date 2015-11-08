@@ -35,15 +35,20 @@ void \hyperlink{class_comunidade_abcdd6a3eba7ff0c2c53e5ea024a98a46}{ver\+Utiliza
 \item 
 void \hyperlink{class_comunidade_ae7c4558f4f6174518b7e15ab007f04fd}{print\+Comunidade} () const 
 \item 
-\hypertarget{class_comunidade_a5455ec3855626919ba1b4d919e38132f}{}bool {\bfseries existe\+Login} (string l) const \label{class_comunidade_a5455ec3855626919ba1b4d919e38132f}
-
-\item 
-\hypertarget{class_comunidade_ac940baac5c4afb4fb47ba165e6ed1797}{}void {\bfseries le\+Comunidade} ()\label{class_comunidade_ac940baac5c4afb4fb47ba165e6ed1797}
-
-\item 
-\hypertarget{class_comunidade_aa29f04ff88d894845f2b41accce47d22}{}int {\bfseries escreve\+Comunidade} ()\label{class_comunidade_aa29f04ff88d894845f2b41accce47d22}
-
-\end{DoxyCompactItemize}
+bool \hyperlink{class_comunidade_a5455ec3855626919ba1b4d919e38132f}{existe\+Login} (string l) const 
+\begin{DoxyCompactList}\small\item\em Funcao que verifica se existe um login. \end{DoxyCompactList}\item 
+void \hyperlink{class_comunidade_a3a39cdd6a92e68d4d25e6b99b68da32d}{le\+Utilizador} (string path)
+\begin{DoxyCompactList}\small\item\em Funcao que le um ficheiro de texto com os utilizadores e coloca a informacao no local certo. \end{DoxyCompactList}\item 
+void \hyperlink{class_comunidade_ae9ed6b53c7fc25c1286dd8c0ff3d2ed3}{le\+Conversa} (string path)
+\begin{DoxyCompactList}\small\item\em Funcao que le um ficheiro de texto com as conversas e coloca a informacao no local certo. \end{DoxyCompactList}\item 
+void \hyperlink{class_comunidade_a6bdcfec2d0bd2f2d518713830fc17242}{le\+Grupo} (string path)
+\begin{DoxyCompactList}\small\item\em Funcao que le um ficheiro de texto com os grupos e coloca a informacao no local certo. \end{DoxyCompactList}\item 
+int \hyperlink{class_comunidade_a78e9b2f723065c9085dd8984cba6691f}{escreve\+Utilizador} (string path)
+\begin{DoxyCompactList}\small\item\em Funcao que converte a informacao do programa sobre utilizadores num ficheiro .txt. \end{DoxyCompactList}\item 
+int \hyperlink{class_comunidade_a0de7c5114b4754401b8e12e4ed0ba34e}{escreve\+Conversa} (string path)
+\begin{DoxyCompactList}\small\item\em Funcao que converte a informacao do programa sobre conversas num ficheiro .txt. \end{DoxyCompactList}\item 
+int \hyperlink{class_comunidade_aecb81c6a5dba43898876761c491db171}{escreve\+Grupo} (string path)
+\begin{DoxyCompactList}\small\item\em Funcao que converte a informacao do programa sobre grupos num ficheiro .txt. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -57,14 +62,90 @@ Classe \hyperlink{class_comunidade}{Comunidade}. Class que contem e gere todos o
 \item[{{\bf Utilizador} $\ast$}]{util}
 \end{DoxyParamCaption}
 )}\label{class_comunidade_a1961b08389ea8fc40a7cdd099d733ad7}
-@ brief Funcao que adiciona um utilizador à comunidade @ param util\+: utilizador @ return void \hypertarget{class_comunidade_adfc1f95d2fc409985c291bd29c9b7855}{}\index{Comunidade@{Comunidade}!existe\+Grupo@{existe\+Grupo}}
+@ brief Funcao que adiciona um utilizador à comunidade @ param util\+: utilizador @ return void \hypertarget{class_comunidade_a0de7c5114b4754401b8e12e4ed0ba34e}{}\index{Comunidade@{Comunidade}!escreve\+Conversa@{escreve\+Conversa}}
+\index{escreve\+Conversa@{escreve\+Conversa}!Comunidade@{Comunidade}}
+\subsubsection[{escreve\+Conversa(string path)}]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::escreve\+Conversa (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_a0de7c5114b4754401b8e12e4ed0ba34e}
+
+
+Funcao que converte a informacao do programa sobre conversas num ficheiro .txt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho onde se encontra o ficheiro conversas.\+txt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se sucesso ou 1 se insucesso 
+\end{DoxyReturn}
+\hypertarget{class_comunidade_aecb81c6a5dba43898876761c491db171}{}\index{Comunidade@{Comunidade}!escreve\+Grupo@{escreve\+Grupo}}
+\index{escreve\+Grupo@{escreve\+Grupo}!Comunidade@{Comunidade}}
+\subsubsection[{escreve\+Grupo(string path)}]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::escreve\+Grupo (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_aecb81c6a5dba43898876761c491db171}
+
+
+Funcao que converte a informacao do programa sobre grupos num ficheiro .txt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho onde se encontra o ficheiro grupos.\+txt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se sucesso ou 1 se insucesso 
+\end{DoxyReturn}
+\hypertarget{class_comunidade_a78e9b2f723065c9085dd8984cba6691f}{}\index{Comunidade@{Comunidade}!escreve\+Utilizador@{escreve\+Utilizador}}
+\index{escreve\+Utilizador@{escreve\+Utilizador}!Comunidade@{Comunidade}}
+\subsubsection[{escreve\+Utilizador(string path)}]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::escreve\+Utilizador (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_a78e9b2f723065c9085dd8984cba6691f}
+
+
+Funcao que converte a informacao do programa sobre utilizadores num ficheiro .txt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho onde se encontra o ficheiro utilizadores.\+txt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se sucesso ou 1 se insucesso 
+\end{DoxyReturn}
+\hypertarget{class_comunidade_adfc1f95d2fc409985c291bd29c9b7855}{}\index{Comunidade@{Comunidade}!existe\+Grupo@{existe\+Grupo}}
 \index{existe\+Grupo@{existe\+Grupo}!Comunidade@{Comunidade}}
 \subsubsection[{existe\+Grupo(string grupo) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grupo} $\ast$ Comunidade\+::existe\+Grupo (
 \begin{DoxyParamCaption}
 \item[{string}]{grupo}
 \end{DoxyParamCaption}
 ) const}\label{class_comunidade_adfc1f95d2fc409985c291bd29c9b7855}
-@ brief Funcao que verifica a existencia de um certo grupo @ param util \+: indica o nome do grupo @ return \hyperlink{class_grupo}{Grupo} \hypertarget{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{}\index{Comunidade@{Comunidade}!existe\+Util@{existe\+Util}}
+@ brief Funcao que verifica a existencia de um certo grupo @ param util \+: indica o nome do grupo @ return \hyperlink{class_grupo}{Grupo} \hypertarget{class_comunidade_a5455ec3855626919ba1b4d919e38132f}{}\index{Comunidade@{Comunidade}!existe\+Login@{existe\+Login}}
+\index{existe\+Login@{existe\+Login}!Comunidade@{Comunidade}}
+\subsubsection[{existe\+Login(string l) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Comunidade\+::existe\+Login (
+\begin{DoxyParamCaption}
+\item[{string}]{l}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_a5455ec3855626919ba1b4d919e38132f}
+
+
+Funcao que verifica se existe um login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Login que vamos procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se já existe, false se nao 
+\end{DoxyReturn}
+\hypertarget{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{}\index{Comunidade@{Comunidade}!existe\+Util@{existe\+Util}}
 \index{existe\+Util@{existe\+Util}!Comunidade@{Comunidade}}
 \subsubsection[{existe\+Util(\+Utilizador $\ast$util) const }]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::existe\+Util (
 \begin{DoxyParamCaption}
@@ -97,7 +178,55 @@ posicao
 \item[{string}]{nome}
 \end{DoxyParamCaption}
 ) const}\label{class_comunidade_a8c7188c4db52d049b25b158497ac8c14}
-@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o nome do utilizador @ return posicao \hypertarget{class_comunidade_a4770f5f57ce9e47e0a661b3b923061d8}{}\index{Comunidade@{Comunidade}!ordena\+Data@{ordena\+Data}}
+@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o nome do utilizador @ return posicao \hypertarget{class_comunidade_ae9ed6b53c7fc25c1286dd8c0ff3d2ed3}{}\index{Comunidade@{Comunidade}!le\+Conversa@{le\+Conversa}}
+\index{le\+Conversa@{le\+Conversa}!Comunidade@{Comunidade}}
+\subsubsection[{le\+Conversa(string path)}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::le\+Conversa (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_ae9ed6b53c7fc25c1286dd8c0ff3d2ed3}
+
+
+Funcao que le um ficheiro de texto com as conversas e coloca a informacao no local certo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho onde se encontra o ficheiro conversas.\+txt \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_comunidade_a6bdcfec2d0bd2f2d518713830fc17242}{}\index{Comunidade@{Comunidade}!le\+Grupo@{le\+Grupo}}
+\index{le\+Grupo@{le\+Grupo}!Comunidade@{Comunidade}}
+\subsubsection[{le\+Grupo(string path)}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::le\+Grupo (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_a6bdcfec2d0bd2f2d518713830fc17242}
+
+
+Funcao que le um ficheiro de texto com os grupos e coloca a informacao no local certo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho onde se encontra o ficheiro grupos.\+txt \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_comunidade_a3a39cdd6a92e68d4d25e6b99b68da32d}{}\index{Comunidade@{Comunidade}!le\+Utilizador@{le\+Utilizador}}
+\index{le\+Utilizador@{le\+Utilizador}!Comunidade@{Comunidade}}
+\subsubsection[{le\+Utilizador(string path)}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::le\+Utilizador (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_a3a39cdd6a92e68d4d25e6b99b68da32d}
+
+
+Funcao que le um ficheiro de texto com os utilizadores e coloca a informacao no local certo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho onde se encontra o ficheiro utilizadores.\+txt \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_comunidade_a4770f5f57ce9e47e0a661b3b923061d8}{}\index{Comunidade@{Comunidade}!ordena\+Data@{ordena\+Data}}
 \index{ordena\+Data@{ordena\+Data}!Comunidade@{Comunidade}}
 \subsubsection[{ordena\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::ordena\+Data (
 \begin{DoxyParamCaption}

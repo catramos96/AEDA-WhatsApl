@@ -114,6 +114,12 @@ public:
 	*@return conversas[i]
 	*/
 	Conversa* getConversa(int i) const;
+
+	/**
+	* @brief Funcao que retorna as conversas de um utilizador
+	* @return vector<Conversa*>
+	*/
+	vector<Conversa *> getConversas() const;
 	/**
 	*@brief Funcao que retorna o nome destinatario da Conversa
 	*@param c conversa
@@ -412,6 +418,7 @@ public:
 	 */
 	Grupo *escolheGruposAmigos(int i) const;
 
+	void escreveUtilizador(string linha, bool novo);
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

@@ -34,7 +34,11 @@ int \hyperlink{class_mensagem_a376309b58e69c41bf10acb7adad7bd3d}{get\+Numero} ()
 void \hyperlink{class_mensagem_a74d42818d3796b28496f400e02328c92}{set\+Emissor} (string emissor)
 \begin{DoxyCompactList}\small\item\em Funcao que altera o emissor. \end{DoxyCompactList}\item 
 void \hyperlink{class_mensagem_a042a57d4dca817ed0450340b42111a9a}{set\+Numero} (int num)
-\begin{DoxyCompactList}\small\item\em Funcao que altera o numero da mensagem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao que altera o numero da mensagem. \end{DoxyCompactList}\item 
+virtual string \hyperlink{class_mensagem_a3d814fb7b7540c4df98f522208e0c1ac}{tipo} () const 
+\begin{DoxyCompactList}\small\item\em Funcao abstrata que retorna uma string com o tipo dependendo da classe derivada. \end{DoxyCompactList}\item 
+virtual string \hyperlink{class_mensagem_ab4bbb32ae268565c8f87c370f9793db6}{get\+Conteudo} () const 
+\begin{DoxyCompactList}\small\item\em Funcao abstrata que retorna o conteudo da classe derivada. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,6 +72,24 @@ Construtor da classe \hyperlink{class_mensagem}{Mensagem};.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_mensagem_ab4bbb32ae268565c8f87c370f9793db6}{}\index{Mensagem@{Mensagem}!get\+Conteudo@{get\+Conteudo}}
+\index{get\+Conteudo@{get\+Conteudo}!Mensagem@{Mensagem}}
+\subsubsection[{get\+Conteudo() const }]{\setlength{\rightskip}{0pt plus 5cm}string Mensagem\+::get\+Conteudo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_mensagem_ab4bbb32ae268565c8f87c370f9793db6}
+
+
+Funcao abstrata que retorna o conteudo da classe derivada. 
+
+\begin{DoxyReturn}{Returns}
+string com o conteudo 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_msg_imagem_accf2ff0d0a89b5cff9051eaad8930e25}{Msg\+Imagem}, \hyperlink{class_msg_video_a7031c0283267d133f84e79a037ca43dc}{Msg\+Video}, and \hyperlink{class_msg_texto_a9743e624bf980d9b4ed0db65a947f203}{Msg\+Texto}.
+
 \hypertarget{class_mensagem_a8d3b52e1c20fac96c4df60c79b5b7846}{}\index{Mensagem@{Mensagem}!get\+Data@{get\+Data}}
 \index{get\+Data@{get\+Data}!Mensagem@{Mensagem}}
 \subsubsection[{get\+Data() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Mensagem\+::get\+Data (
@@ -170,6 +192,24 @@ Funcao que altera o numero da mensagem.
 {\em num} & Numero novo \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_mensagem_a3d814fb7b7540c4df98f522208e0c1ac}{}\index{Mensagem@{Mensagem}!tipo@{tipo}}
+\index{tipo@{tipo}!Mensagem@{Mensagem}}
+\subsubsection[{tipo() const }]{\setlength{\rightskip}{0pt plus 5cm}string Mensagem\+::tipo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_mensagem_a3d814fb7b7540c4df98f522208e0c1ac}
+
+
+Funcao abstrata que retorna uma string com o tipo dependendo da classe derivada. 
+
+\begin{DoxyReturn}{Returns}
+string com i, v ou t 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_msg_imagem_a031cfa1eb0a38eb9f95d2d3b5e569c2e}{Msg\+Imagem}, \hyperlink{class_msg_video_ae5bb59188c75751e655afcc29578380f}{Msg\+Video}, and \hyperlink{class_msg_texto_acd54b047498f468c1f57a694c1bea591}{Msg\+Texto}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

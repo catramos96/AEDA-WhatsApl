@@ -16,7 +16,8 @@ class Membro{
 private:
 	string login;  /**<  membro privado que representa o login do utilizador */
 	Data adesaoGrupo;  /**<  membro privado que representa a data de adesao ao grupo*/
-	bool bloqueado;  /**<  membro privado que indica se o utilizador está ou não bloqueado do grupo */
+	bool bloqueado;  /**<  membro privado que indica se o utilizador esta ou nao bloqueado do grupo */
+	Data bloqueio; /**< membro privado que indica a data do ultimo bloqueio de um membro */
 public:
 	/**
 	 * @brief Construtor default.
@@ -40,10 +41,20 @@ public:
 	 */
 	Data getData() const;
 	/**
+	* @brief Funcao que retorna a Data de bloqueio do utilizador ao grupo.
+	* @return bloqueio.
+	*/
+	Data getDataBloqueio() const;
+	/**
 	 * @brief Funcao que permite alterar a data inicial.
 	 * @param d Nova data.
 	 */
 	void setData(Data d);
+	/**
+	* @brief Funcao que coloca uma nova data de bloqueio de um membro.
+	* @param d Data de bloqueio.
+	*/
+	void setDataBloqueio(Data d);
 	/**
 	 * @brief Funcao que coloca um novo valor ao membro privado 'bloqueado'.
 	 * @param bloq Boleano com o valor true ou false.
@@ -243,10 +254,30 @@ public:
 	*/
 	void colocaMembro(Membro m);
 	/**
-	* @brief Funcao que escreve no status
-	* @param linha Linha que contem a informacao
+	* @brief Funcao que devolve a data de criacao do grupo.
+	* @return Data de criacao.
 	*/
-	void escreveStatus(string linha);
+	Data getDataCriacao() const;
+	/**
+	* @brief Funcao que retorna o login do moderador
+	* @return login do moderador
+	*/
+	string getModerador() const;
+	/**
+	* @brief Funcao que retorna os membros de um grupo
+	* @return membros de um grupo
+	*/
+	vector<Membro> getMembros() const;
+	/**
+	* @brief funcao que retorna a conversa de grupo
+	* @return conversa de grupo
+	*/
+	Conversa getConversa() const;
+	/**
+	* @brief funcao que retorna os pedidos de adesao a um grupo.
+	* @return pedidos de adesao a um grupo.
+	*/
+	vector<string> getPedidos() const;
 };
 
 #endif /* SRC_GRUPO_H_ */

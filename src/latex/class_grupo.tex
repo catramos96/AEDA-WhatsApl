@@ -63,8 +63,16 @@ void \hyperlink{class_grupo_afb167f10ddb461bcc4c3020b8c57df69}{set\+Moderador} (
 \begin{DoxyCompactList}\small\item\em Funcao que altera o moderador. \end{DoxyCompactList}\item 
 void \hyperlink{class_grupo_a928e7d26214ada7c478d9959b7b63d1f}{coloca\+Membro} (\hyperlink{class_membro}{Membro} m)
 \begin{DoxyCompactList}\small\item\em Funcao que coloca um membro no vetor de membros. \end{DoxyCompactList}\item 
-void \hyperlink{class_grupo_a8f7b75882e8c20576254f316e9f2a866}{escreve\+Status} (string linha)
-\begin{DoxyCompactList}\small\item\em Funcao que escreve no status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{class_data}{Data} \hyperlink{class_grupo_ad4d35197aece46eb8db303a5d5bc3b4a}{get\+Data\+Criacao} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que devolve a data de criacao do grupo. \end{DoxyCompactList}\item 
+string \hyperlink{class_grupo_ae328509d175cc973dc22ee58f43af053}{get\+Moderador} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o login do moderador. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_membro}{Membro} $>$ \hyperlink{class_grupo_a008d8a2e6cc7ef4693da66d9e10e08de}{get\+Membros} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os membros de um grupo. \end{DoxyCompactList}\item 
+\hyperlink{class_conversa}{Conversa} \hyperlink{class_grupo_a57909680047626c345dbcb59003ff95e}{get\+Conversa} () const 
+\begin{DoxyCompactList}\small\item\em funcao que retorna a conversa de grupo \end{DoxyCompactList}\item 
+vector$<$ string $>$ \hyperlink{class_grupo_a561a0d9dea5fa946fcb5c585aa715959}{get\+Pedidos} () const 
+\begin{DoxyCompactList}\small\item\em funcao que retorna os pedidos de adesao a um grupo. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -225,22 +233,6 @@ Funcao que envia uma mensagem para a conversa de grupo. Gera excecoes se o utili
 \begin{DoxyReturn}{Returns}
 True em caso de sucesso ou false se insucesso. 
 \end{DoxyReturn}
-\hypertarget{class_grupo_a8f7b75882e8c20576254f316e9f2a866}{}\index{Grupo@{Grupo}!escreve\+Status@{escreve\+Status}}
-\index{escreve\+Status@{escreve\+Status}!Grupo@{Grupo}}
-\subsubsection[{escreve\+Status(string linha)}]{\setlength{\rightskip}{0pt plus 5cm}void Grupo\+::escreve\+Status (
-\begin{DoxyParamCaption}
-\item[{string}]{linha}
-\end{DoxyParamCaption}
-)}\label{class_grupo_a8f7b75882e8c20576254f316e9f2a866}
-
-
-Funcao que escreve no status. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em linha} & Linha que contem a informacao \\
-\hline
-\end{DoxyParams}
 \hypertarget{class_grupo_ae47743b312afead1d38b67e9a770dff4}{}\index{Grupo@{Grupo}!existe\+Membro@{existe\+Membro}}
 \index{existe\+Membro@{existe\+Membro}!Grupo@{Grupo}}
 \subsubsection[{existe\+Membro(\+Membro m)}]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::existe\+Membro (
@@ -259,6 +251,76 @@ Funcao que procura um membro no vetor \textquotesingle{}membros\textquotesingle{
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 posicao no vetor do membro. -\/1 se nao encontra. 
+\end{DoxyReturn}
+\hypertarget{class_grupo_a57909680047626c345dbcb59003ff95e}{}\index{Grupo@{Grupo}!get\+Conversa@{get\+Conversa}}
+\index{get\+Conversa@{get\+Conversa}!Grupo@{Grupo}}
+\subsubsection[{get\+Conversa() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversa} Grupo\+::get\+Conversa (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_grupo_a57909680047626c345dbcb59003ff95e}
+
+
+funcao que retorna a conversa de grupo 
+
+\begin{DoxyReturn}{Returns}
+conversa de grupo 
+\end{DoxyReturn}
+\hypertarget{class_grupo_ad4d35197aece46eb8db303a5d5bc3b4a}{}\index{Grupo@{Grupo}!get\+Data\+Criacao@{get\+Data\+Criacao}}
+\index{get\+Data\+Criacao@{get\+Data\+Criacao}!Grupo@{Grupo}}
+\subsubsection[{get\+Data\+Criacao() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Grupo\+::get\+Data\+Criacao (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_grupo_ad4d35197aece46eb8db303a5d5bc3b4a}
+
+
+Funcao que devolve a data de criacao do grupo. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_data}{Data} de criacao. 
+\end{DoxyReturn}
+\hypertarget{class_grupo_a008d8a2e6cc7ef4693da66d9e10e08de}{}\index{Grupo@{Grupo}!get\+Membros@{get\+Membros}}
+\index{get\+Membros@{get\+Membros}!Grupo@{Grupo}}
+\subsubsection[{get\+Membros() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Membro} $>$ Grupo\+::get\+Membros (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_grupo_a008d8a2e6cc7ef4693da66d9e10e08de}
+
+
+Funcao que retorna os membros de um grupo. 
+
+\begin{DoxyReturn}{Returns}
+membros de um grupo 
+\end{DoxyReturn}
+\hypertarget{class_grupo_ae328509d175cc973dc22ee58f43af053}{}\index{Grupo@{Grupo}!get\+Moderador@{get\+Moderador}}
+\index{get\+Moderador@{get\+Moderador}!Grupo@{Grupo}}
+\subsubsection[{get\+Moderador() const }]{\setlength{\rightskip}{0pt plus 5cm}string Grupo\+::get\+Moderador (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_grupo_ae328509d175cc973dc22ee58f43af053}
+
+
+Funcao que retorna o login do moderador. 
+
+\begin{DoxyReturn}{Returns}
+login do moderador 
+\end{DoxyReturn}
+\hypertarget{class_grupo_a561a0d9dea5fa946fcb5c585aa715959}{}\index{Grupo@{Grupo}!get\+Pedidos@{get\+Pedidos}}
+\index{get\+Pedidos@{get\+Pedidos}!Grupo@{Grupo}}
+\subsubsection[{get\+Pedidos() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ Grupo\+::get\+Pedidos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_grupo_a561a0d9dea5fa946fcb5c585aa715959}
+
+
+funcao que retorna os pedidos de adesao a um grupo. 
+
+\begin{DoxyReturn}{Returns}
+pedidos de adesao a um grupo. 
 \end{DoxyReturn}
 \hypertarget{class_grupo_a9a9bedb25b3d23d366c84203d1998663}{}\index{Grupo@{Grupo}!is\+Moderador@{is\+Moderador}}
 \index{is\+Moderador@{is\+Moderador}!Grupo@{Grupo}}

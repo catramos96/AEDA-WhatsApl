@@ -83,12 +83,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
       <li><a href="#index_u"><span>u</span></a></li>
       <li><a href="#index_v"><span>v</span></a></li>
       <li class="current"><a href="#index_~"><span>~</span></a></li>
@@ -207,11 +209,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>escolheGruposAmigos()
 : <a class="el" href="class_utilizador.html#a8292ead93b56ba0c48b9fc92265134c3">Utilizador</a>
 </li>
-<li>escreveStatus()
-: <a class="el" href="class_grupo.html#a8f7b75882e8c20576254f316e9f2a866">Grupo</a>
+<li>escreveConversa()
+: <a class="el" href="class_comunidade.html#a0de7c5114b4754401b8e12e4ed0ba34e">Comunidade</a>
+</li>
+<li>escreveGrupo()
+: <a class="el" href="class_comunidade.html#aecb81c6a5dba43898876761c491db171">Comunidade</a>
+</li>
+<li>escreveUtilizador()
+: <a class="el" href="class_comunidade.html#a78e9b2f723065c9085dd8984cba6691f">Comunidade</a>
 </li>
 <li>existeGrupo()
 : <a class="el" href="class_comunidade.html#adfc1f95d2fc409985c291bd29c9b7855">Comunidade</a>
+</li>
+<li>existeLogin()
+: <a class="el" href="class_comunidade.html#a5455ec3855626919ba1b4d919e38132f">Comunidade</a>
 </li>
 <li>existeMembro()
 : <a class="el" href="class_grupo.html#ae47743b312afead1d38b67e9a770dff4">Grupo</a>
@@ -240,10 +251,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="class_data_invalida.html#afafe67093a501d5d861b8475695f29fe">DataInvalida</a>
 </li>
 <li>getConteudo()
-: <a class="el" href="class_msg_texto.html#a9743e624bf980d9b4ed0db65a947f203">MsgTexto</a>
+: <a class="el" href="class_mensagem.html#ab4bbb32ae268565c8f87c370f9793db6">Mensagem</a>
+, <a class="el" href="class_msg_imagem.html#accf2ff0d0a89b5cff9051eaad8930e25">MsgImagem</a>
+, <a class="el" href="class_msg_texto.html#a9743e624bf980d9b4ed0db65a947f203">MsgTexto</a>
+, <a class="el" href="class_msg_video.html#a7031c0283267d133f84e79a037ca43dc">MsgVideo</a>
 </li>
 <li>getConversa()
-: <a class="el" href="class_utilizador.html#a07745e2c5f5d9236aea0c7357f1325b7">Utilizador</a>
+: <a class="el" href="class_grupo.html#a57909680047626c345dbcb59003ff95e">Grupo</a>
+, <a class="el" href="class_utilizador.html#a07745e2c5f5d9236aea0c7357f1325b7">Utilizador</a>
+</li>
+<li>getConversas()
+: <a class="el" href="class_utilizador.html#a2593f5a4722a536786593a762ec934be">Utilizador</a>
 </li>
 <li>getData()
 : <a class="el" href="class_membro.html#a7619c15445b61c099b0a6fcb1e5f9f51">Membro</a>
@@ -251,6 +269,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>getDataAdesao()
 : <a class="el" href="class_utilizador.html#af6c41442d2029ccb1a135092a5c27007">Utilizador</a>
+</li>
+<li>getDataBloqueio()
+: <a class="el" href="class_membro.html#ab46a305310ad7f3ada262bc3a7229da0">Membro</a>
+</li>
+<li>getDataCriacao()
+: <a class="el" href="class_grupo.html#ad4d35197aece46eb8db303a5d5bc3b4a">Grupo</a>
 </li>
 <li>getDestinatarioConversa()
 : <a class="el" href="class_utilizador.html#a5d4275b4d23d955ef295773d3d9eb3b5">Utilizador</a>
@@ -301,12 +325,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="class_utilizador_inexistente.html#aa43e8ef928916c8ae7f7c80a25c1e435">UtilizadorInexistente</a>
 , <a class="el" href="class_utilizador_ja_existe.html#a545e95145227b85f40f6342ccbdfcab1">UtilizadorJaExiste</a>
 </li>
+<li>getMembros()
+: <a class="el" href="class_grupo.html#a008d8a2e6cc7ef4693da66d9e10e08de">Grupo</a>
+</li>
 <li>getMes()
 : <a class="el" href="class_data.html#af73ca438bf53a0f386a6b1c03a6c0d3e">Data</a>
 , <a class="el" href="class_data_invalida.html#a22f39fe99f467b66d61dc576d750d4c6">DataInvalida</a>
 </li>
 <li>getMinutos()
 : <a class="el" href="class_horas.html#a51e1dd7ac2811960ac1c2faacd034a3c">Horas</a>
+</li>
+<li>getModerador()
+: <a class="el" href="class_grupo.html#ae328509d175cc973dc22ee58f43af053">Grupo</a>
 </li>
 <li>getNome()
 : <a class="el" href="class_nao_moderador.html#aff0ecf62b3446554d93d4032276a6f29">NaoModerador</a>
@@ -317,6 +347,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>getOp()
 : <a class="el" href="class_opccao_invalida.html#ac9afa1ee68970cddd39a9873fd2c357f">OpccaoInvalida&lt; N &gt;</a>
+</li>
+<li>getPedidos()
+: <a class="el" href="class_grupo.html#a561a0d9dea5fa946fcb5c585aa715959">Grupo</a>
 </li>
 <li>getPosicao()
 : <a class="el" href="class_conversa_inexistente.html#a8cd77144051893773e469b8dcf5140ba">ConversaInexistente</a>
@@ -382,6 +415,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>isModerador()
 : <a class="el" href="class_grupo.html#a9a9bedb25b3d23d366c84203d1998663">Grupo</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>leConversa()
+: <a class="el" href="class_comunidade.html#ae9ed6b53c7fc25c1286dd8c0ff3d2ed3">Comunidade</a>
+</li>
+<li>leGrupo()
+: <a class="el" href="class_comunidade.html#a6bdcfec2d0bd2f2d518713830fc17242">Comunidade</a>
+</li>
+<li>leUtilizador()
+: <a class="el" href="class_comunidade.html#a3a39cdd6a92e68d4d25e6b99b68da32d">Comunidade</a>
 </li>
 </ul>
 
@@ -523,6 +569,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="class_membro.html#a251129b637633510a9e08fe29cc7dfaa">Membro</a>
 , <a class="el" href="class_utilizador.html#a8cd2a3b9c962eeef6ffa497ce6e39a3c">Utilizador</a>
 </li>
+<li>setDataBloqueio()
+: <a class="el" href="class_membro.html#a93771e7b02097f22334205ff5f97de42">Membro</a>
+</li>
 <li>setEmail()
 : <a class="el" href="class_utilizador.html#aa5ad3c6ed417e2b3aebc96bfa5432dfb">Utilizador</a>
 </li>
@@ -552,6 +601,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>setVisibilidade()
 : <a class="el" href="class_utilizador.html#a2228288656c31e63710c31bf0d8eb58f">Utilizador</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>tipo()
+: <a class="el" href="class_mensagem.html#a3d814fb7b7540c4df98f522208e0c1ac">Mensagem</a>
+, <a class="el" href="class_msg_imagem.html#a031cfa1eb0a38eb9f95d2d3b5e569c2e">MsgImagem</a>
+, <a class="el" href="class_msg_texto.html#acd54b047498f468c1f57a694c1bea591">MsgTexto</a>
+, <a class="el" href="class_msg_video.html#ae5bb59188c75751e655afcc29578380f">MsgVideo</a>
 </li>
 </ul>
 

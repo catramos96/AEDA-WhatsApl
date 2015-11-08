@@ -22,7 +22,11 @@ Inheritance diagram for Msg\+Video\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Construtor de \hyperlink{class_msg_video}{Msg\+Video}. \end{DoxyCompactList}\item 
 \hypertarget{class_msg_video_a9073f476d181d88e03c6cbf4c283533d}{}void \hyperlink{class_msg_video_a9073f476d181d88e03c6cbf4c283533d}{imprimir\+Msg} ()\label{class_msg_video_a9073f476d181d88e03c6cbf4c283533d}
 
-\begin{DoxyCompactList}\small\item\em Funcao que imprime no ecra a mensagem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao que imprime no ecra a mensagem. \end{DoxyCompactList}\item 
+string \hyperlink{class_msg_video_ae5bb59188c75751e655afcc29578380f}{tipo} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o tipo de mensagem. \end{DoxyCompactList}\item 
+string \hyperlink{class_msg_video_a7031c0283267d133f84e79a037ca43dc}{get\+Conteudo} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna um \textquotesingle{}video\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -49,6 +53,45 @@ Construtor de \hyperlink{class_msg_video}{Msg\+Video}.
 {\em h} & hora \\
 \hline
 \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_msg_video_a7031c0283267d133f84e79a037ca43dc}{}\index{Msg\+Video@{Msg\+Video}!get\+Conteudo@{get\+Conteudo}}
+\index{get\+Conteudo@{get\+Conteudo}!Msg\+Video@{Msg\+Video}}
+\subsubsection[{get\+Conteudo() const }]{\setlength{\rightskip}{0pt plus 5cm}string Msg\+Video\+::get\+Conteudo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_msg_video_a7031c0283267d133f84e79a037ca43dc}
+
+
+Funcao que retorna um \textquotesingle{}video\textquotesingle{}. 
+
+\begin{DoxyReturn}{Returns}
+string com o conteudo 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_mensagem_ab4bbb32ae268565c8f87c370f9793db6}{Mensagem}.
+
+\hypertarget{class_msg_video_ae5bb59188c75751e655afcc29578380f}{}\index{Msg\+Video@{Msg\+Video}!tipo@{tipo}}
+\index{tipo@{tipo}!Msg\+Video@{Msg\+Video}}
+\subsubsection[{tipo() const }]{\setlength{\rightskip}{0pt plus 5cm}string Msg\+Video\+::tipo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_msg_video_ae5bb59188c75751e655afcc29578380f}
+
+
+Funcao que retorna o tipo de mensagem. 
+
+\begin{DoxyReturn}{Returns}
+string com v 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_mensagem_a3d814fb7b7540c4df98f522208e0c1ac}{Mensagem}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

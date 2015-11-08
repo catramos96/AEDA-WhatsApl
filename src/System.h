@@ -139,20 +139,6 @@ public:
 	bool operator==(const Data&d) const;
 };
 
-// ainda nao sei se devo comentar
-
-class HoraNova{
-private:
-	time_t t;
-public:
-	HoraNova();
-	HoraNova(time_t time1);
-	void setHoraNova(time_t time1);
-	time_t getHoraNova();
-	const string getHoraNovaCompleta();
-	const string getHoraNovaHoras();
-	const string getHoraNovaData();
-};
 /**
 * @brief Limpa o ecra da consola
 */
