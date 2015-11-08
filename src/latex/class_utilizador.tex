@@ -128,8 +128,7 @@ bool \hyperlink{class_utilizador_a7424cd944ea535338280e821666768f7}{desbloquear\
 \begin{DoxyCompactList}\small\item\em Funcao que desbloqueia um utilizador de um grupo. O utilizador atual pode desbloquear outro utilizador de um dado grupo, desde que o utilizador atual seja o moderador do grupo. Esta funcao chama a funcao desbloquear\+Membro da classe grupo. \end{DoxyCompactList}\item 
 \hyperlink{class_grupo}{Grupo} $\ast$ \hyperlink{class_utilizador_a8292ead93b56ba0c48b9fc92265134c3}{escolhe\+Grupos\+Amigos} (int i) const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o grupo escolhido pelo utilizador. Antes desta função é feito um print dos grupos do circulo de amigos do utilizador com numeros. A partir dai o utilizador escolhe um grupo que é devolvido pela funcao. \end{DoxyCompactList}\item 
-\hypertarget{class_utilizador_a56049150a07b5da75017efe35d5a7d61}{}void {\bfseries escreve\+Utilizador} (string linha, bool novo)\label{class_utilizador_a56049150a07b5da75017efe35d5a7d61}
-
+void \hyperlink{class_utilizador_a56049150a07b5da75017efe35d5a7d61}{escreve\+Utilizador} (string linha, bool novo)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -444,6 +443,21 @@ Funcao que retorna o grupo escolhido pelo utilizador. Antes desta função é feito
 \begin{DoxyReturn}{Returns}
 grupo escolhido 
 \end{DoxyReturn}
+\hypertarget{class_utilizador_a56049150a07b5da75017efe35d5a7d61}{}\index{Utilizador@{Utilizador}!escreve\+Utilizador@{escreve\+Utilizador}}
+\index{escreve\+Utilizador@{escreve\+Utilizador}!Utilizador@{Utilizador}}
+\subsubsection[{escreve\+Utilizador(string linha, bool novo)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::escreve\+Utilizador (
+\begin{DoxyParamCaption}
+\item[{string}]{linha, }
+\item[{bool}]{novo}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_a56049150a07b5da75017efe35d5a7d61}
+@ brief Funcao que imprime no ecras as informações do utilizador 
+\begin{DoxyParams}{Parameters}
+{\em linha} & Posicao no vetor \\
+\hline
+{\em novo} & @ return void \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_utilizador_a13a11370779713c7de00ea62f5c3799b}{}\index{Utilizador@{Utilizador}!get\+Amigo@{get\+Amigo}}
 \index{get\+Amigo@{get\+Amigo}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Amigo(string login) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utilizador} $\ast$ Utilizador\+::get\+Amigo (

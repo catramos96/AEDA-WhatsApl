@@ -418,6 +418,12 @@ public:
 	 */
 	Grupo *escolheGruposAmigos(int i) const;
 
+	/**
+		* @ brief Funcao que imprime no ecras as informações do utilizador
+		* @param linha Posicao no vetor
+		* @param novo
+		* @ return void
+		*/
 	void escreveUtilizador(string linha, bool novo);
 };
 

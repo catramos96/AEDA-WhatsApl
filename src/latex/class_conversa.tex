@@ -1,48 +1,150 @@
 \hypertarget{class_conversa}{}\section{Conversa Class Reference}
 \label{class_conversa}\index{Conversa@{Conversa}}
+
+
+Classe \hyperlink{class_comunidade}{Comunidade}. Class que gere as conversas E possivel ordenar as conversas por data.  
+
+
+
+
+{\ttfamily \#include $<$Conversa.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_conversa_a00aae9cbb21f271ac1d6ba578ca820ec}{}{\bfseries Conversa} (vector$<$ string $>$ part\+Login)\label{class_conversa_a00aae9cbb21f271ac1d6ba578ca820ec}
+\hypertarget{class_conversa_ad8504a58d4ce78537bcf1e4abfd84b60}{}\hyperlink{class_conversa_ad8504a58d4ce78537bcf1e4abfd84b60}{Conversa} ()\label{class_conversa_ad8504a58d4ce78537bcf1e4abfd84b60}
 
+\begin{DoxyCompactList}\small\item\em Construtor Construtor default que inicializa uma conversa vazia. \end{DoxyCompactList}\item 
+\hypertarget{class_conversa_a00aae9cbb21f271ac1d6ba578ca820ec}{}\hyperlink{class_conversa_a00aae9cbb21f271ac1d6ba578ca820ec}{Conversa} (vector$<$ string $>$ part\+Login)\label{class_conversa_a00aae9cbb21f271ac1d6ba578ca820ec}
+
+\begin{DoxyCompactList}\small\item\em Construtor Construtor default que inicializa uma conversa vazia. \end{DoxyCompactList}\item 
+void \hyperlink{class_conversa_aee6541eeaa269a26b14e7d5170ab82e0}{adiciona\+Sms} (\hyperlink{class_mensagem}{Mensagem} $\ast$sms)
 \item 
-\hypertarget{class_conversa_aee6541eeaa269a26b14e7d5170ab82e0}{}void {\bfseries adiciona\+Sms} (\hyperlink{class_mensagem}{Mensagem} $\ast$sms)\label{class_conversa_aee6541eeaa269a26b14e7d5170ab82e0}
-
+void \hyperlink{class_conversa_ab7e050856c96cc40bd6dd16044b167cb}{adiciona\+Participante} (string part\+Novo)
 \item 
-\hypertarget{class_conversa_ab7e050856c96cc40bd6dd16044b167cb}{}void {\bfseries adiciona\+Participante} (string part\+Novo)\label{class_conversa_ab7e050856c96cc40bd6dd16044b167cb}
-
+void \hyperlink{class_conversa_adfa90ab666242fc6079cc847be1396e2}{remove\+Participante} (string part)
 \item 
-\hypertarget{class_conversa_adfa90ab666242fc6079cc847be1396e2}{}void {\bfseries remove\+Participante} (string part)\label{class_conversa_adfa90ab666242fc6079cc847be1396e2}
-
+void \hyperlink{class_conversa_a85952428a550fe77c42347b487624027}{remove\+Sms} (int id)
 \item 
-\hypertarget{class_conversa_a85952428a550fe77c42347b487624027}{}void {\bfseries remove\+Sms} (int id)\label{class_conversa_a85952428a550fe77c42347b487624027}
-
+void \hyperlink{class_conversa_a9bb99c60f68841f6a7a01c1c68db15df}{imprimir\+Conversa} ()
 \item 
-\hypertarget{class_conversa_a9bb99c60f68841f6a7a01c1c68db15df}{}void {\bfseries imprimir\+Conversa} ()\label{class_conversa_a9bb99c60f68841f6a7a01c1c68db15df}
-
+int \hyperlink{class_conversa_a35b1035a3f780e63963dc11d8cc9fcb8}{num\+Sms} () const 
 \item 
-\hypertarget{class_conversa_a35b1035a3f780e63963dc11d8cc9fcb8}{}int {\bfseries num\+Sms} () const \label{class_conversa_a35b1035a3f780e63963dc11d8cc9fcb8}
-
+int \hyperlink{class_conversa_ae206bbcfb7fe25d6cbca2a7dc9266b0e}{num\+Participantes} () const 
 \item 
-\hypertarget{class_conversa_ae206bbcfb7fe25d6cbca2a7dc9266b0e}{}int {\bfseries num\+Participantes} () const \label{class_conversa_ae206bbcfb7fe25d6cbca2a7dc9266b0e}
-
+vector$<$ string $>$ \hyperlink{class_conversa_afe17736f50a6ab6b471be57c64da79dc}{get\+Participantes} () const 
 \item 
-\hypertarget{class_conversa_afe17736f50a6ab6b471be57c64da79dc}{}vector$<$ string $>$ {\bfseries get\+Participantes} () const \label{class_conversa_afe17736f50a6ab6b471be57c64da79dc}
-
+vector$<$ \hyperlink{class_mensagem}{Mensagem} $\ast$ $>$ \hyperlink{class_conversa_a72d2a6000bbb9438417c456031bf8ced}{get\+Mensagens} () const 
 \item 
-\hypertarget{class_conversa_a72d2a6000bbb9438417c456031bf8ced}{}vector$<$ \hyperlink{class_mensagem}{Mensagem} $\ast$ $>$ {\bfseries get\+Mensagens} () const \label{class_conversa_a72d2a6000bbb9438417c456031bf8ced}
-
+void \hyperlink{class_conversa_a8f575a8d5137b94f5190e85998b01b8d}{ordenar\+Data} ()
 \item 
-\hypertarget{class_conversa_a8f575a8d5137b94f5190e85998b01b8d}{}void {\bfseries ordenar\+Data} ()\label{class_conversa_a8f575a8d5137b94f5190e85998b01b8d}
-
-\item 
-\hypertarget{class_conversa_a3a7785ca7dfa6154bd33566d5fe2ed04}{}bool {\bfseries operator==} (\hyperlink{class_conversa}{Conversa} \&c) const \label{class_conversa_a3a7785ca7dfa6154bd33566d5fe2ed04}
-
-\item 
-\hypertarget{class_conversa_a6c783d4e16c1e7c76406eedbccd13da8}{}void {\bfseries imprimir\+Participantes} () const \label{class_conversa_a6c783d4e16c1e7c76406eedbccd13da8}
-
+bool \hyperlink{class_conversa_a3a7785ca7dfa6154bd33566d5fe2ed04}{operator==} (\hyperlink{class_conversa}{Conversa} \&c) const 
+\begin{DoxyCompactList}\small\item\em Funcao que permite fazer o overloading do operador == de modo a conseguir igualar 2 objetos do tipo \hyperlink{class_conversa}{Conversa}. O criterio de igualdade sao os participantes. \end{DoxyCompactList}\item 
+void \hyperlink{class_conversa_a6c783d4e16c1e7c76406eedbccd13da8}{imprimir\+Participantes} () const 
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Classe \hyperlink{class_comunidade}{Comunidade}. Class que gere as conversas E possivel ordenar as conversas por data. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_conversa_ab7e050856c96cc40bd6dd16044b167cb}{}\index{Conversa@{Conversa}!adiciona\+Participante@{adiciona\+Participante}}
+\index{adiciona\+Participante@{adiciona\+Participante}!Conversa@{Conversa}}
+\subsubsection[{adiciona\+Participante(string part\+Novo)}]{\setlength{\rightskip}{0pt plus 5cm}void Conversa\+::adiciona\+Participante (
+\begin{DoxyParamCaption}
+\item[{string}]{part\+Novo}
+\end{DoxyParamCaption}
+)}\label{class_conversa_ab7e050856c96cc40bd6dd16044b167cb}
+@ brief Funcao que adiciona um participante @ param part\+Novo \+: indica o novo participante @ return void \hypertarget{class_conversa_aee6541eeaa269a26b14e7d5170ab82e0}{}\index{Conversa@{Conversa}!adiciona\+Sms@{adiciona\+Sms}}
+\index{adiciona\+Sms@{adiciona\+Sms}!Conversa@{Conversa}}
+\subsubsection[{adiciona\+Sms(\+Mensagem $\ast$sms)}]{\setlength{\rightskip}{0pt plus 5cm}void Conversa\+::adiciona\+Sms (
+\begin{DoxyParamCaption}
+\item[{{\bf Mensagem} $\ast$}]{sms}
+\end{DoxyParamCaption}
+)}\label{class_conversa_aee6541eeaa269a26b14e7d5170ab82e0}
+@ brief Funcao que adiciona uma mensagem @ param sms\+: contem a mensagem @ return void \hypertarget{class_conversa_a72d2a6000bbb9438417c456031bf8ced}{}\index{Conversa@{Conversa}!get\+Mensagens@{get\+Mensagens}}
+\index{get\+Mensagens@{get\+Mensagens}!Conversa@{Conversa}}
+\subsubsection[{get\+Mensagens() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Mensagem} $\ast$ $>$ Conversa\+::get\+Mensagens (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_conversa_a72d2a6000bbb9438417c456031bf8ced}
+@ brief Funcao retorna todas as mensagens de uma conversa @ return vetor de mensagens \hypertarget{class_conversa_afe17736f50a6ab6b471be57c64da79dc}{}\index{Conversa@{Conversa}!get\+Participantes@{get\+Participantes}}
+\index{get\+Participantes@{get\+Participantes}!Conversa@{Conversa}}
+\subsubsection[{get\+Participantes() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ Conversa\+::get\+Participantes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_conversa_afe17736f50a6ab6b471be57c64da79dc}
+@ brief Funcao permite obter todos os participantes @ return vector com os participantes \hypertarget{class_conversa_a9bb99c60f68841f6a7a01c1c68db15df}{}\index{Conversa@{Conversa}!imprimir\+Conversa@{imprimir\+Conversa}}
+\index{imprimir\+Conversa@{imprimir\+Conversa}!Conversa@{Conversa}}
+\subsubsection[{imprimir\+Conversa()}]{\setlength{\rightskip}{0pt plus 5cm}void Conversa\+::imprimir\+Conversa (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_conversa_a9bb99c60f68841f6a7a01c1c68db15df}
+@ brief Funcao que imprime no ecra toda a conversa @ return void \hypertarget{class_conversa_a6c783d4e16c1e7c76406eedbccd13da8}{}\index{Conversa@{Conversa}!imprimir\+Participantes@{imprimir\+Participantes}}
+\index{imprimir\+Participantes@{imprimir\+Participantes}!Conversa@{Conversa}}
+\subsubsection[{imprimir\+Participantes() const }]{\setlength{\rightskip}{0pt plus 5cm}void Conversa\+::imprimir\+Participantes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_conversa_a6c783d4e16c1e7c76406eedbccd13da8}
+@ brief Funcao que imprime os participantes de uma conversa @ return void \hypertarget{class_conversa_ae206bbcfb7fe25d6cbca2a7dc9266b0e}{}\index{Conversa@{Conversa}!num\+Participantes@{num\+Participantes}}
+\index{num\+Participantes@{num\+Participantes}!Conversa@{Conversa}}
+\subsubsection[{num\+Participantes() const }]{\setlength{\rightskip}{0pt plus 5cm}int Conversa\+::num\+Participantes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_conversa_ae206bbcfb7fe25d6cbca2a7dc9266b0e}
+@ brief Funcao que retorna o numero de participantes de uma conversa @ return numero de participantes \hypertarget{class_conversa_a35b1035a3f780e63963dc11d8cc9fcb8}{}\index{Conversa@{Conversa}!num\+Sms@{num\+Sms}}
+\index{num\+Sms@{num\+Sms}!Conversa@{Conversa}}
+\subsubsection[{num\+Sms() const }]{\setlength{\rightskip}{0pt plus 5cm}int Conversa\+::num\+Sms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_conversa_a35b1035a3f780e63963dc11d8cc9fcb8}
+@ brief Funcao que retorna o numero de sms @ return numero de mensagens \hypertarget{class_conversa_a3a7785ca7dfa6154bd33566d5fe2ed04}{}\index{Conversa@{Conversa}!operator==@{operator==}}
+\index{operator==@{operator==}!Conversa@{Conversa}}
+\subsubsection[{operator==(\+Conversa \&c) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Conversa\+::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Conversa} \&}]{c}
+\end{DoxyParamCaption}
+) const}\label{class_conversa_a3a7785ca7dfa6154bd33566d5fe2ed04}
+
+
+Funcao que permite fazer o overloading do operador == de modo a conseguir igualar 2 objetos do tipo \hyperlink{class_conversa}{Conversa}. O criterio de igualdade sao os participantes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \hyperlink{class_conversa}{Conversa} que vamos comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se forem iguais, false se diferentes. 
+\end{DoxyReturn}
+\hypertarget{class_conversa_a8f575a8d5137b94f5190e85998b01b8d}{}\index{Conversa@{Conversa}!ordenar\+Data@{ordenar\+Data}}
+\index{ordenar\+Data@{ordenar\+Data}!Conversa@{Conversa}}
+\subsubsection[{ordenar\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}void Conversa\+::ordenar\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_conversa_a8f575a8d5137b94f5190e85998b01b8d}
+@ brief Funcao que ordena as mensagens de uma conversa por ordem cronologica @ return void \hypertarget{class_conversa_adfa90ab666242fc6079cc847be1396e2}{}\index{Conversa@{Conversa}!remove\+Participante@{remove\+Participante}}
+\index{remove\+Participante@{remove\+Participante}!Conversa@{Conversa}}
+\subsubsection[{remove\+Participante(string part)}]{\setlength{\rightskip}{0pt plus 5cm}void Conversa\+::remove\+Participante (
+\begin{DoxyParamCaption}
+\item[{string}]{part}
+\end{DoxyParamCaption}
+)}\label{class_conversa_adfa90ab666242fc6079cc847be1396e2}
+@ brief Funcao que remove um participante @ param part\+Novo \+: indica o novo participante @ return void \hypertarget{class_conversa_a85952428a550fe77c42347b487624027}{}\index{Conversa@{Conversa}!remove\+Sms@{remove\+Sms}}
+\index{remove\+Sms@{remove\+Sms}!Conversa@{Conversa}}
+\subsubsection[{remove\+Sms(int id)}]{\setlength{\rightskip}{0pt plus 5cm}void Conversa\+::remove\+Sms (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\label{class_conversa_a85952428a550fe77c42347b487624027}
+@ brief Funcao que remove uma mensagem @ param id \+: indica id da mensagem @ return void 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

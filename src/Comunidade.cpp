@@ -113,7 +113,7 @@ void Comunidade::leUtilizador(string path) {
 
 	/* parte 1 - le utilizadores */
 
-	ifstream util(path);
+	ifstream util(path.c_str());
 	if (util.is_open()) {
 		while (util.good())
 		{
@@ -175,7 +175,7 @@ void Comunidade::leConversa(string path){
 
 	/* parte 2 - le conversas */
 
-	ifstream conv(path);
+	ifstream conv(path.c_str());
 	if (conv.is_open()) {
 		while (conv.good())
 		{
@@ -356,7 +356,7 @@ int Comunidade::escreveUtilizador(string path) {
 
 	/* parte 1 - escreve utilizadores */
 
-	fstream myfile(path);
+	fstream myfile(path.c_str());
 	if (myfile.is_open()) {
 		for (size_t i = 0; i < comunidade.size(); i++){
 			myfile << comunidade.at(i)->getNome() << endl;
@@ -402,7 +402,7 @@ int Comunidade::escreveConversa(string path){
 	}
 	eliminaRepetidos(todas);
 
-	fstream myfile(path);
+	fstream myfile(path.c_str());
 	if (myfile.is_open()) {
 		for (size_t m = 0; m < todas.size(); m++){ // percorre todas as conversas
 			myfile << todas.at(m)->getParticipantes().at(0) << endl;
@@ -447,7 +447,7 @@ int Comunidade::escreveGrupo(string path){
 	}
 	eliminaRepetidos(todosGrupos);
 	
-	fstream myfile(path);
+	fstream myfile(path.c_str());
 	if (myfile.is_open()) {
 
 		for (size_t s = 0; s < todosGrupos.size(); s++){

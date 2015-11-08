@@ -5,7 +5,7 @@ var searchData=
   ['escolhegruposamigos',['escolheGruposAmigos',['../class_utilizador.html#a8292ead93b56ba0c48b9fc92265134c3',1,'Utilizador']]],
   ['escreveconversa',['escreveConversa',['../class_comunidade.html#a0de7c5114b4754401b8e12e4ed0ba34e',1,'Comunidade']]],
   ['escrevegrupo',['escreveGrupo',['../class_comunidade.html#aecb81c6a5dba43898876761c491db171',1,'Comunidade']]],
-  ['escreveutilizador',['escreveUtilizador',['../class_comunidade.html#a78e9b2f723065c9085dd8984cba6691f',1,'Comunidade']]],
+  ['escreveutilizador',['escreveUtilizador',['../class_comunidade.html#a78e9b2f723065c9085dd8984cba6691f',1,'Comunidade::escreveUtilizador()'],['../class_utilizador.html#a56049150a07b5da75017efe35d5a7d61',1,'Utilizador::escreveUtilizador()']]],
   ['existegrupo',['existeGrupo',['../class_comunidade.html#adfc1f95d2fc409985c291bd29c9b7855',1,'Comunidade']]],
   ['existelogin',['existeLogin',['../class_comunidade.html#a5455ec3855626919ba1b4d919e38132f',1,'Comunidade']]],
   ['existemembro',['existeMembro',['../class_grupo.html#ae47743b312afead1d38b67e9a770dff4',1,'Grupo']]],
