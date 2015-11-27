@@ -938,6 +938,9 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
 					<< endl << endl;
 			esperar();
 		}
+		catch (Bloqueado(x)){		//<<<<<<<<<<<<<<<<<<<<<<<<<<
+			cout << "O utilizador" << x.getLogin() << "foi bloqueado pelo que nao pode enviar mensagens. " << endl << endl;
+		}
 	} while (terminar == false);
 }
 
@@ -980,6 +983,7 @@ int main() {
 		dataHoje.setData(d, m, a);
 		MenuUtilizador(u, c);
 	}
+	
 	return 0;
 	
 }

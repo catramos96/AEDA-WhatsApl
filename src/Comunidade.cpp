@@ -117,6 +117,7 @@ void Comunidade::leUtilizador(string path) {
 	if (util.is_open()) {
 		while (util.good())
 		{
+			cout << "a";
 			Utilizador *u = new Utilizador;
 			getline(util, line);
 			u->setNome(line);	//nome
@@ -159,6 +160,7 @@ void Comunidade::leUtilizador(string path) {
 		cout << "Unable to open file";
 		util.close();
 	}
+	cout << "x";
 
 	for (size_t i = 0; i < todosAmigos.size(); i++){
 		for (size_t j = 0; j < todosAmigos.at(i).size(); j++){
@@ -174,7 +176,7 @@ void Comunidade::leConversa(string path){
 	string titulo, moderador, novo, line;
 
 	/* parte 2 - le conversas */
-
+	
 	ifstream conv(path.c_str());
 	if (conv.is_open()) {
 		while (conv.good())
@@ -193,8 +195,8 @@ void Comunidade::leConversa(string path){
 			if (pos != -1)
 				comunidade.at(pos)->addConversa(c);
 
+			getline(conv, line);	//<<<<<<<<<<<<<<<<<<<
 			while (line != "-"){ //adicionar mensagens
-				getline(conv, line);
 				d = atoi(line.c_str());
 				getline(conv, line);
 				m = atoi(line.c_str());
@@ -231,6 +233,7 @@ void Comunidade::leConversa(string path){
 					sms->setEmissor(line);
 					c->adicionaSms(sms);
 				}
+				getline(conv, line);
 			}
 		}
 		conv.close();
@@ -239,6 +242,7 @@ void Comunidade::leConversa(string path){
 		cout << "Unable to open file";
 		conv.close();
 	}
+	cout << "x";
 }
 
 void Comunidade::leGrupo(string path){
@@ -247,7 +251,7 @@ void Comunidade::leGrupo(string path){
 
 	/* parte 3 - le grupos */
 
-	ifstream grupo("C:\\AEDA\\grupos.txt");
+	ifstream grupo(path.c_str());
 	if (grupo.is_open()) {
 		while (grupo.good())
 		{
@@ -263,12 +267,11 @@ void Comunidade::leGrupo(string path){
 			getline(grupo, line); //moderador
 			Grupo *g = new Grupo(titulo, datag, line);
 			moderador = line;
-
 			pos = existeUtilLogin(line); //adicionar o grupo ao utilizador
 			if (pos != -1)
 				comunidade.at(pos)->addGrupo(g);
-
 			getline(grupo, line);
+
 			while (line != "-"){ //membros
 				d = atoi(line.c_str());
 				getline(grupo, line);
@@ -296,7 +299,7 @@ void Comunidade::leGrupo(string path){
 					comunidade.at(pos)->addGrupo(g);
 				getline(grupo, line);
 			}
-
+			
 			getline(grupo, line);
 			while (line != "-"){ //pedidos de adesao
 				g->adicionarPedido(line);
@@ -350,6 +353,7 @@ void Comunidade::leGrupo(string path){
 		cout << "Unable to open file";
 		grupo.close();
 	}
+	cout << "x";
 }
 
 int Comunidade::escreveUtilizador(string path) {
@@ -358,6 +362,7 @@ int Comunidade::escreveUtilizador(string path) {
 
 	fstream myfile(path.c_str());
 	if (myfile.is_open()) {
+
 		for (size_t i = 0; i < comunidade.size(); i++){
 			myfile << comunidade.at(i)->getNome() << endl;
 			myfile << comunidade.at(i)->getLogin() << endl;
@@ -449,7 +454,6 @@ int Comunidade::escreveGrupo(string path){
 	
 	fstream myfile(path.c_str());
 	if (myfile.is_open()) {
-
 		for (size_t s = 0; s < todosGrupos.size(); s++){
 			myfile << todosGrupos.at(s)->getTitulo() << endl;
 			myfile << todosGrupos.at(s)->getDataCriacao().getDia() << endl;
@@ -457,11 +461,10 @@ int Comunidade::escreveGrupo(string path){
 			myfile << todosGrupos.at(s)->getDataCriacao().getAno() << endl;
 			myfile << todosGrupos.at(s)->getModerador() << endl;
 
-			for (size_t t = 0; t < todosGrupos.at(s)->numMembros(); t++){ //percorre os membros
+			for (unsigned int t = 0; t < todosGrupos.at(s)->numMembros(); t++){ //percorre os membros
 				if (todosGrupos.at(s)->getMembros().at(t).getLogin() == todosGrupos.at(s)->getModerador()){ //passa à frente o moderador
 					t++;
 					if (t == todosGrupos.at(s)->numMembros()){ // se o moderador era o ultimo elemento acaba o ciclo
-						myfile << "-" << endl;
 						break;
 					}
 				}
@@ -478,13 +481,13 @@ int Comunidade::escreveGrupo(string path){
 				}
 				else
 					myfile << "0" << endl;
-				myfile << "-" << endl;
 			}
+			myfile << "-" << endl;
 
-			for (size_t u = 0; u < todosGrupos.at(s)->numPedidos(); u++){ //pedidos de adesao
+			for (unsigned int u = 0; u < todosGrupos.at(s)->numPedidos(); u++){ //pedidos de adesao
 				myfile << todosGrupos.at(s)->getPedidos().at(u) << endl;
-				myfile << "-" << endl;
 			}
+			myfile << "-" << endl;
 
 			for (size_t v = 0; v < todosGrupos.at(s)->getConversa().getMensagens().size(); v++){ //percorre as mensagens
 				myfile << todosGrupos.at(s)->getConversa().getMensagens().at(v)->getData().getDia() << endl;
@@ -497,10 +500,10 @@ int Comunidade::escreveGrupo(string path){
 				if (todosGrupos.at(s)->getConversa().getMensagens().at(v)->tipo() == "t")
 					myfile << todosGrupos.at(s)->getConversa().getMensagens().at(v)->getConteudo() << endl;
 				myfile << todosGrupos.at(s)->getConversa().getMensagens().at(v)->getEmissor() << endl;
-				myfile << "-";
-				if (v != todosGrupos.at(s)->getConversa().getMensagens().size() - 1)
-					myfile << endl;
 			}
+			myfile << "-";
+			if (s != todosGrupos.size() - 1)
+				myfile << endl;
 		}
 		myfile.close();
 	}
