@@ -15,6 +15,9 @@ using namespace std;
 int Mensagem::id = 0;
 
 Mensagem::Mensagem(Data data, Horas hora) : numero(++id){
+	Data d(0, 0, 0);
+	Membro novo("", d);
+	this->emissor = novo;
 	this->data = data;
 	this->hora = hora;
 }
@@ -26,7 +29,7 @@ void Mensagem::imprimirMsg() {
 }
 
 string Mensagem::getEmissor() const{
-	return emissor;
+	return emissor.getLogin();
 }
 
 Data Mensagem::getData() const {
@@ -41,8 +44,12 @@ int Mensagem::getNumero() const{
 	return numero;
 }
 
+Data Mensagem::getDataEmissor() const {
+	return emissor.getDataCriacao();
+}
+
 void Mensagem::setEmissor(string emissor){
-	this->emissor = emissor;
+	this->emissor.setLogin(emissor);
 }
 
 void Mensagem::setNumero(int num){
@@ -55,6 +62,19 @@ string Mensagem::tipo() const{
 
 string Mensagem::getConteudo() const{
 	return "sem conteudo";
+}
+
+bool Mensagem::operator<(const Mensagem &m) const {
+	if (data < m.getData())  
+		return false;
+	else if (m.getData() < data) //datas mais antigas têm prioridade
+		return true;
+	else if (emissor.getDataCriacao() == m.getDataEmissor() && m.getData() == data) //os utilizadores tÊm a mesma data de criacao e data de mensagem
+		return (emissor.getLogin < m.getEmissor()); //ordem alfabetica do login
+	else if (m.getData() == data) // os utilizadores apenas têm datas iguais
+		return emissor.getDataCriacao() == m.getDataEmissor(); //prioridade aos mais recentes
+	else
+		return false;
 }
 
 /********************************

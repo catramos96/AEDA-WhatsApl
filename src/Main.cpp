@@ -544,7 +544,10 @@ void gruposUtilizador(Utilizador *u) {
 			}
 			case 3: //Gerir grupo
 			{
-				gerirGrupos(u, n);
+				if(temp->isModerador(u->getLogin()))
+					gerirGrupos(u, n);
+				else
+					throw NaoModerador(u->getLogin());
 				break;
 			}
 			case 4: //Sair de um grupo

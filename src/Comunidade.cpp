@@ -469,9 +469,9 @@ int Comunidade::escreveGrupo(string path){
 					}
 				}
 
-				myfile << todosGrupos.at(s)->getMembros().at(t).getData().getDia() << endl;
-				myfile << todosGrupos.at(s)->getMembros().at(t).getData().getMes() << endl;
-				myfile << todosGrupos.at(s)->getMembros().at(t).getData().getAno() << endl;
+				myfile << todosGrupos.at(s)->getMembros().at(t).getDataCriacao().getDia() << endl;
+				myfile << todosGrupos.at(s)->getMembros().at(t).getDataCriacao().getMes() << endl;
+				myfile << todosGrupos.at(s)->getMembros().at(t).getDataCriacao().getAno() << endl;
 				myfile << todosGrupos.at(s)->getMembros().at(t).getLogin() << endl;
 				if (todosGrupos.at(s)->getMembros().at(t).isBloqueado()){
 					myfile << "1" << endl;
