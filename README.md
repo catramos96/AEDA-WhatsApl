@@ -2,6 +2,12 @@
 
 # Distribuição de trabalho
 
+* Catarina : (primeiro ponto) BST
+
+* Inês : (segundo ponto) filas de prioridade
+
+* Pedro : (terceiro ponto) tabelas de dispersão
+
 # ------------------------------------------------------------------------------- #
 
 # Comandos do git #
@@ -31,9 +37,9 @@
 * git pull      //Ir buscar qualquer atualização ao rep antes de fazer upload das 
 vossas adiçõees de código
 
-* git push     //Faz upload do commit para o repositĂłrio
+* git push     //Faz upload do commit para o repositório
 
 
 ## Outros comandos ##
 
-* git status   //diz se o vosso rep estĂĄ atualizado com o do site
+* git status   //diz se o vosso rep está atualizado com o do site
