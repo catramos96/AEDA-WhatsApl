@@ -2,7 +2,7 @@
 
 # Distribuição de trabalho
 
-* Catarina : (primeiro ponto) BST
+* Catarina : BST - a começar ...
 
 * Inês : (segundo ponto) filas de prioridade
 
