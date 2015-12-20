@@ -7,7 +7,7 @@
 
 # Distribuição de trabalho
 
-* Catarina : BST - a começar ...
+* Catarina : BST - falta meter no main ...
 
 * Inês : (segundo ponto) filas de prioridade
 
