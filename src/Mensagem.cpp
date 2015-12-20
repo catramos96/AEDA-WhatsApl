@@ -70,7 +70,7 @@ bool Mensagem::operator<(const Mensagem &m) const {
 	else if (m.getData() < data) //datas mais antigas têm prioridade
 		return true;
 	else if (emissor.getDataCriacao() == m.getDataEmissor() && m.getData() == data) //os utilizadores tÊm a mesma data de criacao e data de mensagem
-		return (emissor.getLogin < m.getEmissor()); //ordem alfabetica do login
+		return (emissor.getLogin() < m.getEmissor()); //ordem alfabetica do login
 	else if (m.getData() == data) // os utilizadores apenas têm datas iguais
 		return emissor.getDataCriacao() == m.getDataEmissor(); //prioridade aos mais recentes
 	else

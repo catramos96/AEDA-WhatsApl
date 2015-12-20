@@ -2,6 +2,7 @@
 #define SRC_COMUNIDADE_H_
 
 #include "Utilizador.h"
+#include "BST.h"
 #include <vector>
 
 using namespace std;
@@ -124,7 +125,12 @@ public:
   * @brief Funcao que analiza os utilizadores mais ativos nos ultimos 3 dias da aplicação
   * @return árvore binária de pesquisa com a informação dos utilizadores mais ativos
   */
-  //BST<Utilizador *> topUtilizadores();
+  BST<Utilizador *> topUtilizadores() const;
+
+  /**
+  * @brief Funcao que mostra no ecra os utilizadores mais ativos
+  */
+  void displayTopUtilizadores() const;
 };
 
 #endif /* SRC_COMUNIDADE_H_ */

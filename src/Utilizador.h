@@ -8,6 +8,13 @@
 #include "Grupo.h"
 
 /**
+* @brief Função que atualiza a data
+* será usada para a função de getNumMsg3dias()
+* @param d Data
+*/
+void atualData(Data d);
+
+/**
 * @brief Classe Utilizador.
 * Cada Utilizador tem como unico o seu login e tem que ter como obrigatorio maior de 18 anos.
 * A Classe Utilizador permite ter conversas e grupos com aqueles que apenas fazem parte do seu grupo de amigos.
@@ -46,7 +53,7 @@ public:
   * @param idade do utilizador
   */
   Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
-
+  
   /*****************************************************************
   *                             GETS                               *
   *****************************************************************/
@@ -137,7 +144,7 @@ public:
   * @brief Funcao que retorna o numero de mensagens enviadas durante os ultimos 3 dias
   *
   */
-  int getNumMsg3dias(Data d) const;
+  int getNumMsg3dias() const;
 
   /*****************************************************************
   *                             SETS                               *
@@ -297,7 +304,9 @@ public:
   /**
   * @brief overloading do operador < que compara o utilzador e u
   * @param u utilizador com quem se vai comparar
-  * @return bool , true - o login do utilizador for < que o de u
+  * @return bool , true - se o numero de mensagens enviadas nos ultimos 3 dias pelo utilizador 
+  * for maior do que o utilizador u e, em caso de empate, se o numero de grupos a que pertence
+  * for maior
   */
   bool operator<(const Utilizador &u) const;
   /**

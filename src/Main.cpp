@@ -1017,7 +1017,8 @@ int main() {
   header("Loading ...");
   cout << "Data (dia mes ano): ";
   cin >> d >> m >> a;
-  dataHoje.setData(d, m, a);
+  dataHoje.setData(d, m, a); //variavel estática de main.cpp
+  atualData(dataHoje); //variavel estática de utilizador.cpp
   clrscr();
 
 

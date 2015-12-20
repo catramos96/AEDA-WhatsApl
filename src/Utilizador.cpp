@@ -9,6 +9,12 @@
 
 using namespace std;
 
+static Data dataHoje;
+
+void atualData(Data d){
+  dataHoje = d;
+}
+
 /*******************************************************
 * 				   CLASSE UTILIZADOR	          	   *
 ******************************************************/
@@ -132,7 +138,7 @@ vector<Grupo *> Utilizador::getGruposAmigos() const {
   return gruposAmigos;
 }
 
-int Utilizador::getNumMsg3dias(Data d) const {
+int Utilizador::getNumMsg3dias() const {
   int n = 0;
 
   //numero de mensagens enviadas em conversas
@@ -144,7 +150,7 @@ int Utilizador::getNumMsg3dias(Data d) const {
     while (it_m != msgs.end()) {
       Mensagem *m = *it_m;
       Data data = m->getData();
-      if (datasTresDias(data, d)) {
+      if (datasTresDias(data, dataHoje)) {
         if (m->getEmissor() == login)
           n++; //incrementa
       }
@@ -163,7 +169,7 @@ int Utilizador::getNumMsg3dias(Data d) const {
     while (it_m_g != msgs_g.end()) {
       Mensagem *m_g = *it_m_g;
       Data data_g = m_g->getData();
-      if (datasTresDias(data_g, d)) {
+      if (datasTresDias(data_g, dataHoje)) {
         if (m_g->getEmissor() == login)
           n++; //incrementa
       }
@@ -348,7 +354,12 @@ bool Utilizador::operator==(const Utilizador&u) const {
 }
 
 bool Utilizador::operator<(const Utilizador &u) const {
-  return (login < u.login);
+  if (getNumMsg3dias() > u.getNumMsg3dias())
+    return true;
+  else if (getNumMsg3dias() == u.getNumMsg3dias() && grupos.size() > u.getGrupos().size())
+    return true;
+  else
+    return false;
 }
 
 ostream & operator<<(ostream & out, const Utilizador & u) {

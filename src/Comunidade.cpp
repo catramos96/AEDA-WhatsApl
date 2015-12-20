@@ -513,3 +513,32 @@ int Comunidade::escreveGrupo(string path) {
   }
   return 0;
 }
+
+BST<Utilizador *> Comunidade::topUtilizadores() const{
+
+  Utilizador *u;
+  u->setEmail("");
+  u->setIdade(0);
+  u->setLogin("");
+  u->setTelemovel(0);
+  u->setNome("");
+ 
+  BST<Utilizador *> arvore(u);
+  vector<Utilizador *>::const_iterator it = comunidade.begin();
+
+  while (it != comunidade.end()) {
+    arvore.insert(*it);
+    it++;
+  }
+
+  return arvore;
+}
+
+void Comunidade::displayTopUtilizadores() const {
+  BSTItrIn<Utilizador *> it(topUtilizadores());
+
+  while (!it.isAtEnd()) {
+    cout << *(it.retrieve()) << endl;
+  }
+  cout << endl;
+}
