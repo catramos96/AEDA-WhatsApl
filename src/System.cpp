@@ -201,7 +201,8 @@ void menuGerirGrupos() {
   cout << "Bloquear utilizador (3)" << endl;
   cout << "Desbloquear utilizador (4)" << endl;
   cout << "Pedidos de adesao (5)" << endl;
-  cout << "Voltar Atras (6)" << endl << endl;
+  cout << "Mensagens Pendentes (6)" << endl;
+  cout << "Voltar Atras (7)" << endl << endl;
 }
 
 void menuConversas() {

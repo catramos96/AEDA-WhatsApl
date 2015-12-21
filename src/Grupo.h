@@ -16,7 +16,7 @@
  */
 class Grupo {
 private:
-	priority_queue<Mensagem> msgPendentes;
+	priority_queue<Mensagem*> msgPendentes;
 	Conversa conversa;	/**< membro privado que contem a conversa do grupo */
 	string titulo;  /**<  membro privado que indica o titulo do grupo */
 	vector <Membro> membros;  /**<  membro privado que guarda os membros que pertencem ao grupo */
@@ -51,7 +51,7 @@ public:
 	 * @param m Membro que queremos encontrar.
 	 * @return posicao no vetor do membro. -1 se nao encontra.
 	 */
-	int existeMembro(Membro m);
+	int existeMembro(Membro &m);
 	/**
 	 * @brief Funcao que devolve o membro indicado na posicao 'pos'.
 	 * @param pos Posicao do elemento no vetor 'membros'.
@@ -66,6 +66,10 @@ public:
 	 * @brief Funcao que imprime os membros existentes no vetor 'membros'.
 	 */
 	void printMembros() const;
+	/**
+	*@brief Funcao que imprime o topo da priority_queue 'msgPendentes'
+	*/
+	void printTopo() const;
 	/**
 	 * @brief Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um pedido de adesao.
 	 * O surgimento de um novo membro e registado no membro-dado 'status'.
@@ -168,7 +172,7 @@ public:
 	*/
 	void setModerador(string login, Data diaAtual);
 	/**
-	* @brief Funcao que coloca um membro no vetor de membros
+	* @brief Funcao que coloca um membro no vetor de membros, e retira algum que já exista com o mesmo login.
 	* @param m Membro
 	*/
 	void colocaMembro(Membro m);
@@ -197,15 +201,42 @@ public:
 	* @return pedidos de adesao a um grupo.
 	*/
 	vector<string> getPedidos() const;
-
+	/**
+	*@brief Funcao que retorna o numero de mensagens pendentes na priority_queue
+	*@return Tamanho da priority_queue
+	*/
+	int getMsgPendentesSize() const;
 	/**
 	* @brief Funcao que avalia uma mensagem que esteja na fila de prioridade.
 	* Esta funcao só pode ser usada pelo moderador. 
 	* A avaliação permite escolher se coloca ou não a mensagem na conversa, e se é necessario ou não bloquear o emissor.
-	* @param aceita
-	* 
+	* @param moderador Único utilizador que pode aceder a este método.
+	* @param aceita True se a mensagem pode ser enviada para a conversa de grupo, ou false se não
+	* @param true Se é necessário bloquear o utilizador que mandou uma mensagem "ofensiva"
 	*/
-	void avaliaMensagem(bool aceita, bool censura);
+	void avaliaMensagem(string moderador, bool aceita, bool censura);
+	/**
+	*@brief Funcao apenas usada na leitura de ficheiros. Permite colocar diretamente uma mensagem num conversa sem passar pelo moderador
+	*@param Mensagem Mensagem que vai ser escrita
+	*/
+	void colocaMsgConversa(Mensagem *sms);
+	/**
+	*@brief Funcao que é apenas usada na escrita de ficheiro.
+	*@return Devolve o topo da priority_queue
+	*/
+	Mensagem *getTopo() const;
+	/**
+	* @brief Funcao apenas usada na escita de ficheiros. Faz pop do primeiro elemenro da priority_queue
+	*/
+	void MsgPendentesPop();
+	/**
+	*@brief funcao que apenas é usada na escrita de ficheiros
+	*@param sms Mensagem que vai ser colocada na priority_queue
+	*/
+	void MsgPendentesPush(Mensagem *sms);
+	/**
+	*/
+	void eliminaMembro(Membro m);
 };
 
 #endif /* SRC_GRUPO_H_ */

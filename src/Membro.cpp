@@ -40,7 +40,7 @@ void Membro::setData(Data d) {
 }
 
 void Membro::setBloqueio(bool bloq) {
-	bloqueado = bloq;
+	this->bloqueado = bloq;
 }
 
 bool Membro::isBloqueado() const {

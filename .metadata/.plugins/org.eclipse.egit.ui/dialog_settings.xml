@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="0" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<item value="619" key="DIALOG_WIDTH"/>
+	<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	<item value="D:\Universidade\2 ano 1S\AEDA\trabalho\.git" key="GitSelectRepositoryPage.lastRepository"/>
+	<item value="537" key="DIALOG_HEIGHT"/>
+	<item value="382" key="DIALOG_X_ORIGIN"/>
+	<item value="14" key="DIALOG_Y_ORIGIN"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://ines_gomes@bitbucket.org/ines_gomes/ines_gomes-aeda_whatsapl.git"/>
+	</list>
 	<section name="GitImportWizard">
 		<item value="true" key="GitProjectsImportPage.STORE_NESTED_PROJECTS"/>
 	</section>

@@ -4,6 +4,8 @@
 #include "Templates.h"
 #include "Excecoes.h"
 
+extern Data dataHoje;
+
 /* Classe Grupo*/
 
 Grupo::Grupo(string titulo, Data criacao, string moderador) {
@@ -27,7 +29,7 @@ bool Grupo::isModerador(string m) {
 	return (m == moderador.getLogin());
 }
 
-int Grupo::existeMembro(Membro m) {
+int Grupo::existeMembro(Membro &m) {
 	return sequentialSearch(membros, m);
 }
 
@@ -127,20 +129,42 @@ bool Grupo::pedidoAdesao(string novo, string moderador, Data adesao,
 	return false;
 }
 
-bool Grupo::bloquearMembro(string login, string moderador, Data diaAtual) {
+void Grupo::eliminaMembro(Membro m) {
+	vector<Membro>::iterator it;
 
+	for (it = membros.begin(); it != membros.end(); it++)
+		if (*it == m) {
+			membros.erase(it);
+			return;
+		}
+}
+
+void Grupo::colocaMembro(Membro m) {
+	int pos = existeMembro(m);
+
+	if (pos == -1)
+		membros.push_back(m);
+	else {
+		Membro temp = membroNaPosicao(pos);
+		eliminaMembro(temp);
+		membros.push_back(m);
+	}
+}
+
+bool Grupo::bloquearMembro(string login, string moderador, Data diaAtual) {
+	
 	stringstream out;
 	Data d;
 	Membro temp(login, d);
 	int pos = existeMembro(temp);
 
 	if (isModerador(moderador)) {
-
 		if (pos != -1) { //encontra o membro
 			temp = membroNaPosicao(pos); //coloca os valores corretos do membro
 			if (temp.isBloqueado() == false) {
 				temp.setBloqueio(true); //coloca como bloqueado
 				temp.setDataBloqueio(diaAtual);
+				colocaMembro(temp); //atualiza o membro
 				out << "Membro bloqueado : " << login << endl << "Data : "
 						<< diaAtual << endl << endl;
 				status.push_back(out.str());
@@ -208,11 +232,15 @@ bool Grupo::enviarMensagem(string emissor, Mensagem *sms) {
 	int pos = existeMembro(temp);
 
 	if (pos != -1) //utilizador existe
-			{
-		if (temp.isBloqueado())
+	{
+		temp = membroNaPosicao(pos);
+
+		if (temp.isBloqueado()) {
 			throw Bloqueado(emissor); // excecao que não deixa o utilizador enviar uma mensagem
+		}
 		else {
-			conversa.adicionaSms(sms);
+			sms->setMembroEmissor(temp);
+			msgPendentes.push(sms);
 			return true;
 		}
 	} else
@@ -278,10 +306,6 @@ void Grupo::setModerador(string login, Data diaAtual) {
 		throw MembroInexistente(login);
 }
 
-void Grupo::colocaMembro(Membro m){
-	membros.push_back(m);
-}
-
 Data Grupo::getDataCriacao() const{
 	return criacao;
 }
@@ -300,4 +324,51 @@ Conversa Grupo::getConversa() const{
 
 vector<string> Grupo::getPedidos() const{
 	return pedidos;
+}
+
+void Grupo::avaliaMensagem(string moderador, bool aceita, bool censura) {
+	string loginMembro = msgPendentes.top()->getEmissor().getLogin();
+	
+	if (isModerador(moderador)) {
+		if (aceita && !censura) {
+			conversa.adicionaSms(msgPendentes.top()); //coloca a mensagem na convers
+			msgPendentes.pop();
+			return;
+		}
+		else if (!aceita && !censura) {
+			msgPendentes.pop();
+			return;
+		}
+		else if (censura) {
+			msgPendentes.pop();
+			bloquearMembro(loginMembro, moderador, dataHoje);
+			return;
+		}
+	}
+	else
+		throw NaoModerador(moderador);
+}
+
+void Grupo::printTopo() const {
+	msgPendentes.top()->imprimirMsg();
+}
+
+int Grupo::getMsgPendentesSize() const {
+	return msgPendentes.size();
+}
+
+void Grupo::colocaMsgConversa(Mensagem *sms) {
+	conversa.adicionaSms(sms);
+}
+
+Mensagem *Grupo::getTopo() const {
+	return msgPendentes.top();
+}
+
+void Grupo::MsgPendentesPop() {
+	msgPendentes.pop();
+}
+
+void Grupo::MsgPendentesPush(Mensagem *sms) {
+	msgPendentes.push(sms);
 }

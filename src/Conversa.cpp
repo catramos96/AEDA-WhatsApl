@@ -29,7 +29,7 @@ void Conversa::removeParticipante(string part){
 }
 
 void Conversa::adicionaSms(Mensagem *sms){
-	string temp = sms->getEmissor();
+	string temp = sms->getEmissor().getLogin();
 	if (sequentialSearch<string>(participantes, temp) == -1)
 		throw NaoParticipante(temp);
 	mensagens.push_back(sms);

@@ -355,7 +355,7 @@ Conversa *Utilizador::criarConversa(Utilizador *u) {
 }
 
 void Utilizador::enviarMensagem(Mensagem *sms, Conversa *c) {
-	sms->setEmissor(login);
+	sms->setLoginEmissor(login);
 	c->adicionaSms(sms);
 }
 
@@ -370,7 +370,7 @@ Grupo *Utilizador::criarGrupo(string titulo, Data dataAtual) {
 }
 
 void Utilizador::enviarMensagemGrupo(Mensagem *sms, Grupo *g) {
-	sms->setEmissor(login);
+	sms->setLoginEmissor(login);
 	g->enviarMensagem(login, sms);
 }
 

@@ -38,7 +38,7 @@ public:
   * @brief Funcao que retorna o emissor
   * @return emissor
   */
-	string getEmissor() const;
+	Membro getEmissor() const;
   /**
   * @brief Funcao que retorna a data
   * @return data
@@ -69,7 +69,12 @@ public:
   * @brief Funcao que altera o emissor
   * @param emissor
   */
-	void setEmissor(string emissor);
+	void setMembroEmissor(Membro emissor);
+	/**
+	*@brief Funcao que altera o login do emissor
+	*@param login Login do emissor
+	*/
+	void setLoginEmissor(string login);
 	/**
 	 * @brief Funcao que altera o numero da mensagem
 	 * @param num Numero novo

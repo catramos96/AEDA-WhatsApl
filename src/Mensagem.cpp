@@ -15,7 +15,7 @@ using namespace std;
 int Mensagem::id = 0;
 
 Mensagem::Mensagem(Data data, Horas hora) : numero(++id){
-	Data d(0, 0, 0);
+	Data d;
 	Membro novo("", d);
 	this->emissor = novo;
 	this->data = data;
@@ -28,8 +28,8 @@ void Mensagem::imprimirMsg() {
 	cout << "Emissor: " << emissor << endl;
 }
 
-string Mensagem::getEmissor() const{
-	return emissor.getLogin();
+Membro Mensagem::getEmissor() const{
+	return emissor;
 }
 
 Data Mensagem::getData() const {
@@ -48,8 +48,12 @@ Data Mensagem::getDataEmissor() const {
 	return emissor.getDataCriacao();
 }
 
-void Mensagem::setEmissor(string emissor){
-	this->emissor.setLogin(emissor);
+void Mensagem::setMembroEmissor(Membro emissor){
+	this->emissor = emissor;
+}
+
+void Mensagem::setLoginEmissor(string login) {
+	emissor.setLogin(login);
 }
 
 void Mensagem::setNumero(int num){
@@ -70,7 +74,7 @@ bool Mensagem::operator<(const Mensagem &m) const {
 	else if (m.getData() < data) //datas mais antigas têm prioridade
 		return true;
 	else if (emissor.getDataCriacao() == m.getDataEmissor() && m.getData() == data) //os utilizadores tÊm a mesma data de criacao e data de mensagem
-		return (emissor.getLogin < m.getEmissor()); //ordem alfabetica do login
+		return (emissor.getLogin() < m.getEmissor().getLogin()); //ordem alfabetica do login
 	else if (m.getData() == data) // os utilizadores apenas têm datas iguais
 		return emissor.getDataCriacao() == m.getDataEmissor(); //prioridade aos mais recentes
 	else

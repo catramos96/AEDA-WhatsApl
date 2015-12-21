@@ -12,7 +12,7 @@
 
 using namespace std;
 
-static Data dataHoje;
+Data dataHoje;
 static string pathUtilizadores, pathGrupos, pathConversas;
 
 /**
@@ -367,7 +367,7 @@ void gerirGrupos(Utilizador *u, int i) {
 
 	header("GERIR - " + temp->getTitulo());
 	menuGerirGrupos();
-	opccao(op, 1, 6);
+	opccao(op, 1, 7);
 
 	clrscr();
 
@@ -459,6 +459,45 @@ void gerirGrupos(Utilizador *u, int i) {
 		}
 	}
 	case 6:
+	{
+		int n = temp->getMsgPendentesSize();
+
+		cout << "Mensagens Pendentes: " << endl;
+
+		//ciclo que percorre todas as mensagens da priority_queue
+		for (int i = 0; i < n; i++) {
+			temp->printTopo();
+			cout << endl;
+			cout << "Aceitar (1)" << endl;
+			cout << "Recusar (2)" << endl << endl;
+			opccao(op, 1, 2);
+
+			switch (op)
+			{
+			case 1: //aceita o pedido
+				temp->avaliaMensagem(u->getLogin(), true, false);
+				break;
+			case 2: // verifica se é necessario bloquear o membro
+				cout << "E necessario bloquear o Membro? \n Sim (1) \n Nao(2)\n\n";
+				opccao(op, 1, 2);
+
+				if (op == 1)
+					temp->avaliaMensagem(u->getLogin(), false, true);
+				else
+					temp->avaliaMensagem(u->getLogin(), false, false);
+				break;
+			}
+
+			if (i != (n - 1)) {
+				cout << "Continuar a ver as mensagens pendentes (1) \n Sair (2) \n\n";
+				opccao(op, 1, 2);
+				if (op == 2)
+					break;
+			}
+		}
+		break;
+	}
+	case 7:
 		throw VoltarAtras();
 	}
 }
@@ -941,8 +980,9 @@ void MenuUtilizador(Utilizador *u, Comunidade *c) {
 					<< endl << endl;
 			esperar();
 		}
-		catch (Bloqueado(x)){		//<<<<<<<<<<<<<<<<<<<<<<<<<<
-			cout << "O utilizador" << x.getLogin() << "foi bloqueado pelo que nao pode enviar mensagens. " << endl << endl;
+		catch (Bloqueado(x)){
+			cout << "O utilizador " << x.getLogin() << " foi bloqueado pelo que nao pode enviar mensagens. " << endl << endl;
+			esperar();
 		}
 	} while (terminar == false);
 }
@@ -969,13 +1009,13 @@ void leCaminhos(){
 int main() {
 	Comunidade *c = new Comunidade;
 	Utilizador *u = new Utilizador;
-
+	
 	leCaminhos();
 
 	c->leUtilizador(pathUtilizadores);
 	c->leConversa(pathConversas);
 	c->leGrupo(pathGrupos);
-	
+
 	int d, m, a;
 	while (1) {
 		u = MenuInicial(c);
@@ -986,7 +1026,5 @@ int main() {
 		dataHoje.setData(d, m, a);
 		MenuUtilizador(u, c);
 	}
-	
 	return 0;
-	
 }
