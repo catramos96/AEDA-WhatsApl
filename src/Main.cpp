@@ -113,7 +113,7 @@ void registar(Comunidade *c) {
 void comunidade(Comunidade *c) {
   menuComunidade();
   int op;
-  opccao(op, 1, 3);
+  opccao(op, 1, 4);
 
   clrscr();
 
@@ -126,13 +126,18 @@ void comunidade(Comunidade *c) {
     c->ordenaData();
     break;
   }
-  case 3:
+  case 4:
     throw VoltarAtras();
   }
 
-  menuComunidadeOrdenada();
-  c->printComunidade();
-
+  if (op == 3) {
+    header("Top Utilizadores");
+    c->displayTopUtilizadores();
+  }
+  else {
+    menuComunidadeOrdenada();
+    c->printComunidade();
+  }
 }
 
 /**

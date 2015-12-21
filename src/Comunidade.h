@@ -125,7 +125,7 @@ public:
   * @brief Funcao que analiza os utilizadores mais ativos nos ultimos 3 dias da aplicação
   * @return árvore binária de pesquisa com a informação dos utilizadores mais ativos
   */
-  BST<Utilizador *> topUtilizadores() const;
+  BST<Utilizador> topUtilizadores() const;
 
   /**
   * @brief Funcao que mostra no ecra os utilizadores mais ativos

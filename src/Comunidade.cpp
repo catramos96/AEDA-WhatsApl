@@ -1001,20 +1001,15 @@ int Comunidade::escreveGrupo(string path) {
 >>>>>>> 8501d842da852d27cbed2d4f289d39b23fa64fb8*/
 }
 
-BST<Utilizador *> Comunidade::topUtilizadores() const{
-
-  Utilizador *u;
-  u->setEmail("");
-  u->setIdade(0);
-  u->setLogin("");
-  u->setTelemovel(0);
-  u->setNome("");
+BST<Utilizador> Comunidade::topUtilizadores() const{
+  Data d(1, 1, 1);
+  Utilizador u(1, "", "", "", d, 0, 18);
  
-  BST<Utilizador *> arvore(u);
+  BST<Utilizador> arvore(u);
   vector<Utilizador *>::const_iterator it = comunidade.begin();
 
   while (it != comunidade.end()) {
-    arvore.insert(*it);
+    arvore.insert(**it);
     it++;
   }
 
@@ -1022,10 +1017,7 @@ BST<Utilizador *> Comunidade::topUtilizadores() const{
 }
 
 void Comunidade::displayTopUtilizadores() const {
-  BSTItrIn<Utilizador *> it(topUtilizadores());
-
-  while (!it.isAtEnd()) {
-    cout << *(it.retrieve()) << endl;
-  }
+  BST<Utilizador> bst = topUtilizadores();
+  bst.printTree();  
   cout << endl;
 }
