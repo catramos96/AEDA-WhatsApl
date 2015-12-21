@@ -891,6 +891,11 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
   {
     header("PERFIL");
     u->imprimirUtilizador();
+
+    cout << endl;
+    cout << "Numero de sms: " << u->getNumMsg3dias() << endl;
+    cout << "Numero de grupos: " << u->getGrupos().size() << endl << endl;
+
     esperar();
     break;
   }

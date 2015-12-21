@@ -1004,7 +1004,6 @@ int Comunidade::escreveGrupo(string path) {
 BST<Utilizador> Comunidade::topUtilizadores() const{
   Data d(1, 1, 1);
   Utilizador u(1, "", "", "", d, 0, 18);
- 
   BST<Utilizador> arvore(u);
   vector<Utilizador *>::const_iterator it = comunidade.begin();
 

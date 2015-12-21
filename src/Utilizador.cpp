@@ -356,7 +356,7 @@ bool Utilizador::operator==(const Utilizador&u) const {
 bool Utilizador::operator<(const Utilizador &u) const {
   if (getNumMsg3dias() > u.getNumMsg3dias())
     return true;
-  else if (getNumMsg3dias() == u.getNumMsg3dias() && grupos.size() > u.getGrupos().size())
+  else if (getNumMsg3dias() == u.getNumMsg3dias() && grupos.size() >= u.getGrupos().size())
     return true;
   else
     return false;
