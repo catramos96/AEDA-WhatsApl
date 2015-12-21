@@ -452,7 +452,7 @@ public:
   *
   * @ return booleano
   */
-  bool inativo();
+  int inativo();
 };
 
 #endif /* SRC_UTILIZADOR_H_ */

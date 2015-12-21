@@ -459,25 +459,25 @@ Grupo *Utilizador::escolheGruposAmigos(int pos) const {
 
 }
 
-bool Utilizador::inativo(){
+int Utilizador::inativo() {
 	//convert data atual para julian date
-	 int julianDateHoje;
-	 int julianDateUltimoAcesso;
-	 int y= dataHoje.getAno();
-	 int m= dataHoje.getMes();
-	 int d= dataHoje.getDia();
-	 int y2= ultimoAcesso.getAno();
-	 int m2= ultimoAcesso.getMes();
-	 int d2= ultimoAcesso.getDia();
+	int julianDateHoje;
+	int julianDateUltimoAcesso;
+	int y = dataHoje.getAno();
+	int m = dataHoje.getMes();
+	int d = dataHoje.getDia();
+	int y2 = ultimoAcesso.getAno();
+	int m2 = ultimoAcesso.getMes();
+	int d2 = ultimoAcesso.getDia();
 
 	//Formula to convert gregorian date to julian date
-	 julianDateHoje= ((2 - y / 100) + (y / 400)) + (int(365.25 * y)) + (int(30.6001 * (m + 1))) + d + 1720994.5;
+	julianDateHoje = ((2 - y / 100) + (y / 400)) + (int(365.25 * y))
+			+ (int(30.6001 * (m + 1))) + d + 1720994.5;
 
-	 julianDateUltimoAcesso = ((2 - y2 / 100) + (y2 / 400)) + (int(365.25 * y2)) + (int(30.6001 * (m2 + 1))) + d2 + 1720994.5;
+	julianDateUltimoAcesso = ((2 - y2 / 100) + (y2 / 400)) + (int(365.25 * y2))
+			+ (int(30.6001 * (m2 + 1))) + d2 + 1720994.5;
 
-	 if((julianDateHoje - julianDateUltimoAcesso) > 30)
-		 return true;
-	 else
-		 return false;
+
+	return (julianDateHoje - julianDateUltimoAcesso);
 
 }

@@ -4,8 +4,30 @@
 #include "Utilizador.h"
 #include "BST.h"
 #include <vector>
-
+#include <tr1/unordered_set>
 using namespace std;
+
+/**
+* @brief Struct with the hash function for users who haven't logged in a month
+*
+*/
+
+struct hUtilizadoresInativos
+{
+	int operator()(const Utilizador* u) const
+	{
+		return u->getLogin();
+	}
+
+	bool operator()(const Utilizador* u1, const Utilizador* u2) const
+	{
+		return (u1->getLogin() == u2->getLogin());
+	}
+};
+
+typedef tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos> hashInativos;
+
+
 
 /**
 * @brief Classe Comunidade.
@@ -15,17 +37,31 @@ using namespace std;
 class Comunidade {
 private:
   vector<Utilizador*> comunidade; /**<  membro privado que contem todos os utilizadores */
+  hashInativos utilizadoresInativos; /**<  membro privado que contem todos os utilizadores inativos por 1 mes */
 public:
   /**
   * @brief Construtor
   * Construtor default que inicializa o vector de utilizadores a zero
   */
   Comunidade();
+
   /**
-  * @ brief Funcao que verifica a existencia de um certo utilizador
-  * @ param util : indica o utilizador
-  * @ return posicao
-  */
+   * @ brief Funcao que carrega para uma tabela de dispersao os utilizadores inativos
+   * @
+   * @ return void
+   */
+  void loadUtilizadoresInativos();
+  /**
+   * @ brief Funcao que imprime todos os utilizadores inativos à mais de 30 dias
+   * @
+   * @ return void
+   */
+  void printUtilizadoresInativos() const;
+  /**
+   * @ brief Funcao que verifica a existencia de um certo utilizador
+   * @ param util : indica o utilizador
+   * @ return posicao
+   */
   int existeUtil(Utilizador *util) const;
 
   /**

@@ -15,6 +15,22 @@ Comunidade::Comunidade() {
   comunidade.clear(); //inicializar o vetor
 }
 
+void Comunidade::loadUtilizadoresInativos(){
+	for (size_t i=0;i<comunidade.size();i++){
+		if(comunidade[i]->inativo()>30){
+			utilizadoresInativos.insert(comunidade[i]);
+		}
+	}
+}
+
+void Comunidade::printUtilizadoresInativos() const{
+	tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::iterator it =utilizadoresInativos.begin();
+	while(it!=utilizadoresInativos.end()){
+		(*it)->imprimirUtilizador();
+		it++;
+	}
+}
+
 int Comunidade::existeUtil(Utilizador *util) const {
   for (unsigned int i = 0; i < comunidade.size(); i++) {
     if (*comunidade[i] == *util)
