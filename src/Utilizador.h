@@ -29,6 +29,7 @@ private:
   string email; /**< membro privado que representa o email */
   int telemovel; /**< membro privado que representa o telemovel */
   Data dataAdesao; /**< membro privado que representa a data de adesao (criacao do utilizador) */
+  Data ultimoAcesso; /**< membro privado que representa a data do ultimo acesso */
   int idade; /**< membro privado que representa a idade */
   vector<Utilizador *> amigos; /**< membro privado que representa os amigos*/
   vector<Conversa *> conversas; /**< membro privado que representa as conversas */
@@ -97,6 +98,12 @@ public:
   *@brief Funcao que retorna um vector de Utilizadores que sao os amigos do Utilizador
   *@return amigos
   */
+  /**
+  *@brief Funcao que retorna a data do ultimo acesso do Utilizador
+  *@return ultimoAcesso
+  */
+  Data getUltimoAcesso() const;
+
   vector<Utilizador *> getAmigos() const;
   /**
   *@brief Funcao que retorna um apontador para um Utilizador dos amigos com um determinado login
@@ -439,6 +446,13 @@ public:
   * @ return void
   */
   void escreveUtilizador(string linha, bool novo);
+
+  /**
+  * @ brief Funcao que indica se o utilizador está inativo à mais de 1 mes.
+  *
+  * @ return booleano
+  */
+  bool inativo();
 };
 
 #endif /* SRC_UTILIZADOR_H_ */
