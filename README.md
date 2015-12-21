@@ -9,7 +9,7 @@
 
 * Catarina : BST - falta meter no main ...
 
-* Inês : (segundo ponto) filas de prioridade
+* Inês : (segundo ponto) filas de prioridade - acabada com main + leitura/escrita de ficheiros. Existe um pequeno erro que eventualmente hei de descobrir na escita de ficheiros apenas quando faço pop na execução do programa. ATENCAO: quem estiver a usar a classe mensagem, o emissor a partir de agora é um 'Membro'. 
 
 * Pedro : (terceiro ponto) tabelas de dispersão
 
