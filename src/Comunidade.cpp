@@ -7,7 +7,8 @@
 #include "Comunidade.h"
 #include "Templates.h"
 #include "Excecoes.h"
-
+#include <tr1/unordered_set>
+using namespace std;
 /********************************
 *		CLASSE COMUNIDADE		*
 *******************************/
@@ -24,7 +25,7 @@ void Comunidade::loadUtilizadoresInativos(){
 }
 
 void Comunidade::printUtilizadoresInativos() const{
-	tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::iterator it =utilizadoresInativos.begin();
+	tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::const_iterator it = utilizadoresInativos.begin();
 	while(it!=utilizadoresInativos.end()){
 		(*it)->imprimirUtilizador();
 		it++;

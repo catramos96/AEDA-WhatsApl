@@ -16,7 +16,7 @@ struct hUtilizadoresInativos
 {
 	int operator()(const Utilizador* u) const
 	{
-		return u->getLogin();
+		return u->inativo();
 	}
 
 	bool operator()(const Utilizador* u1, const Utilizador* u2) const

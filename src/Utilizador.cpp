@@ -459,7 +459,7 @@ Grupo *Utilizador::escolheGruposAmigos(int pos) const {
 
 }
 
-int Utilizador::inativo() {
+int Utilizador::inativo() const{
 	//convert data atual para julian date
 	int julianDateHoje;
 	int julianDateUltimoAcesso;
