@@ -5,6 +5,8 @@ var searchData=
   ['membronaposicao',['membroNaPosicao',['../class_grupo.html#a1c5a333df13698f6b0c6326b9ce76c50',1,'Grupo']]],
   ['mensagem',['Mensagem',['../class_mensagem.html#a4152f41a1dbfd03eb058d6a9926f4426',1,'Mensagem']]],
   ['msgimagem',['MsgImagem',['../class_msg_imagem.html#af214317005643374b9886897ddc28e9c',1,'MsgImagem']]],
+  ['msgpendentespop',['MsgPendentesPop',['../class_grupo.html#adfdcca517d35841e8271caab08f32357',1,'Grupo']]],
+  ['msgpendentespush',['MsgPendentesPush',['../class_grupo.html#a557be5c1c7dcc0c0832248f62fd609f2',1,'Grupo']]],
   ['msgtexto',['MsgTexto',['../class_msg_texto.html#a8ad133274a0f20954695cd2b2c619595',1,'MsgTexto']]],
   ['msgvideo',['MsgVideo',['../class_msg_video.html#aef9a682492022a03ff4ea1ab62e1e1f9',1,'MsgVideo']]]
 ];

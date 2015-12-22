@@ -8,5 +8,7 @@ var searchData=
   ['printgrupo',['printGrupo',['../class_grupo.html#a3519ff974212b2f767aa45f0c59335a0',1,'Grupo']]],
   ['printmembros',['printMembros',['../class_grupo.html#aaea32821021b4a06faa11d906c84d409',1,'Grupo']]],
   ['printpedidos',['printPedidos',['../class_grupo.html#a290892a90ca39fa1b35fba2d292366f7',1,'Grupo']]],
-  ['printstatus',['printStatus',['../class_grupo.html#a97f188af0d699ee9d5a423b654a9dbb2',1,'Grupo']]]
+  ['printstatus',['printStatus',['../class_grupo.html#a97f188af0d699ee9d5a423b654a9dbb2',1,'Grupo']]],
+  ['printtopo',['printTopo',['../class_grupo.html#a63ce298ce3b10fe1d9bc69e42a03eb24',1,'Grupo']]],
+  ['printutilizadoresinativos',['printUtilizadoresInativos',['../class_comunidade.html#a6672ca4af496637a47f1c72e9b038a13',1,'Comunidade']]]
 ];

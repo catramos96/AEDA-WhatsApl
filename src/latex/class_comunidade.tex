@@ -15,6 +15,10 @@ Classe \hyperlink{class_comunidade}{Comunidade}. Class que contem e gere todos o
 \hypertarget{class_comunidade_ad44e0775322f253c3c28bae06bf844de}{}\hyperlink{class_comunidade_ad44e0775322f253c3c28bae06bf844de}{Comunidade} ()\label{class_comunidade_ad44e0775322f253c3c28bae06bf844de}
 
 \begin{DoxyCompactList}\small\item\em Construtor Construtor default que inicializa o vector de utilizadores a zero. \end{DoxyCompactList}\item 
+void \hyperlink{class_comunidade_a287602850aaa830d41fab2719271845e}{load\+Utilizadores\+Inativos} ()
+\item 
+void \hyperlink{class_comunidade_a6672ca4af496637a47f1c72e9b038a13}{print\+Utilizadores\+Inativos} () const 
+\item 
 int \hyperlink{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{existe\+Util} (\hyperlink{class_utilizador}{Utilizador} $\ast$util) const 
 \item 
 int \hyperlink{class_comunidade_a467973e3790e6fdd832bb9702eb635bb}{existe\+Util\+Login} (string login) const 
@@ -48,7 +52,12 @@ int \hyperlink{class_comunidade_a78e9b2f723065c9085dd8984cba6691f}{escreve\+Util
 int \hyperlink{class_comunidade_a0de7c5114b4754401b8e12e4ed0ba34e}{escreve\+Conversa} (string path)
 \begin{DoxyCompactList}\small\item\em Funcao que converte a informacao do programa sobre conversas num ficheiro .txt. \end{DoxyCompactList}\item 
 int \hyperlink{class_comunidade_aecb81c6a5dba43898876761c491db171}{escreve\+Grupo} (string path)
-\begin{DoxyCompactList}\small\item\em Funcao que converte a informacao do programa sobre grupos num ficheiro .txt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao que converte a informacao do programa sobre grupos num ficheiro .txt. \end{DoxyCompactList}\item 
+\hyperlink{class_b_s_t}{B\+S\+T}$<$ \hyperlink{class_utilizador}{Utilizador} $>$ \hyperlink{class_comunidade_a0cbd33ffe5af96e358a3ca0856bcdd92}{top\+Utilizadores} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que analiza os utilizadores mais ativos nos ultimos 3 dias da aplicação. \end{DoxyCompactList}\item 
+\hypertarget{class_comunidade_adcb5e4a98d6e87b1cd531bc18f478484}{}void \hyperlink{class_comunidade_adcb5e4a98d6e87b1cd531bc18f478484}{display\+Top\+Utilizadores} () const \label{class_comunidade_adcb5e4a98d6e87b1cd531bc18f478484}
+
+\begin{DoxyCompactList}\small\item\em Funcao que mostra no ecra os utilizadores mais ativos. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -226,7 +235,14 @@ Funcao que le um ficheiro de texto com os utilizadores e coloca a informacao no 
 {\em path} & Caminho onde se encontra o ficheiro utilizadores.\+txt \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_comunidade_a4770f5f57ce9e47e0a661b3b923061d8}{}\index{Comunidade@{Comunidade}!ordena\+Data@{ordena\+Data}}
+\hypertarget{class_comunidade_a287602850aaa830d41fab2719271845e}{}\index{Comunidade@{Comunidade}!load\+Utilizadores\+Inativos@{load\+Utilizadores\+Inativos}}
+\index{load\+Utilizadores\+Inativos@{load\+Utilizadores\+Inativos}!Comunidade@{Comunidade}}
+\subsubsection[{load\+Utilizadores\+Inativos()}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::load\+Utilizadores\+Inativos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_comunidade_a287602850aaa830d41fab2719271845e}
+@ brief Funcao que carrega para uma tabela de dispersao os utilizadores inativos @ @ return void \hypertarget{class_comunidade_a4770f5f57ce9e47e0a661b3b923061d8}{}\index{Comunidade@{Comunidade}!ordena\+Data@{ordena\+Data}}
 \index{ordena\+Data@{ordena\+Data}!Comunidade@{Comunidade}}
 \subsubsection[{ordena\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::ordena\+Data (
 \begin{DoxyParamCaption}
@@ -247,7 +263,28 @@ Funcao que le um ficheiro de texto com os utilizadores e coloca a informacao no 
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_comunidade_ae7c4558f4f6174518b7e15ab007f04fd}
-@ brief Funcao imprime todos os utilizadores da comunidade @ return void \hypertarget{class_comunidade_a4c537ae9c435a276154051da96e628af}{}\index{Comunidade@{Comunidade}!utilizador\+Na\+Posicao@{utilizador\+Na\+Posicao}}
+@ brief Funcao imprime todos os utilizadores da comunidade @ return void \hypertarget{class_comunidade_a6672ca4af496637a47f1c72e9b038a13}{}\index{Comunidade@{Comunidade}!print\+Utilizadores\+Inativos@{print\+Utilizadores\+Inativos}}
+\index{print\+Utilizadores\+Inativos@{print\+Utilizadores\+Inativos}!Comunidade@{Comunidade}}
+\subsubsection[{print\+Utilizadores\+Inativos() const }]{\setlength{\rightskip}{0pt plus 5cm}void Comunidade\+::print\+Utilizadores\+Inativos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_a6672ca4af496637a47f1c72e9b038a13}
+@ brief Funcao que imprime todos os utilizadores inativos à mais de 30 dias @ @ return void \hypertarget{class_comunidade_a0cbd33ffe5af96e358a3ca0856bcdd92}{}\index{Comunidade@{Comunidade}!top\+Utilizadores@{top\+Utilizadores}}
+\index{top\+Utilizadores@{top\+Utilizadores}!Comunidade@{Comunidade}}
+\subsubsection[{top\+Utilizadores() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+S\+T}$<$ {\bf Utilizador} $>$ Comunidade\+::top\+Utilizadores (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_a0cbd33ffe5af96e358a3ca0856bcdd92}
+
+
+Funcao que analiza os utilizadores mais ativos nos ultimos 3 dias da aplicação. 
+
+\begin{DoxyReturn}{Returns}
+árvore binária de pesquisa com a informação dos utilizadores mais ativos 
+\end{DoxyReturn}
+\hypertarget{class_comunidade_a4c537ae9c435a276154051da96e628af}{}\index{Comunidade@{Comunidade}!utilizador\+Na\+Posicao@{utilizador\+Na\+Posicao}}
 \index{utilizador\+Na\+Posicao@{utilizador\+Na\+Posicao}!Comunidade@{Comunidade}}
 \subsubsection[{utilizador\+Na\+Posicao(int pos) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utilizador} $\ast$ Comunidade\+::utilizador\+Na\+Posicao (
 \begin{DoxyParamCaption}

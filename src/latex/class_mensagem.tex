@@ -2,7 +2,7 @@
 \label{class_mensagem}\index{Mensagem@{Mensagem}}
 
 
-Classe \hyperlink{class_mensagem}{Mensagem}. Cada \hyperlink{class_mensagem}{Mensagem} tem um id unico que representa o numero da mensgem. Cata \hyperlink{class_mensagem}{Mensagem} pode ainda ser de texto, video ou imagem.  
+Classe \hyperlink{class_mensagem}{Mensagem}. Cada \hyperlink{class_mensagem}{Mensagem} tem um id unico que representa o numero da mensgem, um membro que pode ser de um grupo ou individual (neste caso o membro apenas tem login), e uma data e hora de envio. Cada \hyperlink{class_mensagem}{Mensagem} pode ainda ser de texto, video ou imagem.  
 
 
 
@@ -23,7 +23,7 @@ Inheritance diagram for Mensagem\+:\begin{figure}[H]
 \hypertarget{class_mensagem_a4490a1cfe88288fa1ff4b41327e769ed}{}virtual void \hyperlink{class_mensagem_a4490a1cfe88288fa1ff4b41327e769ed}{imprimir\+Msg} ()\label{class_mensagem_a4490a1cfe88288fa1ff4b41327e769ed}
 
 \begin{DoxyCompactList}\small\item\em Funcao que imprime todos os membros privados da mensagem. \end{DoxyCompactList}\item 
-string \hyperlink{class_mensagem_a5438dfe93aec2e6512042704e134d5db}{get\+Emissor} () const 
+\hyperlink{class_membro}{Membro} \hyperlink{class_mensagem_a1117464fdc646e2a71888efb65c5f884}{get\+Emissor} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o emissor. \end{DoxyCompactList}\item 
 \hyperlink{class_data}{Data} \hyperlink{class_mensagem_a8d3b52e1c20fac96c4df60c79b5b7846}{get\+Data} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna a data. \end{DoxyCompactList}\item 
@@ -31,14 +31,20 @@ string \hyperlink{class_mensagem_a5438dfe93aec2e6512042704e134d5db}{get\+Emissor
 \begin{DoxyCompactList}\small\item\em Funcao que retorna a hora. \end{DoxyCompactList}\item 
 int \hyperlink{class_mensagem_a376309b58e69c41bf10acb7adad7bd3d}{get\+Numero} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o numero. \end{DoxyCompactList}\item 
-void \hyperlink{class_mensagem_a74d42818d3796b28496f400e02328c92}{set\+Emissor} (string emissor)
+\hyperlink{class_data}{Data} \hyperlink{class_mensagem_aa3ecd530fadded6533054787a485e2da}{get\+Data\+Emissor} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a data de criacao deste membro num grupo. Caso este membro não seja de um grupo mas apenas de uma conversa, devolve 0 0 0. \end{DoxyCompactList}\item 
+void \hyperlink{class_mensagem_acf6cf534d762acd2f2ec56b745946e3d}{set\+Membro\+Emissor} (\hyperlink{class_membro}{Membro} emissor)
 \begin{DoxyCompactList}\small\item\em Funcao que altera o emissor. \end{DoxyCompactList}\item 
+void \hyperlink{class_mensagem_a9def6b097e03dde72c6652cbe5430b00}{set\+Login\+Emissor} (string login)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o login do emissor. \end{DoxyCompactList}\item 
 void \hyperlink{class_mensagem_a042a57d4dca817ed0450340b42111a9a}{set\+Numero} (int num)
 \begin{DoxyCompactList}\small\item\em Funcao que altera o numero da mensagem. \end{DoxyCompactList}\item 
 virtual string \hyperlink{class_mensagem_a3d814fb7b7540c4df98f522208e0c1ac}{tipo} () const 
 \begin{DoxyCompactList}\small\item\em Funcao abstrata que retorna uma string com o tipo dependendo da classe derivada. \end{DoxyCompactList}\item 
 virtual string \hyperlink{class_mensagem_ab4bbb32ae268565c8f87c370f9793db6}{get\+Conteudo} () const 
-\begin{DoxyCompactList}\small\item\em Funcao abstrata que retorna o conteudo da classe derivada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao abstrata que retorna o conteudo da classe derivada. \end{DoxyCompactList}\item 
+bool \hyperlink{class_mensagem_a3292960e58810e6d8ae3613e4318a04b}{operator$<$} (const \hyperlink{class_mensagem}{Mensagem} \&m) const 
+\begin{DoxyCompactList}\small\item\em o operador menor nas mensagens serve para orderar a fila de prioridade da classe \textquotesingle{}\hyperlink{class_grupo}{Grupo}\textquotesingle{}. Estas mensagens são ordenadas, primeiramente, por ordem cronológica das mensagens (data da mensagem \+: primeiro as mais antigas) e de seguida por data de adesão ao grupo (membros mais recentes têm prioridade). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -47,7 +53,7 @@ static int \hyperlink{class_mensagem_aedda3752e5473856e88644839a16fb10}{get\+I\+
 
 
 \subsection{Detailed Description}
-Classe \hyperlink{class_mensagem}{Mensagem}. Cada \hyperlink{class_mensagem}{Mensagem} tem um id unico que representa o numero da mensgem. Cata \hyperlink{class_mensagem}{Mensagem} pode ainda ser de texto, video ou imagem. 
+Classe \hyperlink{class_mensagem}{Mensagem}. Cada \hyperlink{class_mensagem}{Mensagem} tem um id unico que representa o numero da mensgem, um membro que pode ser de um grupo ou individual (neste caso o membro apenas tem login), e uma data e hora de envio. Cada \hyperlink{class_mensagem}{Mensagem} pode ainda ser de texto, video ou imagem. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_mensagem_a4152f41a1dbfd03eb058d6a9926f4426}{}\index{Mensagem@{Mensagem}!Mensagem@{Mensagem}}
@@ -104,13 +110,27 @@ Funcao que retorna a data.
 \begin{DoxyReturn}{Returns}
 data 
 \end{DoxyReturn}
-\hypertarget{class_mensagem_a5438dfe93aec2e6512042704e134d5db}{}\index{Mensagem@{Mensagem}!get\+Emissor@{get\+Emissor}}
-\index{get\+Emissor@{get\+Emissor}!Mensagem@{Mensagem}}
-\subsubsection[{get\+Emissor() const }]{\setlength{\rightskip}{0pt plus 5cm}string Mensagem\+::get\+Emissor (
+\hypertarget{class_mensagem_aa3ecd530fadded6533054787a485e2da}{}\index{Mensagem@{Mensagem}!get\+Data\+Emissor@{get\+Data\+Emissor}}
+\index{get\+Data\+Emissor@{get\+Data\+Emissor}!Mensagem@{Mensagem}}
+\subsubsection[{get\+Data\+Emissor() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Mensagem\+::get\+Data\+Emissor (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\label{class_mensagem_a5438dfe93aec2e6512042704e134d5db}
+) const}\label{class_mensagem_aa3ecd530fadded6533054787a485e2da}
+
+
+Funcao que retorna a data de criacao deste membro num grupo. Caso este membro não seja de um grupo mas apenas de uma conversa, devolve 0 0 0. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_data}{Data} \hyperlink{class_data}{Data} em que o emissor desta mensagem se juntou a um dado grupo. 
+\end{DoxyReturn}
+\hypertarget{class_mensagem_a1117464fdc646e2a71888efb65c5f884}{}\index{Mensagem@{Mensagem}!get\+Emissor@{get\+Emissor}}
+\index{get\+Emissor@{get\+Emissor}!Mensagem@{Mensagem}}
+\subsubsection[{get\+Emissor() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Membro} Mensagem\+::get\+Emissor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_mensagem_a1117464fdc646e2a71888efb65c5f884}
 
 
 Funcao que retorna o emissor. 
@@ -160,13 +180,48 @@ Funcao que retorna o numero.
 \begin{DoxyReturn}{Returns}
 numero 
 \end{DoxyReturn}
-\hypertarget{class_mensagem_a74d42818d3796b28496f400e02328c92}{}\index{Mensagem@{Mensagem}!set\+Emissor@{set\+Emissor}}
-\index{set\+Emissor@{set\+Emissor}!Mensagem@{Mensagem}}
-\subsubsection[{set\+Emissor(string emissor)}]{\setlength{\rightskip}{0pt plus 5cm}void Mensagem\+::set\+Emissor (
+\hypertarget{class_mensagem_a3292960e58810e6d8ae3613e4318a04b}{}\index{Mensagem@{Mensagem}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Mensagem@{Mensagem}}
+\subsubsection[{operator$<$(const Mensagem \&m) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Mensagem\+::operator$<$ (
 \begin{DoxyParamCaption}
-\item[{string}]{emissor}
+\item[{const {\bf Mensagem} \&}]{m}
 \end{DoxyParamCaption}
-)}\label{class_mensagem_a74d42818d3796b28496f400e02328c92}
+) const}\label{class_mensagem_a3292960e58810e6d8ae3613e4318a04b}
+
+
+o operador menor nas mensagens serve para orderar a fila de prioridade da classe \textquotesingle{}\hyperlink{class_grupo}{Grupo}\textquotesingle{}. Estas mensagens são ordenadas, primeiramente, por ordem cronológica das mensagens (data da mensagem \+: primeiro as mais antigas) e de seguida por data de adesão ao grupo (membros mais recentes têm prioridade). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \hyperlink{class_mensagem}{Mensagem} que queremos comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True or False caso se verifique se é menor ou não. 
+\end{DoxyReturn}
+\hypertarget{class_mensagem_a9def6b097e03dde72c6652cbe5430b00}{}\index{Mensagem@{Mensagem}!set\+Login\+Emissor@{set\+Login\+Emissor}}
+\index{set\+Login\+Emissor@{set\+Login\+Emissor}!Mensagem@{Mensagem}}
+\subsubsection[{set\+Login\+Emissor(string login)}]{\setlength{\rightskip}{0pt plus 5cm}void Mensagem\+::set\+Login\+Emissor (
+\begin{DoxyParamCaption}
+\item[{string}]{login}
+\end{DoxyParamCaption}
+)}\label{class_mensagem_a9def6b097e03dde72c6652cbe5430b00}
+
+
+Funcao que altera o login do emissor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & Login do emissor \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mensagem_acf6cf534d762acd2f2ec56b745946e3d}{}\index{Mensagem@{Mensagem}!set\+Membro\+Emissor@{set\+Membro\+Emissor}}
+\index{set\+Membro\+Emissor@{set\+Membro\+Emissor}!Mensagem@{Mensagem}}
+\subsubsection[{set\+Membro\+Emissor(\+Membro emissor)}]{\setlength{\rightskip}{0pt plus 5cm}void Mensagem\+::set\+Membro\+Emissor (
+\begin{DoxyParamCaption}
+\item[{{\bf Membro}}]{emissor}
+\end{DoxyParamCaption}
+)}\label{class_mensagem_acf6cf534d762acd2f2ec56b745946e3d}
 
 
 Funcao que altera o emissor. 

@@ -12,5 +12,6 @@ var searchData=
   ['adicionarutil',['adicionarUtil',['../class_comunidade.html#a1961b08389ea8fc40a7cdd099d733ad7',1,'Comunidade']]],
   ['adicionasms',['adicionaSms',['../class_conversa.html#aee6541eeaa269a26b14e7d5170ab82e0',1,'Conversa']]],
   ['amigoinexistente',['AmigoInexistente',['../class_amigo_inexistente.html',1,'AmigoInexistente'],['../class_amigo_inexistente.html#a214d9d7a9579e42d67f8c7fe290958f3',1,'AmigoInexistente::AmigoInexistente()']]],
-  ['amigojaexiste',['AmigoJaExiste',['../class_amigo_ja_existe.html',1,'AmigoJaExiste'],['../class_amigo_ja_existe.html#a9d61f8dc97244fdd468b7d70b5f35409',1,'AmigoJaExiste::AmigoJaExiste()']]]
+  ['amigojaexiste',['AmigoJaExiste',['../class_amigo_ja_existe.html',1,'AmigoJaExiste'],['../class_amigo_ja_existe.html#a9d61f8dc97244fdd468b7d70b5f35409',1,'AmigoJaExiste::AmigoJaExiste()']]],
+  ['avaliamensagem',['avaliaMensagem',['../class_grupo.html#a5586891b5ee17123124b5d61da2983a6',1,'Grupo']]]
 ];

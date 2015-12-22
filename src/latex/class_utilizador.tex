@@ -34,8 +34,11 @@ bool \hyperlink{class_utilizador_a99cdee165a8446fb67f3e0cab0831e80}{get\+Visibil
 \begin{DoxyCompactList}\small\item\em Funcao que retorna a visibilidade do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 \hyperlink{class_data}{Data} \hyperlink{class_utilizador_af6c41442d2029ccb1a135092a5c27007}{get\+Data\+Adesao} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna a data de adesao do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{class_utilizador}{Utilizador} $\ast$ $>$ \hyperlink{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}{get\+Amigos} () const 
+\hyperlink{class_data}{Data} \hyperlink{class_utilizador_aad3c0159c06b1631b92b5ab389c34c98}{get\+Ultimo\+Acesso} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna um vector de Utilizadores que sao os amigos do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}{}vector$<$ \hyperlink{class_utilizador}{Utilizador} $\ast$ $>$ {\bfseries get\+Amigos} () const \label{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}
+
+\item 
 \hyperlink{class_utilizador}{Utilizador} $\ast$ \hyperlink{class_utilizador_a13a11370779713c7de00ea62f5c3799b}{get\+Amigo} (string login) const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna um apontador para um \hyperlink{class_utilizador}{Utilizador} dos amigos com um determinado login. \end{DoxyCompactList}\item 
 \hyperlink{class_grupo}{Grupo} $\ast$ \hyperlink{class_utilizador_a0b6cd97f274e49649b0c2c7ba0497261}{get\+Grupo} (int i) const 
@@ -50,6 +53,9 @@ string \hyperlink{class_utilizador_a5d4275b4d23d955ef295773d3d9eb3b5}{get\+Desti
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o nome destinatario da \hyperlink{class_conversa}{Conversa}. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{class_grupo}{Grupo} $\ast$ $>$ \hyperlink{class_utilizador_ac5e58137167b1cf097d10f862f036998}{get\+Grupos\+Amigos} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna um vector com os grupos do meu circulo de amigos. Esta funcao retira os grupos repetidos e os grupos que ja incluem o utilizador atual. \end{DoxyCompactList}\item 
+\hypertarget{class_utilizador_a6f17644dc85b48e874be937492939c61}{}int \hyperlink{class_utilizador_a6f17644dc85b48e874be937492939c61}{get\+Num\+Msg3dias} () const \label{class_utilizador_a6f17644dc85b48e874be937492939c61}
+
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o numero de mensagens enviadas durante os ultimos 3 dias. \end{DoxyCompactList}\item 
 void \hyperlink{class_utilizador_a11032f76b9d07c21e9111155519407c5}{set\+Login} (string l)
 \begin{DoxyCompactList}\small\item\em Funcao que altera o login de um utilizador. \end{DoxyCompactList}\item 
 void \hyperlink{class_utilizador_a27aeea3bb85f457a2d42ff6f0a1240dd}{set\+Nome} (string n)
@@ -129,6 +135,8 @@ bool \hyperlink{class_utilizador_a7424cd944ea535338280e821666768f7}{desbloquear\
 \hyperlink{class_grupo}{Grupo} $\ast$ \hyperlink{class_utilizador_a8292ead93b56ba0c48b9fc92265134c3}{escolhe\+Grupos\+Amigos} (int i) const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o grupo escolhido pelo utilizador. Antes desta função é feito um print dos grupos do circulo de amigos do utilizador com numeros. A partir dai o utilizador escolhe um grupo que é devolvido pela funcao. \end{DoxyCompactList}\item 
 void \hyperlink{class_utilizador_a56049150a07b5da75017efe35d5a7d61}{escreve\+Utilizador} (string linha, bool novo)
+\item 
+int \hyperlink{class_utilizador_a3b85c70373abad979a9dea909772efa3}{inativo} () const 
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -477,20 +485,6 @@ Funcao que retorna um apontador para um \hyperlink{class_utilizador}{Utilizador}
 \begin{DoxyReturn}{Returns}
 Utilizador$\ast$ 
 \end{DoxyReturn}
-\hypertarget{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}{}\index{Utilizador@{Utilizador}!get\+Amigos@{get\+Amigos}}
-\index{get\+Amigos@{get\+Amigos}!Utilizador@{Utilizador}}
-\subsubsection[{get\+Amigos() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Utilizador} $\ast$ $>$ Utilizador\+::get\+Amigos (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\label{class_utilizador_ad76009d2278707a5c9a1e8088633cfd2}
-
-
-Funcao que retorna um vector de Utilizadores que sao os amigos do \hyperlink{class_utilizador}{Utilizador}. 
-
-\begin{DoxyReturn}{Returns}
-amigos 
-\end{DoxyReturn}
 \hypertarget{class_utilizador_a07745e2c5f5d9236aea0c7357f1325b7}{}\index{Utilizador@{Utilizador}!get\+Conversa@{get\+Conversa}}
 \index{get\+Conversa@{get\+Conversa}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Conversa(int i) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversa} $\ast$ Utilizador\+::get\+Conversa (
@@ -674,6 +668,22 @@ Funcao que retorna o telemovel do \hyperlink{class_utilizador}{Utilizador}.
 \begin{DoxyReturn}{Returns}
 telemovel 
 \end{DoxyReturn}
+\hypertarget{class_utilizador_aad3c0159c06b1631b92b5ab389c34c98}{}\index{Utilizador@{Utilizador}!get\+Ultimo\+Acesso@{get\+Ultimo\+Acesso}}
+\index{get\+Ultimo\+Acesso@{get\+Ultimo\+Acesso}!Utilizador@{Utilizador}}
+\subsubsection[{get\+Ultimo\+Acesso() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Utilizador\+::get\+Ultimo\+Acesso (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_utilizador_aad3c0159c06b1631b92b5ab389c34c98}
+
+
+Funcao que retorna um vector de Utilizadores que sao os amigos do \hyperlink{class_utilizador}{Utilizador}. 
+
+\begin{DoxyReturn}{Returns}
+amigos Funcao que retorna a data do ultimo acesso do \hyperlink{class_utilizador}{Utilizador} 
+
+ultimo\+Acesso 
+\end{DoxyReturn}
 \hypertarget{class_utilizador_a99cdee165a8446fb67f3e0cab0831e80}{}\index{Utilizador@{Utilizador}!get\+Visibilidade@{get\+Visibilidade}}
 \index{get\+Visibilidade@{get\+Visibilidade}!Utilizador@{Utilizador}}
 \subsubsection[{get\+Visibilidade() const }]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::get\+Visibilidade (
@@ -688,7 +698,16 @@ Funcao que retorna a visibilidade do \hyperlink{class_utilizador}{Utilizador}.
 \begin{DoxyReturn}{Returns}
 visibilidade 
 \end{DoxyReturn}
-\hypertarget{class_utilizador_a19b6202cece0cde531de23a1fd24b4c6}{}\index{Utilizador@{Utilizador}!operator$<$@{operator$<$}}
+\hypertarget{class_utilizador_a3b85c70373abad979a9dea909772efa3}{}\index{Utilizador@{Utilizador}!inativo@{inativo}}
+\index{inativo@{inativo}!Utilizador@{Utilizador}}
+\subsubsection[{inativo() const }]{\setlength{\rightskip}{0pt plus 5cm}int Utilizador\+::inativo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_utilizador_a3b85c70373abad979a9dea909772efa3}
+@ brief Funcao que indica se o utilizador está inativo à mais de 1 mes.
+
+@ return booleano \hypertarget{class_utilizador_a19b6202cece0cde531de23a1fd24b4c6}{}\index{Utilizador@{Utilizador}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Utilizador@{Utilizador}}
 \subsubsection[{operator$<$(const Utilizador \&u) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Utilizador\+::operator$<$ (
 \begin{DoxyParamCaption}
@@ -705,7 +724,7 @@ overloading do operador $<$ que compara o utilzador e u
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-bool , true -\/ o login do utilizador for $<$ que o de u 
+bool , true -\/ se o numero de mensagens enviadas nos ultimos 3 dias pelo utilizador for maior do que o utilizador u e, em caso de empate, se o numero de grupos a que pertence for maior 
 \end{DoxyReturn}
 \hypertarget{class_utilizador_a051ebe3fbeadbb5b00a78da320a9f49e}{}\index{Utilizador@{Utilizador}!operator==@{operator==}}
 \index{operator==@{operator==}!Utilizador@{Utilizador}}
