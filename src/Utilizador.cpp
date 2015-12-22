@@ -28,14 +28,16 @@ Utilizador::Utilizador() {
   telemovel = 0;
   Data d;
   dataAdesao = d;
+  ultimoAcesso = dataHoje;
 }
 
-Utilizador::Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade) {
+Utilizador::Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao,Data ultimoAcesso, int telemovel, int idade) {
   this->visibilidade = visibilidade;
   this->login = login;
   this->nome = nome;
   this->email = email;
   this->dataAdesao = dataAdesao;
+  this->ultimoAcesso = ultimoAcesso;
   if (idade < 18)
     throw IdadeInsuficiente(idade);
   this->idade = idade;
@@ -218,6 +220,10 @@ void Utilizador::setTelemovel(int t) {
 
 void Utilizador::setData(int d, int m, int a) {
   dataAdesao.setData(d, m, a);
+}
+
+void Utilizador::setDataAcesso(int d, int m, int a){
+	ultimoAcesso.setData(d,m,a);
 }
 
 /*****************************************************************

@@ -121,7 +121,7 @@ void Comunidade::printComunidade() const {
 
 void Comunidade::leUtilizador(string path) {
 
-	int d, m, a, h, min, num, pos, bloq;
+	int d, m, a, h, min, num, pos, bloq,d1,m1,a1;
 	string titulo, moderador, novo;
 	bool flag3 = true;
 	vector<string> amigos; //amigos de 1 utilizador
@@ -150,6 +150,13 @@ void Comunidade::leUtilizador(string path) {
 			getline(util, line);
 			a = atoi(line.c_str());
 			u->setData(d, m, a);	//data
+			getline(util, line);
+			d1 = atoi(line.c_str());
+			getline(util, line);
+			m1 = atoi(line.c_str());
+			getline(util, line);
+			a1 = atoi(line.c_str());
+			u->setDataAcesso(d1,m1,a1);	//ultimo acesso
 			getline(util, line);
 			u->setIdade(atoi(line.c_str()));	//idade
 			while (flag3) { //amigos
@@ -696,6 +703,9 @@ int Comunidade::escreveUtilizador(string path) {
 			myfile << comunidade.at(i)->getDataAdesao().getDia() << endl;
 			myfile << comunidade.at(i)->getDataAdesao().getMes() << endl;
 			myfile << comunidade.at(i)->getDataAdesao().getAno() << endl;
+			myfile << comunidade.at(i)->getUltimoAcesso().getDia() << endl;
+			myfile << comunidade.at(i)->getUltimoAcesso().getMes() << endl;
+			myfile << comunidade.at(i)->getUltimoAcesso().getAno() << endl;
 			myfile << comunidade.at(i)->getIdade() << endl;
 
 			for (size_t j = 0; j < comunidade.at(i)->getAmigos().size(); j++)
@@ -1020,7 +1030,7 @@ int Comunidade::escreveGrupo(string path) {
 
 BST<Utilizador> Comunidade::topUtilizadores() const{
   Data d(1, 1, 1);
-  Utilizador u(1, "", "", "", d, 0, 18);
+  Utilizador u(1, "", "", "", d,d, 0, 18);
   BST<Utilizador> arvore(u);
   vector<Utilizador *>::const_iterator it = comunidade.begin();
 
