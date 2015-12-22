@@ -65,6 +65,8 @@ Utilizador * login(Comunidade *c) {
   }
   else
     throw UtilizadorInexistente(u->getLogin());
+
+  u->setDataAcesso(dataHoje.getDia(),dataHoje.getMes(),dataHoje.getAno());
   return u;
 }
 
