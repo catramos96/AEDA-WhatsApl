@@ -4,6 +4,7 @@ var searchData=
   ['sairgrupo',['sairGrupo',['../class_utilizador.html#a6b77341ab59960b86c54a0a82c100f5c',1,'Utilizador']]],
   ['setbloqueio',['setBloqueio',['../class_membro.html#aaeea526aaa8f558d7e415c56c0b1be52',1,'Membro']]],
   ['setdata',['setData',['../class_membro.html#a251129b637633510a9e08fe29cc7dfaa',1,'Membro::setData()'],['../class_data.html#a0d2b92a9f9a418ab45407f9c0a19e92b',1,'Data::setData()'],['../class_utilizador.html#a8cd2a3b9c962eeef6ffa497ce6e39a3c',1,'Utilizador::setData()']]],
+  ['setdataacesso',['setDataAcesso',['../class_utilizador.html#ac5129216853e20609fee630a4214f116',1,'Utilizador']]],
   ['setdatabloqueio',['setDataBloqueio',['../class_membro.html#a93771e7b02097f22334205ff5f97de42',1,'Membro']]],
   ['setemail',['setEmail',['../class_utilizador.html#aa5ad3c6ed417e2b3aebc96bfa5432dfb',1,'Utilizador']]],
   ['sethoras',['setHoras',['../class_horas.html#a5da58fcd1a263e3c97e6e11c35b61d76',1,'Horas']]],

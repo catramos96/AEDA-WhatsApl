@@ -18,7 +18,7 @@ Classe \hyperlink{class_utilizador}{Utilizador}. Cada \hyperlink{class_utilizado
 \hypertarget{class_utilizador_aa0c2432b0a0f7b64ca5e7232ceec2869}{}\hyperlink{class_utilizador_aa0c2432b0a0f7b64ca5e7232ceec2869}{$\sim$\+Utilizador} ()\label{class_utilizador_aa0c2432b0a0f7b64ca5e7232ceec2869}
 
 \begin{DoxyCompactList}\small\item\em Destrutor \hyperlink{class_utilizador}{Utilizador};. \end{DoxyCompactList}\item 
-\hyperlink{class_utilizador_a470435e7e91ef2aa93eaf97b0615499b}{Utilizador} (bool visibilidade, string login, string nome, string email, \hyperlink{class_data}{Data} data\+Adesao, int telemovel, int idade)
+\hyperlink{class_utilizador_a8ca75b47aa1c8eb79d8014c4ae3b92d3}{Utilizador} (bool visibilidade, string login, string nome, string email, \hyperlink{class_data}{Data} data\+Adesao, \hyperlink{class_data}{Data} ultimo\+Acesso, int telemovel, int idade)
 \begin{DoxyCompactList}\small\item\em Construtor classe \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
 string \hyperlink{class_utilizador_aa5af9c1385b0a93116dd8a80264b887a}{get\+Nome} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o nome do \hyperlink{class_utilizador}{Utilizador}. \end{DoxyCompactList}\item 
@@ -70,6 +70,8 @@ void \hyperlink{class_utilizador_a74e3737924910c4306bac26cacb5f8e1}{set\+Telemov
 \begin{DoxyCompactList}\small\item\em Funcao que altera o telemovel de um utilizador. \end{DoxyCompactList}\item 
 void \hyperlink{class_utilizador_a8cd2a3b9c962eeef6ffa497ce6e39a3c}{set\+Data} (int d, int m, int a)
 \begin{DoxyCompactList}\small\item\em Funcao que altera a data de adesao de um utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{class_utilizador_ac5129216853e20609fee630a4214f116}{set\+Data\+Acesso} (int d, int m, int a)
+\begin{DoxyCompactList}\small\item\em Funcao que altera a data de acesso de um utilizador. \end{DoxyCompactList}\item 
 void \hyperlink{class_utilizador_a4b31c37715158bd7f672b8d2a546883f}{add\+Amigos\+Aux} (\hyperlink{class_utilizador}{Utilizador} $\ast$u)
 \begin{DoxyCompactList}\small\item\em Funcao que adiciona um utilizador aos amigos do utilizador. \end{DoxyCompactList}\item 
 void \hyperlink{class_utilizador_a896ea43c9f3c7224b2985b012e14b70d}{add\+Amigo} (\hyperlink{class_utilizador}{Utilizador} \&u)
@@ -149,19 +151,20 @@ ostream \& \hyperlink{class_utilizador_ad02a468bf3828d06a96b41947147c754}{operat
 Classe \hyperlink{class_utilizador}{Utilizador}. Cada \hyperlink{class_utilizador}{Utilizador} tem como unico o seu login e tem que ter como obrigatorio maior de 18 anos. A Classe \hyperlink{class_utilizador}{Utilizador} permite ter conversas e grupos com aqueles que apenas fazem parte do seu grupo de amigos. Esta Classe permite a gestao e a criacao de novos objectos \hyperlink{class_grupo}{Grupo}, \hyperlink{class_conversa}{Conversa} e Mensagens. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_utilizador_a470435e7e91ef2aa93eaf97b0615499b}{}\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
+\hypertarget{class_utilizador_a8ca75b47aa1c8eb79d8014c4ae3b92d3}{}\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
 \index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
-\subsubsection[{Utilizador(bool visibilidade, string login, string nome, string email, Data data\+Adesao, int telemovel, int idade)}]{\setlength{\rightskip}{0pt plus 5cm}Utilizador\+::\+Utilizador (
+\subsubsection[{Utilizador(bool visibilidade, string login, string nome, string email, Data data\+Adesao, Data ultimo\+Acesso, int telemovel, int idade)}]{\setlength{\rightskip}{0pt plus 5cm}Utilizador\+::\+Utilizador (
 \begin{DoxyParamCaption}
 \item[{bool}]{visibilidade, }
 \item[{string}]{login, }
 \item[{string}]{nome, }
 \item[{string}]{email, }
 \item[{{\bf Data}}]{data\+Adesao, }
+\item[{{\bf Data}}]{ultimo\+Acesso, }
 \item[{int}]{telemovel, }
 \item[{int}]{idade}
 \end{DoxyParamCaption}
-)}\label{class_utilizador_a470435e7e91ef2aa93eaf97b0615499b}
+)}\label{class_utilizador_a8ca75b47aa1c8eb79d8014c4ae3b92d3}
 
 
 Construtor classe \hyperlink{class_utilizador}{Utilizador}. 
@@ -908,6 +911,28 @@ Funcao que altera a data de adesao de um utilizador.
 {\em m} & mes de adesao \\
 \hline
 {\em a} & ano de adesao \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilizador_ac5129216853e20609fee630a4214f116}{}\index{Utilizador@{Utilizador}!set\+Data\+Acesso@{set\+Data\+Acesso}}
+\index{set\+Data\+Acesso@{set\+Data\+Acesso}!Utilizador@{Utilizador}}
+\subsubsection[{set\+Data\+Acesso(int d, int m, int a)}]{\setlength{\rightskip}{0pt plus 5cm}void Utilizador\+::set\+Data\+Acesso (
+\begin{DoxyParamCaption}
+\item[{int}]{d, }
+\item[{int}]{m, }
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\label{class_utilizador_ac5129216853e20609fee630a4214f116}
+
+
+Funcao que altera a data de acesso de um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & dia do ultimo acesso \\
+\hline
+{\em m} & dia do ultimo acesso \\
+\hline
+{\em a} & dia do ultimo acesso \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_utilizador_aa5ad3c6ed417e2b3aebc96bfa5432dfb}{}\index{Utilizador@{Utilizador}!set\+Email@{set\+Email}}
