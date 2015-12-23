@@ -7,7 +7,7 @@ Classe \hyperlink{class_membro}{Membro}. Classe que define os parametros necessa
 
 
 
-{\ttfamily \#include $<$Grupo.\+h$>$}
+{\ttfamily \#include $<$Membro.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -19,10 +19,12 @@ Classe \hyperlink{class_membro}{Membro}. Classe que define os parametros necessa
 \begin{DoxyCompactList}\small\item\em construtor \hyperlink{class_membro}{Membro}. Inicializa o \hyperlink{class_utilizador}{Utilizador} util com o utilizador dado, a \hyperlink{class_data}{Data} adesao\+Grupo com a data dada, e o boleano bloqueado a \textquotesingle{}false\textquotesingle{}. \end{DoxyCompactList}\item 
 string \hyperlink{class_membro_aa45e6c73454118f919a035bdf5df37e0}{get\+Login} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o login do \hyperlink{class_utilizador}{Utilizador} util. \end{DoxyCompactList}\item 
-\hyperlink{class_data}{Data} \hyperlink{class_membro_a7619c15445b61c099b0a6fcb1e5f9f51}{get\+Data} () const 
+\hyperlink{class_data}{Data} \hyperlink{class_membro_a0a8356290478242bfd2401749d924042}{get\+Data\+Criacao} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna a \hyperlink{class_data}{Data} de adesao do utilizador ao grupo. \end{DoxyCompactList}\item 
 \hyperlink{class_data}{Data} \hyperlink{class_membro_ab46a305310ad7f3ada262bc3a7229da0}{get\+Data\+Bloqueio} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que retorna a \hyperlink{class_data}{Data} de bloqueio do utilizador ao grupo. \end{DoxyCompactList}\item 
+void \hyperlink{class_membro_a2e1279ac44c40422dd632c0b0e7d9c57}{set\+Login} (string login)
+\begin{DoxyCompactList}\small\item\em Funcao que permite alterar o login do membro. \end{DoxyCompactList}\item 
 void \hyperlink{class_membro_a251129b637633510a9e08fe29cc7dfaa}{set\+Data} (\hyperlink{class_data}{Data} d)
 \begin{DoxyCompactList}\small\item\em Funcao que permite alterar a data inicial. \end{DoxyCompactList}\item 
 void \hyperlink{class_membro_a93771e7b02097f22334205ff5f97de42}{set\+Data\+Bloqueio} (\hyperlink{class_data}{Data} d)
@@ -68,20 +70,6 @@ construtor \hyperlink{class_membro}{Membro}. Inicializa o \hyperlink{class_utili
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_membro_a7619c15445b61c099b0a6fcb1e5f9f51}{}\index{Membro@{Membro}!get\+Data@{get\+Data}}
-\index{get\+Data@{get\+Data}!Membro@{Membro}}
-\subsubsection[{get\+Data() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Membro\+::get\+Data (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\label{class_membro_a7619c15445b61c099b0a6fcb1e5f9f51}
-
-
-Funcao que retorna a \hyperlink{class_data}{Data} de adesao do utilizador ao grupo. 
-
-\begin{DoxyReturn}{Returns}
-Adesao\+Grupo. 
-\end{DoxyReturn}
 \hypertarget{class_membro_ab46a305310ad7f3ada262bc3a7229da0}{}\index{Membro@{Membro}!get\+Data\+Bloqueio@{get\+Data\+Bloqueio}}
 \index{get\+Data\+Bloqueio@{get\+Data\+Bloqueio}!Membro@{Membro}}
 \subsubsection[{get\+Data\+Bloqueio() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Membro\+::get\+Data\+Bloqueio (
@@ -95,6 +83,20 @@ Funcao que retorna a \hyperlink{class_data}{Data} de bloqueio do utilizador ao g
 
 \begin{DoxyReturn}{Returns}
 bloqueio. 
+\end{DoxyReturn}
+\hypertarget{class_membro_a0a8356290478242bfd2401749d924042}{}\index{Membro@{Membro}!get\+Data\+Criacao@{get\+Data\+Criacao}}
+\index{get\+Data\+Criacao@{get\+Data\+Criacao}!Membro@{Membro}}
+\subsubsection[{get\+Data\+Criacao() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} Membro\+::get\+Data\+Criacao (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_membro_a0a8356290478242bfd2401749d924042}
+
+
+Funcao que retorna a \hyperlink{class_data}{Data} de adesao do utilizador ao grupo. 
+
+\begin{DoxyReturn}{Returns}
+Adesao\+Grupo. 
 \end{DoxyReturn}
 \hypertarget{class_membro_aa45e6c73454118f919a035bdf5df37e0}{}\index{Membro@{Membro}!get\+Login@{get\+Login}}
 \index{get\+Login@{get\+Login}!Membro@{Membro}}
@@ -205,6 +207,22 @@ Funcao que coloca uma nova data de bloqueio de um membro.
 {\em d} & \hyperlink{class_data}{Data} de bloqueio. \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_membro_a2e1279ac44c40422dd632c0b0e7d9c57}{}\index{Membro@{Membro}!set\+Login@{set\+Login}}
+\index{set\+Login@{set\+Login}!Membro@{Membro}}
+\subsubsection[{set\+Login(string login)}]{\setlength{\rightskip}{0pt plus 5cm}void Membro\+::set\+Login (
+\begin{DoxyParamCaption}
+\item[{string}]{login}
+\end{DoxyParamCaption}
+)}\label{class_membro_a2e1279ac44c40422dd632c0b0e7d9c57}
+
+
+Funcao que permite alterar o login do membro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & Novo login. \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Friends And Related Function Documentation}
@@ -227,5 +245,5 @@ out
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Grupo.\+h\item 
-Grupo.\+cpp\end{DoxyCompactItemize}
+Membro.\+h\item 
+Membro.\+cpp\end{DoxyCompactItemize}

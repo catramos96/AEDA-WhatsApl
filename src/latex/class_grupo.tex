@@ -18,7 +18,7 @@ int \hyperlink{class_grupo_a32080a4eae4ff9e2058d1ab8fe3e757f}{num\+Membros} () c
 \begin{DoxyCompactList}\small\item\em Funcao que retorna o numero de elementos do grupo. \end{DoxyCompactList}\item 
 bool \hyperlink{class_grupo_a9a9bedb25b3d23d366c84203d1998663}{is\+Moderador} (string m)
 \begin{DoxyCompactList}\small\item\em Funcao que indica se um utilizador e ou nao o mderador do grupo. \end{DoxyCompactList}\item 
-int \hyperlink{class_grupo_ae47743b312afead1d38b67e9a770dff4}{existe\+Membro} (\hyperlink{class_membro}{Membro} m)
+int \hyperlink{class_grupo_a559c71b65737b5ee32eb934ec818f7c0}{existe\+Membro} (\hyperlink{class_membro}{Membro} \&m)
 \begin{DoxyCompactList}\small\item\em Funcao que procura um membro no vetor \textquotesingle{}membros\textquotesingle{} através do metodo de pesquisa sequential search definido na header \hyperlink{_templates_8h_source}{Templates.\+h}. \end{DoxyCompactList}\item 
 \hyperlink{class_membro}{Membro} \hyperlink{class_grupo_a1c5a333df13698f6b0c6326b9ce76c50}{membro\+Na\+Posicao} (int pos)
 \begin{DoxyCompactList}\small\item\em Funcao que devolve o membro indicado na posicao \textquotesingle{}pos\textquotesingle{}. \end{DoxyCompactList}\item 
@@ -28,6 +28,9 @@ int \hyperlink{class_grupo_ae47743b312afead1d38b67e9a770dff4}{existe\+Membro} (\
 \hypertarget{class_grupo_aaea32821021b4a06faa11d906c84d409}{}void \hyperlink{class_grupo_aaea32821021b4a06faa11d906c84d409}{print\+Membros} () const \label{class_grupo_aaea32821021b4a06faa11d906c84d409}
 
 \begin{DoxyCompactList}\small\item\em Funcao que imprime os membros existentes no vetor \textquotesingle{}membros\textquotesingle{}. \end{DoxyCompactList}\item 
+\hypertarget{class_grupo_a63ce298ce3b10fe1d9bc69e42a03eb24}{}void \hyperlink{class_grupo_a63ce298ce3b10fe1d9bc69e42a03eb24}{print\+Topo} () const \label{class_grupo_a63ce298ce3b10fe1d9bc69e42a03eb24}
+
+\begin{DoxyCompactList}\small\item\em Funcao que imprime o topo da priority\+\_\+queue \textquotesingle{}msg\+Pendentes\textquotesingle{}. \end{DoxyCompactList}\item 
 bool \hyperlink{class_grupo_acbbc1d9ffef8f4d59564f31cc094c896}{adicionar\+Membro} (string novo, string moderador, \hyperlink{class_data}{Data} adesao)
 \begin{DoxyCompactList}\small\item\em Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um pedido de adesao. O surgimento de um novo membro e registado no membro-\/dado \textquotesingle{}status\textquotesingle{}. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe. \end{DoxyCompactList}\item 
 bool \hyperlink{class_grupo_a9b0aca29a05044b1bd8eb3b012950149}{pedido\+Adesao} (string novo, string moderador, \hyperlink{class_data}{Data} adesao, bool aceita)
@@ -62,7 +65,7 @@ void \hyperlink{class_grupo_ae358292c3dbb687910f0c4c365260a9c}{adicionar\+Pedido
 void \hyperlink{class_grupo_afb167f10ddb461bcc4c3020b8c57df69}{set\+Moderador} (string login, \hyperlink{class_data}{Data} dia\+Atual)
 \begin{DoxyCompactList}\small\item\em Funcao que altera o moderador. \end{DoxyCompactList}\item 
 void \hyperlink{class_grupo_a928e7d26214ada7c478d9959b7b63d1f}{coloca\+Membro} (\hyperlink{class_membro}{Membro} m)
-\begin{DoxyCompactList}\small\item\em Funcao que coloca um membro no vetor de membros. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Funcao que coloca um membro no vetor de membros, e retira algum que já exista com o mesmo login. \end{DoxyCompactList}\item 
 \hyperlink{class_data}{Data} \hyperlink{class_grupo_ad4d35197aece46eb8db303a5d5bc3b4a}{get\+Data\+Criacao} () const 
 \begin{DoxyCompactList}\small\item\em Funcao que devolve a data de criacao do grupo. \end{DoxyCompactList}\item 
 string \hyperlink{class_grupo_ae328509d175cc973dc22ee58f43af053}{get\+Moderador} () const 
@@ -72,7 +75,23 @@ vector$<$ \hyperlink{class_membro}{Membro} $>$ \hyperlink{class_grupo_a008d8a2e6
 \hyperlink{class_conversa}{Conversa} \hyperlink{class_grupo_a57909680047626c345dbcb59003ff95e}{get\+Conversa} () const 
 \begin{DoxyCompactList}\small\item\em funcao que retorna a conversa de grupo \end{DoxyCompactList}\item 
 vector$<$ string $>$ \hyperlink{class_grupo_a561a0d9dea5fa946fcb5c585aa715959}{get\+Pedidos} () const 
-\begin{DoxyCompactList}\small\item\em funcao que retorna os pedidos de adesao a um grupo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em funcao que retorna os pedidos de adesao a um grupo. \end{DoxyCompactList}\item 
+int \hyperlink{class_grupo_adb2761cfd9b937d9dec2c9615562f40b}{get\+Msg\+Pendentes\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o numero de mensagens pendentes na priority\+\_\+queue. \end{DoxyCompactList}\item 
+void \hyperlink{class_grupo_a5586891b5ee17123124b5d61da2983a6}{avalia\+Mensagem} (string moderador, bool aceita, bool censura)
+\begin{DoxyCompactList}\small\item\em Funcao que avalia uma mensagem que esteja na fila de prioridade. Esta funcao só pode ser usada pelo moderador. A avaliação permite escolher se coloca ou não a mensagem na conversa, e se é necessario ou não bloquear o emissor. \end{DoxyCompactList}\item 
+void \hyperlink{class_grupo_ad9facd7d0eb8da70b5ddde17579b036b}{coloca\+Msg\+Conversa} (\hyperlink{class_mensagem}{Mensagem} $\ast$sms)
+\begin{DoxyCompactList}\small\item\em Funcao apenas usada na leitura de ficheiros. Permite colocar diretamente uma mensagem num conversa sem passar pelo moderador. \end{DoxyCompactList}\item 
+\hyperlink{class_mensagem}{Mensagem} $\ast$ \hyperlink{class_grupo_ae32d99ed6b56befe41ebb648f88197de}{get\+Topo} () const 
+\begin{DoxyCompactList}\small\item\em Funcao que é apenas usada na escrita de ficheiro. \end{DoxyCompactList}\item 
+\hypertarget{class_grupo_adfdcca517d35841e8271caab08f32357}{}void \hyperlink{class_grupo_adfdcca517d35841e8271caab08f32357}{Msg\+Pendentes\+Pop} ()\label{class_grupo_adfdcca517d35841e8271caab08f32357}
+
+\begin{DoxyCompactList}\small\item\em Funcao apenas usada na escita de ficheiros. Faz pop do primeiro elemenro da priority\+\_\+queue. \end{DoxyCompactList}\item 
+void \hyperlink{class_grupo_a557be5c1c7dcc0c0832248f62fd609f2}{Msg\+Pendentes\+Push} (\hyperlink{class_mensagem}{Mensagem} $\ast$sms)
+\begin{DoxyCompactList}\small\item\em funcao que apenas é usada na escrita de ficheiros \end{DoxyCompactList}\item 
+\hypertarget{class_grupo_acfd7d2f762d26d234184140d3d1ffec2}{}void {\bfseries elimina\+Membro} (\hyperlink{class_membro}{Membro} m)\label{class_grupo_acfd7d2f762d26d234184140d3d1ffec2}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -145,6 +164,28 @@ Funcao que adiciona o pedido de adesao de um utilizador ao membro privado \textq
 {\em login} & Login do utilizador que quer pertencer ao grupo. \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_grupo_a5586891b5ee17123124b5d61da2983a6}{}\index{Grupo@{Grupo}!avalia\+Mensagem@{avalia\+Mensagem}}
+\index{avalia\+Mensagem@{avalia\+Mensagem}!Grupo@{Grupo}}
+\subsubsection[{avalia\+Mensagem(string moderador, bool aceita, bool censura)}]{\setlength{\rightskip}{0pt plus 5cm}void Grupo\+::avalia\+Mensagem (
+\begin{DoxyParamCaption}
+\item[{string}]{moderador, }
+\item[{bool}]{aceita, }
+\item[{bool}]{censura}
+\end{DoxyParamCaption}
+)}\label{class_grupo_a5586891b5ee17123124b5d61da2983a6}
+
+
+Funcao que avalia uma mensagem que esteja na fila de prioridade. Esta funcao só pode ser usada pelo moderador. A avaliação permite escolher se coloca ou não a mensagem na conversa, e se é necessario ou não bloquear o emissor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em moderador} & Único utilizador que pode aceder a este método. \\
+\hline
+{\em aceita} & True se a mensagem pode ser enviada para a conversa de grupo, ou false se não \\
+\hline
+{\em true} & Se é necessário bloquear o utilizador que mandou uma mensagem \char`\"{}ofensiva\char`\"{} \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_grupo_a9d9aaa23c2c01ec6cf71d642b5b1551c}{}\index{Grupo@{Grupo}!bloquear\+Membro@{bloquear\+Membro}}
 \index{bloquear\+Membro@{bloquear\+Membro}!Grupo@{Grupo}}
 \subsubsection[{bloquear\+Membro(string login, string moderador, Data dia\+Atual)}]{\setlength{\rightskip}{0pt plus 5cm}bool Grupo\+::bloquear\+Membro (
@@ -179,11 +220,27 @@ True se o membro e bloqueado com sucesso e false se o membro ja se encontra bloq
 )}\label{class_grupo_a928e7d26214ada7c478d9959b7b63d1f}
 
 
-Funcao que coloca um membro no vetor de membros. 
+Funcao que coloca um membro no vetor de membros, e retira algum que já exista com o mesmo login. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em m} & \hyperlink{class_membro}{Membro} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_grupo_ad9facd7d0eb8da70b5ddde17579b036b}{}\index{Grupo@{Grupo}!coloca\+Msg\+Conversa@{coloca\+Msg\+Conversa}}
+\index{coloca\+Msg\+Conversa@{coloca\+Msg\+Conversa}!Grupo@{Grupo}}
+\subsubsection[{coloca\+Msg\+Conversa(\+Mensagem $\ast$sms)}]{\setlength{\rightskip}{0pt plus 5cm}void Grupo\+::coloca\+Msg\+Conversa (
+\begin{DoxyParamCaption}
+\item[{{\bf Mensagem} $\ast$}]{sms}
+\end{DoxyParamCaption}
+)}\label{class_grupo_ad9facd7d0eb8da70b5ddde17579b036b}
+
+
+Funcao apenas usada na leitura de ficheiros. Permite colocar diretamente uma mensagem num conversa sem passar pelo moderador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_mensagem}{Mensagem}} & \hyperlink{class_mensagem}{Mensagem} que vai ser escrita \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_grupo_a8e58dce790752c7f19d67fabcc163ad3}{}\index{Grupo@{Grupo}!desbloquear\+Membro@{desbloquear\+Membro}}
@@ -233,13 +290,13 @@ Funcao que envia uma mensagem para a conversa de grupo. Gera excecoes se o utili
 \begin{DoxyReturn}{Returns}
 True em caso de sucesso ou false se insucesso. 
 \end{DoxyReturn}
-\hypertarget{class_grupo_ae47743b312afead1d38b67e9a770dff4}{}\index{Grupo@{Grupo}!existe\+Membro@{existe\+Membro}}
+\hypertarget{class_grupo_a559c71b65737b5ee32eb934ec818f7c0}{}\index{Grupo@{Grupo}!existe\+Membro@{existe\+Membro}}
 \index{existe\+Membro@{existe\+Membro}!Grupo@{Grupo}}
-\subsubsection[{existe\+Membro(\+Membro m)}]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::existe\+Membro (
+\subsubsection[{existe\+Membro(\+Membro \&m)}]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::existe\+Membro (
 \begin{DoxyParamCaption}
-\item[{{\bf Membro}}]{m}
+\item[{{\bf Membro} \&}]{m}
 \end{DoxyParamCaption}
-)}\label{class_grupo_ae47743b312afead1d38b67e9a770dff4}
+)}\label{class_grupo_a559c71b65737b5ee32eb934ec818f7c0}
 
 
 Funcao que procura um membro no vetor \textquotesingle{}membros\textquotesingle{} através do metodo de pesquisa sequential search definido na header \hyperlink{_templates_8h_source}{Templates.\+h}. 
@@ -308,6 +365,20 @@ Funcao que retorna o login do moderador.
 \begin{DoxyReturn}{Returns}
 login do moderador 
 \end{DoxyReturn}
+\hypertarget{class_grupo_adb2761cfd9b937d9dec2c9615562f40b}{}\index{Grupo@{Grupo}!get\+Msg\+Pendentes\+Size@{get\+Msg\+Pendentes\+Size}}
+\index{get\+Msg\+Pendentes\+Size@{get\+Msg\+Pendentes\+Size}!Grupo@{Grupo}}
+\subsubsection[{get\+Msg\+Pendentes\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::get\+Msg\+Pendentes\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_grupo_adb2761cfd9b937d9dec2c9615562f40b}
+
+
+Funcao que retorna o numero de mensagens pendentes na priority\+\_\+queue. 
+
+\begin{DoxyReturn}{Returns}
+Tamanho da priority\+\_\+queue 
+\end{DoxyReturn}
 \hypertarget{class_grupo_a561a0d9dea5fa946fcb5c585aa715959}{}\index{Grupo@{Grupo}!get\+Pedidos@{get\+Pedidos}}
 \index{get\+Pedidos@{get\+Pedidos}!Grupo@{Grupo}}
 \subsubsection[{get\+Pedidos() const }]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ Grupo\+::get\+Pedidos (
@@ -321,6 +392,20 @@ funcao que retorna os pedidos de adesao a um grupo.
 
 \begin{DoxyReturn}{Returns}
 pedidos de adesao a um grupo. 
+\end{DoxyReturn}
+\hypertarget{class_grupo_ae32d99ed6b56befe41ebb648f88197de}{}\index{Grupo@{Grupo}!get\+Topo@{get\+Topo}}
+\index{get\+Topo@{get\+Topo}!Grupo@{Grupo}}
+\subsubsection[{get\+Topo() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mensagem} $\ast$ Grupo\+::get\+Topo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_grupo_ae32d99ed6b56befe41ebb648f88197de}
+
+
+Funcao que é apenas usada na escrita de ficheiro. 
+
+\begin{DoxyReturn}{Returns}
+Devolve o topo da priority\+\_\+queue 
 \end{DoxyReturn}
 \hypertarget{class_grupo_a9a9bedb25b3d23d366c84203d1998663}{}\index{Grupo@{Grupo}!is\+Moderador@{is\+Moderador}}
 \index{is\+Moderador@{is\+Moderador}!Grupo@{Grupo}}
@@ -355,6 +440,22 @@ Funcao que devolve o membro indicado na posicao \textquotesingle{}pos\textquotes
 \begin{DoxyReturn}{Returns}
 \hyperlink{class_membro}{Membro} na posicao pos. 
 \end{DoxyReturn}
+\hypertarget{class_grupo_a557be5c1c7dcc0c0832248f62fd609f2}{}\index{Grupo@{Grupo}!Msg\+Pendentes\+Push@{Msg\+Pendentes\+Push}}
+\index{Msg\+Pendentes\+Push@{Msg\+Pendentes\+Push}!Grupo@{Grupo}}
+\subsubsection[{Msg\+Pendentes\+Push(\+Mensagem $\ast$sms)}]{\setlength{\rightskip}{0pt plus 5cm}void Grupo\+::\+Msg\+Pendentes\+Push (
+\begin{DoxyParamCaption}
+\item[{{\bf Mensagem} $\ast$}]{sms}
+\end{DoxyParamCaption}
+)}\label{class_grupo_a557be5c1c7dcc0c0832248f62fd609f2}
+
+
+funcao que apenas é usada na escrita de ficheiros 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sms} & \hyperlink{class_mensagem}{Mensagem} que vai ser colocada na priority\+\_\+queue \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_grupo_a32080a4eae4ff9e2058d1ab8fe3e757f}{}\index{Grupo@{Grupo}!num\+Membros@{num\+Membros}}
 \index{num\+Membros@{num\+Membros}!Grupo@{Grupo}}
 \subsubsection[{num\+Membros() const }]{\setlength{\rightskip}{0pt plus 5cm}int Grupo\+::num\+Membros (

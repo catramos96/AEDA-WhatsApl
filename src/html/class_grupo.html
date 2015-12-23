@@ -106,9 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9a9bedb25b3d23d366c84203d1998663"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a9a9bedb25b3d23d366c84203d1998663">isModerador</a> (string m)</td></tr>
 <tr class="memdesc:a9a9bedb25b3d23d366c84203d1998663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que indica se um utilizador e ou nao o mderador do grupo.  <a href="#a9a9bedb25b3d23d366c84203d1998663">More...</a><br /></td></tr>
 <tr class="separator:a9a9bedb25b3d23d366c84203d1998663"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae47743b312afead1d38b67e9a770dff4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#ae47743b312afead1d38b67e9a770dff4">existeMembro</a> (<a class="el" href="class_membro.html">Membro</a> m)</td></tr>
-<tr class="memdesc:ae47743b312afead1d38b67e9a770dff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que procura um membro no vetor 'membros' através do metodo de pesquisa sequential search definido na header <a class="el" href="_templates_8h_source.html">Templates.h</a>.  <a href="#ae47743b312afead1d38b67e9a770dff4">More...</a><br /></td></tr>
-<tr class="separator:ae47743b312afead1d38b67e9a770dff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a559c71b65737b5ee32eb934ec818f7c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a559c71b65737b5ee32eb934ec818f7c0">existeMembro</a> (<a class="el" href="class_membro.html">Membro</a> &amp;m)</td></tr>
+<tr class="memdesc:a559c71b65737b5ee32eb934ec818f7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que procura um membro no vetor 'membros' através do metodo de pesquisa sequential search definido na header <a class="el" href="_templates_8h_source.html">Templates.h</a>.  <a href="#a559c71b65737b5ee32eb934ec818f7c0">More...</a><br /></td></tr>
+<tr class="separator:a559c71b65737b5ee32eb934ec818f7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c5a333df13698f6b0c6326b9ce76c50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_membro.html">Membro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a1c5a333df13698f6b0c6326b9ce76c50">membroNaPosicao</a> (int pos)</td></tr>
 <tr class="memdesc:a1c5a333df13698f6b0c6326b9ce76c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que devolve o membro indicado na posicao 'pos'.  <a href="#a1c5a333df13698f6b0c6326b9ce76c50">More...</a><br /></td></tr>
 <tr class="separator:a1c5a333df13698f6b0c6326b9ce76c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,6 +120,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#aaea32821021b4a06faa11d906c84d409">printMembros</a> () const </td></tr>
 <tr class="memdesc:aaea32821021b4a06faa11d906c84d409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que imprime os membros existentes no vetor 'membros'. <br /></td></tr>
 <tr class="separator:aaea32821021b4a06faa11d906c84d409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ce298ce3b10fe1d9bc69e42a03eb24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63ce298ce3b10fe1d9bc69e42a03eb24"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a63ce298ce3b10fe1d9bc69e42a03eb24">printTopo</a> () const </td></tr>
+<tr class="memdesc:a63ce298ce3b10fe1d9bc69e42a03eb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que imprime o topo da priority_queue 'msgPendentes'. <br /></td></tr>
+<tr class="separator:a63ce298ce3b10fe1d9bc69e42a03eb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbbc1d9ffef8f4d59564f31cc094c896"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#acbbc1d9ffef8f4d59564f31cc094c896">adicionarMembro</a> (string novo, string moderador, <a class="el" href="class_data.html">Data</a> adesao)</td></tr>
 <tr class="memdesc:acbbc1d9ffef8f4d59564f31cc094c896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que adiciona um novo membro a um gupo mesmo que este nao tenha feito um pedido de adesao. O surgimento de um novo membro e registado no membro-dado 'status'. Gera excecoes quando o utilizador moderador nao e o moderador do grupo ou quando o utilizador nao existe.  <a href="#acbbc1d9ffef8f4d59564f31cc094c896">More...</a><br /></td></tr>
 <tr class="separator:acbbc1d9ffef8f4d59564f31cc094c896"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,7 +171,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memdesc:afb167f10ddb461bcc4c3020b8c57df69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que altera o moderador.  <a href="#afb167f10ddb461bcc4c3020b8c57df69">More...</a><br /></td></tr>
 <tr class="separator:afb167f10ddb461bcc4c3020b8c57df69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a928e7d26214ada7c478d9959b7b63d1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a928e7d26214ada7c478d9959b7b63d1f">colocaMembro</a> (<a class="el" href="class_membro.html">Membro</a> m)</td></tr>
-<tr class="memdesc:a928e7d26214ada7c478d9959b7b63d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que coloca um membro no vetor de membros.  <a href="#a928e7d26214ada7c478d9959b7b63d1f">More...</a><br /></td></tr>
+<tr class="memdesc:a928e7d26214ada7c478d9959b7b63d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que coloca um membro no vetor de membros, e retira algum que já exista com o mesmo login.  <a href="#a928e7d26214ada7c478d9959b7b63d1f">More...</a><br /></td></tr>
 <tr class="separator:a928e7d26214ada7c478d9959b7b63d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4d35197aece46eb8db303a5d5bc3b4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#ad4d35197aece46eb8db303a5d5bc3b4a">getDataCriacao</a> () const </td></tr>
 <tr class="memdesc:ad4d35197aece46eb8db303a5d5bc3b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que devolve a data de criacao do grupo.  <a href="#ad4d35197aece46eb8db303a5d5bc3b4a">More...</a><br /></td></tr>
@@ -184,6 +188,28 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memitem:a561a0d9dea5fa946fcb5c585aa715959"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a561a0d9dea5fa946fcb5c585aa715959">getPedidos</a> () const </td></tr>
 <tr class="memdesc:a561a0d9dea5fa946fcb5c585aa715959"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcao que retorna os pedidos de adesao a um grupo.  <a href="#a561a0d9dea5fa946fcb5c585aa715959">More...</a><br /></td></tr>
 <tr class="separator:a561a0d9dea5fa946fcb5c585aa715959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2761cfd9b937d9dec2c9615562f40b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#adb2761cfd9b937d9dec2c9615562f40b">getMsgPendentesSize</a> () const </td></tr>
+<tr class="memdesc:adb2761cfd9b937d9dec2c9615562f40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que retorna o numero de mensagens pendentes na priority_queue.  <a href="#adb2761cfd9b937d9dec2c9615562f40b">More...</a><br /></td></tr>
+<tr class="separator:adb2761cfd9b937d9dec2c9615562f40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5586891b5ee17123124b5d61da2983a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a5586891b5ee17123124b5d61da2983a6">avaliaMensagem</a> (string moderador, bool aceita, bool censura)</td></tr>
+<tr class="memdesc:a5586891b5ee17123124b5d61da2983a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que avalia uma mensagem que esteja na fila de prioridade. Esta funcao só pode ser usada pelo moderador. A avaliação permite escolher se coloca ou não a mensagem na conversa, e se é necessario ou não bloquear o emissor.  <a href="#a5586891b5ee17123124b5d61da2983a6">More...</a><br /></td></tr>
+<tr class="separator:a5586891b5ee17123124b5d61da2983a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9facd7d0eb8da70b5ddde17579b036b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#ad9facd7d0eb8da70b5ddde17579b036b">colocaMsgConversa</a> (<a class="el" href="class_mensagem.html">Mensagem</a> *sms)</td></tr>
+<tr class="memdesc:ad9facd7d0eb8da70b5ddde17579b036b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao apenas usada na leitura de ficheiros. Permite colocar diretamente uma mensagem num conversa sem passar pelo moderador.  <a href="#ad9facd7d0eb8da70b5ddde17579b036b">More...</a><br /></td></tr>
+<tr class="separator:ad9facd7d0eb8da70b5ddde17579b036b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae32d99ed6b56befe41ebb648f88197de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mensagem.html">Mensagem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#ae32d99ed6b56befe41ebb648f88197de">getTopo</a> () const </td></tr>
+<tr class="memdesc:ae32d99ed6b56befe41ebb648f88197de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que é apenas usada na escrita de ficheiro.  <a href="#ae32d99ed6b56befe41ebb648f88197de">More...</a><br /></td></tr>
+<tr class="separator:ae32d99ed6b56befe41ebb648f88197de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfdcca517d35841e8271caab08f32357"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfdcca517d35841e8271caab08f32357"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#adfdcca517d35841e8271caab08f32357">MsgPendentesPop</a> ()</td></tr>
+<tr class="memdesc:adfdcca517d35841e8271caab08f32357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao apenas usada na escita de ficheiros. Faz pop do primeiro elemenro da priority_queue. <br /></td></tr>
+<tr class="separator:adfdcca517d35841e8271caab08f32357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557be5c1c7dcc0c0832248f62fd609f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grupo.html#a557be5c1c7dcc0c0832248f62fd609f2">MsgPendentesPush</a> (<a class="el" href="class_mensagem.html">Mensagem</a> *sms)</td></tr>
+<tr class="memdesc:a557be5c1c7dcc0c0832248f62fd609f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcao que apenas é usada na escrita de ficheiros  <a href="#a557be5c1c7dcc0c0832248f62fd609f2">More...</a><br /></td></tr>
+<tr class="separator:a557be5c1c7dcc0c0832248f62fd609f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfd7d2f762d26d234184140d3d1ffec2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfd7d2f762d26d234184140d3d1ffec2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>eliminaMembro</b> (<a class="el" href="class_membro.html">Membro</a> m)</td></tr>
+<tr class="separator:acfd7d2f762d26d234184140d3d1ffec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe <a class="el" href="class_grupo.html" title="Classe Grupo. Classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador...">Grupo</a>. Classe que forma um grupo. Um grupo pode ter varios membros, mas apenas um moderador. O moderador e o utilizador que gere o grupo: permite aceitar pedidos de adesao ao grupo, retirar, bloquear ou desbloquear elementos, Um grupo tem um titulo e uma data de criacao. O utilizador moderador e o utilizador que cria o grupo, logo contem a mesma data de adesao que a data de criacao do grupo. Um grupo contem uma unica conversa que contem todos os utilizadores. No entanto podem estar bloqueados, pelo que nao podem enviar mensagens. </p>
@@ -298,6 +324,48 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
+<a class="anchor" id="a5586891b5ee17123124b5d61da2983a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grupo::avaliaMensagem </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>moderador</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aceita</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>censura</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao que avalia uma mensagem que esteja na fila de prioridade. Esta funcao só pode ser usada pelo moderador. A avaliação permite escolher se coloca ou não a mensagem na conversa, e se é necessario ou não bloquear o emissor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">moderador</td><td>Único utilizador que pode aceder a este método. </td></tr>
+    <tr><td class="paramname">aceita</td><td>True se a mensagem pode ser enviada para a conversa de grupo, ou false se não </td></tr>
+    <tr><td class="paramname">true</td><td>Se é necessário bloquear o utilizador que mandou uma mensagem "ofensiva" </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a9d9aaa23c2c01ec6cf71d642b5b1551c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -355,10 +423,34 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
       </table>
 </div><div class="memdoc">
 
-<p>Funcao que coloca um membro no vetor de membros. </p>
+<p>Funcao que coloca um membro no vetor de membros, e retira algum que já exista com o mesmo login. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">m</td><td><a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad9facd7d0eb8da70b5ddde17579b036b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grupo::colocaMsgConversa </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mensagem.html">Mensagem</a> *&#160;</td>
+          <td class="paramname"><em>sms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao apenas usada na leitura de ficheiros. Permite colocar diretamente uma mensagem num conversa sem passar pelo moderador. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_mensagem.html" title="Classe Mensagem. Cada Mensagem tem um id unico que representa o numero da mensgem, um membro que pode ser de um grupo ou individual (neste caso o membro apenas tem login), e uma data e hora de envio. Cada Mensagem pode ainda ser de texto, video ou imagem. ">Mensagem</a></td><td><a class="el" href="class_mensagem.html" title="Classe Mensagem. Cada Mensagem tem um id unico que representa o numero da mensgem, um membro que pode ser de um grupo ou individual (neste caso o membro apenas tem login), e uma data e hora de envio. Cada Mensagem pode ainda ser de texto, video ou imagem. ">Mensagem</a> que vai ser escrita </td></tr>
   </table>
   </dd>
 </dl>
@@ -436,7 +528,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">emissor</td><td>Login do utilizador que envia a mensagem. </td></tr>
-    <tr><td class="paramname">*sms</td><td><a class="el" href="class_mensagem.html" title="Classe Mensagem. Cada Mensagem tem um id unico que representa o numero da mensgem. Cata Mensagem pode ainda ser de texto, video ou imagem. ">Mensagem</a> que vai ser enviada, </td></tr>
+    <tr><td class="paramname">*sms</td><td><a class="el" href="class_mensagem.html" title="Classe Mensagem. Cada Mensagem tem um id unico que representa o numero da mensgem, um membro que pode ser de um grupo ou individual (neste caso o membro apenas tem login), e uma data e hora de envio. Cada Mensagem pode ainda ser de texto, video ou imagem. ">Mensagem</a> que vai ser enviada, </td></tr>
   </table>
   </dd>
 </dl>
@@ -444,14 +536,14 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
-<a class="anchor" id="ae47743b312afead1d38b67e9a770dff4"></a>
+<a class="anchor" id="a559c71b65737b5ee32eb934ec818f7c0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int Grupo::existeMembro </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_membro.html">Membro</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_membro.html">Membro</a> &amp;&#160;</td>
           <td class="paramname"><em>m</em></td><td>)</td>
           <td></td>
         </tr>
@@ -541,6 +633,24 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
+<a class="anchor" id="adb2761cfd9b937d9dec2c9615562f40b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Grupo::getMsgPendentesSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao que retorna o numero de mensagens pendentes na priority_queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>Tamanho da priority_queue </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a561a0d9dea5fa946fcb5c585aa715959"></a>
 <div class="memitem">
 <div class="memproto">
@@ -556,6 +666,24 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 <p>funcao que retorna os pedidos de adesao a um grupo. </p>
 <dl class="section return"><dt>Returns</dt><dd>pedidos de adesao a um grupo. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae32d99ed6b56befe41ebb648f88197de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_mensagem.html">Mensagem</a> * Grupo::getTopo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao que é apenas usada na escrita de ficheiro. </p>
+<dl class="section return"><dt>Returns</dt><dd>Devolve o topo da priority_queue </dd></dl>
 
 </div>
 </div>
@@ -600,6 +728,30 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_membro.html" title="Classe Membro. Classe que define os parametros necessarios para um utilizador estar num grupo...">Membro</a> na posicao pos. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a557be5c1c7dcc0c0832248f62fd609f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grupo::MsgPendentesPush </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mensagem.html">Mensagem</a> *&#160;</td>
+          <td class="paramname"><em>sms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcao que apenas é usada na escrita de ficheiros </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sms</td><td><a class="el" href="class_mensagem.html" title="Classe Mensagem. Cada Mensagem tem um id unico que representa o numero da mensgem, um membro que pode ser de um grupo ou individual (neste caso o membro apenas tem login), e uma data e hora de envio. Cada Mensagem pode ainda ser de texto, video ou imagem. ">Mensagem</a> que vai ser colocada na priority_queue </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

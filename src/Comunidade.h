@@ -16,7 +16,7 @@ struct hUtilizadoresInativos
 {
 	int operator()(const Utilizador* u) const
 	{
-		return u->getLogin();
+		return u->inativo();
 	}
 
 	bool operator()(const Utilizador* u1, const Utilizador* u2) const
@@ -50,7 +50,7 @@ public:
    * @
    * @ return void
    */
-  void loadUtilizadoresInativos();
+  void updateUtilizadoresInativos();
   /**
    * @ brief Funcao que imprime todos os utilizadores inativos à mais de 30 dias
    * @
@@ -63,6 +63,13 @@ public:
    * @ return posicao
    */
   int existeUtil(Utilizador *util) const;
+
+  /**
+   * @ brief Funcao que verifica a existencia de um certo utilizador na tabela de dispersao
+   * @ param util : indica o utilizador
+   * @ return posicao
+   */
+  int existeUtilInativo(Utilizador *util) const;
 
   /**
   * @brief Funcao que procura um utilizador na comunidade pelo login

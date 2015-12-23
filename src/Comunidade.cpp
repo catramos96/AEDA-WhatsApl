@@ -7,7 +7,8 @@
 #include "Comunidade.h"
 #include "Templates.h"
 #include "Excecoes.h"
-
+#include <tr1/unordered_set>
+using namespace std;
 /********************************
 *		CLASSE COMUNIDADE		*
 *******************************/
@@ -15,28 +16,53 @@ Comunidade::Comunidade() {
   comunidade.clear(); //inicializar o vetor
 }
 
-void Comunidade::loadUtilizadoresInativos(){
-	for (size_t i=0;i<comunidade.size();i++){
-		if(comunidade[i]->inativo()>30){
+void Comunidade::updateUtilizadoresInativos() {
+	for (size_t i = 0; i < comunidade.size(); i++) {
+		if (comunidade[i]->inativo() > 30) {
 			utilizadoresInativos.insert(comunidade[i]);
+			comunidade.erase(comunidade.begin()+i);
 		}
+	}
+
+	tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::iterator it = utilizadoresInativos.begin();
+	while (it != utilizadoresInativos.end()) {
+		if((*it)->inativo() < 30 ){
+			Utilizador * u = new Utilizador();
+			u = (*it);
+			utilizadoresInativos.erase((*it));
+			comunidade.push_back(u);
+		}
+		it++;
 	}
 }
 
 void Comunidade::printUtilizadoresInativos() const{
-	tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::iterator it =utilizadoresInativos.begin();
+	tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::const_iterator it = utilizadoresInativos.begin();
 	while(it!=utilizadoresInativos.end()){
 		(*it)->imprimirUtilizador();
+		cout<<endl;
 		it++;
 	}
 }
 
 int Comunidade::existeUtil(Utilizador *util) const {
-  for (unsigned int i = 0; i < comunidade.size(); i++) {
-    if (*comunidade[i] == *util)
-      return i;
-  }
-  return -1;
+	for (unsigned int i = 0; i < comunidade.size(); i++) {
+		if (*comunidade[i] == *util)
+			return i;
+	}
+	return -1;
+}
+
+int Comunidade::existeUtilInativo(Utilizador *util) const{
+	Utilizador *u = new Utilizador();
+	tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::const_iterator it = utilizadoresInativos.begin();
+	while(it!=utilizadoresInativos.end()){
+		u=(*it);
+		if(*u==*util)
+			return 1;
+		it++;
+	}
+	return -1;
 }
 
 int Comunidade::existeUtilLogin(string login) const {
@@ -70,6 +96,8 @@ bool Comunidade::existeLogin(string l) const {
   u->setLogin(l);
   if (existeUtil(u) == -1)
     return true;
+  else if(existeUtilInativo(u)==-1)
+	return true;
   else
     throw UtilizadorJaExiste(u->getLogin());
 }
@@ -79,8 +107,11 @@ Utilizador *Comunidade::utilizadorNaPosicao(int pos) const {
 }
 
 void Comunidade::adicionarUtil(Utilizador *util) {
-  if (existeUtil(util) == -1) {
-    comunidade.push_back(util);
+  if (existeUtil(util) == -1 && existeUtilInativo(util)==-1) {
+	  if(util->inativo() >30)
+		  utilizadoresInativos.insert(util);
+	  else
+		  comunidade.push_back(util);
   }
   else
     throw UtilizadorJaExiste(util->getLogin());
@@ -103,24 +134,41 @@ void Comunidade::ordenaLogin() {
 }
 
 void Comunidade::verUtilizador(Utilizador *util) const {
-  Utilizador *u = new Utilizador();
-  int i = existeUtil(util);
-  if (i != -1)
-    u = utilizadorNaPosicao(i);
-  else
-    throw UtilizadorInexistente((*util).getLogin());
+	Utilizador *u = new Utilizador();
+	Utilizador *x = new Utilizador();
+	int i = existeUtil(util);
+	if (i != -1)
+		u = utilizadorNaPosicao(i);
+	else if (existeUtilInativo(util) != -1) {
+		tr1::unordered_set<Utilizador*, hUtilizadoresInativos,
+				hUtilizadoresInativos>::const_iterator it =
+				utilizadoresInativos.begin();
+		while (it != utilizadoresInativos.end()) {
+			x=(*it);
+			if (*x == *util)
+				(*it)->imprimirUtilizador();
+			it++;
+		}
+	}
 
-  u->imprimirUtilizador();
+	else
+		throw UtilizadorInexistente((*util).getLogin());
+
+	u->imprimirUtilizador();
 }
 
 void Comunidade::printComunidade() const {
-  for (unsigned int i = 0; i < comunidade.size(); i++)
-    cout << *comunidade.at(i) << endl;
+	cout << "UTILIZADORES ATIVOS:" << endl;
+	for (unsigned int i = 0; i < comunidade.size(); i++) {
+		cout << *comunidade.at(i) << endl;
+	}
+	cout << "UTILIZADORES INATIVOS:" << endl;
+	printUtilizadoresInativos();
 }
 
 void Comunidade::leUtilizador(string path) {
 
-	int d, m, a, h, min, num, pos, bloq;
+	int d, m, a, h, min, num, pos, bloq,d1,m1,a1;
 	string titulo, moderador, novo;
 	bool flag3 = true;
 	vector<string> amigos; //amigos de 1 utilizador
@@ -135,7 +183,11 @@ void Comunidade::leUtilizador(string path) {
 		{
 			Utilizador *u = new Utilizador;
 			getline(util, line);
-			u->setNome(line);	//nome
+			if(line == "")
+				break;
+			else{
+				u->setNome(line);	//nome
+			}
 			getline(util, line);
 			u->setLogin(line);	//login
 			getline(util, line);
@@ -149,6 +201,13 @@ void Comunidade::leUtilizador(string path) {
 			getline(util, line);
 			a = atoi(line.c_str());
 			u->setData(d, m, a);	//data
+			getline(util, line);
+			d1 = atoi(line.c_str());
+			getline(util, line);
+			m1 = atoi(line.c_str());
+			getline(util, line);
+			a1 = atoi(line.c_str());
+			u->setDataAcesso(d1,m1,a1);	//ultimo acesso
 			getline(util, line);
 			u->setIdade(atoi(line.c_str()));	//idade
 			while (flag3) { //amigos
@@ -695,6 +754,9 @@ int Comunidade::escreveUtilizador(string path) {
 			myfile << comunidade.at(i)->getDataAdesao().getDia() << endl;
 			myfile << comunidade.at(i)->getDataAdesao().getMes() << endl;
 			myfile << comunidade.at(i)->getDataAdesao().getAno() << endl;
+			myfile << comunidade.at(i)->getUltimoAcesso().getDia() << endl;
+			myfile << comunidade.at(i)->getUltimoAcesso().getMes() << endl;
+			myfile << comunidade.at(i)->getUltimoAcesso().getAno() << endl;
 			myfile << comunidade.at(i)->getIdade() << endl;
 
 			for (size_t j = 0; j < comunidade.at(i)->getAmigos().size(); j++)
@@ -702,12 +764,35 @@ int Comunidade::escreveUtilizador(string path) {
 			myfile << "-" << endl;
 
 			if (comunidade.at(i)->getVisibilidade())
-				myfile << "1";
+				myfile << "1" << endl;
 			else
-				myfile << "0";
+				myfile << "0" << endl;
 
-			if (i != comunidade.size() - 1)
-				myfile << endl;
+		}
+		tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::const_iterator it = utilizadoresInativos.begin();
+			while(it!=utilizadoresInativos.end()){
+			myfile << (*it)->getNome() << endl;
+			myfile << (*it)->getLogin() << endl;
+			myfile << (*it)->getEmail() << endl;
+			myfile << (*it)->getTelemovel() << endl;
+			myfile << (*it)->getDataAdesao().getDia() << endl;
+			myfile << (*it)->getDataAdesao().getMes() << endl;
+			myfile << (*it)->getDataAdesao().getAno() << endl;
+			myfile << (*it)->getUltimoAcesso().getDia() << endl;
+			myfile << (*it)->getUltimoAcesso().getMes() << endl;
+			myfile << (*it)->getUltimoAcesso().getAno() << endl;
+			myfile << (*it)->getIdade() << endl;
+
+			for (size_t j = 0; j < (*it)->getAmigos().size(); j++)
+				myfile << (*it)->getAmigos().at(j)->getLogin() << endl;
+			myfile << "-" << endl;
+
+			if ((*it)->getVisibilidade())
+				myfile << "1" << endl;
+			else
+				myfile << "0" << endl;
+
+			it++;
 		}
 		myfile.close();
 	}
@@ -1019,7 +1104,7 @@ int Comunidade::escreveGrupo(string path) {
 
 BST<Utilizador> Comunidade::topUtilizadores() const{
   Data d(1, 1, 1);
-  Utilizador u(1, "", "", "", d, 0, 18);
+  Utilizador u(1, "", "", "", d,d, 0, 18);
   BST<Utilizador> arvore(u);
   vector<Utilizador *>::const_iterator it = comunidade.begin();
 

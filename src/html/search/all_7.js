@@ -10,6 +10,7 @@ var searchData=
   ['imprimirmsg',['imprimirMsg',['../class_mensagem.html#a4490a1cfe88288fa1ff4b41327e769ed',1,'Mensagem::imprimirMsg()'],['../class_msg_texto.html#ac621ebd05f2c55fcfe9746ff402ab26b',1,'MsgTexto::imprimirMsg()'],['../class_msg_video.html#a9073f476d181d88e03c6cbf4c283533d',1,'MsgVideo::imprimirMsg()'],['../class_msg_imagem.html#a70e0cf4e47ecaee095501d211e010e27',1,'MsgImagem::imprimirMsg()']]],
   ['imprimirparticipantes',['imprimirParticipantes',['../class_conversa.html#a6c783d4e16c1e7c76406eedbccd13da8',1,'Conversa::imprimirParticipantes()'],['../class_conversa_ja_existe.html#ad830cc518411774efe43885cb3003371',1,'ConversaJaExiste::imprimirParticipantes()']]],
   ['imprimirutilizador',['imprimirUtilizador',['../class_utilizador.html#abf2814a0783cdc5ef39326981474767b',1,'Utilizador']]],
+  ['inativo',['inativo',['../class_utilizador.html#a3b85c70373abad979a9dea909772efa3',1,'Utilizador']]],
   ['inputfail',['InputFail',['../class_input_fail.html',1,'']]],
   ['isbloqueado',['isBloqueado',['../class_membro.html#a4fee0ae7563027e70cf03456e74feffc',1,'Membro']]],
   ['ismoderador',['isModerador',['../class_grupo.html#a9a9bedb25b3d23d366c84203d1998663',1,'Grupo']]]

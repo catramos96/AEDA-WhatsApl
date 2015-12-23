@@ -65,6 +65,9 @@ Utilizador * login(Comunidade *c) {
   }
   else
     throw UtilizadorInexistente(u->getLogin());
+
+  u->setDataAcesso(dataHoje.getDia(),dataHoje.getMes(),dataHoje.getAno());
+  c->updateUtilizadoresInativos();
   return u;
 }
 
@@ -101,7 +104,7 @@ void registar(Comunidade *c) {
   cout << "Perfil publico/privado (1/0): ";
   input<bool>(vis);
 
-  Utilizador * u = new Utilizador(vis, login, nome, email, dA, telemovel,
+  Utilizador * u = new Utilizador(vis, login, nome, email, dA,dataHoje, telemovel,
     idade);
   c->adicionarUtil(u);
 }
@@ -113,7 +116,7 @@ void registar(Comunidade *c) {
 void comunidade(Comunidade *c) {
   menuComunidade();
   int op;
-  opccao(op, 1, 4);
+  opccao(op, 1, 5);
 
   clrscr();
 
@@ -126,13 +129,18 @@ void comunidade(Comunidade *c) {
     c->ordenaData();
     break;
   }
-  case 4:
+  case 5:
     throw VoltarAtras();
   }
 
   if (op == 3) {
     header("Top Utilizadores");
     c->displayTopUtilizadores();
+  }
+  if(op==4){
+	header("Utilizadores Inativos");
+	c->updateUtilizadoresInativos();
+	c->printUtilizadoresInativos();
   }
   else {
     menuComunidadeOrdenada();
@@ -1062,6 +1070,7 @@ int main() {
   c->leConversa(pathConversas);
   c->leGrupo(pathGrupos);
 
+
   int d, m, a;
   clrscr();
   header("Loading ...");
@@ -1070,7 +1079,7 @@ int main() {
   dataHoje.setData(d, m, a); //variavel estática de main.cpp
   atualData(dataHoje); //variavel estática de utilizador.cpp
   clrscr();
-
+  //c->updateUtilizadoresInativos();
 
   while (1) {
     u = MenuInicial(c);

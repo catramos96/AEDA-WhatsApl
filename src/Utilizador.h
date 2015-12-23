@@ -53,7 +53,7 @@ public:
   * @param telemovel do utilizador
   * @param idade do utilizador
   */
-  Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao, int telemovel, int idade);
+  Utilizador(bool visibilidade, string login, string nome, string email, Data dataAdesao,Data ultimoAcesso, int telemovel, int idade);
   
   /*****************************************************************
   *                             GETS                               *
@@ -195,6 +195,13 @@ public:
   * @param a ano de adesao
   */
   void setData(int d, int m, int a);
+  /**
+   * @brief Funcao que altera a data de acesso de um utilizador
+   * @param d dia do ultimo acesso
+   * @param m dia do ultimo acesso
+   * @param a dia do ultimo acesso
+   */
+   void setDataAcesso(int d, int m, int a);
 
   /*****************************************************************
   *                             ADDS                               *
@@ -452,7 +459,7 @@ public:
   *
   * @ return booleano
   */
-  int inativo();
+  int inativo() const;
 };
 
 #endif /* SRC_UTILIZADOR_H_ */
