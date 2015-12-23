@@ -50,7 +50,7 @@ public:
    * @
    * @ return void
    */
-  void loadUtilizadoresInativos();
+  void updateUtilizadoresInativos();
   /**
    * @ brief Funcao que imprime todos os utilizadores inativos à mais de 30 dias
    * @

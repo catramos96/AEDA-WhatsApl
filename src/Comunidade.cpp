@@ -16,11 +16,23 @@ Comunidade::Comunidade() {
   comunidade.clear(); //inicializar o vetor
 }
 
-void Comunidade::loadUtilizadoresInativos(){
-	for (size_t i=0;i<comunidade.size();i++){
-		if(comunidade[i]->inativo()>30){
+void Comunidade::updateUtilizadoresInativos() {
+	for (size_t i = 0; i < comunidade.size(); i++) {
+		if (comunidade[i]->inativo() > 30) {
 			utilizadoresInativos.insert(comunidade[i]);
+			//comunidade.erase(comunidade.begin()+i);
 		}
+	}
+
+	tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::iterator it = utilizadoresInativos.begin();
+	while (it != utilizadoresInativos.end()) {
+		if((*it)->inativo() < 30 ){
+			Utilizador * u = new Utilizador();
+			u = (*it);
+			utilizadoresInativos.erase((*it));
+			//comunidade.push_back(u);
+		}
+		it++;
 	}
 }
 
@@ -33,11 +45,11 @@ void Comunidade::printUtilizadoresInativos() const{
 }
 
 int Comunidade::existeUtil(Utilizador *util) const {
-  for (unsigned int i = 0; i < comunidade.size(); i++) {
-    if (*comunidade[i] == *util)
-      return i;
-  }
-  return -1;
+	for (unsigned int i = 0; i < comunidade.size(); i++) {
+		if (*comunidade[i] == *util)
+			return i;
+	}
+	return -1;
 }
 
 int Comunidade::existeUtilLogin(string login) const {

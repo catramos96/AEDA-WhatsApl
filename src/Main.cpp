@@ -67,6 +67,7 @@ Utilizador * login(Comunidade *c) {
     throw UtilizadorInexistente(u->getLogin());
 
   u->setDataAcesso(dataHoje.getDia(),dataHoje.getMes(),dataHoje.getAno());
+  //c->updateUtilizadoresInativos();
   return u;
 }
 
@@ -138,6 +139,7 @@ void comunidade(Comunidade *c) {
   }
   if(op==4){
 	header("Utilizadores Inativos");
+	c->updateUtilizadoresInativos();
 	c->printUtilizadoresInativos();
   }
   else {
@@ -1077,7 +1079,7 @@ int main() {
   dataHoje.setData(d, m, a); //variavel estática de main.cpp
   atualData(dataHoje); //variavel estática de utilizador.cpp
   clrscr();
-  c->loadUtilizadoresInativos();
+  //c->updateUtilizadoresInativos();
 
   while (1) {
     u = MenuInicial(c);
