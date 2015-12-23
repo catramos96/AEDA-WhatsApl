@@ -1,5 +1,5 @@
 #include <iostream>
-#include <windows.h>
+//#include <windows.h>
 #include "System.h"
 #include "Utilizador.h"
 #include "Comunidade.h"
