@@ -127,30 +127,47 @@ bool datasTresDias(Data d1, Data d2) {
   int dia1 = d1.getDia();
   int dia2 = d2.getDia();
 
-  if (ano1 == ano2 && mes1 == mes2 && abs(dia1 - dia2 <= 2))
+//apenas dias diferentes
+  if (ano1 == ano2 && mes1 == mes2 && abs(dia1 - dia2) <= 2)
     return true;
+  //meses diferentes
   else if (ano1 == ano2 && abs(mes1 - mes2) == 1) {
     switch (mes1)
     {
     case 1: case 3: case 5: case 7: case 8: case 10: case 12: {
-      if (dia1 >= 30 && dia2 <= 2 && (dia1 + dia2 >= 32))
+      if ((dia1 >= 30 && dia2 == 1) || (dia1 == 31 && dia2 <= 2))
         return true;
       break;
     }
     case 4: case 6: case 9: case 11: {
-      if (dia1 >= 29 && dia2 <= 2 && (dia1 + dia2 >= 31))
+      if (dia1 == 30 && dia2 <= 2)
+        return true;
+      else if (dia1 >= 29 && dia2 == 1)
         return true;
       break;
     }
-    case 2: {
-      if (dia1 >= 27 && dia2 <= 2 && (dia1 + dia2 >= 29))
+    case 2: { 
+      if (ano1 % 4 != 0) {
+        if(dia1 >= 27 && dia2 == 1)
+          return true;
+        else if (dia1 == 28 && dia2 <= 2)
         return true;
+      }
+      else {
+        if (dia1 >= 28 && dia2 == 1)
+          return true;
+        else if (dia1 == 29 && dia2 <= 2)
+          return true;
+      }
       break;
     }
     }
+    return false;
   }
-  else if (abs(ano1 - ano2) == 1 && mes1 == 12 && (mes2 == 1 && mes2 == 01) && dia1 >= 30 && dia2 <= 2 && (dia1 + dia2) >= 32)
+  //anos diferentes
+  else if (abs(ano1 - ano2) == 1 && mes1 == 12 && (mes2 == 1 && mes2 == 01) && ((dia1 >= 30 && dia2 == 1) || (dia1 == 31 && dia2 <= 2)))
     return true;
+
   else
     return false;
 }

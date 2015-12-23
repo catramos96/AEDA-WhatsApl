@@ -908,6 +908,8 @@ void opccaoMenuUtilizador(Utilizador *u, Comunidade *c, int op) {
     cout << "Numero de sms: " << u->getNumMsg3dias() << endl;
     cout << "Numero de grupos: " << u->getGrupos().size() << endl << endl;
 
+    cout << "Numero de sms: " << u->getNumMsg3dias() << endl << endl;
+
     esperar();
     break;
   }
@@ -1074,7 +1076,6 @@ int main() {
   c->leConversa(pathConversas);
   c->leGrupo(pathGrupos);
 
-
   int d, m, a;
   clrscr();
   header("Loading ...");
@@ -1084,7 +1085,7 @@ int main() {
   atualData(dataHoje); //variavel estática de utilizador.cpp
   clrscr();
   //c->updateUtilizadoresInativos();
-
+  
   while (1) {
     u = MenuInicial(c);
     clrscr();
