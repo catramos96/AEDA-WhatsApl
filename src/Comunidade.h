@@ -6,6 +6,7 @@
 #include <vector>
 //#include <tr1/unordered_set> //para eclipse
 #include <unordered_set> //para visual studio
+
 using namespace std;
 
 /**

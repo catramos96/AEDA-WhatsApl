@@ -141,7 +141,7 @@ void comunidade(Comunidade *c) {
     header("Top Utilizadores");
     c->displayTopUtilizadores();
   }
-  if(op==4){
+  else if(op==4){
 	header("Utilizadores Inativos");
 	c->updateUtilizadoresInativos();
 	c->printUtilizadoresInativos();
