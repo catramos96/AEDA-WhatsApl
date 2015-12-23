@@ -65,6 +65,13 @@ public:
   int existeUtil(Utilizador *util) const;
 
   /**
+   * @ brief Funcao que verifica a existencia de um certo utilizador na tabela de dispersao
+   * @ param util : indica o utilizador
+   * @ return posicao
+   */
+  int existeUtilInativo(Utilizador *util) const;
+
+  /**
   * @brief Funcao que procura um utilizador na comunidade pelo login
   * @param login Login do utilizador
   * @return posicao

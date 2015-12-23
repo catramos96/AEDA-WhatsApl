@@ -10,6 +10,7 @@ var searchData=
   ['existelogin',['existeLogin',['../class_comunidade.html#a5455ec3855626919ba1b4d919e38132f',1,'Comunidade']]],
   ['existemembro',['existeMembro',['../class_grupo.html#a559c71b65737b5ee32eb934ec818f7c0',1,'Grupo']]],
   ['existeutil',['existeUtil',['../class_comunidade.html#accf146332d17ad07080bcee3bb2a727c',1,'Comunidade']]],
+  ['existeutilinativo',['existeUtilInativo',['../class_comunidade.html#a06eaa5c8649c2c5c6e52f01f12bddfdd',1,'Comunidade']]],
   ['existeutillogin',['existeUtilLogin',['../class_comunidade.html#a467973e3790e6fdd832bb9702eb635bb',1,'Comunidade']]],
   ['existeutilnome',['existeUtilNome',['../class_comunidade.html#a8c7188c4db52d049b25b158497ac8c14',1,'Comunidade']]]
 ];

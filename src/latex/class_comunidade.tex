@@ -21,6 +21,8 @@ void \hyperlink{class_comunidade_a6672ca4af496637a47f1c72e9b038a13}{print\+Utili
 \item 
 int \hyperlink{class_comunidade_accf146332d17ad07080bcee3bb2a727c}{existe\+Util} (\hyperlink{class_utilizador}{Utilizador} $\ast$util) const 
 \item 
+int \hyperlink{class_comunidade_a06eaa5c8649c2c5c6e52f01f12bddfdd}{existe\+Util\+Inativo} (\hyperlink{class_utilizador}{Utilizador} $\ast$util) const 
+\item 
 int \hyperlink{class_comunidade_a467973e3790e6fdd832bb9702eb635bb}{existe\+Util\+Login} (string login) const 
 \begin{DoxyCompactList}\small\item\em Funcao que procura um utilizador na comunidade pelo login. \end{DoxyCompactList}\item 
 int \hyperlink{class_comunidade_a8c7188c4db52d049b25b158497ac8c14}{existe\+Util\+Nome} (string nome) const 
@@ -161,7 +163,14 @@ true se já existe, false se nao
 \item[{{\bf Utilizador} $\ast$}]{util}
 \end{DoxyParamCaption}
 ) const}\label{class_comunidade_accf146332d17ad07080bcee3bb2a727c}
-@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o utilizador @ return posicao \hypertarget{class_comunidade_a467973e3790e6fdd832bb9702eb635bb}{}\index{Comunidade@{Comunidade}!existe\+Util\+Login@{existe\+Util\+Login}}
+@ brief Funcao que verifica a existencia de um certo utilizador @ param util \+: indica o utilizador @ return posicao \hypertarget{class_comunidade_a06eaa5c8649c2c5c6e52f01f12bddfdd}{}\index{Comunidade@{Comunidade}!existe\+Util\+Inativo@{existe\+Util\+Inativo}}
+\index{existe\+Util\+Inativo@{existe\+Util\+Inativo}!Comunidade@{Comunidade}}
+\subsubsection[{existe\+Util\+Inativo(\+Utilizador $\ast$util) const }]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::existe\+Util\+Inativo (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilizador} $\ast$}]{util}
+\end{DoxyParamCaption}
+) const}\label{class_comunidade_a06eaa5c8649c2c5c6e52f01f12bddfdd}
+@ brief Funcao que verifica a existencia de um certo utilizador na tabela de dispersao @ param util \+: indica o utilizador @ return posicao \hypertarget{class_comunidade_a467973e3790e6fdd832bb9702eb635bb}{}\index{Comunidade@{Comunidade}!existe\+Util\+Login@{existe\+Util\+Login}}
 \index{existe\+Util\+Login@{existe\+Util\+Login}!Comunidade@{Comunidade}}
 \subsubsection[{existe\+Util\+Login(string login) const }]{\setlength{\rightskip}{0pt plus 5cm}int Comunidade\+::existe\+Util\+Login (
 \begin{DoxyParamCaption}

@@ -67,7 +67,7 @@ Utilizador * login(Comunidade *c) {
     throw UtilizadorInexistente(u->getLogin());
 
   u->setDataAcesso(dataHoje.getDia(),dataHoje.getMes(),dataHoje.getAno());
-  //c->updateUtilizadoresInativos();
+  c->updateUtilizadoresInativos();
   return u;
 }
 
