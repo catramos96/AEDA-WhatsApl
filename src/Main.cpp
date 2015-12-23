@@ -50,7 +50,7 @@ void opccao(int &op, int min, int max) {
 */
 Utilizador * login(Comunidade *c) {
   string login;
-  int i, op;
+  int i,j, op;
   Utilizador * u = new Utilizador();
 
   header("LOGIN");
@@ -59,10 +59,14 @@ Utilizador * login(Comunidade *c) {
   cin >> login;
   u->setLogin(login);
   i = c->existeUtil(u);
-  if (i != -1) {
+  j = c->existeUtilInativo(u);
+ if (i != -1) { //o utilizador estava na comunidade
     u = c->utilizadorNaPosicao(i);
     cout << i;
   }
+ else if(j == 1){
+	 u = c->devolveUtilizadorInativo(login);
+ }
   else
     throw UtilizadorInexistente(u->getLogin());
 

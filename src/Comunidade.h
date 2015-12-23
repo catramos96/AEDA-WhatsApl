@@ -4,7 +4,8 @@
 #include "Utilizador.h"
 #include "BST.h"
 #include <vector>
-#include <tr1/unordered_set>
+//#include <tr1/unordered_set> //para eclipse
+#include <unordered_set> //para visual studio
 using namespace std;
 
 /**
@@ -174,6 +175,11 @@ public:
   * @brief Funcao que mostra no ecra os utilizadores mais ativos
   */
   void displayTopUtilizadores() const;
+  /*
+  * @brief funcao que devolve o utilizador de login 'log' dentro da tabela de dispersão.
+  * se não existir devolve um utilizador default.
+  */
+  Utilizador *devolveUtilizadorInativo(string log) const;
 };
 
 #endif /* SRC_COMUNIDADE_H_ */

@@ -7,7 +7,9 @@
 #include "Comunidade.h"
 #include "Templates.h"
 #include "Excecoes.h"
-#include <tr1/unordered_set>
+//#include <tr1/unordered_set> //para eclipse
+#include <unordered_set>  //para visual studio
+
 using namespace std;
 /********************************
 *		CLASSE COMUNIDADE		*
@@ -94,9 +96,9 @@ Grupo *Comunidade::existeGrupo(string grupo) const {
 bool Comunidade::existeLogin(string l) const {
   Utilizador *u = new Utilizador;
   u->setLogin(l);
-  if (existeUtil(u) == -1)
+  if (existeUtil(u) != -1) //encontra
     return true;
-  else if(existeUtilInativo(u)==-1)
+  else if(existeUtilInativo(u) != -1) //encontra
 	return true;
   else
     throw UtilizadorJaExiste(u->getLogin());
@@ -104,6 +106,19 @@ bool Comunidade::existeLogin(string l) const {
 
 Utilizador *Comunidade::utilizadorNaPosicao(int pos) const {
   return comunidade.at(pos);
+}
+
+Utilizador *Comunidade::devolveUtilizadorInativo(string login) const{
+	Utilizador *u = new Utilizador();
+	tr1::unordered_set<Utilizador*, hUtilizadoresInativos, hUtilizadoresInativos>::const_iterator it = utilizadoresInativos.begin();
+	while (it != utilizadoresInativos.end()) {
+		if ((*it)->getLogin() == login) {
+			u = *it;
+			break;
+		}
+		it++;
+	}
+	return u;
 }
 
 void Comunidade::adicionarUtil(Utilizador *util) {
