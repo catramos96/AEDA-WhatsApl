@@ -7,7 +7,7 @@
 #include "Comunidade.h"
 #include "Templates.h"
 #include "Excecoes.h"
-#include <tr1/unordered_set>
+#include <unordered_set>
 using namespace std;
 /********************************
 *		CLASSE COMUNIDADE		*

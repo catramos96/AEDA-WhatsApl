@@ -196,7 +196,7 @@ void menuComunidade() {
   cout << "Ordenar por:" << endl;
   cout << "Login (1)" << endl;
   cout << "Data (2)" << endl;
-  cout << "Top Utilizadores (3)" << endl << endl;
+  cout << "Top Utilizadores (3)" << endl;
   cout << "Utilizadores Inativos (4)" << endl << endl;
   cout << "Voltar Atras (5)" << endl << endl;
 }
